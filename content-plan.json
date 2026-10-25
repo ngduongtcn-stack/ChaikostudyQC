@@ -1,0 +1,45 @@
+{
+  "paused": false,
+  "per_run": {
+    "sun": 20,
+    "wed": 25
+  },
+  "targets": {
+    "4": 500,
+    "3": 1000
+  },
+  "topic_targets": {
+    "4": {
+      "kangaekata": 80,
+      "hinshitsu": 70,
+      "kaizen": 70,
+      "kensa": 70,
+      "hyojun": 60,
+      "data": 75,
+      "7tools": 75
+    },
+    "3": {
+      "data3": 150,
+      "7tools3": 150,
+      "shin7": 100,
+      "toukei": 120,
+      "kanrizu": 150,
+      "kouteinouryoku": 110,
+      "soukan": 70,
+      "kanri": 150
+    }
+  },
+  "exhausted": {
+    "4": [],
+    "3": []
+  },
+  "exam": {
+    "size": 50,
+    "max_exams": {
+      "4": 10,
+      "3": 20
+    },
+    "pass_rate": 0.7,
+    "minutes": 90
+  }
+}

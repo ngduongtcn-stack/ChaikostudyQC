@@ -1,0 +1,62 @@
+[
+  {
+    "id": "r-c08",
+    "level": 4,
+    "topic": "7tools",
+    "question": "パレート図を作るとき、「その他」の項目はどこに置くか。",
+    "choices": [
+      "件数の大きさの順に、ほかの項目と一緒に並べる",
+      "一番左に置く",
+      "件数に関係なく、最後（右端）に置く",
+      "グラフには載せない"
+    ],
+    "answer": 2,
+    "explanation": "パレート図では、項目を件数の多い順に並べますが、「その他」は件数が多くても最後（右端）に置きます。「その他」が大きすぎる場合は、項目の分け方を見直します。",
+    "explanation_vi": "Biểu đồ Pareto xếp các hạng mục theo số lượng giảm dần, nhưng mục「その他」(khác) luôn để cuối cùng (bên phải) dù số lượng nhiều. Nếu「その他」quá lớn thì nên xem lại cách chia hạng mục."
+  },
+  {
+    "id": "r-d04",
+    "level": 3,
+    "topic": "data3",
+    "question": "母集団をいくつかのグループ（層）に分け、それぞれの層からサンプルを取り出す方法を何というか。",
+    "choices": [
+      "単純ランダムサンプリング",
+      "層別サンプリング",
+      "集落サンプリング",
+      "系統サンプリング"
+    ],
+    "answer": 1,
+    "explanation": "層別サンプリングは、母集団を層に分け、各層からサンプルを取る方法です。集落サンプリングは集落を選んでその中をすべて調べる方法、系統サンプリングは一定間隔で取る方法です。",
+    "explanation_vi": "層別サンプリング (lấy mẫu phân tầng) là chia tổng thể thành các tầng rồi lấy mẫu từ mỗi tầng. 集落サンプリング (lấy mẫu theo cụm) là chọn một số cụm và kiểm tra toàn bộ trong cụm đó; 系統サンプリング (lấy mẫu hệ thống) là lấy theo khoảng cách đều."
+  },
+  {
+    "id": "r-d11",
+    "level": 3,
+    "topic": "kanrizu",
+    "question": "X̄−R管理図で、X̿＝50.0、R̄＝4.0、サンプルの大きさn＝5（A₂＝0.577）のとき、X̄管理図の上方管理限界（UCL）はおよそいくらか。",
+    "choices": [
+      "52.3",
+      "54.0",
+      "47.7",
+      "58.5"
+    ],
+    "answer": 0,
+    "explanation": "X̄管理図のUCL＝X̿＋A₂R̄＝50.0＋0.577×4.0≒52.3 です。47.7はLCL、54.0はA₂を掛け忘れた値です。",
+    "explanation_vi": "UCL của biểu đồ X̄ = X̿ + A₂R̄ = 50.0 + 0.577 × 4.0 ≈ 52.3. 47.7 là LCL (giới hạn dưới), còn 54.0 là kết quả khi quên nhân A₂."
+  },
+  {
+    "id": "r-d14",
+    "level": 3,
+    "topic": "kanri",
+    "question": "製品の企画・設計など、上流の段階で品質を確保し、後工程での問題を未然に防ごうとする考え方を何というか。",
+    "choices": [
+      "源流管理",
+      "応急処置",
+      "抜取検査",
+      "層別"
+    ],
+    "answer": 0,
+    "explanation": "源流管理は、問題の源である上流（企画・設計・工程設計など）にさかのぼって品質をつくり込み、問題の発生を防ぐ考え方です。後工程で見つけるより、上流で防ぐ方がコストも小さくなります。",
+    "explanation_vi": "源流管理 (quản lý từ nguồn) là quay ngược về thượng nguồn của vấn đề (lên kế hoạch, thiết kế, thiết kế công đoạn) để tạo ra chất lượng và ngăn vấn đề phát sinh. Ngăn từ thượng nguồn rẻ hơn nhiều so với phát hiện ở công đoạn sau."
+  }
+]

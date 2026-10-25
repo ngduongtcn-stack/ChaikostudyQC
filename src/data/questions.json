@@ -668,6 +668,118 @@
       "explanation_vi": "Phiếu kiểm tra (チェックシート) có hai loại: loại ghi chép dữ liệu và loại kiểm tra (点検用) giúp không bỏ sót hạng mục cần xác nhận."
     },
     {
+      "id": "4-037",
+      "level": 4,
+      "topic": "kangaekata",
+      "status": "checked",
+      "question": "「事実にもとづく管理」の説明として、最も適切なものはどれか。",
+      "choices": [
+        "経験豊富なベテランの勘を最優先して判断する",
+        "データを集めて現状を把握し、事実にもとづいて判断する",
+        "上司の意見に従って判断する",
+        "過去の慣例どおりに判断する"
+      ],
+      "answer": 1,
+      "explanation": "事実にもとづく管理とは、勘や経験、慣例だけに頼らず、データで現状を正しくつかんで判断・行動することです。三現主義（現場・現物・現実）とも深く関係します。",
+      "explanation_vi": "事実にもとづく管理 (quản lý dựa trên sự thật) là không chỉ dựa vào cảm tính, kinh nghiệm hay thói quen, mà dùng dữ liệu để nắm đúng hiện trạng rồi mới phán đoán, hành động. Nó gắn liền với 三現主義 (hiện trường, hiện vật, hiện thực)."
+    },
+    {
+      "id": "4-038",
+      "level": 4,
+      "topic": "hinshitsu",
+      "status": "checked",
+      "question": "品質の考え方として、最も適切なものはどれか。",
+      "choices": [
+        "価格が高い製品ほど品質がよい",
+        "機能が多い製品ほど品質がよい",
+        "製品やサービスがお客様の要求をどれだけ満たしているかで決まる",
+        "製造者が決めた規格に合っていれば、お客様の評価は関係ない"
+      ],
+      "answer": 2,
+      "explanation": "品質は、製品やサービスがお客様（使う人）の要求をどれだけ満たしているかの程度で決まります。価格や機能の多さそのものが品質の高さを表すわけではありません。",
+      "explanation_vi": "Chất lượng được quyết định bởi mức độ sản phẩm, dịch vụ đáp ứng yêu cầu của khách hàng (người sử dụng). Giá cao hay nhiều tính năng không tự động có nghĩa là chất lượng cao."
+    },
+    {
+      "id": "4-039",
+      "level": 4,
+      "topic": "kaizen",
+      "status": "checked",
+      "question": "QCストーリーで、「対策の立案と実施」の次に行う手順はどれか。",
+      "choices": [
+        "テーマの選定",
+        "要因の解析",
+        "効果の確認",
+        "現状の把握と目標の設定"
+      ],
+      "answer": 2,
+      "explanation": "QCストーリーは、テーマの選定→現状の把握と目標の設定→要因の解析→対策の立案と実施→効果の確認→標準化と管理の定着→反省と今後の課題、の順に進めます。対策を実施したら、目標に対する効果をデータで確認します。",
+      "explanation_vi": "QC story đi theo thứ tự: chọn đề tài → nắm hiện trạng và đặt mục tiêu → phân tích nguyên nhân → lập và thực hiện đối sách → xác nhận hiệu quả (効果の確認) → tiêu chuẩn hóa và duy trì → rút kinh nghiệm. Thực hiện đối sách xong thì dùng dữ liệu kiểm tra hiệu quả so với mục tiêu."
+    },
+    {
+      "id": "4-040",
+      "level": 4,
+      "topic": "kensa",
+      "status": "checked",
+      "question": "抜取検査の説明として、正しいものはどれか。",
+      "choices": [
+        "すべての製品を1個ずつ調べて、良否を判定する",
+        "ロットからサンプルを抜き取って調べ、その結果でロットの合否を判定する",
+        "試験を行わず、書類だけで合否を判定する",
+        "製品を壊さずに調べる検査のことである"
+      ],
+      "answer": 1,
+      "explanation": "抜取検査は、ロットから一部（サンプル）を取り出して調べ、その結果からロット全体の合格・不合格を判定する方法です。全数を調べるのは全数検査、書類で判定するのは無試験検査です。",
+      "explanation_vi": "抜取検査 (kiểm tra lấy mẫu) là lấy một phần (mẫu) từ lô để kiểm tra, rồi từ kết quả đó phán định cả lô đạt hay không. Kiểm tra từng cái là 全数検査 (kiểm tra toàn bộ); phán định chỉ bằng hồ sơ là 無試験検査."
+    },
+    {
+      "id": "4-041",
+      "level": 4,
+      "topic": "hyojun",
+      "status": "checked",
+      "question": "作業標準書を作る目的として、最も適切なものはどれか。",
+      "choices": [
+        "ベテラン作業者だけが作業できるようにする",
+        "誰が作業しても、同じ品質・同じやり方で作業できるようにする",
+        "作業者がそれぞれ自由に作業方法を工夫できるようにする",
+        "監査のときだけ見せる書類を用意する"
+      ],
+      "answer": 1,
+      "explanation": "作業標準書は、作業の手順や急所を決めて文書にしたものです。誰が作業しても同じ品質で作業できるようにし、ばらつきを減らすことが目的です。教育や技能の伝承にも使います。",
+      "explanation_vi": "作業標準書 (tài liệu tiêu chuẩn thao tác) ghi lại trình tự và điểm then chốt của công việc. Mục đích là để ai làm cũng ra cùng chất lượng, giảm biến động; nó cũng dùng để đào tạo và truyền lại kỹ năng."
+    },
+    {
+      "id": "4-042",
+      "level": 4,
+      "topic": "data",
+      "status": "checked",
+      "question": "測定して得られる連続的なデータ（計量値）の例として、正しいものはどれか。",
+      "choices": [
+        "1か月のクレーム件数",
+        "ボルトの直径（mm）",
+        "欠勤した人の数",
+        "外観検査で見つかったキズの数"
+      ],
+      "answer": 1,
+      "explanation": "ボルトの直径のように、測定器で測って得られ、連続的な値をとるデータを計量値といいます。件数・人数・キズの数のように数えて得られるデータは計数値です。",
+      "explanation_vi": "Dữ liệu đo bằng dụng cụ và có giá trị liên tục như đường kính bu-lông gọi là 計量値 (giá trị đo). Số vụ, số người, số vết xước là dữ liệu đếm được, gọi là 計数値 (giá trị đếm)."
+    },
+    {
+      "id": "4-043",
+      "level": 4,
+      "topic": "7tools",
+      "status": "checked",
+      "question": "「部品の加工時間」と「仕上がり寸法」に関係があるかを調べたい。最も適した手法はどれか。",
+      "choices": [
+        "パレート図",
+        "散布図",
+        "チェックシート",
+        "特性要因図"
+      ],
+      "answer": 1,
+      "explanation": "対になった2つの数値データの関係を調べるには散布図を使います。横軸に加工時間、縦軸に仕上がり寸法をとって点を打ち、点の並び方から関係の有無を見ます。",
+      "explanation_vi": "Muốn xem quan hệ giữa hai loại dữ liệu số đi theo cặp thì dùng 散布図 (biểu đồ phân tán): trục ngang là thời gian gia công, trục dọc là kích thước hoàn thiện, rồi xem cách các điểm phân bố."
+    },
+    {
       "id": "3-001",
       "level": 3,
       "topic": "data3",
@@ -1306,6 +1418,214 @@
       "answer": 0,
       "explanation": "QCサークル活動（小集団活動）は、職場の第一線の人たちが自主的・継続的に改善を行う活動で、人材育成にもつながります。",
       "explanation_vi": "QCサークル活動 (hoạt động nhóm QC, còn gọi 小集団活動) là hoạt động cải tiến tự giác, liên tục của những người làm việc trực tiếp, đồng thời giúp phát triển nhân lực."
+    },
+    {
+      "id": "3-041",
+      "level": 3,
+      "topic": "data3",
+      "status": "checked",
+      "question": "データの中に極端に大きな値が1つ含まれているとき、その影響を最も受けにくい「中心」を表す値はどれか。",
+      "choices": [
+        "平均値",
+        "メディアン",
+        "範囲",
+        "標準偏差"
+      ],
+      "answer": 1,
+      "explanation": "メディアン（中央値）は大きさの順に並べた真ん中の値なので、極端な値（外れ値）があっても影響をほとんど受けません。平均値は外れ値に引っぱられます。範囲と標準偏差はばらつきを表す値です。",
+      "explanation_vi": "メディアン (trung vị) là giá trị ở giữa khi xếp theo thứ tự, nên hầu như không bị ảnh hưởng bởi giá trị cực đoan. Trung bình (平均値) thì bị kéo lệch theo giá trị đó. Khoảng biến thiên và độ lệch chuẩn là đại lượng đo độ phân tán, không phải trung tâm."
+    },
+    {
+      "id": "3-042",
+      "level": 3,
+      "topic": "data3",
+      "status": "checked",
+      "question": "次のデータの不偏分散Vはいくらか（小数第3位を四捨五入）。　2, 3, 7, 8",
+      "choices": [
+        "6.50",
+        "8.67",
+        "26.00",
+        "2.94"
+      ],
+      "answer": 1,
+      "explanation": "平均は5。偏差は −3, −2, 2, 3 なので、平方和S＝9＋4＋4＋9＝26。不偏分散V＝S÷(n−1)＝26÷3≒8.67 です。6.50はnで割った値、2.94は標準偏差です。",
+      "explanation_vi": "Trung bình = 5. Độ lệch là −3, −2, 2, 3 nên tổng bình phương S = 9 + 4 + 4 + 9 = 26. Phương sai không chệch V = S ÷ (n − 1) = 26 ÷ 3 ≈ 8.67. Chú ý bẫy: 6.50 là chia cho n, 2.94 là độ lệch chuẩn."
+    },
+    {
+      "id": "3-043",
+      "level": 3,
+      "topic": "data3",
+      "status": "checked",
+      "question": "工程Aは平均20、標準偏差2、工程Bは平均200、標準偏差10であった。相対的なばらつきについて、正しいものはどれか。",
+      "choices": [
+        "変動係数はAが10%、Bが5%で、Aの方が相対的なばらつきが大きい",
+        "標準偏差が大きいので、Bの方が相対的なばらつきが大きい",
+        "AとBの相対的なばらつきは同じである",
+        "平均が違うので比較できない"
+      ],
+      "answer": 0,
+      "explanation": "平均の大きさが違うデータは、変動係数CV＝s÷x̄で比べます。A：2÷20＝10%、B：10÷200＝5% なので、Aの方が相対的なばらつきが大きいといえます。",
+      "explanation_vi": "Khi trung bình khác nhau nhiều thì so sánh bằng hệ số biến thiên CV = s ÷ x̄. A: 2 ÷ 20 = 10%, B: 10 ÷ 200 = 5%, nên A có độ phân tán tương đối lớn hơn, dù độ lệch chuẩn của B lớn hơn."
+    },
+    {
+      "id": "3-044",
+      "level": 3,
+      "topic": "7tools3",
+      "status": "checked",
+      "question": "ヒストグラムで、分布から離れた位置に小さな山がある「離れ小島型」になったとき、まず疑うべきことはどれか。",
+      "choices": [
+        "異常なデータの混入や測定ミス",
+        "工程が安定していること",
+        "区間の数が少なすぎること",
+        "規格の幅が広すぎること"
+      ],
+      "answer": 0,
+      "explanation": "離れ小島型は、異なる工程のデータや異常値が混ざったり、測定・記録のミスがあったりしたときに現れます。離れた山のデータについて原因を調べます。",
+      "explanation_vi": "Dạng đảo nhỏ tách rời (離れ小島型) xuất hiện khi dữ liệu bị lẫn giá trị bất thường, dữ liệu từ công đoạn khác, hoặc khi đo, ghi chép bị sai. Cần tìm nguyên nhân của các dữ liệu thuộc đỉnh nhỏ đó."
+    },
+    {
+      "id": "3-045",
+      "level": 3,
+      "topic": "7tools3",
+      "status": "checked",
+      "question": "データ数が100のヒストグラムを作るとき、区間の数の目安として最も適切なものはどれか。",
+      "choices": [
+        "5",
+        "10",
+        "50",
+        "100"
+      ],
+      "answer": 1,
+      "explanation": "区間の数の目安は、データ数nの平方根（√n）です。√100＝10 なので、10程度にします。区間が少なすぎても多すぎても、分布の形が読み取りにくくなります。",
+      "explanation_vi": "Số khoảng nên lấy xấp xỉ căn bậc hai của số dữ liệu (√n). √100 = 10 nên khoảng 10 khoảng là phù hợp. Quá ít hay quá nhiều khoảng đều làm khó đọc hình dạng phân bố."
+    },
+    {
+      "id": "3-046",
+      "level": 3,
+      "topic": "7tools3",
+      "status": "checked",
+      "question": "不良件数が A：50件、B：30件、C：12件、その他：8件（合計100件）であった。パレート図で、上位2項目（AとB）の累積比率はいくらか。",
+      "choices": [
+        "30%",
+        "50%",
+        "80%",
+        "92%"
+      ],
+      "answer": 2,
+      "explanation": "累積比率は、上位からの件数の合計÷総数です。(50＋30)÷100＝80%。上位2項目で全体の80%を占めるので、AとBを重点的に改善すると効果が大きいとわかります。",
+      "explanation_vi": "Tỷ lệ tích lũy = tổng số lượng tính từ hạng mục đầu ÷ tổng số. (50 + 30) ÷ 100 = 80%. Hai hạng mục đầu đã chiếm 80%, nên tập trung cải tiến A và B sẽ hiệu quả nhất."
+    },
+    {
+      "id": "3-047",
+      "level": 3,
+      "topic": "kanrizu",
+      "status": "checked",
+      "question": "管理図の管理限界線についての説明として、正しいものはどれか。",
+      "choices": [
+        "製品の規格値をそのまま管理限界線として使う",
+        "工程から得たデータをもとに計算して求める",
+        "顧客と相談して自由に決める",
+        "規格の幅の80%の位置に引く"
+      ],
+      "answer": 1,
+      "explanation": "管理限界線は、工程から取ったデータをもとに計算して求めます（中心線±3σ）。工程の実力を表す線であり、顧客や設計が決める規格値とは別のものです。",
+      "explanation_vi": "Đường giới hạn kiểm soát được tính từ dữ liệu lấy ra từ công đoạn (đường trung tâm ± 3σ). Nó thể hiện năng lực thực của công đoạn, khác với giá trị quy cách do khách hàng hay thiết kế quyết định."
+    },
+    {
+      "id": "3-048",
+      "level": 3,
+      "topic": "kanrizu",
+      "status": "checked",
+      "question": "一定の大きさの布1枚あたりに見つかるキズの数を管理したい。最も適した管理図はどれか。",
+      "choices": [
+        "X̄−R管理図",
+        "p管理図",
+        "np管理図",
+        "c管理図"
+      ],
+      "answer": 3,
+      "explanation": "一定の大きさ（面積・長さなど）の中の欠点数を管理するにはc管理図を使います。大きさが一定でない場合は、単位あたりの欠点数を管理するu管理図を使います。",
+      "explanation_vi": "Quản lý số khuyết tật trong một kích thước cố định (diện tích, chiều dài…) thì dùng c管理図. Nếu kích thước thay đổi thì dùng u管理図 (số khuyết tật trên một đơn vị)."
+    },
+    {
+      "id": "3-049",
+      "level": 3,
+      "topic": "kanrizu",
+      "status": "checked",
+      "question": "工程のばらつきの原因のうち、「異常原因」の例として最も適切なものはどれか。",
+      "choices": [
+        "標準どおりに作業しても避けられない、わずかな寸法の違い",
+        "刃具の摩耗が進み、寸法が少しずつ大きくなっていった",
+        "同じ測定器で同じ品物を測ったときに生じるごくわずかな差",
+        "管理限界の内側でランダムに変動している状態"
+      ],
+      "answer": 1,
+      "explanation": "異常原因は、見逃すことのできない特定の原因で、刃具の摩耗、材料ロットの変更、作業方法の誤りなどがあります。標準どおりに作業しても生じる小さなばらつきは偶然原因によるものです。",
+      "explanation_vi": "異常原因 (nguyên nhân bất thường) là nguyên nhân cụ thể không được bỏ qua, như dao cụ bị mòn, đổi lô vật liệu, làm sai thao tác. Biến động nhỏ vẫn xảy ra dù làm đúng tiêu chuẩn là do 偶然原因 (nguyên nhân ngẫu nhiên)."
+    },
+    {
+      "id": "3-050",
+      "level": 3,
+      "topic": "kanri",
+      "status": "checked",
+      "question": "次のうち、「再発防止」にあたる対策はどれか。",
+      "choices": [
+        "不良品を選別して、良品と入れ替えた",
+        "不良の原因を調べて取り除き、作業標準を改訂した",
+        "新製品の設計段階でFMEAを行い、起こりうる不具合に対策した",
+        "不良が出たロットを出荷停止にした"
+      ],
+      "answer": 1,
+      "explanation": "再発防止は、原因を取り除いて同じ問題を二度と起こさないようにすることで、標準の改訂などで仕組みに反映します。選別や出荷停止は応急処置、設計段階のFMEAは未然防止です。",
+      "explanation_vi": "再発防止 (phòng ngừa tái phát) là loại bỏ nguyên nhân để vấn đề không lặp lại, và phản ánh vào cơ chế như sửa tiêu chuẩn. Tuyển chọn hàng hay dừng xuất hàng là 応急処置 (xử lý tạm thời); làm FMEA ở giai đoạn thiết kế là 未然防止 (phòng ngừa từ trước)."
+    },
+    {
+      "id": "3-051",
+      "level": 3,
+      "topic": "kanri",
+      "status": "checked",
+      "question": "日常管理の説明として、最も適切なものはどれか。",
+      "choices": [
+        "トップの方針を、全部門・全階層に展開して達成する活動",
+        "各部門が日常の分掌業務について、目的を達成するために維持・改善を行う活動",
+        "外部の審査機関が品質マネジメントシステムを審査する活動",
+        "新製品の開発計画を立てる活動"
+      ],
+      "answer": 1,
+      "explanation": "日常管理は、各部門が自分の担当業務（分掌業務）を確実に行い、よい状態を維持し、必要に応じて改善する活動です。トップの方針を展開するのは方針管理です。",
+      "explanation_vi": "日常管理 (quản lý hằng ngày) là hoạt động mỗi bộ phận thực hiện chắc chắn công việc được giao (分掌業務), duy trì trạng thái tốt và cải tiến khi cần. Triển khai phương châm của lãnh đạo là 方針管理."
+    },
+    {
+      "id": "3-052",
+      "level": 3,
+      "topic": "soukan",
+      "status": "checked",
+      "question": "Sxx＝10、Syy＝40、Sxy＝16 のとき、相関係数rはいくらか。",
+      "choices": [
+        "0.8",
+        "0.4",
+        "1.6",
+        "0.16"
+      ],
+      "answer": 0,
+      "explanation": "r＝Sxy÷√(Sxx×Syy)＝16÷√(10×40)＝16÷20＝0.8。かなり強い正の相関があります。rは−1から1の範囲なので、1.6のような値にはなりません。",
+      "explanation_vi": "r = Sxy ÷ √(Sxx × Syy) = 16 ÷ √(10 × 40) = 16 ÷ 20 = 0.8, tức tương quan thuận khá mạnh. r luôn nằm trong khoảng −1 đến 1 nên không thể là 1.6."
+    },
+    {
+      "id": "3-053",
+      "level": 3,
+      "topic": "kouteinouryoku",
+      "status": "checked",
+      "question": "ある製品の強度には、下限規格SL＝20のみが定められている。工程平均が26、標準偏差が2のとき、工程能力指数はいくらか。",
+      "choices": [
+        "0.5",
+        "1.0",
+        "1.5",
+        "3.0"
+      ],
+      "answer": 1,
+      "explanation": "下限規格のみの場合、工程能力指数＝(x̄−SL)÷3s＝(26−20)÷(3×2)＝1.0 です。判断の目安では「まずまず（やや不足）」にあたります。",
+      "explanation_vi": "Khi chỉ có giới hạn dưới: chỉ số = (x̄ − SL) ÷ 3s = (26 − 20) ÷ (3 × 2) = 1.0. Theo mốc đánh giá, mức này là “tạm được, hơi thiếu” (まずまず)."
     }
   ]
 }

@@ -96,16 +96,37 @@
     for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; }
     return a;
   }
+  // Mock exams (模擬試験) are addressed as topic "m1", "m2", ... and list fixed question IDs.
+  var EXAM_CFG = DATA.exam_cfg || { pass_rate: 0.7 };
+  var RESULTS_KEY = "qc-renshu:exams";
+  function mockNo(topic) { var m = /^m(\d+)$/.exec(topic || ""); return m ? parseInt(m[1], 10) : 0; }
   function topicName(level, id) {
+    var n = mockNo(id);
+    if (n) return "模擬試験 第" + n + "回";
     var L = DATA.levels[String(level)];
     if (!L) return "";
     for (var i = 0; i < L.topics.length; i++) if (L.topics[i].id === id) return L.topics[i].name;
     return "";
   }
+  var BY_ID = {};
+  DATA.questions.forEach(function (q) { BY_ID[q.id] = q; });
   function pool(level, topic) {
+    var n = mockNo(topic);
+    if (n) {
+      var sets = (DATA.exams && DATA.exams[String(level)]) || [];
+      return (sets[n - 1] || []).map(function (id) { return BY_ID[id]; }).filter(Boolean);
+    }
     return DATA.questions.filter(function (q) {
       return String(q.level) === String(level) && (topic === "all" || q.topic === topic);
     });
+  }
+  function loadResults() {
+    try { return JSON.parse(localStorage.getItem(RESULTS_KEY) || "{}") || {}; } catch (e) { return {}; }
+  }
+  function saveResult(key, ok, n) {
+    var r = loadResults(), prev = r[key];
+    r[key] = { last: ok, best: Math.max(ok, prev ? prev.best : 0), n: n };
+    try { localStorage.setItem(RESULTS_KEY, JSON.stringify(r)); } catch (e) { /* storage unavailable */ }
   }
   function feedbackLink(id) {
     var url = CONFIG.feedback_form_url;
@@ -141,6 +162,14 @@
       var btn = node.closest("a, button");
       if (btn && n === 0) btn.classList.add("ghost");
     });
+    var results = loadResults();
+    document.querySelectorAll("[data-exam]").forEach(function (node) {
+      var r = results[node.getAttribute("data-exam")];
+      if (!r) return;
+      var pass = r.best / r.n >= EXAM_CFG.pass_rate;
+      node.textContent = "最高 " + r.best + "/" + r.n + (pass ? " ・ 合格ライン到達" : "");
+      if (pass) node.classList.add("passed");
+    });
   }
 
   // ---------- quiz ----------
@@ -169,8 +198,12 @@
     var qs = pool(p.level, p.topic);
     var stats = loadStats();
     if (p.mode === "review") qs = qs.filter(function (q) { return stats[q.id] && stats[q.id].last === false; });
+    var mock = mockNo(p.topic);
+    if (mock && p.mode === "practice") p.mode = "exam";
+    this.mock = mock;
     qs = shuffle(qs);
-    if (p.mode === "exam") qs = qs.slice(0, EXAM_SIZE);
+    if (p.mode === "exam" && !mock) qs = qs.slice(0, EXAM_SIZE);
+    if (this.timer) { clearInterval(this.timer); this.timer = null; }
     this.items = qs.map(function (q) {
       var order = shuffle(q.choices.map(function (_, i) { return i; }));
       return { q: q, order: order, picked: null };
@@ -179,7 +212,8 @@
     this.t0 = Date.now();
     var L = DATA.levels[p.level] || {};
     var modeName = { practice: "練習", exam: "ミニ模擬試験", review: "間違えた問題の復習" }[p.mode];
-    this.title = (L.name || "") + " ・ " + (p.topic === "all" ? "全分野" : topicName(p.level, p.topic)) + " ・ " + modeName;
+    if (mock && p.mode === "exam") this.title = (L.name || "") + " ・ " + topicName(p.level, p.topic);
+    else this.title = (L.name || "") + " ・ " + (p.topic === "all" ? "全分野" : topicName(p.level, p.topic)) + " ・ " + modeName;
     document.title = this.title + " | " + (CONFIG.site_name || "QC検定");
     var h = $("#quiz-title"); if (h) h.textContent = this.title;
     var back = $("#quiz-back"); if (back && L.slug) back.setAttribute("href", L.slug + "/index.html");
@@ -190,7 +224,7 @@
     var p = this.p, L = DATA.levels[p.level] || {};
     var msg = p.mode === "review"
       ? "復習する問題はありません。間違えた問題は、ここに自動で集まります。"
-      : "この分野の問題はまだありません。";
+      : (this.mock ? "この模擬試験はまだ公開されていません。問題が増えると、順に追加されます。" : "この分野の問題はまだありません。");
     this.root.replaceChildren(el("div", { class: "empty" }, [
       el("p", { text: msg }),
       el("div", { class: "btn-row" }, [
@@ -206,8 +240,16 @@
 
     var top = el("div", { class: "quiz-top" }, [
       el("span", { class: "meta", text: "第" + (this.i + 1) + "問 / " + n + "問" }),
+      exam ? el("span", { class: "meta", id: "quiz-clock", text: "経過 " + fmtTime(Date.now() - this.t0) }) : null,
       el("span", { class: "meta", text: topicName(q.level, q.topic) + " ・ " + q.id })
     ]);
+    if (exam && !this.timer) {
+      var t0 = this.t0;
+      this.timer = setInterval(function () {
+        var c = document.getElementById("quiz-clock");
+        if (c) c.textContent = "経過 " + fmtTime(Date.now() - t0);
+      }, 1000);
+    }
     var prog = el("div", { class: "progress", role: "progressbar", "aria-valuemin": "0", "aria-valuemax": String(n), "aria-valuenow": String(this.i + (answered ? 1 : 0)) },
       [el("i", { style: "width:" + Math.round((this.i + (answered || (exam && item.picked !== null) ? 1 : 0)) / n * 100) + "%" })]);
 
@@ -277,13 +319,16 @@
     var p = this.p, L = DATA.levels[p.level] || {};
     var n = this.items.length, ok = this.items.filter(function (it) { return it.picked === it.q.answer; }).length;
     var pct = Math.round(ok / n * 100);
+    if (this.timer) { clearInterval(this.timer); this.timer = null; }
+    if (this.mock && p.mode === "exam") saveResult(p.level + ":" + p.topic, ok, n);
+    var passPct = Math.round(EXAM_CFG.pass_rate * 100);
     var score = el("div", { class: "score" }, [
       el("span", { class: "big", html: ok + "<small> / " + n + "問</small>" }),
       el("span", { class: "meta", text: "正答率 " + pct + "%" + (p.mode === "exam" ? " ・ 所要時間 " + fmtTime(Date.now() - this.t0) : "") })
     ]);
-    var comment = el("p", { class: "note", text: pct >= 70
-      ? "合格の目安（正答率70%以上）に届いています。間違えた問題の解説を読んでおきましょう。"
-      : "合格の目安は正答率70%以上です。間違えた問題を復習して、もう一度挑戦しましょう。" });
+    var comment = el("p", { class: "note", text: pct >= passPct
+      ? "合格の目安（正答率" + passPct + "%以上）に届いています。間違えた問題の解説を読んでおきましょう。"
+      : "合格の目安は正答率" + passPct + "%以上です。間違えた問題を復習して、もう一度挑戦しましょう。" });
 
     var list = el("ul", { class: "result-list" });
     this.items.forEach(function (it, idx) {

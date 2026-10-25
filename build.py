@@ -31,6 +31,11 @@ def load():
     data = json.loads((SRC / "data" / "questions.json").read_text(encoding="utf-8"))
     theory_path = SRC / "data" / "theory.json"
     data["theory"] = json.loads(theory_path.read_text(encoding="utf-8")) if theory_path.exists() else {}
+    exams_path = SRC / "data" / "exams.json"
+    data["exams"] = json.loads(exams_path.read_text(encoding="utf-8")) if exams_path.exists() else {}
+    plan_path = ROOT / "content-plan.json"
+    plan = json.loads(plan_path.read_text(encoding="utf-8")) if plan_path.exists() else {}
+    data["exam_cfg"] = plan.get("exam", {"size": 50, "pass_rate": 0.7})
     return site, data
 
 
@@ -173,6 +178,31 @@ def build_index(site, data):
                 desc=f"{site['tagline']}。分野別の練習問題と解説、ミニ模擬試験、間違えた問題の復習が無料・登録なしで使えます。")
 
 
+def build_exam_section(data, lv):
+    cfg = data["exam_cfg"]
+    size = cfg.get("size", 50)
+    sets = data["exams"].get(lv, [])
+    n_level = sum(1 for q in data["questions"] if str(q["level"]) == lv)
+    used = sum(len(x) for x in sets)
+    left = size - (n_level - used)
+    nxt = (f'<p class="note">次の模擬試験（第{len(sets) + 1}回）まで、あと{max(left, 0)}問。問題が{size}問たまるごとに、1回分ずつ追加されます。'
+           f'<span lang="vi">　Cứ đủ {size} câu mới là có thêm một đề thi thử.</span></p>')
+    if not sets:
+        cards = '<div class="empty"><p>模擬試験は準備中です。</p></div>'
+    else:
+        items = "".join(
+            f'<a class="exam-card" href="../quiz.html#{lv}.m{i}.exam"><span class="exam-no">第{i}回</span>'
+            f'<span class="meta">{len(ex)}問</span><span class="meta exam-score" data-exam="{lv}:m{i}">未受験</span></a>'
+            for i, ex in enumerate(sets, 1))
+        cards = f'<div class="exam-grid">{items}</div>'
+    return f"""<section aria-labelledby="h-exams">
+  <h2 id="h-exams">模擬試験</h2>
+  <p class="note">{size}問・時間を計って本番形式で解き、最後にまとめて採点します。合格の目安は正答率{round(cfg.get("pass_rate", 0.7) * 100)}%です。</p>
+  {cards}
+  {nxt if len(sets) < cfg.get("max_exams", {}).get(lv, 99) else ""}
+</section>"""
+
+
 def build_level(site, data, lv):
     L = data["levels"][lv]
     rows = []
@@ -199,8 +229,10 @@ def build_level(site, data, lv):
     <a class="btn" href="../quiz.html#{lv}.all.exam">ミニ模擬試験（最大20問）</a>
     <a class="btn" href="../quiz.html#{lv}.all.review">間違えた問題を復習（<span data-review-count="{lv}:all">0</span>）</a>
   </div>"""
+    exam_section = build_exam_section(data, lv)
     body = hero(f"QC KENTEI LEVEL {lv}", f"{L['name']} 練習問題", L["lead"], extra) + f"""
 <main><div class="wrap">
+{exam_section}
 <section aria-labelledby="h-topics">
   <h2 id="h-topics">分野別に学ぶ・練習する</h2>
   <p class="note">「学ぶ」で要点を読んでから「解く」で確認するのがおすすめです。<span lang="vi">　Nên đọc「学ぶ」(lý thuyết) trước, rồi làm「解く」(bài tập).</span></p>
@@ -413,8 +445,11 @@ def main():
             print("  -", m)
         sys.exit(1)
     counts = {lv: sum(1 for q in data["questions"] if str(q["level"]) == lv) for lv in data["levels"]}
-    drafts = sum(1 for q in data["questions"] if q.get("status") == "draft")
-    print(f"OK: {len(data['questions'])}問（" + "、".join(f"{lv}級 {n}問" for lv, n in counts.items()) + f"）、うち未確認(draft) {drafts}問")
+    st = {}
+    for q in data["questions"]:
+        st[q.get("status", "draft")] = st.get(q.get("status", "draft"), 0) + 1
+    print(f"OK: {len(data['questions'])}問（" + "、".join(f"{lv}級 {n}問" for lv, n in counts.items()) + "）、状態: "
+          + "、".join(f"{k} {v}" for k, v in sorted(st.items())))
     if "--check" in sys.argv:
         return
 
@@ -426,8 +461,12 @@ def main():
 
     fields = ("id", "level", "topic", "question", "choices", "answer", "explanation", "explanation_vi")
     public_q = [{k: q[k] for k in fields if k in q} for q in data["questions"]]
+    known = {q["id"] for q in public_q}
+    exams = {lv: [ex for ex in sets if all(i in known for i in ex)] for lv, sets in data["exams"].items()}
     write("assets/questions.js", "window.QC_DATA = " + json.dumps(
-        {"levels": data["levels"], "questions": public_q}, ensure_ascii=False, separators=(",", ":")) + ";\n")
+        {"levels": data["levels"], "questions": public_q, "exams": exams,
+         "exam_cfg": {"pass_rate": data["exam_cfg"].get("pass_rate", 0.7)}},
+        ensure_ascii=False, separators=(",", ":")) + ";\n")
     write("assets/config.js", "window.QC_CONFIG = " + json.dumps(
         {"site_name": site["site_name"], "feedback_form_url": site.get("feedback_form_url", "")},
         ensure_ascii=False) + ";\n")
