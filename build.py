@@ -85,6 +85,8 @@ def page(site, *, title, desc, body, depth=0, path="", nav=""):
     pre = "../" * depth
     full_title = f"{title} | {site['site_name']}" if title != site["site_name"] else f"{site['site_name']}｜{site['tagline']}"
     url = site["site_url"].rstrip("/") + "/" + path
+    gsv = (f'\n<meta name="google-site-verification" content="{e(site["google_site_verification"])}">'
+           if site.get("google_site_verification") else "")
 
     def nav_link(href, label, key):
         cur = ' aria-current="page"' if key == nav else ""
@@ -97,7 +99,7 @@ def page(site, *, title, desc, body, depth=0, path="", nav=""):
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{e(full_title)}</title>
 <meta name="description" content="{e(desc)}">
-<link rel="canonical" href="{e(url)}">
+<link rel="canonical" href="{e(url)}">{gsv}
 <meta property="og:title" content="{e(full_title)}">
 <meta property="og:description" content="{e(desc)}">
 <meta property="og:type" content="website">
