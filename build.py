@@ -491,6 +491,12 @@ def main():
     write("sitemap.xml", f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n')
     write("robots.txt", f"User-agent: *\nAllow: /\nSitemap: {base}/sitemap.xml\n")
     write(".nojekyll", "")
+    # files that must be served as-is from the site root (e.g. Google Search Console verification)
+    static = SRC / "static"
+    if static.exists():
+        for f in static.iterdir():
+            if f.is_file():
+                shutil.copy(f, DIST / f.name)
     print(f"dist/ に {len(pages)} ページを書き出しました")
 
 
