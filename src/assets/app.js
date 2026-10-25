@@ -17,6 +17,29 @@
   function setViPref(on) {
     try { localStorage.setItem(VI_KEY, on ? "1" : "0"); } catch (e) { /* storage unavailable */ }
   }
+  // One switch for the whole site: remembered choice, page class (theory pages), quiz blocks.
+  function setVi(on) {
+    setViPref(on);
+    var root = document.documentElement;
+    root.classList.toggle("vi-on", on);
+    root.classList.toggle("vi-off", !on);
+    document.querySelectorAll(".vi-wrap").forEach(function (w) { if (w._set) w._set(on); });
+    syncSwitch();
+  }
+  function syncSwitch() {
+    var sw = document.getElementById("vi-switch");
+    if (!sw) return;
+    var on = document.documentElement.classList.contains("vi-on");
+    sw.setAttribute("aria-pressed", String(on));
+    var label = sw.querySelector(".vi-switch-text");
+    if (label) label.textContent = on ? "Ẩn bản tiếng Việt" : "Hiện bản tiếng Việt";
+  }
+  function initViSwitch() {
+    var sw = document.getElementById("vi-switch");
+    if (!sw) return;
+    syncSwitch();
+    sw.addEventListener("click", function () { setVi(!document.documentElement.classList.contains("vi-on")); });
+  }
   function viBlock(q) {
     if (!q.explanation_vi) return null;
     var open = viPref();
@@ -31,12 +54,7 @@
         document.createTextNode(on ? "Ẩn giải thích tiếng Việt" : "Xem giải thích bằng tiếng Việt"));
     }
     label(open);
-    btn.addEventListener("click", function () {
-      var on = body.hidden;
-      setViPref(on);
-      // keep every open block on the page in sync with the remembered choice
-      document.querySelectorAll(".vi-wrap").forEach(function (w) { w._set && w._set(on); });
-    });
+    btn.addEventListener("click", function () { setVi(body.hidden); });
     var wrap = el("div", { class: "vi-wrap" }, [btn, body]);
     wrap._set = function (on) { body.hidden = !on; btn.setAttribute("aria-expanded", String(on)); label(on); };
     return wrap;
@@ -332,5 +350,6 @@
     fillProgress();
     initQuiz();
     initReset();
+    initViSwitch();
   });
 })();

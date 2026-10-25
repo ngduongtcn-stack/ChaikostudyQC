@@ -29,7 +29,23 @@ e = html.escape
 def load():
     site = json.loads((ROOT / "site.json").read_text(encoding="utf-8"))
     data = json.loads((SRC / "data" / "questions.json").read_text(encoding="utf-8"))
+    theory_path = SRC / "data" / "theory.json"
+    data["theory"] = json.loads(theory_path.read_text(encoding="utf-8")) if theory_path.exists() else {}
     return site, data
+
+
+def validate_theory(data):
+    errors = []
+    keys = {f"{lv}:{t['id']}" for lv, L in data["levels"].items() for t in L["topics"]}
+    for key, th in data["theory"].items():
+        if key not in keys:
+            errors.append(f"theory.json: '{key}' に対応する分野がありません")
+            continue
+        for si, sec in enumerate(th.get("sections", [])):
+            for b in sec.get("blocks", []):
+                if b.get("type") not in ("p", "list", "formula", "table", "point"):
+                    errors.append(f"theory.json: {key} セクション{si + 1} に不明なブロック '{b.get('type')}'")
+    return errors
 
 
 def validate(data):
@@ -86,6 +102,7 @@ def page(site, *, title, desc, body, depth=0, path="", nav=""):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="{FONTS}">
 <link rel="stylesheet" href="{pre}assets/style.css">
+<script>try{{document.documentElement.classList.add(localStorage.getItem("qc-renshu:vi")==="1"?"vi-on":"vi-off")}}catch(e){{document.documentElement.classList.add("vi-off")}}</script>
 </head>
 <body>
 <header class="site-head"><div class="wrap">
@@ -143,6 +160,7 @@ def build_index(site, data):
 <section aria-labelledby="h-how">
   <h2 id="h-how">使い方</h2>
   <ul class="topics">
+    <li><div><span class="t-name">要点を学ぶ</span><p class="t-desc">分野ごとのまとめページで、考え方・公式・重要用語（読み・ベトナム語訳つき）を確認できます。</p></div></li>
     <li><div><span class="t-name">分野別に練習する</span><p class="t-desc">1問ごとに正解と解説が出ます。苦手な分野だけをくり返し解けます。</p></div></li>
     <li><div><span class="t-name">ミニ模擬試験で力をはかる</span><p class="t-desc">全分野からランダムに最大{20}問。最後にまとめて採点し、所要時間も表示します。</p></div></li>
     <li><div><span class="t-name">間違えた問題を復習する</span><p class="t-desc">直近で間違えた問題が自動で集まります。正解すると復習リストから外れます。</p></div></li>
@@ -160,16 +178,20 @@ def build_level(site, data, lv):
     rows = []
     for t in L["topics"]:
         n = sum(1 for q in data["questions"] if str(q["level"]) == lv and q["topic"] == t["id"])
+        has_theory = f"{lv}:{t['id']}" in data["theory"]
+        name_href = f"learn/{t['id']}.html" if has_theory else f"{t['id']}.html"
+        learn_btn = f'<a class="btn" href="learn/{t["id"]}.html">学ぶ</a>' if has_theory else ""
         rows.append(f"""<li data-progress="{lv}:{t['id']}">
   <div>
-    <a class="t-name" href="{t['id']}.html">{e(t['name'])}</a>
+    <a class="t-name" href="{name_href}">{e(t['name'])}</a>
     <p class="t-desc">{e(t['desc'])}</p>
     <span class="meta">{n}問</span>
     <div class="bar"><i></i></div>
   </div>
   <div class="t-actions">
+    {learn_btn}
     <a class="btn ghost" href="{t['id']}.html">問題一覧</a>
-    <a class="btn" href="../quiz.html#{lv}.{t['id']}.practice">解く</a>
+    <a class="btn primary" href="../quiz.html#{lv}.{t['id']}.practice">解く</a>
   </div>
 </li>""")
     extra = f"""<div class="btn-row" style="margin-top:20px">
@@ -180,7 +202,8 @@ def build_level(site, data, lv):
     body = hero(f"QC KENTEI LEVEL {lv}", f"{L['name']} 練習問題", L["lead"], extra) + f"""
 <main><div class="wrap">
 <section aria-labelledby="h-topics">
-  <h2 id="h-topics">分野別に練習する</h2>
+  <h2 id="h-topics">分野別に学ぶ・練習する</h2>
+  <p class="note">「学ぶ」で要点を読んでから「解く」で確認するのがおすすめです。<span lang="vi">　Nên đọc「学ぶ」(lý thuyết) trước, rồi làm「解く」(bài tập).</span></p>
   <ul class="topics">{''.join(rows)}</ul>
 </section>
 </div></main>"""
@@ -217,9 +240,12 @@ def build_topic(site, data, lv, idx):
     if next_t:
         pager += f'<a class="btn ghost" href="{next_t["id"]}.html">{e(next_t["name"])} →</a>'
     pager += "</div>"
+    learn_link = (f'<a class="btn" href="learn/{t["id"]}.html">この分野のまとめを読む</a>'
+                  if f"{lv}:{t['id']}" in data["theory"] else "")
     extra = f"""<div class="btn-row" style="margin-top:20px">
     <a class="btn primary" href="../quiz.html#{lv}.{t['id']}.practice">この分野をクイズ形式で解く</a>
-    <a class="btn" href="index.html">{e(L['name'])}の分野一覧</a>
+    {learn_link}
+    <a class="btn ghost" href="index.html">{e(L['name'])}の分野一覧</a>
   </div>"""
     body = hero(f"{L['name']} ・ {len(qs)}問", f"{t['name']}の練習問題", t["desc"], extra) + f"""
 <main><div class="wrap">
@@ -231,6 +257,99 @@ def build_topic(site, data, lv, idx):
 </div></main>"""
     return page(site, title=f"{L['name']}「{t['name']}」練習問題", depth=1, path=f"{L['slug']}/{t['id']}.html", nav=lv, body=body,
                 desc=f"{L['name']}「{t['name']}」の練習問題{len(qs)}問と解説。{t['desc']}")
+
+
+def vi_switch():
+    return ('<button type="button" class="vi-switch" id="vi-switch" aria-pressed="false" lang="vi">'
+            '<span class="vi-badge">VI</span><span class="vi-switch-text">Hiện bản tiếng Việt</span></button>')
+
+
+def render_block(b):
+    t = b["type"]
+    if t == "p":
+        return f'<p>{e(b["ja"])}</p>' + (f'<p class="vi-t" lang="vi">{e(b["vi"])}</p>' if b.get("vi") else "")
+    if t == "list":
+        tag = "ol" if b.get("ol") else "ul"
+        out = f'<{tag} class="learn-list">' + "".join(f"<li>{e(x)}</li>" for x in b["ja"]) + f"</{tag}>"
+        if b.get("vi"):
+            out += f'<{tag} class="learn-list vi-t" lang="vi">' + "".join(f"<li>{e(x)}</li>" for x in b["vi"]) + f"</{tag}>"
+        return out
+    if t == "formula":
+        out = '<div class="formula">' + "".join(f"<span>{e(line)}</span>" for line in b["f"]) + "</div>"
+        if b.get("ja"):
+            out += f'<p>{e(b["ja"])}</p>'
+        if b.get("vi"):
+            out += f'<p class="vi-t" lang="vi">{e(b["vi"])}</p>'
+        return out
+    if t == "table":
+        def table(head, rows, extra=""):
+            th = "".join(f'<th scope="col">{e(h)}</th>' for h in head)
+            trs = "".join("<tr>" + "".join(f"<td>{e(c)}</td>" for c in r) + "</tr>" for r in rows)
+            return f'<div class="table-wrap{extra}"><table><thead><tr>{th}</tr></thead><tbody>{trs}</tbody></table></div>'
+        out = table(b["head"], b["rows"])
+        if b.get("rows_vi"):
+            out = out + table(b.get("head_vi", b["head"]), b["rows_vi"], ' vi-t" lang="vi')
+        return out
+    if t == "point":
+        return ('<aside class="point"><span class="point-label">ポイント</span>'
+                f'<p>{e(b["ja"])}</p>' + (f'<p class="vi-t" lang="vi">{e(b["vi"])}</p>' if b.get("vi") else "") + "</aside>")
+    return ""
+
+
+def build_theory(site, data, lv, idx):
+    L = data["levels"][lv]
+    t = L["topics"][idx]
+    th = data["theory"][f"{lv}:{t['id']}"]
+    n = sum(1 for q in data["questions"] if str(q["level"]) == lv and q["topic"] == t["id"])
+
+    toc, secs = [], []
+    for i, s in enumerate(th["sections"], 1):
+        toc.append(f'<li><a href="#s{i}">{e(s["h"]["ja"])}</a></li>')
+        blocks = "".join(render_block(b) for b in s["blocks"])
+        secs.append(f"""<section class="learn-sec" id="s{i}" aria-labelledby="h{i}">
+  <div class="learn-h"><h2 id="h{i}">{e(s['h']['ja'])}</h2><p class="vi-t vi-h" lang="vi">{e(s['h'].get('vi', ''))}</p></div>
+  {blocks}
+</section>""")
+
+    terms = ""
+    if th.get("terms"):
+        rows = "".join(f'<tr><td class="term">{e(a)}</td><td class="yomi">{e(b)}</td><td lang="vi">{e(c)}</td></tr>'
+                       for a, b, c in th["terms"])
+        terms = f"""<section class="learn-sec" id="terms" aria-labelledby="h-terms">
+  <div class="learn-h"><h2 id="h-terms">重要用語</h2><p class="vi-t vi-h" lang="vi">Thuật ngữ quan trọng</p></div>
+  <div class="table-wrap"><table class="glossary"><thead><tr><th scope="col">用語</th><th scope="col">読み</th><th scope="col" lang="vi">Tiếng Việt</th></tr></thead><tbody>{rows}</tbody></table></div>
+</section>"""
+
+    prev_t = L["topics"][idx - 1] if idx > 0 else None
+    next_t = L["topics"][idx + 1] if idx + 1 < len(L["topics"]) else None
+    pager = '<div class="btn-row">'
+    if prev_t:
+        pager += f'<a class="btn ghost" href="{prev_t["id"]}.html">← {e(prev_t["name"])}</a>'
+    if next_t:
+        pager += f'<a class="btn ghost" href="{next_t["id"]}.html">{e(next_t["name"])} →</a>'
+    pager += "</div>"
+
+    intro = th["intro"]
+    lead_vi = f'<p class="lead vi-t" lang="vi">{e(intro["vi"])}</p>' if intro.get("vi") else ""
+    extra = f"""{lead_vi}
+  <div class="btn-row" style="margin-top:20px">{vi_switch()}</div>"""
+    body = hero(f"{L['name']} ・ 学ぶ", f"{t['name']}のまとめ", intro["ja"], extra) + f"""
+<main><div class="wrap">
+<nav class="toc" aria-label="目次"><p class="eyebrow">目次</p><ul>{''.join(toc)}{'<li><a href="#terms">重要用語</a></li>' if terms else ''}</ul></nav>
+<article class="learn">{''.join(secs)}{terms}</article>
+<section class="cta" aria-labelledby="h-cta">
+  <h2 id="h-cta">理解できたら、問題で確認しよう</h2>
+  <p class="vi-t" lang="vi">Hiểu rồi thì làm bài tập để kiểm tra lại nhé.</p>
+  <div class="btn-row">
+    <a class="btn primary" href="../../quiz.html#{lv}.{t['id']}.practice">練習問題を解く（{n}問）</a>
+    <a class="btn" href="../{t['id']}.html">問題と解説の一覧</a>
+  </div>
+</section>
+{pager}
+</div></main>"""
+    return page(site, title=f"{L['name']}「{t['name']}」のまとめ", depth=2,
+                path=f"{L['slug']}/learn/{t['id']}.html", nav=lv, body=body,
+                desc=f"{L['name']}「{t['name']}」の要点まとめ。{t['desc']} 重要用語の読みとベトナム語訳つき。")
 
 
 def build_quiz(site):
@@ -287,7 +406,7 @@ def write(rel, text):
 
 def main():
     site, data = load()
-    errors = validate(data)
+    errors = validate(data) + validate_theory(data)
     if errors:
         print("questions.json にエラーがあります：")
         for m in errors:
@@ -323,6 +442,9 @@ def main():
         for i, t in enumerate(L["topics"]):
             write(f"{L['slug']}/{t['id']}.html", build_topic(site, data, lv, i))
             pages.append(f"{L['slug']}/{t['id']}.html")
+            if f"{lv}:{t['id']}" in data["theory"]:
+                write(f"{L['slug']}/learn/{t['id']}.html", build_theory(site, data, lv, i))
+                pages.append(f"{L['slug']}/learn/{t['id']}.html")
 
     base = site["site_url"].rstrip("/")
     today = date.today().isoformat()

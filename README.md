@@ -44,6 +44,23 @@ Mở `src/data/questions.json`, thêm một khối như sau vào `"questions"`:
 - `status`: `"draft"` = chưa kiểm tra, đổi thành `"ok"` sau khi anh/chị đã tự kiểm tra nội dung.
 - Không chép nguyên văn từ sách hay đề thi cũ (bản quyền). Tự viết lại câu hỏi và giải thích.
 
+## Bài lý thuyết (学ぶ)
+
+Nội dung lý thuyết của từng phân野 nằm trong `src/data/theory.json`, khóa theo dạng `"cấp:id phân野"` (ví dụ `"4:kensa"`). Mỗi bài gồm:
+
+- `intro`: đoạn mở đầu (`ja` + `vi`)
+- `sections`: các mục, mỗi mục có tiêu đề `h` và các khối `blocks`:
+  - `p`: đoạn văn — `{"type":"p","ja":"…","vi":"…"}`
+  - `list`: danh sách — `{"type":"list","ol":true,"ja":[…],"vi":[…]}` (`ol: true` = có đánh số)
+  - `formula`: công thức — `{"type":"formula","f":["dòng 1","dòng 2"],"ja":"ghi chú","vi":"…"}`
+  - `table`: bảng — `head`, `rows` (tiếng Nhật) và `head_vi`, `rows_vi` (tiếng Việt)
+  - `point`: ô ghi nhớ — `{"type":"point","ja":"…","vi":"…"}`
+- `terms`: bảng thuật ngữ — `["用語", "よみ", "nghĩa tiếng Việt"]`
+
+Phần tiếng Việt ẩn mặc định; người đọc bấm「Hiện bản tiếng Việt」để hiện, và web nhớ lựa chọn này cho cả bài tập.
+
+## Build
+
 Sau đó chạy:
 
 ```bash
