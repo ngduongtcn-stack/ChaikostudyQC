@@ -2,7 +2,11 @@
 
 Tài liệu này là quy trình chuẩn cho mỗi lần chạy tự động. Lần chạy nào cũng làm đúng các bước dưới đây, theo thứ tự.
 
-Mục tiêu: 4級 500 câu, 3級 1.000 câu, rồi đề thi thử (4級 10 đề, 3級 20 đề, mỗi đề 50 câu, mở dần tự động). Đây là việc làm thêm bằng dung lượng dư: **ưu tiên chất lượng hơn số lượng**. Thiếu câu hay còn hơn câu trùng hoặc sai.
+Mục tiêu: 4級 500 câu, 3級 1.000 câu, rồi đề thi thử (4級 10 đề, 3級 20 đề, mỗi đề 50 câu, mở dần tự động).
+
+Phân野 được chia theo 分野 như đề thi thật (trường `domain` của từng topic trong `questions.json`):
+- 4級: 実践分野, 手法分野, 企業活動の基本 (đỗ khi tổng ≥ 70%).
+- 3級: 手法分野 và 実践分野, mỗi phần 50% số câu của đề thi thử (đỗ khi tổng ≥ 70% **và** mỗi phần ≥ 50%). `make_exams.py` chỉ tạo đề 3級 khi mỗi phần có đủ 25 câu chưa dùng, nên phần nào thiếu thì `plan.py` sẽ tự ưu tiên phần đó. Đây là việc làm thêm bằng dung lượng dư: **ưu tiên chất lượng hơn số lượng**. Thiếu câu hay còn hơn câu trùng hoặc sai.
 
 ## Cấu hình: `content-plan.json`
 
@@ -44,6 +48,7 @@ Quy tắc chất lượng:
 - `explanation_vi`: tiếng Việt tự nhiên; giữ thuật ngữ tiếng Nhật kèm nghĩa trong ngoặc, ví dụ 管理限界線 (đường giới hạn kiểm soát).
 - Không dùng thông tin dễ thay đổi theo thời gian (ngày thi, lệ phí, số liệu thống kê mới nhất…).
 - 3級 có thể hỏi cả kiến thức 4級, nhưng phải ở mức sâu hơn.
+- Phân野 実践 (品質の概念, 管理の方法, 品質保証, 品質経営の要素) cần câu hỏi tình huống thực tế ở nơi làm việc, không chỉ hỏi định nghĩa.
 
 ### 4. Kiểm tra độc lập (bắt buộc)
 ```bash

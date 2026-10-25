@@ -58,5 +58,80 @@
     "answer": 0,
     "explanation": "源流管理は、問題の源である上流（企画・設計・工程設計など）にさかのぼって品質をつくり込み、問題の発生を防ぐ考え方です。後工程で見つけるより、上流で防ぐ方がコストも小さくなります。",
     "explanation_vi": "源流管理 (quản lý từ nguồn) là quay ngược về thượng nguồn của vấn đề (lên kế hoạch, thiết kế, thiết kế công đoạn) để tạo ra chất lượng và ngăn vấn đề phát sinh. Ngăn từ thượng nguồn rẻ hơn nhiều so với phát hiện ở công đoạn sau."
+  },
+  {
+    "id": "r-k7",
+    "level": 4,
+    "topic": "kotei",
+    "question": "4Mのうち「Method（方法）」にあたるものはどれか。",
+    "choices": [
+      "作業者の技能",
+      "加工機の精度",
+      "部品の材質",
+      "作業の手順や加工条件"
+    ],
+    "answer": 3,
+    "explanation": "4Mは Man（人）、Machine（機械）、Material（材料）、Method（方法）です。作業の手順や加工条件は Method、作業者の技能は Man、加工機の精度は Machine、部品の材質は Material にあたります。",
+    "explanation_vi": "4M gồm Man (người), Machine (máy), Material (vật liệu), Method (phương pháp). Trình tự thao tác, điều kiện gia công thuộc Method; tay nghề người làm thuộc Man; độ chính xác máy thuộc Machine; chất liệu linh kiện thuộc Material."
+  },
+  {
+    "id": "r-g7",
+    "level": 4,
+    "topic": "kigyo",
+    "question": "上司から仕事の指示を受けたときの行動として、最も適切なものはどれか。",
+    "choices": [
+      "一度聞いたら、確認せずにすぐ作業を始める",
+      "5W1Hで内容を確認し、メモをとる",
+      "わからない点があっても質問しない",
+      "期限に間に合わなくても連絡しない"
+    ],
+    "answer": 1,
+    "explanation": "指示を受けたら、5W1H（誰が・何を・いつ・どこで・なぜ・どのように）で内容を確認し、メモをとって漏れを防ぎます。わからない点はその場で質問します。",
+    "explanation_vi": "Khi nhận chỉ thị, xác nhận nội dung theo 5W1H (ai, cái gì, khi nào, ở đâu, tại sao, như thế nào) và ghi chép để không bỏ sót. Chỗ nào chưa hiểu thì hỏi ngay lúc đó."
+  },
+  {
+    "id": "r-q7",
+    "level": 3,
+    "topic": "gainen3",
+    "question": "製造品質（できばえの品質）を評価する観点として、最も適切なものはどれか。",
+    "choices": [
+      "お客様の要求が企画に反映されているか",
+      "製品が設計どおりにつくられているか",
+      "製品の広告がわかりやすいか",
+      "製品の価格が適正か"
+    ],
+    "answer": 1,
+    "explanation": "製造品質（できばえの品質・適合品質）は、つくった製品が設計品質（ねらい）どおりになっているかを表します。お客様の要求の反映は企画品質・設計品質の観点です。",
+    "explanation_vi": "製造品質 (chất lượng sản xuất, thực hiện) thể hiện sản phẩm làm ra có đúng như chất lượng thiết kế (mục tiêu) không. Việc phản ánh yêu cầu khách hàng thuộc về chất lượng kế hoạch, chất lượng thiết kế."
+  },
+  {
+    "id": "r-h7",
+    "level": 3,
+    "topic": "hoho3",
+    "question": "課題達成型QCストーリーの「成功シナリオの追究」で行うこととして、最も適切なものはどれか。",
+    "choices": [
+      "不良の真の原因を突き止める",
+      "方策を具体化し、予想される障害とその対策も含めて検討する",
+      "実施した対策の効果を確認する",
+      "作業標準を改訂する"
+    ],
+    "answer": 1,
+    "explanation": "成功シナリオの追究では、立案した方策を具体的なシナリオにし、実施したときに起こりうる障害や副作用と、その対策まで検討します。真の原因の追究は問題解決型の要因解析です。",
+    "explanation_vi": "Ở bước tìm kịch bản thành công, phương sách đã lập được cụ thể hóa thành kịch bản, cân nhắc cả trở ngại, tác dụng phụ có thể xảy ra và đối sách cho chúng. Truy tìm nguyên nhân thật là bước phân tích nguyên nhân của dạng giải quyết vấn đề."
+  },
+  {
+    "id": "r-s7",
+    "level": 3,
+    "topic": "hosho3",
+    "question": "新製品の品質保証の流れとして、正しい順序はどれか。",
+    "choices": [
+      "設計→企画→製造→生産準備→販売・アフターサービス",
+      "企画→製造→設計→生産準備→販売・アフターサービス",
+      "企画→設計→生産準備→製造→販売・アフターサービス",
+      "生産準備→企画→設計→製造→販売・アフターサービス"
+    ],
+    "answer": 2,
+    "explanation": "お客様の要求を調べる企画から始まり、設計で品質特性や規格を決め、生産準備で工程をつくり、製造で品質をつくり込み、販売・アフターサービスで使用情報を集めて次に活かします。",
+    "explanation_vi": "Bắt đầu từ kế hoạch (tìm hiểu yêu cầu khách hàng), thiết kế quyết định đặc tính chất lượng và quy cách, chuẩn bị sản xuất tạo công đoạn, sản xuất tạo chất lượng, rồi bán hàng và dịch vụ sau bán thu thập thông tin sử dụng cho lần sau."
   }
 ]

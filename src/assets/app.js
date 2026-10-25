@@ -123,9 +123,9 @@
   function loadResults() {
     try { return JSON.parse(localStorage.getItem(RESULTS_KEY) || "{}") || {}; } catch (e) { return {}; }
   }
-  function saveResult(key, ok, n) {
+  function saveResult(key, ok, n, passed) {
     var r = loadResults(), prev = r[key];
-    r[key] = { last: ok, best: Math.max(ok, prev ? prev.best : 0), n: n };
+    r[key] = { last: ok, best: Math.max(ok, prev ? prev.best : 0), n: n, passed: !!(passed || (prev && prev.passed)) };
     try { localStorage.setItem(RESULTS_KEY, JSON.stringify(r)); } catch (e) { /* storage unavailable */ }
   }
   function feedbackLink(id) {
@@ -166,7 +166,7 @@
     document.querySelectorAll("[data-exam]").forEach(function (node) {
       var r = results[node.getAttribute("data-exam")];
       if (!r) return;
-      var pass = r.best / r.n >= EXAM_CFG.pass_rate;
+      var pass = r.passed !== undefined ? r.passed : r.best / r.n >= EXAM_CFG.pass_rate;
       node.textContent = "最高 " + r.best + "/" + r.n + (pass ? " ・ 合格ライン到達" : "");
       if (pass) node.classList.add("passed");
     });
@@ -320,15 +320,38 @@
     var n = this.items.length, ok = this.items.filter(function (it) { return it.picked === it.q.answer; }).length;
     var pct = Math.round(ok / n * 100);
     if (this.timer) { clearInterval(this.timer); this.timer = null; }
-    if (this.mock && p.mode === "exam") saveResult(p.level + ":" + p.topic, ok, n);
     var passPct = Math.round(EXAM_CFG.pass_rate * 100);
     var score = el("div", { class: "score" }, [
       el("span", { class: "big", html: ok + "<small> / " + n + "問</small>" }),
       el("span", { class: "meta", text: "正答率 " + pct + "%" + (p.mode === "exam" ? " ・ 所要時間 " + fmtTime(Date.now() - this.t0) : "") })
     ]);
-    var comment = el("p", { class: "note", text: pct >= passPct
-      ? "合格の目安（正答率" + passPct + "%以上）に届いています。間違えた問題の解説を読んでおきましょう。"
-      : "合格の目安は正答率" + passPct + "%以上です。間違えた問題を復習して、もう一度挑戦しましょう。" });
+    // per-domain scores (real exam: 3級 needs each domain >= 50% as well as 70% overall)
+    var L0 = DATA.levels[p.level] || {}, domOf = {}, domNames = L0.domains || {};
+    (L0.topics || []).forEach(function (t) { domOf[t.id] = t.domain; });
+    var dom = {};
+    this.items.forEach(function (it) {
+      var d = domOf[it.q.topic] || "all";
+      dom[d] = dom[d] || { ok: 0, n: 0 };
+      dom[d].n++;
+      if (it.picked === it.q.answer) dom[d].ok++;
+    });
+    var dmin = (EXAM_CFG.domain_min || {})[p.level];
+    var domFail = [];
+    var domRows = Object.keys(domNames).filter(function (d) { return dom[d]; }).map(function (d) {
+      var r = dom[d], dp = Math.round(r.ok / r.n * 100);
+      if (dmin && r.ok / r.n < dmin) domFail.push(domNames[d]);
+      return el("li", null, [el("span", { text: domNames[d] }), el("span", { class: "meta", text: r.ok + " / " + r.n + "（" + dp + "%）" })]);
+    });
+    var passed = pct >= passPct && domFail.length === 0;
+    var verdictText;
+    if (passed) verdictText = "合格の目安に届いています。間違えた問題の解説を読んでおきましょう。";
+    else if (pct >= passPct) verdictText = "総合は" + passPct + "%以上ですが、" + domFail.join("・") + "が" + Math.round(dmin * 100) + "%未満です。本番では分野ごとの基準もあるので、この分野を復習しましょう。";
+    else verdictText = "合格の目安は総合" + passPct + "%以上" + (dmin ? "、かつ各分野" + Math.round(dmin * 100) + "%以上" : "") + "です。間違えた問題を復習して、もう一度挑戦しましょう。";
+    var comment = el("div", { class: "explain" }, [
+      el("p", { class: "verdict " + (passed ? "ok" : "ng"), text: passed ? "合格ライン到達" : "合格ラインまであと少し" }),
+      el("p", { text: verdictText }),
+      domRows.length > 1 ? el("ul", { class: "dom-scores" }, domRows) : null
+    ]);
 
     var list = el("ul", { class: "result-list" });
     this.items.forEach(function (it, idx) {
@@ -348,6 +371,7 @@
       ]));
     });
 
+    if (this.mock && p.mode === "exam") saveResult(p.level + ":" + p.topic, ok, n, passed);
     var hasMiss = ok < n, self = this;
     var reviewHash = "#" + p.level + "." + p.topic + ".review";
     var actions = el("div", { class: "btn-row" }, [
@@ -391,10 +415,200 @@
     document.getElementById("reset-no").addEventListener("click", function () { confirmBox.hidden = true; });
   }
 
+
+  // ---------- home: try one question ----------
+  function initSample() {
+    var root = document.getElementById("sample-q");
+    if (!root || !DATA.questions.length) return;
+    function show() {
+      var q = DATA.questions[Math.floor(Math.random() * DATA.questions.length)];
+      var order = shuffle(q.choices.map(function (_, i) { return i; }));
+      var L = DATA.levels[String(q.level)] || {};
+      var list = el("ul", { class: "choices" });
+      var sheet = el("div", { class: "sheet" }, [
+        el("span", { class: "meta", text: (L.name || "") + " ・ " + topicName(q.level, q.topic) }),
+        el("p", { class: "qtext", text: q.question }), list
+      ]);
+      var buttons = [];
+      order.forEach(function (orig, pos) {
+        var b = el("button", { type: "button", class: "choice" }, [el("span", { class: "k", text: KEYS[pos] }), el("span", { text: q.choices[orig] })]);
+        b.addEventListener("click", function () {
+          var ok = orig === q.answer;
+          record(q.id, ok);
+          buttons.forEach(function (x, i) {
+            x.disabled = true;
+            if (order[i] === q.answer) x.classList.add("correct");
+            else if (i === pos) x.classList.add("wrong");
+          });
+          sheet.appendChild(el("span", { class: "pen", "aria-hidden": "true", text: ok ? "○" : "×" }));
+          sheet.appendChild(el("div", { class: "explain" }, [
+            el("p", { class: "verdict " + (ok ? "ok" : "ng"), text: ok ? "正解です" : "不正解　正解は「" + KEYS[order.indexOf(q.answer)] + "」" }),
+            el("p", { text: q.explanation }), viBlock(q)
+          ]));
+          sheet.appendChild(el("div", { class: "btn-row" }, [
+            el("button", { type: "button", class: "btn", text: "別の問題", onclick: show }),
+            el("a", { class: "btn primary", href: "quiz.html#" + q.level + "." + q.topic + ".practice", text: "この分野をもっと解く" })
+          ]));
+        });
+        buttons.push(b);
+        list.appendChild(el("li", null, [b]));
+      });
+      root.replaceChildren(sheet);
+    }
+    show();
+  }
+
+  // ---------- progress page ----------
+  function initProgressPage() {
+    var root = document.getElementById("progress-root");
+    if (!root) return;
+    var stats = loadStats(), results = loadResults();
+    var blocks = [];
+    var anyAnswered = false;
+    ["4", "3"].forEach(function (lv) {
+      var L = DATA.levels[lv];
+      if (!L) return;
+      var topics = L.topics.map(function (t) {
+        var qs = pool(lv, t.id), done = 0, ok = 0;
+        qs.forEach(function (q) { var r = stats[q.id]; if (r) { done++; if (r.last) ok++; } });
+        return { t: t, n: qs.length, done: done, ok: ok, rate: done ? ok / done : null };
+      });
+      var done = topics.reduce(function (a, x) { return a + x.done; }, 0);
+      var ok = topics.reduce(function (a, x) { return a + x.ok; }, 0);
+      var total = topics.reduce(function (a, x) { return a + x.n; }, 0);
+      if (done) anyAnswered = true;
+      var sec = el("section", { class: "prog-level", "aria-label": L.name }, [
+        el("h2", { text: L.name }),
+        el("p", { class: "meta", text: "解いた問題 " + done + " / " + total + "　・　直近の正答率 " + (done ? Math.round(ok / done * 100) + "%" : "—") })
+      ]);
+      // domains
+      var doms = L.domains || {};
+      var drows = Object.keys(doms).map(function (d) {
+        var ts = topics.filter(function (x) { return x.t.domain === d; });
+        var dd = ts.reduce(function (a, x) { return a + x.done; }, 0), dk = ts.reduce(function (a, x) { return a + x.ok; }, 0);
+        var pct = dd ? Math.round(dk / dd * 100) : 0;
+        return el("li", null, [
+          el("span", { text: doms[d] }),
+          el("span", { class: "meta", text: dd ? pct + "%（" + dk + "/" + dd + "）" : "未着手" }),
+          el("div", { class: "bar" }, [el("i", { style: "width:" + pct + "%" })])
+        ]);
+      });
+      if (drows.length) sec.appendChild(el("ul", { class: "dom-scores prog-doms" }, drows));
+      // weak topics: lowest rate with at least 3 answered
+      var weak = topics.filter(function (x) { return x.done >= 3; }).sort(function (a, b) { return a.rate - b.rate; }).slice(0, 3)
+        .filter(function (x) { return x.rate < 0.8; });
+      var untouched = topics.filter(function (x) { return !x.done && x.n; });
+      if (weak.length) {
+        sec.appendChild(el("h3", { text: "苦手な分野（優先して復習）" }));
+        sec.appendChild(el("ul", { class: "topics" }, weak.map(function (x) {
+          return el("li", null, [
+            el("div", null, [el("span", { class: "t-name", text: x.t.name }), el("p", { class: "t-desc", text: "正答率 " + Math.round(x.rate * 100) + "%（" + x.ok + "/" + x.done + "）" })]),
+            el("div", { class: "t-actions" }, [
+              el("a", { class: "btn", href: L.slug + "/learn/" + x.t.id + ".html", text: "学ぶ" }),
+              el("a", { class: "btn primary", href: "quiz.html#" + lv + "." + x.t.id + ".review", text: "間違いを復習" })
+            ])
+          ]);
+        })));
+      }
+      if (untouched.length && done) {
+        sec.appendChild(el("p", { class: "note", text: "まだ解いていない分野：" + untouched.map(function (x) { return x.t.name; }).join("、") }));
+      }
+      // mock exams
+      var sets = (DATA.exams && DATA.exams[lv]) || [];
+      if (sets.length) {
+        var cells = sets.map(function (_, i) {
+          var r = results[lv + ":m" + (i + 1)];
+          return el("a", { class: "exam-card", href: "quiz.html#" + lv + ".m" + (i + 1) + ".exam" }, [
+            el("span", { class: "exam-no", text: "第" + (i + 1) + "回" }),
+            el("span", { class: "meta exam-score" + (r && r.passed ? " passed" : ""), text: r ? "最高 " + r.best + "/" + r.n + (r.passed ? " ・ 合格ライン" : "") : "未受験" })
+          ]);
+        });
+        sec.appendChild(el("h3", { text: "模擬試験" }));
+        sec.appendChild(el("div", { class: "exam-grid" }, cells));
+      }
+      blocks.push(sec);
+    });
+    if (!anyAnswered) {
+      blocks.unshift(el("div", { class: "empty" }, [
+        el("p", { text: "まだ記録がありません。問題を解くと、ここに分野ごとの正答率が表示されます。" }),
+        el("div", { class: "btn-row" }, [
+          el("a", { class: "btn primary", href: "4kyu/index.html", text: "4級を解く" }),
+          el("a", { class: "btn primary", href: "3kyu/index.html", text: "3級を解く" })
+        ])
+      ]));
+    }
+    root.replaceChildren.apply(root, blocks);
+  }
+
+  // ---------- flashcards ----------
+  var CARDS_KEY = "qc-renshu:cards";
+  function initFlashcards() {
+    var root = document.getElementById("fc-root");
+    if (!root) return;
+    var all = [];
+    try { all = JSON.parse(document.getElementById("fc-data").textContent); } catch (e) { all = []; }
+    var known = {};
+    try { known = JSON.parse(localStorage.getItem(CARDS_KEY) || "{}") || {}; } catch (e) { known = {}; }
+    function saveKnown() { try { localStorage.setItem(CARDS_KEY, JSON.stringify(known)); } catch (e) { /* storage unavailable */ } }
+    var sel = document.getElementById("fc-topic"), only = document.getElementById("fc-unknown");
+    var card = document.getElementById("fc-card"), front = document.getElementById("fc-front"), back = document.getElementById("fc-back");
+    var hint = document.getElementById("fc-hint"), count = document.getElementById("fc-count");
+    var deck = [], i = 0;
+    function build() {
+      deck = shuffle(all.filter(function (c) {
+        return (sel.value === "all" || c.k === sel.value) && (!only.checked || !known[c.t]);
+      }));
+      i = 0;
+      draw();
+    }
+    function draw() {
+      var nKnown = all.filter(function (c) { return known[c.t] && (sel.value === "all" || c.k === sel.value); }).length;
+      var nAll = all.filter(function (c) { return sel.value === "all" || c.k === sel.value; }).length;
+      count.textContent = "覚えた " + nKnown + " / " + nAll + " 語" + (deck.length ? "　・　" + (i + 1) + " 枚目 / " + deck.length : "");
+      back.hidden = true; hint.hidden = false;
+      if (!deck.length) {
+        front.textContent = "このカードはすべて覚えました";
+        back.textContent = "";
+        hint.textContent = "「まだ覚えていないカードだけ」を外すと、もう一度すべて見られます";
+        return;
+      }
+      var c = deck[i];
+      front.textContent = c.t;
+      back.replaceChildren(
+        el("span", { class: "fc-yomi", text: c.y }),
+        el("span", { class: "fc-vi", lang: "vi", text: c.v }),
+        el("span", { class: "meta", text: c.n })
+      );
+      hint.textContent = "タップして裏を見る";
+    }
+    function flip() { if (deck.length) { back.hidden = !back.hidden; hint.hidden = !back.hidden ? true : false; } }
+    function next(isKnown) {
+      if (!deck.length) return;
+      var c = deck[i];
+      if (isKnown) known[c.t] = true; else delete known[c.t];
+      saveKnown();
+      if (only.checked && isKnown) { deck.splice(i, 1); if (i >= deck.length) i = 0; }
+      else { i = (i + 1) % deck.length; }
+      draw();
+    }
+    card.addEventListener("click", flip);
+    document.getElementById("fc-known").addEventListener("click", function () { next(true); });
+    document.getElementById("fc-again").addEventListener("click", function () { next(false); });
+    sel.addEventListener("change", build);
+    only.addEventListener("change", build);
+    document.addEventListener("keydown", function (e) {
+      if (e.target && /input|select|textarea/i.test(e.target.tagName)) return;
+      if (e.key === " ") { e.preventDefault(); flip(); }
+      else if (e.key === "ArrowRight") next(true);
+      else if (e.key === "ArrowLeft") next(false);
+    });
+    build();
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
-    fillProgress();
-    initQuiz();
-    initReset();
-    initViSwitch();
+    // each feature starts on its own, so a problem in one never blocks the others
+    [fillProgress, initQuiz, initReset, initViSwitch, initSample, initProgressPage, initFlashcards].forEach(function (fn) {
+      try { fn(); } catch (err) { if (window.console) console.error(err); }
+    });
   });
 })();

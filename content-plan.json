@@ -10,23 +10,28 @@
   },
   "topic_targets": {
     "4": {
-      "kangaekata": 80,
-      "hinshitsu": 70,
-      "kaizen": 70,
-      "kensa": 70,
-      "hyojun": 60,
-      "data": 75,
-      "7tools": 75
+      "kangaekata": 55,
+      "hinshitsu": 45,
+      "kaizen": 45,
+      "kensa": 45,
+      "hyojun": 40,
+      "kotei": 40,
+      "data": 90,
+      "7tools": 90,
+      "kigyo": 50
     },
     "3": {
-      "data3": 150,
-      "7tools3": 150,
-      "shin7": 100,
-      "toukei": 120,
-      "kanrizu": 150,
-      "kouteinouryoku": 110,
-      "soukan": 70,
-      "kanri": 150
+      "data3": 90,
+      "7tools3": 90,
+      "shin7": 60,
+      "toukei": 80,
+      "kanrizu": 90,
+      "kouteinouryoku": 60,
+      "soukan": 30,
+      "gainen3": 120,
+      "hoho3": 130,
+      "hosho3": 130,
+      "kanri": 120
     }
   },
   "exhausted": {
@@ -40,6 +45,15 @@
       "3": 20
     },
     "pass_rate": 0.7,
-    "minutes": 90
+    "minutes": 90,
+    "domain_min": {
+      "3": 0.5
+    },
+    "domain_split": {
+      "3": {
+        "shuho": 0.5,
+        "jissen": 0.5
+      }
+    }
   }
 }
