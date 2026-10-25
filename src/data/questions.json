@@ -1,0 +1,831 @@
+{
+  "levels": {
+    "4": {
+      "name": "QC検定4級",
+      "slug": "4kyu",
+      "lead": "品質管理の基本用語と考え方。職場で品質に関わり始めた人向けの入門レベルです。",
+      "topics": [
+        {
+          "id": "kangaekata",
+          "name": "QC的ものの見方・考え方",
+          "desc": "後工程はお客様、三現主義、PDCA、重点指向など、品質管理の土台になる考え方。"
+        },
+        {
+          "id": "hinshitsu",
+          "name": "品質とは",
+          "desc": "ねらいの品質とできばえの品質、当たり前品質と魅力的品質の違い。"
+        },
+        {
+          "id": "kaizen",
+          "name": "改善・5S",
+          "desc": "5S（整理・整頓・清掃・清潔・しつけ）と5W1Hによる職場の改善活動。"
+        },
+        {
+          "id": "kensa",
+          "name": "検査",
+          "desc": "受入検査・工程間検査・最終検査、全数検査と抜取検査の使い分け。"
+        },
+        {
+          "id": "hyojun",
+          "name": "標準・標準化",
+          "desc": "標準化の目的と、JISなどの規格の基本。"
+        },
+        {
+          "id": "data",
+          "name": "データの取り方・まとめ方",
+          "desc": "計量値と計数値、平均値・範囲の計算、層別の考え方。"
+        },
+        {
+          "id": "7tools",
+          "name": "QC七つ道具",
+          "desc": "パレート図、特性要因図、チェックシートなど、問題解決の基本ツール。"
+        }
+      ]
+    },
+    "3": {
+      "name": "QC検定3級",
+      "slug": "3kyu",
+      "lead": "QC七つ道具・管理図・工程能力など、職場の問題をデータで解決するための知識。",
+      "topics": [
+        {
+          "id": "data3",
+          "name": "データの取り方・まとめ方",
+          "desc": "メディアン、平方和、不偏分散、標準偏差、変動係数の計算。"
+        },
+        {
+          "id": "7tools3",
+          "name": "QC七つ道具",
+          "desc": "ヒストグラムの形の読み方、散布図の使い方など。"
+        },
+        {
+          "id": "shin7",
+          "name": "新QC七つ道具",
+          "desc": "親和図法、アローダイアグラム法、PDPC法など、言語データを扱う手法。"
+        },
+        {
+          "id": "toukei",
+          "name": "統計的方法の基礎",
+          "desc": "正規分布の性質と標準化、二項分布の期待値。"
+        },
+        {
+          "id": "kanrizu",
+          "name": "管理図",
+          "desc": "管理図の種類、管理限界線、異常の判定ルール。"
+        },
+        {
+          "id": "kouteinouryoku",
+          "name": "工程能力指数",
+          "desc": "Cp・Cpkの計算と、工程能力の判断基準。"
+        },
+        {
+          "id": "soukan",
+          "name": "相関分析",
+          "desc": "相関係数の意味と読み方。"
+        },
+        {
+          "id": "kanri",
+          "name": "品質管理の実践",
+          "desc": "方針管理、日常管理、未然防止、品質マネジメントシステム。"
+        }
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "4-001",
+      "level": 4,
+      "topic": "kangaekata",
+      "status": "draft",
+      "question": "「後工程はお客様」の説明として、最も適切なものはどれか。",
+      "choices": [
+        "自分の工程の次の工程を顧客と考え、不良品や不完全な仕事を渡さないようにすること",
+        "最終工程だけが顧客と接するので、最終工程が品質に責任を持つこと",
+        "前工程で発生した不良は、後工程の検査で取り除けばよいということ",
+        "後工程の作業者が前工程の作業を手伝い、作業量を平準化すること"
+      ],
+      "answer": 0,
+      "explanation": "「後工程はお客様」は、社内の次工程も顧客とみなし、自工程で品質をつくり込んで不良を流さないという考え方です。品質は各工程で責任を持ってつくり込むもので、後工程の検査任せにするものではありません。",
+      "explanation_vi": "後工程はお客様 (công đoạn sau là khách hàng) nghĩa là coi cả công đoạn tiếp theo trong nội bộ là khách hàng của mình. Vì vậy phải tạo ra chất lượng ngay tại công đoạn của mình, không chuyển hàng lỗi hay công việc chưa hoàn chỉnh sang công đoạn sau. Chất lượng được tạo ra trong từng công đoạn (品質は工程でつくり込む), không phải trông chờ khâu kiểm tra phía sau loại bỏ lỗi."
+    },
+    {
+      "id": "4-002",
+      "level": 4,
+      "topic": "kangaekata",
+      "status": "draft",
+      "question": "三現主義の「三現」の組み合わせとして、正しいものはどれか。",
+      "choices": [
+        "現場・現物・現実",
+        "現場・現金・現実",
+        "現物・現状・現金",
+        "現場・現物・原因"
+      ],
+      "answer": 0,
+      "explanation": "三現主義は、問題が起きたら「現場」に行き、「現物」を見て、「現実」を確かめるという考え方です。机上の推測ではなく事実にもとづいて判断するための基本姿勢です。",
+      "explanation_vi": "三現主義 (nguyên tắc tam hiện): khi có vấn đề thì đến 現場 (hiện trường), xem 現物 (hiện vật – sản phẩm thực tế) và xác nhận 現実 (thực tế đang diễn ra). Mục đích là phán đoán dựa trên sự thật, không suy đoán trên bàn giấy. Chú ý bẫy: 現金 (tiền mặt), 原因 (nguyên nhân) đọc gần giống."
+    },
+    {
+      "id": "4-003",
+      "level": 4,
+      "topic": "kangaekata",
+      "status": "draft",
+      "question": "PDCAサイクルの「C」に当たる活動はどれか。",
+      "choices": [
+        "目標と計画を立てる",
+        "計画どおりに実施する",
+        "実施した結果を確認・評価する",
+        "評価にもとづいて処置・改善する"
+      ],
+      "answer": 2,
+      "explanation": "PDCAは Plan（計画）→ Do（実施）→ Check（確認・評価）→ Act（処置）の順に回します。Cは、実施結果が計画どおりかをデータで確かめる段階です。",
+      "explanation_vi": "PDCA: Plan (計画 – lập kế hoạch) → Do (実施 – thực hiện) → Check (確認・評価 – kiểm tra, đánh giá) → Act (処置 – xử lý, cải tiến). C là bước dùng dữ liệu để kiểm tra xem kết quả có đúng như kế hoạch hay không."
+    },
+    {
+      "id": "4-004",
+      "level": 4,
+      "topic": "kangaekata",
+      "status": "draft",
+      "question": "重点指向の考え方として、最も適切なものはどれか。",
+      "choices": [
+        "すべての問題に同じ時間と労力をかけて、順番に取り組む",
+        "結果への影響が大きい問題を選び、優先して取り組む",
+        "解決しやすい小さな問題から片付けて、件数を減らす",
+        "上司が気にしている問題から取り組む"
+      ],
+      "answer": 1,
+      "explanation": "限られた時間と人で成果を出すため、影響の大きい問題に絞って取り組むのが重点指向です。どれが重要かを見極める道具として、パレート図がよく使われます。",
+      "explanation_vi": "重点指向 (tập trung vào trọng điểm): vì thời gian và nhân lực có hạn, chọn những vấn đề ảnh hưởng lớn nhất đến kết quả để ưu tiên xử lý. Công cụ hay dùng để xác định vấn đề nào quan trọng là パレート図 (biểu đồ Pareto)."
+    },
+    {
+      "id": "4-005",
+      "level": 4,
+      "topic": "hinshitsu",
+      "status": "draft",
+      "question": "顧客の要求をもとに、設計段階で製品の目標として定めた品質を何というか。",
+      "choices": [
+        "ねらいの品質",
+        "できばえの品質",
+        "当たり前品質",
+        "魅力的品質"
+      ],
+      "answer": 0,
+      "explanation": "設計段階で目標とする品質を「ねらいの品質（設計品質）」、製造した製品がそのねらいにどれだけ合っているかを「できばえの品質（製造品質・適合品質）」といいます。",
+      "explanation_vi": "ねらいの品質 (chất lượng mục tiêu, còn gọi 設計品質 – chất lượng thiết kế) là chất lượng được đặt ra ở giai đoạn thiết kế dựa trên yêu cầu của khách hàng. できばえの品質 (chất lượng thực hiện, còn gọi 製造品質・適合品質) là mức độ sản phẩm làm ra phù hợp với mục tiêu đó."
+    },
+    {
+      "id": "4-006",
+      "level": 4,
+      "topic": "hinshitsu",
+      "status": "draft",
+      "question": "狩野モデルで「充足されれば満足を与えるが、不充足でもしかたがないと受け取られる品質要素」はどれか。",
+      "choices": [
+        "当たり前品質",
+        "一元的品質",
+        "魅力的品質",
+        "無関心品質"
+      ],
+      "answer": 2,
+      "explanation": "魅力的品質は、なくても不満にはならないが、あると満足が高まる要素です。逆に当たり前品質は、あって当然で、ないと強い不満になる要素です。一元的品質は、充足度に比例して満足も不満も変わる要素です。",
+      "explanation_vi": "Mô hình Kano (狩野モデル): 魅力的品質 (chất lượng hấp dẫn) – không có cũng không bất mãn, có thì rất hài lòng. 当たり前品質 (chất lượng đương nhiên) – có là bình thường, thiếu thì rất bất mãn. 一元的品質 (chất lượng một chiều) – càng đầy đủ càng hài lòng, càng thiếu càng bất mãn. 無関心品質 (chất lượng không quan tâm) – có hay không cũng không ảnh hưởng."
+    },
+    {
+      "id": "4-007",
+      "level": 4,
+      "topic": "hinshitsu",
+      "status": "draft",
+      "question": "当たり前品質の例として、最も適切なものはどれか。",
+      "choices": [
+        "新車のブレーキが確実に効く",
+        "ホテルの部屋に、予想していなかった手書きのメッセージカードがある",
+        "スマートフォンのカメラに新しい自動補正機能がある",
+        "飲食店で誕生日に思いがけずデザートのサービスがある"
+      ],
+      "answer": 0,
+      "explanation": "ブレーキが効くことは顧客にとって当然であり、満たされていても特に満足は生まれませんが、欠けると強い不満（事故）につながります。他の選択肢は、なくても不満にならない魅力的品質の例です。",
+      "explanation_vi": "Phanh xe mới hoạt động chắc chắn là điều khách hàng coi là đương nhiên: có cũng không làm họ đặc biệt hài lòng, nhưng thiếu thì gây bất mãn lớn (thậm chí tai nạn), nên đây là 当たり前品質 (chất lượng đương nhiên). Các lựa chọn còn lại là những điều bất ngờ, không có cũng không ai phàn nàn, tức là 魅力的品質 (chất lượng hấp dẫn)."
+    },
+    {
+      "id": "4-008",
+      "level": 4,
+      "topic": "kaizen",
+      "status": "draft",
+      "question": "「必要なものを、決められた場所に、誰でもすぐ取り出せるように置くこと」は、5Sのどれに当たるか。",
+      "choices": [
+        "整理",
+        "整頓",
+        "清掃",
+        "しつけ"
+      ],
+      "answer": 1,
+      "explanation": "整理は「要るものと要らないものを分け、要らないものを捨てる」こと、整頓は「要るものを使いやすく置き、表示する」ことです。整理をしてから整頓を行う順番も押さえておきましょう。",
+      "explanation_vi": "Trong 5S: 整理 (sàng lọc) là phân biệt đồ cần và không cần, bỏ đồ không cần. 整頓 (sắp xếp) là đặt đồ cần dùng ở vị trí quy định, có nhãn, ai cũng lấy ra ngay được. Đề bài mô tả đúng 整頓. Thứ tự thực hiện là 整理 trước, rồi mới đến 整頓."
+    },
+    {
+      "id": "4-009",
+      "level": 4,
+      "topic": "kaizen",
+      "status": "draft",
+      "question": "5Sに含まれないものはどれか。",
+      "choices": [
+        "清潔",
+        "清掃",
+        "整備",
+        "しつけ"
+      ],
+      "answer": 2,
+      "explanation": "5Sは「整理・整頓・清掃・清潔・しつけ」の5つです。清潔は整理・整頓・清掃がきれいに保たれている状態、しつけは決められたことを守る習慣づけを指します。",
+      "explanation_vi": "5S gồm 整理 (sàng lọc), 整頓 (sắp xếp), 清掃 (vệ sinh, quét dọn), 清潔 (sạch sẽ – duy trì trạng thái của 3S trước) và しつけ (kỷ luật – tạo thói quen tuân thủ quy định). 整備 (bảo dưỡng) không nằm trong 5S."
+    },
+    {
+      "id": "4-010",
+      "level": 4,
+      "topic": "kaizen",
+      "status": "draft",
+      "question": "作業指示を5W1Hで確認するとき、「どのような方法で行うか」に当たる要素はどれか。",
+      "choices": [
+        "Who",
+        "When",
+        "Where",
+        "How"
+      ],
+      "answer": 3,
+      "explanation": "5W1Hは Who（誰が）、What（何を）、When（いつ）、Where（どこで）、Why（なぜ）、How（どのように）です。漏れのない指示や報告に使います。",
+      "explanation_vi": "5W1H: Who (誰が – ai), What (何を – cái gì), When (いつ – khi nào), Where (どこで – ở đâu), Why (なぜ – tại sao), How (どのように – như thế nào). Làm bằng phương pháp nào là How. 5W1H giúp chỉ thị và báo cáo không bị sót thông tin."
+    },
+    {
+      "id": "4-011",
+      "level": 4,
+      "topic": "kensa",
+      "status": "draft",
+      "question": "外部から購入した材料や部品を、受け入れる段階で行う検査を何というか。",
+      "choices": [
+        "受入検査",
+        "工程間検査",
+        "最終検査",
+        "出荷検査"
+      ],
+      "answer": 0,
+      "explanation": "受入検査は購入品を受け入れてよいかを判定する検査です。工程の途中で行うのが工程間検査（中間検査）、完成品に対して行うのが最終検査です。",
+      "explanation_vi": "受入検査 (kiểm tra đầu vào) là kiểm tra nguyên vật liệu, linh kiện mua từ bên ngoài để quyết định có nhận hay không. 工程間検査 (kiểm tra giữa công đoạn, còn gọi 中間検査) làm trong quá trình sản xuất; 最終検査 (kiểm tra cuối) làm với thành phẩm."
+    },
+    {
+      "id": "4-012",
+      "level": 4,
+      "topic": "kensa",
+      "status": "draft",
+      "question": "全数検査を行うべき場合として、最も適切なものはどれか。",
+      "choices": [
+        "製品を壊さなければ特性を調べられない場合",
+        "検査する数が非常に多く、検査費用が大きくなる場合",
+        "不良品が1個でも流出すると、人命に関わる重大な影響が出る場合",
+        "多少の不良品の混入が許される場合"
+      ],
+      "answer": 2,
+      "explanation": "不良の見逃しが重大な結果につながる場合は全数検査が必要です。破壊検査が必要な場合、数が多く費用がかかる場合、多少の不良混入が許される場合は、抜取検査が適しています。",
+      "explanation_vi": "Khi chỉ một sản phẩm lỗi lọt ra ngoài cũng có thể gây hậu quả nghiêm trọng đến tính mạng thì phải làm 全数検査 (kiểm tra toàn bộ). Các trường hợp phải kiểm tra phá hủy, số lượng quá lớn và tốn chi phí, hoặc cho phép lẫn một ít hàng lỗi thì phù hợp với 抜取検査 (kiểm tra lấy mẫu)."
+    },
+    {
+      "id": "4-013",
+      "level": 4,
+      "topic": "kensa",
+      "status": "draft",
+      "question": "引張強度試験のように、製品を壊して特性を調べる検査で用いられる方式はどれか。",
+      "choices": [
+        "全数検査",
+        "抜取検査",
+        "無試験検査",
+        "自主検査"
+      ],
+      "answer": 1,
+      "explanation": "破壊検査で全数を調べると製品がなくなってしまうため、ロットから一部を抜き取って調べ、ロットの合否を判定する抜取検査を用います。",
+      "explanation_vi": "Thử độ bền kéo (引張強度試験) phải phá hủy sản phẩm. Nếu kiểm tra toàn bộ thì sẽ không còn sản phẩm nào, nên phải dùng 抜取検査 (kiểm tra lấy mẫu): lấy một phần từ lô (ロット) để kiểm tra, rồi phán định cả lô đạt hay không đạt."
+    },
+    {
+      "id": "4-014",
+      "level": 4,
+      "topic": "hyojun",
+      "status": "draft",
+      "question": "標準化の目的として、適切でないものはどれか。",
+      "choices": [
+        "作業のやり方をそろえ、品質のばらつきを減らす",
+        "技術やノウハウを蓄積し、次の人へ伝える",
+        "部品の互換性を確保する",
+        "作業者それぞれが自由なやり方で作業できるようにする"
+      ],
+      "answer": 3,
+      "explanation": "標準化は、最もよいやり方を決めて全員がそれに従うことで、品質を安定させ、技術を伝承し、互換性を確保する活動です。各自の自由なやり方は、ばらつきの原因になります。",
+      "explanation_vi": "標準化 (tiêu chuẩn hóa) là quyết định cách làm tốt nhất và mọi người cùng làm theo, nhằm giảm biến động chất lượng (ばらつき), tích lũy và truyền lại kỹ thuật, đảm bảo tính lắp lẫn (互換性). Để mỗi người tự làm theo cách riêng sẽ gây ra biến động, nên không phải là mục đích của tiêu chuẩn hóa."
+    },
+    {
+      "id": "4-015",
+      "level": 4,
+      "topic": "hyojun",
+      "status": "draft",
+      "question": "産業標準化法にもとづく日本の国家規格はどれか。",
+      "choices": [
+        "JIS",
+        "ISO",
+        "IEC",
+        "ASTM"
+      ],
+      "answer": 0,
+      "explanation": "JIS（日本産業規格）は産業標準化法にもとづく日本の国家規格です。ISOとIECは国際規格、ASTMは米国の団体規格です。",
+      "explanation_vi": "JIS (日本産業規格 – Tiêu chuẩn công nghiệp Nhật Bản) là tiêu chuẩn quốc gia của Nhật, dựa trên 産業標準化法 (Luật tiêu chuẩn hóa công nghiệp). ISO và IEC là tiêu chuẩn quốc tế; ASTM là tiêu chuẩn của một tổ chức ở Mỹ."
+    },
+    {
+      "id": "4-016",
+      "level": 4,
+      "topic": "data",
+      "status": "draft",
+      "question": "計数値のデータはどれか。",
+      "choices": [
+        "部品の長さ（mm）",
+        "製品の重さ（g）",
+        "1日に発生した不良品の個数",
+        "炉内の温度（℃）"
+      ],
+      "answer": 2,
+      "explanation": "個数や件数のように数えて得られるデータを計数値、長さ・重さ・温度のように測って得られる連続的なデータを計量値といいます。",
+      "explanation_vi": "計数値 (giá trị đếm) là dữ liệu có được bằng cách đếm, như số sản phẩm lỗi, số lần sự cố. 計量値 (giá trị đo) là dữ liệu liên tục có được bằng cách đo, như chiều dài, khối lượng, nhiệt độ."
+    },
+    {
+      "id": "4-017",
+      "level": 4,
+      "topic": "data",
+      "status": "draft",
+      "question": "次のデータの平均値はいくらか。　5, 7, 6, 8, 9",
+      "choices": [
+        "6.5",
+        "7",
+        "7.5",
+        "8"
+      ],
+      "answer": 1,
+      "explanation": "平均値＝合計÷データ数です。(5＋7＋6＋8＋9)÷5＝35÷5＝7 となります。",
+      "explanation_vi": "平均値 (giá trị trung bình) = tổng ÷ số dữ liệu = (5 + 7 + 6 + 8 + 9) ÷ 5 = 35 ÷ 5 = 7."
+    },
+    {
+      "id": "4-018",
+      "level": 4,
+      "topic": "data",
+      "status": "draft",
+      "question": "次のデータの範囲Rはいくらか。　5, 7, 6, 8, 9",
+      "choices": [
+        "3",
+        "4",
+        "5",
+        "9"
+      ],
+      "answer": 1,
+      "explanation": "範囲R＝最大値－最小値です。9－5＝4 となります。範囲はばらつきの大きさを表す最も簡単な指標です。",
+      "explanation_vi": "範囲 R (khoảng biến thiên) = giá trị lớn nhất − giá trị nhỏ nhất = 9 − 5 = 4. Đây là chỉ số đơn giản nhất thể hiện độ phân tán (ばらつき) của dữ liệu."
+    },
+    {
+      "id": "4-019",
+      "level": 4,
+      "topic": "data",
+      "status": "draft",
+      "question": "不良品のデータを機械別・作業者別・材料ロット別などに分けて比較することを何というか。",
+      "choices": [
+        "層別",
+        "標準化",
+        "平準化",
+        "抜取"
+      ],
+      "answer": 0,
+      "explanation": "層別は、データを共通の特徴でグループ分けして比較する方法です。分けることで、どの機械や材料に問題があるかが見えてきます。",
+      "explanation_vi": "層別 (phân tầng) là chia dữ liệu thành các nhóm theo đặc điểm chung (theo máy, theo người làm, theo lô nguyên liệu…) rồi so sánh. Nhờ chia nhóm mà thấy được máy hay nguyên liệu nào đang có vấn đề."
+    },
+    {
+      "id": "4-020",
+      "level": 4,
+      "topic": "7tools",
+      "status": "draft",
+      "question": "不良項目を件数の多い順に並べた棒グラフと、累積比率の折れ線グラフを組み合わせた図はどれか。",
+      "choices": [
+        "ヒストグラム",
+        "パレート図",
+        "散布図",
+        "管理図"
+      ],
+      "answer": 1,
+      "explanation": "パレート図は、どの項目が全体の大部分を占めているかをひと目で示し、重点的に取り組む問題を選ぶのに使います。",
+      "explanation_vi": "パレート図 (biểu đồ Pareto) gồm biểu đồ cột xếp các hạng mục lỗi theo số lượng giảm dần và đường gấp khúc tỷ lệ tích lũy (累積比率). Nhìn vào là biết hạng mục nào chiếm phần lớn, từ đó chọn vấn đề cần ưu tiên."
+    },
+    {
+      "id": "4-021",
+      "level": 4,
+      "topic": "7tools",
+      "status": "draft",
+      "question": "結果（特性）と、それに影響を与える原因（要因）の関係を、魚の骨のような形に整理した図はどれか。",
+      "choices": [
+        "特性要因図",
+        "散布図",
+        "ヒストグラム",
+        "チェックシート"
+      ],
+      "answer": 0,
+      "explanation": "特性要因図は、要因を4M（人・機械・材料・方法）などの大骨・中骨・小骨に分けて整理し、原因の候補を洗い出すために使います。",
+      "explanation_vi": "特性要因図 (biểu đồ nhân quả, còn gọi biểu đồ xương cá) sắp xếp quan hệ giữa kết quả (特性 – đặc tính) và nguyên nhân (要因 – yếu tố). Nguyên nhân thường được chia theo 4M: 人 (con người), 機械 (máy móc), 材料 (nguyên vật liệu), 方法 (phương pháp)."
+    },
+    {
+      "id": "4-022",
+      "level": 4,
+      "topic": "7tools",
+      "status": "draft",
+      "question": "QC七つ道具に含まれないものはどれか。",
+      "choices": [
+        "チェックシート",
+        "層別",
+        "親和図",
+        "グラフ"
+      ],
+      "answer": 2,
+      "explanation": "親和図は新QC七つ道具の手法です。QC七つ道具は主に数値データを扱い、パレート図・特性要因図・チェックシート・ヒストグラム・散布図・グラフ（管理図）・層別で構成されます。",
+      "explanation_vi": "親和図 (biểu đồ thân hòa) thuộc 新QC七つ道具 (7 công cụ QC mới). QC七つ道具 (7 công cụ QC) chủ yếu xử lý dữ liệu số, gồm パレート図 (Pareto), 特性要因図 (xương cá), チェックシート (phiếu kiểm tra), ヒストグラム (biểu đồ tần suất), 散布図 (biểu đồ phân tán), グラフ・管理図 (đồ thị, biểu đồ kiểm soát) và 層別 (phân tầng)."
+    },
+    {
+      "id": "3-001",
+      "level": 3,
+      "topic": "data3",
+      "status": "draft",
+      "question": "次のデータのメディアン（中央値）はいくらか。　3, 8, 5, 10, 6",
+      "choices": [
+        "5",
+        "6",
+        "6.4",
+        "8"
+      ],
+      "answer": 1,
+      "explanation": "メディアンはデータを小さい順に並べたときの真ん中の値です。3, 5, 6, 8, 10 と並べると中央は 6 です。6.4 は平均値なので注意しましょう。",
+      "explanation_vi": "メディアン (trung vị) là giá trị ở giữa khi xếp dữ liệu từ nhỏ đến lớn: 3, 5, 6, 8, 10 → giá trị giữa là 6. Chú ý bẫy: 6.4 là giá trị trung bình (平均値), không phải trung vị."
+    },
+    {
+      "id": "3-002",
+      "level": 3,
+      "topic": "data3",
+      "status": "draft",
+      "question": "次のデータの不偏分散Vはいくらか。　2, 4, 6",
+      "choices": [
+        "2",
+        "2.67",
+        "4",
+        "8"
+      ],
+      "answer": 2,
+      "explanation": "平均は4。偏差は −2, 0, 2 で、平方和S＝4＋0＋4＝8。不偏分散V＝S÷(n−1)＝8÷2＝4 です。8÷3≒2.67 はnで割った値で、不偏分散ではありません。",
+      "explanation_vi": "Trung bình = 4. Độ lệch (偏差) là −2, 0, 2. 平方和 S (tổng bình phương độ lệch) = 4 + 0 + 4 = 8. 不偏分散 V (phương sai không chệch) = S ÷ (n − 1) = 8 ÷ 2 = 4. Chú ý bẫy: 8 ÷ 3 ≈ 2.67 là chia cho n, không phải phương sai không chệch."
+    },
+    {
+      "id": "3-003",
+      "level": 3,
+      "topic": "data3",
+      "status": "draft",
+      "question": "平均値が50、標準偏差が5のデータの変動係数CVはいくらか。",
+      "choices": [
+        "5%",
+        "10%",
+        "45%",
+        "250%"
+      ],
+      "answer": 1,
+      "explanation": "変動係数CV＝標準偏差÷平均値です。5÷50＝0.10（10%）。平均の大きさが違うデータのばらつきを比べるときに使います。",
+      "explanation_vi": "変動係数 CV (hệ số biến thiên) = độ lệch chuẩn ÷ trung bình = 5 ÷ 50 = 0.10 = 10%. Dùng khi muốn so sánh độ phân tán của những nhóm dữ liệu có giá trị trung bình khác nhau."
+    },
+    {
+      "id": "3-004",
+      "level": 3,
+      "topic": "7tools3",
+      "status": "draft",
+      "question": "ヒストグラムが二つの山をもつ形（二山型）になったとき、まず考えるべきことはどれか。",
+      "choices": [
+        "測定器の目盛りが粗すぎる",
+        "平均値の異なる二つの分布が混ざっている",
+        "規格外れ品を選別して取り除いた",
+        "工程が非常に安定している"
+      ],
+      "answer": 1,
+      "explanation": "二山型は、機械や材料、作業者などが異なるデータが混ざっていることが多い形です。層別してヒストグラムを描き直すと原因がわかります。目盛りが粗いと歯抜け型、選別後のデータは絶壁型になりやすいです。",
+      "explanation_vi": "ヒストグラム hai đỉnh (二山型) thường xuất hiện khi dữ liệu từ hai nguồn có trung bình khác nhau (2 máy, 2 loại nguyên liệu, 2 người làm…) bị trộn lẫn. Hãy 層別 (phân tầng) rồi vẽ lại. Ghi nhớ thêm: vạch chia dụng cụ đo quá thô → dạng răng lược (歯抜け型); dữ liệu sau khi loại hàng ngoài quy cách → dạng vách đá (絶壁型)."
+    },
+    {
+      "id": "3-005",
+      "level": 3,
+      "topic": "7tools3",
+      "status": "draft",
+      "question": "ヒストグラムの片側が切り立った「絶壁型」になる原因として、最も考えられるものはどれか。",
+      "choices": [
+        "規格外れの製品を全数選別して取り除いたあとのデータである",
+        "二台の機械のデータが混ざっている",
+        "測定値の丸め方が不適切である",
+        "工程が正規分布にしたがって安定している"
+      ],
+      "answer": 0,
+      "explanation": "規格の外側を選別で取り除くと、分布がその位置で突然切れたような形になります。工程そのものの能力が不足しているサインでもあります。",
+      "explanation_vi": "Khi tuyển chọn và loại bỏ hết sản phẩm nằm ngoài quy cách (規格), phân bố bị cắt đột ngột tại giới hạn quy cách, tạo thành dạng vách đá (絶壁型). Đây cũng là dấu hiệu năng lực công đoạn (工程能力) đang không đủ."
+    },
+    {
+      "id": "3-006",
+      "level": 3,
+      "topic": "7tools3",
+      "status": "draft",
+      "question": "熱処理温度と製品の硬さの関係を調べるのに、最も適した手法はどれか。",
+      "choices": [
+        "パレート図",
+        "散布図",
+        "チェックシート",
+        "特性要因図"
+      ],
+      "answer": 1,
+      "explanation": "散布図は、対になった2つの数値データ（x：温度、y：硬さ）を点で打ち、関係の有無や強さを見る手法です。",
+      "explanation_vi": "散布図 (biểu đồ phân tán) chấm các cặp dữ liệu số tương ứng (x: nhiệt độ nhiệt luyện, y: độ cứng) để xem hai đại lượng có quan hệ hay không, và quan hệ mạnh hay yếu."
+    },
+    {
+      "id": "3-007",
+      "level": 3,
+      "topic": "shin7",
+      "status": "draft",
+      "question": "混沌とした状態の中から、意見やアイデアなどの言語データを親和性によってまとめ、問題を明確にする手法はどれか。",
+      "choices": [
+        "親和図法",
+        "連関図法",
+        "系統図法",
+        "マトリックス図法"
+      ],
+      "answer": 0,
+      "explanation": "親和図法は、似ている言語データをグループにまとめていくことで、はっきりしない問題の全体像をつかむ手法です。連関図法は、複雑にからみ合った原因と結果の関係を矢印で整理する手法です。",
+      "explanation_vi": "親和図法 (phương pháp biểu đồ thân hòa): gom các dữ liệu ngôn ngữ (ý kiến, ý tưởng) có nội dung gần nhau thành nhóm, từ đó nắm được toàn cảnh của một vấn đề còn mơ hồ. Phân biệt với 連関図法 (biểu đồ liên quan): dùng mũi tên để sắp xếp quan hệ nguyên nhân – kết quả đan xen phức tạp."
+    },
+    {
+      "id": "3-008",
+      "level": 3,
+      "topic": "shin7",
+      "status": "draft",
+      "question": "作業の順序関係を矢線で表し、日程計画の作成やクリティカルパスの把握に使う手法はどれか。",
+      "choices": [
+        "PDPC法",
+        "アローダイアグラム法",
+        "系統図法",
+        "親和図法"
+      ],
+      "answer": 1,
+      "explanation": "アローダイアグラム法では作業を矢線と結合点で表し、最も時間のかかる経路（クリティカルパス）を見つけて、日程を管理します。",
+      "explanation_vi": "アローダイアグラム法 (phương pháp biểu đồ mũi tên): biểu diễn các công việc bằng mũi tên và điểm nối, tìm ra đường găng クリティカルパス (con đường tốn nhiều thời gian nhất) để quản lý tiến độ."
+    },
+    {
+      "id": "3-009",
+      "level": 3,
+      "topic": "shin7",
+      "status": "draft",
+      "question": "計画の実施中に起こりうる事態を事前に予測し、望ましい結果に至るプロセスを決めておく手法はどれか。",
+      "choices": [
+        "マトリックス図法",
+        "連関図法",
+        "PDPC法",
+        "マトリックス・データ解析法"
+      ],
+      "answer": 2,
+      "explanation": "PDPC（Process Decision Program Chart）法は、不測の事態も想定して対応策を組み込んだプロセスを描き、計画を目標まで導くための手法です。",
+      "explanation_vi": "PDPC法 (Process Decision Program Chart – biểu đồ quyết định quá trình): dự đoán trước các tình huống có thể xảy ra khi thực hiện kế hoạch, kể cả sự cố bất ngờ, và đưa sẵn phương án đối phó vào quy trình để dẫn kế hoạch đến mục tiêu."
+    },
+    {
+      "id": "3-010",
+      "level": 3,
+      "topic": "shin7",
+      "status": "draft",
+      "question": "新QC七つ道具のうち、言語データではなく数値データを扱う手法はどれか。",
+      "choices": [
+        "系統図法",
+        "親和図法",
+        "マトリックス・データ解析法",
+        "連関図法"
+      ],
+      "answer": 2,
+      "explanation": "新QC七つ道具は主に言語データを扱いますが、マトリックス・データ解析法だけは数値データを扱います。主成分分析にあたる手法です。",
+      "explanation_vi": "新QC七つ道具 (7 công cụ QC mới) chủ yếu xử lý dữ liệu ngôn ngữ. Chỉ riêng マトリックス・データ解析法 (phương pháp phân tích dữ liệu ma trận) xử lý dữ liệu số; nó tương ứng với phân tích thành phần chính (主成分分析)."
+    },
+    {
+      "id": "3-011",
+      "level": 3,
+      "topic": "toukei",
+      "status": "draft",
+      "question": "正規分布において、平均値μから±3σの範囲の外側に出る確率は、およそいくらか。",
+      "choices": [
+        "約0.3%",
+        "約5%",
+        "約32%",
+        "約0.003%"
+      ],
+      "answer": 0,
+      "explanation": "μ±3σの範囲に入る確率は約99.7%なので、外側に出る確率は約0.3%（0.27%）です。μ±1σは約68.3%、μ±2σは約95.4%も覚えておきましょう。",
+      "explanation_vi": "Trong phân phối chuẩn (正規分布), xác suất nằm trong khoảng μ ± 3σ là khoảng 99.7%, nên xác suất nằm ngoài là khoảng 0.3% (chính xác 0.27%). Nhớ thêm: μ ± 1σ ≈ 68.3%, μ ± 2σ ≈ 95.4%."
+    },
+    {
+      "id": "3-012",
+      "level": 3,
+      "topic": "toukei",
+      "status": "draft",
+      "question": "正規分布において、平均値μから±2σの範囲に入る確率は、およそいくらか。",
+      "choices": [
+        "68.3%",
+        "95.4%",
+        "99.7%",
+        "50.0%"
+      ],
+      "answer": 1,
+      "explanation": "±1σで約68.3%、±2σで約95.4%、±3σで約99.7%です。",
+      "explanation_vi": "μ ± 1σ ≈ 68.3%, μ ± 2σ ≈ 95.4%, μ ± 3σ ≈ 99.7%. Ba con số này rất hay ra đề, nên học thuộc."
+    },
+    {
+      "id": "3-013",
+      "level": 3,
+      "topic": "toukei",
+      "status": "draft",
+      "question": "ある部品の寸法は平均50.0mm、標準偏差5.0mmの正規分布にしたがう。規格上限60.0mmを超える割合は、およそいくらか。（P(u≧2.00)＝0.0228）",
+      "choices": [
+        "約0.13%",
+        "約2.3%",
+        "約4.6%",
+        "約16%"
+      ],
+      "answer": 1,
+      "explanation": "標準化すると u＝(60.0−50.0)÷5.0＝2.00。u≧2.00 となる確率は0.0228なので、約2.3%です。4.6%は両側（上限と下限の両方）を合わせた値です。",
+      "explanation_vi": "Chuẩn hóa (標準化): u = (60.0 − 50.0) ÷ 5.0 = 2.00. Xác suất u ≥ 2.00 là 0.0228, tức khoảng 2.3%. Chú ý bẫy: 4.6% là tổng của cả hai phía (vượt giới hạn trên và vượt giới hạn dưới)."
+    },
+    {
+      "id": "3-014",
+      "level": 3,
+      "topic": "toukei",
+      "status": "draft",
+      "question": "不良率5%の工程から製品を100個取り出したとき、不良品の個数の期待値はいくらか。",
+      "choices": [
+        "0.05個",
+        "4.75個",
+        "5個",
+        "95個"
+      ],
+      "answer": 2,
+      "explanation": "不良品の個数は二項分布にしたがい、期待値はnp＝100×0.05＝5個です。4.75はnp(1−p)で、分散の値です。",
+      "explanation_vi": "Số sản phẩm lỗi tuân theo phân phối nhị thức (二項分布). Giá trị kỳ vọng (期待値) = np = 100 × 0.05 = 5 cái. Chú ý bẫy: 4.75 = np(1 − p) là phương sai (分散), không phải kỳ vọng."
+    },
+    {
+      "id": "3-015",
+      "level": 3,
+      "topic": "kanrizu",
+      "status": "draft",
+      "question": "サンプルの大きさが一定でない場合に、不良率を管理するのに用いる管理図はどれか。",
+      "choices": [
+        "X̄−R管理図",
+        "X−Rs管理図",
+        "p管理図",
+        "X̄−s管理図"
+      ],
+      "answer": 2,
+      "explanation": "p管理図は計数値（不良率）の管理図で、サンプルの大きさが変わっても使えます。X̄−R管理図などは長さや重さといった計量値の管理図です。サンプルの大きさが一定で不良個数を管理する場合はnp管理図を使います。",
+      "explanation_vi": "p管理図 (biểu đồ kiểm soát p) dùng cho giá trị đếm là tỷ lệ lỗi (不良率), và dùng được cả khi cỡ mẫu thay đổi. X̄−R管理図 và các loại tương tự dùng cho giá trị đo (計量値) như chiều dài, khối lượng. Nếu cỡ mẫu cố định và quản lý số sản phẩm lỗi thì dùng np管理図."
+    },
+    {
+      "id": "3-016",
+      "level": 3,
+      "topic": "kanrizu",
+      "status": "draft",
+      "question": "シューハート管理図の管理限界線は、一般にどこに引かれるか。",
+      "choices": [
+        "中心線±1σ",
+        "中心線±2σ",
+        "中心線±3σ",
+        "製品の規格上限・規格下限"
+      ],
+      "answer": 2,
+      "explanation": "管理限界線は工程のデータから計算した中心線±3σの位置に引きます。顧客や設計が決める規格限界とは別のものなので、混同しないようにしましょう。",
+      "explanation_vi": "管理限界線 (đường giới hạn kiểm soát) được vẽ tại đường trung tâm ± 3σ, tính từ dữ liệu của chính công đoạn. Đừng nhầm với 規格限界 (giới hạn quy cách) do khách hàng hoặc bộ phận thiết kế quyết định – hai thứ này hoàn toàn khác nhau."
+    },
+    {
+      "id": "3-017",
+      "level": 3,
+      "topic": "kanrizu",
+      "status": "draft",
+      "question": "管理図の見方として、工程に異常があると判断すべきものはどれか。",
+      "choices": [
+        "すべての点が管理限界内にあり、ランダムに並んでいる",
+        "中心線の同じ側に、点が9点連続して並んでいる",
+        "中心線の上下に、ほぼ同じ数の点がランダムに並んでいる",
+        "管理限界線の内側で、限界線に近い点が1点だけある"
+      ],
+      "answer": 1,
+      "explanation": "点が管理限界の外に出ることのほか、中心線の片側に9点連続する（JIS Z 9020-2の判定ルール）など、並び方にくせがある場合も異常と判断します。管理限界内でランダムなら、工程は安定状態とみなします。",
+      "explanation_vi": "Ngoài trường hợp điểm vượt ra ngoài đường giới hạn kiểm soát, nếu các điểm sắp xếp theo một quy luật bất thường – ví dụ 9 điểm liên tiếp nằm cùng một phía của đường trung tâm (quy tắc trong JIS Z 9020-2) – thì cũng phán đoán là có bất thường. Nếu mọi điểm nằm trong giới hạn và phân bố ngẫu nhiên thì coi là công đoạn ổn định (安定状態)."
+    },
+    {
+      "id": "3-018",
+      "level": 3,
+      "topic": "kouteinouryoku",
+      "status": "draft",
+      "question": "規格が 10.0±0.6mm（SU＝10.6、SL＝9.4）、標準偏差s＝0.10mmのとき、工程能力指数Cpはいくらか。",
+      "choices": [
+        "1.00",
+        "1.33",
+        "2.00",
+        "4.00"
+      ],
+      "answer": 2,
+      "explanation": "Cp＝(SU−SL)÷6s＝(10.6−9.4)÷(6×0.10)＝1.2÷0.6＝2.00 です。",
+      "explanation_vi": "Cp = (SU − SL) ÷ 6s = (10.6 − 9.4) ÷ (6 × 0.10) = 1.2 ÷ 0.6 = 2.00. Trong đó SU là giới hạn trên của quy cách, SL là giới hạn dưới, s là độ lệch chuẩn."
+    },
+    {
+      "id": "3-019",
+      "level": 3,
+      "topic": "kouteinouryoku",
+      "status": "draft",
+      "question": "規格が SU＝10.6、SL＝9.4、平均値10.3、標準偏差0.10のとき、かたよりを考慮した工程能力指数Cpkはいくらか。",
+      "choices": [
+        "1.00",
+        "2.00",
+        "3.00",
+        "0.50"
+      ],
+      "answer": 0,
+      "explanation": "上側：(10.6−10.3)÷(3×0.10)＝1.00、下側：(10.3−9.4)÷(3×0.10)＝3.00。Cpkは小さい方をとるので 1.00 です。平均が規格の中心からずれると、CpkはCpより小さくなります。",
+      "explanation_vi": "Phía trên: (10.6 − 10.3) ÷ (3 × 0.10) = 1.00. Phía dưới: (10.3 − 9.4) ÷ (3 × 0.10) = 3.00. Cpk lấy giá trị nhỏ hơn nên Cpk = 1.00. Khi trung bình lệch khỏi tâm quy cách (かたより – độ lệch tâm) thì Cpk nhỏ hơn Cp."
+    },
+    {
+      "id": "3-020",
+      "level": 3,
+      "topic": "kouteinouryoku",
+      "status": "draft",
+      "question": "工程能力指数が 1.33 ≦ Cp ＜ 1.67 のとき、工程能力の一般的な判断はどれか。",
+      "choices": [
+        "非常に不足している",
+        "やや不足している",
+        "十分である",
+        "判断できない"
+      ],
+      "answer": 2,
+      "explanation": "一般的な目安は、Cp≧1.67：十分すぎる、1.33≦Cp＜1.67：十分、1.00≦Cp＜1.33：まずまず（やや不足）、Cp＜1.00：不足 です。",
+      "explanation_vi": "Mốc đánh giá thường dùng: Cp ≥ 1.67: quá đủ (十分すぎる); 1.33 ≤ Cp < 1.67: đủ (十分); 1.00 ≤ Cp < 1.33: tạm được, hơi thiếu (まずまず); Cp < 1.00: không đủ (不足)."
+    },
+    {
+      "id": "3-021",
+      "level": 3,
+      "topic": "soukan",
+      "status": "draft",
+      "question": "相関係数rについての説明で、正しいものはどれか。",
+      "choices": [
+        "rは0から1までの値をとる",
+        "r＝−0.9 は、強い負の相関があることを示す",
+        "r＝0 のとき、2つの変数にはどんな関係もない",
+        "rが大きいほど、xがyの原因である可能性が高い"
+      ],
+      "answer": 1,
+      "explanation": "rは−1から1までの値をとり、−1に近いほど強い負の相関です。r＝0でも曲線的な関係があることはあり、また相関があっても因果関係があるとは限りません。",
+      "explanation_vi": "相関係数 r (hệ số tương quan) nhận giá trị từ −1 đến 1; càng gần −1 thì tương quan nghịch (負の相関) càng mạnh. r = 0 vẫn có thể có quan hệ dạng đường cong. Ngoài ra, có tương quan không có nghĩa là có quan hệ nhân quả (因果関係)."
+    },
+    {
+      "id": "3-022",
+      "level": 3,
+      "topic": "kanri",
+      "status": "draft",
+      "question": "経営方針にもとづく重点課題を、全部門・全階層に展開して達成していく活動を何というか。",
+      "choices": [
+        "日常管理",
+        "方針管理",
+        "小集団活動",
+        "標準化"
+      ],
+      "answer": 1,
+      "explanation": "方針管理は、トップの方針を目標と方策に展開し、各部門が連携して達成する活動です。日常管理は、各部門が日々の分掌業務を確実に行い、維持・改善する活動です。",
+      "explanation_vi": "方針管理 (quản lý theo phương châm): triển khai phương châm của lãnh đạo thành mục tiêu và biện pháp cho mọi bộ phận, mọi cấp; các bộ phận phối hợp với nhau để đạt được. 日常管理 (quản lý hằng ngày): mỗi bộ phận thực hiện chắc chắn công việc thường ngày theo chức năng của mình, duy trì và cải tiến."
+    },
+    {
+      "id": "3-023",
+      "level": 3,
+      "topic": "kanri",
+      "status": "draft",
+      "question": "FMEAなどを用いて、まだ発生していない不具合を予測し、事前に対策を打つ考え方を何というか。",
+      "choices": [
+        "応急処置",
+        "再発防止",
+        "未然防止",
+        "是正処置"
+      ],
+      "answer": 2,
+      "explanation": "未然防止は、起こりうる問題を前もって洗い出して対策することです。再発防止は、すでに起きた問題の原因を取り除き、二度と起こさないようにすることです。",
+      "explanation_vi": "未然防止 (phòng ngừa từ trước): dự đoán và xử lý trước những vấn đề có thể xảy ra, thường dùng FMEA (phân tích dạng lỗi và tác động). 再発防止 (phòng ngừa tái phát): loại bỏ nguyên nhân của vấn đề đã xảy ra để không lặp lại. 応急処置 (xử lý tạm thời) chỉ khắc phục hiện tượng trước mắt."
+    },
+    {
+      "id": "3-024",
+      "level": 3,
+      "topic": "kanri",
+      "status": "draft",
+      "question": "品質マネジメントシステムの要求事項を定めた国際規格はどれか。",
+      "choices": [
+        "ISO 14001",
+        "ISO 45001",
+        "ISO 9001",
+        "ISO/IEC 27001"
+      ],
+      "answer": 2,
+      "explanation": "ISO 9001は品質マネジメントシステムの規格です。ISO 14001は環境、ISO 45001は労働安全衛生、ISO/IEC 27001は情報セキュリティのマネジメントシステム規格です。",
+      "explanation_vi": "ISO 9001 là tiêu chuẩn hệ thống quản lý chất lượng (品質マネジメントシステム). ISO 14001: môi trường; ISO 45001: an toàn và sức khỏe nghề nghiệp; ISO/IEC 27001: an toàn thông tin."
+    }
+  ]
+}
