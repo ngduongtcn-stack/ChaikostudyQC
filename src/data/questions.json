@@ -1026,6 +1026,134 @@
       "explanation_vi": "指差呼称 (chỉ tay hô to) là chỉ tay vào đối tượng cần xác nhận và nói to, ví dụ “công tắc, ổn!”. Dùng cả mắt, tay, miệng, tai giúp tránh sơ suất."
     },
     {
+      "id": "4-056",
+      "level": 4,
+      "topic": "7tools",
+      "status": "checked",
+      "question": "パレート図を作るとき、「その他」の項目はどこに置くか。",
+      "choices": [
+        "件数の大きさの順に、ほかの項目と一緒に並べる",
+        "一番左に置く",
+        "件数に関係なく、最後（右端）に置く",
+        "グラフには載せない"
+      ],
+      "answer": 2,
+      "explanation": "パレート図では、項目を件数の多い順に並べますが、「その他」は件数が多くても最後（右端）に置きます。「その他」が大きすぎる場合は、項目の分け方を見直します。",
+      "explanation_vi": "Biểu đồ Pareto xếp các hạng mục theo số lượng giảm dần, nhưng mục「その他」(khác) luôn để cuối cùng (bên phải) dù số lượng nhiều. Nếu「その他」quá lớn thì nên xem lại cách chia hạng mục."
+    },
+    {
+      "id": "4-057",
+      "level": 4,
+      "topic": "7tools",
+      "status": "checked",
+      "question": "ある1か月の不良件数は、キズ50件、汚れ30件、寸法不良12件、その他8件だった。パレート図を作ったとき、上位2項目（キズと汚れ）の累積比率はいくらか。",
+      "choices": [
+        "50%",
+        "62.5%",
+        "80%",
+        "92%"
+      ],
+      "answer": 2,
+      "explanation": "不良件数の合計は50＋30＋12＋8＝100件です。上位2項目は50＋30＝80件なので、累積比率は80÷100＝80%です。62.5%は汚れをキズで割った値、92%は上位3項目までの累積比率で、どちらも誤りです。",
+      "explanation_vi": "Tổng số lỗi là 50 + 30 + 12 + 8 = 100. Hai hạng mục đầu là 50 + 30 = 80, nên 累積比率 (tỷ lệ tích lũy) là 80 ÷ 100 = 80%. 62.5% là lấy 汚れ chia cho キズ, còn 92% là tỷ lệ tích lũy đến hạng mục thứ 3, đều sai."
+    },
+    {
+      "id": "4-058",
+      "level": 4,
+      "topic": "7tools",
+      "status": "checked",
+      "question": "特性要因図を作るときの進め方として、適切でないものはどれか。",
+      "choices": [
+        "取り上げる特性（結果）を具体的に決めてから始める",
+        "関係する人が集まり、ブレーンストーミングで要因を出し合う",
+        "4M（人・機械・材料・方法）などを大骨にして要因を整理する",
+        "時間をかけないように、担当者が一人で考えて仕上げる"
+      ],
+      "answer": 3,
+      "explanation": "特性要因図は、現場をよく知る関係者が集まり、意見を出し合って作ることで要因の見落としを防ぎます。一人で考えると見方がかたよりやすくなります。特性を具体的に決めること、4Mを大骨にすることは適切な進め方です。",
+      "explanation_vi": "特性要因図 (biểu đồ xương cá) nên được làm bởi nhiều người liên quan hiểu rõ hiện trường, cùng đưa ý kiến (ブレーンストーミング – động não) để không bỏ sót nguyên nhân. Một người tự nghĩ thì dễ thiên lệch. Xác định cụ thể đặc tính và lấy 4M làm xương lớn là cách làm đúng."
+    },
+    {
+      "id": "4-059",
+      "level": 4,
+      "topic": "7tools",
+      "status": "checked",
+      "question": "不良の種類ごとに、発生するたびに「正」の字などで記入して、件数を集計するためのチェックシートはどれか。",
+      "choices": [
+        "記録用（調査用）チェックシート",
+        "点検用チェックシート",
+        "特性要因図",
+        "管理図"
+      ],
+      "answer": 0,
+      "explanation": "不良の種類や発生場所などのデータを、記入するだけで集計できるようにしたものが記録用（調査用）チェックシートです。点検用チェックシートは、確認項目の漏れを防ぐためのものです。",
+      "explanation_vi": "Phiếu ghi số lần xảy ra theo từng loại lỗi (đánh dấu chữ「正」…) để tổng hợp là 記録用（調査用）チェックシート (phiếu kiểm tra dùng để ghi chép/điều tra). Còn 点検用チェックシート (phiếu kiểm tra dùng để rà soát) dùng để chống bỏ sót hạng mục cần kiểm tra."
+    },
+    {
+      "id": "4-060",
+      "level": 4,
+      "topic": "data",
+      "status": "checked",
+      "question": "ロットからサンプルを取るとき、作業者が取り出しやすい箱の上の段の製品だけを毎回選んでいた。この取り方の問題点として、最も適切なものはどれか。",
+      "choices": [
+        "サンプルの数が多くなりすぎる",
+        "測定に時間がかかる",
+        "計量値が計数値になってしまう",
+        "サンプルにかたよりが生じ、ロット全体の状態を正しく表さない"
+      ],
+      "answer": 3,
+      "explanation": "サンプルはロット（母集団）の状態を推測するために取るので、かたよりなくランダムに取ることが大切です。上の段だけから取ると、下の段の製品の状態が反映されず、誤った判断につながります。",
+      "explanation_vi": "Mẫu được lấy để suy ra trạng thái của lô (母集団 – tổng thể), nên phải lấy ngẫu nhiên, không thiên lệch. Chỉ lấy ở tầng trên của thùng thì trạng thái sản phẩm ở tầng dưới không được phản ánh, dẫn đến phán đoán sai."
+    },
+    {
+      "id": "4-061",
+      "level": 4,
+      "topic": "data",
+      "status": "checked",
+      "question": "言語データにあたるものはどれか。",
+      "choices": [
+        "お客様アンケートの自由記述欄に書かれた意見",
+        "1日の生産数",
+        "部品の重さ（g）",
+        "1週間の欠勤者数"
+      ],
+      "answer": 0,
+      "explanation": "言語データは、言葉で表された情報で、お客様の声や意見などがあたります。生産数や欠勤者数は数えて得られる計数値、重さは測って得られる計量値です。",
+      "explanation_vi": "言語データ (dữ liệu ngôn ngữ) là thông tin thể hiện bằng lời, như ý kiến, tiếng nói của khách hàng. Số lượng sản xuất, số người nghỉ là 計数値 (giá trị đếm); khối lượng là 計量値 (giá trị đo)."
+    },
+    {
+      "id": "4-062",
+      "level": 4,
+      "topic": "data",
+      "status": "checked",
+      "question": "データを取るときに、最初に決めておくべきこととして、最も適切なものはどれか。",
+      "choices": [
+        "グラフの色",
+        "データを取る目的",
+        "報告書の表紙",
+        "データを入れるファイルの名前"
+      ],
+      "answer": 1,
+      "explanation": "何のためにデータを取るのか（目的）がはっきりしないと、必要なデータが取れなかったり、使えないデータを集めてしまったりします。目的を決めてから、何を、どのように、どれだけ取るかを決めます。",
+      "explanation_vi": "Nếu không rõ lấy dữ liệu để làm gì (目的 – mục đích) thì có thể không lấy được dữ liệu cần thiết hoặc thu thập dữ liệu vô dụng. Phải xác định mục đích trước, rồi mới quyết định lấy cái gì, lấy thế nào, lấy bao nhiêu."
+    },
+    {
+      "id": "4-063",
+      "level": 4,
+      "topic": "data",
+      "status": "checked",
+      "question": "5日間の手直し件数は 8, 9, 10, 11, 62 件だった。62件の日はトラブルがあった日である。このように極端な値が含まれるとき、その影響を受けにくい代表値はどれか。",
+      "choices": [
+        "平均値",
+        "合計",
+        "メディアン（中央値）",
+        "範囲"
+      ],
+      "answer": 2,
+      "explanation": "メディアンは大きさの順に並べた真ん中の値なので、極端な値の影響を受けにくい特徴があります。この例ではメディアンは10件ですが、平均値は62件に引っ張られて20件になります。範囲はばらつきを表す値で、代表値ではありません。",
+      "explanation_vi": "メディアン (trung vị) là giá trị ở giữa khi xếp theo thứ tự nên ít bị ảnh hưởng bởi giá trị bất thường. Ở ví dụ này trung vị là 10, còn 平均値 (trung bình) bị kéo lên thành 20 do giá trị 62. 範囲 (khoảng biến thiên) biểu thị độ phân tán, không phải giá trị đại diện."
+    },
+    {
       "id": "3-001",
       "level": 3,
       "topic": "data3",
@@ -2160,6 +2288,278 @@
       "answer": 0,
       "explanation": "フールプルーフは、人が誤った操作をしようとしてもできない、または誤っても不具合にならないようにするしくみです。向きを間違えると入らないコネクタは代表的な例です。",
       "explanation_vi": "フールプルーフ (chống sai sót, poka-yoke) là cơ chế khiến người dùng không thể thao tác sai, hoặc có sai cũng không gây sự cố. Đầu nối không cắm được nếu sai chiều là ví dụ tiêu biểu."
+    },
+    {
+      "id": "3-072",
+      "level": 3,
+      "topic": "kanri",
+      "status": "checked",
+      "question": "製品の企画・設計など、上流の段階で品質を確保し、後工程での問題を未然に防ごうとする考え方を何というか。",
+      "choices": [
+        "源流管理",
+        "応急処置",
+        "抜取検査",
+        "層別"
+      ],
+      "answer": 0,
+      "explanation": "源流管理は、問題の源である上流（企画・設計・工程設計など）にさかのぼって品質をつくり込み、問題の発生を防ぐ考え方です。後工程で見つけるより、上流で防ぐ方がコストも小さくなります。",
+      "explanation_vi": "源流管理 (quản lý từ nguồn) là quay ngược về thượng nguồn của vấn đề (lên kế hoạch, thiết kế, thiết kế công đoạn) để tạo ra chất lượng và ngăn vấn đề phát sinh. Ngăn từ thượng nguồn rẻ hơn nhiều so với phát hiện ở công đoạn sau."
+    },
+    {
+      "id": "3-073",
+      "level": 3,
+      "topic": "gainen3",
+      "status": "checked",
+      "question": "製造品質（できばえの品質）を評価する観点として、最も適切なものはどれか。",
+      "choices": [
+        "お客様の要求が企画に反映されているか",
+        "製品が設計どおりにつくられているか",
+        "製品の広告がわかりやすいか",
+        "製品の価格が適正か"
+      ],
+      "answer": 1,
+      "explanation": "製造品質（できばえの品質・適合品質）は、つくった製品が設計品質（ねらい）どおりになっているかを表します。お客様の要求の反映は企画品質・設計品質の観点です。",
+      "explanation_vi": "製造品質 (chất lượng sản xuất, thực hiện) thể hiện sản phẩm làm ra có đúng như chất lượng thiết kế (mục tiêu) không. Việc phản ánh yêu cầu khách hàng thuộc về chất lượng kế hoạch, chất lượng thiết kế."
+    },
+    {
+      "id": "3-074",
+      "level": 3,
+      "topic": "hoho3",
+      "status": "checked",
+      "question": "課題達成型QCストーリーの「成功シナリオの追究」で行うこととして、最も適切なものはどれか。",
+      "choices": [
+        "不良の真の原因を突き止める",
+        "方策を具体化し、予想される障害とその対策も含めて検討する",
+        "実施した対策の効果を確認する",
+        "作業標準を改訂する"
+      ],
+      "answer": 1,
+      "explanation": "成功シナリオの追究では、立案した方策を具体的なシナリオにし、実施したときに起こりうる障害や副作用と、その対策まで検討します。真の原因の追究は問題解決型の要因解析です。",
+      "explanation_vi": "Ở bước tìm kịch bản thành công, phương sách đã lập được cụ thể hóa thành kịch bản, cân nhắc cả trở ngại, tác dụng phụ có thể xảy ra và đối sách cho chúng. Truy tìm nguyên nhân thật là bước phân tích nguyên nhân của dạng giải quyết vấn đề."
+    },
+    {
+      "id": "3-075",
+      "level": 3,
+      "topic": "hosho3",
+      "status": "checked",
+      "question": "新製品の品質保証の流れとして、正しい順序はどれか。",
+      "choices": [
+        "設計→企画→製造→生産準備→販売・アフターサービス",
+        "企画→製造→設計→生産準備→販売・アフターサービス",
+        "企画→設計→生産準備→製造→販売・アフターサービス",
+        "生産準備→企画→設計→製造→販売・アフターサービス"
+      ],
+      "answer": 2,
+      "explanation": "お客様の要求を調べる企画から始まり、設計で品質特性や規格を決め、生産準備で工程をつくり、製造で品質をつくり込み、販売・アフターサービスで使用情報を集めて次に活かします。",
+      "explanation_vi": "Bắt đầu từ kế hoạch (tìm hiểu yêu cầu khách hàng), thiết kế quyết định đặc tính chất lượng và quy cách, chuẩn bị sản xuất tạo công đoạn, sản xuất tạo chất lượng, rồi bán hàng và dịch vụ sau bán thu thập thông tin sử dụng cho lần sau."
+    },
+    {
+      "id": "3-076",
+      "level": 3,
+      "topic": "toukei",
+      "status": "checked",
+      "question": "ある部品の長さは平均20.0mm、標準偏差2.0mmの正規分布にしたがう。規格が16.0〜24.0mmのとき、規格から外れる割合はおよそいくらか。（P(u≧2.00)＝0.0228）",
+      "choices": [
+        "約2.3%",
+        "約4.6%",
+        "約0.3%",
+        "約95.4%"
+      ],
+      "answer": 1,
+      "explanation": "規格下限はu＝(16.0−20.0)÷2.0＝−2.00、上限はu＝(24.0−20.0)÷2.0＝2.00です。外れる割合は両側の合計で0.0228×2＝0.0456、約4.6%です。約2.3%は片側だけの値、約95.4%は規格内に入る割合です。",
+      "explanation_vi": "Giới hạn dưới: u = (16.0 − 20.0) ÷ 2.0 = −2.00; giới hạn trên: u = (24.0 − 20.0) ÷ 2.0 = 2.00. Tỷ lệ nằm ngoài quy cách là tổng hai phía: 0.0228 × 2 = 0.0456, khoảng 4.6%. 2.3% chỉ là một phía, còn 95.4% là tỷ lệ nằm trong quy cách."
+    },
+    {
+      "id": "3-077",
+      "level": 3,
+      "topic": "hoho3",
+      "status": "checked",
+      "question": "問題解決型QCストーリーで、対策を実施して効果が確認できた。次に行うべきこととして、最も適切なものはどれか。",
+      "choices": [
+        "作業標準を改訂し、関係者に教育して、対策が確実に守られるようにする",
+        "効果が出たので、活動を終了して記録を廃棄する",
+        "別の対策も試すため、作業方法を毎日変えてみる",
+        "もう一度テーマの選定からやり直す"
+      ],
+      "answer": 0,
+      "explanation": "効果の確認のあとは「標準化と管理の定着（歯止め）」です。よい結果を出した方法を標準にして教育し、元に戻らないようにします。この歯止めがないと、時間がたつと同じ問題が再発しやすくなります。",
+      "explanation_vi": "Sau bước xác nhận hiệu quả là「標準化と管理の定着」(tiêu chuẩn hóa và duy trì quản lý – 歯止め, chặn lại). Phương pháp đã cho kết quả tốt phải được đưa vào tiêu chuẩn và đào tạo để không quay lại cách cũ. Nếu không có 歯止め, theo thời gian vấn đề dễ tái phát."
+    },
+    {
+      "id": "3-078",
+      "level": 3,
+      "topic": "hoho3",
+      "status": "checked",
+      "question": "問題解決型QCストーリーの「現状の把握」で行うこととして、最も適切なものはどれか。",
+      "choices": [
+        "思いついた対策をすぐに実行する",
+        "作業標準を改訂する",
+        "不良のデータを層別し、パレート図などで攻撃対象を絞り込む",
+        "活動の反省点と今後の計画をまとめる"
+      ],
+      "answer": 2,
+      "explanation": "現状の把握では、事実をデータで調べ、層別やパレート図を使って、どこに問題が集中しているかを明らかにします。対策の実施、標準の改訂、反省と今後の計画は、もっとあとの手順です。",
+      "explanation_vi": "Ở bước「現状の把握」(nắm bắt hiện trạng), ta điều tra sự thật bằng dữ liệu, dùng 層別 (phân tầng) và パレート図 (biểu đồ Pareto) để làm rõ vấn đề tập trung ở đâu. Thực hiện đối sách, sửa tiêu chuẩn, rút kinh nghiệm là các bước về sau."
+    },
+    {
+      "id": "3-079",
+      "level": 3,
+      "topic": "hoho3",
+      "status": "checked",
+      "question": "「要因の解析」で、特性要因図に挙げた多くの要因について行うこととして、最も適切なものはどれか。",
+      "choices": [
+        "挙げた要因すべてに、同時に対策を行う",
+        "データや実験で検証し、特性に大きく影響している主要因を確かめる",
+        "メンバーの多数決で原因を決める",
+        "経験の長い人の意見をそのまま原因とする"
+      ],
+      "answer": 1,
+      "explanation": "特性要因図に挙げた要因は、まだ「原因の候補」です。データや実験で事実を確かめて、本当に影響の大きい主要因を特定してから対策を考えます。多数決や経験だけで決めると、真の原因を見逃すおそれがあります。",
+      "explanation_vi": "Các yếu tố liệt kê trên 特性要因図 mới chỉ là「ứng viên nguyên nhân」. Phải kiểm chứng bằng dữ liệu hoặc thí nghiệm để xác định 主要因 (nguyên nhân chính) thực sự ảnh hưởng lớn rồi mới nghĩ đối sách. Quyết định bằng biểu quyết hay chỉ dựa vào kinh nghiệm thì dễ bỏ sót nguyên nhân thật."
+    },
+    {
+      "id": "3-080",
+      "level": 3,
+      "topic": "hoho3",
+      "status": "checked",
+      "question": "日常管理において、仕事の結果がよいかどうかを確認する項目（管理点）に対して、結果を生み出す要因（原因系）の状態を確認する項目を何というか。",
+      "choices": [
+        "管理水準",
+        "重点指向",
+        "点検項目（点検点）",
+        "品質特性"
+      ],
+      "answer": 2,
+      "explanation": "結果系で確認する項目を管理項目（管理点）、原因系で確認する項目を点検項目（点検点）といいます。管理水準は、管理項目が正常か異常かを判断する基準のことです。",
+      "explanation_vi": "Hạng mục kiểm tra phía kết quả gọi là 管理項目 (管理点 – điểm quản lý), hạng mục kiểm tra phía nguyên nhân gọi là 点検項目 (点検点 – điểm kiểm tra). 管理水準 (mức quản lý) là tiêu chuẩn để phán đoán hạng mục quản lý bình thường hay bất thường."
+    },
+    {
+      "id": "3-081",
+      "level": 3,
+      "topic": "hosho3",
+      "status": "checked",
+      "question": "工程の流れに沿って、各工程の管理項目、管理方法（測定方法・頻度）、担当者などを一覧にまとめたものを何というか。",
+      "choices": [
+        "特性要因図",
+        "QC工程図（QC工程表）",
+        "検査成績書",
+        "系統図"
+      ],
+      "answer": 1,
+      "explanation": "QC工程図は、原材料の受入れから出荷までの工程ごとに、何を、どのように管理するかを示したもので、プロセス保証の基本となる資料です。作業標準書は個々の作業の手順を示すもので、役割が異なります。",
+      "explanation_vi": "QC工程図 (bảng/sơ đồ quản lý chất lượng công đoạn) thể hiện theo từng công đoạn, từ nhận nguyên liệu đến xuất hàng, quản lý cái gì và quản lý thế nào; đây là tài liệu cơ bản của プロセス保証 (đảm bảo quá trình). Khác với 作業標準書 (tiêu chuẩn thao tác) chỉ ghi trình tự của từng thao tác."
+    },
+    {
+      "id": "3-082",
+      "level": 3,
+      "topic": "hosho3",
+      "status": "checked",
+      "question": "新製品の量産を始めた直後の一定期間、通常より検査や監視を強化し、問題を早く見つけて対策する活動を何というか。",
+      "choices": [
+        "初期流動管理",
+        "方針管理",
+        "源流管理",
+        "日常管理"
+      ],
+      "answer": 0,
+      "explanation": "量産立ち上げ直後は、設計や工程の問題が表に出やすい時期です。この期間に管理を強化して、問題を早く見つけて手を打つ活動を初期流動管理といいます。安定したと確認できたら通常の管理に移行します。",
+      "explanation_vi": "Ngay sau khi bắt đầu sản xuất hàng loạt là thời kỳ các vấn đề về thiết kế, công đoạn dễ lộ ra. Hoạt động tăng cường kiểm tra, giám sát trong giai đoạn này để phát hiện sớm và xử lý gọi là 初期流動管理 (quản lý giai đoạn đầu sản xuất). Khi xác nhận đã ổn định thì chuyển sang quản lý thông thường."
+    },
+    {
+      "id": "3-083",
+      "level": 3,
+      "topic": "hosho3",
+      "status": "checked",
+      "question": "作業者が、自分が加工した製品を自分で決められた方法で検査し、不良を次工程に流さないようにすることを何というか。",
+      "choices": [
+        "受入検査",
+        "出荷検査",
+        "自主検査",
+        "間接検査"
+      ],
+      "answer": 2,
+      "explanation": "自主検査は、作業者が自分の作業の結果を自ら確認する検査で、「品質は工程でつくり込む」考え方にもとづきます。受入検査は材料や部品を受け入れるとき、出荷検査は出荷前に行う検査です。間接検査は、供給側の検査結果を確認して受入検査を簡略化する方法です。",
+      "explanation_vi": "自主検査 (tự kiểm tra) là việc người thao tác tự kiểm tra kết quả công việc của mình, dựa trên quan điểm「chất lượng được tạo ra trong công đoạn」. 受入検査 là kiểm tra khi nhận nguyên liệu, linh kiện; 出荷検査 là kiểm tra trước khi xuất hàng; 間接検査 (kiểm tra gián tiếp) là xác nhận kết quả kiểm tra của bên cung cấp để giản lược kiểm tra nhận hàng."
+    },
+    {
+      "id": "3-084",
+      "level": 3,
+      "topic": "gainen3",
+      "status": "checked",
+      "question": "ある会社は、お客様へのアンケートやインタビューで要望を調べ、それにもとづいて新製品を企画した。この考え方を何というか。",
+      "choices": [
+        "プロダクトアウト",
+        "重点指向",
+        "マーケットイン",
+        "標準化"
+      ],
+      "answer": 2,
+      "explanation": "マーケットインは、お客様のニーズを調べ、それに合った製品やサービスを提供する考え方です。プロダクトアウトは、つくる側の都合や技術を優先して製品を市場に出す考え方で、マーケットインとは逆です。",
+      "explanation_vi": "マーケットイン (market-in) là cách nghĩ tìm hiểu nhu cầu khách hàng rồi cung cấp sản phẩm, dịch vụ phù hợp. プロダクトアウト (product-out) là ưu tiên sự tiện lợi, kỹ thuật của bên sản xuất rồi đưa sản phẩm ra thị trường, ngược với マーケットイン."
+    },
+    {
+      "id": "3-085",
+      "level": 3,
+      "topic": "gainen3",
+      "status": "checked",
+      "question": "自動車の燃費は、よければよいほど満足が高まり、悪ければ悪いほど不満が大きくなる。狩野モデルでは、このような品質要素を何というか。",
+      "choices": [
+        "当たり前品質",
+        "一元的品質",
+        "魅力的品質",
+        "無関心品質"
+      ],
+      "answer": 1,
+      "explanation": "充足されれば満足、不充足なら不満となり、その程度に比例するものが一元的品質です。当たり前品質は充足されても当然と受け取られ、不充足だと不満になるもの、魅力的品質は不充足でも仕方ないと受け取られ、充足されると満足を与えるものです。",
+      "explanation_vi": "Yếu tố mà càng được đáp ứng thì càng hài lòng, càng không đáp ứng thì càng bất mãn (tỷ lệ thuận) là 一元的品質 (chất lượng một chiều). 当たり前品質 (chất lượng đương nhiên) được đáp ứng thì coi là đương nhiên, không đáp ứng thì bất mãn; 魅力的品質 (chất lượng hấp dẫn) không có cũng chấp nhận được, có thì tạo sự hài lòng."
+    },
+    {
+      "id": "3-086",
+      "level": 3,
+      "topic": "gainen3",
+      "status": "checked",
+      "question": "品質の定義として、最も適切なものはどれか。",
+      "choices": [
+        "製品の価格が高いほど、品質がよいといえる",
+        "検査に合格した製品の割合のこと",
+        "つくる側が決めた規格に合っていれば、お客様の評価は関係ない",
+        "対象に本来備わっている特性の集まりが、要求事項を満たす程度"
+      ],
+      "answer": 3,
+      "explanation": "品質は「対象に本来備わっている特性の集まりが、要求事項を満たす程度」と定義されます。要求事項にはお客様や社会の要求が含まれるので、規格に合うだけでなく、お客様の評価が重要です。価格の高さや合格率そのものが品質ではありません。",
+      "explanation_vi": "Chất lượng được định nghĩa là「mức độ mà tập hợp các đặc tính vốn có của đối tượng đáp ứng các yêu cầu」. Yêu cầu bao gồm cả yêu cầu của khách hàng và xã hội, nên không chỉ phù hợp quy cách mà đánh giá của khách hàng mới quan trọng. Giá cao hay tỷ lệ đạt kiểm tra không phải là chất lượng."
+    },
+    {
+      "id": "3-087",
+      "level": 3,
+      "topic": "kanri",
+      "status": "checked",
+      "question": "方針管理で、上位の方針を受けて、各部門が自部門の具体的な目標と方策を定め、下位へと順に落とし込んでいくことを何というか。",
+      "choices": [
+        "方針の展開",
+        "歯止め",
+        "層別",
+        "応急処置"
+      ],
+      "answer": 0,
+      "explanation": "方針管理では、トップの方針を各部門・各階層の目標と方策に具体化して展開し、全体で同じ方向に取り組みます。これを方針の展開といいます。歯止めは改善の成果を標準化して元に戻らないようにすることです。",
+      "explanation_vi": "Trong 方針管理 (quản lý theo phương châm), phương châm của lãnh đạo được cụ thể hóa thành mục tiêu và biện pháp của từng bộ phận, từng cấp để cả tổ chức cùng hướng. Việc này gọi là 方針の展開 (triển khai phương châm). 歯止め là tiêu chuẩn hóa thành quả cải tiến để không quay lại như cũ."
+    },
+    {
+      "id": "3-088",
+      "level": 3,
+      "topic": "kanri",
+      "status": "checked",
+      "question": "職場で上司や先輩が、実際の仕事を通じて部下に必要な知識や技能を教える教育方法を何というか。",
+      "choices": [
+        "Off-JT",
+        "自己啓発",
+        "OJT",
+        "QCサークル"
+      ],
+      "answer": 2,
+      "explanation": "OJT（On the Job Training）は、仕事をしながら職場で行う教育です。Off-JTは職場を離れて行う研修、自己啓発は本人が自主的に学ぶことです。",
+      "explanation_vi": "OJT (On the Job Training – đào tạo tại chỗ) là đào tạo ngay tại nơi làm việc trong khi làm việc. Off-JT là đào tạo tách khỏi nơi làm việc (lớp học, khóa huấn luyện); 自己啓発 là tự học, tự phát triển."
     }
   ]
 }

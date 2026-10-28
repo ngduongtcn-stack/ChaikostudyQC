@@ -1,20 +1,5 @@
 [
   {
-    "id": "r-c08",
-    "level": 4,
-    "topic": "7tools",
-    "question": "パレート図を作るとき、「その他」の項目はどこに置くか。",
-    "choices": [
-      "件数の大きさの順に、ほかの項目と一緒に並べる",
-      "一番左に置く",
-      "件数に関係なく、最後（右端）に置く",
-      "グラフには載せない"
-    ],
-    "answer": 2,
-    "explanation": "パレート図では、項目を件数の多い順に並べますが、「その他」は件数が多くても最後（右端）に置きます。「その他」が大きすぎる場合は、項目の分け方を見直します。",
-    "explanation_vi": "Biểu đồ Pareto xếp các hạng mục theo số lượng giảm dần, nhưng mục「その他」(khác) luôn để cuối cùng (bên phải) dù số lượng nhiều. Nếu「その他」quá lớn thì nên xem lại cách chia hạng mục."
-  },
-  {
     "id": "r-d04",
     "level": 3,
     "topic": "data3",
@@ -43,21 +28,6 @@
     "answer": 0,
     "explanation": "X̄管理図のUCL＝X̿＋A₂R̄＝50.0＋0.577×4.0≒52.3 です。47.7はLCL、54.0はA₂を掛け忘れた値です。",
     "explanation_vi": "UCL của biểu đồ X̄ = X̿ + A₂R̄ = 50.0 + 0.577 × 4.0 ≈ 52.3. 47.7 là LCL (giới hạn dưới), còn 54.0 là kết quả khi quên nhân A₂."
-  },
-  {
-    "id": "r-d14",
-    "level": 3,
-    "topic": "kanri",
-    "question": "製品の企画・設計など、上流の段階で品質を確保し、後工程での問題を未然に防ごうとする考え方を何というか。",
-    "choices": [
-      "源流管理",
-      "応急処置",
-      "抜取検査",
-      "層別"
-    ],
-    "answer": 0,
-    "explanation": "源流管理は、問題の源である上流（企画・設計・工程設計など）にさかのぼって品質をつくり込み、問題の発生を防ぐ考え方です。後工程で見つけるより、上流で防ぐ方がコストも小さくなります。",
-    "explanation_vi": "源流管理 (quản lý từ nguồn) là quay ngược về thượng nguồn của vấn đề (lên kế hoạch, thiết kế, thiết kế công đoạn) để tạo ra chất lượng và ngăn vấn đề phát sinh. Ngăn từ thượng nguồn rẻ hơn nhiều so với phát hiện ở công đoạn sau."
   },
   {
     "id": "r-k7",
@@ -90,48 +60,108 @@
     "explanation_vi": "Khi nhận chỉ thị, xác nhận nội dung theo 5W1H (ai, cái gì, khi nào, ở đâu, tại sao, như thế nào) và ghi chép để không bỏ sót. Chỗ nào chưa hiểu thì hỏi ngay lúc đó."
   },
   {
-    "id": "r-q7",
-    "level": 3,
-    "topic": "gainen3",
-    "question": "製造品質（できばえの品質）を評価する観点として、最も適切なものはどれか。",
+    "id": "r-c04",
+    "level": 4,
+    "topic": "7tools",
+    "question": "「炉の温度」と「製品の硬さ」の散布図を描いたところ、温度が高いほど硬さも大きくなる右上がりの傾向が見られた。この関係を何というか。",
     "choices": [
-      "お客様の要求が企画に反映されているか",
-      "製品が設計どおりにつくられているか",
-      "製品の広告がわかりやすいか",
-      "製品の価格が適正か"
+      "負の相関",
+      "正の相関",
+      "無相関",
+      "層別"
     ],
     "answer": 1,
-    "explanation": "製造品質（できばえの品質・適合品質）は、つくった製品が設計品質（ねらい）どおりになっているかを表します。お客様の要求の反映は企画品質・設計品質の観点です。",
-    "explanation_vi": "製造品質 (chất lượng sản xuất, thực hiện) thể hiện sản phẩm làm ra có đúng như chất lượng thiết kế (mục tiêu) không. Việc phản ánh yêu cầu khách hàng thuộc về chất lượng kế hoạch, chất lượng thiết kế."
+    "explanation": "一方が大きくなると、もう一方も大きくなる関係を正の相関といい、散布図では点が右上がりに並びます。右下がりなら負の相関、傾向が見られなければ無相関です。",
+    "explanation_vi": "Khi một đại lượng tăng thì đại lượng kia cũng tăng, gọi là 正の相関 (tương quan dương); trên 散布図 (biểu đồ phân tán) các điểm xếp đi lên bên phải. Đi xuống bên phải là 負の相関 (tương quan âm), không có xu hướng là 無相関 (không tương quan)."
   },
   {
-    "id": "r-h7",
-    "level": 3,
-    "topic": "hoho3",
-    "question": "課題達成型QCストーリーの「成功シナリオの追究」で行うこととして、最も適切なものはどれか。",
+    "id": "r-c09",
+    "level": 4,
+    "topic": "data",
+    "question": "測定値を記録するとき、測定日時・機械・作業者・材料ロットなどもあわせて記録しておく主な理由として、最も適切なものはどれか。",
     "choices": [
-      "不良の真の原因を突き止める",
-      "方策を具体化し、予想される障害とその対策も含めて検討する",
-      "実施した対策の効果を確認する",
-      "作業標準を改訂する"
-    ],
-    "answer": 1,
-    "explanation": "成功シナリオの追究では、立案した方策を具体的なシナリオにし、実施したときに起こりうる障害や副作用と、その対策まで検討します。真の原因の追究は問題解決型の要因解析です。",
-    "explanation_vi": "Ở bước tìm kịch bản thành công, phương sách đã lập được cụ thể hóa thành kịch bản, cân nhắc cả trở ngại, tác dụng phụ có thể xảy ra và đối sách cho chúng. Truy tìm nguyên nhân thật là bước phân tích nguyên nhân của dạng giải quyết vấn đề."
-  },
-  {
-    "id": "r-s7",
-    "level": 3,
-    "topic": "hosho3",
-    "question": "新製品の品質保証の流れとして、正しい順序はどれか。",
-    "choices": [
-      "設計→企画→製造→生産準備→販売・アフターサービス",
-      "企画→製造→設計→生産準備→販売・アフターサービス",
-      "企画→設計→生産準備→製造→販売・アフターサービス",
-      "生産準備→企画→設計→製造→販売・アフターサービス"
+      "記録用紙の空欄を埋めるため",
+      "測定値を大きく見せるため",
+      "問題が起きたとき、データを層別して原因を調べられるようにするため",
+      "測定の回数を減らすため"
     ],
     "answer": 2,
-    "explanation": "お客様の要求を調べる企画から始まり、設計で品質特性や規格を決め、生産準備で工程をつくり、製造で品質をつくり込み、販売・アフターサービスで使用情報を集めて次に活かします。",
-    "explanation_vi": "Bắt đầu từ kế hoạch (tìm hiểu yêu cầu khách hàng), thiết kế quyết định đặc tính chất lượng và quy cách, chuẩn bị sản xuất tạo công đoạn, sản xuất tạo chất lượng, rồi bán hàng và dịch vụ sau bán thu thập thông tin sử dụng cho lần sau."
+    "explanation": "データの履歴（いつ、どの機械で、誰が、どの材料で）を残しておくと、あとで機械別・作業者別などに層別して比較でき、原因をつかみやすくなります。",
+    "explanation_vi": "Nếu ghi lại lý lịch dữ liệu (khi nào, máy nào, ai, nguyên liệu nào) thì sau này có thể 層別 (phân tầng) theo máy, theo người… để so sánh và dễ tìm ra nguyên nhân."
+  },
+  {
+    "id": "r-c11",
+    "level": 3,
+    "topic": "toukei",
+    "question": "不良率10%の工程から製品を100個取り出したとき、不良品の個数の標準偏差はいくらか（二項分布にしたがうものとする）。",
+    "choices": [
+      "9個",
+      "10個",
+      "0.9個",
+      "3個"
+    ],
+    "answer": 3,
+    "explanation": "二項分布の分散はnP(1−P)＝100×0.1×0.9＝9なので、標準偏差は√9＝3個です。9は分散、10は期待値（nP）で、標準偏差ではありません。",
+    "explanation_vi": "Phương sai của 二項分布 (phân phối nhị thức) là nP(1 − P) = 100 × 0.1 × 0.9 = 9, nên 標準偏差 (độ lệch chuẩn) là √9 = 3 cái. 9 là phương sai, 10 là kỳ vọng (nP), không phải độ lệch chuẩn."
+  },
+  {
+    "id": "r-c16",
+    "level": 3,
+    "topic": "hoho3",
+    "question": "QCストーリーの「効果の確認」の進め方として、最も適切なものはどれか。",
+    "choices": [
+      "対策前と同じ尺度・条件でデータを取り、目標と比べて評価する",
+      "対策後のデータだけを見て、よくなったと判断する",
+      "効果が出なかった場合は、記録に残さない",
+      "効果は金額でしか表してはいけない"
+    ],
+    "answer": 0,
+    "explanation": "効果の確認では、対策前と同じ尺度・条件でデータを取り、対策前後を比較して目標を達成したかを評価します。金額などの有形効果だけでなく、技術の向上などの無形効果もまとめます。目標未達の場合は、前の手順に戻って見直します。",
+    "explanation_vi": "Khi xác nhận hiệu quả, phải lấy dữ liệu với cùng thước đo, cùng điều kiện như trước đối sách, so sánh trước–sau và đánh giá có đạt mục tiêu hay không. Ngoài hiệu quả hữu hình (như tiền) còn tổng hợp cả hiệu quả vô hình (như nâng cao kỹ năng). Nếu chưa đạt mục tiêu thì quay lại các bước trước để xem xét."
+  },
+  {
+    "id": "r-c20",
+    "level": 3,
+    "topic": "hosho3",
+    "question": "市場で不具合が見つかったとき、製品のロット番号から使用した材料・製造日・設備などをさかのぼって調べられるようにしておくことを何というか。",
+    "choices": [
+      "フールプルーフ",
+      "トレーサビリティ",
+      "デザインレビュー",
+      "標準化"
+    ],
+    "answer": 1,
+    "explanation": "トレーサビリティ（追跡可能性）を確保しておくと、問題が起きたときに原因の調査や、影響する製品の範囲の特定、回収などを素早く行えます。フールプルーフはミスを防ぐ仕組み、デザインレビューは設計の審査です。",
+    "explanation_vi": "Nếu đảm bảo トレーサビリティ (khả năng truy xuất nguồn gốc) thì khi có sự cố có thể nhanh chóng điều tra nguyên nhân, xác định phạm vi sản phẩm bị ảnh hưởng và thu hồi. フールプルーフ là cơ chế chống sai sót, デザインレビュー là thẩm tra thiết kế."
+  },
+  {
+    "id": "r-c24",
+    "level": 3,
+    "topic": "gainen3",
+    "question": "組立工程の作業者が、次の検査工程が測定しやすいように、部品の向きをそろえてトレーに並べて渡すようにした。この行動のもとになっている考え方として、最も適切なものはどれか。",
+    "choices": [
+      "後工程はお客様",
+      "プロダクトアウト",
+      "結果による管理",
+      "全数検査"
+    ],
+    "answer": 0,
+    "explanation": "「後工程はお客様」は、自分の仕事を受け取る次の工程をお客様と考え、その工程が困らない品質・状態で渡すという考え方です。プロダクトアウトはつくる側の都合を優先する考え方で、この行動とは逆です。",
+    "explanation_vi": "「後工程はお客様」(công đoạn sau là khách hàng) là cách nghĩ coi công đoạn tiếp nhận công việc của mình là khách hàng, giao cho họ với chất lượng và trạng thái không gây khó khăn. プロダクトアウト là ưu tiên sự tiện lợi của bên làm ra, ngược với hành động này."
+  },
+  {
+    "id": "r-c27",
+    "level": 3,
+    "topic": "kanri",
+    "question": "社内標準の作り方・使い方として、適切でないものはどれか。",
+    "choices": [
+      "実際に作業する人が理解できるように、具体的に書く",
+      "改善の結果や設備の変更に合わせて、必要に応じて改訂する",
+      "実行可能な内容にする",
+      "一度定めたら、混乱を避けるために改訂しない"
+    ],
+    "answer": 3,
+    "explanation": "社内標準は、改善の成果や条件の変化に合わせて見直し、必要に応じて改訂することで、常に最新のよい方法を表すようにします。改訂しないままでは、実際の作業と合わなくなり、守られなくなります。",
+    "explanation_vi": "社内標準 (tiêu chuẩn nội bộ) phải được xem xét lại theo thành quả cải tiến và thay đổi điều kiện, và sửa đổi khi cần để luôn thể hiện cách làm tốt nhất hiện tại. Nếu không bao giờ sửa đổi thì sẽ không khớp với công việc thực tế và không được tuân thủ."
   }
 ]
