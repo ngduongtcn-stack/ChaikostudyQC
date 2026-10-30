@@ -2,6 +2,7 @@
 """Validate, de-duplicate and add verified questions to the bank.
 
     python3 tools/add_questions.py verified.json --alloc "$(python3 tools/plan.py --day sun --json)"
+    python3 tools/add_questions.py verified-1.json verified-2.json --alloc ... --reserve ...
     python3 tools/add_questions.py verified.json [--limit-4 N] [--limit-3 N] [--dry-run]
 
 --alloc takes this run's per-topic allocation from plan.py. Each topic first gets up to
@@ -62,7 +63,7 @@ def is_dup(a, b):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("file")
+    ap.add_argument("files", nargs="+", help="one or more verified.json files (one per batch)")
     ap.add_argument("--limit-4", type=int)
     ap.add_argument("--limit-3", type=int)
     ap.add_argument("--alloc", help="JSON from plan.py --json: {level: {topic: n}}")
@@ -74,7 +75,7 @@ def main():
     plan = load_json(PLAN)
     topics = {lv: set(t) for lv, t in plan["topic_targets"].items()}
     limits = {"4": args.limit_4, "3": args.limit_3}
-    cands = load_json(args.file)
+    cands = [c for f in args.files for c in load_json(f)]
     reserve_in = load_json(args.reserve, []) if args.reserve else []
     cands = reserve_in + cands
     if args.alloc:

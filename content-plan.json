@@ -1,8 +1,8 @@
 {
   "paused": false,
   "per_run": {
-    "sun": 20,
-    "wed": 25
+    "sun": 40,
+    "wed": 40
   },
   "targets": {
     "4": 500,

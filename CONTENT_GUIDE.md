@@ -50,6 +50,8 @@ Quy tắc chất lượng:
 - 3級 có thể hỏi cả kiến thức 4級, nhưng phải ở mức sâu hơn.
 - Phân野 実践 (品質の概念, 管理の方法, 品質保証, 品質経営の要素) cần câu hỏi tình huống thực tế ở nơi làm việc, không chỉ hỏi định nghĩa.
 
+**Lần chạy lớn (trên 25 câu):** soạn và kiểm tra theo **từng đợt tối đa khoảng 25 câu ứng viên** (`candidates-1.json`, `candidates-2.json`, …). Chia đợt theo phân野 để mỗi đợt tập trung vào vài chủ đề. Mỗi đợt làm riêng bước 4 với một tác tử kiểm tra riêng, rồi gộp ở bước 5. Trước khi soạn đợt sau, xem lại các câu của đợt trước để không lặp ý.
+
 ### 4. Kiểm tra độc lập (bắt buộc)
 ```bash
 python3 tools/blind.py candidates.json blind.json
@@ -67,7 +69,7 @@ Chỉ những câu khớp đáp án **và** `confident: true` mới được gi�
 
 ### 5. Chống trùng và thêm vào ngân hàng
 ```bash
-python3 tools/add_questions.py verified.json --alloc "$(python3 tools/plan.py --day sun --json)" --reserve src/data/reserve.json
+python3 tools/add_questions.py verified-1.json verified-2.json --alloc "$(python3 tools/plan.py --day sun --json)" --reserve src/data/reserve.json
 ```
 (Thay `sun` bằng `wed` ở lần thứ Tư.) Script dùng kho dự trữ trước, giới hạn đúng số câu đã phân công cho từng phân野, loại câu gần giống câu đã có, gán ID mới và đặt `status: "checked"` (đã qua kiểm tra độc lập, chưa qua người duyệt). Câu đạt nhưng dư được cất lại vào kho dự trữ cho lần sau.
 
