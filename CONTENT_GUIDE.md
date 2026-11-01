@@ -1,4 +1,4 @@
-# Quy trình thêm câu hỏi định kỳ (Chủ nhật & thứ Tư)
+# Quy trình thêm câu hỏi định kỳ (Chủ nhật, thứ Ba & thứ Tư)
 
 Tài liệu này là quy trình chuẩn cho mỗi lần chạy tự động. Lần chạy nào cũng làm đúng các bước dưới đây, theo thứ tự.
 
@@ -11,7 +11,7 @@ Phân野 được chia theo 分野 như đề thi thật (trường `domain` c�
 ## Cấu hình: `content-plan.json`
 
 - `paused`: `true` → lần chạy chỉ báo cáo, không soạn câu mới.
-- `per_run.sun` / `per_run.wed`: số câu soạn cho lần Chủ nhật / thứ Tư. Chủ repo có thể sửa số `wed` trong ngày thứ Tư (sau khi xem dung lượng còn lại), trước giờ chạy buổi tối.
+- `per_run.sun` / `per_run.tue` / `per_run.wed`: số câu soạn cho lần Chủ nhật / thứ Ba / thứ Tư. Đặt `0` để bỏ lần chạy đó. Chủ repo có thể sửa số `wed` trong ngày thứ Tư (sau khi xem dung lượng còn lại), trước giờ chạy buổi tối.
 - `topic_targets`: số câu mục tiêu theo từng phân野.
 - `exhausted`: phân野 đã hết nội dung mới (soạn tiếp chỉ ra câu trùng) → bỏ qua.
 - `exam`: cỡ đề thi thử, số đề tối đa, mốc đạt.
@@ -22,7 +22,7 @@ Làm việc ở thư mục gốc của repo. File tạm để ở thư mục scr
 
 ### 1. Lập kế hoạch
 ```bash
-python3 tools/plan.py --day sun   # hoặc --day wed
+python3 tools/plan.py --day sun   # hoặc --day tue / --day wed
 ```
 Nếu kết quả là "paused" hoặc "Đã đạt mục tiêu" → bỏ qua bước 2–5, chỉ làm bước 6–8.
 
@@ -71,7 +71,7 @@ Chỉ những câu khớp đáp án **và** `confident: true` mới được gi�
 ```bash
 python3 tools/add_questions.py verified-1.json verified-2.json --alloc "$(python3 tools/plan.py --day sun --json)" --reserve src/data/reserve.json
 ```
-(Thay `sun` bằng `wed` ở lần thứ Tư.) Script dùng kho dự trữ trước, giới hạn đúng số câu đã phân công cho từng phân野, loại câu gần giống câu đã có, gán ID mới và đặt `status: "checked"` (đã qua kiểm tra độc lập, chưa qua người duyệt). Câu đạt nhưng dư được cất lại vào kho dự trữ cho lần sau.
+(Thay `sun` bằng `tue` hoặc `wed` cho lần thứ Ba / thứ Tư.) Script dùng kho dự trữ trước, giới hạn đúng số câu đã phân công cho từng phân野, loại câu gần giống câu đã có, gán ID mới và đặt `status: "checked"` (đã qua kiểm tra độc lập, chưa qua người duyệt). Câu đạt nhưng dư được cất lại vào kho dự trữ cho lần sau.
 
 Nếu một phân野 có **hơn một nửa** số câu ứng viên bị loại vì trùng, phân野 đó coi như đã hết nội dung mới: thêm nó vào `exhausted` trong `content-plan.json`.
 

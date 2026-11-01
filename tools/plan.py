@@ -3,6 +3,7 @@
 
     python3 tools/plan.py            # progress only
     python3 tools/plan.py --day sun  # progress + how many questions to write per topic this run
+    python3 tools/plan.py --day tue
     python3 tools/plan.py --day wed
 
 The number of questions per run comes from content-plan.json ("per_run").
@@ -18,7 +19,7 @@ from qclib import PLAN, QUESTIONS, EXAMS, counts, load_json
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--day", choices=["sun", "wed"])
+    ap.add_argument("--day", choices=["sun", "tue", "wed"])
     ap.add_argument("--json", action="store_true", help="print the allocation as JSON only")
     args = ap.parse_args()
 

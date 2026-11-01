@@ -81,19 +81,21 @@ def validate(data):
 
 # ---------- templates ----------
 
-def page(site, *, title, desc, body, depth=0, path="", nav="", crumbs=None, head_extra=""):
+def page(site, *, title, desc, body, depth=0, path="", nav="", crumbs=None, head_extra="", lang="ja", alternates=None):
     pre = "../" * depth
     base = site["site_url"].rstrip("/") + "/"
+    for code, alt_path in (alternates or {}).items():
+        head_extra += f'\n<link rel="alternate" hreflang="{code}" href="{e(base + alt_path)}">'
     crumbs_html = ""
     if crumbs:
-        items = [("ホーム", "")] + list(crumbs)
+        items = [("Trang chủ" if lang == "vi" else "ホーム", "")] + list(crumbs)
         ld = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": k, "name": n, "item": base + u} for k, (n, u) in enumerate(items, 1)]}
         head_extra += '\n<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False) + "</script>"
         links = [f'<a href="{pre}{u or "index.html"}">{e(n)}</a>' for n, u in items[:-1]]
         crumbs_html = ('<nav class="crumbs" aria-label="パンくずリスト"><div class="wrap">'
                        + " › ".join(links + [f'<span aria-current="page">{e(items[-1][0])}</span>']) + "</div></nav>")
-    full_title = f"{title} | {site['site_name']}" if title != site["site_name"] else f"{site['site_name']}｜{site['tagline']}"
+    full_title = (f"{title} | {site['site_name']}" if title != site["site_name"] else f"{site['site_name']}｜{site['tagline']}")
     url = site["site_url"].rstrip("/") + "/" + path
     gsv = (f'\n<meta name="google-site-verification" content="{e(site["google_site_verification"])}">'
            if site.get("google_site_verification") else "")
@@ -103,7 +105,7 @@ def page(site, *, title, desc, body, depth=0, path="", nav="", crumbs=None, head
         return f'<a href="{pre}{href}"{cur}>{label}</a>'
 
     return f"""<!doctype html>
-<html lang="ja">
+<html lang="{lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -115,13 +117,13 @@ def page(site, *, title, desc, body, depth=0, path="", nav="", crumbs=None, head
 <meta property="og:type" content="website">
 <meta property="og:url" content="{e(url)}">
 <meta property="og:site_name" content="{e(site['site_name'])}">
-<meta property="og:locale" content="ja_JP">
+<meta property="og:locale" content="{'vi_VN' if lang == 'vi' else 'ja_JP'}">
 <meta name="twitter:card" content="summary">{head_extra}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="{FONTS}">
 <link rel="stylesheet" href="{pre}assets/style.css">
-<script>try{{document.documentElement.classList.add(localStorage.getItem("qc-renshu:vi")==="1"?"vi-on":"vi-off")}}catch(e){{document.documentElement.classList.add("vi-off")}}</script>
+<script>try{{var v=localStorage.getItem("qc-renshu:vi");{'if(v===null){v="1";localStorage.setItem("qc-renshu:vi","1")}' if lang == "vi" else ""}document.documentElement.classList.add(v==="1"?"vi-on":"vi-off")}}catch(e){{document.documentElement.classList.add("{'vi-on' if lang == 'vi' else 'vi-off'}")}}</script>
 </head>
 <body>
 <header class="site-head"><div class="wrap">
@@ -131,6 +133,7 @@ def page(site, *, title, desc, body, depth=0, path="", nav="", crumbs=None, head
     {nav_link('3kyu/index.html', '3級', '3')}
     {nav_link('exam.html', '試験について', 'exam')}
     {nav_link('progress.html', '進捗', 'progress')}
+    <a href="{pre}vi/index.html" lang="vi" hreflang="vi"{' aria-current="page"' if nav == 'vi' else ''}>Tiếng Việt</a>
   </nav>
 </div></header>
 {crumbs_html}
@@ -202,7 +205,7 @@ def build_index(site, data):
   <p class="note">学習の記録はお使いのブラウザの中にだけ保存され、外部には送信されません。</p>
 </section>
 </div></main>"""
-    return page(site, title=site["site_name"], body=body, path="",
+    return page(site, title=site["site_name"], body=body, path="", alternates={"ja": "", "vi": "vi/", "x-default": ""},
                 desc=f"{site['tagline']}。分野別の練習問題と解説、ミニ模擬試験、間違えた問題の復習が無料・登録なしで使えます。")
 
 
@@ -569,6 +572,90 @@ def build_flashcards(site, data, lv):
                 desc=f"{L['name']}の重要用語{len(cards)}語をフラッシュカードで覚えられます。読みとベトナム語訳つき。")
 
 
+
+VI_FAQ = [
+    ("QC検定 là gì?",
+     "QC検定 (品質管理検定 – Kiểm định quản lý chất lượng) là kỳ thi do Hiệp hội Tiêu chuẩn Nhật Bản (JSA) và Hiệp hội Khoa học Kỹ thuật Nhật Bản (JUSE) tổ chức, đánh giá kiến thức quản lý chất lượng. Có 4 cấp, từ 4級 (cơ bản nhất) đến 1級. Nhiều nhà máy ở Nhật khuyến khích nhân viên thi 4級, 3級."),
+    ("Hiện nay 3級 và 4級 thi như thế nào?",
+     "Từ kỳ thi lần thứ 40 (tháng 9/2025), 3級 và 4級 thi trên máy tính (CBT) tại trung tâm thi. Thí sinh tự chọn địa điểm và giờ thi trong khoảng thời gian quy định. Đề thi hoàn toàn bằng tiếng Nhật, dạng trắc nghiệm."),
+    ("Tiêu chuẩn đỗ là bao nhiêu?",
+     "3級: tổng điểm khoảng 70% trở lên, đồng thời phần 手法 (phương pháp) và phần 実践 (thực tiễn) mỗi phần khoảng 50% trở lên. 4級: tổng điểm khoảng 70% trở lên."),
+    ("Không giỏi tiếng Nhật có học được không?",
+     "Đề thi bằng tiếng Nhật nên vẫn cần học thuật ngữ tiếng Nhật. Trên web này, câu hỏi giữ nguyên tiếng Nhật như đề thật, còn lời giải thích và bài lý thuyết có thêm bản tiếng Việt; thuật ngữ có cách đọc hiragana và nghĩa tiếng Việt, kèm flashcard để học thuộc."),
+    ("Web có mất phí hay cần đăng ký không?",
+     "Không. Web hoàn toàn miễn phí, không cần đăng ký. Tiến độ học được lưu ngay trên trình duyệt của bạn."),
+    ("Câu hỏi trên web có phải đề thi cũ không?",
+     "Không. Tất cả câu hỏi và lời giải thích đều được soạn riêng, không chép từ đề thi cũ hay sách. Mỗi câu đều qua bước kiểm tra độc lập trước khi đăng. Mỗi tuần web đều thêm câu hỏi mới."),
+]
+
+
+def build_vi(site, data):
+    lv_blocks = []
+    for lv in ("4", "3"):
+        L = data["levels"][lv]
+        n = sum(1 for q in data["questions"] if str(q["level"]) == lv)
+        n_ex = len(data["exams"].get(lv, []))
+        groups = {}
+        for t in L["topics"]:
+            groups.setdefault(t.get("domain", "all"), []).append(t)
+        rows = ""
+        for d, ts in groups.items():
+            dj = L.get("domains", {}).get(d, ""); dv = L.get("domains_vi", {}).get(d, "")
+            rows += f'<h3 class="domain-h">{e(dv)} <span lang="ja">（{e(dj)}）</span></h3><ul class="topics">'
+            for t in ts:
+                k = sum(1 for q in data["questions"] if str(q["level"]) == lv and q["topic"] == t["id"])
+                learn = (f'<a class="btn" href="../{L["slug"]}/learn/{t["id"]}.html">Lý thuyết</a>'
+                         if f"{lv}:{t['id']}" in data["theory"] else "")
+                rows += f"""<li><div>
+    <span class="t-name">{e(t.get('name_vi', t['name']))}</span>
+    <p class="t-desc" lang="ja">{e(t['name'])}</p>
+    <span class="meta">{k} câu</span>
+  </div><div class="t-actions">
+    {learn}
+    <a class="btn primary" href="../quiz.html#{lv}.{t['id']}.practice">Làm bài</a>
+  </div></li>"""
+            rows += "</ul>"
+        lv_blocks.append(f"""<section aria-labelledby="vi-h{lv}">
+  <h2 id="vi-h{lv}">{e(L['name'])} <span class="meta">· {n} câu · {n_ex} đề thi thử</span></h2>
+  <div class="btn-row">
+    <a class="btn primary" href="../{L['slug']}/index.html">Vào trang {e(L['name'])}</a>
+    <a class="btn" href="../{L['slug']}/flashcards.html">Flashcard thuật ngữ</a>
+  </div>
+  {rows}
+</section>""")
+    faq_html = "".join(f'<details class="faq"><summary>{e(q)}</summary><p>{e(a)}</p></details>' for q, a in VI_FAQ)
+    ld = {"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "vi", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in VI_FAQ]}
+    total = len(data["questions"])
+    body = hero("QC KENTEI · TIẾNG VIỆT", "Ôn thi QC検定 4級・3級 miễn phí, có giải thích tiếng Việt",
+                f"Dành cho người Việt đang làm việc tại Nhật. Câu hỏi bằng tiếng Nhật như đề thật, lời giải thích và lý thuyết có bản tiếng Việt. Hiện có {total} câu, mỗi tuần đều thêm câu mới.",
+                '<div class="btn-row" style="margin-top:20px"><a class="btn primary" href="../4kyu/index.html">Bắt đầu 4級</a><a class="btn primary" href="../3kyu/index.html">Bắt đầu 3級</a><a class="btn" href="../progress.html">Xem tiến độ</a></div>') + f"""
+<main><div class="wrap">
+<section aria-labelledby="vi-how">
+  <h2 id="vi-how">Học trên web này như thế nào</h2>
+  <ol class="learn-list">
+    <li><b>Đọc lý thuyết</b> của từng phân野: tóm tắt ý chính, công thức, lỗi hay gặp, mẹo nhớ và bảng thuật ngữ có cách đọc, nghĩa tiếng Việt.</li>
+    <li><b>Làm bài tập</b> theo phân野: chọn đáp án là biết đúng sai ngay, kèm giải thích tiếng Nhật và tiếng Việt.</li>
+    <li><b>Ôn câu sai</b>: câu làm sai được tự động gom lại để ôn.</li>
+    <li><b>Thi thử 50 câu</b>: có đồng hồ, chấm theo đúng tiêu chuẩn đỗ (3級 cần tổng ≥ 70% và mỗi phần ≥ 50%).</li>
+  </ol>
+  <aside class="point"><span class="point-label">MẸO</span>
+    <p>Phần tiếng Việt đã được bật sẵn cho bạn. Muốn luyện đọc chỉ bằng tiếng Nhật, bấm「Ẩn bản tiếng Việt」trên trang lý thuyết hoặc「Ẩn giải thích tiếng Việt」dưới câu hỏi.</p>
+  </aside>
+</section>
+{''.join(lv_blocks)}
+<section aria-labelledby="vi-faq">
+  <h2 id="vi-faq">Câu hỏi thường gặp</h2>
+  {faq_html}
+  <p class="note">Lịch thi, lệ phí và cách đăng ký có thể thay đổi; hãy xem thông tin chính thức của JSA và <a href="https://cbt-s.com/page/qckc_all.html/" rel="noopener" target="_blank">trang đăng ký thi CBT</a>. Tóm tắt bằng tiếng Nhật: <a href="../exam.html" lang="ja">試験について</a>.</p>
+</section>
+</div></main>"""
+    return page(site, title="Ôn thi QC検定 4級・3級 miễn phí – giải thích tiếng Việt", depth=1, path="vi/", nav="vi", body=body,
+                lang="vi", alternates={"vi": "vi/", "ja": "", "x-default": ""},
+                crumbs=[("Tiếng Việt", "vi/")],
+                head_extra='\n<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False) + "</script>",
+                desc=f"Web ôn thi QC検定 4級・3級 miễn phí cho người Việt tại Nhật: {total} câu hỏi có giải thích tiếng Việt, lý thuyết song ngữ, flashcard thuật ngữ và đề thi thử chấm như thi thật.")
+
 def build_quiz(site):
     body = """<main><div class="wrap">
 <section aria-labelledby="quiz-title">
@@ -663,6 +750,8 @@ def main():
     write("about.html", build_about(site))
     write("exam.html", build_exam_info(site, data))
     write("progress.html", build_progress(site))
+    write("vi/index.html", build_vi(site, data))
+    pages.append("vi/")
     pages.append("exam.html")
     for lv, L in data["levels"].items():
         write(f"{L['slug']}/index.html", build_level(site, data, lv))

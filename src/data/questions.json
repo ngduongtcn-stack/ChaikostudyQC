@@ -9,61 +9,75 @@
           "id": "kangaekata",
           "name": "QC的ものの見方・考え方",
           "desc": "後工程はお客様、三現主義、PDCA、重点指向など、品質管理の土台になる考え方。",
-          "domain": "jissen"
+          "domain": "jissen",
+          "name_vi": "Cách nhìn, cách nghĩ theo QC"
         },
         {
           "id": "hinshitsu",
           "name": "品質とは",
           "desc": "ねらいの品質とできばえの品質、当たり前品質と魅力的品質の違い。",
-          "domain": "jissen"
+          "domain": "jissen",
+          "name_vi": "Chất lượng là gì"
         },
         {
           "id": "kaizen",
           "name": "改善・5S",
           "desc": "5S（整理・整頓・清掃・清潔・しつけ）と5W1Hによる職場の改善活動。",
-          "domain": "jissen"
+          "domain": "jissen",
+          "name_vi": "Cải tiến và 5S"
         },
         {
           "id": "kensa",
           "name": "検査",
           "desc": "受入検査・工程間検査・最終検査、全数検査と抜取検査の使い分け。",
-          "domain": "jissen"
+          "domain": "jissen",
+          "name_vi": "Kiểm tra"
         },
         {
           "id": "hyojun",
           "name": "標準・標準化",
           "desc": "標準化の目的と、JISなどの規格の基本。",
-          "domain": "jissen"
+          "domain": "jissen",
+          "name_vi": "Tiêu chuẩn và tiêu chuẩn hóa"
         },
         {
           "id": "kotei",
           "name": "工程（プロセス）と管理",
           "desc": "工程の考え方、4M、作業標準と管理項目、異常が起きたときの処置。",
-          "domain": "jissen"
+          "domain": "jissen",
+          "name_vi": "Công đoạn và quản lý"
         },
         {
           "id": "data",
           "name": "データの取り方・まとめ方",
           "desc": "計量値と計数値、平均値・範囲の計算、層別の考え方。",
-          "domain": "shuho"
+          "domain": "shuho",
+          "name_vi": "Cách lấy và tổng hợp dữ liệu"
         },
         {
           "id": "7tools",
           "name": "QC七つ道具",
           "desc": "パレート図、特性要因図、チェックシートなど、問題解決の基本ツール。",
-          "domain": "shuho"
+          "domain": "shuho",
+          "name_vi": "7 công cụ QC"
         },
         {
           "id": "kigyo",
           "name": "企業活動の基本",
           "desc": "報告・連絡・相談、職場の安全（KY活動・ヒヤリハット）、ルールを守ることなど、働く人の基本。",
-          "domain": "kigyo"
+          "domain": "kigyo",
+          "name_vi": "Cơ bản về hoạt động doanh nghiệp"
         }
       ],
       "domains": {
         "jissen": "実践分野",
         "shuho": "手法分野",
         "kigyo": "企業活動の基本"
+      },
+      "domains_vi": {
+        "jissen": "Thực tiễn",
+        "shuho": "Phương pháp",
+        "kigyo": "Cơ bản về doanh nghiệp"
       }
     },
     "3": {
@@ -75,72 +89,87 @@
           "id": "data3",
           "name": "データの取り方・まとめ方",
           "desc": "メディアン、平方和、不偏分散、標準偏差、変動係数の計算。",
-          "domain": "shuho"
+          "domain": "shuho",
+          "name_vi": "Lấy và tổng hợp dữ liệu (phương sai, độ lệch chuẩn)"
         },
         {
           "id": "7tools3",
           "name": "QC七つ道具",
           "desc": "ヒストグラムの形の読み方、散布図の使い方など。",
-          "domain": "shuho"
+          "domain": "shuho",
+          "name_vi": "7 công cụ QC (đọc biểu đồ)"
         },
         {
           "id": "shin7",
           "name": "新QC七つ道具",
           "desc": "親和図法、アローダイアグラム法、PDPC法など、言語データを扱う手法。",
-          "domain": "shuho"
+          "domain": "shuho",
+          "name_vi": "7 công cụ QC mới"
         },
         {
           "id": "toukei",
           "name": "統計的方法の基礎",
           "desc": "正規分布の性質と標準化、二項分布の期待値。",
-          "domain": "shuho"
+          "domain": "shuho",
+          "name_vi": "Phân phối chuẩn và nhị thức"
         },
         {
           "id": "kanrizu",
           "name": "管理図",
           "desc": "管理図の種類、管理限界線、異常の判定ルール。",
-          "domain": "shuho"
+          "domain": "shuho",
+          "name_vi": "Biểu đồ kiểm soát"
         },
         {
           "id": "kouteinouryoku",
           "name": "工程能力指数",
           "desc": "Cp・Cpkの計算と、工程能力の判断基準。",
-          "domain": "shuho"
+          "domain": "shuho",
+          "name_vi": "Chỉ số năng lực công đoạn (Cp, Cpk)"
         },
         {
           "id": "soukan",
           "name": "相関分析",
           "desc": "相関係数の意味と読み方。",
-          "domain": "shuho"
+          "domain": "shuho",
+          "name_vi": "Phân tích tương quan"
         },
         {
           "id": "gainen3",
           "name": "品質の概念・QC的ものの見方",
           "desc": "品質の定義、要求品質と品質特性、顧客満足、QC的ものの見方・考え方。",
-          "domain": "jissen"
+          "domain": "jissen",
+          "name_vi": "Khái niệm chất lượng"
         },
         {
           "id": "hoho3",
           "name": "管理の方法",
           "desc": "維持と改善、PDCA・SDCA、問題解決型と課題達成型のQCストーリー。",
-          "domain": "jissen"
+          "domain": "jissen",
+          "name_vi": "Phương pháp quản lý (QC story)"
         },
         {
           "id": "hosho3",
           "name": "品質保証",
           "desc": "新製品開発での品質保証、プロセス保証、QC工程図、検査、苦情への対応。",
-          "domain": "jissen"
+          "domain": "jissen",
+          "name_vi": "Đảm bảo chất lượng"
         },
         {
           "id": "kanri",
           "name": "品質経営の要素",
           "desc": "方針管理、日常管理、標準化、小集団活動、人材育成、品質マネジメントシステム。",
-          "domain": "jissen"
+          "domain": "jissen",
+          "name_vi": "Các yếu tố quản lý chất lượng"
         }
       ],
       "domains": {
         "shuho": "手法分野",
         "jissen": "実践分野"
+      },
+      "domains_vi": {
+        "shuho": "Phương pháp",
+        "jissen": "Thực tiễn"
       }
     }
   },
@@ -149,7 +178,7 @@
       "id": "4-001",
       "level": 4,
       "topic": "kangaekata",
-      "status": "draft",
+      "status": "checked",
       "question": "「後工程はお客様」の説明として、最も適切なものはどれか。",
       "choices": [
         "自分の工程の次の工程を顧客と考え、不良品や不完全な仕事を渡さないようにすること",
@@ -165,7 +194,7 @@
       "id": "4-002",
       "level": 4,
       "topic": "kangaekata",
-      "status": "draft",
+      "status": "checked",
       "question": "三現主義の「三現」の組み合わせとして、正しいものはどれか。",
       "choices": [
         "現場・現物・現実",
@@ -181,7 +210,7 @@
       "id": "4-003",
       "level": 4,
       "topic": "kangaekata",
-      "status": "draft",
+      "status": "checked",
       "question": "PDCAサイクルの「C」に当たる活動はどれか。",
       "choices": [
         "目標と計画を立てる",
@@ -197,7 +226,7 @@
       "id": "4-004",
       "level": 4,
       "topic": "kangaekata",
-      "status": "draft",
+      "status": "checked",
       "question": "重点指向の考え方として、最も適切なものはどれか。",
       "choices": [
         "すべての問題に同じ時間と労力をかけて、順番に取り組む",
@@ -213,7 +242,7 @@
       "id": "4-005",
       "level": 4,
       "topic": "hinshitsu",
-      "status": "draft",
+      "status": "checked",
       "question": "顧客の要求をもとに、設計段階で製品の目標として定めた品質を何というか。",
       "choices": [
         "ねらいの品質",
@@ -229,7 +258,7 @@
       "id": "4-006",
       "level": 4,
       "topic": "hinshitsu",
-      "status": "draft",
+      "status": "checked",
       "question": "狩野モデルで「充足されれば満足を与えるが、不充足でもしかたがないと受け取られる品質要素」はどれか。",
       "choices": [
         "当たり前品質",
@@ -245,7 +274,7 @@
       "id": "4-007",
       "level": 4,
       "topic": "hinshitsu",
-      "status": "draft",
+      "status": "checked",
       "question": "当たり前品質の例として、最も適切なものはどれか。",
       "choices": [
         "新車のブレーキが確実に効く",
@@ -261,7 +290,7 @@
       "id": "4-008",
       "level": 4,
       "topic": "kaizen",
-      "status": "draft",
+      "status": "checked",
       "question": "「必要なものを、決められた場所に、誰でもすぐ取り出せるように置くこと」は、5Sのどれに当たるか。",
       "choices": [
         "整理",
@@ -277,7 +306,7 @@
       "id": "4-009",
       "level": 4,
       "topic": "kaizen",
-      "status": "draft",
+      "status": "checked",
       "question": "5Sに含まれないものはどれか。",
       "choices": [
         "清潔",
@@ -293,7 +322,7 @@
       "id": "4-010",
       "level": 4,
       "topic": "kaizen",
-      "status": "draft",
+      "status": "checked",
       "question": "作業指示を5W1Hで確認するとき、「どのような方法で行うか」に当たる要素はどれか。",
       "choices": [
         "Who",
@@ -309,7 +338,7 @@
       "id": "4-011",
       "level": 4,
       "topic": "kensa",
-      "status": "draft",
+      "status": "checked",
       "question": "外部から購入した材料や部品を、受け入れる段階で行う検査を何というか。",
       "choices": [
         "受入検査",
@@ -325,7 +354,7 @@
       "id": "4-012",
       "level": 4,
       "topic": "kensa",
-      "status": "draft",
+      "status": "checked",
       "question": "全数検査を行うべき場合として、最も適切なものはどれか。",
       "choices": [
         "製品を壊さなければ特性を調べられない場合",
@@ -341,7 +370,7 @@
       "id": "4-013",
       "level": 4,
       "topic": "kensa",
-      "status": "draft",
+      "status": "checked",
       "question": "引張強度試験のように、製品を壊して特性を調べる検査で用いられる方式はどれか。",
       "choices": [
         "全数検査",
@@ -357,7 +386,7 @@
       "id": "4-014",
       "level": 4,
       "topic": "hyojun",
-      "status": "draft",
+      "status": "checked",
       "question": "標準化の目的として、適切でないものはどれか。",
       "choices": [
         "作業のやり方をそろえ、品質のばらつきを減らす",
@@ -373,7 +402,7 @@
       "id": "4-015",
       "level": 4,
       "topic": "hyojun",
-      "status": "draft",
+      "status": "checked",
       "question": "産業標準化法にもとづく日本の国家規格はどれか。",
       "choices": [
         "JIS",
@@ -389,7 +418,7 @@
       "id": "4-016",
       "level": 4,
       "topic": "data",
-      "status": "draft",
+      "status": "checked",
       "question": "計数値のデータはどれか。",
       "choices": [
         "部品の長さ（mm）",
@@ -405,7 +434,7 @@
       "id": "4-017",
       "level": 4,
       "topic": "data",
-      "status": "draft",
+      "status": "checked",
       "question": "次のデータの平均値はいくらか。　5, 7, 6, 8, 9",
       "choices": [
         "6.5",
@@ -421,7 +450,7 @@
       "id": "4-018",
       "level": 4,
       "topic": "data",
-      "status": "draft",
+      "status": "checked",
       "question": "次のデータの範囲Rはいくらか。　5, 7, 6, 8, 9",
       "choices": [
         "3",
@@ -437,7 +466,7 @@
       "id": "4-019",
       "level": 4,
       "topic": "data",
-      "status": "draft",
+      "status": "checked",
       "question": "不良品のデータを機械別・作業者別・材料ロット別などに分けて比較することを何というか。",
       "choices": [
         "層別",
@@ -453,7 +482,7 @@
       "id": "4-020",
       "level": 4,
       "topic": "7tools",
-      "status": "draft",
+      "status": "checked",
       "question": "不良項目を件数の多い順に並べた棒グラフと、累積比率の折れ線グラフを組み合わせた図はどれか。",
       "choices": [
         "ヒストグラム",
@@ -469,7 +498,7 @@
       "id": "4-021",
       "level": 4,
       "topic": "7tools",
-      "status": "draft",
+      "status": "checked",
       "question": "結果（特性）と、それに影響を与える原因（要因）の関係を、魚の骨のような形に整理した図はどれか。",
       "choices": [
         "特性要因図",
@@ -485,7 +514,7 @@
       "id": "4-022",
       "level": 4,
       "topic": "7tools",
-      "status": "draft",
+      "status": "checked",
       "question": "QC七つ道具に含まれないものはどれか。",
       "choices": [
         "チェックシート",
@@ -501,7 +530,7 @@
       "id": "4-023",
       "level": 4,
       "topic": "kangaekata",
-      "status": "draft",
+      "status": "checked",
       "question": "マーケットインの説明として、最も適切なものはどれか。",
       "choices": [
         "つくり手が得意な製品をつくり、販売に力を入れて売る",
@@ -517,7 +546,7 @@
       "id": "4-024",
       "level": 4,
       "topic": "kangaekata",
-      "status": "draft",
+      "status": "checked",
       "question": "ばらつきの原因を整理する「4M」に含まれないものはどれか。",
       "choices": [
         "Man（人）",
@@ -533,7 +562,7 @@
       "id": "4-025",
       "level": 4,
       "topic": "hinshitsu",
-      "status": "draft",
+      "status": "checked",
       "question": "狩野モデルで「充足されれば満足、不充足だと不満」となる品質要素はどれか。",
       "choices": [
         "魅力的品質",
@@ -549,7 +578,7 @@
       "id": "4-026",
       "level": 4,
       "topic": "hinshitsu",
-      "status": "draft",
+      "status": "checked",
       "question": "広い意味の品質「QCD」の「D」が表すものはどれか。",
       "choices": [
         "Design（設計）",
@@ -565,7 +594,7 @@
       "id": "4-027",
       "level": 4,
       "topic": "kaizen",
-      "status": "draft",
+      "status": "checked",
       "question": "5Sのうち、整理・整頓・清掃した状態を維持することを何というか。",
       "choices": [
         "清掃",
@@ -581,7 +610,7 @@
       "id": "4-028",
       "level": 4,
       "topic": "kaizen",
-      "status": "draft",
+      "status": "checked",
       "question": "効果があった改善策を標準化して、元のやり方に戻らないようにすることを何というか。",
       "choices": [
         "歯止め",
@@ -597,7 +626,7 @@
       "id": "4-029",
       "level": 4,
       "topic": "kensa",
-      "status": "draft",
+      "status": "checked",
       "question": "工程の途中で、不良品を次の工程に流さないために行う検査はどれか。",
       "choices": [
         "受入検査",
@@ -613,7 +642,7 @@
       "id": "4-030",
       "level": 4,
       "topic": "kensa",
-      "status": "draft",
+      "status": "checked",
       "question": "外観検査やX線検査のように、品物を壊さずに調べる検査を何というか。",
       "choices": [
         "破壊検査",
@@ -629,7 +658,7 @@
       "id": "4-031",
       "level": 4,
       "topic": "hyojun",
-      "status": "draft",
+      "status": "checked",
       "question": "社内標準についての説明で、最も適切なものはどれか。",
       "choices": [
         "一度決めたら、変更してはならない",
@@ -645,7 +674,7 @@
       "id": "4-032",
       "level": 4,
       "topic": "hyojun",
-      "status": "draft",
+      "status": "checked",
       "question": "国際標準化機構の略称はどれか。",
       "choices": [
         "ISO",
@@ -661,7 +690,7 @@
       "id": "4-033",
       "level": 4,
       "topic": "data",
-      "status": "draft",
+      "status": "checked",
       "question": "調べたい対象全体のことを何というか。",
       "choices": [
         "母集団",
@@ -677,7 +706,7 @@
       "id": "4-034",
       "level": 4,
       "topic": "data",
-      "status": "draft",
+      "status": "checked",
       "question": "次のデータのメディアン（中央値）はいくらか。　1, 13, 4, 6",
       "choices": [
         "4",
@@ -693,7 +722,7 @@
       "id": "4-035",
       "level": 4,
       "topic": "7tools",
-      "status": "draft",
+      "status": "checked",
       "question": "データのばらつき方（分布の形）を見るのに、最も適した手法はどれか。",
       "choices": [
         "パレート図",
@@ -709,7 +738,7 @@
       "id": "4-036",
       "level": 4,
       "topic": "7tools",
-      "status": "draft",
+      "status": "checked",
       "question": "点検や確認の漏れを防ぐために、確認項目を一覧にしたものはどれか。",
       "choices": [
         "点検用チェックシート",
@@ -1365,7 +1394,7 @@
       "id": "3-001",
       "level": 3,
       "topic": "data3",
-      "status": "draft",
+      "status": "checked",
       "question": "次のデータのメディアン（中央値）はいくらか。　3, 8, 5, 10, 6",
       "choices": [
         "5",
@@ -1381,7 +1410,7 @@
       "id": "3-002",
       "level": 3,
       "topic": "data3",
-      "status": "draft",
+      "status": "checked",
       "question": "次のデータの不偏分散Vはいくらか。　2, 4, 6",
       "choices": [
         "2",
@@ -1397,7 +1426,7 @@
       "id": "3-003",
       "level": 3,
       "topic": "data3",
-      "status": "draft",
+      "status": "checked",
       "question": "平均値が50、標準偏差が5のデータの変動係数CVはいくらか。",
       "choices": [
         "5%",
@@ -1413,7 +1442,7 @@
       "id": "3-004",
       "level": 3,
       "topic": "7tools3",
-      "status": "draft",
+      "status": "checked",
       "question": "ヒストグラムが二つの山をもつ形（二山型）になったとき、まず考えるべきことはどれか。",
       "choices": [
         "測定器の目盛りが粗すぎる",
@@ -1429,7 +1458,7 @@
       "id": "3-005",
       "level": 3,
       "topic": "7tools3",
-      "status": "draft",
+      "status": "checked",
       "question": "ヒストグラムの片側が切り立った「絶壁型」になる原因として、最も考えられるものはどれか。",
       "choices": [
         "規格外れの製品を全数選別して取り除いたあとのデータである",
@@ -1445,7 +1474,7 @@
       "id": "3-006",
       "level": 3,
       "topic": "7tools3",
-      "status": "draft",
+      "status": "checked",
       "question": "熱処理温度と製品の硬さの関係を調べるのに、最も適した手法はどれか。",
       "choices": [
         "パレート図",
@@ -1461,7 +1490,7 @@
       "id": "3-007",
       "level": 3,
       "topic": "shin7",
-      "status": "draft",
+      "status": "checked",
       "question": "混沌とした状態の中から、意見やアイデアなどの言語データを親和性によってまとめ、問題を明確にする手法はどれか。",
       "choices": [
         "親和図法",
@@ -1477,7 +1506,7 @@
       "id": "3-008",
       "level": 3,
       "topic": "shin7",
-      "status": "draft",
+      "status": "checked",
       "question": "作業の順序関係を矢線で表し、日程計画の作成やクリティカルパスの把握に使う手法はどれか。",
       "choices": [
         "PDPC法",
@@ -1493,7 +1522,7 @@
       "id": "3-009",
       "level": 3,
       "topic": "shin7",
-      "status": "draft",
+      "status": "checked",
       "question": "計画の実施中に起こりうる事態を事前に予測し、望ましい結果に至るプロセスを決めておく手法はどれか。",
       "choices": [
         "マトリックス図法",
@@ -1509,7 +1538,7 @@
       "id": "3-010",
       "level": 3,
       "topic": "shin7",
-      "status": "draft",
+      "status": "checked",
       "question": "新QC七つ道具のうち、言語データではなく数値データを扱う手法はどれか。",
       "choices": [
         "系統図法",
@@ -1525,7 +1554,7 @@
       "id": "3-011",
       "level": 3,
       "topic": "toukei",
-      "status": "draft",
+      "status": "checked",
       "question": "正規分布において、平均値μから±3σの範囲の外側に出る確率は、およそいくらか。",
       "choices": [
         "約0.3%",
@@ -1541,7 +1570,7 @@
       "id": "3-012",
       "level": 3,
       "topic": "toukei",
-      "status": "draft",
+      "status": "checked",
       "question": "正規分布において、平均値μから±2σの範囲に入る確率は、およそいくらか。",
       "choices": [
         "68.3%",
@@ -1557,7 +1586,7 @@
       "id": "3-013",
       "level": 3,
       "topic": "toukei",
-      "status": "draft",
+      "status": "checked",
       "question": "ある部品の寸法は平均50.0mm、標準偏差5.0mmの正規分布にしたがう。規格上限60.0mmを超える割合は、およそいくらか。（P(u≧2.00)＝0.0228）",
       "choices": [
         "約0.13%",
@@ -1573,7 +1602,7 @@
       "id": "3-014",
       "level": 3,
       "topic": "toukei",
-      "status": "draft",
+      "status": "checked",
       "question": "不良率5%の工程から製品を100個取り出したとき、不良品の個数の期待値はいくらか。",
       "choices": [
         "0.05個",
@@ -1589,7 +1618,7 @@
       "id": "3-015",
       "level": 3,
       "topic": "kanrizu",
-      "status": "draft",
+      "status": "checked",
       "question": "サンプルの大きさが一定でない場合に、不良率を管理するのに用いる管理図はどれか。",
       "choices": [
         "X̄−R管理図",
@@ -1605,7 +1634,7 @@
       "id": "3-016",
       "level": 3,
       "topic": "kanrizu",
-      "status": "draft",
+      "status": "checked",
       "question": "シューハート管理図の管理限界線は、一般にどこに引かれるか。",
       "choices": [
         "中心線±1σ",
@@ -1621,7 +1650,7 @@
       "id": "3-017",
       "level": 3,
       "topic": "kanrizu",
-      "status": "draft",
+      "status": "checked",
       "question": "管理図の見方として、工程に異常があると判断すべきものはどれか。",
       "choices": [
         "すべての点が管理限界内にあり、ランダムに並んでいる",
@@ -1637,7 +1666,7 @@
       "id": "3-018",
       "level": 3,
       "topic": "kouteinouryoku",
-      "status": "draft",
+      "status": "checked",
       "question": "規格が 10.0±0.6mm（SU＝10.6、SL＝9.4）、標準偏差s＝0.10mmのとき、工程能力指数Cpはいくらか。",
       "choices": [
         "1.00",
@@ -1653,7 +1682,7 @@
       "id": "3-019",
       "level": 3,
       "topic": "kouteinouryoku",
-      "status": "draft",
+      "status": "checked",
       "question": "規格が SU＝10.6、SL＝9.4、平均値10.3、標準偏差0.10のとき、かたよりを考慮した工程能力指数Cpkはいくらか。",
       "choices": [
         "1.00",
@@ -1669,7 +1698,7 @@
       "id": "3-020",
       "level": 3,
       "topic": "kouteinouryoku",
-      "status": "draft",
+      "status": "checked",
       "question": "工程能力指数が 1.33 ≦ Cp ＜ 1.67 のとき、工程能力の一般的な判断はどれか。",
       "choices": [
         "非常に不足している",
@@ -1685,7 +1714,7 @@
       "id": "3-021",
       "level": 3,
       "topic": "soukan",
-      "status": "draft",
+      "status": "checked",
       "question": "相関係数rについての説明で、正しいものはどれか。",
       "choices": [
         "rは0から1までの値をとる",
@@ -1701,7 +1730,7 @@
       "id": "3-022",
       "level": 3,
       "topic": "kanri",
-      "status": "draft",
+      "status": "checked",
       "question": "経営方針にもとづく重点課題を、全部門・全階層に展開して達成していく活動を何というか。",
       "choices": [
         "日常管理",
@@ -1717,7 +1746,7 @@
       "id": "3-023",
       "level": 3,
       "topic": "kanri",
-      "status": "draft",
+      "status": "checked",
       "question": "FMEAなどを用いて、まだ発生していない不具合を予測し、事前に対策を打つ考え方を何というか。",
       "choices": [
         "応急処置",
@@ -1733,7 +1762,7 @@
       "id": "3-024",
       "level": 3,
       "topic": "kanri",
-      "status": "draft",
+      "status": "checked",
       "question": "品質マネジメントシステムの要求事項を定めた国際規格はどれか。",
       "choices": [
         "ISO 14001",
@@ -1749,7 +1778,7 @@
       "id": "3-025",
       "level": 3,
       "topic": "data3",
-      "status": "draft",
+      "status": "checked",
       "question": "次のデータの平方和Sはいくらか。　1, 3, 5, 7",
       "choices": [
         "5",
@@ -1765,7 +1794,7 @@
       "id": "3-026",
       "level": 3,
       "topic": "data3",
-      "status": "draft",
+      "status": "checked",
       "question": "次のデータの標準偏差sはいくらか（小数第3位を四捨五入）。　1, 3, 5, 7",
       "choices": [
         "2.24",
@@ -1781,7 +1810,7 @@
       "id": "3-027",
       "level": 3,
       "topic": "7tools3",
-      "status": "draft",
+      "status": "checked",
       "question": "ヒストグラムで、1つおきに度数が少なくなる「歯抜け型」の原因として、最も考えられるものはどれか。",
       "choices": [
         "区間の幅が測定単位の整数倍になっていない",
@@ -1797,7 +1826,7 @@
       "id": "3-028",
       "level": 3,
       "topic": "7tools3",
-      "status": "draft",
+      "status": "checked",
       "question": "散布図で、xが大きくなるとyが小さくなる傾向が見られるとき、この関係を何というか。",
       "choices": [
         "正の相関",
@@ -1813,7 +1842,7 @@
       "id": "3-029",
       "level": 3,
       "topic": "shin7",
-      "status": "draft",
+      "status": "checked",
       "question": "目的を達成するための手段を、目的→手段の関係で枝分かれさせながら展開していく手法はどれか。",
       "choices": [
         "系統図法",
@@ -1829,7 +1858,7 @@
       "id": "3-030",
       "level": 3,
       "topic": "shin7",
-      "status": "draft",
+      "status": "checked",
       "question": "新QC七つ道具が主に扱うデータはどれか。",
       "choices": [
         "言語データ",
@@ -1845,7 +1874,7 @@
       "id": "3-031",
       "level": 3,
       "topic": "toukei",
-      "status": "draft",
+      "status": "checked",
       "question": "標準正規分布で、u ≧ 1.96 となる確率はいくらか。",
       "choices": [
         "0.0250",
@@ -1861,7 +1890,7 @@
       "id": "3-032",
       "level": 3,
       "topic": "toukei",
-      "status": "draft",
+      "status": "checked",
       "question": "平均100、標準偏差4の正規分布にしたがう特性が、92以下となる確率はおよそいくらか。（P(u≧2.00)＝0.0228）",
       "choices": [
         "約2.3%",
@@ -1877,7 +1906,7 @@
       "id": "3-033",
       "level": 3,
       "topic": "kanrizu",
-      "status": "draft",
+      "status": "checked",
       "question": "1日に1個しかデータが得られない工程で、計量値を管理するのに適した管理図はどれか。",
       "choices": [
         "X̄−R管理図",
@@ -1893,7 +1922,7 @@
       "id": "3-034",
       "level": 3,
       "topic": "kanrizu",
-      "status": "draft",
+      "status": "checked",
       "question": "管理図で、工程に異常があると判断すべきものはどれか。",
       "choices": [
         "点が中心線の上下にランダムに並んでいる",
@@ -1909,7 +1938,7 @@
       "id": "3-035",
       "level": 3,
       "topic": "kouteinouryoku",
-      "status": "draft",
+      "status": "checked",
       "question": "上限規格のみ SU＝50、平均値44、標準偏差1.5のとき、工程能力指数はいくらか。",
       "choices": [
         "0.67",
@@ -1925,7 +1954,7 @@
       "id": "3-036",
       "level": 3,
       "topic": "kouteinouryoku",
-      "status": "draft",
+      "status": "checked",
       "question": "工程能力指数を計算する前に、確認しておくべきことはどれか。",
       "choices": [
         "工程が安定状態にあることを管理図で確認する",
@@ -1941,7 +1970,7 @@
       "id": "3-037",
       "level": 3,
       "topic": "soukan",
-      "status": "draft",
+      "status": "checked",
       "question": "Sxx＝4、Syy＝9、Sxy＝−5.4 のとき、相関係数rはいくらか。",
       "choices": [
         "−0.9",
@@ -1957,7 +1986,7 @@
       "id": "3-038",
       "level": 3,
       "topic": "soukan",
-      "status": "draft",
+      "status": "checked",
       "question": "アイスクリームの売上と水難事故の件数に強い正の相関があった。最も適切な解釈はどれか。",
       "choices": [
         "アイスクリームを食べると水難事故が増える",
@@ -1973,7 +2002,7 @@
       "id": "3-039",
       "level": 3,
       "topic": "kanri",
-      "status": "draft",
+      "status": "checked",
       "question": "決められた水準を維持するために回すサイクルはどれか。",
       "choices": [
         "SDCA",
@@ -1989,7 +2018,7 @@
       "id": "3-040",
       "level": 3,
       "topic": "kanri",
-      "status": "draft",
+      "status": "checked",
       "question": "同じ職場の人たちが小グループをつくり、継続的に改善に取り組む活動はどれか。",
       "choices": [
         "QCサークル活動",
