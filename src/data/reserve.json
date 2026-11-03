@@ -1,167 +1,47 @@
 [
   {
-    "id": "r-k7",
-    "level": 4,
-    "topic": "kotei",
-    "question": "4Mのうち「Method（方法）」にあたるものはどれか。",
-    "choices": [
-      "作業者の技能",
-      "加工機の精度",
-      "部品の材質",
-      "作業の手順や加工条件"
-    ],
-    "answer": 3,
-    "explanation": "4Mは Man（人）、Machine（機械）、Material（材料）、Method（方法）です。作業の手順や加工条件は Method、作業者の技能は Man、加工機の精度は Machine、部品の材質は Material にあたります。",
-    "explanation_vi": "4M gồm Man (người), Machine (máy), Material (vật liệu), Method (phương pháp). Trình tự thao tác, điều kiện gia công thuộc Method; tay nghề người làm thuộc Man; độ chính xác máy thuộc Machine; chất liệu linh kiện thuộc Material."
-  },
-  {
-    "id": "r-c03",
-    "level": 4,
-    "topic": "7tools",
-    "question": "全体に対して、それぞれの項目がどのくらいの割合を占めているか（内訳）を示すのに、最も適したグラフはどれか。",
-    "choices": [
-      "折れ線グラフ",
-      "円グラフ",
-      "レーダーチャート",
-      "ガントチャート"
-    ],
-    "answer": 1,
-    "explanation": "円グラフは全体を100%とした内訳の割合を表すのに適しています。折れ線グラフは時間による変化、レーダーチャートは複数項目のバランス、ガントチャートは日程計画を表すのに使います。",
-    "explanation_vi": "円グラフ (biểu đồ tròn) phù hợp để thể hiện tỷ lệ từng phần trong tổng thể (100%). 折れ線グラフ (biểu đồ đường) dùng cho thay đổi theo thời gian, レーダーチャート (biểu đồ radar) cho sự cân bằng giữa nhiều hạng mục, ガントチャート (biểu đồ Gantt) cho kế hoạch tiến độ."
-  },
-  {
-    "id": "r-c07",
+    "id": "r-c10",
     "level": 4,
     "topic": "data",
-    "question": "ある日、製品を200個検査したところ、不良品が6個見つかった。この日の不良率はいくらか。",
+    "question": "ある工程で、1時間ごとに製品を5個取り出して寸法を測定し、工程の状態を判断している。この「取り出した5個」を何というか。",
     "choices": [
-      "0.03%",
-      "3%",
-      "6%",
-      "33%"
+      "母集団",
+      "サンプル",
+      "ロット",
+      "層"
     ],
     "answer": 1,
-    "explanation": "不良率は 不良品の数÷検査した数 で求めます。6÷200＝0.03 で、百分率にすると3%です。",
-    "explanation_vi": "不良率 (tỷ lệ lỗi) = số sản phẩm lỗi ÷ số sản phẩm kiểm tra = 6 ÷ 200 = 0,03, tức là 3%. Đáp án 0,03% là lỗi quên nhân 100 nhưng vẫn gắn ký hiệu %."
+    "explanation": "母集団（ここでは工程でつくられる製品全体）の状態を知るために取り出した一部をサンプル（試料）といいます。母集団は調べたい対象全体、ロットは同じ条件でつくられた品物のまとまりです。",
+    "explanation_vi": "Phần được lấy ra từ tổng thể (母集団 – ở đây là toàn bộ sản phẩm công đoạn làm ra) để biết trạng thái của tổng thể gọi là サンプル (mẫu, 試料). 母集団 là toàn bộ đối tượng muốn tìm hiểu, ロット (lô) là nhóm sản phẩm được làm cùng điều kiện."
   },
   {
-    "id": "r-c14",
-    "level": 3,
-    "topic": "toukei",
-    "question": "正規分布の性質として、正しいものはどれか。",
+    "id": "r-c12",
+    "level": 4,
+    "topic": "kigyo",
+    "question": "工場の通路に油がこぼれているのを見つけた。自分の担当場所ではないが、最も適切な行動はどれか。",
     "choices": [
-      "平均値を中心に左右対称で、平均値・メディアン・最頻値が一致する",
-      "平均値より大きい値の出る確率は、小さい値の出る確率より大きい",
-      "標準偏差が大きいほど、分布の山は高く鋭くなる",
-      "分布の形は平均値だけで決まり、標準偏差には関係しない"
-    ],
-    "answer": 0,
-    "explanation": "正規分布は平均値μを中心とした左右対称の釣鐘形で、平均値・メディアン・最頻値が一致します。形は平均値μと標準偏差σで決まり、σが大きいほど山は低く横に広がります。",
-    "explanation_vi": "Phân phối chuẩn (正規分布) có dạng chuông đối xứng quanh giá trị trung bình μ, nên trung bình, trung vị (メディアン) và yếu vị (最頻値) trùng nhau. Hình dạng được quyết định bởi μ và độ lệch chuẩn σ; σ càng lớn thì đỉnh càng thấp và trải rộng."
-  },
-  {
-    "id": "r-c18",
-    "level": 3,
-    "topic": "7tools3",
-    "question": "2台の機械のデータをまとめて散布図を描くと、xとyの間に相関がないように見えた。ところが機械別に層別して描き直すと、どちらの機械でもはっきりした正の相関が見られた。このことから言えることとして、最も適切なものはどれか。",
-    "choices": [
-      "層別した散布図は誤りなので、全体の散布図を採用する",
-      "散布図では、層別をしてはいけない",
-      "異なる層のデータが混ざると、本当の関係が見えなくなることがある",
-      "機械が2台あるときは、必ず負の相関になる"
-    ],
-    "answer": 2,
-    "explanation": "性質の違う層のデータを一緒にすると、それぞれの層にある関係が打ち消されて見えなくなることがあります。散布図でも、機械・材料・作業者などで層別して確認することが大切です。",
-    "explanation_vi": "Khi trộn dữ liệu của các lớp (層) có tính chất khác nhau, mối quan hệ trong từng lớp có thể bị che khuất. Vì vậy với 散布図 (biểu đồ phân tán) cũng cần 層別 (phân lớp) theo máy, vật liệu, người làm… để kiểm tra."
-  },
-  {
-    "id": "r-c20",
-    "level": 3,
-    "topic": "kanrizu",
-    "question": "毎日100個ずつ（サンプルの大きさ一定）抜き取って、その中の不良品の個数を管理したい。最も適した管理図はどれか。",
-    "choices": [
-      "np管理図",
-      "c管理図",
-      "X̄−R管理図",
-      "X−Rs管理図"
-    ],
-    "answer": 0,
-    "explanation": "サンプルの大きさが一定で、不良品の個数（計数値）を管理するにはnp管理図を使います。c管理図は一定単位あたりの欠点数、X̄−R管理図やX−Rs管理図は計量値の管理に用います。",
-    "explanation_vi": "Khi cỡ mẫu cố định và cần quản lý số sản phẩm lỗi (dữ liệu đếm, 計数値) thì dùng np管理図. c管理図 dùng cho số khuyết tật trên một đơn vị cố định; X̄−R管理図 và X−Rs管理図 dùng cho dữ liệu đo (計量値)."
-  },
-  {
-    "id": "r-c22",
-    "level": 3,
-    "topic": "shin7",
-    "question": "行に「品質特性」、列に「工程」を並べ、交点に関連の強さを◎・○・△の記号で表して、どの工程がどの特性に影響するかを整理した。用いた手法はどれか。",
-    "choices": [
-      "系統図法",
-      "マトリックス図法",
-      "PDPC法",
-      "連関図法"
+      "自分の担当場所ではないので、そのままにしておく",
+      "すぐに安全を確保して（ふき取るか表示をして）、関係者に連絡する",
+      "終業後にまとめて報告する",
+      "誰かが転んでから対処を考える"
     ],
     "answer": 1,
-    "explanation": "行と列に要素を並べ、交点に関連の有無や強さを記号で表すのはマトリックス図法です。二元的な関係を見える化し、着眼点を得るのに使います。",
-    "explanation_vi": "Sắp xếp các yếu tố theo hàng và cột, rồi dùng ký hiệu ◎・○・△ tại giao điểm để thể hiện mức độ liên quan là マトリックス図法 (phương pháp sơ đồ ma trận). Nó giúp trực quan hóa quan hệ hai chiều để tìm điểm cần chú ý."
+    "explanation": "通路の油は転倒事故の原因になります。担当にかかわらず、ふき取りや立入禁止の表示などですぐに安全を確保し、関係者に連絡して原因（漏れなど）の対策につなげます。",
+    "explanation_vi": "Dầu đổ trên lối đi có thể gây té ngã. Dù không phải khu vực mình phụ trách, cần đảm bảo an toàn ngay (lau sạch hoặc đặt biển báo cấm đi) và báo cho người liên quan để xử lý nguyên nhân (rò rỉ…)."
   },
   {
-    "id": "r-d05",
-    "level": 3,
-    "topic": "hosho3",
-    "question": "製品の企画から販売・アフターサービスまでの各段階で、どの部門がどのような品質保証の活動を行うかを、流れ図の形で示したものを何というか。",
-    "choices": [
-      "品質保証体系図",
-      "アローダイアグラム",
-      "管理図",
-      "特性要因図"
-    ],
-    "answer": 0,
-    "explanation": "品質保証体系図は、開発から販売・アフターサービスまでの各ステップと関係部門の役割、情報の流れを一つの図に表したものです。部門間の責任と連携を明確にするのに役立ちます。",
-    "explanation_vi": "品質保証体系図 (sơ đồ hệ thống đảm bảo chất lượng) thể hiện trong một sơ đồ các bước từ phát triển đến bán hàng, dịch vụ sau bán, cùng vai trò của từng bộ phận và dòng thông tin. Nó giúp làm rõ trách nhiệm và sự phối hợp giữa các bộ phận."
-  },
-  {
-    "id": "r-d09",
+    "id": "r-d22",
     "level": 3,
     "topic": "gainen3",
-    "question": "顧客満足についての考え方として、最も適切なものはどれか。",
+    "question": "品質管理（TQM）の考え方として、適切でないものはどれか。",
     "choices": [
-      "不満があっても苦情を言わずに離れていくお客様もいるので、苦情の件数だけで満足度を判断しない",
-      "顧客満足は営業部門だけが考えればよい",
-      "一度満足したお客様の要求は、その後も変わらない",
-      "苦情がなければ、お客様は満足していると判断してよい"
+      "品質は、企画・設計・製造・販売などすべての部門が関わってつくり込む",
+      "経営者から第一線の作業者まで、全員が参加して取り組む",
+      "品質管理は品質管理部門の仕事なので、他部門は関わらなくてよい",
+      "お客様の満足を中心において、継続的に改善を進める"
     ],
-    "answer": 0,
-    "explanation": "不満を持っても苦情を言わず、黙って他社に移るお客様も多くいます。そのため、苦情の件数だけでなく、アンケートや使用状況の調査などで満足度を積極的に把握することが大切です。お客様の要求は時間とともに変化します。",
-    "explanation_vi": "Nhiều khách hàng không hài lòng nhưng không khiếu nại mà lặng lẽ chuyển sang công ty khác. Vì vậy không chỉ dựa vào số khiếu nại, mà cần chủ động nắm mức độ hài lòng (顧客満足) bằng khảo sát, điều tra tình hình sử dụng… Yêu cầu của khách hàng cũng thay đổi theo thời gian."
-  },
-  {
-    "id": "r-d13",
-    "level": 3,
-    "topic": "kanri",
-    "question": "方針管理における「方針」を構成する要素の組み合わせとして、最も適切なものはどれか。",
-    "choices": [
-      "品質・コスト・納期",
-      "重点課題・目標・方策",
-      "人・機械・材料",
-      "整理・整頓・清掃"
-    ],
-    "answer": 1,
-    "explanation": "方針管理の方針は、取り組むべき重点課題、達成すべき目標（何を・いつまでに・どれだけ）、目標を達成するための方策で構成されます。人・機械・材料は4Mの一部、整理・整頓・清掃は5Sの一部です。",
-    "explanation_vi": "Trong 方針管理 (quản lý theo phương châm), 方針 gồm: 重点課題 (vấn đề trọng điểm), 目標 (mục tiêu: cái gì, đến khi nào, bao nhiêu) và 方策 (biện pháp để đạt mục tiêu). Người, máy, vật liệu là một phần của 4M; 整理・整頓・清掃 là một phần của 5S."
-  },
-  {
-    "id": "r-d17",
-    "level": 3,
-    "topic": "hoho3",
-    "question": "問題解決型QCストーリーの最後の手順「反省と今後の課題」で行うこととして、最も適切なものはどれか。",
-    "choices": [
-      "活動の進め方を振り返り、残った問題や今後の進め方をまとめる",
-      "特性要因図を作って要因を洗い出す",
-      "対策案を考えて実施する",
-      "効果が出たので、活動の記録をすべて廃棄する"
-    ],
-    "answer": 0,
-    "explanation": "「反省と今後の課題」では、活動のよかった点・悪かった点を振り返り、残った問題や次に取り組むことを明確にして、次の改善につなげます。要因の洗い出しや対策の実施は、それより前の手順です。",
-    "explanation_vi": "Ở bước cuối 反省と今後の課題 (rút kinh nghiệm và vấn đề tiếp theo), nhìn lại điểm tốt/chưa tốt của hoạt động, làm rõ vấn đề còn lại và việc cần làm tiếp để nối sang lần cải tiến sau. Liệt kê yếu tố hay thực hiện đối sách là các bước trước đó."
+    "answer": 2,
+    "explanation": "TQM（総合的品質管理）では、品質は全部門・全員で取り組むものと考えます。品質管理部門だけに任せる考え方は適切ではありません。",
+    "explanation_vi": "Theo TQM (総合的品質管理 – quản lý chất lượng toàn diện), chất lượng là việc của mọi bộ phận và mọi người. Cách nghĩ giao phó hoàn toàn cho bộ phận quản lý chất lượng là không phù hợp."
   }
 ]
