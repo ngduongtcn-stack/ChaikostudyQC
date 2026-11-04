@@ -8779,6 +8779,1610 @@
       "answer": 0,
       "explanation": "連関図法は、原因と結果、原因どうしの関係を矢線で自由に結べるため、要因が複雑にからみ合った問題の整理に向いています。特性要因図は大骨・中骨・小骨の枝分かれ構造で、原因どうしの横のつながりは表しにくい図です。目的→手段の展開は系統図法の説明です。",
       "explanation_vi": "連関図法 (biểu đồ liên quan) có thể nối tự do bằng mũi tên quan hệ giữa nguyên nhân – kết quả và giữa các nguyên nhân với nhau, nên hợp với vấn đề có nhiều yếu tố đan xen. 特性要因図 (biểu đồ xương cá) có cấu trúc phân nhánh xương lớn – vừa – nhỏ, khó thể hiện liên kết ngang giữa các nguyên nhân. Triển khai mục đích → phương tiện là mô tả của 系統図法 (biểu đồ cây)."
+    },
+    {
+      "id": "3-350",
+      "level": 3,
+      "topic": "toukei",
+      "status": "checked",
+      "question": "充填機でつめる製品の内容量は標準偏差2gの正規分布にしたがい、表示量（下限）は500gである。下限を下回る割合を約2.3%以下にするには、充填量の平均値を何g以上に設定すればよいか。（P(u≧2.00)＝0.0228）",
+      "choices": [
+        "504g",
+        "503.92g",
+        "506g",
+        "502g"
+      ],
+      "answer": 0,
+      "explanation": "下限を下回る割合が約2.3%になるのは、下限が平均より2σ下にあるときです。したがって平均値は 500＋2×2＝504g 以上にします。502g は1σ分、506g は3σ分の余裕で、503.92g は u＝1.96（2.5%）を使った値です。",
+      "explanation_vi": "Tỷ lệ dưới giới hạn khoảng 2.3% khi giới hạn dưới thấp hơn trung bình 2σ. Vì vậy trung bình cần đặt ≥ 500 + 2 × 2 = 504g. 502g là cách 1σ, 506g là cách 3σ, còn 503.92g là giá trị dùng u = 1.96 (ứng với 2.5%)."
+    },
+    {
+      "id": "3-351",
+      "level": 3,
+      "topic": "toukei",
+      "status": "checked",
+      "question": "製品Aの特性値は平均70、標準偏差5の正規分布に、製品Bの特性値は平均120、標準偏差4の正規分布にしたがう。製品Aで75、製品Bで130の測定値が得られた。それぞれの分布の中で、平均から相対的に大きく離れているのはどちらか。",
+      "choices": [
+        "平均が違うので比べることはできない",
+        "Aの75（u＝1.0）の方が大きく離れている",
+        "どちらも平均との差が同じなので、同じ程度である",
+        "Bの130（u＝2.5）の方が大きく離れている"
+      ],
+      "answer": 3,
+      "explanation": "標準化すると、Aは u＝(75−70)÷5＝1.0、Bは u＝(130−120)÷4＝2.5 です。標準化すれば、平均や標準偏差の異なる分布の値でも、平均から何σ離れているかで比べられます。",
+      "explanation_vi": "Chuẩn hóa (標準化): A có u = (75 − 70) ÷ 5 = 1.0, B có u = (130 − 120) ÷ 4 = 2.5. Nhờ chuẩn hóa, có thể so sánh giá trị thuộc các phân phối có trung bình và độ lệch chuẩn khác nhau bằng cách xem cách trung bình bao nhiêu σ."
+    },
+    {
+      "id": "3-352",
+      "level": 3,
+      "topic": "data3",
+      "status": "checked",
+      "question": "不偏分散を求めるとき、平方和Sをデータ数nではなく n−1 で割る理由として、最も適切なものはどれか。",
+      "choices": [
+        "データの中の最大値を除くため",
+        "平方和は母平均ではなくサンプルの平均値からの偏差で計算するため小さめになり、nで割ると母分散を小さく見積もってしまうから",
+        "n で割ると、単位がデータと同じになってしまうから",
+        "n−1 で割ると計算が簡単になるから"
+      ],
+      "answer": 1,
+      "explanation": "サンプルの平方和は x̄ からの偏差で計算しますが、x̄ はそのデータに最も近くなる値なので、母平均からの偏差で計算するより小さくなります。この偏りを補うために自由度 n−1 で割ります。",
+      "explanation_vi": "Tổng bình phương của mẫu được tính theo độ lệch so với x̄; vì x̄ là giá trị gần dữ liệu nhất nên tổng này nhỏ hơn khi tính theo trung bình tổng thể. Để bù sai lệch này, ta chia cho bậc tự do (自由度) n − 1 để có phương sai không chệch (不偏分散)."
+    },
+    {
+      "id": "3-353",
+      "level": 3,
+      "topic": "data3",
+      "status": "checked",
+      "question": "データ x₁, x₂, …, xₙ について、Σ(xᵢ − a)² を最も小さくする a の値はどれか。",
+      "choices": [
+        "メディアン",
+        "平均値",
+        "最大値と最小値の中間の値",
+        "最頻値"
+      ],
+      "answer": 1,
+      "explanation": "Σ(xᵢ − a)² は a が平均値 x̄ のときに最小になり、その最小値が平方和Sです。このため平方和は「平均値からの偏差の2乗和」として定義されています。",
+      "explanation_vi": "Σ(xᵢ − a)² nhỏ nhất khi a bằng trung bình x̄, và giá trị nhỏ nhất đó chính là tổng bình phương (平方和) S. Vì thế tổng bình phương được định nghĩa là tổng bình phương độ lệch so với trung bình."
+    },
+    {
+      "id": "3-354",
+      "level": 3,
+      "topic": "soukan",
+      "status": "checked",
+      "question": "2つの特性x、yについて、Sxx＝25、Syy＝16、相関係数 r＝0.5 であった。偏差積和Sxyはいくらか。",
+      "choices": [
+        "5",
+        "10",
+        "20",
+        "200"
+      ],
+      "answer": 1,
+      "explanation": "r＝Sxy÷√(Sxx×Syy) より、Sxy＝r×√(25×16)＝0.5×20＝10 です。20 は √(Sxx×Syy) のまま、200 は √ をとらずに 0.5×400 とした誤りです。",
+      "explanation_vi": "Từ r = Sxy ÷ √(Sxx × Syy) suy ra Sxy = r × √(25 × 16) = 0.5 × 20 = 10. 20 là chưa nhân với r, còn 200 là lỗi quên lấy căn (0.5 × 400)."
+    },
+    {
+      "id": "3-355",
+      "level": 3,
+      "topic": "kanrizu",
+      "status": "checked",
+      "question": "ある工程の管理図では、長期間、点はすべて管理限界内にあり、異常を示す並び方もない。しかし、製品の約3%が規格外れになっている。この状況の判断と処置として、最も適切なものはどれか。",
+      "choices": [
+        "管理限界線を規格値に引き直せば、規格外れはなくなる",
+        "異常原因が起きているので、管理限界の外に出た点を探して原因を取り除く",
+        "管理図に異常がないので、規格外れは偶然であり、何もしなくてよい",
+        "工程は安定状態にあるが工程能力が不足しているので、設備・方法など工程そのものを見直してばらつきや平均を改善する"
+      ],
+      "answer": 3,
+      "explanation": "管理図で異常がないのは「安定状態」であることを示すだけで、規格を満たす能力があるかどうかは別の問題です。安定していても規格外れが続くのは工程能力の不足なので、4Mなど工程の仕組みを改善する必要があります。改善するまでは選別などで不良の流出を防ぎます。",
+      "explanation_vi": "Biểu đồ kiểm soát không có bất thường chỉ cho thấy công đoạn ở 安定状態 (trạng thái ổn định); có đủ năng lực đáp ứng quy cách hay không là chuyện khác. Ổn định mà vẫn liên tục có hàng ngoài quy cách là do thiếu 工程能力 (năng lực công đoạn), nên cần cải tiến chính hệ thống công đoạn như 4M. Trong lúc chưa cải tiến xong thì tuyển chọn để không cho hàng lỗi lọt ra."
+    },
+    {
+      "id": "3-356",
+      "level": 3,
+      "topic": "kanrizu",
+      "status": "checked",
+      "question": "工程改善のため加工条件を変更し、その結果、工程の平均値が意図したとおり小さくなった。変更後、従来の管理限界を使った管理図では、点が中心線の下側に続けて並ぶようになった。この後の対応として最も適切なものはどれか。",
+      "choices": [
+        "中心線の片側に点が続いているので、加工条件を元に戻す",
+        "管理図の使用をやめ、規格値だけで工程を見る",
+        "変更後の工程から改めてデータを集め、安定を確認したうえで管理限界を計算し直す",
+        "従来の管理限界のまま、異常として毎回報告を続ける"
+      ],
+      "answer": 2,
+      "explanation": "工程を意図的に変えた場合、従来の管理限界はもう新しい工程の姿を表していません。変更後のデータで安定状態を確認し、管理限界を計算し直して使います。改善の結果を元に戻したり、同じ「異常」を報告し続けたりするのは適切ではありません。",
+      "explanation_vi": "Khi đã chủ động thay đổi công đoạn thì giới hạn kiểm soát cũ không còn phản ánh công đoạn mới. Cần thu thập dữ liệu sau thay đổi, xác nhận ổn định rồi tính lại giới hạn kiểm soát. Quay về điều kiện cũ hay cứ tiếp tục báo cáo cùng một “bất thường” đều không phù hợp."
+    },
+    {
+      "id": "3-357",
+      "level": 3,
+      "topic": "kouteinouryoku",
+      "status": "checked",
+      "question": "ある工程の工程能力指数が Cp＝Cpk＝2.0 であり、管理図でも安定状態が続いている。この工程についての考え方として、最も適切なものはどれか。",
+      "choices": [
+        "工程能力は十分すぎるので、検査の簡略化やコスト低減を検討してよい",
+        "工程能力が高すぎるのは異常なので、ばらつきを大きくする",
+        "工程能力が不足しているので、ただちに全数検査を始める",
+        "Cp が1.33を超えているので、管理図による管理はやめてよい"
+      ],
+      "answer": 0,
+      "explanation": "Cp≧1.67 は「工程能力は十分すぎる」と判断され、検査の簡略化や、より安価な設備・材料への変更などによるコスト低減を検討できます。ただし、工程能力が高くても安定状態を維持する管理は続ける必要があり、管理図をやめてよいわけではありません。",
+      "explanation_vi": "Cp ≥ 1.67 được đánh giá là năng lực “quá đủ”, có thể xem xét đơn giản hóa kiểm tra hoặc giảm chi phí (đổi sang thiết bị, vật liệu rẻ hơn…). Tuy nhiên dù năng lực cao vẫn phải tiếp tục quản lý để duy trì trạng thái ổn định, không có nghĩa là bỏ biểu đồ kiểm soát."
+    },
+    {
+      "id": "3-358",
+      "level": 3,
+      "topic": "7tools3",
+      "status": "checked",
+      "question": "散布図を描いたところ、ある職場の「残業時間」と「不良件数」の間に強い正の相関が見られた。この結果の解釈として、最も適切なものはどれか。",
+      "choices": [
+        "相関係数を計算していないので、散布図からは何もわからない",
+        "正の相関があるので、残業をなくせば不良は必ずゼロになる",
+        "相関があっても因果関係があるとは限らないので、生産量の多さなど共通の原因がないかも含めて技術的に検討する",
+        "正の相関があるので、残業が不良の原因であると断定してよい"
+      ],
+      "answer": 2,
+      "explanation": "散布図で相関が見られても、一方が他方の原因であるとは限りません。たとえば生産量が多い月は残業も不良も増えるというように、別の共通の原因が両方に影響していることがあります。相関の結果は、固有技術の知識や追加のデータで確かめてから判断します。",
+      "explanation_vi": "Dù biểu đồ phân tán cho thấy tương quan, không có nghĩa cái này là nguyên nhân của cái kia. Ví dụ tháng nào sản lượng cao thì cả giờ tăng ca lẫn số lỗi đều tăng – có thể có một nguyên nhân chung tác động lên cả hai. Cần kiểm chứng bằng kiến thức kỹ thuật chuyên môn (固有技術) và dữ liệu bổ sung trước khi kết luận."
+    },
+    {
+      "id": "3-359",
+      "level": 3,
+      "topic": "7tools3",
+      "status": "checked",
+      "question": "不良の内訳（キズ・寸法・汚れ・その他）の構成比が、年度ごとにどのように変わったかを比べたい。最も適したグラフはどれか。",
+      "choices": [
+        "ガントチャート",
+        "折れ線グラフ",
+        "帯グラフ",
+        "レーダーチャート"
+      ],
+      "answer": 2,
+      "explanation": "帯グラフは、全体を100%として内訳の割合を帯の長さで表すので、年度ごとに帯を並べると構成比の変化がひと目でわかります。折れ線グラフは数量の時間的な推移、レーダーチャートは複数項目のバランス、ガントチャートは日程の管理に向いています。",
+      "explanation_vi": "帯グラフ (biểu đồ dải) thể hiện tỷ lệ các thành phần trên tổng 100% bằng độ dài dải, nên xếp các dải theo từng năm sẽ thấy ngay sự thay đổi cơ cấu. Biểu đồ đường hợp với xu hướng số lượng theo thời gian, radar hợp với cân bằng nhiều hạng mục, Gantt hợp với quản lý tiến độ."
+    },
+    {
+      "id": "3-360",
+      "level": 3,
+      "topic": "gainen3",
+      "status": "checked",
+      "question": "台所用洗剤についてお客様にアンケートをとったところ、「油汚れが落ちやすい」という意見が多く寄せられた。この「油汚れが落ちやすい」は、品質管理の用語で何にあたるか。",
+      "choices": [
+        "代用特性",
+        "品質特性",
+        "製造品質",
+        "要求品質"
+      ],
+      "answer": 3,
+      "explanation": "お客様が言葉で表した、製品に求める性質を要求品質といいます。これを、一定条件での油汚れの除去率など、測定できる品質特性に置き換えて設計や管理に使います。",
+      "explanation_vi": "Tính chất khách hàng mong muốn ở sản phẩm, được diễn đạt bằng lời, gọi là 要求品質 (chất lượng được yêu cầu). Người ta chuyển nó thành 品質特性 (đặc tính chất lượng) đo được, như tỉ lệ loại bỏ vết dầu trong điều kiện nhất định, để dùng cho thiết kế và quản lý."
+    },
+    {
+      "id": "3-361",
+      "level": 3,
+      "topic": "gainen3",
+      "status": "checked",
+      "question": "旅館で、チェックイン時に地元の手作り菓子を無料で出すサービスを始めたところ、多くのお客様に喜ばれた。このサービスがなくても不満を言うお客様はいなかった。狩野モデルでは、このサービスは何にあたるか。",
+      "choices": [
+        "魅力的品質",
+        "逆品質",
+        "一元的品質",
+        "当たり前品質"
+      ],
+      "answer": 0,
+      "explanation": "なくても不満にはならないが、あると大きな満足につながる品質要素を魅力的品質といいます。当たり前品質は逆に、あっても満足は増えにくく、ないと不満になる要素です。",
+      "explanation_vi": "Yếu tố không có thì khách cũng không bất mãn, nhưng có thì mang lại hài lòng lớn gọi là 魅力的品質 (chất lượng hấp dẫn). Ngược lại, 当たり前品質 (chất lượng đương nhiên) có thì khó tăng hài lòng, thiếu thì gây bất mãn."
+    },
+    {
+      "id": "3-362",
+      "level": 3,
+      "topic": "kanri",
+      "status": "checked",
+      "question": "ある組立ラインでは、作業者の交代、材料ロットの切り替え、設備の修理後など、4Mに変化があったときに、最初の製品を重点的に確認するルールを定めている。この管理を何というか。",
+      "choices": [
+        "方針管理",
+        "機能別管理",
+        "変化点管理",
+        "源流管理"
+      ],
+      "answer": 2,
+      "explanation": "人・機械・材料・方法（4M）に変化があったときは、品質の異常が起こりやすくなります。そのタイミングを変化点としてとらえ、重点的に確認・管理することを変化点管理といいます。",
+      "explanation_vi": "Khi 4M (con người, máy móc, vật liệu, phương pháp) thay đổi thì dễ phát sinh bất thường chất lượng. Coi thời điểm đó là điểm thay đổi và kiểm tra, quản lý trọng điểm gọi là 変化点管理 (quản lý điểm thay đổi)."
+    },
+    {
+      "id": "3-363",
+      "level": 3,
+      "topic": "kanri",
+      "status": "checked",
+      "question": "ある職場で改善活動を行い、新しい作業方法によって不良率が大きく下がった。この後に行うこととして、最も適切なものはどれか。",
+      "choices": [
+        "効果を確かめるため、元の作業方法にいったん戻す",
+        "作業方法は各作業者の好みに任せ、標準には反映しない",
+        "新しい作業方法を作業標準に反映して関係者に教育し、効果が続いているかを確認する",
+        "成果が出たので、記録はせずに活動を終了する"
+      ],
+      "answer": 2,
+      "explanation": "改善の効果を維持するには、新しいやり方を標準化し、教育して全員が守れるようにする「歯止め」が必要です。そのうえで、効果が続いているかを確認します。標準化しないと、時間がたつと元のやり方に戻りやすくなります。",
+      "explanation_vi": "Để duy trì hiệu quả cải tiến cần 歯止め (chốt chặn): tiêu chuẩn hóa cách làm mới, đào tạo để mọi người tuân thủ, rồi xác nhận hiệu quả còn duy trì. Nếu không tiêu chuẩn hóa, lâu ngày dễ quay lại cách làm cũ."
+    },
+    {
+      "id": "3-364",
+      "level": 3,
+      "topic": "hosho3",
+      "status": "checked",
+      "question": "自動車のドアを閉めたときの音の重厚感や、ハンドルの手触りのよさのように、人の感覚によって評価される品質を何というか。",
+      "choices": [
+        "信頼性",
+        "製造品質",
+        "当たり前品質",
+        "感性品質"
+      ],
+      "answer": 3,
+      "explanation": "人の五感や感情によって評価される品質を感性品質といいます。音・手触り・見た目の高級感などが例で、評価には官能検査が用いられます。信頼性は故障せずに機能を果たし続ける性質、製造品質は設計品質をどれだけ実現できたかを表すものです。",
+      "explanation_vi": "Chất lượng được đánh giá bằng ngũ giác và cảm xúc của con người gọi là 感性品質 (chất lượng cảm tính), ví dụ âm thanh, cảm giác khi chạm, vẻ sang trọng…; đánh giá bằng kiểm tra cảm quan (官能検査). 信頼性 (độ tin cậy) là tính chất hoạt động liên tục không hỏng, còn 製造品質 (chất lượng chế tạo) thể hiện mức độ hiện thực hóa chất lượng thiết kế."
+    },
+    {
+      "id": "3-365",
+      "level": 3,
+      "topic": "hosho3",
+      "status": "checked",
+      "question": "新製品の量産開始後に行っていた初期流動管理を終了し、通常の管理に移るときの判断として、最も適切なものはどれか。",
+      "choices": [
+        "あらかじめ決めた期間や数量の間、品質や工程能力が目標を満たし、問題が解決していることを確認して移る",
+        "製造部門が忙しくなったら、その時点で移る",
+        "量産開始から1週間たったら、結果に関係なく移る",
+        "不具合が出ている間に移り、通常の管理の中で対策する"
+      ],
+      "answer": 0,
+      "explanation": "初期流動管理は、量産初期の問題を早く見つけて対策するために、検査や監視を強化する活動です。終了するときは、決めておいた期間・数量で品質や工程能力が目標を満たしているか、出た問題が解決しているかを確認して判断します。期日や都合だけで解除すると、初期の問題が残ったまま流出するおそれがあります。",
+      "explanation_vi": "初期流動管理 (quản lý giai đoạn đầu sản xuất hàng loạt) là tăng cường kiểm tra, giám sát để sớm phát hiện và xử lý vấn đề ban đầu. Khi kết thúc, phải xác nhận trong khoảng thời gian/số lượng đã định trước, chất lượng và năng lực công đoạn đạt mục tiêu và các vấn đề đã được giải quyết. Nếu dỡ bỏ chỉ theo ngày tháng hay sự tiện lợi, vấn đề ban đầu có thể còn sót và lọt ra ngoài."
+    },
+    {
+      "id": "3-366",
+      "level": 3,
+      "topic": "hoho3",
+      "status": "checked",
+      "question": "職場で計画を立てて改善策を1か月間実施した。PDCAサイクルに沿って次に行うべきこととして、最も適切なものはどれか。",
+      "choices": [
+        "次の計画のテーマを決める",
+        "うまくいかなかった原因を取り除く処置をとる",
+        "計画どおりに作業を実施する",
+        "実施した結果を、計画で立てた目標と比べて評価する"
+      ],
+      "answer": 3,
+      "explanation": "Cは、実施した結果を計画（目標）と比べて、計画どおりにできたか、効果が出たかを評価する段階です。原因を取り除く処置や標準化はA（Act）、作業の実施はD（Do）で行います。",
+      "explanation_vi": "C là giai đoạn so sánh kết quả thực hiện với kế hoạch (mục tiêu) để đánh giá có làm đúng kế hoạch và có hiệu quả không. Xử lý loại bỏ nguyên nhân hay tiêu chuẩn hóa thuộc A (Act), còn thực hiện công việc thuộc D (Do)."
+    },
+    {
+      "id": "3-367",
+      "level": 3,
+      "topic": "hoho3",
+      "status": "checked",
+      "question": "不良対策の会議で、要因の解析を行わずに「思いついた対策」をすぐ実施することにした。この進め方の問題点として、最も適切なものはどれか。",
+      "choices": [
+        "真の原因に対する対策になっていない可能性があり、効果が出なかったり再発したりしやすい",
+        "対策の費用が必ず大きくなる",
+        "効果の確認ができなくなる",
+        "標準化ができなくなる"
+      ],
+      "answer": 0,
+      "explanation": "要因の解析で主要因を確かめないまま対策を打つと、真の原因に手を打てていない可能性があり、効果が出なかったり、一時的に良くなっても再発したりします。事実とデータで原因を確かめてから対策を立てることが、問題解決型QCストーリーの基本です。",
+      "explanation_vi": "Nếu đưa ra biện pháp mà chưa xác nhận nguyên nhân chính bằng 要因の解析 (phân tích nguyên nhân), có thể biện pháp không nhắm vào nguyên nhân thật, nên không có hiệu quả hoặc tạm tốt rồi tái phát. Nguyên tắc của QC story dạng giải quyết vấn đề là xác nhận nguyên nhân bằng sự thật và dữ liệu rồi mới lập biện pháp."
+    },
+    {
+      "id": "3-368",
+      "level": 3,
+      "topic": "shin7",
+      "status": "checked",
+      "question": "系統図法で「納期遅れをなくす」ための方策を最終の具体的手段まで展開した。次に、各手段について効果・実現性・費用を評価し、どれを実施するかを決めたい。系統図と組み合わせて用いる手法として、最も適切なものはどれか。",
+      "choices": [
+        "親和図法",
+        "連関図法",
+        "マトリックス図法",
+        "アローダイアグラム法"
+      ],
+      "answer": 2,
+      "explanation": "系統図の最終の手段を行に、効果・実現性・費用などの評価項目を列に並べ、交点に評価を記入するとマトリックス図になり、実施する方策を選べます。親和図法は問題の明確化、連関図法は原因の探索、アローダイアグラム法は実施段階の日程計画に使う手法です。",
+      "explanation_vi": "Đặt các phương tiện cuối cùng của 系統図 (biểu đồ cây) ở hàng, các tiêu chí đánh giá hiệu quả – khả năng thực hiện – chi phí ở cột, ghi đánh giá tại giao điểm thì thành マトリックス図 (biểu đồ ma trận) và chọn được biện pháp thực hiện. 親和図法 dùng để làm rõ vấn đề, 連関図法 để tìm nguyên nhân, アローダイアグラム法 để lập tiến độ khi triển khai."
+    },
+    {
+      "id": "3-369",
+      "level": 3,
+      "topic": "shin7",
+      "status": "checked",
+      "question": "新QC七つ道具の使い方についての説明として、適切でないものはどれか。",
+      "choices": [
+        "アローダイアグラム法では、クリティカルパス上の作業には余裕があるので、その作業が多少遅れても全体の日程には影響しない",
+        "PDPC法では、計画の実施中に新しい情報が得られたら、図を見直して計画を修正していく",
+        "親和図法は、まだはっきりしない問題や将来の課題について、事実や意見を整理して問題を明確にするのに向いている",
+        "系統図法は、方策の展開だけでなく、製品の品質特性をより細かい要素に分けて展開するのにも用いられる"
+      ],
+      "answer": 0,
+      "explanation": "クリティカルパスは最も時間のかかる経路で、その上の作業には余裕（フロート）がありません。そのため、クリティカルパス上の作業が遅れると全体の日程がそのまま遅れます。ほかの3つは各手法の正しい使い方です。",
+      "explanation_vi": "クリティカルパス (đường găng) là đường tốn thời gian nhất, các công việc trên đó không có thời gian dư (余裕・フロート). Vì vậy công việc trên đường găng bị trễ thì toàn bộ tiến độ trễ theo. Ba phương án còn lại là cách dùng đúng của từng công cụ."
+    },
+    {
+      "id": "3-370",
+      "level": 3,
+      "topic": "toukei",
+      "status": "checked",
+      "question": "正規分布にしたがう特性で、平均値μを中心とした μ±1σ の範囲の外側に出る割合は、およそいくらか。（P(u≧1.00)＝0.1587）",
+      "choices": [
+        "約4.6%",
+        "約15.9%",
+        "約31.7%",
+        "約68.3%"
+      ],
+      "answer": 2,
+      "explanation": "μ±1σ の外側は上側と下側の両方なので、片側の確率0.1587を2倍して約0.317（約31.7%）になります。15.9%は片側だけ、68.3%は範囲の内側に入る割合です。",
+      "explanation_vi": "Phía ngoài μ±1σ gồm cả phía trên và phía dưới, nên nhân đôi xác suất một phía 0.1587 được khoảng 0.317 (khoảng 31.7%). 15.9% chỉ là một phía, còn 68.3% là tỷ lệ nằm bên trong khoảng."
+    },
+    {
+      "id": "3-371",
+      "level": 3,
+      "topic": "toukei",
+      "status": "checked",
+      "question": "正規分布にしたがう特性で、平均値μから μ＋2σ までの間に入る割合は、およそいくらか。（P(u≧2.00)＝0.0228）",
+      "choices": [
+        "約2.3%",
+        "約45.4%",
+        "約47.7%",
+        "約95.4%"
+      ],
+      "answer": 2,
+      "explanation": "平均値より大きい側は全体の0.5です。そこから μ＋2σ を超える0.0228を引くと、0.5−0.0228＝0.4772（約47.7%）になります。95.4%は μ±2σ（両側）の範囲に入る割合です。",
+      "explanation_vi": "Phía lớn hơn trung bình chiếm 0.5 tổng thể. Trừ đi phần vượt μ＋2σ là 0.0228 thì được 0.5 − 0.0228 = 0.4772 (khoảng 47.7%). 95.4% là tỷ lệ nằm trong μ±2σ (cả hai phía)."
+    },
+    {
+      "id": "3-372",
+      "level": 3,
+      "topic": "toukei",
+      "status": "checked",
+      "question": "ある部品の寸法は標準偏差4mmの正規分布にしたがい、規格上限は58mmである。はじめ平均値は50mmだったが、工具の摩耗で平均値が54mmにずれた（標準偏差は変わらない）。ずれた後に規格上限を超える割合は、およそいくらか。（P(u≧1.00)＝0.1587、P(u≧2.00)＝0.0228）",
+      "choices": [
+        "約2.3%",
+        "約15.9%",
+        "約31.7%",
+        "約50%"
+      ],
+      "answer": 1,
+      "explanation": "ずれた後は u＝(58−54)÷4＝1.00 なので、上限を超える割合は0.1587（約15.9%）です。2.3%は平均値が50mmのとき（u＝2.00）の割合で、平均値のずれによって不良が大きく増えたことがわかります。",
+      "explanation_vi": "Sau khi lệch, u = (58 − 54) ÷ 4 = 1.00 nên tỷ lệ vượt giới hạn trên là 0.1587 (khoảng 15.9%). 2.3% là tỷ lệ khi trung bình còn ở 50mm (u = 2.00); có thể thấy việc trung bình bị lệch làm hàng lỗi tăng mạnh.",
+      "advanced": true
+    },
+    {
+      "id": "3-373",
+      "level": 3,
+      "topic": "toukei",
+      "status": "checked",
+      "question": "1個ごとの不良率が0.2で一定の工程がある。抜き取った4個の中に不良品が1個以上含まれていればロットを詳しく調べることにしている。詳しく調べることになる確率はおよそいくらか（不良個数は二項分布にしたがうものとする）。",
+      "choices": [
+        "0.200",
+        "0.410",
+        "0.590",
+        "0.800"
+      ],
+      "answer": 2,
+      "explanation": "1個も不良品が含まれない確率は 0.8⁴＝0.4096 です。「少なくとも1個」はその余事象なので、1−0.4096≒0.590 になります。0.800は不良率0.2を4倍しただけの誤りで、0.410は不良品が0個の確率です。",
+      "explanation_vi": "Xác suất không có hàng lỗi nào là 0.8⁴ = 0.4096. “Ít nhất 1 cái” là biến cố bù (余事象) nên bằng 1 − 0.4096 ≈ 0.590. 0.800 là lỗi khi chỉ nhân tỷ lệ lỗi 0.2 với 4, còn 0.410 là xác suất không có cái lỗi nào."
+    },
+    {
+      "id": "3-374",
+      "level": 3,
+      "topic": "toukei",
+      "status": "checked",
+      "question": "データの種類と、その分布としてよく用いられるものの組み合わせとして、最も適切なものはどれか。",
+      "choices": [
+        "部品の長さ：正規分布　　100個中の不良品の個数：二項分布",
+        "部品の長さ：二項分布　　100個中の不良品の個数：二項分布",
+        "部品の長さ：二項分布　　100個中の不良品の個数：正規分布",
+        "部品の長さ：正規分布　　100個中の不良品の個数：正規分布"
+      ],
+      "answer": 0,
+      "explanation": "長さや重さのような計量値は、正規分布にしたがうと考えることが多いです。一方、不良品の個数のような計数値（不良個数）は二項分布にしたがいます。",
+      "explanation_vi": "Giá trị đo lường liên tục (計量値) như chiều dài, khối lượng thường được coi là tuân theo phân phối chuẩn (正規分布). Còn giá trị đếm (計数値) như số hàng lỗi thì tuân theo phân phối nhị thức (二項分布)."
+    },
+    {
+      "id": "3-375",
+      "level": 3,
+      "topic": "toukei",
+      "status": "checked",
+      "question": "ある製品の重さは平均200g、標準偏差8gの正規分布にしたがう。重いほうから5%の製品を選別したい。選別の基準となる重さはおよそ何gか。（P(u≧1.645)＝0.050、P(u≧1.96)＝0.025、P(u≧2.00)＝0.0228）",
+      "choices": [
+        "208.0g",
+        "215.7g",
+        "213.2g",
+        "216.0g"
+      ],
+      "answer": 2,
+      "explanation": "上側5%となる u は1.645なので、x＝μ＋uσ＝200＋1.645×8≒213.2g です。215.7gは上側2.5%（u＝1.96）、216.0gは u＝2.00 を使った値です。",
+      "explanation_vi": "u ứng với 5% phía trên là 1.645, nên x = μ + uσ = 200 + 1.645 × 8 ≈ 213.2g. 215.7g là giá trị ứng với 2.5% phía trên (u = 1.96), còn 216.0g là khi dùng u = 2.00."
+    },
+    {
+      "id": "3-376",
+      "level": 3,
+      "topic": "data3",
+      "status": "checked",
+      "question": "次の5個のデータの変動係数CVはおよそいくらか（標準偏差は不偏分散の平方根とする）。　9, 10, 11, 12, 13",
+      "choices": [
+        "約12.9%",
+        "約14.4%",
+        "約22.7%",
+        "約27.3%"
+      ],
+      "answer": 1,
+      "explanation": "平均値は11、平方和 S＝4＋1＋0＋1＋4＝10、不偏分散 V＝10÷4＝2.5、標準偏差 s＝√2.5≒1.58 です。CV＝1.58÷11≒14.4% になります。12.9%は n＝5 で割った誤り、22.7%は分散 V を平均値で割った誤りです。",
+      "explanation_vi": "Trung bình là 11, tổng bình phương S = 4 + 1 + 0 + 1 + 4 = 10, phương sai không chệch V = 10 ÷ 4 = 2.5, độ lệch chuẩn s = √2.5 ≈ 1.58. Hệ số biến thiên CV = 1.58 ÷ 11 ≈ 14.4%. 12.9% là lỗi chia cho n = 5, còn 22.7% là lỗi lấy phương sai V chia cho trung bình.",
+      "advanced": true
+    },
+    {
+      "id": "3-377",
+      "level": 3,
+      "topic": "data3",
+      "status": "checked",
+      "question": "データ 101, 103, 104, 108 の平方和Sを、各データから100を引いた値（1, 3, 4, 8）を使って求めた。平方和Sはいくらか。",
+      "choices": [
+        "6.5",
+        "8.7",
+        "26",
+        "90"
+      ],
+      "answer": 2,
+      "explanation": "すべてのデータから同じ値を引いても、平方和は変わりません。1, 3, 4, 8 の平均値は4で、S＝9＋1＋0＋16＝26 です。90は Σx² をそのまま答えた誤り、8.7は S を n−1 で割った不偏分散です。",
+      "explanation_vi": "Trừ cùng một giá trị khỏi mọi dữ liệu thì tổng bình phương không đổi. Trung bình của 1, 3, 4, 8 là 4, nên S = 9 + 1 + 0 + 16 = 26. 90 là lỗi lấy luôn Σx², còn 8.7 là phương sai không chệch (S chia n − 1)."
+    },
+    {
+      "id": "3-378",
+      "level": 3,
+      "topic": "data3",
+      "status": "checked",
+      "question": "長さのデータの単位をcmからmmに変えたため、すべての数値が10倍になった。このとき変動係数CVはどうなるか。",
+      "choices": [
+        "100倍になる",
+        "10分の1になる",
+        "変わらない",
+        "10倍になる"
+      ],
+      "answer": 2,
+      "explanation": "単位を変えてデータが10倍になると、平均値も標準偏差も10倍になります。CV＝s÷x̄ なので、分子と分母がともに10倍になり、変動係数は変わりません。",
+      "explanation_vi": "Khi đổi đơn vị làm mọi dữ liệu tăng 10 lần, cả trung bình và độ lệch chuẩn đều tăng 10 lần. Vì CV = s ÷ x̄, tử và mẫu cùng tăng 10 lần nên hệ số biến thiên (変動係数) không đổi."
+    },
+    {
+      "id": "3-379",
+      "level": 3,
+      "topic": "data3",
+      "status": "checked",
+      "question": "ある製品ロット2,000個から10個をランダムに取り出して寸法を測定し、ロットの平均寸法を推定した。このときの「母集団」として、最も適切なものはどれか。",
+      "choices": [
+        "ロットから取り除いた不良品",
+        "取り出した10個の製品",
+        "測定した10個の寸法の平均値",
+        "製品ロット2,000個"
+      ],
+      "answer": 3,
+      "explanation": "母集団は、調べて処置をとりたい対象全体のことで、ここではロット2,000個です。取り出した10個はサンプル（試料）で、その平均値は母集団の平均を推定するための統計量です。",
+      "explanation_vi": "Tổng thể (母集団) là toàn bộ đối tượng mà ta muốn biết và xử lý, ở đây là lô 2.000 cái. 10 cái lấy ra là mẫu (サンプル・試料), còn trung bình của chúng là thống kê dùng để ước lượng trung bình của tổng thể."
+    },
+    {
+      "id": "3-380",
+      "level": 3,
+      "topic": "data3",
+      "status": "checked",
+      "question": "10枚の鋼板について1枚あたりのピンホール数を数えたところ、0個が3枚、1個が4枚、2個が2枚、3個が1枚であった。ピンホール数の中央値（メディアン）はいくらか。",
+      "choices": [
+        "1個",
+        "1.1個",
+        "1.5個",
+        "2個"
+      ],
+      "answer": 0,
+      "explanation": "ピンホール数を小さい順に並べると 0,0,0,1,1,1,1,2,2,3 で、データ数が10なので5番目と6番目の平均をとり、(1＋1)÷2＝1個です。1.1個は平均値、1.5個は最小値と最大値の中間で、メディアンではありません。",
+      "explanation_vi": "Xếp số lỗ kim (ピンホール) từ nhỏ đến lớn: 0,0,0,1,1,1,1,2,2,3. Có 10 dữ liệu nên lấy trung bình của giá trị thứ 5 và thứ 6: (1 + 1) ÷ 2 = 1 cái. 1.1 cái là trung bình, còn 1.5 cái là điểm giữa của giá trị nhỏ nhất và lớn nhất, không phải trung vị (メディアン)."
+    },
+    {
+      "id": "3-381",
+      "level": 3,
+      "topic": "data3",
+      "status": "checked",
+      "question": "真の値が10.00mmの標準ゲージを、ある測定器で20回測った。測定値の平均は10.30mmで、測定値のばらつきは非常に小さかった。この測定器についての説明として、最も適切なものはどれか。",
+      "choices": [
+        "かたよりもばらつきも小さく、問題はない",
+        "かたよりもばらつきも大きい",
+        "かたよりが大きいが、ばらつきは小さい",
+        "かたよりは小さいが、ばらつきが大きい"
+      ],
+      "answer": 2,
+      "explanation": "測定値の平均と真の値との差（ここでは0.30mm）が「かたより」で、測定値どうしの散らばりが「ばらつき」です。この測定器はばらつきは小さいものの、かたよりが大きいので、校正などで修正する必要があります。",
+      "explanation_vi": "Hiệu giữa trung bình đo và giá trị thật (ở đây 0.30mm) là độ chệch (かたより), còn mức phân tán giữa các lần đo là độ biến động (ばらつき). Thiết bị này có độ biến động nhỏ nhưng độ chệch lớn, nên cần hiệu chuẩn (校正) để khắc phục."
+    },
+    {
+      "id": "3-382",
+      "level": 3,
+      "topic": "data3",
+      "status": "checked",
+      "question": "あるデータの標準偏差sが0になった。このデータについて正しいものはどれか。",
+      "choices": [
+        "すべてのデータが同じ値である",
+        "平均値が0である",
+        "データ数が1個である",
+        "データの合計が0である"
+      ],
+      "answer": 0,
+      "explanation": "標準偏差は偏差の2乗から求めるため、0になるのはすべての偏差が0、つまりすべてのデータが同じ値のときだけです。平均値やデータの合計が0でも、ばらつきがあれば標準偏差は0になりません。",
+      "explanation_vi": "Độ lệch chuẩn được tính từ bình phương độ lệch, nên chỉ bằng 0 khi mọi độ lệch đều bằng 0, tức là mọi dữ liệu có cùng một giá trị. Dù trung bình hay tổng bằng 0, nếu có phân tán thì độ lệch chuẩn vẫn khác 0."
+    },
+    {
+      "id": "3-383",
+      "level": 3,
+      "topic": "soukan",
+      "status": "checked",
+      "question": "5組のデータ (x, y) が、すべて直線 y＝−2x＋10 の上にのっていた。xとyの相関係数rはいくらか。",
+      "choices": [
+        "−2",
+        "−1",
+        "−0.5",
+        "0"
+      ],
+      "answer": 1,
+      "explanation": "すべての点が右下がりの直線上にあるので、完全な負の相関で r＝−1 です。相関係数は −1 から 1 の範囲の値で、直線の傾き（−2）とは別のものです。",
+      "explanation_vi": "Mọi điểm đều nằm trên một đường thẳng dốc xuống, nên đây là tương quan nghịch hoàn toàn, r = −1. Hệ số tương quan (相関係数) nằm trong khoảng −1 đến 1 và khác với độ dốc của đường thẳng (−2)."
+    },
+    {
+      "id": "3-384",
+      "level": 3,
+      "topic": "soukan",
+      "status": "checked",
+      "question": "散布図と相関係数rの読み方について述べた次の記述のうち、誤っているものはどれか。",
+      "choices": [
+        "r＝1 のとき、すべての点は右上がりの直線上にある",
+        "xとyを入れ替えて計算しても、rの値は変わらない",
+        "rには単位がない",
+        "rの絶対値が大きいほど、散布図の点が並ぶ直線の傾きが急である"
+      ],
+      "answer": 3,
+      "explanation": "rの絶対値は、点が直線のまわりにどれだけまとまっているか（直線的な関係の強さ）を表すもので、直線の傾きの大きさとは関係がありません。傾きがゆるやかでも、点が直線上に並んでいれば r は1に近くなります。",
+      "explanation_vi": "Giá trị tuyệt đối của r thể hiện các điểm tập trung quanh đường thẳng đến mức nào (độ mạnh của quan hệ tuyến tính), không liên quan đến độ dốc của đường thẳng. Dù độ dốc thoải, nếu các điểm nằm sát đường thẳng thì r vẫn gần 1."
+    },
+    {
+      "id": "3-385",
+      "level": 3,
+      "topic": "kanrizu",
+      "status": "checked",
+      "question": "JIS Z 9020-2の異常判定ルールで、工程に異常があると判断する点の並び方として、最も適切なものはどれか。",
+      "choices": [
+        "14点が交互に増減している",
+        "10点がすべて管理限界内でばらばらに並んでいる",
+        "5点が連続して中心線の上側にある",
+        "3点が連続して中心線と1σの間にある"
+      ],
+      "answer": 0,
+      "explanation": "14点が交互に増減する（上がって下がってを繰り返す）並び方は、JIS Z 9020-2で異常とされる並び方の一つです。同じ側に続く点は9点で異常と判断するので、5点では異常とはいえません。管理限界内でランダムに並んでいる状態は安定状態です。",
+      "explanation_vi": "14 điểm tăng giảm xen kẽ liên tiếp là một trong các mẫu bất thường theo JIS Z 9020-2. Các điểm liên tiếp cùng một phía của đường trung tâm phải đủ 9 điểm mới bị coi là bất thường, nên 5 điểm thì chưa. Các điểm nằm ngẫu nhiên trong 管理限界 (giới hạn kiểm soát) là trạng thái ổn định (安定状態)."
+    },
+    {
+      "id": "3-386",
+      "level": 3,
+      "topic": "kanrizu",
+      "status": "checked",
+      "question": "X̄管理図の直近3点が、いずれも中心線より上側にあり、そのうち2点が中心線から＋2σを超え＋3σ以内の領域に入っていた。JIS Z 9020-2の考え方による判断として、最も適切なものはどれか。",
+      "choices": [
+        "連続する3点中2点が同じ側の2σを超える領域にあるので、異常と判断して原因を調べる",
+        "上側と下側の両方に点が出るまで判断を保留する",
+        "管理限界を超えた点がないので、工程は安定状態と判断する",
+        "同じ側に9点続いていないので、異常とはいえない"
+      ],
+      "answer": 0,
+      "explanation": "JIS Z 9020-2では、連続する3点中2点が中心線の同じ側で2σを超える領域（2σと3σの間など）にある場合を異常と判断します。管理限界外の点がなくても、このような並び方は工程平均の変化を示すことがあります。管理限界内かどうかだけで判断するのはよくある誤りです。",
+      "explanation_vi": "Theo JIS Z 9020-2, khi 2 trong 3 điểm liên tiếp nằm cùng một phía và vượt quá vùng 2σ (giữa 2σ và 3σ) thì coi là bất thường. Dù không có điểm nào ra ngoài 管理限界 (giới hạn kiểm soát), mẫu này có thể cho thấy trung bình công đoạn đã thay đổi. Chỉ xét điểm có nằm trong giới hạn hay không là lỗi hay gặp.",
+      "advanced": true
+    },
+    {
+      "id": "3-387",
+      "level": 3,
+      "topic": "kanrizu",
+      "status": "checked",
+      "question": "np管理図の下方管理限界LCLを求めたい。サンプルの大きさが n＝200 で一定、過去のデータから求めた平均不良率が p̄＝0.05 である。LCLはおよそいくらか。",
+      "choices": [
+        "約10.0",
+        "LCLは負になるので考えない",
+        "約6.9",
+        "約0.75"
+      ],
+      "answer": 3,
+      "explanation": "np管理図の中心線は np̄＝200×0.05＝10、管理限界は np̄±3√(np̄(1−p̄))＝10±3×√9.5≒10±9.25 です。したがってLCL≒0.75となり、この場合は正の値なので管理限界線を引きます。nやp̄が小さいときはLCLが負になって考えないことがありますが、いつもそうなるわけではありません。",
+      "explanation_vi": "Đường trung tâm của biểu đồ np là np̄ = 200×0,05 = 10; giới hạn kiểm soát là np̄ ± 3√(np̄(1−p̄)) = 10 ± 3×√9,5 ≈ 10 ± 9,25. Vậy LCL ≈ 0,75; vì là số dương nên vẫn vẽ đường giới hạn dưới. Khi n hoặc p̄ nhỏ thì LCL có thể âm và không xét, nhưng không phải lúc nào cũng vậy."
+    },
+    {
+      "id": "3-388",
+      "level": 3,
+      "topic": "kanrizu",
+      "status": "checked",
+      "question": "塗装面の欠点数をu管理図で管理している。単位面積（1m²）あたりの平均欠点数が ū＝0.5 で、ある群の検査面積が 8m² のとき、この群の上方管理限界UCLはいくらか。",
+      "choices": [
+        "0.69",
+        "0.75",
+        "1.25",
+        "2.62"
+      ],
+      "answer": 2,
+      "explanation": "u管理図の管理限界は ū±3√(ū/n) で、nは検査した単位の数（ここでは8）です。UCL＝0.5＋3×√(0.5/8)＝0.5＋3×0.25＝1.25となります。√(ū/n)のnを忘れると2.62、3σでなく1σで計算すると0.75になります。",
+      "explanation_vi": "Giới hạn của biểu đồ u là ū ± 3√(ū/n), với n là số đơn vị được kiểm tra (ở đây là 8). UCL = 0,5 + 3×√(0,5/8) = 0,5 + 3×0,25 = 1,25. Nếu quên chia cho n sẽ ra 2,62; nếu tính với 1σ thay vì 3σ sẽ ra 0,75."
+    },
+    {
+      "id": "3-389",
+      "level": 3,
+      "topic": "kanrizu",
+      "status": "checked",
+      "question": "大きさ n＝5 の群を20群集めて X̄−R管理図を作る。20群の平均値の合計が600.0、範囲の合計が24.0であった。X̄管理図の上方管理限界UCLはおよそいくらか。（n＝5 のとき A₂＝0.577）",
+      "choices": [
+        "29.31",
+        "30.69",
+        "31.20",
+        "31.61"
+      ],
+      "answer": 1,
+      "explanation": "X̿＝600.0÷20＝30.0、R̄＝24.0÷20＝1.2 です。UCL＝X̿＋A₂R̄＝30.0＋0.577×1.2≒30.69となります。29.31は下方管理限界LCLで、31.20はA₂を掛けずにR̄をそのまま足した誤りです。",
+      "explanation_vi": "X̿ = 600,0 ÷ 20 = 30,0; R̄ = 24,0 ÷ 20 = 1,2. UCL = X̿ + A₂R̄ = 30,0 + 0,577×1,2 ≈ 30,69. 29,31 là giới hạn dưới LCL, còn 31,20 là lỗi cộng thẳng R̄ mà không nhân A₂."
+    },
+    {
+      "id": "3-390",
+      "level": 3,
+      "topic": "kanrizu",
+      "status": "checked",
+      "question": "シューハート管理図で、管理限界を中心線から±3σの位置に引く理由として、最も適切なものはどれか。",
+      "choices": [
+        "±3σにすると、異常をすべて見逃さずに見つけられるから",
+        "データが正規分布に従わないときでも、点が外に出る確率が0になるから",
+        "規格値が一般に±3σで決められているから",
+        "異常がないのに異常と判断する誤りと、異常を見逃す誤りの両方を考え、実用上つり合いがよいから"
+      ],
+      "answer": 3,
+      "explanation": "管理限界を狭くすると、異常がないのに異常と判断する誤り（あわてものの誤り）が増え、広くすると異常を見逃す誤り（ぼんやりものの誤り）が増えます。±3σは、この2つの誤りのつり合いを経験的に考えて決められたものです。管理限界は規格値とは関係がなく、±3σでも見逃しが0になるわけではありません。",
+      "explanation_vi": "Nếu thu hẹp 管理限界 (giới hạn kiểm soát) thì lỗi kết luận bất thường khi không có bất thường (あわてものの誤り – lỗi vội vàng) tăng; nếu nới rộng thì lỗi bỏ sót bất thường (ぼんやりものの誤り – lỗi lơ đễnh) tăng. ±3σ được chọn dựa trên kinh nghiệm để cân bằng hai loại lỗi này. Giới hạn kiểm soát không liên quan đến quy cách, và ±3σ cũng không giúp phát hiện được mọi bất thường."
+    },
+    {
+      "id": "3-391",
+      "level": 3,
+      "topic": "kanrizu",
+      "status": "checked",
+      "question": "不良率をp管理図で管理している職場で、ある日の点が下方管理限界LCLより下に出た（不良率が非常に低かった）。対応として、最も適切なものはどれか。",
+      "choices": [
+        "その点はデータから削除し、管理図を描き直す",
+        "LCLより下の点は意味がないので、LCLの線を消す",
+        "不良が少ないのはよいことなので、何もせずにそのまま記録を続ける",
+        "異常のサインとして原因を調べ、よい原因であれば標準に取り入れることを検討する"
+      ],
+      "answer": 3,
+      "explanation": "管理限界の外に出た点は、よい方向であっても「いつもと違うことが起きた」という異常のサインです。原因を調べ、検査ミスなど悪い原因であれば処置し、作業方法の変化などよい原因であれば標準化して維持することを考えます。調べずに放置したり、データを削除したりするのは不適切です。",
+      "explanation_vi": "Điểm nằm ngoài 管理限界 (giới hạn kiểm soát), dù theo hướng tốt, vẫn là dấu hiệu bất thường “có điều gì đó khác thường”. Cần tìm nguyên nhân: nếu là nguyên nhân xấu (như lỗi kiểm tra) thì xử lý; nếu là nguyên nhân tốt (như thay đổi cách làm) thì xem xét 標準化 (tiêu chuẩn hóa) để duy trì. Bỏ mặc hoặc xóa dữ liệu là không phù hợp."
+    },
+    {
+      "id": "3-392",
+      "level": 3,
+      "topic": "kouteinouryoku",
+      "status": "checked",
+      "question": "規格が SL＝94、SU＝110 の製品で、工程の平均値が100、標準偏差が2であった。現状のCpkと、ばらつきを変えずに平均値を規格の中心に合わせたときのCpkの組合せとして、正しいものはどれか。",
+      "choices": [
+        "現状 0.67、調整後 1.33",
+        "現状 1.00、調整後 1.33",
+        "現状 1.00、調整後 1.00",
+        "現状 1.33、調整後 1.33"
+      ],
+      "answer": 1,
+      "explanation": "現状は、近い方の規格SLまでの距離が100−94＝6なので Cpk＝6÷(3×2)＝1.00です。規格の中心は102なので、平均値を102に合わせると Cpk＝Cp＝16÷(6×2)≒1.33になります。ばらつきが同じでも、平均値の位置を調整するだけで工程能力が改善することがわかります。",
+      "explanation_vi": "Hiện tại, khoảng cách đến quy cách gần hơn (SL) là 100 − 94 = 6, nên Cpk = 6 ÷ (3×2) = 1,00. Tâm quy cách là 102; khi chỉnh trung bình về 102 thì Cpk = Cp = 16 ÷ (6×2) ≈ 1,33. Dù 偏差 (độ phân tán) không đổi, chỉ cần chỉnh vị trí trung bình là 工程能力 (năng lực công đoạn) đã được cải thiện.",
+      "advanced": true
+    },
+    {
+      "id": "3-393",
+      "level": 3,
+      "topic": "kouteinouryoku",
+      "status": "checked",
+      "question": "上限規格のみが定められた特性で、工程能力指数が1.00であった。データが正規分布に従うとき、上限規格を超える製品の割合はおよそいくらか。",
+      "choices": [
+        "約0.003%",
+        "約0.13%",
+        "約0.27%",
+        "約2.3%"
+      ],
+      "answer": 1,
+      "explanation": "片側規格で工程能力指数が1.00ということは、平均値から上限規格までが3σということです。正規分布で平均から3σを超える片側の確率は約0.13%です。0.27%は両側の合計で、2.3%は2σを超える片側の確率です。",
+      "explanation_vi": "Quy cách một phía với chỉ số năng lực 1,00 nghĩa là từ trung bình đến giới hạn trên đúng bằng 3σ. Trong phân phối chuẩn, xác suất vượt quá 3σ ở một phía là khoảng 0,13%. 0,27% là tổng cả hai phía, còn 2,3% là xác suất một phía vượt 2σ."
+    },
+    {
+      "id": "3-394",
+      "level": 3,
+      "topic": "kouteinouryoku",
+      "status": "checked",
+      "question": "下限規格のみ SL＝30 が定められた特性で、工程の平均値は36である。平均値を変えずに工程能力指数を1.33以上にするには、標準偏差をおよそいくら以下にする必要があるか。",
+      "choices": [
+        "0.75",
+        "1.5",
+        "2.0",
+        "4.5"
+      ],
+      "answer": 1,
+      "explanation": "下限規格のみの場合、工程能力指数は (平均値−SL)÷3s で求めます。(36−30)÷3s≧1.33 から s≦6÷(3×1.33)≒1.5 となります。0.75は分母を6sにした誤り、2.0は指数1.00に対する値です。",
+      "explanation_vi": "Với quy cách chỉ có giới hạn dưới, chỉ số năng lực = (trung bình − SL) ÷ 3s. Từ (36 − 30) ÷ 3s ≥ 1,33 suy ra s ≤ 6 ÷ (3×1,33) ≈ 1,5. 0,75 là lỗi dùng 6s ở mẫu số, còn 2,0 là giá trị ứng với chỉ số 1,00."
+    },
+    {
+      "id": "3-395",
+      "level": 3,
+      "topic": "kouteinouryoku",
+      "status": "checked",
+      "question": "ある工程の工程能力指数を調べたところ、Cp＝1.50、Cpk＝0.90であった。まず行う処置として、最も適切なものはどれか。",
+      "choices": [
+        "規格の幅を広げるよう、顧客に申し入れる",
+        "平均値が規格の中心から大きくずれているので、平均値を中心に近づけるよう調整する",
+        "ばらつきが大きすぎるので、設備を更新する",
+        "Cpが1.33以上あるので、処置は必要ない"
+      ],
+      "answer": 1,
+      "explanation": "Cpは十分（1.50）なので、ばらつきの大きさには問題がありません。CpkがCpより大きく下がっているのは、平均値が規格の中心からかたよっているためです。まず平均値の調整を行うのが効果的で、Cpだけ見て「処置不要」とするのは誤りです。",
+      "explanation_vi": "Cp = 1,50 là đủ nên mức độ biến động không có vấn đề. Cpk thấp hơn Cp nhiều là do trung bình bị lệch khỏi tâm quy cách. Việc hiệu quả trước tiên là điều chỉnh trung bình; chỉ nhìn Cp rồi kết luận “không cần xử lý” là sai."
+    },
+    {
+      "id": "3-396",
+      "level": 3,
+      "topic": "kouteinouryoku",
+      "status": "checked",
+      "question": "ある部品の規格が 20.0±0.9mm から 20.0±0.6mm に厳しくなった。工程の平均値は20.0mm、標準偏差は0.15mmで変わらない。工程能力指数Cpの変化として、正しいものはどれか。",
+      "choices": [
+        "2.00から1.00に下がる",
+        "1.33から0.89に下がる",
+        "2.00から1.33に下がる",
+        "規格が変わってもCpは変わらない"
+      ],
+      "answer": 2,
+      "explanation": "Cp＝(SU−SL)÷6s なので、変更前は1.8÷0.9＝2.00、変更後は1.2÷0.9≒1.33です。Cpは規格の幅とばらつきの比なので、ばらつきが同じでも規格が厳しくなれば小さくなります。変更後も1.33なので、工程能力は十分といえます。",
+      "explanation_vi": "Cp = (SU − SL) ÷ 6s, nên trước khi đổi là 1,8 ÷ 0,9 = 2,00, sau khi đổi là 1,2 ÷ 0,9 ≈ 1,33. Cp là tỉ số giữa độ rộng quy cách và độ biến động, nên dù biến động không đổi, quy cách chặt hơn thì Cp giảm. Sau khi đổi vẫn là 1,33 nên năng lực công đoạn vẫn đủ."
+    },
+    {
+      "id": "3-397",
+      "level": 3,
+      "topic": "7tools3",
+      "status": "checked",
+      "question": "製品に含まれる不純物の量（0以上の値で、多くは0に近い）をヒストグラムにすると、どのような形になりやすいか。",
+      "choices": [
+        "左右対称の一般型",
+        "二つの山をもつ二山型",
+        "頂上が平らな高原型",
+        "左側が切り立ち、右側に長くすそを引く形"
+      ],
+      "answer": 3,
+      "explanation": "不純物の量のように、0という下限があり多くの値がその近くに集まる特性では、右側に長くすそを引く「すそ引き型」になりやすくなります。これは理論的な制約によるもので、必ずしも異常ではありません。二山型や高原型は、異なる分布が混ざっているときに現れます。",
+      "explanation_vi": "Với đặc tính có giới hạn dưới là 0 và phần lớn giá trị tập trung gần đó (như lượng tạp chất), histogram dễ có dạng kéo đuôi dài sang phải (すそ引き型). Đây là do giới hạn lý thuyết, không hẳn là bất thường. Dạng hai đỉnh hay cao nguyên xuất hiện khi các phân phối khác nhau bị trộn lẫn."
+    },
+    {
+      "id": "3-398",
+      "level": 3,
+      "topic": "7tools3",
+      "status": "checked",
+      "question": "始業前に、設備の油量・圧力・安全カバーなど決められた項目を、漏れなく確認するために使うチェックシートはどれか。",
+      "choices": [
+        "工程分布調査用チェックシート",
+        "不良項目調査用チェックシート",
+        "点検・確認用チェックシート",
+        "不良位置調査用チェックシート"
+      ],
+      "answer": 2,
+      "explanation": "決められた項目を順に確認し、漏れを防ぐために使うのは点検・確認用チェックシートです。工程分布調査用は測定値の分布、不良位置調査用は不良の発生位置、不良項目調査用は不良の種類ごとの件数を調べるためのものです。",
+      "explanation_vi": "Phiếu dùng để kiểm tra lần lượt các hạng mục đã định và tránh bỏ sót là 点検・確認用チェックシート (phiếu kiểm tra xác nhận). Phiếu 工程分布調査用 dùng để xem phân bố giá trị đo, 不良位置調査用 để xem vị trí lỗi, 不良項目調査用 để đếm số lỗi theo loại."
+    },
+    {
+      "id": "3-399",
+      "level": 3,
+      "topic": "7tools3",
+      "status": "checked",
+      "question": "ある月の不良の件数と1件あたりの損失額は、キズ60件（200円）、寸法不良30件（1,000円）、汚れ40件（300円）、欠け10件（1,500円）であった。損失金額でパレート図を作ったとき、1位になる項目はどれか。",
+      "choices": [
+        "欠け",
+        "キズ",
+        "寸法不良",
+        "汚れ"
+      ],
+      "answer": 2,
+      "explanation": "損失金額は、キズ12,000円、寸法不良30,000円、汚れ12,000円、欠け15,000円です。したがって損失金額のパレート図では寸法不良が1位になります。件数ではキズが1位ですが、目的によって何で集計するかを選ぶことが大切です。",
+      "explanation_vi": "Số tiền tổn thất: vết xước 12.000 yên, sai kích thước 30.000 yên, bẩn 12.000 yên, sứt mẻ 15.000 yên. Vì vậy trên biểu đồ Pareto theo tiền tổn thất, sai kích thước đứng đầu. Theo số lượng thì vết xước đứng đầu, nên quan trọng là chọn cách tổng hợp phù hợp với mục đích."
+    },
+    {
+      "id": "3-400",
+      "level": 3,
+      "topic": "7tools3",
+      "status": "checked",
+      "question": "作業ごとの予定と実績の期間を横棒で表し、日程の進み具合を管理するのに使うグラフはどれか。",
+      "choices": [
+        "パレート図",
+        "帯グラフ",
+        "ガントチャート",
+        "レーダーチャート"
+      ],
+      "answer": 2,
+      "explanation": "ガントチャートは、横軸に日付をとり、作業ごとの予定と実績を横棒で示すグラフで、日程管理に使います。レーダーチャートは複数項目のバランス、帯グラフは構成比の比較、パレート図は重点項目の把握に使います。",
+      "explanation_vi": "ガントチャート (biểu đồ Gantt) lấy trục ngang là ngày, thể hiện kế hoạch và thực tế của từng công việc bằng thanh ngang, dùng để quản lý tiến độ. レーダーチャート (biểu đồ radar) để so sánh cân bằng nhiều hạng mục, 帯グラフ (biểu đồ dải) để so sánh cơ cấu, パレート図 (biểu đồ Pareto) để xác định hạng mục trọng điểm."
+    },
+    {
+      "id": "3-401",
+      "level": 3,
+      "topic": "7tools3",
+      "status": "checked",
+      "question": "次のうち、QC七つ道具に含まれないものはどれか。",
+      "choices": [
+        "チェックシート",
+        "特性要因図",
+        "連関図法",
+        "散布図"
+      ],
+      "answer": 2,
+      "explanation": "連関図法は新QC七つ道具の一つで、主に言語データを整理するための手法です。特性要因図、散布図、チェックシートは、パレート図・ヒストグラム・グラフ（管理図）・層別とともにQC七つ道具に含まれます。",
+      "explanation_vi": "連関図法 (phương pháp sơ đồ liên quan) thuộc 新QC七つ道具 (7 công cụ QC mới), chủ yếu dùng để sắp xếp dữ liệu ngôn ngữ. 特性要因図, 散布図, チェックシート cùng với パレート図, ヒストグラム, グラフ (管理図) và 層別 thuộc 7 công cụ QC."
+    },
+    {
+      "id": "3-402",
+      "level": 3,
+      "topic": "7tools3",
+      "status": "checked",
+      "question": "安定した工程のデータでヒストグラムを作り、上下の規格線と比べた。平均値は規格の中心とほぼ同じ位置にあるが、分布の左右の端が規格線にほとんど接しており、余裕がない。今のところ規格外れの製品はない。この工程の判断として、最も適切なものはどれか。",
+      "choices": [
+        "規格に対する余裕がなく、少しの変化で規格外れが出るおそれがあるので、ばらつきを小さくする改善を考える",
+        "平均値を規格の中心からずらして調整する",
+        "規格外れが出ていないので、現状のままで問題ない",
+        "規格の幅が広すぎるので、規格を厳しくする"
+      ],
+      "answer": 0,
+      "explanation": "分布の幅が規格の幅とほぼ同じで余裕がない状態では、平均値が少し動いたり、ばらつきが少し増えたりするだけで規格外れが出ます。中心は合っているので、ばらつきを小さくする改善が必要です。今、規格外れがないことだけで安心するのは誤りです。",
+      "explanation_vi": "Khi độ rộng phân bố gần bằng độ rộng quy cách và không còn dư địa, chỉ cần trung bình dịch nhẹ hoặc biến động tăng nhẹ là sẽ xuất hiện hàng ngoài quy cách. Vì tâm đã khớp nên cần cải tiến để giảm biến động. Yên tâm chỉ vì hiện tại chưa có hàng ngoài quy cách là sai."
+    },
+    {
+      "id": "3-403",
+      "level": 3,
+      "topic": "7tools3",
+      "status": "checked",
+      "question": "パレート図で、右側の縦軸に目盛り（0〜100%）をとって表すものはどれか。",
+      "choices": [
+        "各項目の件数",
+        "項目の数",
+        "各項目の損失金額",
+        "累積比率"
+      ],
+      "answer": 3,
+      "explanation": "パレート図では、左の縦軸に件数や金額をとって棒グラフで示し、右の縦軸に0〜100%の目盛りをとって累積比率を折れ線（累積曲線）で示します。これにより、上位の項目で全体の何%を占めるかがすぐにわかります。",
+      "explanation_vi": "Trong biểu đồ Pareto, trục dọc bên trái là số lượng hoặc số tiền (biểu diễn bằng cột), trục dọc bên phải có thang 0–100% để biểu diễn 累積比率 (tỉ lệ tích lũy) bằng đường gấp khúc (累積曲線). Nhờ đó thấy ngay các hạng mục đứng đầu chiếm bao nhiêu % tổng thể."
+    },
+    {
+      "id": "3-404",
+      "level": 3,
+      "topic": "gainen3",
+      "status": "checked",
+      "question": "狩野モデルで品質要素を分類するために、お客様にアンケートを行う。質問のしかたとして、最も適切なものはどれか。",
+      "choices": [
+        "その機能が「ない場合」に不満かどうかだけを尋ねる",
+        "その機能を何円なら買うかだけを尋ねる",
+        "その機能が「ある場合」に満足かどうかだけを尋ねる",
+        "その機能が「ある場合」と「ない場合」の両方について、どう感じるかを対にして尋ねる"
+      ],
+      "answer": 3,
+      "explanation": "狩野モデルでは、品質要素が充足された場合と充足されない場合のそれぞれについてお客様の感じ方を尋ね、その組み合わせで魅力的品質・一元的品質・当たり前品質などに分類します。片方だけを尋ねても、たとえば当たり前品質と無関心品質を区別できません。",
+      "explanation_vi": "Mô hình Kano phân loại yếu tố chất lượng bằng cách hỏi khách hàng cảm nhận thế nào trong cả hai trường hợp: khi yếu tố được đáp ứng và khi không được đáp ứng, rồi dựa vào cặp câu trả lời để xếp vào 魅力的品質 (chất lượng hấp dẫn), 一元的品質 (chất lượng một chiều), 当たり前品質 (chất lượng đương nhiên)… Chỉ hỏi một phía thì không phân biệt được, ví dụ, chất lượng đương nhiên với 無関心品質 (chất lượng không quan tâm)."
+    },
+    {
+      "id": "3-405",
+      "level": 3,
+      "topic": "gainen3",
+      "status": "checked",
+      "question": "品質管理では、「KKD」だけに頼った判断を改め、事実（データ）にもとづいて判断することが求められる。この「KKD」が表すものはどれか。",
+      "choices": [
+        "根拠・数値・データ",
+        "勘・経験・度胸",
+        "記録・管理・データ",
+        "改善・継続・同期"
+      ],
+      "answer": 1,
+      "explanation": "KKDは「勘・経験・度胸」の頭文字で、データの裏付けがない思い込みによる判断を指します。勘や経験も大切ですが、それだけに頼らず、データで事実を確かめて判断することが「事実にもとづく管理」です。",
+      "explanation_vi": "KKD là chữ đầu của 勘・経験・度胸 (cảm tính, kinh nghiệm, liều lĩnh), chỉ việc phán đoán theo suy đoán chủ quan không có dữ liệu chứng minh. Cảm tính và kinh nghiệm cũng quan trọng, nhưng không chỉ dựa vào chúng mà phải xác nhận sự thật bằng dữ liệu — đó là 事実にもとづく管理 (quản lý dựa trên sự thật)."
+    },
+    {
+      "id": "3-406",
+      "level": 3,
+      "topic": "gainen3",
+      "status": "checked",
+      "question": "ある設備メーカーは、お客様から「故障したときの修理に時間がかかる」という声を受け、次の機種では故障しやすい部品をユニットにまとめ、短時間で交換できるように設計した。この改善によって主に高めた品質特性はどれか。",
+      "choices": [
+        "外観品質",
+        "安全性",
+        "保全性",
+        "操作性"
+      ],
+      "answer": 2,
+      "explanation": "故障したときに点検・修理がしやすく、短時間で元の状態に戻せる性質を保全性といいます。部品をユニット化して交換しやすくすることは、保全性を高める代表的な設計です。故障そのものの起こりにくさ（信頼性）とは区別します。",
+      "explanation_vi": "Tính chất dễ kiểm tra, sửa chữa và nhanh chóng khôi phục khi hỏng gọi là 保全性 (tính bảo trì). Gom các bộ phận thành cụm (unit) để dễ thay thế là thiết kế điển hình nhằm nâng cao tính bảo trì. Cần phân biệt với 信頼性 (độ tin cậy) — khả năng ít hỏng hóc."
+    },
+    {
+      "id": "3-407",
+      "level": 3,
+      "topic": "gainen3",
+      "status": "checked",
+      "question": "ある職場の課長は、作業のやり方を一方的に指示するのをやめ、作業者自身に改善案を考えてもらい、よい提案は実際に取り入れるようにした。その結果、作業者の意欲が高まり、改善が次々に進んだ。この取り組みに最も関係の深いQC的な考え方はどれか。",
+      "choices": [
+        "重点指向",
+        "応急処置",
+        "人間性尊重",
+        "マーケットイン"
+      ],
+      "answer": 2,
+      "explanation": "人の能力や創意工夫を認め、自主的に考えて仕事を改善できるようにすることは、人間性尊重の考え方です。働く人の意欲を引き出すことが、継続的な改善につながります。重点指向は優先順位の考え方、マーケットインはお客様の要求から出発する考え方です。",
+      "explanation_vi": "Ghi nhận năng lực, sự sáng tạo của con người và tạo điều kiện để họ tự suy nghĩ cải tiến công việc là tư tưởng 人間性尊重 (tôn trọng tính người). Khơi dậy động lực của người lao động dẫn đến cải tiến liên tục. 重点指向 (tập trung trọng điểm) là cách nghĩ về thứ tự ưu tiên, còn マーケットイン (market-in) là xuất phát từ yêu cầu khách hàng."
+    },
+    {
+      "id": "3-408",
+      "level": 3,
+      "topic": "gainen3",
+      "status": "checked",
+      "question": "お客様から「製品の表面に傷がある」という苦情が届いた。品質管理課長は、営業担当者が書いた報告書だけを読み、「輸送中の傷だろう」と判断して梱包材を変えることにした。三現主義の立場から、最も適切な指摘はどれか。",
+      "choices": [
+        "返品された現物を確認し、工程や輸送の現場で実際の状況を調べてから判断すべきである",
+        "梱包材の変更より先に、作業者全員に注意を促すべきである",
+        "報告書の書式を統一すれば、正しい判断ができる",
+        "過去の苦情件数を調べれば、現物を見なくても原因はわかる"
+      ],
+      "answer": 0,
+      "explanation": "三現主義は、現場に行き、現物を見て、現実を確認してから判断する考え方です。報告書だけで原因を決めつけると、たとえば工程内でついた傷を見逃すおそれがあります。まず現物の傷の状態を確認し、どこで発生したかを事実で確かめます。",
+      "explanation_vi": "三現主義 (nguyên tắc 3 thực tế) là đi đến hiện trường (現場), xem hiện vật (現物), nắm thực tế (現実) rồi mới phán đoán. Chỉ đọc báo cáo mà kết luận nguyên nhân thì có thể bỏ sót, ví dụ vết xước phát sinh ngay trong công đoạn. Trước tiên phải xem tình trạng vết xước trên hiện vật và xác nhận bằng sự thật nơi phát sinh."
+    },
+    {
+      "id": "3-409",
+      "level": 3,
+      "topic": "gainen3",
+      "status": "checked",
+      "question": "出荷の前日、最終検査で、あるロットの一部に規格外れの疑いがある製品が見つかった。翌日の納期に間に合わせるには、すぐに出荷の準備をしなければならない。品質優先の考え方にもとづく対応として、最も適切なものはどれか。",
+      "choices": [
+        "疑いのある製品の情報は記録に残さず、次回から検査を厳しくする",
+        "納期を守ることが最優先なので、出荷後に時間があれば調べる",
+        "疑いのあるロットの出荷を止めて確認を行い、納期への影響はお客様に早めに連絡して相談する",
+        "規格外れが確定したわけではないので、予定どおり全量を出荷する"
+      ],
+      "answer": 2,
+      "explanation": "品質優先の考え方では、目先の納期や生産量よりも品質を優先し、不良の疑いがある製品をお客様に渡さないようにします。そのうえで、納期への影響は隠さずに早めに連絡し、相談することがお客様の信頼につながります。",
+      "explanation_vi": "Theo tư tưởng 品質優先 (ưu tiên chất lượng), chất lượng được đặt trên hạn giao hàng hay sản lượng trước mắt; không giao cho khách sản phẩm nghi có lỗi. Đồng thời, ảnh hưởng đến hạn giao cần được thông báo sớm và trao đổi với khách hàng, không che giấu — điều đó tạo nên lòng tin của khách."
+    },
+    {
+      "id": "3-410",
+      "level": 3,
+      "topic": "gainen3",
+      "status": "checked",
+      "question": "ある飲食店で、お客様の「注文した料理を早く出してほしい」という要求にこたえるため、品質特性を決めて測定することにした。品質特性として最も適切なものはどれか。",
+      "choices": [
+        "店員の接客態度のよさ",
+        "注文を受けてから料理を提供するまでの時間（分）",
+        "料理の評判のよさ",
+        "店内の雰囲気の明るさ"
+      ],
+      "answer": 1,
+      "explanation": "品質特性は、要求品質を測定できる特性に置き換えたものです。「早く出してほしい」という要求は、注文から提供までの時間（分）として数値で測ることができます。ほかの選択肢は、そのままでは数値で測りにくい表現です。",
+      "explanation_vi": "品質特性 (đặc tính chất lượng) là chuyển 要求品質 (chất lượng được yêu cầu) thành đặc tính đo được. Yêu cầu “mang món ra nhanh” có thể đo bằng số là thời gian (phút) từ lúc nhận order đến lúc phục vụ. Các lựa chọn khác là cách diễn đạt khó đo trực tiếp bằng con số."
+    },
+    {
+      "id": "3-411",
+      "level": 3,
+      "topic": "gainen3",
+      "status": "checked",
+      "question": "飲食店や窓口業務などのサービスは、製品とは異なる特徴をもつ。サービスの品質を管理するうえで考慮すべき特徴を述べたものはどれか。",
+      "choices": [
+        "サービスは形がないので、品質管理の対象にならない",
+        "サービスは毎回同じ人が提供するので、ばらつきは生じない",
+        "サービスの品質は、提供する側だけで決めることができる",
+        "サービスは提供されると同時に消費されることが多いため、提供前に検査して不良を取り除くことが難しい"
+      ],
+      "answer": 3,
+      "explanation": "サービスは形がなく、提供と消費が同時に行われることが多いため、製品のように出荷前の検査で不良を取り除くことが難しいという特徴があります。そのため、提供のプロセスそのものを標準化し、管理することが重要です。サービスも品質管理の対象であり、提供する人や状況によってばらつきも生じます。",
+      "explanation_vi": "Dịch vụ không có hình dạng và thường được tiêu dùng ngay khi cung cấp, nên khó loại bỏ lỗi bằng kiểm tra trước khi giao như sản phẩm. Vì vậy cần tiêu chuẩn hóa và quản lý chính quá trình cung cấp. Dịch vụ cũng là đối tượng của quản lý chất lượng và vẫn có biến động tùy người cung cấp và tình huống."
+    },
+    {
+      "id": "3-412",
+      "level": 3,
+      "topic": "gainen3",
+      "status": "checked",
+      "question": "製造品質（できばえの品質）は、設計で定めた品質にどれだけ合っているかを表すことから、別の名前でも呼ばれる。その名前として、最も適切なものはどれか。",
+      "choices": [
+        "魅力的品質",
+        "使用品質",
+        "適合の品質",
+        "企画品質"
+      ],
+      "answer": 2,
+      "explanation": "製造品質は、つくられた製品が設計品質（ねらいの品質）にどれだけ合っているかを表すので、「適合の品質」ともいいます。企画品質は企画段階の品質、使用品質はお客様が使ったときに感じる品質、魅力的品質は狩野モデルの品質要素です。",
+      "explanation_vi": "製造品質 (chất lượng sản xuất, chất lượng thực hiện) thể hiện sản phẩm làm ra phù hợp đến mức nào với 設計品質 (chất lượng thiết kế), nên còn gọi là 適合の品質 (chất lượng phù hợp). 企画品質 là chất lượng ở giai đoạn kế hoạch, 使用品質 là chất lượng khách cảm nhận khi dùng, còn 魅力的品質 là một yếu tố trong mô hình Kano."
+    },
+    {
+      "id": "3-413",
+      "level": 3,
+      "topic": "gainen3",
+      "status": "checked",
+      "question": "製品の品質特性について、合格・不合格を判定するために、設計や取引の段階で定めた許容範囲を何というか。",
+      "choices": [
+        "規格（規格値）",
+        "実測値",
+        "平均値",
+        "管理限界"
+      ],
+      "answer": 0,
+      "explanation": "品質特性に対して、製品として許される範囲を定めたものが規格（規格値）で、合否の判定に使います。管理限界は、工程が安定しているかを判断するために、工程のデータから計算する線であり、規格とは意味が異なります。",
+      "explanation_vi": "Phạm vi cho phép của đặc tính chất lượng, được quyết định ở giai đoạn thiết kế hoặc giao dịch để phán định đạt/không đạt, gọi là 規格 (quy cách, giá trị quy cách). Còn 管理限界 (giới hạn kiểm soát) là đường tính từ dữ liệu công đoạn để xem công đoạn có ổn định không — ý nghĩa khác với quy cách."
+    },
+    {
+      "id": "3-414",
+      "level": 3,
+      "topic": "kanri",
+      "status": "checked",
+      "question": "ある製造課長が、方針管理の年度目標を部下と一緒に検討している。次の目標案のうち、期末に達成度を評価しやすいものはどれか。",
+      "choices": [
+        "不良を減らすことを常に意識する",
+        "品質向上にできるだけ努力する",
+        "製品Aの工程内不良率を、年度末までに2.0％から1.0％に下げる",
+        "お客様の苦情をなくすよう全員で頑張る"
+      ],
+      "answer": 2,
+      "explanation": "方針管理の目標は、達成できたかどうかを評価できるように、何を・どれだけ・いつまでに、を明確にし、できるだけ数値で表します。「努力する」「頑張る」のような表現では、期末に達成度を評価できません。",
+      "explanation_vi": "Trong 方針管理 (quản lý theo phương châm), mục tiêu phải nêu rõ cái gì, bao nhiêu, đến khi nào, và nên thể hiện bằng con số để có thể đánh giá đạt hay không. Những cách nói như “cố gắng”, “nỗ lực” thì cuối kỳ không đánh giá được mức độ đạt."
+    },
+    {
+      "id": "3-415",
+      "level": 3,
+      "topic": "kanri",
+      "status": "checked",
+      "question": "方針管理を進めている途中の中間確認で、ある部門の目標の達成が難しいことがわかった。このときの対応として、最も適切なものはどれか。",
+      "choices": [
+        "達成が難しい目標は、理由を問わずにすぐ取り消す",
+        "期末まで何もせず、期末の反省で原因を考える",
+        "目標と実績の差の原因を分析し、方策を見直して必要な処置をとる",
+        "評価が悪くならないよう、実績の数値を目標に合わせて報告する"
+      ],
+      "answer": 2,
+      "explanation": "方針管理でも期中にPDCAを回し、進捗を確認して、目標とのずれがあればその原因を分析し、方策の見直しなどの処置をとります。期末まで待つと手遅れになります。実績の数値を変えて報告することは、事実にもとづく管理に反します。",
+      "explanation_vi": "Trong 方針管理 cũng phải xoay vòng PDCA giữa kỳ: kiểm tra tiến độ, nếu lệch mục tiêu thì phân tích nguyên nhân và thực hiện biện pháp như xem lại 方策 (biện pháp). Đợi đến cuối kỳ thì đã muộn. Báo cáo sửa số liệu thực tế là trái với quản lý dựa trên sự thật."
+    },
+    {
+      "id": "3-416",
+      "level": 3,
+      "topic": "kanri",
+      "status": "checked",
+      "question": "QCサークル活動のリーダーの役割として、最も適切なものはどれか。",
+      "choices": [
+        "メンバー全員が発言し、役割を分担して参加できるように会合を運営する",
+        "経験の浅いメンバーには発言させず、ベテランだけで話し合う",
+        "テーマや対策をリーダー一人で決め、メンバーに実行させる",
+        "メンバーの意見はまとめず、会合の記録だけを残す"
+      ],
+      "answer": 0,
+      "explanation": "QCサークルのリーダーは、メンバー全員が意見を出し、役割を持って参加できるように話し合いを進め、サークルをまとめる役割を担います。リーダーが一人で決めて指示するやり方は、自主性や全員参加という活動の考え方に合いません。",
+      "explanation_vi": "Trưởng nhóm QC (QCサークル) có vai trò điều hành cuộc họp để mọi thành viên đều phát biểu, được phân công vai trò và tham gia, đồng thời gắn kết nhóm. Trưởng nhóm tự quyết rồi ra lệnh là trái với tinh thần tự chủ và mọi người cùng tham gia của hoạt động."
+    },
+    {
+      "id": "3-417",
+      "level": 3,
+      "topic": "kanri",
+      "status": "checked",
+      "question": "品質マネジメントシステムの内部監査で、製造部門に不適合が見つかった。この不適合に対する是正処置を計画し、実施するのは主に誰か。",
+      "choices": [
+        "内部監査を行った監査員",
+        "お客様",
+        "不適合を指摘された被監査部門",
+        "外部の認証機関"
+      ],
+      "answer": 2,
+      "explanation": "内部監査で見つかった不適合については、指摘を受けた被監査部門が原因を調べ、是正処置を計画・実施します。監査員は客観的な立場で事実を確認し、処置が有効であったかをフォローアップで確認する役割です。",
+      "explanation_vi": "Với điểm không phù hợp phát hiện khi 内部監査 (đánh giá nội bộ), bộ phận được đánh giá (被監査部門) sẽ tìm nguyên nhân, lập kế hoạch và thực hiện 是正処置 (hành động khắc phục). Đánh giá viên đứng ở lập trường khách quan xác nhận sự thật và kiểm tra lại hiệu quả của biện pháp trong bước theo dõi."
+    },
+    {
+      "id": "3-418",
+      "level": 3,
+      "topic": "kanri",
+      "status": "checked",
+      "question": "トップマネジメントが、自社の品質マネジメントシステムが引き続き適切で、有効に機能しているかを、あらかじめ定めた間隔で確認し、改善の必要性などを判断する活動を何というか。",
+      "choices": [
+        "方針の展開",
+        "内部監査",
+        "第三者審査",
+        "マネジメントレビュー"
+      ],
+      "answer": 3,
+      "explanation": "マネジメントレビューは、トップマネジメント自身が、監査結果や顧客の評価、目標の達成状況などの情報をもとに、品質マネジメントシステムを定期的に見直す活動です。内部監査は監査員が要求事項への適合や運用状況を確認する活動で、トップによる見直しとは異なります。",
+      "explanation_vi": "マネジメントレビュー (xem xét của lãnh đạo) là hoạt động lãnh đạo cao nhất định kỳ tự xem xét hệ thống quản lý chất lượng, dựa trên thông tin như kết quả đánh giá, phản hồi khách hàng, mức đạt mục tiêu. 内部監査 (đánh giá nội bộ) là hoạt động đánh giá viên kiểm tra sự phù hợp và vận hành — khác với việc lãnh đạo tự xem xét."
+    },
+    {
+      "id": "3-419",
+      "level": 3,
+      "topic": "kanri",
+      "status": "checked",
+      "question": "次の職場の活動のうち、「維持」ではなく「改善」にあたるものはどれか。",
+      "choices": [
+        "作業標準どおりに作業し、決められた項目を点検した",
+        "作業方法を見直して作業時間を短縮し、その方法を新しい作業標準にした",
+        "新しく配属された作業者に、現在の作業標準を教えた",
+        "設備の日常点検を点検表に従って行い、結果を記録した"
+      ],
+      "answer": 1,
+      "explanation": "維持は決めた水準を守る活動（SDCA）、改善は水準そのものを上げる活動（PDCA）です。作業方法を見直して作業時間を短縮し、新しい標準にすることは、水準を上げる改善にあたります。ほかの選択肢は、現在の標準を守るための維持の活動です。",
+      "explanation_vi": "維持 (duy trì) là giữ vững mức đã quyết định (SDCA), còn 改善 (cải tiến) là nâng chính mức đó lên (PDCA). Xem lại cách làm để rút ngắn thời gian và đưa thành tiêu chuẩn mới là cải tiến. Các lựa chọn khác là hoạt động duy trì để giữ đúng tiêu chuẩn hiện tại."
+    },
+    {
+      "id": "3-420",
+      "level": 3,
+      "topic": "kanri",
+      "status": "checked",
+      "question": "ある工場の今年度の方針として、次の三つが示された。\n(a) 重点課題：お客様からの外観不良の苦情を減らす\n(b) 目標：外観不良の苦情件数を年度末までに半減する\n(c) 検査工程に画像検査装置を導入し、目視検査の見逃しを防ぐ\n(c)は方針の構成要素のうち、何にあたるか。",
+      "choices": [
+        "目標",
+        "管理水準",
+        "方策",
+        "重点課題"
+      ],
+      "answer": 2,
+      "explanation": "方針は、重点課題・目標・方策で構成されます。(a)のように取り組むべき課題が重点課題、(b)のように達成すべき水準と期限が目標、(c)のように目標を達成するための具体的な手段が方策です。",
+      "explanation_vi": "Phương châm gồm 重点課題 (vấn đề trọng điểm), 目標 (mục tiêu) và 方策 (biện pháp). (a) là vấn đề cần giải quyết, (b) là mức cần đạt và thời hạn, (c) là phương tiện cụ thể để đạt mục tiêu — tức là 方策."
+    },
+    {
+      "id": "3-421",
+      "level": 3,
+      "topic": "kanri",
+      "status": "checked",
+      "question": "ある職場では、日常管理のルールとして「異常が起きたらすぐに報告する」と定めている。ここでいう「異常」の意味を正しく述べたものはどれか。",
+      "choices": [
+        "お客様から苦情があった場合だけを異常という",
+        "製品が規格を外れた場合だけを異常という",
+        "工程や管理項目が、通常の状態（あらかじめ定めた管理水準など）から外れていることをいい、製品が規格内であっても異常となることがある",
+        "作業者が欠勤した場合だけを異常という"
+      ],
+      "answer": 2,
+      "explanation": "日常管理では、工程がいつもと違う状態、つまり管理水準などから外れた状態を異常といいます。製品がまだ規格内であっても、工程に異常が起きていれば、不良が出る前に原因を調べて処置することが大切です。規格外れ（不適合）とは区別して考えます。",
+      "explanation_vi": "Trong 日常管理 (quản lý hằng ngày), 異常 (bất thường) là trạng thái công đoạn khác thường, tức lệch khỏi mức quản lý đã định. Dù sản phẩm vẫn trong quy cách, nếu công đoạn có bất thường thì cần tìm nguyên nhân và xử lý trước khi phát sinh lỗi. Cần phân biệt với việc vượt quy cách (不適合 – không phù hợp)."
+    },
+    {
+      "id": "3-422",
+      "level": 3,
+      "topic": "kanri",
+      "status": "checked",
+      "question": "品質マネジメントシステムを組織に根づかせるために、経営者（トップマネジメント）が自ら果たすべき役割はどれか。",
+      "choices": [
+        "現場の作業標準を一人で作成する",
+        "品質方針を示し、その達成に必要な人や設備などの資源を確保する",
+        "不良が出たときに担当者を処分することに専念する",
+        "品質のことは品質保証部門にすべて任せ、関与しない"
+      ],
+      "answer": 1,
+      "explanation": "品質マネジメントでは、トップマネジメントがリーダーシップを発揮し、品質方針や目標を示して、その達成に必要な資源を確保することが求められます。品質を特定の部門だけに任せたり、担当者の処分だけで済ませたりするのは適切ではありません。",
+      "explanation_vi": "Trong quản lý chất lượng, lãnh đạo cao nhất cần thể hiện vai trò lãnh đạo: đưa ra 品質方針 (chính sách chất lượng), mục tiêu và bảo đảm nguồn lực (con người, thiết bị…) cần thiết. Giao phó hết cho một bộ phận hay chỉ xử phạt người phụ trách là không phù hợp."
+    },
+    {
+      "id": "3-423",
+      "level": 3,
+      "topic": "kanri",
+      "status": "checked",
+      "question": "職場の教育訓練の計画を立てるとき、最初に行うこととして最も適切なものはどれか。",
+      "choices": [
+        "仕事に必要な力量と、各人の現在の力量を比べて、不足している点を明らかにする",
+        "全員に同じ内容の研修を同じ回数だけ受けさせる",
+        "教育の予算が余った分だけ研修を行う",
+        "他社と同じ研修をそのまま取り入れる"
+      ],
+      "answer": 0,
+      "explanation": "教育訓練は、仕事に必要な知識や技能（力量）と、一人ひとりの現在の力量との差を明らかにし、その差を埋めるように計画します。目的のはっきりしない研修や、全員一律の研修では、効果的な教育になりません。",
+      "explanation_vi": "Đào tạo cần được lập kế hoạch bằng cách làm rõ khoảng cách giữa 力量 (năng lực) cần cho công việc và năng lực hiện tại của từng người, rồi lấp khoảng cách đó. Đào tạo không rõ mục đích hoặc giống hệt nhau cho mọi người thì không hiệu quả."
+    },
+    {
+      "id": "3-424",
+      "level": 3,
+      "topic": "hosho3",
+      "status": "checked",
+      "question": "新しく発売した電子機器で、使い始めてまもない時期の故障が多く、その後は故障がほとんど起きないことがわかった。この時期の故障を出荷前に減らす対策として、最も適切なものはどれか。",
+      "choices": [
+        "出荷前に一定時間通電して動かし、初期の弱い製品を取り除く（スクリーニング）",
+        "保証期間を短くして、修理の件数を減らす",
+        "部品の寿命が尽きる前に、定期的に交換するよう取扱説明書に書く",
+        "故障した製品は、お客様の使い方が原因として処理する"
+      ],
+      "answer": 0,
+      "explanation": "使い始めの時期に多い故障は初期故障で、製造上の欠陥や弱い部品が原因です。出荷前に通電・動作させて弱いものを取り除くスクリーニング（エージング）が有効です。定期交換は寿命の後半に増える摩耗故障への対策です。",
+      "explanation_vi": "Hỏng hóc nhiều ở giai đoạn mới bắt đầu sử dụng là 初期故障 (hỏng hóc ban đầu), do khuyết tật chế tạo hay linh kiện yếu. Cách hiệu quả là cho thiết bị chạy thử (cấp điện) một thời gian trước khi xuất hàng để loại bỏ sản phẩm yếu — スクリーニング (sàng lọc). Thay thế định kỳ là đối sách cho 摩耗故障 (hỏng do hao mòn) ở giai đoạn cuối tuổi thọ."
+    },
+    {
+      "id": "3-425",
+      "level": 3,
+      "topic": "hosho3",
+      "status": "checked",
+      "question": "同じ種類の装置5台を、それぞれ600時間ずつ稼働させたところ、合計で6回の故障が発生した（故障はすぐに修理して稼働を続けた）。MTBF（平均故障間動作時間）はいくらか。",
+      "choices": [
+        "100時間",
+        "3000時間",
+        "500時間",
+        "600時間"
+      ],
+      "answer": 2,
+      "explanation": "MTBFは、総動作時間を故障の回数で割って求めます。総動作時間は5台×600時間＝3000時間なので、3000÷6＝500時間です。1台分の600時間を6で割ると100時間となり誤りです。",
+      "explanation_vi": "MTBF (thời gian hoạt động trung bình giữa các lần hỏng) = tổng thời gian hoạt động ÷ số lần hỏng. Tổng thời gian là 5 máy × 600 giờ = 3000 giờ, nên 3000 ÷ 6 = 500 giờ. Lấy 600 giờ của một máy chia cho 6 ra 100 giờ là sai."
+    },
+    {
+      "id": "3-426",
+      "level": 3,
+      "topic": "hosho3",
+      "status": "checked",
+      "question": "故障した設備や製品を、短い時間で容易に修理して、使える状態に戻せる性質を何というか。",
+      "choices": [
+        "保全性",
+        "信頼性",
+        "耐久性",
+        "安全性"
+      ],
+      "answer": 0,
+      "explanation": "故障したときに修理しやすく、短時間で元の状態に戻せる性質を保全性といいます。信頼性は故障せずに機能を果たし続ける性質で、保全性とは別の概念です。",
+      "explanation_vi": "Tính chất dễ sửa chữa, có thể đưa thiết bị hay sản phẩm bị hỏng về trạng thái sử dụng được trong thời gian ngắn gọi là 保全性 (khả năng bảo trì). 信頼性 (độ tin cậy) là tính chất hoạt động liên tục không hỏng — hai khái niệm khác nhau."
+    },
+    {
+      "id": "3-427",
+      "level": 3,
+      "topic": "hosho3",
+      "status": "checked",
+      "question": "プレス機で、停電や部品の故障が起きたときに、機械が必ず安全な側（ラムが下降しない状態）で停止するように設計した。この設計の考え方を何というか。",
+      "choices": [
+        "フェールセーフ",
+        "冗長設計",
+        "ロバスト設計",
+        "フールプルーフ"
+      ],
+      "answer": 0,
+      "explanation": "故障や異常が起きても、システムが安全な側に動作するように設計する考え方をフェールセーフといいます。フールプルーフは、人が誤った操作をしても事故や不良にならない（または誤操作ができない）ようにする考え方です。",
+      "explanation_vi": "Thiết kế sao cho dù có hỏng hóc hay bất thường, hệ thống vẫn hoạt động về phía an toàn gọi là フェールセーフ (fail-safe). フールプルーフ (chống sai sót) là thiết kế để dù con người thao tác sai cũng không gây tai nạn hay lỗi (hoặc không thể thao tác sai)."
+    },
+    {
+      "id": "3-428",
+      "level": 3,
+      "topic": "hosho3",
+      "status": "checked",
+      "question": "ある設備では、軸受けが壊れてから交換していたため、突然のライン停止と不良の発生がたびたび起きていた。そこで、過去の故障記録から寿命を見積もり、壊れる前に決めた周期で軸受けを交換することにした。この保全のやり方を何というか。",
+      "choices": [
+        "事後保全",
+        "予防保全",
+        "改良保全",
+        "応急処置"
+      ],
+      "answer": 1,
+      "explanation": "故障する前に、決めた周期や設備の状態に応じて点検・交換を行い、故障を防ぐ保全を予防保全といいます。壊れてから修理するのは事後保全です。改良保全は、故障しにくいように設備そのものを改良する保全です。",
+      "explanation_vi": "Bảo trì bằng cách kiểm tra, thay thế theo chu kỳ đã định hoặc theo tình trạng thiết bị trước khi hỏng gọi là 予防保全 (bảo trì phòng ngừa). Hỏng rồi mới sửa là 事後保全 (bảo trì sau sự cố). 改良保全 (bảo trì cải tiến) là cải tạo bản thân thiết bị để ít hỏng hơn."
+    },
+    {
+      "id": "3-429",
+      "level": 3,
+      "topic": "hosho3",
+      "status": "checked",
+      "question": "購入部品の受入検査で、あるロットが不合格になった。このときの対応として、最も適切なものはどれか。",
+      "choices": [
+        "不合格ロットを良品のロットと混ぜて使い、不良率を薄める",
+        "生産を止めないために、不合格ロットをそのまま使い、次のロットから検査を厳しくする",
+        "不合格ロットは識別して隔離し、返品や選別などの処置を決めるとともに、供給者に原因の調査と再発防止を求める",
+        "不合格になったことは供給者には伝えず、自社で選別して使う"
+      ],
+      "answer": 2,
+      "explanation": "不合格ロットは誤って使われないように識別・隔離し、返品・選別などの処置を決めます。さらに、同じ問題を繰り返さないよう、供給者に原因調査と再発防止（是正処置）を求めることが大切です。供給者に伝えずに自社だけで処理すると、再発を防げません。",
+      "explanation_vi": "Lô không đạt cần được nhận diện, cách ly để không bị dùng nhầm, rồi quyết định xử lý như trả lại hay chọn lọc. Quan trọng hơn, phải yêu cầu nhà cung cấp điều tra nguyên nhân và phòng ngừa tái phát (是正処置 – hành động khắc phục). Nếu tự xử lý mà không báo nhà cung cấp thì không ngăn được tái phát."
+    },
+    {
+      "id": "3-430",
+      "level": 3,
+      "topic": "hosho3",
+      "status": "checked",
+      "question": "新製品の設計で、使用者がけがをするおそれのある危険源が見つかった。リスクを減らす対策を考えるとき、最も優先すべきものはどれか。",
+      "choices": [
+        "販売店に、お客様へ口頭で注意するよう依頼する",
+        "危険源そのものをなくす、または小さくするように設計を変える（本質的安全設計）",
+        "製品に警告ラベルを貼る",
+        "取扱説明書に注意事項を書き加える"
+      ],
+      "answer": 1,
+      "explanation": "リスクを減らす対策は、まず設計で危険源そのものをなくす・小さくする本質的安全設計を考え、次に保護装置などの安全防護、最後に警告表示や取扱説明書による使用上の情報という順で検討します。表示や説明だけに頼る対策は、優先順位が最も低くなります。",
+      "explanation_vi": "Khi giảm rủi ro, trước hết phải xem xét 本質的安全設計 (thiết kế an toàn từ bản chất) — loại bỏ hoặc giảm chính nguồn nguy hiểm bằng thiết kế; tiếp theo là thiết bị bảo vệ; cuối cùng mới là thông tin sử dụng như nhãn cảnh báo, sách hướng dẫn. Biện pháp chỉ dựa vào ghi chú, giải thích có mức ưu tiên thấp nhất."
+    },
+    {
+      "id": "3-431",
+      "level": 3,
+      "topic": "hosho3",
+      "status": "checked",
+      "question": "出荷予定日になったが、その製品ロットの強度試験の結果がまだ出ていない。お客様からは早く納品してほしいと言われている。このときの対応として、最も適切なものはどれか。",
+      "choices": [
+        "これまで不合格になったことがないので、結果を待たずに出荷する",
+        "試験結果が出て合格が確認されるまでロットを保留し、お客様に状況を連絡して納期を相談する",
+        "試験を省略したことを記録に残さずに出荷する",
+        "半分だけ出荷し、残りは試験結果が出てから出荷する"
+      ],
+      "answer": 1,
+      "explanation": "決められた試験に合格したことを確認してから出荷するのが品質保証の基本です。結果が出るまでロットを保留し、お客様には状況を伝えて納期を相談します。過去の実績を理由に確認を省くと、不良品を流出させるおそれがあります。",
+      "explanation_vi": "Nguyên tắc cơ bản của đảm bảo chất lượng là chỉ xuất hàng sau khi xác nhận lô hàng đã đạt các phép thử quy định. Cần giữ lô hàng lại (保留 – tạm giữ) cho đến khi có kết quả, đồng thời báo tình hình cho khách và thương lượng thời hạn giao. Bỏ qua xác nhận vì “trước giờ chưa từng trượt” có thể làm lọt hàng lỗi ra ngoài."
+    },
+    {
+      "id": "3-432",
+      "level": 3,
+      "topic": "hosho3",
+      "status": "checked",
+      "question": "製品開発で、設計のアウトプット（図面・仕様書など）が、設計のインプットとして定めた要求事項を満たしているかを、計算や試験によって確認することを何というか。",
+      "choices": [
+        "初期流動管理",
+        "設計の検証",
+        "設計の妥当性確認",
+        "工程能力調査"
+      ],
+      "answer": 1,
+      "explanation": "設計のアウトプットが、設計のインプット（要求事項）を満たしているかを確認するのが設計の検証です。これに対し、設計の妥当性確認は、製品が実際の使用条件で意図した用途を満たすかを確認するものです。",
+      "explanation_vi": "Xác nhận đầu ra thiết kế (bản vẽ, quy cách…) có đáp ứng yêu cầu đã định làm đầu vào thiết kế hay không, bằng tính toán hoặc thử nghiệm, gọi là 設計の検証 (kiểm tra xác nhận thiết kế — verification). Còn 設計の妥当性確認 (xác nhận giá trị sử dụng — validation) là xác nhận sản phẩm có đáp ứng mục đích sử dụng dự kiến trong điều kiện sử dụng thực tế hay không."
+    },
+    {
+      "id": "3-433",
+      "level": 3,
+      "topic": "hosho3",
+      "status": "checked",
+      "question": "お客様から、部品の穴の位置がずれているという苦情があった。社内で調べると、穴あけ工程で不良が発生し、さらに最終検査でも見逃されていたことがわかった。再発防止の進め方として、最も適切なものはどれか。",
+      "choices": [
+        "最終検査員に注意して、検査を厳しくするだけにする",
+        "苦情を受けたロットを交換するだけにする",
+        "穴あけ工程の作業者を交代させるだけにする",
+        "不良が発生した原因（発生原因）と、検査で見逃した原因（流出原因）の両方を調べて対策する"
+      ],
+      "answer": 3,
+      "explanation": "不良がお客様に届いたときは、なぜ不良がつくられたか（発生原因）と、なぜ検査などで止められずに流出したか（流出原因）の両方を調べて対策します。どちらか一方だけの対策では、同じ苦情が再び起こるおそれがあります。",
+      "explanation_vi": "Khi hàng lỗi đến tay khách, cần điều tra và đối sách cả hai: vì sao lỗi được tạo ra (発生原因 – nguyên nhân phát sinh) và vì sao lỗi không bị chặn lại ở kiểm tra mà lọt ra ngoài (流出原因 – nguyên nhân lọt lỗi). Nếu chỉ xử lý một phía thì khiếu nại tương tự có thể lặp lại."
+    },
+    {
+      "id": "3-434",
+      "level": 3,
+      "topic": "hosho3",
+      "status": "checked",
+      "question": "出荷前の製品の中から定期的にサンプルを抜き取り、お客様の立場に立って、外観・機能・包装・表示などを評価し、品質保証の仕組みが有効に働いているかを確かめる活動を何というか。",
+      "choices": [
+        "工程内検査",
+        "受入検査",
+        "初品検査",
+        "製品監査"
+      ],
+      "answer": 3,
+      "explanation": "検査に合格した製品を、お客様の立場から改めて評価し、品質保証の仕組みが有効に働いているかを確かめる活動を製品監査といいます。受入検査は購入品を受け入れる段階、工程内検査は工程の途中で行う検査で、目的が異なります。",
+      "explanation_vi": "Hoạt động định kỳ lấy mẫu sản phẩm trước khi xuất hàng (đã qua kiểm tra), đánh giá lại từ góc nhìn khách hàng để xác nhận hệ thống đảm bảo chất lượng có hoạt động hiệu quả hay không, gọi là 製品監査 (đánh giá sản phẩm — product audit). 受入検査 (kiểm tra đầu vào) và 工程内検査 (kiểm tra trong công đoạn) có mục đích khác."
+    },
+    {
+      "id": "3-435",
+      "level": 3,
+      "topic": "hoho3",
+      "status": "checked",
+      "question": "改善活動で、ある部品の不良が月300個から月120個に減った。不良1個あたりの損失を500円とすると、この改善による年間（12か月）の有形効果はいくらか。",
+      "choices": [
+        "180万円",
+        "108万円",
+        "9万円",
+        "72万円"
+      ],
+      "answer": 1,
+      "explanation": "減った不良は300－120＝180個/月で、損失の減少は180×500＝90,000円/月です。年間では90,000×12＝1,080,000円（108万円）となります。対策後の120個で計算したり、月の値のままにしたりする誤りに注意します。",
+      "explanation_vi": "Số lỗi giảm được là 300 − 120 = 180 cái/tháng, tổn thất giảm 180 × 500 = 90.000 yên/tháng. Cả năm là 90.000 × 12 = 1.080.000 yên (108万円). Chú ý tránh nhầm khi tính bằng 120 cái sau đối sách hoặc để nguyên giá trị theo tháng. Đây là 有形効果 (hiệu quả hữu hình)."
+    },
+    {
+      "id": "3-436",
+      "level": 3,
+      "topic": "hoho3",
+      "status": "checked",
+      "question": "日常管理で管理項目を決めるときの考え方として、適切でないものはどれか。",
+      "choices": [
+        "管理項目ごとに管理水準と、外れたときの処置の担当者を決めておく",
+        "仕事の目的に照らして、結果をよく表す項目を選ぶ",
+        "測れるものはできるだけ多く管理項目にして、すべてを同じ重みで毎日確認する",
+        "データで判断できるように、測定の方法や頻度を決めておく"
+      ],
+      "answer": 2,
+      "explanation": "管理項目は、仕事の目的に照らして重要なものに絞って決めます。測れるものを何でも管理項目にすると、確認の手間が増えて、重要な異常を見落としやすくなります。管理水準、処置の担当、測定方法や頻度もあわせて決めておきます。",
+      "explanation_vi": "管理項目 (hạng mục quản lý) phải được chọn lọc, chỉ giữ những hạng mục quan trọng theo mục đích công việc. Nếu biến mọi thứ đo được thành hạng mục quản lý, công sức kiểm tra tăng lên và dễ bỏ sót bất thường quan trọng. Cần quyết định kèm mức quản lý, người phụ trách xử lý, cách đo và tần suất đo."
+    },
+    {
+      "id": "3-437",
+      "level": 3,
+      "topic": "hoho3",
+      "status": "checked",
+      "question": "ある工程で改善を行った結果、管理項目のばらつきが以前の半分程度に小さくなり、その状態が安定して続いている。管理水準についての対応として、最も適切なものはどれか。",
+      "choices": [
+        "管理水準を、規格の上限・下限と同じ値に変える",
+        "改善後のデータをもとに管理水準を見直し、新しい状態に合った値に改める",
+        "管理水準は一度決めたら変えてはいけないので、そのまま使い続ける",
+        "ばらつきが小さくなったので、管理水準による確認をやめる"
+      ],
+      "answer": 1,
+      "explanation": "工程が改善されて新しい安定状態になったら、改善後のデータで管理水準を見直します。古い広い管理水準のままでは、改善した状態からの変化（異常）を早く見つけられません。",
+      "explanation_vi": "Khi công đoạn đã được cải tiến và ổn định ở trạng thái mới, phải xem lại 管理水準 (mức quản lý) dựa trên dữ liệu sau cải tiến. Nếu giữ mức quản lý cũ rộng hơn, sẽ không phát hiện sớm được sự thay đổi (bất thường) so với trạng thái đã cải tiến."
+    },
+    {
+      "id": "3-438",
+      "level": 3,
+      "topic": "hoho3",
+      "status": "checked",
+      "question": "作業標準を改訂して新しい作業方法を決めたが、一部の職場に旧版の作業標準書が残っていて、古い方法で作業が行われ不良が発生した。このようなことを防ぐ対策として、最も適切なものはどれか。",
+      "choices": [
+        "改訂時に版数と改訂日を明記し、新版を配付すると同時に旧版を回収・廃棄する",
+        "旧版と新版の両方を職場に置き、作業者が選べるようにする",
+        "作業標準書は配付せず、作業者の記憶に任せる",
+        "改訂の回数を減らすために、作業標準は改訂しないことにする"
+      ],
+      "answer": 0,
+      "explanation": "標準を改訂したときは、版数や改訂日で最新版がわかるようにし、新版の配付と同時に旧版を回収・廃棄して、旧版が誤って使われないようにします。あわせて、改訂内容を関係者に教育することも大切です。",
+      "explanation_vi": "Khi sửa đổi tiêu chuẩn, phải ghi rõ số phiên bản và ngày sửa đổi để biết đâu là bản mới nhất, và thu hồi, hủy bản cũ cùng lúc phát bản mới, để bản cũ không bị dùng nhầm. Đồng thời cần đào tạo nội dung sửa đổi cho những người liên quan."
+    },
+    {
+      "id": "3-439",
+      "level": 3,
+      "topic": "hoho3",
+      "status": "checked",
+      "question": "日常管理で、職場や職位ごとに、管理項目、管理水準、確認の頻度、異常のときの処置の担当者などを一覧にまとめたものを何というか。",
+      "choices": [
+        "QC工程図",
+        "作業標準書",
+        "管理項目一覧表",
+        "特性要因図"
+      ],
+      "answer": 2,
+      "explanation": "管理項目一覧表は、職場や職位ごとに、何を（管理項目）、どの水準で（管理水準）、どのくらいの頻度で確認し、異常時に誰が処置するかをまとめたものです。QC工程図は、製品の工程の流れに沿って各工程の管理方法を示したもので、目的が異なります。",
+      "explanation_vi": "管理項目一覧表 (bảng danh mục hạng mục quản lý) tổng hợp cho từng nơi làm việc, từng chức vụ: quản lý cái gì, ở mức nào, tần suất kiểm tra, ai xử lý khi bất thường. QC工程図 (sơ đồ QC công đoạn) thể hiện cách quản lý từng công đoạn theo dòng chảy sản phẩm, mục đích khác nhau."
+    },
+    {
+      "id": "3-440",
+      "level": 3,
+      "topic": "hoho3",
+      "status": "checked",
+      "question": "不良対策の会議で、ベテランの作業者が「長年の経験から、原因は材料に違いない」と主張した。品質管理の考え方に沿った進め方として、最も適切なものはどれか。",
+      "choices": [
+        "材料を含めて考えられる要因についてデータを取り、事実にもとづいて原因を確かめる",
+        "原因の議論はやめて、検査を増やすことにする",
+        "多数決で原因を決める",
+        "ベテランの経験は確かなので、すぐに材料の変更を決める"
+      ],
+      "answer": 0,
+      "explanation": "品質管理では、経験や勘（KKD）だけで判断せず、データにもとづいて事実で判断することを重視します。経験からの意見は要因の候補として大切に扱い、データで検証してから原因を決めます。",
+      "explanation_vi": "Quản lý chất lượng coi trọng việc phán đoán bằng sự thật dựa trên dữ liệu (事実にもとづく管理), không chỉ dựa vào kinh nghiệm, trực giác (KKD). Ý kiến từ kinh nghiệm được coi là ứng viên nguyên nhân quan trọng, nhưng phải kiểm chứng bằng dữ liệu rồi mới kết luận."
+    },
+    {
+      "id": "3-441",
+      "level": 3,
+      "topic": "hoho3",
+      "status": "checked",
+      "question": "ある工程の不良率を月ごとに折れ線グラフにしたところ、6月から急に高くなり、その後も高いままであった。現状把握の次の調べ方として、最も適切なものはどれか。",
+      "choices": [
+        "6月前後に、材料・設備・作業方法・作業者（4M）などに変化がなかったかを調べる",
+        "6月以降のデータは異常なので、除いて分析する",
+        "1年間の平均の不良率だけを計算して報告する",
+        "グラフの縦軸の目盛りを変えて、変化を小さく見せる"
+      ],
+      "answer": 0,
+      "explanation": "時系列で見て、ある時点から急に状態が変わった場合は、その時期に4M（人・機械・材料・方法）などの変化がなかったかを調べると、原因の手がかりが得られます。平均値だけでは変化の時期がわからなくなります。",
+      "explanation_vi": "Khi xem theo chuỗi thời gian và thấy trạng thái thay đổi đột ngột từ một thời điểm, hãy điều tra xem quanh thời điểm đó có thay đổi về 4M (con người, máy, vật liệu, phương pháp) hay không — đó là manh mối tìm nguyên nhân. Nếu chỉ nhìn giá trị trung bình sẽ không biết được thời điểm thay đổi."
+    },
+    {
+      "id": "3-442",
+      "level": 3,
+      "topic": "hoho3",
+      "status": "checked",
+      "question": "作業の改善を考えるときに用いる「ECRSの原則」で、最初に検討すべきこととして、最も適切なものはどれか。",
+      "choices": [
+        "作業の順序を入れ替えられないか（交換）",
+        "その作業そのものをなくせないか（排除）",
+        "その作業をほかの作業とまとめられないか（結合）",
+        "その作業を簡単にできないか（簡素化）"
+      ],
+      "answer": 1,
+      "explanation": "ECRSの原則は、排除（Eliminate）、結合（Combine）、交換（Rearrange）、簡素化（Simplify）の順に検討します。まず作業そのものをなくせないかを考えるのが、最も効果が大きいためです。",
+      "explanation_vi": "Nguyên tắc ECRS xem xét theo thứ tự: 排除 (loại bỏ – Eliminate), 結合 (kết hợp – Combine), 交換 (sắp xếp lại – Rearrange), 簡素化 (đơn giản hóa – Simplify). Trước hết hỏi “có bỏ hẳn công việc này được không” vì hiệu quả lớn nhất."
+    },
+    {
+      "id": "3-443",
+      "level": 3,
+      "topic": "hoho3",
+      "status": "checked",
+      "question": "改善活動の結果、不良率が5.0%から3.5%になった。不良率の低減率（対策前に対して何%減ったか）はいくらか。",
+      "choices": [
+        "1.5%",
+        "30%",
+        "約43%",
+        "70%"
+      ],
+      "answer": 1,
+      "explanation": "低減率＝（対策前－対策後）÷対策前＝（5.0－3.5）÷5.0＝0.30で30%です。差の1.5%はポイントの差で、低減率ではありません。対策後の3.5%で割ると約43%となり誤りです。",
+      "explanation_vi": "Tỷ lệ giảm (低減率) = (trước − sau) ÷ trước = (5,0 − 3,5) ÷ 5,0 = 0,30 tức 30%. Chênh lệch 1,5% là hiệu số điểm phần trăm, không phải tỷ lệ giảm. Nếu chia cho 3,5% sau đối sách sẽ ra khoảng 43% — sai."
+    },
+    {
+      "id": "3-444",
+      "level": 3,
+      "topic": "hoho3",
+      "status": "checked",
+      "question": "設備が故障してラインが止まったが、作業者が自分で部品を付け直して運転を再開し、誰にも報告しなかった。この対応の問題点として、最も適切なものはどれか。",
+      "choices": [
+        "報告や記録がないため、原因の調査と再発防止が行われず、同じ故障が繰り返されるおそれがある",
+        "故障はすでに直っているので、問題点はない",
+        "ラインを再開したこと自体が問題で、修理は必ず翌日に行うべきだった",
+        "作業者が修理したので、設備の保証が受けられなくなる"
+      ],
+      "answer": 0,
+      "explanation": "異常が起きたときは、応急処置に加えて、報告・記録をして原因を調べ、再発防止を行う必要があります。報告がないと、管理者が異常を知ることができず、根本の原因が残ったままになります。",
+      "explanation_vi": "Khi có bất thường, ngoài xử lý tạm thời (応急処置) còn phải báo cáo, ghi chép, điều tra nguyên nhân và phòng ngừa tái phát (再発防止). Nếu không báo cáo, người quản lý không biết được bất thường và nguyên nhân gốc vẫn còn nguyên."
+    },
+    {
+      "id": "3-445",
+      "level": 3,
+      "topic": "hoho3",
+      "status": "checked",
+      "question": "製造工程で見つかった不良の原因をさかのぼって調べたところ、設計図面の公差の決め方や、購入材料の選び方に原因があった。このように、問題の原因を上流の段階（設計・購買など）までさかのぼって対策する考え方を何というか。",
+      "choices": [
+        "源流管理",
+        "水平展開",
+        "結果管理",
+        "応急処置"
+      ],
+      "answer": 0,
+      "explanation": "問題の真の原因を、製造よりも上流の企画・設計・購買などの段階までさかのぼって取り除く考え方を源流管理といいます。上流で対策するほど、効果が大きく費用も小さくなります。水平展開は、ある対策をほかの同種の製品や工程にも広げることです。",
+      "explanation_vi": "Cách nghĩ truy ngược nguyên nhân thật của vấn đề lên các giai đoạn thượng nguồn như kế hoạch, thiết kế, mua hàng để loại bỏ gọi là 源流管理 (quản lý từ nguồn). Đối sách càng ở thượng nguồn thì hiệu quả càng lớn, chi phí càng nhỏ. 水平展開 (triển khai ngang) là mở rộng đối sách sang sản phẩm, công đoạn cùng loại."
+    },
+    {
+      "id": "3-446",
+      "level": 3,
+      "topic": "shin7",
+      "status": "checked",
+      "question": "ある作業計画をアローダイアグラムで表した。作業A（2日）のあとに作業C（3日）を行う。作業B（4日）はAと同時に開始でき、Bのあとに作業D（2日）を行う。作業E（3日）は、作業Cと作業Bの両方が終わってから開始する（Bの終了からEの開始へはダミーの矢線で結ぶ）。作業DとEの両方が終われば全体が完了する。全体の完了までに必要な最短の日数はどれか。",
+      "choices": [
+        "7日",
+        "8日",
+        "9日",
+        "14日"
+      ],
+      "answer": 1,
+      "explanation": "経路ごとに日数を合計すると、A→C→E は2＋3＋3＝8日、B→（ダミー）→E は4＋0＋3＝7日、B→D は4＋2＝6日で、最も長い8日が全体の最短日数になります。ダミーは順序関係だけを表し、所要日数は0です。Eの前にDも必要だと誤解すると、B→D→E の9日を選んでしまいます。",
+      "explanation_vi": "Cộng số ngày theo từng đường: A→C→E = 2+3+3 = 8 ngày; B→(ダミー)→E = 4+0+3 = 7 ngày; B→D = 4+2 = 6 ngày. Đường dài nhất 8 ngày là thời gian ngắn nhất để hoàn thành toàn bộ. ダミー (công việc giả) chỉ thể hiện quan hệ thứ tự, thời gian bằng 0. Nếu hiểu nhầm rằng E còn phải chờ D thì sẽ chọn 9 ngày (B→D→E)."
+    },
+    {
+      "id": "3-447",
+      "level": 3,
+      "topic": "shin7",
+      "status": "checked",
+      "question": "「材料」「工程」「不良現象」の3つの要素について、材料と工程、工程と不良現象、不良現象と材料の3組すべての関係を1つの図で表したい。このとき用いるマトリックス図の型として、最も適切なものはどれか。",
+      "choices": [
+        "X型マトリックス図",
+        "Y型マトリックス図",
+        "T型マトリックス図",
+        "L型マトリックス図"
+      ],
+      "answer": 1,
+      "explanation": "3つの要素の間のすべての組み合わせ（3組）の関係を表すのはY型マトリックス図です。T型も3つの要素を扱いますが、1つの要素を共通の軸にして2組の関係を表すだけで、残りの1組の関係は表しません。L型は2要素、X型は4要素の組み合わせです。",
+      "explanation_vi": "Biểu đồ biểu diễn quan hệ giữa cả 3 cặp của 3 yếu tố là Y型マトリックス図 (ma trận chữ Y). T型 (chữ T) cũng dùng 3 yếu tố nhưng chỉ lấy 1 yếu tố làm trục chung để biểu diễn 2 cặp quan hệ, không thể hiện cặp còn lại. L型 dùng 2 yếu tố, X型 dùng 4 yếu tố."
+    },
+    {
+      "id": "3-448",
+      "level": 3,
+      "topic": "shin7",
+      "status": "checked",
+      "question": "ある職場で「新しい検査ラインの立ち上げ」に取り組んだ。①メンバーの意見をカードに書いてグループにまとめ、取り組むべき課題をはっきりさせた。②課題を達成するための手段を目的→手段の順に展開した。③展開した手段を効果・費用の評価項目と組み合わせて実施項目を選んだ。①〜③で用いた手法の組み合わせとして、最も適切なものはどれか。",
+      "choices": [
+        "①親和図法　②系統図法　③マトリックス図法",
+        "①親和図法　②アローダイアグラム法　③マトリックス図法",
+        "①連関図法　②系統図法　③マトリックス・データ解析法",
+        "①連関図法　②PDPC法　③マトリックス図法"
+      ],
+      "answer": 0,
+      "explanation": "言語データを親和性でまとめて課題を明確にするのは親和図法、目的→手段の順に展開するのは系統図法、手段と評価項目を行と列に並べて交点で評価するのはマトリックス図法です。マトリックス・データ解析法は数値データを解析する手法で、③のような記号による評価には使いません。",
+      "explanation_vi": "Gom dữ liệu ngôn ngữ theo độ gần gũi để làm rõ vấn đề là 親和図法 (biểu đồ thân hòa); triển khai theo thứ tự mục đích → phương tiện là 系統図法 (biểu đồ cây); xếp phương tiện và tiêu chí đánh giá theo hàng – cột rồi đánh giá ở giao điểm là マトリックス図法 (biểu đồ ma trận). マトリックス・データ解析法 là công cụ phân tích dữ liệu số, không dùng cho việc đánh giá bằng ký hiệu như ở ③."
+    },
+    {
+      "id": "3-449",
+      "level": 3,
+      "topic": "shin7",
+      "status": "checked",
+      "question": "PDPC法の特徴についての説明として、最も適切なものはどれか。",
+      "choices": [
+        "作業の所要日数を矢線で表し、全体の日程が最も長くなる経路を求める",
+        "一度作成した図は計画の途中で変更せず、最初に決めた手順どおりに実行する",
+        "計画を進める中で新しい事態が判明したら、図を見直して対応策を追加・修正していく",
+        "多数の数値データを少数の総合的な指標にまとめて、全体の傾向をつかむ"
+      ],
+      "answer": 2,
+      "explanation": "PDPC法は、起こりうる事態を予測して目標に至るプロセスを決めておく手法で、実施の途中で新たな情報や予想外の事態が出てきたら、図を随時見直して修正していくのが特徴です。日程とクリティカルパスを求めるのはアローダイアグラム法、数値データを総合指標にまとめるのはマトリックス・データ解析法です。",
+      "explanation_vi": "PDPC法 là công cụ dự đoán các tình huống có thể xảy ra và quyết định trước quy trình đi đến mục tiêu; đặc điểm của nó là trong quá trình thực hiện, nếu có thông tin mới hoặc tình huống ngoài dự kiến thì xem lại và chỉnh sửa sơ đồ bất cứ lúc nào. Biểu diễn tiến độ và tìm đường găng là アローダイアグラム法; gom nhiều dữ liệu số thành ít chỉ số tổng hợp là マトリックス・データ解析法."
     }
   ]
 }
