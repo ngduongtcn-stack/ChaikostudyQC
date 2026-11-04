@@ -6,6 +6,163 @@
     },
     "sections": [
       {
+        "basic": true,
+        "h": {
+          "ja": "品質管理（QC）とは？",
+          "vi": "Quản lý chất lượng (QC) là gì?"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "たとえば、お弁当屋さんを考えてみましょう。毎日おいしいお弁当を、決まった時間に、決まった値段で出せれば、お客様はまた買いに来てくれます。逆に、日によって味が違ったり、ご飯が少なかったりすると、お客様は離れていきます。",
+            "vi": "Hãy thử nghĩ về một tiệm cơm hộp. Nếu ngày nào cũng bán được hộp cơm ngon, đúng giờ, đúng giá, khách sẽ quay lại mua. Ngược lại, nếu hôm thì vị khác, hôm thì ít cơm, khách sẽ bỏ đi."
+          },
+          {
+            "type": "p",
+            "ja": "品質管理（QC：Quality Control）は、このように「お客様が満足するものを、いつも同じように、むだなくつくる」ための工夫と活動のことです。工場だけでなく、事務やサービスの仕事にも当てはまります。",
+            "vi": "品質管理 (quản lý chất lượng, QC: Quality Control) chính là những cách làm và hoạt động để “luôn làm ra thứ khách hàng hài lòng, đều đặn như nhau, không lãng phí”. Không chỉ ở nhà máy mà cả công việc văn phòng, dịch vụ cũng áp dụng được."
+          },
+          {
+            "type": "list",
+            "ja": [
+              "お客様の立場で考える（品質第一・マーケットイン）",
+              "次の工程の人もお客様と考える（後工程はお客様）",
+              "思い込みではなく、現場・現物・データで判断する（三現主義・事実にもとづく管理）",
+              "計画→実行→確認→処置をくり返して、少しずつよくする（PDCA）"
+            ],
+            "vi": [
+              "Suy nghĩ từ vị trí của khách hàng (品質第一 – chất lượng là trên hết, マーケットイン – hướng theo thị trường)",
+              "Coi người ở công đoạn sau cũng là khách hàng (後工程はお客様)",
+              "Phán đoán bằng hiện trường, hàng thật và dữ liệu chứ không phải phỏng đoán (三現主義 – chủ nghĩa ba hiện, 事実にもとづく管理 – quản lý dựa trên sự thật)",
+              "Lặp lại kế hoạch → thực hiện → kiểm tra → xử lý để tốt dần lên (PDCA)"
+            ]
+          },
+          {
+            "type": "point",
+            "ja": "この分野の考え方は、ほかのすべての分野の土台です。用語を丸暗記するより、「なぜそうするのか」をつかみましょう。",
+            "vi": "Các cách nghĩ trong phân野 này là nền tảng cho mọi phân野 khác. Thay vì học thuộc thuật ngữ, hãy nắm “vì sao lại làm như vậy”."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "職場ではこう使う：不良が出たとき",
+          "vi": "Áp dụng ở nơi làm việc: khi xuất hiện hàng lỗi"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "ある組立ラインで、ねじの締め忘れが続けて見つかったとします。QCの考え方を使うと、次のように動きます。",
+            "vi": "Giả sử ở một dây chuyền lắp ráp liên tục phát hiện lỗi quên siết vít. Nếu dùng cách nghĩ QC, ta sẽ hành động như sau."
+          },
+          {
+            "type": "list",
+            "ja": [
+              "まず現場へ行き、実物を見て、実際にどの作業で起きているかを確かめる（三現主義）",
+              "締め忘れの件数を記録し、どの時間帯・どの作業者・どの製品で多いかをデータで調べる（事実にもとづく管理）",
+              "件数の多いものから手をつける（重点指向）",
+              "「注意しろ」で終わらせず、締め忘れが起きない作業のやり方に変える（プロセス重視）",
+              "効果があったやり方を標準にして、全員で守る（PDCAのA・標準化）"
+            ],
+            "vi": [
+              "Trước hết ra hiện trường, xem hàng thật, xác nhận lỗi xảy ra ở thao tác nào (三現主義)",
+              "Ghi lại số lần quên siết, xem bằng dữ liệu là nhiều vào khung giờ nào, người nào, sản phẩm nào (事実にもとづく管理)",
+              "Bắt tay vào cái có số lượng nhiều trước (重点指向 – tập trung vào trọng điểm)",
+              "Không kết thúc bằng câu “hãy chú ý”, mà đổi cách làm để không thể quên siết (プロセス重視 – coi trọng quá trình)",
+              "Biến cách làm có hiệu quả thành tiêu chuẩn và mọi người cùng tuân thủ (A trong PDCA, 標準化 – tiêu chuẩn hóa)"
+            ],
+            "ol": true
+          },
+          {
+            "type": "point",
+            "ja": "ひとつの問題の中で、いくつもの考え方がつながって使われます。試験でも、場面を読んで「どの考え方に当たるか」を選ぶ問題がよく出ます。",
+            "vi": "Trong cùng một vấn đề, nhiều cách nghĩ được dùng nối tiếp nhau. Trong đề thi cũng hay có dạng đọc tình huống rồi chọn “thuộc cách nghĩ nào”."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "例題で確かめる：まぎらわしい組み合わせ",
+          "vi": "Kiểm tra bằng ví dụ: những cặp dễ nhầm"
+        },
+        "blocks": [
+          {
+            "type": "table",
+            "head": [
+              "場面",
+              "当てはまる考え方",
+              "ポイント"
+            ],
+            "rows": [
+              [
+                "技術者がつくりたい高性能品を出したが売れなかった",
+                "プロダクトアウト",
+                "つくり手の都合が中心"
+              ],
+              [
+                "アンケートで要望を調べてから設計した",
+                "マーケットイン",
+                "お客様の要求が出発点"
+              ],
+              [
+                "不良品を全数選別して取り除いた",
+                "応急処置",
+                "今の不良への手当て。原因は残る"
+              ],
+              [
+                "原因の機械条件を直し、作業標準も改訂した",
+                "再発防止",
+                "原因を取り除き、くり返さない"
+              ],
+              [
+                "新製品の設計で、過去の不具合を前もって対策した",
+                "未然防止",
+                "まだ起きていない問題を防ぐ"
+              ]
+            ],
+            "head_vi": [
+              "Tình huống",
+              "Cách nghĩ tương ứng",
+              "Điểm mấu chốt"
+            ],
+            "rows_vi": [
+              [
+                "Kỹ sư tung ra sản phẩm tính năng cao mình muốn làm nhưng bán không chạy",
+                "プロダクトアウト (hướng theo sản phẩm)",
+                "Lấy sự tiện lợi của người làm làm trung tâm"
+              ],
+              [
+                "Khảo sát mong muốn bằng phiếu hỏi rồi mới thiết kế",
+                "マーケットイン (hướng theo thị trường)",
+                "Xuất phát từ yêu cầu của khách"
+              ],
+              [
+                "Tuyển lựa toàn bộ để loại bỏ hàng lỗi",
+                "応急処置 (xử lý khẩn cấp)",
+                "Xử lý hàng lỗi hiện tại; nguyên nhân vẫn còn"
+              ],
+              [
+                "Sửa điều kiện máy là nguyên nhân, sửa cả tiêu chuẩn thao tác",
+                "再発防止 (phòng ngừa tái phát)",
+                "Loại bỏ nguyên nhân để không lặp lại"
+              ],
+              [
+                "Khi thiết kế sản phẩm mới, đối sách trước cho các lỗi trong quá khứ",
+                "未然防止 (phòng ngừa từ trước)",
+                "Ngăn vấn đề chưa xảy ra"
+              ]
+            ]
+          },
+          {
+            "type": "mistake",
+            "ja": "「検査員を増やす」「注意を呼びかける」は、不良を見つける・減らす努力ではあっても、不良をつくる原因（プロセス）を直していません。プロセス重視とは、仕事のやり方そのものを変えることです。",
+            "vi": "“Tăng người kiểm tra”, “nhắc nhở chú ý” tuy là nỗ lực tìm ra hay giảm hàng lỗi, nhưng không sửa nguyên nhân tạo ra lỗi (quá trình). プロセス重視 nghĩa là thay đổi chính cách làm việc."
+          }
+        ]
+      },
+      {
         "h": {
           "ja": "品質第一とマーケットイン",
           "vi": "Chất lượng là số một và market-in"
@@ -188,6 +345,159 @@
       "vi": "Chất lượng là mức độ sản phẩm, dịch vụ đáp ứng yêu cầu của khách hàng. Đáp ứng được yêu cầu thì gọi là chất lượng tốt."
     },
     "sections": [
+      {
+        "basic": true,
+        "h": {
+          "ja": "「品質」とは？",
+          "vi": "“Chất lượng” là gì?"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "「品質がよい」と聞くと、高級なものや丈夫なものを思い浮かべるかもしれません。しかし品質管理でいう品質は、「お客様の要求をどれだけ満たしているか」の程度です。",
+            "vi": "Nghe “chất lượng tốt”, có thể bạn nghĩ đến đồ cao cấp hay đồ bền. Nhưng chất lượng trong quản lý chất lượng là mức độ “đáp ứng yêu cầu của khách hàng đến đâu”."
+          },
+          {
+            "type": "p",
+            "ja": "たとえば、子ども用の水筒なら「軽い」「洗いやすい」「落としても割れない」が大切です。どんなに高級な素材でも、重くて洗いにくければ、この使い方では品質がよいとはいえません。",
+            "vi": "Ví dụ với bình nước cho trẻ em, điều quan trọng là “nhẹ”, “dễ rửa”, “rơi không vỡ”. Dù vật liệu cao cấp đến đâu, nếu nặng và khó rửa thì với cách dùng này không thể nói là chất lượng tốt."
+          },
+          {
+            "type": "list",
+            "ja": [
+              "品質を決めるのは、つくる人ではなく使うお客様",
+              "形のある製品だけでなく、サービスや事務の仕事にも品質がある",
+              "お客様の要求は、時代や使う人によって変わる"
+            ],
+            "vi": [
+              "Người quyết định chất lượng là khách hàng sử dụng, không phải người làm ra",
+              "Không chỉ sản phẩm hữu hình mà dịch vụ và công việc văn phòng cũng có chất lượng",
+              "Yêu cầu của khách thay đổi theo thời đại và theo người dùng"
+            ]
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "職場ではこう使う：どこで品質が決まるか",
+          "vi": "Áp dụng ở nơi làm việc: chất lượng được quyết định ở đâu"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "製品ができるまでの流れで見ると、品質には「ねらい」と「できばえ」の2段階があります。ある会社が新しいいすをつくる場面で考えます。",
+            "vi": "Nhìn theo dòng chảy cho đến khi có sản phẩm, chất lượng có 2 giai đoạn: “mục tiêu” và “kết quả làm ra”. Hãy xét tình huống một công ty làm chiếc ghế mới."
+          },
+          {
+            "type": "list",
+            "ja": [
+              "お客様の声を調べる：「長時間すわっても疲れない」「場所をとらない」",
+              "設計で目標を決める：座面の高さ・幅・重さなどを図面に決める（ねらいの品質＝設計品質）",
+              "製造で図面どおりにつくる：寸法や仕上がりが図面に合っているか（できばえの品質＝製造品質・適合品質）",
+              "お客様が使って満足するかを確かめ、次の設計に生かす"
+            ],
+            "vi": [
+              "Tìm hiểu tiếng nói khách hàng: “ngồi lâu không mỏi”, “không chiếm chỗ”",
+              "Quyết định mục tiêu khi thiết kế: chiều cao, độ rộng, trọng lượng mặt ngồi… ghi trên bản vẽ (ねらいの品質 = 設計品質, chất lượng thiết kế)",
+              "Sản xuất đúng bản vẽ: kích thước, độ hoàn thiện có khớp bản vẽ không (できばえの品質 = 製造品質・適合品質, chất lượng chế tạo/phù hợp)",
+              "Xác nhận khách dùng có hài lòng không, rồi áp dụng cho thiết kế lần sau"
+            ],
+            "ol": true
+          },
+          {
+            "type": "point",
+            "ja": "「図面どおりなのに売れない」ならねらいの品質の問題、「図面どおりにつくれていない」ならできばえの品質の問題です。",
+            "vi": "“Làm đúng bản vẽ mà bán không chạy” là vấn đề của chất lượng mục tiêu; “không làm được đúng bản vẽ” là vấn đề của chất lượng kết quả."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "例題で確かめる：狩野モデルの見分け方",
+          "vi": "Kiểm tra bằng ví dụ: cách phân biệt trong mô hình Kano"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "狩野モデルは、「その品質があるとき」と「ないとき」に、お客様がどう感じるかで分けます。2つの質問をすると見分けやすくなります。",
+            "vi": "Mô hình Kano phân loại theo cảm nhận của khách “khi có chất lượng đó” và “khi không có”. Đặt 2 câu hỏi sẽ dễ phân biệt."
+          },
+          {
+            "type": "table",
+            "head": [
+              "例",
+              "あると？",
+              "ないと？",
+              "分類"
+            ],
+            "rows": [
+              [
+                "ホテルの部屋が清潔",
+                "当然",
+                "強い不満",
+                "当たり前品質"
+              ],
+              [
+                "スマホの電池の持ち",
+                "長いほど満足",
+                "短いと不満",
+                "一元的品質"
+              ],
+              [
+                "頼んでいないのに傘を貸してくれた",
+                "うれしい",
+                "特に不満なし",
+                "魅力的品質"
+              ],
+              [
+                "ほとんど使わない付属のアプリ",
+                "何とも思わない",
+                "何とも思わない",
+                "無関心品質"
+              ]
+            ],
+            "head_vi": [
+              "Ví dụ",
+              "Khi có?",
+              "Khi không có?",
+              "Phân loại"
+            ],
+            "rows_vi": [
+              [
+                "Phòng khách sạn sạch sẽ",
+                "Đương nhiên",
+                "Rất bất mãn",
+                "当たり前品質 (chất lượng đương nhiên)"
+              ],
+              [
+                "Thời lượng pin điện thoại",
+                "Càng dài càng hài lòng",
+                "Ngắn thì bất mãn",
+                "一元的品質 (chất lượng một chiều)"
+              ],
+              [
+                "Không nhờ mà vẫn được cho mượn ô",
+                "Vui",
+                "Không bất mãn gì",
+                "魅力的品質 (chất lượng hấp dẫn)"
+              ],
+              [
+                "Ứng dụng kèm theo hầu như không dùng",
+                "Không thấy gì",
+                "Không thấy gì",
+                "無関心品質 (chất lượng không quan tâm)"
+              ]
+            ]
+          },
+          {
+            "type": "memo",
+            "ja": "「あれば満足・なくてもしかたない」＝魅力的、「なければ不満」＝当たり前、「多いほど満足」＝一元的、と覚えましょう。",
+            "vi": "Nhớ: “có thì hài lòng, không có cũng đành” = hấp dẫn; “không có thì bất mãn” = đương nhiên; “càng nhiều càng hài lòng” = một chiều."
+          }
+        ]
+      },
       {
         "h": {
           "ja": "ねらいの品質とできばえの品質",
@@ -394,6 +704,141 @@
       "vi": "改善 (cải tiến) là hoạt động liên tục thay đổi cách làm việc để đạt trạng thái tốt hơn hiện tại. Hãy bắt đầu từ 5S, nền tảng của nơi làm việc."
     },
     "sections": [
+      {
+        "basic": true,
+        "h": {
+          "ja": "「改善」とは？",
+          "vi": "“Cải tiến” là gì?"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "毎朝の通勤で、少し早く出る、乗り換えの位置を変える、といった工夫をすると、同じ道でも楽に早く着けるようになります。仕事でも同じで、今のやり方を少しずつ変えて、よりよい状態にしていくことを改善といいます。",
+            "vi": "Khi đi làm mỗi sáng, chỉ cần xuất phát sớm hơn một chút, đổi vị trí đứng để chuyển tàu… là cùng một con đường mà đến nơi nhẹ nhàng, nhanh hơn. Công việc cũng vậy: thay đổi dần cách làm hiện tại để tốt hơn gọi là 改善 (cải tiến)."
+          },
+          {
+            "type": "list",
+            "ja": [
+              "大きな投資をしなくても、職場の一人ひとりができる",
+              "一度で終わりではなく、続けることが大切（継続的改善）",
+              "よくなったやり方は標準にして、元に戻らないようにする（歯止め）"
+            ],
+            "vi": [
+              "Không cần đầu tư lớn, từng người ở nơi làm việc đều làm được",
+              "Không phải làm một lần là xong, quan trọng là duy trì (継続的改善 – cải tiến liên tục)",
+              "Cách làm đã tốt lên thì đưa thành tiêu chuẩn để không quay lại như cũ (歯止め – chốt chặn)"
+            ]
+          },
+          {
+            "type": "p",
+            "ja": "改善の第一歩としてよく使われるのが5S、改善を漏れなく考える道具が5W1H、問題を順序立てて解く手順がQCストーリーです。",
+            "vi": "Bước đầu tiên hay dùng cho cải tiến là 5S; công cụ để suy nghĩ không bỏ sót là 5W1H; trình tự giải quyết vấn đề có thứ tự là QCストーリー (QC story)."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "職場ではこう使う：散らかった作業台の5S",
+          "vi": "Áp dụng ở nơi làm việc: 5S cho bàn làm việc bừa bộn"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "工具や部品が山積みで、探し物に毎日時間がかかっている作業台を、5Sの順番で片付けてみます。",
+            "vi": "Thử dọn một bàn làm việc chất đầy dụng cụ, linh kiện, ngày nào cũng mất thời gian tìm đồ, theo thứ tự 5S."
+          },
+          {
+            "type": "list",
+            "ja": [
+              "整理：1か月使っていない工具や壊れた治具を取り除き、要るものだけ残す",
+              "整頓：よく使う工具を手の届く位置に並べ、置き場に名前と形を表示する",
+              "清掃：作業台と床をふき、ついでに油もれや工具の傷みがないか点検する",
+              "清潔：整理・整頓・清掃の状態をチェック表で毎日確かめ、よい状態を保つ",
+              "しつけ：「使ったら戻す」などの決まりを、全員が習慣として守る"
+            ],
+            "vi": [
+              "整理 (sàng lọc): bỏ dụng cụ 1 tháng không dùng, đồ gá hỏng; chỉ giữ thứ cần",
+              "整頓 (sắp xếp): xếp dụng cụ hay dùng ở tầm tay, ghi tên và vẽ hình ở chỗ để",
+              "清掃 (vệ sinh): lau bàn và sàn, nhân tiện kiểm tra rò dầu, dụng cụ hư hỏng",
+              "清潔 (săn sóc): kiểm tra hằng ngày bằng phiếu kiểm tra để giữ trạng thái tốt của 3S",
+              "しつけ (sẵn sàng/kỷ luật): mọi người giữ thành thói quen các quy tắc như “dùng xong thì trả lại”"
+            ],
+            "ol": true
+          },
+          {
+            "type": "point",
+            "ja": "整理を飛ばして整頓から始めると、要らないものまできれいに並べてしまいます。「まず捨てる、次に置き場を決める」の順番が大切です。",
+            "vi": "Nếu bỏ qua 整理 mà bắt đầu từ 整頓, ta sẽ xếp gọn cả những thứ không cần. Thứ tự “trước tiên bỏ đi, sau đó quyết định chỗ để” là quan trọng."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "例題で確かめる：ムリ・ムダ・ムラとQCストーリー",
+          "vi": "Kiểm tra bằng ví dụ: Muri – Muda – Mura và QC story"
+        },
+        "blocks": [
+          {
+            "type": "table",
+            "head": [
+              "職場の様子",
+              "分類",
+              "改善の例"
+            ],
+            "rows": [
+              [
+                "重い箱を一人で何度も持ち上げている",
+                "ムリ",
+                "台車やリフトを使う"
+              ],
+              [
+                "部品を取りに毎回10m歩いている",
+                "ムダ",
+                "部品棚を作業場所の近くに移す"
+              ],
+              [
+                "作業者によって組立時間が大きく違う",
+                "ムラ",
+                "作業標準をつくり、やり方をそろえる"
+              ]
+            ],
+            "head_vi": [
+              "Tình trạng nơi làm việc",
+              "Phân loại",
+              "Ví dụ cải tiến"
+            ],
+            "rows_vi": [
+              [
+                "Một người phải nhấc thùng nặng nhiều lần",
+                "ムリ (quá sức)",
+                "Dùng xe đẩy, thiết bị nâng"
+              ],
+              [
+                "Mỗi lần lấy linh kiện phải đi bộ 10 m",
+                "ムダ (lãng phí)",
+                "Chuyển giá linh kiện lại gần chỗ làm"
+              ],
+              [
+                "Thời gian lắp ráp chênh lệch lớn giữa các người",
+                "ムラ (không đồng đều)",
+                "Lập tiêu chuẩn thao tác, thống nhất cách làm"
+              ]
+            ]
+          },
+          {
+            "type": "p",
+            "ja": "改善をQCストーリーで進めるときは、「テーマ選定→現状把握と目標設定→要因解析→対策の立案と実施→効果の確認→標準化と管理の定着→反省と今後の課題」の順に進めます。いきなり対策を考えるのではなく、先にデータで現状をつかむのがポイントです。",
+            "vi": "Khi tiến hành cải tiến theo QC story, đi theo thứ tự “chọn đề tài → nắm hiện trạng và đặt mục tiêu → phân tích nguyên nhân → lập và thực hiện đối sách → xác nhận hiệu quả → tiêu chuẩn hóa và duy trì quản lý → nhìn lại và vấn đề tiếp theo”. Điểm mấu chốt là nắm hiện trạng bằng dữ liệu trước, không nghĩ đối sách ngay."
+          },
+          {
+            "type": "mistake",
+            "ja": "「効果の確認」でよい結果が出ても、そこで終わりではありません。標準化しないと、人が替わったときなどに元のやり方に戻ってしまいます。",
+            "vi": "Dù “xác nhận hiệu quả” cho kết quả tốt cũng chưa phải là xong. Nếu không tiêu chuẩn hóa, khi đổi người làm… cách làm sẽ quay về như cũ."
+          }
+        ]
+      },
       {
         "h": {
           "ja": "5S",
@@ -608,6 +1053,147 @@
     },
     "sections": [
       {
+        "basic": true,
+        "h": {
+          "ja": "「検査」とは？",
+          "vi": "“Kiểm tra” là gì?"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "スーパーで果物を買うとき、傷んでいないか手に取って確かめることがあります。工場の検査も、考え方は同じです。品物を測ったり試したりして、決められた基準（判定基準）と比べ、「よい・わるい」を判定します。",
+            "vi": "Khi mua trái cây ở siêu thị, ta hay cầm lên xem có bị hỏng không. Kiểm tra ở nhà máy cũng cùng cách nghĩ: đo, thử sản phẩm rồi so với tiêu chí đã định (判定基準 – tiêu chuẩn phán định) để phán định “tốt / không tốt”."
+          },
+          {
+            "type": "list",
+            "ja": [
+              "1個ずつの品物について：適合（基準を満たす）か不適合（満たさない）か",
+              "ひとまとまりの品物（ロット）について：合格か不合格か"
+            ],
+            "vi": [
+              "Với từng sản phẩm: 適合 (phù hợp – đạt tiêu chí) hay 不適合 (không phù hợp)",
+              "Với một nhóm sản phẩm (ロット – lô): 合格 (đạt) hay 不合格 (không đạt)"
+            ]
+          },
+          {
+            "type": "point",
+            "ja": "検査は「不良品を後ろに流さない」ための関所です。ただし、検査をしても不良品がつくられる数は減りません。不良を減らすには工程を改善します。",
+            "vi": "Kiểm tra là “trạm chắn” để không cho hàng lỗi đi tiếp. Tuy nhiên kiểm tra không làm giảm số hàng lỗi được tạo ra. Muốn giảm lỗi phải cải tiến công đoạn."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "職場ではこう使う：部品が届いてから出荷まで",
+          "vi": "Áp dụng ở nơi làm việc: từ lúc nhận linh kiện đến khi xuất hàng"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "小さな電気製品の工場で、検査がどこで行われるかを流れで見てみましょう。",
+            "vi": "Hãy xem theo dòng chảy: ở nhà máy sản xuất đồ điện nhỏ, kiểm tra được làm ở đâu."
+          },
+          {
+            "type": "list",
+            "ja": [
+              "部品が届いたら：受入検査で、注文どおりの部品かを確かめる",
+              "組立の途中で：工程間検査で、次の工程に不良を渡さない",
+              "完成したら：最終検査で、製品として要求を満たすかを確かめる",
+              "不適合品が見つかったら：表示をつけ、決めた場所に分けて置き、上司に報告する"
+            ],
+            "vi": [
+              "Khi linh kiện đến: 受入検査 (kiểm tra đầu vào) xác nhận đúng linh kiện đã đặt",
+              "Giữa quá trình lắp ráp: 工程間検査 (kiểm tra giữa công đoạn) không chuyển lỗi sang công đoạn sau",
+              "Khi hoàn thành: 最終検査 (kiểm tra cuối cùng) xác nhận sản phẩm đáp ứng yêu cầu",
+              "Khi phát hiện hàng không phù hợp: gắn nhãn, để riêng ở chỗ quy định và báo cáo cấp trên"
+            ],
+            "ol": true
+          },
+          {
+            "type": "p",
+            "ja": "検査の結果は、合否を決めるだけでなく、「どんな不良が、どの工程で多いか」を前の工程に知らせ、改善に役立てます。",
+            "vi": "Kết quả kiểm tra không chỉ để quyết định đạt/không đạt, mà còn báo cho công đoạn trước biết “lỗi gì, nhiều ở công đoạn nào” để dùng cho cải tiến."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "例題で確かめる：全数検査か抜取検査か",
+          "vi": "Kiểm tra bằng ví dụ: kiểm tra toàn bộ hay kiểm tra lấy mẫu"
+        },
+        "blocks": [
+          {
+            "type": "table",
+            "head": [
+              "場面",
+              "選ぶ検査",
+              "理由"
+            ],
+            "rows": [
+              [
+                "自動車のブレーキ部品",
+                "全数検査",
+                "1個の不良でも命に関わる"
+              ],
+              [
+                "1日10万本つくるねじの寸法",
+                "抜取検査",
+                "数が多く、全部は調べきれない"
+              ],
+              [
+                "電球の寿命試験",
+                "抜取検査",
+                "調べると壊れる（破壊検査）"
+              ],
+              [
+                "長く安定して実績のよい仕入先の部品",
+                "無試験検査（または間接検査）",
+                "品質の実績が十分にある"
+              ]
+            ],
+            "head_vi": [
+              "Tình huống",
+              "Cách kiểm tra chọn",
+              "Lý do"
+            ],
+            "rows_vi": [
+              [
+                "Linh kiện phanh ô tô",
+                "全数検査 (kiểm tra toàn bộ)",
+                "Dù 1 cái lỗi cũng liên quan tính mạng"
+              ],
+              [
+                "Kích thước vít làm 100.000 cái/ngày",
+                "抜取検査 (kiểm tra lấy mẫu)",
+                "Số lượng nhiều, không kiểm hết được"
+              ],
+              [
+                "Thử tuổi thọ bóng đèn",
+                "抜取検査",
+                "Thử là hỏng (破壊検査 – kiểm tra phá hủy)"
+              ],
+              [
+                "Linh kiện của nhà cung cấp ổn định lâu, thành tích tốt",
+                "無試験検査 (miễn kiểm tra) hoặc 間接検査 (kiểm tra gián tiếp)",
+                "Thành tích chất lượng đã đầy đủ"
+              ]
+            ]
+          },
+          {
+            "type": "p",
+            "ja": "抜取検査の例：500個のロットから50個を取り出して調べ、不良品が2個だったとします。サンプルの不良率は 2 ÷ 50 ＝ 0.04、つまり4%です。「不良品が1個以下なら合格」という基準なら、このロットは不合格になります。",
+            "vi": "Ví dụ kiểm tra lấy mẫu: lấy 50 cái từ lô 500 cái để kiểm tra, có 2 cái lỗi. Tỷ lệ lỗi của mẫu là 2 ÷ 50 = 0.04, tức 4%. Nếu tiêu chí là “lỗi từ 1 cái trở xuống thì đạt”, lô này không đạt."
+          },
+          {
+            "type": "mistake",
+            "ja": "抜取検査で合格したロットにも、不良品がまったくないとは限りません。調べたのは一部だけだからです。",
+            "vi": "Lô đã đạt kiểm tra lấy mẫu chưa chắc hoàn toàn không có hàng lỗi, vì chỉ kiểm tra một phần."
+          }
+        ]
+      },
+      {
         "h": {
           "ja": "段階による分類",
           "vi": "Phân loại theo giai đoạn"
@@ -804,6 +1390,141 @@
     },
     "sections": [
       {
+        "basic": true,
+        "h": {
+          "ja": "標準化とは？",
+          "vi": "Tiêu chuẩn hóa là gì?"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "同じ仕事を3人がそれぞれ自分のやり方でしたら、できあがりは少しずつ違ってしまいます。そこで「このやり方がいちばんよい」という方法を決めて文書にし、全員がそのとおりに行います。この決めたものが標準で、決めて守り、必要なら直していく活動全体を標準化といいます。",
+            "vi": "Nếu 3 người làm cùng một việc, mỗi người một kiểu, thì kết quả sẽ hơi khác nhau. Vì vậy người ta quyết định “cách làm tốt nhất”, ghi thành văn bản và mọi người làm theo đúng cách đó. Cái đã được quyết định đó gọi là 標準 (tiêu chuẩn); toàn bộ hoạt động quyết định, tuân thủ và sửa đổi khi cần gọi là 標準化 (tiêu chuẩn hóa)."
+          },
+          {
+            "type": "p",
+            "ja": "標準のうち、国や国際機関・業界などが正式な手続きで定めたものを規格といいます。たとえば日本の国家規格は JIS（日本産業規格）です。",
+            "vi": "Trong các tiêu chuẩn, loại được nhà nước, tổ chức quốc tế hay ngành nghề ban hành theo thủ tục chính thức gọi là 規格 (quy chuẩn). Ví dụ, quy chuẩn quốc gia của Nhật là JIS (日本産業規格 – Tiêu chuẩn công nghiệp Nhật Bản)."
+          },
+          {
+            "type": "point",
+            "ja": "標準は「守るもの」であると同時に「よりよく直していくもの」です。決めたら終わりではありません。",
+            "vi": "Tiêu chuẩn vừa là thứ “phải tuân thủ”, vừa là thứ “cần sửa cho tốt hơn”. Quyết định xong không phải là hết."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "職場ではこう使う",
+          "vi": "Ở nơi làm việc dùng như thế này"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "ある組立ラインで、ねじの締め方が作業者によって違い、ゆるみの不良がときどき出ていました。そこで次のように標準化を進めました。",
+            "vi": "Ở một dây chuyền lắp ráp, cách siết ốc mỗi người một khác nên thỉnh thoảng có lỗi ốc bị lỏng. Vì vậy họ đã tiến hành tiêu chuẩn hóa như sau."
+          },
+          {
+            "type": "list",
+            "ja": [
+              "いちばん不良の少ない作業者のやり方を観察し、手順と急所（品質を左右する大事な点）を整理する",
+              "締める順番・使う工具・締め付けの強さを作業標準書に書く",
+              "全員に作業標準書で教育し、そのとおりに作業する",
+              "不良が減ったかをデータで確認し、新しい問題が見つかれば標準を改訂する"
+            ],
+            "vi": [
+              "Quan sát cách làm của người có ít lỗi nhất, sắp xếp trình tự và 急所 (điểm mấu chốt quyết định chất lượng)",
+              "Ghi thứ tự siết, dụng cụ dùng, lực siết vào 作業標準書 (bản tiêu chuẩn thao tác)",
+              "Đào tạo mọi người bằng bản tiêu chuẩn thao tác và làm đúng theo đó",
+              "Kiểm tra bằng dữ liệu xem lỗi có giảm không; nếu phát hiện vấn đề mới thì 改訂 (sửa đổi) tiêu chuẩn"
+            ],
+            "ol": true
+          },
+          {
+            "type": "p",
+            "ja": "こうすると、誰が作業しても同じ品質になり、新人にも同じ内容を教えられます。ベテランのコツも文書として会社に残ります。",
+            "vi": "Nhờ vậy, ai làm cũng ra cùng một chất lượng, người mới cũng được dạy cùng một nội dung. Bí quyết của người có kinh nghiệm cũng được lưu lại trong công ty dưới dạng văn bản."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "例題で確かめる：まぎらわしい言葉を整理",
+          "vi": "Kiểm tra bằng ví dụ: phân biệt các từ dễ nhầm"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "標準化の分野では、似た言葉がたくさん出てきます。次の表で、何を決めたものかを比べてみましょう。",
+            "vi": "Trong phân野 tiêu chuẩn hóa có nhiều từ giống nhau. Hãy so sánh xem mỗi loại quy định điều gì qua bảng sau."
+          },
+          {
+            "type": "table",
+            "head": [
+              "名前",
+              "何を決めたものか",
+              "身近な例"
+            ],
+            "rows": [
+              [
+                "作業標準書",
+                "作業の手順・急所・条件",
+                "ねじを締める順番と強さ"
+              ],
+              [
+                "製品規格",
+                "製品の形・寸法・材質・性能",
+                "ボルトの長さは 20.0±0.2mm"
+              ],
+              [
+                "検査規格",
+                "検査の項目・方法・判定基準",
+                "外観を目で見て、キズがあれば不合格"
+              ],
+              [
+                "JIS",
+                "日本の国家規格",
+                "紙のA4サイズ、乾電池の単3形"
+              ]
+            ],
+            "head_vi": [
+              "Tên",
+              "Quy định điều gì",
+              "Ví dụ gần gũi"
+            ],
+            "rows_vi": [
+              [
+                "作業標準書 (bản tiêu chuẩn thao tác)",
+                "Trình tự, điểm mấu chốt, điều kiện thao tác",
+                "Thứ tự và lực siết ốc"
+              ],
+              [
+                "製品規格 (quy chuẩn sản phẩm)",
+                "Hình dạng, kích thước, vật liệu, tính năng của sản phẩm",
+                "Chiều dài bu lông 20,0±0,2 mm"
+              ],
+              [
+                "検査規格 (quy chuẩn kiểm tra)",
+                "Hạng mục, phương pháp, tiêu chí phán định khi kiểm tra",
+                "Nhìn ngoại quan, có vết xước thì không đạt"
+              ],
+              [
+                "JIS",
+                "Quy chuẩn quốc gia của Nhật",
+                "Khổ giấy A4, pin cỡ AA (単3形)"
+              ]
+            ]
+          },
+          {
+            "type": "mistake",
+            "ja": "「標準化＝自由をなくすこと」ではありません。よりよいやり方を思いついたら、勝手に変えずに提案し、標準を改訂してから全員で変えます。",
+            "vi": "Tiêu chuẩn hóa không có nghĩa là “mất tự do”. Nếu nghĩ ra cách tốt hơn, đừng tự ý thay đổi mà hãy đề xuất, sửa tiêu chuẩn rồi cả nhóm cùng đổi."
+          }
+        ]
+      },
+      {
         "h": {
           "ja": "標準化の目的",
           "vi": "Mục đích của tiêu chuẩn hóa"
@@ -968,6 +1689,97 @@
     },
     "sections": [
       {
+        "basic": true,
+        "h": {
+          "ja": "データとは？なぜ必要？",
+          "vi": "Dữ liệu là gì? Vì sao cần?"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "「最近、不良が多い気がする」だけでは、本当に多いのか、どこで多いのかがわかりません。「今週は不良率3%、先週は1%」のように数字で表すと、事実を関係者全員で同じように理解できます。このように、事実を数字や言葉で記録したものがデータです。",
+            "vi": "Chỉ nói “dạo này hình như lỗi nhiều” thì không biết có thật sự nhiều không, nhiều ở đâu. Nếu biểu thị bằng con số như “tuần này tỷ lệ lỗi 3%, tuần trước 1%” thì mọi người liên quan đều hiểu sự thật giống nhau. Những gì ghi lại sự thật bằng con số hoặc lời như vậy gọi là データ (dữ liệu)."
+          },
+          {
+            "type": "list",
+            "ja": [
+              "計量値：はかって得る値（長さ・重さ・時間・温度）。小数点以下も続く",
+              "計数値：かぞえて得る値（不良品の数・キズの数）。1個、2個…と飛び飛び",
+              "言語データ：言葉で表された情報（お客様の声、アンケートの意見）"
+            ],
+            "vi": [
+              "計量値 (giá trị đo lường): giá trị có được bằng cách đo (chiều dài, khối lượng, thời gian, nhiệt độ), có thể có phần thập phân",
+              "計数値 (giá trị đếm): giá trị có được bằng cách đếm (số sản phẩm lỗi, số vết xước), rời rạc 1, 2…",
+              "言語データ (dữ liệu ngôn ngữ): thông tin biểu thị bằng lời (ý kiến khách hàng, ý kiến trong phiếu khảo sát)"
+            ]
+          },
+          {
+            "type": "point",
+            "ja": "データを取る前に、まず「何のために取るのか（目的）」を決めます。目的が決まると、何を・いつ・どれだけ取るかが決まります。",
+            "vi": "Trước khi lấy dữ liệu, trước hết phải quyết định “lấy để làm gì (mục đích)”. Có mục đích rồi thì mới quyết định được lấy cái gì, khi nào, bao nhiêu."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "職場ではこう使う：サンプルと層別",
+          "vi": "Ở nơi làm việc dùng như thế này: mẫu và phân tầng"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "1000個の製品を全部測るのは大変です。そこで、ロット（母集団）から何個かをかたよりなく取り出し（サンプル）、そのデータからロット全体の様子を推測します。取りやすい上の段だけから取ると、ロット全体を正しく表しません。",
+            "vi": "Đo hết 1000 sản phẩm thì rất vất vả. Vì vậy người ta lấy ra vài cái một cách không thiên lệch từ lô (母集団 – tổng thể) làm サンプル (mẫu), rồi từ dữ liệu đó suy đoán tình trạng cả lô. Nếu chỉ lấy ở tầng trên cho dễ thì không phản ánh đúng cả lô."
+          },
+          {
+            "type": "p",
+            "ja": "2台の機械でつくった製品の不良をまとめて見ると、全体の不良率は 600個中18個で3%でした。機械別に分けてみると、A は 300個中3個（1%）、B は 300個中15個（5%）。分けたことで、機械Bに問題がありそうだとわかります。このように、機械別・作業者別・材料別などに分けることを層別といいます。",
+            "vi": "Gộp lỗi của sản phẩm từ 2 máy lại thì tỷ lệ lỗi chung là 18/600 = 3%. Tách theo máy thì máy A là 3/300 (1%), máy B là 15/300 (5%). Nhờ tách ra mà biết có vẻ máy B có vấn đề. Việc chia dữ liệu theo máy, người làm, vật liệu… như vậy gọi là 層別 (phân tầng)."
+          },
+          {
+            "type": "memo",
+            "ja": "層別のために、データには日時・機械・作業者・材料ロットなどの「履歴」もいっしょに記録しておきましょう。",
+            "vi": "Để phân tầng được, hãy ghi kèm “lý lịch” như ngày giờ, máy, người làm, lô vật liệu cùng với dữ liệu."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "例題で確かめる：平均値・メディアン・範囲",
+          "vi": "Kiểm tra bằng ví dụ: trung bình, trung vị, khoảng biến thiên"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "ボルト6本の長さ（mm）を測りました：20.2, 19.8, 20.1, 20.4, 19.9, 20.2。順に計算してみましょう。",
+            "vi": "Đo chiều dài 6 bu lông (mm): 20,2; 19,8; 20,1; 20,4; 19,9; 20,2. Hãy tính lần lượt."
+          },
+          {
+            "type": "formula",
+            "f": [
+              "① 平均値 ＝ 合計 ÷ 個数 ＝ 120.6 ÷ 6 ＝ 20.1",
+              "② 小さい順：19.8, 19.9, 20.1, 20.2, 20.2, 20.4",
+              "   メディアン ＝ (20.1 ＋ 20.2) ÷ 2 ＝ 20.15",
+              "③ 範囲 R ＝ 最大値 − 最小値 ＝ 20.4 − 19.8 ＝ 0.6"
+            ],
+            "ja": "データが6個（偶数）なので、メディアンは真ん中の2つ（3番目と4番目）の平均になります。平均値とメディアンは「中心」、範囲は「ばらつき」を表します。",
+            "vi": "Có 6 dữ liệu (số chẵn) nên trung vị (メディアン) là trung bình của 2 giá trị ở giữa (thứ 3 và thứ 4). 平均値 (trung bình) và メディアン (trung vị) biểu thị “vị trí trung tâm”, 範囲 (khoảng biến thiên, R) biểu thị “độ phân tán”."
+          },
+          {
+            "type": "mistake",
+            "ja": "メディアンを求めるとき、並べ替えずに真ん中を取ってしまう間違いが多いです。必ず小さい順に並べてから真ん中を探します。",
+            "vi": "Lỗi hay gặp khi tìm trung vị là lấy giá trị ở giữa mà không sắp xếp. Phải sắp xếp từ nhỏ đến lớn rồi mới tìm giá trị ở giữa."
+          },
+          {
+            "type": "point",
+            "ja": "極端な値（とび離れた値）が1つあると平均値は大きく動きますが、メディアンはほとんど動きません。",
+            "vi": "Nếu có một giá trị cực đoan (giá trị tách xa) thì trung bình thay đổi nhiều, còn trung vị hầu như không đổi."
+          }
+        ]
+      },
+      {
         "h": {
           "ja": "データの種類",
           "vi": "Các loại dữ liệu"
@@ -1115,6 +1927,240 @@
       "vi": "7 công cụ QC (QC七つ道具) là các phương pháp cơ bản dùng chủ yếu dữ liệu số để nhìn thấy rõ vấn đề và giải quyết nó."
     },
     "sections": [
+      {
+        "basic": true,
+        "h": {
+          "ja": "QC七つ道具とは？",
+          "vi": "7 công cụ QC là gì?"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "職場で「最近、不良が多いな」と感じても、感覚だけでは何から手をつければよいかわかりません。QC七つ道具は、データを集めて図や表にし、問題を目に見える形にする（見える化する）ための7つの基本の道具です。大工さんが仕事に合わせて道具箱からのこぎりや金づちを選ぶように、目的に合わせて使い分けます。",
+            "vi": "Ở chỗ làm, dù cảm thấy “dạo này lỗi nhiều”, nếu chỉ dựa vào cảm giác thì không biết nên bắt đầu từ đâu. QC七つ道具 (7 công cụ QC) là 7 công cụ cơ bản để thu thập dữ liệu, biểu diễn thành hình hoặc bảng, giúp vấn đề hiện ra rõ ràng (見える化 – trực quan hóa). Giống như người thợ mộc chọn cưa hay búa trong hộp đồ nghề tùy công việc, ta chọn công cụ theo mục đích."
+          },
+          {
+            "type": "table",
+            "head": [
+              "やりたいこと",
+              "使う道具"
+            ],
+            "rows": [
+              [
+                "データをもれなく、かんたんに集めたい",
+                "チェックシート"
+              ],
+              [
+                "どの問題がいちばん大きいか知りたい",
+                "パレート図"
+              ],
+              [
+                "原因を全員で洗い出したい",
+                "特性要因図"
+              ],
+              [
+                "ばらつきの形を見たい",
+                "ヒストグラム"
+              ],
+              [
+                "2つのデータの関係を見たい",
+                "散布図"
+              ],
+              [
+                "時間による変化や異常を見たい",
+                "管理図・グラフ"
+              ],
+              [
+                "機械別・人別などに分けて比べたい",
+                "層別"
+              ]
+            ],
+            "head_vi": [
+              "Muốn làm gì",
+              "Công cụ dùng"
+            ],
+            "rows_vi": [
+              [
+                "Thu thập dữ liệu đơn giản, không sót",
+                "チェックシート (phiếu kiểm tra)"
+              ],
+              [
+                "Biết vấn đề nào lớn nhất",
+                "パレート図 (biểu đồ Pareto)"
+              ],
+              [
+                "Cả nhóm liệt kê nguyên nhân",
+                "特性要因図 (biểu đồ nhân quả / xương cá)"
+              ],
+              [
+                "Xem hình dạng của sự phân tán",
+                "ヒストグラム (biểu đồ tần suất)"
+              ],
+              [
+                "Xem quan hệ giữa 2 loại dữ liệu",
+                "散布図 (biểu đồ phân tán)"
+              ],
+              [
+                "Xem thay đổi theo thời gian, bất thường",
+                "管理図 (biểu đồ kiểm soát)・グラフ (đồ thị)"
+              ],
+              [
+                "Chia theo máy, theo người… để so sánh",
+                "層別 (phân tầng)"
+              ]
+            ]
+          },
+          {
+            "type": "memo",
+            "ja": "「集める → しぼる → 探る」と覚えましょう。チェックシートで集め、パレート図で重点をしぼり、特性要因図で原因を探ります。",
+            "vi": "Hãy nhớ “thu thập → khoanh vùng → tìm nguyên nhân”: thu thập bằng チェックシート, khoanh vùng trọng điểm bằng パレート図, tìm nguyên nhân bằng 特性要因図."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "職場ではこう使う",
+          "vi": "Dùng ở chỗ làm như thế nào"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "例：組立ラインで、製品の外観不良が増えてきました。リーダーは七つ道具を次の順番で使いました。",
+            "vi": "Ví dụ: ở dây chuyền lắp ráp, lỗi ngoại quan của sản phẩm tăng lên. Trưởng nhóm đã dùng 7 công cụ QC theo thứ tự sau."
+          },
+          {
+            "type": "list",
+            "ja": [
+              "チェックシートを作り、1週間、不良の種類と見つかった場所を記録する",
+              "集計結果をパレート図にすると、「キズ」と「打痕」で全体の約7割だとわかった",
+              "メンバーで特性要因図を作り、キズの要因を4M（人・機械・材料・方法）で洗い出す",
+              "データを層別し、ライン別・時間帯別にキズの件数を比べる",
+              "対策のあと、同じやり方でデータを取り、対策前と後のパレート図を並べて効果を確かめる"
+            ],
+            "vi": [
+              "Lập チェックシート, ghi lại loại lỗi và vị trí phát hiện trong 1 tuần",
+              "Vẽ パレート図 từ kết quả tổng hợp, thấy “trầy xước” và “móp” chiếm khoảng 70% tổng số",
+              "Cả nhóm vẽ 特性要因図, liệt kê nguyên nhân gây trầy xước theo 4M (người, máy, vật liệu, phương pháp)",
+              "層別 (phân tầng) dữ liệu, so sánh số lỗi trầy xước theo từng dây chuyền, từng khung giờ",
+              "Sau khi đối sách, lấy dữ liệu theo cùng cách, đặt パレート図 trước và sau cạnh nhau để xác nhận hiệu quả"
+            ],
+            "ol": true
+          },
+          {
+            "type": "point",
+            "ja": "七つ道具は1つだけで使うより、つなげて使うと力を発揮します。データを取るときは、あとで層別できるように「いつ・どこで・誰が・どの機械で」も一緒に記録しておきましょう。",
+            "vi": "7 công cụ QC phát huy sức mạnh khi dùng nối tiếp nhau hơn là chỉ dùng một cái. Khi lấy dữ liệu, hãy ghi kèm “khi nào, ở đâu, ai, máy nào” để sau này có thể 層別."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "例題で確かめる：パレート図の数字",
+          "vi": "Kiểm tra bằng ví dụ: các con số trong パレート図"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "ある月の不良は合計200件で、内訳はキズ84件、打痕56件、寸法不良30件、汚れ18件、その他12件でした。件数の多い順に並べ、比率と累積比率を計算します。",
+            "vi": "Một tháng có tổng 200 lỗi: trầy xước 84, móp 56, sai kích thước 30, bẩn 18, khác 12. Xếp theo thứ tự số lượng giảm dần, rồi tính tỷ lệ và tỷ lệ tích lũy."
+          },
+          {
+            "type": "table",
+            "head": [
+              "項目",
+              "件数",
+              "比率",
+              "累積比率"
+            ],
+            "rows": [
+              [
+                "キズ",
+                "84",
+                "42%",
+                "42%"
+              ],
+              [
+                "打痕",
+                "56",
+                "28%",
+                "70%"
+              ],
+              [
+                "寸法不良",
+                "30",
+                "15%",
+                "85%"
+              ],
+              [
+                "汚れ",
+                "18",
+                "9%",
+                "94%"
+              ],
+              [
+                "その他",
+                "12",
+                "6%",
+                "100%"
+              ]
+            ],
+            "head_vi": [
+              "Hạng mục",
+              "Số lỗi",
+              "Tỷ lệ",
+              "Tỷ lệ tích lũy"
+            ],
+            "rows_vi": [
+              [
+                "Trầy xước (キズ)",
+                "84",
+                "42%",
+                "42%"
+              ],
+              [
+                "Móp (打痕)",
+                "56",
+                "28%",
+                "70%"
+              ],
+              [
+                "Sai kích thước (寸法不良)",
+                "30",
+                "15%",
+                "85%"
+              ],
+              [
+                "Bẩn (汚れ)",
+                "18",
+                "9%",
+                "94%"
+              ],
+              [
+                "Khác (その他)",
+                "12",
+                "6%",
+                "100%"
+              ]
+            ]
+          },
+          {
+            "type": "formula",
+            "f": [
+              "比率 ＝ その項目の件数 ÷ 合計 × 100",
+              "累積比率 ＝ その項目までの件数の合計 ÷ 合計 × 100"
+            ],
+            "ja": "例：打痕までの累積比率は (84 ＋ 56) ÷ 200 × 100 ＝ 70%。上位2項目で全体の70%を占めるので、まずキズと打痕を重点的に改善します。",
+            "vi": "Ví dụ: tỷ lệ tích lũy đến “móp” là (84 + 56) ÷ 200 × 100 = 70%. Hai hạng mục đầu chiếm 70% tổng số, nên ưu tiên cải tiến trầy xước và móp trước."
+          },
+          {
+            "type": "mistake",
+            "ja": "累積比率を「その項目の比率だけ」と取り違える間違いが多いです。累積比率は、左からその項目までを足し合わせた割合で、最後は必ず100%になります。",
+            "vi": "Lỗi hay gặp là nhầm tỷ lệ tích lũy với “chỉ tỷ lệ của hạng mục đó”. Tỷ lệ tích lũy là tỷ lệ cộng dồn từ bên trái đến hạng mục đó, và hạng mục cuối luôn là 100%."
+          }
+        ]
+      },
       {
         "h": {
           "ja": "七つ道具の一覧",
@@ -1306,6 +2352,150 @@
     },
     "sections": [
       {
+        "basic": true,
+        "h": {
+          "ja": "ばらつきとは？",
+          "vi": "Sự phân tán (ばらつき) là gì?"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "同じ機械で同じ部品を作っても、寸法は少しずつ違います。この「ちらばり具合」をばらつきといいます。平均値が同じでも、ばらつきが大きい工程は規格から外れた製品を出しやすいため、品質管理では「中心（平均値など）」と「ばらつき」の両方を見ます。",
+            "vi": "Dù cùng một máy làm cùng một chi tiết, kích thước vẫn khác nhau một chút. “Mức độ tản mát” này gọi là ばらつき (sự phân tán). Dù trung bình bằng nhau, công đoạn có phân tán lớn dễ tạo ra sản phẩm ngoài quy cách, nên trong quản lý chất lượng luôn xem cả “trung tâm (trung bình…)” lẫn “phân tán”."
+          },
+          {
+            "type": "table",
+            "head": [
+              "",
+              "データ",
+              "平均値",
+              "範囲 R"
+            ],
+            "rows": [
+              [
+                "工程A",
+                "9, 10, 11",
+                "10",
+                "2"
+              ],
+              [
+                "工程B",
+                "6, 10, 14",
+                "10",
+                "8"
+              ]
+            ],
+            "head_vi": [
+              "",
+              "Dữ liệu",
+              "Trung bình",
+              "Khoảng biến thiên R"
+            ],
+            "rows_vi": [
+              [
+                "Công đoạn A",
+                "9, 10, 11",
+                "10",
+                "2"
+              ],
+              [
+                "Công đoạn B",
+                "6, 10, 14",
+                "10",
+                "8"
+              ]
+            ]
+          },
+          {
+            "type": "p",
+            "ja": "平均値はどちらも10ですが、工程Bのほうがばらつきが大きいことがわかります。範囲は最大と最小の2つの値しか使いませんが、平方和・分散・標準偏差はすべてのデータを使ってばらつきを表す「ものさし」です。",
+            "vi": "Trung bình của cả hai đều là 10, nhưng công đoạn B phân tán lớn hơn. 範囲 (khoảng biến thiên) chỉ dùng 2 giá trị lớn nhất và nhỏ nhất, còn 平方和 (tổng bình phương), 分散 (phương sai), 標準偏差 (độ lệch chuẩn) là “thước đo” phân tán dùng toàn bộ dữ liệu."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "職場ではこう使う：サンプルから全体を知る",
+          "vi": "Dùng ở chỗ làm: từ mẫu suy ra tổng thể"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "1日に何千個も作る部品を、すべて測ることはできません。そこで一部を抜き取って測り、その結果から全体のようすを推測します。調べたい全体を母集団、抜き取ったものをサンプル（試料）といいます。",
+            "vi": "Không thể đo hết hàng nghìn chi tiết sản xuất mỗi ngày. Vì vậy ta lấy ra một phần để đo, rồi từ kết quả đó suy ra tình trạng của toàn bộ. Toàn bộ cần tìm hiểu gọi là 母集団 (tổng thể), phần lấy ra gọi là サンプル (mẫu, 試料)."
+          },
+          {
+            "type": "list",
+            "ja": [
+              "母集団（例：今日作ったロット全体）から、かたよりなくサンプルを抜き取る",
+              "サンプルを測定し、平均値 x̄ と標準偏差 s を計算する",
+              "x̄ と s を、母集団の平均 μ と標準偏差 σ の推定値として使う",
+              "2台の機械で s を比べ、ばらつきの大きい機械から原因を調べる"
+            ],
+            "vi": [
+              "Lấy mẫu không thiên lệch từ 母集団 (ví dụ: toàn bộ lô sản xuất hôm nay)",
+              "Đo mẫu, tính trung bình x̄ và độ lệch chuẩn s",
+              "Dùng x̄ và s làm giá trị ước lượng cho trung bình μ và độ lệch chuẩn σ của tổng thể",
+              "So sánh s của 2 máy, điều tra nguyên nhân từ máy có phân tán lớn hơn"
+            ],
+            "ol": true
+          },
+          {
+            "type": "point",
+            "ja": "サンプルの取り方がかたよると、どんなに正しく計算しても全体を正しく表せません。計算の前に「どう抜き取ったか」を確認する習慣をつけましょう。",
+            "vi": "Nếu cách lấy mẫu bị thiên lệch thì dù tính đúng đến đâu cũng không phản ánh đúng tổng thể. Hãy tập thói quen kiểm tra “đã lấy mẫu thế nào” trước khi tính toán."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "例題で確かめる：標準偏差を順番に計算する",
+          "vi": "Kiểm tra bằng ví dụ: tính độ lệch chuẩn từng bước"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "データ 5, 7, 8, 10, 10（n ＝ 5）の標準偏差を、1段階ずつ計算してみましょう。",
+            "vi": "Hãy tính độ lệch chuẩn của dữ liệu 5, 7, 8, 10, 10 (n = 5) từng bước một."
+          },
+          {
+            "type": "list",
+            "ja": [
+              "平均値：x̄ ＝ (5 ＋ 7 ＋ 8 ＋ 10 ＋ 10) ÷ 5 ＝ 40 ÷ 5 ＝ 8",
+              "偏差（各データ − 平均値）：−3, −1, 0, 2, 2（合計すると必ず0になる）",
+              "平方和：S ＝ 9 ＋ 1 ＋ 0 ＋ 4 ＋ 4 ＝ 18",
+              "不偏分散：V ＝ S ÷ (n − 1) ＝ 18 ÷ 4 ＝ 4.5",
+              "標準偏差：s ＝ √4.5 ≒ 2.12",
+              "変動係数：CV ＝ s ÷ x̄ ＝ 2.12 ÷ 8 ≒ 0.265（約26.5%）"
+            ],
+            "vi": [
+              "Trung bình: x̄ = (5 + 7 + 8 + 10 + 10) ÷ 5 = 40 ÷ 5 = 8",
+              "偏差 (độ lệch = mỗi dữ liệu − trung bình): −3, −1, 0, 2, 2 (tổng luôn bằng 0)",
+              "Tổng bình phương: S = 9 + 1 + 0 + 4 + 4 = 18",
+              "Phương sai không chệch: V = S ÷ (n − 1) = 18 ÷ 4 = 4.5",
+              "Độ lệch chuẩn: s = √4.5 ≈ 2.12",
+              "Hệ số biến động: CV = s ÷ x̄ = 2.12 ÷ 8 ≈ 0.265 (khoảng 26.5%)"
+            ],
+            "ol": true
+          },
+          {
+            "type": "formula",
+            "f": [
+              "S ＝ Σx² − (Σx)² ÷ n ＝ 338 − 40² ÷ 5 ＝ 338 − 320 ＝ 18"
+            ],
+            "ja": "別の計算方法でも同じ S ＝ 18 になります。2つの方法で答えが合えば、計算ミスがないことを確かめられます。",
+            "vi": "Tính theo cách khác cũng ra S = 18. Nếu hai cách cho cùng đáp số thì có thể yên tâm là không tính sai."
+          },
+          {
+            "type": "mistake",
+            "ja": "偏差をそのまま足すと必ず0になるので、ばらつきの大きさは表せません。だから偏差を2乗してから足します（平方和）。また、分散 V の単位は元の単位の2乗（mm²など）、標準偏差 s の単位は元と同じ（mm）です。",
+            "vi": "Cộng thẳng các độ lệch thì luôn ra 0 nên không biểu thị được độ lớn của phân tán. Vì thế phải bình phương độ lệch rồi mới cộng (平方和). Ngoài ra, đơn vị của phương sai V là bình phương đơn vị gốc (mm²…), còn độ lệch chuẩn s có cùng đơn vị gốc (mm)."
+          }
+        ]
+      },
+      {
         "h": {
           "ja": "中心を表す値",
           "vi": "Giá trị thể hiện trung tâm"
@@ -1440,6 +2630,138 @@
       "vi": "Ở 3級, đề thi kiểm tra khả năng đọc hiểu kết quả của 7 công cụ QC, đặc biệt là hình dạng biểu đồ tần suất và cách đọc biểu đồ phân tán."
     },
     "sections": [
+      {
+        "basic": true,
+        "h": {
+          "ja": "ヒストグラムと散布図とは？",
+          "vi": "ヒストグラム và 散布図 là gì?"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "ヒストグラムは、データをいくつかの区間に分け、各区間に入るデータの数（度数）を柱の高さで表した図です。「どのあたりの値が多いか」「どのくらい広がっているか」「形におかしな所はないか」がひと目でわかります。散布図は、「温度と硬さ」のように対になった2種類のデータを、1組ずつ点で打った図で、2つの関係を見るのに使います。",
+            "vi": "ヒストグラム (biểu đồ tần suất) chia dữ liệu thành nhiều khoảng (区間) và biểu thị số dữ liệu rơi vào mỗi khoảng (度数 – tần số) bằng chiều cao cột. Nhìn vào là biết “giá trị nào nhiều”, “trải rộng bao nhiêu”, “hình dạng có gì bất thường không”. 散布図 (biểu đồ phân tán) chấm từng cặp của 2 loại dữ liệu đi theo cặp như “nhiệt độ và độ cứng” thành điểm, dùng để xem quan hệ giữa chúng."
+          },
+          {
+            "type": "table",
+            "head": [
+              "図",
+              "横軸",
+              "縦軸",
+              "わかること"
+            ],
+            "rows": [
+              [
+                "ヒストグラム",
+                "測定値の区間",
+                "度数（データの数）",
+                "分布の中心・ばらつき・形"
+              ],
+              [
+                "散布図",
+                "原因側のデータ（例：温度）",
+                "結果側のデータ（例：硬さ）",
+                "2つのデータの相関"
+              ]
+            ],
+            "head_vi": [
+              "Biểu đồ",
+              "Trục ngang",
+              "Trục dọc",
+              "Cho biết điều gì"
+            ],
+            "rows_vi": [
+              [
+                "ヒストグラム",
+                "Khoảng giá trị đo",
+                "Tần số (số dữ liệu)",
+                "Trung tâm, độ phân tán, hình dạng phân bố"
+              ],
+              [
+                "散布図",
+                "Dữ liệu phía nguyên nhân (vd: nhiệt độ)",
+                "Dữ liệu phía kết quả (vd: độ cứng)",
+                "Tương quan giữa 2 loại dữ liệu"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "職場ではこう使う：形から原因を考える",
+          "vi": "Dùng ở chỗ làm: từ hình dạng suy ra nguyên nhân"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "例：シャフトの外径を100本測ってヒストグラムを作ったところ、山が2つある形になりました。この形は「性質の違う2つのグループが混ざっている」サインです。",
+            "vi": "Ví dụ: đo đường kính ngoài của 100 trục rồi vẽ ヒストグラム, thấy biểu đồ có 2 đỉnh. Hình dạng này là dấu hiệu “hai nhóm có tính chất khác nhau đang bị trộn lẫn”."
+          },
+          {
+            "type": "list",
+            "ja": [
+              "形を見る：一般型か、二山型・離れ小島型・絶壁型など特徴のある形か",
+              "中心の位置を見る：規格の中心からかたよっていないか",
+              "広がりを見る：規格の幅に対して余裕があるか",
+              "特徴のある形なら、機械別・材料別などに層別して描き直し、原因をしぼり込む"
+            ],
+            "vi": [
+              "Xem hình dạng: dạng thông thường (一般型) hay dạng đặc biệt như 2 đỉnh (二山型), đảo tách rời (離れ小島型), vách đứng (絶壁型)",
+              "Xem vị trí trung tâm: có lệch khỏi tâm quy cách không",
+              "Xem độ trải rộng: còn dư so với bề rộng quy cách không",
+              "Nếu hình dạng đặc biệt, 層別 theo máy, theo vật liệu… rồi vẽ lại để khoanh vùng nguyên nhân"
+            ],
+            "ol": true
+          },
+          {
+            "type": "point",
+            "ja": "この例では機械別に層別して描き直したところ、2台の機械で平均値がずれていたことがわかりました。ヒストグラムは「形 → 層別 → 原因」の順に考えると読み解きやすくなります。",
+            "vi": "Trong ví dụ này, khi 層別 theo máy và vẽ lại thì thấy trung bình của 2 máy bị lệch nhau. Đọc ヒストグラム sẽ dễ hơn nếu suy nghĩ theo thứ tự “hình dạng → phân tầng → nguyên nhân”."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "例題で確かめる：区間の決め方",
+          "vi": "Kiểm tra bằng ví dụ: cách chia khoảng"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "データ数 n ＝ 50、最大値 12.8、最小値 10.3、測定単位 0.1 のデータでヒストグラムを作ります。",
+            "vi": "Vẽ ヒストグラム cho dữ liệu có n = 50, giá trị lớn nhất 12.8, nhỏ nhất 10.3, đơn vị đo 0.1."
+          },
+          {
+            "type": "list",
+            "ja": [
+              "区間の数の目安：√50 ≒ 7.07 → 7区間",
+              "区間の幅：(12.8 − 10.3) ÷ 7 ≒ 0.357 → 測定単位 0.1 の整数倍に丸めて 0.4",
+              "最初の区間の下側境界：最小値 − 測定単位 ÷ 2 ＝ 10.3 − 0.05 ＝ 10.25",
+              "区間：10.25〜10.65、10.65〜11.05、…、12.65〜13.05 の7区間で、最大値 12.8 まで入る"
+            ],
+            "vi": [
+              "Số khoảng tham khảo: √50 ≈ 7.07 → 7 khoảng",
+              "Độ rộng khoảng: (12.8 − 10.3) ÷ 7 ≈ 0.357 → làm tròn thành bội số nguyên của đơn vị đo 0.1 là 0.4",
+              "Biên dưới của khoảng đầu tiên: giá trị nhỏ nhất − đơn vị đo ÷ 2 = 10.3 − 0.05 = 10.25",
+              "Các khoảng: 10.25–10.65, 10.65–11.05, …, 12.65–13.05, 7 khoảng chứa được đến giá trị lớn nhất 12.8"
+            ],
+            "ol": true
+          },
+          {
+            "type": "point",
+            "ja": "境界値を測定単位の半分の位置（10.25 など）にすると、データがちょうど境界にのって「どちらの区間に入れるか」迷うことがなくなります。",
+            "vi": "Đặt biên ở vị trí một nửa đơn vị đo (như 10.25) thì dữ liệu sẽ không rơi đúng vào biên, tránh phải phân vân “cho vào khoảng nào”."
+          },
+          {
+            "type": "mistake",
+            "ja": "区間の幅を測定単位と関係ない半端な数（0.357 など）のままにすると、柱ごとに入る測定値の数がそろわず、歯抜け型のような形に見えることがあります。",
+            "vi": "Nếu để độ rộng khoảng là số lẻ không liên quan đến đơn vị đo (như 0.357), số giá trị đo có thể rơi vào mỗi cột sẽ không đều, khiến biểu đồ trông như dạng răng lược (歯抜け型)."
+          }
+        ]
+      },
       {
         "h": {
           "ja": "ヒストグラムの作り方",
@@ -1633,6 +2955,172 @@
     },
     "sections": [
       {
+        "basic": true,
+        "h": {
+          "ja": "新QC七つ道具とは？",
+          "vi": "7 công cụ QC mới là gì?"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "「お客様の不満がいろいろ出ている」「新しいラインの立ち上げで何から手をつけるか決めたい」など、数字にしにくい問題もあります。新QC七つ道具は、意見・事実・アイデアなどの言葉（言語データ）を図に整理して、問題をはっきりさせたり、計画を立てたりするための手法です。",
+            "vi": "Có những vấn đề khó chuyển thành con số, như “khách hàng có nhiều điều không hài lòng” hay “muốn quyết định bắt đầu từ đâu khi khởi động dây chuyền mới”. 新QC七つ道具 (7 công cụ QC mới) là các phương pháp sắp xếp lời nói như ý kiến, sự thật, ý tưởng (言語データ – dữ liệu ngôn ngữ) thành sơ đồ để làm rõ vấn đề hoặc lập kế hoạch."
+          },
+          {
+            "type": "table",
+            "head": [
+              "こんな場面で",
+              "使う手法"
+            ],
+            "rows": [
+              [
+                "ばらばらな意見から、問題の全体像をつかみたい",
+                "親和図法"
+              ],
+              [
+                "原因どうしがからみ合っていて、根本原因を探したい",
+                "連関図法"
+              ],
+              [
+                "目的を達成する具体的な手段を考えたい",
+                "系統図法"
+              ],
+              [
+                "2つ（以上）の要素の関係を一覧にしたい",
+                "マトリックス図法"
+              ],
+              [
+                "多くの数値データを少数の指標にまとめたい",
+                "マトリックス・データ解析法"
+              ],
+              [
+                "計画中に起こりうる問題に前もって備えたい",
+                "PDPC法"
+              ],
+              [
+                "作業の順序と日程を管理したい",
+                "アローダイアグラム法"
+              ]
+            ],
+            "head_vi": [
+              "Tình huống",
+              "Phương pháp dùng"
+            ],
+            "rows_vi": [
+              [
+                "Nắm bức tranh tổng thể từ các ý kiến rời rạc",
+                "親和図法 (biểu đồ quan hệ thân thuộc / KJ)"
+              ],
+              [
+                "Các nguyên nhân đan xen nhau, muốn tìm nguyên nhân gốc",
+                "連関図法 (biểu đồ liên quan)"
+              ],
+              [
+                "Nghĩ ra biện pháp cụ thể để đạt mục đích",
+                "系統図法 (biểu đồ hệ thống / cây)"
+              ],
+              [
+                "Liệt kê quan hệ giữa 2 (hoặc nhiều) yếu tố",
+                "マトリックス図法 (biểu đồ ma trận)"
+              ],
+              [
+                "Gom nhiều dữ liệu số thành ít chỉ số",
+                "マトリックス・データ解析法 (phân tích dữ liệu ma trận)"
+              ],
+              [
+                "Chuẩn bị trước cho sự cố có thể xảy ra khi thực hiện kế hoạch",
+                "PDPC法 (sơ đồ quyết định quá trình)"
+              ],
+              [
+                "Quản lý thứ tự và tiến độ công việc",
+                "アローダイアグラム法 (sơ đồ mũi tên)"
+              ]
+            ]
+          },
+          {
+            "type": "mistake",
+            "ja": "マトリックス図法とマトリックス・データ解析法は名前が似ていますが別物です。新QC七つ道具の中で数値データを扱うのは、マトリックス・データ解析法だけです。",
+            "vi": "マトリックス図法 và マトリックス・データ解析法 tên giống nhau nhưng khác nhau. Trong 新QC七つ道具, chỉ có マトリックス・データ解析法 là xử lý dữ liệu số."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "職場ではこう使う",
+          "vi": "Dùng ở chỗ làm như thế nào"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "例：新しい検査ラインを立ち上げるプロジェクトで、チームは次のように手法をつなげて使いました。",
+            "vi": "Ví dụ: trong dự án khởi động dây chuyền kiểm tra mới, nhóm đã nối tiếp các phương pháp như sau."
+          },
+          {
+            "type": "list",
+            "ja": [
+              "親和図法：メンバーの心配ごとをカードに書き出し、似たものをまとめて課題をはっきりさせる",
+              "連関図法：「検査に時間がかかる」原因どうしのつながりを矢印でたどり、根本原因を見つける",
+              "系統図法：「検査時間を半分にする」という目的から、具体的な手段まで枝分かれさせる",
+              "マトリックス図法：手段と評価項目（効果・費用・実現性）を表にして、実施する手段と担当を決める",
+              "PDPC法：「新しい装置の納入が遅れたら」などの事態を予測し、対応の道筋を決めておく",
+              "アローダイアグラム法：作業の順序と日数を図にし、遅れが許されない作業を確認する"
+            ],
+            "vi": [
+              "親和図法: ghi những lo lắng của thành viên ra thẻ, gom các thẻ giống nhau để làm rõ vấn đề",
+              "連関図法: dùng mũi tên lần theo mối liên kết giữa các nguyên nhân “kiểm tra mất nhiều thời gian”, tìm nguyên nhân gốc",
+              "系統図法: từ mục đích “giảm một nửa thời gian kiểm tra”, phân nhánh đến các biện pháp cụ thể",
+              "マトリックス図法: lập bảng biện pháp × tiêu chí đánh giá (hiệu quả, chi phí, tính khả thi), quyết định biện pháp thực hiện và người phụ trách",
+              "PDPC法: dự đoán tình huống như “nếu thiết bị mới giao trễ”, định sẵn hướng xử lý",
+              "アローダイアグラム法: vẽ thứ tự và số ngày của các công việc, xác định công việc không được phép trễ"
+            ],
+            "ol": true
+          },
+          {
+            "type": "point",
+            "ja": "いつも7つ全部を使う必要はありません。「整理したい」「原因を探したい」「手段を考えたい」「日程を管理したい」など、目的に合う手法を選びます。",
+            "vi": "Không cần lúc nào cũng dùng cả 7. Hãy chọn phương pháp phù hợp với mục đích như “muốn sắp xếp”, “muốn tìm nguyên nhân”, “muốn nghĩ biện pháp”, “muốn quản lý tiến độ”."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "例題で確かめる：アローダイアグラムの日程",
+          "vi": "Kiểm tra bằng ví dụ: tiến độ trong アローダイアグラム"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "作業A（4日）のあと、作業B（3日）と作業C（2日）を並行して行います。Cのあとに作業D（4日）を行い、BとDの両方が終わってから作業E（1日）を行います。全体の日数と、作業Bの余裕を求めます。",
+            "vi": "Sau công việc A (4 ngày), làm song song công việc B (3 ngày) và C (2 ngày). Sau C làm D (4 ngày); khi cả B và D xong thì làm E (1 ngày). Tìm tổng số ngày và thời gian dự phòng của công việc B."
+          },
+          {
+            "type": "list",
+            "ja": [
+              "経路1：A → B → E ＝ 4 ＋ 3 ＋ 1 ＝ 8日",
+              "経路2：A → C → D → E ＝ 4 ＋ 2 ＋ 4 ＋ 1 ＝ 11日",
+              "いちばん長い経路2がクリティカルパスで、全体の日数は11日",
+              "Eを始められるのは、Bが終わる7日目とDが終わる10日目の遅いほう、つまり10日目",
+              "Bは7日目に終われば十分なので、3日（10 − 7）遅れても全体の日程に影響しない"
+            ],
+            "vi": [
+              "Đường 1: A → B → E = 4 + 3 + 1 = 8 ngày",
+              "Đường 2: A → C → D → E = 4 + 2 + 4 + 1 = 11 ngày",
+              "Đường dài nhất là đường 2, đó là クリティカルパス (đường găng); tổng thời gian là 11 ngày",
+              "E chỉ bắt đầu được ở thời điểm muộn hơn giữa ngày 7 (B xong) và ngày 10 (D xong), tức là ngày 10",
+              "B xong ở ngày 7 là đủ, nên dù trễ 3 ngày (10 − 7) cũng không ảnh hưởng tiến độ chung"
+            ],
+            "ol": true
+          },
+          {
+            "type": "point",
+            "ja": "全体を早く終わらせたいときは、クリティカルパス上の作業（A・C・D・E）を短くします。余裕のある作業Bを短くしても、全体の日数は変わりません。",
+            "vi": "Muốn rút ngắn toàn bộ thì phải rút ngắn công việc nằm trên クリティカルパス (A, C, D, E). Rút ngắn công việc B vốn có thời gian dự phòng thì tổng số ngày không đổi."
+          }
+        ]
+      },
+      {
         "h": {
           "ja": "手法の一覧",
           "vi": "Danh sách các công cụ"
@@ -1800,6 +3288,106 @@
       "vi": "Phần lớn dữ liệu công đoạn tuân theo phân phối chuẩn. Hãy nắm tính chất của phân phối chuẩn và cách tính xác suất bằng chuẩn hóa."
     },
     "sections": [
+      {
+        "basic": true,
+        "h": {
+          "ja": "正規分布とは？",
+          "vi": "Phân phối chuẩn là gì?"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "「1kg入り」と書かれた米袋を100袋はかってみると、ちょうど1000gの袋はほとんどありません。998g、1001g、1003g…と少しずつ違います。この違いを「ばらつき」といいます。",
+            "vi": "Nếu cân 100 bao gạo ghi “1 kg”, gần như không bao nào nặng đúng 1000 g. Bao 998 g, bao 1001 g, bao 1003 g… mỗi bao lệch một chút. Sự khác nhau này gọi là ばらつき (độ phân tán, biến động)."
+          },
+          {
+            "type": "p",
+            "ja": "重さごとに袋の数を数えてグラフにすると、真ん中（平均の近く）が一番多く、平均から離れるほど少なくなる、左右対称の山の形になります。この形をした分布を正規分布といいます。",
+            "vi": "Đếm số bao theo từng mức cân nặng rồi vẽ đồ thị, ta thấy ở giữa (gần trung bình) nhiều nhất, càng xa trung bình càng ít, tạo thành hình núi đối xứng hai bên. Phân phối có hình dạng này gọi là 正規分布 (phân phối chuẩn)."
+          },
+          {
+            "type": "list",
+            "ja": [
+              "μ（ミュー）：山の中心の位置＝平均",
+              "σ（シグマ）：山の広がり＝標準偏差。σが大きいほど山は横に広く、低くなる",
+              "確率：全体のうち、ある範囲に入るものの割合（例：0.05 ＝ 5%）"
+            ],
+            "vi": [
+              "μ (muy): vị trí tâm của ngọn núi = trung bình",
+              "σ (sigma): độ rộng của ngọn núi = 標準偏差 (độ lệch chuẩn). σ càng lớn thì núi càng bè rộng và thấp",
+              "確率 (xác suất): tỉ lệ phần tử rơi vào một khoảng nào đó trong toàn bộ (ví dụ 0.05 = 5%)"
+            ]
+          },
+          {
+            "type": "point",
+            "ja": "工程のデータ（寸法・重さ・強さなど）は、安定していれば正規分布に近い形になることが多いので、「規格外がどれくらい出るか」を計算で予測できます。",
+            "vi": "Dữ liệu công đoạn (kích thước, khối lượng, độ bền…) khi ổn định thường có dạng gần phân phối chuẩn, nên có thể dùng tính toán để dự đoán “sẽ có bao nhiêu sản phẩm ngoài quy cách”."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "職場ではこう使う",
+          "vi": "Ứng dụng tại nơi làm việc"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "飲料の充てん工程で、内容量の下限規格が500mLとします。測定すると平均 μ ＝ 502mL、標準偏差 σ ＝ 1mL でした。500mLを下回る（量不足の）割合を見積もってみます。",
+            "vi": "Ở công đoạn chiết rót đồ uống, quy cách dưới của dung tích là 500 mL. Đo được trung bình μ = 502 mL, độ lệch chuẩn σ = 1 mL. Hãy ước tính tỉ lệ chai dưới 500 mL (thiếu lượng)."
+          },
+          {
+            "type": "list",
+            "ja": [
+              "規格値が平均から σ の何個分離れているかを計算する：u ＝ (500 − 502) ÷ 1 ＝ −2",
+              "正規分布は左右対称なので、−2 より下の割合は、+2 より上の割合と同じ",
+              "正規分布表で u ＝ 2.00 を読むと 0.0228 → 約2.3%が量不足になる"
+            ],
+            "vi": [
+              "Tính xem quy cách cách trung bình bao nhiêu lần σ: u = (500 − 502) ÷ 1 = −2",
+              "Phân phối chuẩn đối xứng, nên tỉ lệ dưới −2 bằng tỉ lệ trên +2",
+              "Tra 正規分布表 (bảng phân phối chuẩn) với u = 2.00 được 0.0228 → khoảng 2.3% chai bị thiếu lượng"
+            ],
+            "ol": true
+          },
+          {
+            "type": "p",
+            "ja": "平均を503mLに上げると u ＝ (500 − 503) ÷ 1 ＝ −3 となり、量不足は 0.0013（約0.13%）まで減ります。ばらつき σ を小さくしても同じ効果があります。このように、正規分布を使うと対策の効果を数字で比べられます。",
+            "vi": "Nếu nâng trung bình lên 503 mL thì u = (500 − 503) ÷ 1 = −3, tỉ lệ thiếu lượng giảm còn 0.0013 (khoảng 0.13%). Giảm độ phân tán σ cũng cho hiệu quả tương tự. Như vậy, dùng phân phối chuẩn có thể so sánh hiệu quả các biện pháp bằng con số."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "例題で確かめる",
+          "vi": "Kiểm tra bằng ví dụ"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "ボルトの長さが平均 μ ＝ 20.0mm、標準偏差 σ ＝ 0.2mm の正規分布にしたがう。規格は 19.6〜20.4mm。規格外になる割合と、1000本つくったときの規格外の本数の目安を求めよ。",
+            "vi": "Chiều dài bu lông tuân theo phân phối chuẩn với μ = 20.0 mm, σ = 0.2 mm. Quy cách là 19.6–20.4 mm. Tìm tỉ lệ ngoài quy cách và số bu lông ngoài quy cách ước tính khi sản xuất 1000 chiếc."
+          },
+          {
+            "type": "formula",
+            "f": [
+              "上側：u ＝ (20.4 − 20.0) ÷ 0.2 ＝ 2.00 → 0.0228",
+              "下側：u ＝ (19.6 − 20.0) ÷ 0.2 ＝ −2.00 → 0.0228",
+              "合計：0.0228 × 2 ＝ 0.0456（約4.6%）",
+              "1000本 × 0.0456 ≒ 46本"
+            ],
+            "ja": "規格が上下両方にあるので、片側の値を2倍するのがポイントです。",
+            "vi": "Vì có quy cách cả trên và dưới (hai phía), điểm mấu chốt là nhân đôi giá trị một phía."
+          },
+          {
+            "type": "mistake",
+            "ja": "片側だけ計算して「約2.3%」と答えるミスが多いです。問題文が「規格外（上限・下限の両方）」か「上限を超える」だけかを必ず確認しましょう。",
+            "vi": "Lỗi hay gặp là chỉ tính một phía rồi trả lời “khoảng 2.3%”. Luôn kiểm tra đề hỏi “ngoài quy cách (cả trên và dưới)” hay chỉ “vượt giới hạn trên”."
+          }
+        ]
+      },
       {
         "h": {
           "ja": "正規分布の性質",
@@ -1977,6 +3565,147 @@
       "vi": "Biểu đồ kiểm soát (管理図) dùng để phán đoán công đoạn có ở trạng thái ổn định không và phát hiện sớm bất thường."
     },
     "sections": [
+      {
+        "basic": true,
+        "h": {
+          "ja": "管理図とは？",
+          "vi": "Biểu đồ kiểm soát là gì?"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "毎朝の通勤時間を記録すると、28分、31分、30分…と少しずつ違います。これは信号のタイミングなど、避けられない小さな原因によるものです。ところがある日45分かかったら、「事故があった」などの特別な原因を疑うでしょう。",
+            "vi": "Nếu ghi lại thời gian đi làm mỗi sáng: 28 phút, 31 phút, 30 phút… mỗi ngày chênh một chút. Đó là do những nguyên nhân nhỏ không tránh được như thời điểm đèn tín hiệu. Nhưng nếu một hôm mất 45 phút, ta sẽ nghi có nguyên nhân đặc biệt như “có tai nạn”."
+          },
+          {
+            "type": "p",
+            "ja": "管理図は、工程のデータを時間の順に点で打ち、「いつものばらつき」の範囲を示す線（管理限界線）を引いた図です。点が線の中でいつも通りに並んでいれば「安定」、線の外に出たり並び方がおかしかったりすれば「何か特別なことが起きた」と判断します。",
+            "vi": "管理図 (biểu đồ kiểm soát) là biểu đồ chấm dữ liệu công đoạn theo thứ tự thời gian và vẽ các đường thể hiện phạm vi “dao động bình thường” (管理限界線 – đường giới hạn kiểm soát). Nếu các điểm nằm trong đường và sắp xếp bình thường thì là “ổn định”; nếu điểm ra ngoài đường hoặc sắp xếp bất thường thì kết luận “đã có chuyện đặc biệt xảy ra”."
+          },
+          {
+            "type": "table",
+            "head": [
+              "日常の例",
+              "工程での呼び方",
+              "管理図での見え方"
+            ],
+            "rows": [
+              [
+                "信号待ちによる数分の差",
+                "偶然原因",
+                "管理限界線の内側でランダムに並ぶ"
+              ],
+              [
+                "事故による大幅な遅れ",
+                "異常原因",
+                "線の外に出る・くせのある並び方になる"
+              ]
+            ],
+            "head_vi": [
+              "Ví dụ hằng ngày",
+              "Tên gọi trong công đoạn",
+              "Thể hiện trên biểu đồ"
+            ],
+            "rows_vi": [
+              [
+                "Chênh vài phút do chờ đèn",
+                "偶然原因 (nguyên nhân ngẫu nhiên)",
+                "Nằm ngẫu nhiên bên trong đường giới hạn"
+              ],
+              [
+                "Trễ nhiều do tai nạn",
+                "異常原因 (nguyên nhân bất thường)",
+                "Ra ngoài đường, hoặc sắp xếp có quy luật lạ"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "職場ではこう使う",
+          "vi": "Ứng dụng tại nơi làm việc"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "シャフトの外径を加工するラインで、X̄−R管理図を使う流れの例です。",
+            "vi": "Ví dụ trình tự dùng biểu đồ X̄−R ở dây chuyền gia công đường kính ngoài của trục."
+          },
+          {
+            "type": "list",
+            "ja": [
+              "1時間ごとに5本（n ＝ 5）を測る。この5本を「群」という",
+              "20〜25群ほどデータを集め、群ごとに平均値 X̄ と範囲 R を計算する",
+              "全体の平均 X̿ と範囲の平均 R̄ から、係数表を使って管理限界線を計算する",
+              "以後、新しい群の X̄ と R を毎回打点する",
+              "点が管理限界線の外に出たり、判定ルールに当てはまったりしたら、4M（人・機械・材料・方法）の変化を調べて原因を取り除き、記録を残す"
+            ],
+            "vi": [
+              "Mỗi giờ đo 5 trục (n = 5). 5 trục này gọi là một 群 (nhóm mẫu)",
+              "Thu thập khoảng 20–25 nhóm, tính trung bình X̄ và khoảng biến thiên R của từng nhóm",
+              "Từ trung bình chung X̿ và trung bình khoảng biến thiên R̄, dùng bảng hệ số để tính đường giới hạn kiểm soát",
+              "Sau đó mỗi lần lấy nhóm mới thì chấm X̄ và R lên biểu đồ",
+              "Nếu điểm ra ngoài đường giới hạn hoặc rơi vào quy tắc phán định bất thường thì điều tra thay đổi của 4M (người, máy, vật liệu, phương pháp), loại bỏ nguyên nhân và ghi lại hồ sơ"
+            ],
+            "ol": true
+          },
+          {
+            "type": "point",
+            "ja": "X̄管理図は「平均（中心の位置）の変化」、R管理図は「群の中のばらつきの変化」を見ます。2つをセットで見ることが大切です。",
+            "vi": "Biểu đồ X̄ theo dõi “thay đổi của trung bình (vị trí tâm)”, biểu đồ R theo dõi “thay đổi độ phân tán trong nhóm”. Điều quan trọng là xem cả hai cùng nhau."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "例題で確かめる",
+          "vi": "Kiểm tra bằng ví dụ"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "n ＝ 5 の群を25群集めたところ、X̿ ＝ 50.0、R̄ ＝ 2.0 だった（n ＝ 5 のとき A₂ ＝ 0.577、D₄ ＝ 2.114）。管理限界線を求め、次の群の X̄ ＝ 51.3、R ＝ 2.5 を判定せよ。",
+            "vi": "Thu được 25 nhóm với n = 5, X̿ = 50.0, R̄ = 2.0 (khi n = 5: A₂ = 0.577, D₄ = 2.114). Tính các đường giới hạn kiểm soát và phán định nhóm tiếp theo có X̄ = 51.3, R = 2.5."
+          },
+          {
+            "type": "formula",
+            "f": [
+              "X̄管理図：UCL ＝ 50.0 ＋ 0.577 × 2.0 ≒ 51.15",
+              "　　　　　LCL ＝ 50.0 − 0.577 × 2.0 ≒ 48.85",
+              "R管理図：UCL ＝ 2.114 × 2.0 ≒ 4.23（n ≦ 6 なので LCL は示さない）"
+            ],
+            "ja": "X̄ ＝ 51.3 は UCL 51.15 を超えているので異常と判断します。R ＝ 2.5 は 4.23 以下なので、群の中のばらつきは変わっていません。つまり「中心の位置がずれた」可能性が高く、刃具の摩耗や設定値の変化などを調べます。",
+            "vi": "X̄ = 51.3 vượt UCL 51.15 nên phán định là bất thường. R = 2.5 nhỏ hơn 4.23 nên độ phân tán trong nhóm không đổi. Tức là khả năng cao “vị trí tâm đã bị lệch”, cần điều tra mòn dao cụ, thay đổi giá trị cài đặt…"
+          },
+          {
+            "type": "mistake",
+            "ja": "「管理限界線の中にある＝安定」とは限りません。線の中でも、中心線の片側に9点連続する、6点連続で上がり続けるなどの並び方は異常のサインです。",
+            "vi": "“Nằm trong đường giới hạn = ổn định” chưa chắc đúng. Dù trong đường, nếu 9 điểm liên tiếp nằm một phía đường trung tâm, hay 6 điểm liên tiếp tăng dần… thì vẫn là dấu hiệu bất thường."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "つまずきやすいポイント",
+          "vi": "Điểm dễ vấp"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "管理図で「安定状態」と判断できても、それは「いつも通りにつくれている」という意味で、「良品だけがつくれている」という意味ではありません。もともとのばらつきが規格に対して大きければ、安定していても不良は出続けます。",
+            "vi": "Dù biểu đồ kiểm soát cho thấy 安定状態 (trạng thái ổn định), điều đó chỉ có nghĩa “đang sản xuất như mọi khi”, chứ không có nghĩa “chỉ sản xuất ra hàng tốt”. Nếu độ phân tán vốn có lớn so với quy cách thì dù ổn định vẫn liên tục có hàng lỗi."
+          },
+          {
+            "type": "point",
+            "ja": "「安定しているか」は管理図で、「規格を満たす力が十分か」は工程能力指数で確かめます。順番は管理図が先です。",
+            "vi": "“Có ổn định không” thì kiểm tra bằng biểu đồ kiểm soát; “có đủ năng lực đáp ứng quy cách không” thì kiểm tra bằng 工程能力指数 (chỉ số năng lực công đoạn). Thứ tự: biểu đồ kiểm soát trước."
+          }
+        ]
+      },
       {
         "h": {
           "ja": "ばらつきの2つの原因",
@@ -2203,6 +3932,163 @@
     },
     "sections": [
       {
+        "basic": true,
+        "h": {
+          "ja": "工程能力とは？",
+          "vi": "Năng lực công đoạn là gì?"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "車をガレージに入れる場面を考えます。ガレージの幅に対して車幅と運転のふらつきが十分小さければ、毎回ぶつけずに入れられます。ぎりぎりなら、ときどきこすってしまいます。",
+            "vi": "Hãy nghĩ đến việc đỗ xe vào gara. Nếu bề rộng xe cộng với độ lắc khi lái nhỏ hơn nhiều so với bề rộng gara thì lần nào cũng đỗ được mà không va chạm. Nếu sát nút thì thỉnh thoảng sẽ bị quẹt."
+          },
+          {
+            "type": "p",
+            "ja": "工程も同じです。ガレージの幅にあたるのが規格の幅（上限規格値 − 下限規格値）、ふらつきにあたるのが工程のばらつきです。ばらつきの大きさは、ほぼ全部（約99.7%）が入る幅である 6s で表します。",
+            "vi": "Công đoạn cũng vậy. Bề rộng gara tương ứng với bề rộng quy cách (上限規格値 giá trị quy cách trên − 下限規格値 giá trị quy cách dưới), độ lắc tương ứng với độ phân tán của công đoạn. Độ lớn của độ phân tán được biểu thị bằng 6s – bề rộng chứa gần như toàn bộ (khoảng 99.7%) dữ liệu."
+          },
+          {
+            "type": "p",
+            "ja": "工程能力指数 Cp は「規格の幅の中に、ばらつき 6s がいくつ分入るか」を表します。Cp ＝ 1.33 なら、規格の幅がばらつきの約1.33倍あり、余裕がある状態です。",
+            "vi": "工程能力指数 Cp (chỉ số năng lực công đoạn) biểu thị “bề rộng quy cách chứa được bao nhiêu lần độ phân tán 6s”. Cp = 1.33 nghĩa là bề rộng quy cách gấp khoảng 1.33 lần độ phân tán, tức là có dư địa."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "職場ではこう使う",
+          "vi": "Ứng dụng tại nơi làm việc"
+        },
+        "blocks": [
+          {
+            "type": "list",
+            "ja": [
+              "管理図で工程が安定状態であることを確認する（不安定なら先に異常原因を取り除く）",
+              "安定した期間のデータを集め、平均値 x̄ と標準偏差 s を計算する",
+              "Cp と Cpk を計算する",
+              "判断の目安の表と比べ、不足なら「ばらつきを小さくする」か「平均を規格の中心に寄せる」対策を考える",
+              "対策後に再びデータをとり、指数が改善したか確認する"
+            ],
+            "vi": [
+              "Dùng biểu đồ kiểm soát xác nhận công đoạn ở trạng thái ổn định (nếu không ổn định thì loại bỏ nguyên nhân bất thường trước)",
+              "Thu thập dữ liệu trong giai đoạn ổn định, tính trung bình x̄ và độ lệch chuẩn s",
+              "Tính Cp và Cpk",
+              "So với bảng tiêu chí đánh giá; nếu không đủ thì nghĩ biện pháp “giảm độ phân tán” hoặc “đưa trung bình về tâm quy cách”",
+              "Sau khi cải tiến, lấy dữ liệu lại và xác nhận chỉ số đã được cải thiện"
+            ],
+            "ol": true
+          },
+          {
+            "type": "point",
+            "ja": "Cp が十分なのに Cpk が小さいときは「かたより」が原因です。設定を調整して中心に寄せるだけで改善できることが多く、ばらつきを減らすより手軽です。",
+            "vi": "Khi Cp đủ nhưng Cpk nhỏ thì nguyên nhân là かたより (độ lệch tâm). Thường chỉ cần chỉnh cài đặt để đưa về tâm là cải thiện được, dễ hơn so với giảm độ phân tán."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "例題で確かめる",
+          "vi": "Kiểm tra bằng ví dụ"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "ある部品の規格は 10.0 ± 0.6mm（9.4〜10.6mm）。データから x̄ ＝ 10.15mm、s ＝ 0.15mm だった。Cp と Cpk を求めよ。",
+            "vi": "Quy cách của một chi tiết là 10.0 ± 0.6 mm (9.4–10.6 mm). Từ dữ liệu có x̄ = 10.15 mm, s = 0.15 mm. Tính Cp và Cpk."
+          },
+          {
+            "type": "formula",
+            "f": [
+              "Cp ＝ (10.6 − 9.4) ÷ (6 × 0.15) ＝ 1.2 ÷ 0.9 ≒ 1.33",
+              "上側：(10.6 − 10.15) ÷ (3 × 0.15) ＝ 0.45 ÷ 0.45 ＝ 1.00",
+              "下側：(10.15 − 9.4) ÷ (3 × 0.15) ＝ 0.75 ÷ 0.45 ≒ 1.67",
+              "Cpk ＝ 小さい方 ＝ 1.00"
+            ],
+            "ja": "ばらつき自体は十分小さい（Cp ≒ 1.33）のに、平均が上側に0.15mmずれているため、Cpk は 1.00 に下がっています。平均を10.0mmに戻せば Cpk も約1.33になります。",
+            "vi": "Bản thân độ phân tán đủ nhỏ (Cp ≈ 1.33), nhưng trung bình lệch lên phía trên 0.15 mm nên Cpk giảm còn 1.00. Nếu đưa trung bình về 10.0 mm thì Cpk cũng thành khoảng 1.33."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "指数と規格外の割合の関係",
+          "vi": "Quan hệ giữa chỉ số và tỉ lệ ngoài quy cách"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "平均が規格の中心にあり、データが正規分布にしたがうとき、Cp の値から規格外になる割合（両側の合計）の目安がわかります。",
+            "vi": "Khi trung bình nằm ở tâm quy cách và dữ liệu tuân theo phân phối chuẩn, từ giá trị Cp có thể biết tỉ lệ ngoài quy cách ước tính (tổng hai phía)."
+          },
+          {
+            "type": "table",
+            "head": [
+              "Cp",
+              "規格の位置",
+              "規格外の割合（目安）"
+            ],
+            "rows": [
+              [
+                "0.67",
+                "平均 ± 2σ",
+                "約4.6%"
+              ],
+              [
+                "1.00",
+                "平均 ± 3σ",
+                "約0.27%"
+              ],
+              [
+                "1.33",
+                "平均 ± 4σ",
+                "約0.006%"
+              ],
+              [
+                "1.67",
+                "平均 ± 5σ",
+                "ほぼ0"
+              ]
+            ],
+            "head_vi": [
+              "Cp",
+              "Vị trí quy cách",
+              "Tỉ lệ ngoài quy cách (ước tính)"
+            ],
+            "rows_vi": [
+              [
+                "0.67",
+                "Trung bình ± 2σ",
+                "khoảng 4.6%"
+              ],
+              [
+                "1.00",
+                "Trung bình ± 3σ",
+                "khoảng 0.27%"
+              ],
+              [
+                "1.33",
+                "Trung bình ± 4σ",
+                "khoảng 0.006%"
+              ],
+              [
+                "1.67",
+                "Trung bình ± 5σ",
+                "gần như 0"
+              ]
+            ]
+          },
+          {
+            "type": "memo",
+            "ja": "Cp × 3 ＝ 規格が平均から σ の何個分離れているか、と考えると覚えやすいです（Cp ＝ 1.33 → 約4σ）。",
+            "vi": "Dễ nhớ nếu nghĩ: Cp × 3 = quy cách cách trung bình bao nhiêu lần σ (Cp = 1.33 → khoảng 4σ)."
+          }
+        ]
+      },
+      {
         "h": {
           "ja": "両側規格の工程能力指数 Cp",
           "vi": "Chỉ số Cp với quy cách hai phía"
@@ -2363,6 +4249,279 @@
     },
     "sections": [
       {
+        "basic": true,
+        "h": {
+          "ja": "相関とは？",
+          "vi": "Tương quan là gì?"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "暑い日ほどアイスクリームがよく売れる、勉強時間が長いほどテストの点が高い――このように、一方が変わるともう一方も一緒に変わる関係を「相関」といいます。",
+            "vi": "Ngày càng nóng thì kem bán càng chạy, thời gian học càng dài thì điểm thi càng cao – mối quan hệ mà khi một bên thay đổi thì bên kia cũng thay đổi theo gọi là 相関 (tương quan)."
+          },
+          {
+            "type": "table",
+            "head": [
+              "種類",
+              "意味",
+              "例"
+            ],
+            "rows": [
+              [
+                "正の相関",
+                "x が増えると y も増える",
+                "気温とアイスの売上"
+              ],
+              [
+                "負の相関",
+                "x が増えると y は減る",
+                "車の重さと燃費"
+              ],
+              [
+                "相関なし",
+                "x と y に関係が見られない",
+                "身長とテストの点"
+              ]
+            ],
+            "head_vi": [
+              "Loại",
+              "Ý nghĩa",
+              "Ví dụ"
+            ],
+            "rows_vi": [
+              [
+                "正の相関 (tương quan dương)",
+                "x tăng thì y cũng tăng",
+                "Nhiệt độ và doanh số kem"
+              ],
+              [
+                "負の相関 (tương quan âm)",
+                "x tăng thì y giảm",
+                "Trọng lượng xe và mức tiết kiệm nhiên liệu"
+              ],
+              [
+                "相関なし (không tương quan)",
+                "Không thấy quan hệ giữa x và y",
+                "Chiều cao và điểm thi"
+              ]
+            ]
+          },
+          {
+            "type": "p",
+            "ja": "関係の強さを −1 から 1 までの1つの数で表したものが相関係数 r です。まず散布図（x を横軸、y を縦軸にして点を打った図）で形を見て、そのあと r で強さを数字にする、という順番で使います。",
+            "vi": "Con số thể hiện mức độ mạnh của quan hệ trong khoảng −1 đến 1 là 相関係数 r (hệ số tương quan). Trình tự dùng: trước tiên nhìn hình dạng bằng 散布図 (biểu đồ phân tán – chấm điểm với x là trục ngang, y là trục dọc), sau đó dùng r để biểu thị mức độ mạnh bằng con số."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "職場ではこう使う",
+          "vi": "Ứng dụng tại nơi làm việc"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "熱処理工程で「加熱時間を変えると製品の硬さは変わるのか」を調べる例です。",
+            "vi": "Ví dụ điều tra ở công đoạn nhiệt luyện: “thay đổi thời gian gia nhiệt thì độ cứng sản phẩm có thay đổi không”."
+          },
+          {
+            "type": "list",
+            "ja": [
+              "加熱時間 x と硬さ y を、同じ製品ごとに対（ペア）で記録する（目安は30組以上）",
+              "散布図を描き、点の並び方・飛び離れた点（外れ値）・グループ分けできそうな点の集まりがないかを見る",
+              "必要なら設備や材料ロットで層別してから描き直す",
+              "相関係数 r を計算して関係の強さを数字で示す",
+              "相関があっても原因とは決めつけず、実験などで本当に効いているか確かめる"
+            ],
+            "vi": [
+              "Ghi thời gian gia nhiệt x và độ cứng y theo cặp cho từng sản phẩm (tham khảo: từ 30 cặp trở lên)",
+              "Vẽ biểu đồ phân tán, xem cách các điểm phân bố, có điểm tách xa (外れ値 – giá trị ngoại lai) hay cụm điểm có thể chia nhóm không",
+              "Nếu cần thì 層別 (phân tầng) theo thiết bị hoặc lô vật liệu rồi vẽ lại",
+              "Tính hệ số tương quan r để thể hiện mức độ quan hệ bằng con số",
+              "Dù có tương quan cũng không vội kết luận là nguyên nhân, mà xác nhận bằng thí nghiệm xem có thực sự ảnh hưởng không"
+            ],
+            "ol": true
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "例題で確かめる",
+          "vi": "Kiểm tra bằng ví dụ"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "加熱時間 x（時間）と硬さ y のデータ5組：(1, 11)、(2, 13)、(3, 12)、(4, 15)、(5, 14)。相関係数 r を求めよ。",
+            "vi": "5 cặp dữ liệu thời gian gia nhiệt x (giờ) và độ cứng y: (1, 11), (2, 13), (3, 12), (4, 15), (5, 14). Tính hệ số tương quan r."
+          },
+          {
+            "type": "table",
+            "head": [
+              "x",
+              "y",
+              "x − x̄",
+              "y − ȳ",
+              "(x − x̄)²",
+              "(y − ȳ)²",
+              "(x − x̄)(y − ȳ)"
+            ],
+            "rows": [
+              [
+                "1",
+                "11",
+                "−2",
+                "−2",
+                "4",
+                "4",
+                "4"
+              ],
+              [
+                "2",
+                "13",
+                "−1",
+                "0",
+                "1",
+                "0",
+                "0"
+              ],
+              [
+                "3",
+                "12",
+                "0",
+                "−1",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "4",
+                "15",
+                "1",
+                "2",
+                "1",
+                "4",
+                "2"
+              ],
+              [
+                "5",
+                "14",
+                "2",
+                "1",
+                "4",
+                "1",
+                "2"
+              ],
+              [
+                "合計",
+                "",
+                "",
+                "",
+                "Sxx ＝ 10",
+                "Syy ＝ 10",
+                "Sxy ＝ 8"
+              ]
+            ],
+            "head_vi": [
+              "x",
+              "y",
+              "x − x̄",
+              "y − ȳ",
+              "(x − x̄)²",
+              "(y − ȳ)²",
+              "(x − x̄)(y − ȳ)"
+            ],
+            "rows_vi": [
+              [
+                "1",
+                "11",
+                "−2",
+                "−2",
+                "4",
+                "4",
+                "4"
+              ],
+              [
+                "2",
+                "13",
+                "−1",
+                "0",
+                "1",
+                "0",
+                "0"
+              ],
+              [
+                "3",
+                "12",
+                "0",
+                "−1",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "4",
+                "15",
+                "1",
+                "2",
+                "1",
+                "4",
+                "2"
+              ],
+              [
+                "5",
+                "14",
+                "2",
+                "1",
+                "4",
+                "1",
+                "2"
+              ],
+              [
+                "Tổng",
+                "",
+                "",
+                "",
+                "Sxx = 10",
+                "Syy = 10",
+                "Sxy = 8"
+              ]
+            ]
+          },
+          {
+            "type": "formula",
+            "f": [
+              "x̄ ＝ 15 ÷ 5 ＝ 3、ȳ ＝ 65 ÷ 5 ＝ 13",
+              "r ＝ 8 ÷ √(10 × 10) ＝ 8 ÷ 10 ＝ 0.8"
+            ],
+            "ja": "r ＝ 0.8 なので、かなり強い正の相関があります。偏差（平均との差）を表にしてから掛け算・足し算をすると、計算ミスを防げます。",
+            "vi": "r = 0.8 nên có tương quan dương khá mạnh. Lập bảng độ lệch (hiệu so với trung bình) rồi mới nhân và cộng sẽ tránh được nhầm lẫn khi tính."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "つまずきやすいポイント",
+          "vi": "Điểm dễ vấp"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "2台の設備のデータを混ぜて散布図を描くと、設備ごとには相関がないのに、全体では相関があるように見えることがあります（逆の場合もあります）。設備・材料・作業者などで層別して見直すことが大切です。",
+            "vi": "Nếu trộn dữ liệu của 2 máy rồi vẽ biểu đồ phân tán, có khi từng máy riêng không có tương quan nhưng tổng thể lại trông như có tương quan (và cũng có trường hợp ngược lại). Điều quan trọng là phân tầng theo máy, vật liệu, người làm… để xem lại."
+          },
+          {
+            "type": "mistake",
+            "ja": "飛び離れた点が1つあるだけで r は大きく変わります。計算する前に散布図で外れ値がないかを確認し、あれば原因を調べましょう。",
+            "vi": "Chỉ cần một điểm tách xa là r đã thay đổi nhiều. Trước khi tính, hãy kiểm tra trên biểu đồ phân tán xem có giá trị ngoại lai không; nếu có thì điều tra nguyên nhân."
+          }
+        ]
+      },
+      {
         "h": {
           "ja": "相関係数",
           "vi": "Hệ số tương quan"
@@ -2468,6 +4627,199 @@
       "vi": "Tổng hợp các cơ chế và cách nghĩ để thực hành quản lý chất lượng trong toàn tổ chức."
     },
     "sections": [
+      {
+        "basic": true,
+        "h": {
+          "ja": "品質経営のしくみとは？",
+          "vi": "Cơ chế quản lý chất lượng (品質経営) là gì?"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "全国に店がある飲食チェーンを考えてみましょう。本部が「今年はお客様の苦情を半分にする」と決め、各店はその目標に向けて動きます。一方で、各店は毎日の仕込みや清掃を決まったやり方で確実に行っています。",
+            "vi": "Hãy hình dung một chuỗi nhà hàng có cửa hàng trên toàn quốc. Trụ sở quyết định “năm nay giảm một nửa khiếu nại của khách”, và từng cửa hàng hành động hướng tới mục tiêu đó. Mặt khác, mỗi cửa hàng vẫn làm chắc chắn các việc hằng ngày như sơ chế, vệ sinh theo cách đã định."
+          },
+          {
+            "type": "p",
+            "ja": "会社全体で品質を良くしていく活動も同じで、トップが決めた重点を全員で達成する「方針管理」と、各職場が毎日の仕事を確実に回す「日常管理」が車の両輪になります。これを支えるのが、標準化、教育訓練、小集団活動、品質マネジメントシステム（QMS）です。",
+            "vi": "Hoạt động nâng cao chất lượng của cả công ty cũng vậy: 方針管理 (quản lý theo phương châm) để mọi người cùng đạt trọng điểm do lãnh đạo đặt ra, và 日常管理 (quản lý hằng ngày) để từng nơi làm việc vận hành chắc chắn công việc mỗi ngày — hai thứ này như hai bánh xe. Hỗ trợ cho chúng là tiêu chuẩn hóa, đào tạo huấn luyện, hoạt động nhóm nhỏ và hệ thống quản lý chất lượng (QMS)."
+          },
+          {
+            "type": "point",
+            "ja": "方針管理は「変える・高める」ための活動、日常管理は「決めたことを守る」ための活動と考えると区別しやすくなります。",
+            "vi": "Dễ phân biệt nếu nghĩ: 方針管理 là hoạt động để “thay đổi, nâng lên”, còn 日常管理 là hoạt động để “giữ đúng điều đã quyết định”."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "職場ではこう使う：方針が現場に届くまで",
+          "vi": "Ở nơi làm việc: phương châm đi xuống hiện trường như thế nào"
+        },
+        "blocks": [
+          {
+            "type": "list",
+            "ja": [
+              "社長が年度の方針（重点課題・目標・方策）を示す",
+              "工場長は、それを受けて工場の目標と方策を決める",
+              "製造課長は、工場の方策を自分の課の目標に置き換え、部下と話し合って具体的な方策を決める（すり合わせ）",
+              "期の途中で進み具合を確認し、遅れていれば方策を見直す",
+              "期末に目標と実績を比べて反省し、次の年度の方針に生かす"
+            ],
+            "vi": [
+              "Giám đốc đưa ra phương châm năm (vấn đề trọng điểm, mục tiêu, biện pháp)",
+              "Giám đốc nhà máy tiếp nhận và quyết định mục tiêu, biện pháp của nhà máy",
+              "Trưởng phòng sản xuất chuyển biện pháp của nhà máy thành mục tiêu của phòng mình, bàn bạc với cấp dưới để quyết định biện pháp cụ thể (すり合わせ – thống nhất qua trao đổi)",
+              "Giữa kỳ kiểm tra tiến độ, nếu chậm thì xem lại biện pháp",
+              "Cuối kỳ so sánh mục tiêu với thực tế, rút kinh nghiệm và áp dụng vào phương châm năm sau"
+            ],
+            "ol": true
+          },
+          {
+            "type": "point",
+            "ja": "目標は「何を・どれだけ・いつまでに」の3つをはっきりさせます。例：「A製品の外観不良率を、3月までに2.0%から1.0%にする」。",
+            "vi": "Mục tiêu cần rõ 3 yếu tố “cái gì – bao nhiêu – đến khi nào”. Ví dụ: “Giảm tỷ lệ lỗi ngoại quan của sản phẩm A từ 2.0% xuống 1.0% trước tháng 3”."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "例題で確かめる：問題が起きたときの処置",
+          "vi": "Kiểm tra bằng ví dụ: xử lý khi xảy ra vấn đề"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "出荷前の検査で、部品に傷が見つかりました。調べると、搬送コンベアの金具の出っぱりが原因でした。このとき行う処置を種類ごとに整理します。",
+            "vi": "Khi kiểm tra trước xuất hàng, phát hiện linh kiện bị xước. Điều tra thì nguyên nhân là phần kim loại nhô ra trên băng chuyền. Sắp xếp các xử lý theo từng loại như sau."
+          },
+          {
+            "type": "table",
+            "head": [
+              "この例での行動",
+              "処置の種類"
+            ],
+            "rows": [
+              [
+                "傷のある部品を選び出して取り除き、良品だけを出荷する",
+                "応急処置"
+              ],
+              [
+                "金具の出っぱりを削り、点検項目を作業標準に加える",
+                "再発防止"
+              ],
+              [
+                "同じ形のコンベアを使うほかのラインも点検する",
+                "水平展開（横展開）"
+              ],
+              [
+                "新しいラインの設計段階で、傷の原因になる箇所を事前に洗い出す",
+                "未然防止"
+              ]
+            ],
+            "head_vi": [
+              "Hành động trong ví dụ này",
+              "Loại xử lý"
+            ],
+            "rows_vi": [
+              [
+                "Lọc ra và loại bỏ linh kiện bị xước, chỉ xuất hàng tốt",
+                "応急処置 (xử lý khẩn cấp)"
+              ],
+              [
+                "Mài phần kim loại nhô ra, thêm hạng mục kiểm tra vào tiêu chuẩn công việc",
+                "再発防止 (phòng ngừa tái phát)"
+              ],
+              [
+                "Kiểm tra cả các dây chuyền khác dùng băng chuyền cùng kiểu",
+                "水平展開 (triển khai ngang)"
+              ],
+              [
+                "Ở giai đoạn thiết kế dây chuyền mới, tìm trước những chỗ có thể gây xước",
+                "未然防止 (phòng ngừa từ trước)"
+              ]
+            ]
+          },
+          {
+            "type": "mistake",
+            "ja": "不良品を取り除いただけでは、原因が残っているので同じ問題がまた起こります。応急処置と再発防止を混同しないようにしましょう。",
+            "vi": "Chỉ loại bỏ hàng lỗi thì nguyên nhân vẫn còn nên vấn đề sẽ lặp lại. Đừng nhầm lẫn xử lý khẩn cấp với phòng ngừa tái phát."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "人を育てるしくみ：教育訓練",
+          "vi": "Cơ chế phát triển con người: đào tạo huấn luyện"
+        },
+        "blocks": [
+          {
+            "type": "table",
+            "head": [
+              "種類",
+              "内容",
+              "例"
+            ],
+            "rows": [
+              [
+                "OJT",
+                "仕事をしながら、上司や先輩が教える",
+                "新人に機械の段取り替えを実際にやらせながら教える"
+              ],
+              [
+                "Off-JT",
+                "職場を離れて学ぶ",
+                "研修所での品質管理講座、外部セミナー"
+              ],
+              [
+                "自己啓発",
+                "本人の意思で学ぶ",
+                "通信教育、資格試験の勉強"
+              ],
+              [
+                "階層別教育",
+                "職位や経験の段階に合わせて行う",
+                "新入社員研修、管理職研修"
+              ]
+            ],
+            "head_vi": [
+              "Loại",
+              "Nội dung",
+              "Ví dụ"
+            ],
+            "rows_vi": [
+              [
+                "OJT",
+                "Cấp trên, đàn anh dạy trong khi làm việc",
+                "Vừa cho người mới thực hiện thay khuôn máy vừa hướng dẫn"
+              ],
+              [
+                "Off-JT",
+                "Học tách khỏi nơi làm việc",
+                "Khóa quản lý chất lượng ở trung tâm đào tạo, hội thảo bên ngoài"
+              ],
+              [
+                "自己啓発 (tự học)",
+                "Tự học theo ý muốn của bản thân",
+                "Học hàm thụ, ôn thi chứng chỉ"
+              ],
+              [
+                "階層別教育 (đào tạo theo cấp bậc)",
+                "Đào tạo theo chức vụ, giai đoạn kinh nghiệm",
+                "Đào tạo nhân viên mới, đào tạo quản lý"
+              ]
+            ]
+          },
+          {
+            "type": "point",
+            "ja": "教育訓練は「やりっぱなし」にせず、終わったあとに、実際に仕事ができるようになったかを確かめます。",
+            "vi": "Không “dạy xong là thôi”: sau khi đào tạo phải kiểm tra xem người học đã thật sự làm được công việc chưa."
+          }
+        ]
+      },
       {
         "h": {
           "ja": "維持と改善",
@@ -2660,6 +5012,143 @@
     },
     "sections": [
       {
+        "basic": true,
+        "h": {
+          "ja": "工程（プロセス）とは？",
+          "vi": "Công đoạn (プロセス) là gì?"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "料理を思い浮かべてください。材料を切る、炒める、味をつける、盛りつける。この一つひとつの作業の流れが工程です。工場でも、材料（インプット）に加工や組立をして、製品（アウトプット）に変えていく流れを工程といいます。",
+            "vi": "Hãy nghĩ đến việc nấu ăn: thái nguyên liệu, xào, nêm nếm, bày ra đĩa. Dòng chảy của từng thao tác đó chính là 工程 (công đoạn). Trong nhà máy cũng vậy, dòng chảy biến nguyên liệu (インプット – đầu vào) qua gia công, lắp ráp thành sản phẩm (アウトプット – đầu ra) gọi là công đoạn."
+          },
+          {
+            "type": "p",
+            "ja": "同じレシピでも、作る人・道具・材料・やり方が変わると味が変わります。工場ではこれを 4M（人 Man・機械 Machine・材料 Material・方法 Method）と呼び、工程の結果（品質）を左右する4つの要素として管理します。",
+            "vi": "Cùng một công thức nhưng nếu người nấu, dụng cụ, nguyên liệu hay cách làm thay đổi thì vị sẽ khác. Trong nhà máy gọi đây là 4M (người, máy, vật liệu, phương pháp) – 4 yếu tố quyết định kết quả (chất lượng) của công đoạn và cần được quản lý."
+          },
+          {
+            "type": "point",
+            "ja": "「できた製品を検査してよい物を選ぶ」だけでなく、「工程をよい状態に保って、最初からよい物をつくる」のが工程管理の考え方です（品質は工程でつくり込む）。",
+            "vi": "Không chỉ “kiểm tra sản phẩm làm xong để chọn hàng tốt”, mà “giữ công đoạn ở trạng thái tốt để làm ra hàng tốt ngay từ đầu” – đó là tư duy quản lý công đoạn (品質は工程でつくり込む – chất lượng được tạo ra trong công đoạn)."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "職場ではこう使う",
+          "vi": "Ở nơi làm việc dùng như thế này"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "ある成形ラインの1日の流れで、工程を管理するしくみがどう使われるかを見てみましょう。",
+            "vi": "Hãy xem các cơ chế quản lý công đoạn được dùng thế nào qua một ngày làm việc ở dây chuyền ép khuôn."
+          },
+          {
+            "type": "list",
+            "ja": [
+              "始業点検：作業の前に、設備の温度設定や金型の状態をチェックシートで確認する",
+              "初品確認：最初にできた製品の寸法・外観を確かめてから、本格的に生産する",
+              "作業中：作業標準どおりに作業し、QC工程表で決められた頻度で寸法（管理項目）を測る",
+              "異常に気づいたら：作業を止めて上司に報告し、異常品を区別して後工程に流さない",
+              "材料ロットが変わったとき（変化点）：初品確認をもう一度行い、測定の回数を増やす"
+            ],
+            "vi": [
+              "始業点検 (kiểm tra đầu ca): trước khi làm, dùng phiếu kiểm tra xác nhận nhiệt độ cài đặt của thiết bị, tình trạng khuôn",
+              "初品確認 (xác nhận sản phẩm đầu tiên): kiểm tra kích thước, ngoại quan của sản phẩm đầu tiên rồi mới sản xuất chính thức",
+              "Trong khi làm: làm đúng tiêu chuẩn thao tác, đo kích thước (管理項目 – hạng mục quản lý) theo tần suất ghi trong QC工程表 (bảng quản lý công đoạn)",
+              "Khi phát hiện bất thường: dừng việc, báo cấp trên, tách riêng hàng bất thường, không cho chảy sang công đoạn sau",
+              "Khi đổi lô vật liệu (変化点 – điểm thay đổi): làm lại xác nhận sản phẩm đầu tiên, tăng số lần đo"
+            ],
+            "ol": true
+          },
+          {
+            "type": "memo",
+            "ja": "工程管理は「決める（標準）→守る（作業）→見る（測定）→おかしければ止めて直す（処置）」のくり返しです。",
+            "vi": "Quản lý công đoạn là vòng lặp “quyết định (tiêu chuẩn) → tuân thủ (thao tác) → quan sát (đo) → bất thường thì dừng và sửa (xử lý)”."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "例題で確かめる：変化点を4Mに分ける",
+          "vi": "Kiểm tra bằng ví dụ: xếp điểm thay đổi vào 4M"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "次の出来事は、4Mのどれが変わったものでしょうか。変化点に気づけると、不良を未然に防ぎやすくなります。",
+            "vi": "Các sự việc sau thuộc thay đổi của M nào trong 4M? Nhận ra điểm thay đổi giúp phòng ngừa lỗi từ trước dễ hơn."
+          },
+          {
+            "type": "table",
+            "head": [
+              "出来事",
+              "4M",
+              "注意すること"
+            ],
+            "rows": [
+              [
+                "休んだ人の代わりに、別のラインの人が入った",
+                "人（Man）",
+                "作業標準を確認し、初品を念入りに確認する"
+              ],
+              [
+                "故障した金型を修理して、生産を再開した",
+                "機械（Machine）",
+                "修理後の初品の寸法を確認する"
+              ],
+              [
+                "部品の仕入先が新しいロットに切り替わった",
+                "材料（Material）",
+                "受入時と使い始めの品質を確認する"
+              ],
+              [
+                "加工条件（温度）を変更した",
+                "方法（Method）",
+                "変更後の製品を多めに測定する"
+              ]
+            ],
+            "head_vi": [
+              "Sự việc",
+              "4M",
+              "Điều cần chú ý"
+            ],
+            "rows_vi": [
+              [
+                "Người ở dây chuyền khác vào thay người nghỉ",
+                "Người (Man)",
+                "Xác nhận tiêu chuẩn thao tác, kiểm tra kỹ sản phẩm đầu tiên"
+              ],
+              [
+                "Sửa khuôn bị hỏng rồi sản xuất lại",
+                "Máy (Machine)",
+                "Kiểm tra kích thước sản phẩm đầu tiên sau khi sửa"
+              ],
+              [
+                "Linh kiện của nhà cung cấp chuyển sang lô mới",
+                "Vật liệu (Material)",
+                "Xác nhận chất lượng lúc nhận hàng và lúc bắt đầu dùng"
+              ],
+              [
+                "Thay đổi điều kiện gia công (nhiệt độ)",
+                "Phương pháp (Method)",
+                "Đo nhiều sản phẩm hơn sau khi thay đổi"
+              ]
+            ]
+          },
+          {
+            "type": "mistake",
+            "ja": "「管理項目」と「点検項目」を逆に覚える人が多いです。管理項目は結果（寸法・不良率など）、点検項目は原因側（温度・圧力の設定など）です。",
+            "vi": "Nhiều người nhớ ngược 管理項目 và 点検項目. 管理項目 (hạng mục quản lý) là phía kết quả (kích thước, tỷ lệ lỗi…), 点検項目 (hạng mục kiểm tra) là phía nguyên nhân (nhiệt độ, áp suất cài đặt…)."
+          }
+        ]
+      },
+      {
         "h": {
           "ja": "工程と4M",
           "vi": "Công đoạn và 4M"
@@ -2840,6 +5329,133 @@
     },
     "sections": [
       {
+        "basic": true,
+        "h": {
+          "ja": "企業活動の基本とは？",
+          "vi": "Cơ bản về hoạt động doanh nghiệp là gì?"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "会社の仕事は、一人で完結することはほとんどありません。前の工程・後の工程・上司・ほかの部署とつながっています。そのため、情報を正しく早く伝えること、決められたルールを守ること、安全に働くことが、品質をつくる土台になります。",
+            "vi": "Công việc ở công ty hầu như không bao giờ một người làm trọn. Nó gắn với công đoạn trước, công đoạn sau, cấp trên và các bộ phận khác. Vì thế truyền đạt thông tin đúng và nhanh, tuân thủ quy định, làm việc an toàn chính là nền tảng tạo ra chất lượng."
+          },
+          {
+            "type": "p",
+            "ja": "4級では、こうした「働く人としての基本」として、報連相（報告・連絡・相談）、仕事の進め方、職場の安全（KY活動・ヒヤリハットなど）、ルールを守ること（コンプライアンス）が問われます。",
+            "vi": "Ở 4級, những “điều cơ bản của người đi làm” này được hỏi gồm: 報連相 (báo cáo – liên lạc – trao đổi), cách tiến hành công việc, an toàn nơi làm việc (KY活動, ヒヤリハット…), tuân thủ quy định (コンプライアンス – tuân thủ pháp luật, quy tắc)."
+          },
+          {
+            "type": "point",
+            "ja": "迷ったら「お客様と仲間の安全・品質を守るには、どうするのがよいか」で考えると、正しい選択肢を選びやすくなります。",
+            "vi": "Khi phân vân, hãy nghĩ “làm thế nào để bảo vệ an toàn và chất lượng cho khách hàng và đồng nghiệp” thì sẽ dễ chọn đáp án đúng hơn."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "職場ではこう使う",
+          "vi": "Ở nơi làm việc dùng như thế này"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "作業中に、自分が担当した製品にキズがあるのを見つけた場面で考えてみましょう。",
+            "vi": "Hãy thử nghĩ tình huống: trong lúc làm, bạn phát hiện sản phẩm mình phụ trách có vết xước."
+          },
+          {
+            "type": "list",
+            "ja": [
+              "すぐに上司に報告する（悪い情報ほど早く）",
+              "結論を先に言う：「〇〇の製品に、キズが3個ありました」",
+              "見た事実と、自分の推測を分けて伝える：「原因は治具かもしれません（推測）」",
+              "キズのある製品は区別して置き、後工程に流さない",
+              "後工程や関係者に必要な連絡をする。どうするか迷うことは相談する"
+            ],
+            "vi": [
+              "Báo cáo ngay cho cấp trên (tin xấu càng phải báo sớm)",
+              "Nói kết luận trước: “Sản phẩm 〇〇 có 3 cái bị xước”",
+              "Tách sự thật đã thấy với suy đoán của mình: “Nguyên nhân có thể là đồ gá (suy đoán)”",
+              "Để riêng sản phẩm bị xước, không cho chảy sang công đoạn sau",
+              "Liên lạc cần thiết với công đoạn sau và người liên quan; việc gì phân vân thì trao đổi (相談)"
+            ],
+            "ol": true
+          },
+          {
+            "type": "mistake",
+            "ja": "「自分のミスだから、こっそり直しておこう」は最もよくない行動です。報告がないと、同じ原因の不良がほかにも出ていても気づけません。",
+            "vi": "“Lỗi của mình nên sửa lén cho xong” là hành động tệ nhất. Không báo cáo thì dù cùng nguyên nhân gây lỗi ở chỗ khác cũng không ai nhận ra."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "例題で確かめる：報告・連絡・相談を見分ける",
+          "vi": "Kiểm tra bằng ví dụ: phân biệt báo cáo, liên lạc, trao đổi"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "報連相の3つは、相手と目的で見分けます。次の例で確かめましょう。",
+            "vi": "Ba việc của 報連相 được phân biệt theo đối tượng và mục đích. Hãy kiểm tra qua các ví dụ sau."
+          },
+          {
+            "type": "table",
+            "head": [
+              "場面",
+              "どれにあたるか",
+              "見分け方"
+            ],
+            "rows": [
+              [
+                "頼まれた検査が終わり、結果を上司に伝えた",
+                "報告",
+                "指示した人へ、経過や結果を返す"
+              ],
+              [
+                "明日の会議室が変わったことを、参加者全員に知らせた",
+                "連絡",
+                "関係者へ、事実や情報を知らせる"
+              ],
+              [
+                "規格ぎりぎりの製品をどうするか迷い、先輩の意見を聞いた",
+                "相談",
+                "判断に迷うとき、意見をもらう"
+              ]
+            ],
+            "head_vi": [
+              "Tình huống",
+              "Thuộc loại nào",
+              "Cách phân biệt"
+            ],
+            "rows_vi": [
+              [
+                "Kiểm tra được giao đã xong, báo kết quả cho cấp trên",
+                "報告 (báo cáo)",
+                "Gửi lại tiến độ, kết quả cho người đã giao việc"
+              ],
+              [
+                "Báo cho tất cả người tham dự rằng phòng họp ngày mai đã đổi",
+                "連絡 (liên lạc)",
+                "Thông báo sự việc, thông tin cho người liên quan"
+              ],
+              [
+                "Phân vân không biết xử lý sản phẩm sát giới hạn quy chuẩn thế nào nên hỏi ý kiến tiền bối",
+                "相談 (trao đổi)",
+                "Khi phân vân trong phán đoán thì xin ý kiến"
+              ]
+            ]
+          },
+          {
+            "type": "memo",
+            "ja": "安全の3点セット：作業前に危険を話し合う「KY活動」、ヒヤリとしたら報告する「ヒヤリハット」、指を差して声に出す「指差呼称」。",
+            "vi": "Bộ 3 về an toàn: “KY活動” (hoạt động dự đoán nguy hiểm) – bàn trước về nguy hiểm trước khi làm; “ヒヤリハット” (sự cố suýt xảy ra) – thấy giật mình thì báo cáo; “指差呼称” (chỉ tay hô to) – chỉ tay vào đối tượng và nói to để xác nhận."
+          }
+        ]
+      },
+      {
         "h": {
           "ja": "報告・連絡・相談（報連相）",
           "vi": "Báo cáo, liên lạc, xin ý kiến (hou-ren-sou)"
@@ -3013,6 +5629,215 @@
       "vi": "Phần 実践 của 3級 hỏi về các quan niệm cơ bản: chất lượng là gì và nên suy nghĩ, quản lý như thế nào."
     },
     "sections": [
+      {
+        "basic": true,
+        "h": {
+          "ja": "品質とは？ 身近な例で考える",
+          "vi": "Chất lượng là gì? Suy nghĩ qua ví dụ gần gũi"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "傘を買うとき、お客様は「雨にぬれない」「軽い」「すぐ開く」といったことを求めます。これが要求品質です。つくる側は、それを「重さ300g以下」「開くまでの時間」のように、測ることのできる品質特性に置き換えて管理します。",
+            "vi": "Khi mua ô, khách hàng mong “không bị ướt”, “nhẹ”, “mở nhanh”. Đó là 要求品質 (chất lượng yêu cầu). Bên sản xuất chuyển chúng thành 品質特性 (đặc tính chất lượng) đo được, như “nặng không quá 300g”, “thời gian mở”, để quản lý."
+          },
+          {
+            "type": "p",
+            "ja": "品質とは「お客様の要求をどれだけ満たしているか」の程度です。値段が高い、機能が多いことが、そのまま品質が高いことにはなりません。",
+            "vi": "Chất lượng là mức độ “đáp ứng yêu cầu của khách hàng đến đâu”. Đắt tiền hay nhiều chức năng không có nghĩa ngay là chất lượng cao."
+          },
+          {
+            "type": "point",
+            "ja": "機能を増やしすぎて使いにくくなった製品は、お客様から見ると品質が下がったことになります。",
+            "vi": "Sản phẩm thêm quá nhiều chức năng đến mức khó dùng thì, theo góc nhìn của khách hàng, là chất lượng đã giảm."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "職場ではこう使う：要求が製品になるまで",
+          "vi": "Ở nơi làm việc: yêu cầu trở thành sản phẩm như thế nào"
+        },
+        "blocks": [
+          {
+            "type": "list",
+            "ja": [
+              "企画品質：お客様の声から「1分でお湯がわく電気ケトル」をつくると決める",
+              "設計品質（ねらいの品質）：ヒーターの出力や容量を図面と仕様書で決める",
+              "製造品質（できばえの品質）：工場で図面どおりに組み立てられているか",
+              "使用品質：お客様が実際に使って、満足できるか"
+            ],
+            "vi": [
+              "企画品質 (chất lượng hoạch định): từ tiếng nói khách hàng, quyết định làm “ấm điện đun sôi trong 1 phút”",
+              "設計品質 (chất lượng thiết kế, chất lượng mục tiêu): quyết định công suất bộ gia nhiệt, dung tích bằng bản vẽ và thông số",
+              "製造品質 (chất lượng chế tạo, chất lượng thành phẩm): nhà máy lắp ráp có đúng bản vẽ không",
+              "使用品質 (chất lượng sử dụng): khách hàng dùng thực tế có hài lòng không"
+            ],
+            "ol": true
+          },
+          {
+            "type": "p",
+            "ja": "お客様の不満がどの段階で生まれたのかを分けて考えると、対策が見つけやすくなります。図面どおりなのに評判が悪いなら設計品質の問題、図面とちがうなら製造品質の問題です。",
+            "vi": "Tách bạch xem sự không hài lòng của khách sinh ra ở giai đoạn nào thì dễ tìm biện pháp. Làm đúng bản vẽ mà vẫn bị chê là vấn đề chất lượng thiết kế; khác bản vẽ là vấn đề chất lượng chế tạo."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "例題で確かめる：狩野モデルで分類する",
+          "vi": "Kiểm tra bằng ví dụ: phân loại theo mô hình Kano"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "ビジネスホテルの品質要素を、満たされたとき・満たされないときのお客様の気持ちで分けてみます。",
+            "vi": "Thử phân loại các yếu tố chất lượng của khách sạn thương mại theo cảm xúc của khách khi được đáp ứng và khi không được đáp ứng."
+          },
+          {
+            "type": "table",
+            "head": [
+              "品質要素",
+              "満たされたとき",
+              "満たされないとき",
+              "分類"
+            ],
+            "rows": [
+              [
+                "シーツが清潔",
+                "特に喜ばない",
+                "強い不満",
+                "当たり前品質"
+              ],
+              [
+                "部屋が広い",
+                "広いほど満足",
+                "狭いほど不満",
+                "一元的品質"
+              ],
+              [
+                "地元のお菓子のサービス",
+                "とても喜ぶ",
+                "不満はない",
+                "魅力的品質"
+              ],
+              [
+                "客室の壁の色",
+                "特に喜ばない",
+                "不満もない",
+                "無関心品質"
+              ]
+            ],
+            "head_vi": [
+              "Yếu tố chất lượng",
+              "Khi được đáp ứng",
+              "Khi không được đáp ứng",
+              "Phân loại"
+            ],
+            "rows_vi": [
+              [
+                "Ga giường sạch",
+                "Không đặc biệt vui",
+                "Rất bất mãn",
+                "当たり前品質 (chất lượng đương nhiên)"
+              ],
+              [
+                "Phòng rộng",
+                "Càng rộng càng hài lòng",
+                "Càng hẹp càng bất mãn",
+                "一元的品質 (chất lượng một chiều)"
+              ],
+              [
+                "Tặng bánh đặc sản địa phương",
+                "Rất vui",
+                "Không bất mãn",
+                "魅力的品質 (chất lượng hấp dẫn)"
+              ],
+              [
+                "Màu tường phòng",
+                "Không đặc biệt vui",
+                "Cũng không bất mãn",
+                "無関心品質 (chất lượng không quan tâm)"
+              ]
+            ]
+          },
+          {
+            "type": "mistake",
+            "ja": "魅力的品質はずっと魅力的なままではありません。みんなが当たり前に提供するようになると、一元的品質や当たり前品質に変わっていきます。",
+            "vi": "Chất lượng hấp dẫn không giữ mãi sức hấp dẫn. Khi ai cũng cung cấp như chuyện bình thường, nó dần chuyển thành chất lượng một chiều hoặc chất lượng đương nhiên."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "QC的なものの見方を職場の言葉で",
+          "vi": "Cách nhìn theo QC bằng lời nói ở nơi làm việc"
+        },
+        "blocks": [
+          {
+            "type": "table",
+            "head": [
+              "考え方",
+              "職場の言葉にすると"
+            ],
+            "rows": [
+              [
+                "事実にもとづく管理",
+                "「たぶん」ではなく「データを見ると」で話す"
+              ],
+              [
+                "重点指向",
+                "全部を少しずつではなく、効果の大きいものから手をつける"
+              ],
+              [
+                "プロセス重視",
+                "悪い結果を叱るより、結果を生むやり方を見直す"
+              ],
+              [
+                "後工程はお客様",
+                "次の工程が困らない状態で渡す"
+              ],
+              [
+                "全員参加",
+                "トップから第一線まで、全員が品質にかかわる"
+              ]
+            ],
+            "head_vi": [
+              "Cách nghĩ",
+              "Nói bằng lời ở nơi làm việc"
+            ],
+            "rows_vi": [
+              [
+                "事実にもとづく管理 (quản lý dựa trên sự thật)",
+                "Nói “nhìn dữ liệu thì…” thay vì “chắc là…”"
+              ],
+              [
+                "重点指向 (tập trung trọng điểm)",
+                "Không làm mỗi thứ một chút, bắt tay từ việc có hiệu quả lớn"
+              ],
+              [
+                "プロセス重視 (coi trọng quá trình)",
+                "Thay vì trách kết quả xấu, xem lại cách làm tạo ra kết quả"
+              ],
+              [
+                "後工程はお客様 (công đoạn sau là khách hàng)",
+                "Giao cho công đoạn sau ở trạng thái họ không gặp khó"
+              ],
+              [
+                "全員参加 (mọi người cùng tham gia)",
+                "Từ lãnh đạo đến tuyến đầu, ai cũng liên quan đến chất lượng"
+              ]
+            ]
+          },
+          {
+            "type": "memo",
+            "ja": "選択肢に迷ったら「お客様のためになるか」「事実で判断しているか」「やり方（プロセス）を見ているか」の3点で比べましょう。",
+            "vi": "Khi phân vân giữa các lựa chọn, so sánh theo 3 điểm: “có vì khách hàng không”, “có phán đoán bằng sự thật không”, “có nhìn vào cách làm (quá trình) không”."
+          }
+        ]
+      },
       {
         "h": {
           "ja": "要求品質と品質特性",
@@ -3192,6 +6017,169 @@
       "vi": "管理 (quản lý) là toàn bộ hoạt động để đạt mục đích một cách hiệu quả. Cơ bản là “duy trì” trạng thái tốt và tiếp tục “cải tiến”."
     },
     "sections": [
+      {
+        "basic": true,
+        "h": {
+          "ja": "管理とは？ 維持と改善",
+          "vi": "Quản lý là gì? Duy trì và cải tiến"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "体重管理を思い浮かべてください。目標の体重を決め、毎日はかり、増えてきたら食事や運動を見直します。この「決める→やる→確かめる→手を打つ」の流れが、仕事での管理の基本です。",
+            "vi": "Hãy nghĩ đến việc quản lý cân nặng. Đặt cân nặng mục tiêu, cân mỗi ngày, nếu tăng thì xem lại ăn uống và vận động. Dòng “quyết định → làm → kiểm tra → hành động” này là cơ bản của quản lý trong công việc."
+          },
+          {
+            "type": "table",
+            "head": [
+              "サイクル",
+              "使う場面",
+              "最初のステップ"
+            ],
+            "rows": [
+              [
+                "SDCA",
+                "決めた水準を守る（維持）",
+                "S：標準（やり方）を決める"
+              ],
+              [
+                "PDCA",
+                "水準を上げる（改善）",
+                "P：目標と計画を立てる"
+              ]
+            ],
+            "head_vi": [
+              "Chu trình",
+              "Khi nào dùng",
+              "Bước đầu tiên"
+            ],
+            "rows_vi": [
+              [
+                "SDCA",
+                "Giữ mức đã định (duy trì – 維持)",
+                "S: quyết định tiêu chuẩn (cách làm)"
+              ],
+              [
+                "PDCA",
+                "Nâng mức lên (cải tiến – 改善)",
+                "P: đặt mục tiêu và kế hoạch"
+              ]
+            ]
+          },
+          {
+            "type": "point",
+            "ja": "改善でよい結果が出たら、新しいやり方を標準にしてSDCAで守ります。改善と維持はセットで回します。",
+            "vi": "Khi cải tiến cho kết quả tốt, đưa cách làm mới thành tiêu chuẩn và giữ bằng SDCA. Cải tiến và duy trì luôn đi cùng nhau."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "職場ではこう使う：日常管理の流れ",
+          "vi": "Ở nơi làm việc: dòng chảy của quản lý hằng ngày"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "ある樹脂成形の職場では、製品の長さを管理項目とし、「50.0±0.3mm」を管理水準（正常とみなす範囲）に決めています。",
+            "vi": "Ở một xưởng ép nhựa, chiều dài sản phẩm được chọn là 管理項目 (hạng mục quản lý), và “50.0±0.3mm” được định là 管理水準 (mức quản lý – phạm vi coi là bình thường)."
+          },
+          {
+            "type": "list",
+            "ja": [
+              "1時間ごとに測定してグラフに記入する",
+              "管理水準を外れたら「異常」と判断し、すぐに上司へ報告する",
+              "不良品が後工程へ流れないよう応急処置をする",
+              "4M（人・機械・材料・方法）の変化を調べて原因を突き止める",
+              "原因を取り除き、作業標準を見直して再発を防ぐ"
+            ],
+            "vi": [
+              "Đo mỗi giờ và ghi vào biểu đồ",
+              "Nếu ra ngoài mức quản lý thì phán đoán là “bất thường” (異常), báo ngay cho cấp trên",
+              "Xử lý khẩn cấp để hàng lỗi không chảy sang công đoạn sau",
+              "Điều tra thay đổi về 4M (người, máy, vật liệu, phương pháp) để tìm nguyên nhân",
+              "Loại bỏ nguyên nhân, xem lại tiêu chuẩn công việc để ngăn tái phát"
+            ],
+            "ol": true
+          },
+          {
+            "type": "point",
+            "ja": "結果（長さ）だけを見るのが管理項目、結果を生む原因側（金型温度など）を見るのが点検項目です。原因側も見ておくと、異常を早く防げます。",
+            "vi": "Hạng mục chỉ nhìn kết quả (chiều dài) là 管理項目; hạng mục nhìn phía nguyên nhân tạo ra kết quả (như nhiệt độ khuôn) là 点検項目 (hạng mục kiểm tra). Theo dõi cả phía nguyên nhân thì ngăn bất thường sớm hơn."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "例題で確かめる：QCストーリーと効果の計算",
+          "vi": "Kiểm tra bằng ví dụ: QC story và tính hiệu quả"
+        },
+        "blocks": [
+          {
+            "type": "table",
+            "head": [
+              "",
+              "問題解決型",
+              "課題達成型"
+            ],
+            "rows": [
+              [
+                "出発点",
+                "すでに起きている悪さ（不良の増加など）",
+                "新しい目標や、これまでにない仕事"
+              ],
+              [
+                "テーマ例",
+                "B工程の寸法不良を減らす",
+                "新ラインの段取り時間を半分にする"
+              ],
+              [
+                "特徴的な手順",
+                "現状の把握 → 要因の解析",
+                "攻め所と目標の設定 → 方策の立案 → 成功シナリオの追究"
+              ]
+            ],
+            "head_vi": [
+              "",
+              "Kiểu giải quyết vấn đề",
+              "Kiểu đạt nhiệm vụ"
+            ],
+            "rows_vi": [
+              [
+                "Điểm xuất phát",
+                "Cái xấu đã xảy ra (lỗi tăng…)",
+                "Mục tiêu mới, công việc chưa từng có"
+              ],
+              [
+                "Ví dụ đề tài",
+                "Giảm lỗi kích thước ở công đoạn B",
+                "Rút thời gian thay khuôn của dây chuyền mới còn một nửa"
+              ],
+              [
+                "Bước đặc trưng",
+                "Nắm hiện trạng → phân tích yếu tố",
+                "Đặt điểm tấn công (攻め所) và mục tiêu → lập phương sách → truy cầu kịch bản thành công"
+              ]
+            ]
+          },
+          {
+            "type": "formula",
+            "f": [
+              "低減率 ＝（対策前 − 対策後）÷ 対策前 × 100",
+              "（6.0 − 4.5）÷ 6.0 × 100 ＝ 25%"
+            ],
+            "ja": "不良率が6.0%から4.5%になったとき、差は1.5ポイントで、低減率は25%です。",
+            "vi": "Khi tỷ lệ lỗi từ 6.0% xuống 4.5%, chênh lệch là 1.5 điểm phần trăm, còn tỷ lệ giảm (低減率) là 25%."
+          },
+          {
+            "type": "mistake",
+            "ja": "「1.5ポイント減った」と「25%減った」は意味がちがいます。問題文が「対策前に対して何%減ったか」を聞いているときは、差を対策前の値で割ります。",
+            "vi": "“Giảm 1.5 điểm phần trăm” và “giảm 25%” khác nghĩa nhau. Khi đề hỏi “giảm bao nhiêu % so với trước biện pháp” thì lấy chênh lệch chia cho giá trị trước biện pháp."
+          }
+        ]
+      },
       {
         "h": {
           "ja": "維持と改善",
@@ -3378,6 +6366,187 @@
       "vi": "品質保証 (đảm bảo chất lượng) là hoạt động có hệ thống để cam kết chất lượng và thực hiện chắc chắn cam kết đó, giúp khách hàng yên tâm, hài lòng khi mua và sử dụng lâu dài."
     },
     "sections": [
+      {
+        "basic": true,
+        "h": {
+          "ja": "品質保証とは？",
+          "vi": "Đảm bảo chất lượng là gì?"
+        },
+        "blocks": [
+          {
+            "type": "p",
+            "ja": "家電を買うと保証書がついてきます。しかし品質保証は、こわれたら直すという約束だけではありません。お客様が安心して買い、長く満足して使えるように、企画からアフターサービスまでのすべての段階で行う活動の全体です。",
+            "vi": "Mua đồ điện gia dụng thì có kèm phiếu bảo hành. Nhưng 品質保証 (đảm bảo chất lượng) không chỉ là lời hứa “hỏng thì sửa”. Đó là toàn bộ hoạt động ở mọi giai đoạn từ hoạch định đến dịch vụ hậu mãi, để khách yên tâm mua và hài lòng sử dụng lâu dài."
+          },
+          {
+            "type": "p",
+            "ja": "不良品を検査で見つけて取り除くだけでは、つくるたびにムダが出て、見のがしも起こります。上流の企画・設計で問題をつぶし、工程で品質をつくり込むことが大切です。",
+            "vi": "Chỉ dùng kiểm tra để tìm và loại bỏ hàng lỗi thì mỗi lần sản xuất đều sinh lãng phí và vẫn có thể bỏ sót. Điều quan trọng là triệt tiêu vấn đề ở thượng nguồn (hoạch định, thiết kế) và tạo ra chất lượng ngay trong công đoạn."
+          },
+          {
+            "type": "point",
+            "ja": "問題を見つけるのが後になるほど、対策の費用は大きくなります。設計で見つければ図面の修正ですみますが、市場で見つかればリコールになることもあります。",
+            "vi": "Phát hiện vấn đề càng muộn thì chi phí khắc phục càng lớn. Phát hiện ở thiết kế thì chỉ cần sửa bản vẽ, còn phát hiện trên thị trường có thể phải thu hồi (リコール)."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "職場ではこう使う：新製品が出荷されるまで",
+          "vi": "Ở nơi làm việc: đến khi sản phẩm mới được xuất hàng"
+        },
+        "blocks": [
+          {
+            "type": "list",
+            "ja": [
+              "企画：お客様の声を集め、品質機能展開（QFD）で要求を品質特性に変換する",
+              "設計：デザインレビュー（DR）とFMEAで、設計の弱点を早めに見つける",
+              "生産準備：QC工程表と作業標準書をつくる",
+              "量産試作：量産と同じ設備・作業者でつくり、工程の実力を確かめる",
+              "量産初期：初期流動管理で、検査や監視をしばらく強化する",
+              "販売・サービス：苦情や使われ方の情報を集め、設計や製造に戻す"
+            ],
+            "vi": [
+              "Hoạch định: thu thập tiếng nói khách hàng, dùng triển khai chức năng chất lượng (QFD – 品質機能展開) để chuyển yêu cầu thành đặc tính chất lượng",
+              "Thiết kế: dùng xem xét thiết kế (DR – デザインレビュー) và FMEA để sớm tìm điểm yếu của thiết kế",
+              "Chuẩn bị sản xuất: lập sơ đồ QC công đoạn (QC工程表) và tiêu chuẩn công việc",
+              "Sản xuất thử hàng loạt: làm bằng đúng thiết bị, người như sản xuất hàng loạt để xác nhận năng lực công đoạn",
+              "Đầu kỳ sản xuất hàng loạt: quản lý giai đoạn đầu (初期流動管理), tăng cường kiểm tra, giám sát một thời gian",
+              "Bán hàng, dịch vụ: thu thập thông tin khiếu nại và cách sử dụng, phản hồi lại cho thiết kế và sản xuất"
+            ],
+            "ol": true
+          },
+          {
+            "type": "point",
+            "ja": "最後の「情報を戻す」がないと、同じ問題が次の製品でもくり返されます。品質保証は一方通行ではなく、輪になって回ります。",
+            "vi": "Nếu thiếu bước cuối “phản hồi thông tin”, cùng một vấn đề sẽ lặp lại ở sản phẩm sau. Đảm bảo chất lượng không phải đường một chiều mà là một vòng tròn."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "例題で確かめる：まぎらわしい用語の比較",
+          "vi": "Kiểm tra bằng ví dụ: so sánh các thuật ngữ dễ nhầm"
+        },
+        "blocks": [
+          {
+            "type": "table",
+            "head": [
+              "用語",
+              "ひと言でいうと",
+              "例"
+            ],
+            "rows": [
+              [
+                "FMEA",
+                "部品・工程の故障モードから、上位への影響を調べる",
+                "「ねじがゆるむ」と製品はどうなるか"
+              ],
+              [
+                "FTA",
+                "起きてほしくない事象から、原因を下へたどる",
+                "「発火」の原因を樹形図で分解する"
+              ],
+              [
+                "フールプルーフ",
+                "人がまちがえても、まちがいが起きない・すぐ気づく",
+                "向きがちがうと差し込めないコネクタ"
+              ],
+              [
+                "フェールセーフ",
+                "故障しても、安全な側にはたらく",
+                "停電するとブレーキがかかる機械"
+              ],
+              [
+                "信頼性",
+                "故障しにくさ",
+                "1000時間使っても故障しない"
+              ],
+              [
+                "保全性",
+                "直しやすさ",
+                "部品をすぐ交換できる構造"
+              ]
+            ],
+            "head_vi": [
+              "Thuật ngữ",
+              "Nói ngắn gọn",
+              "Ví dụ"
+            ],
+            "rows_vi": [
+              [
+                "FMEA",
+                "Từ dạng hỏng (故障モード) của linh kiện, công đoạn, xem ảnh hưởng lên cấp trên",
+                "“Ốc bị lỏng” thì sản phẩm sẽ ra sao"
+              ],
+              [
+                "FTA",
+                "Từ sự kiện không mong muốn, lần ngược xuống nguyên nhân",
+                "Phân tách nguyên nhân “bốc cháy” bằng sơ đồ cây"
+              ],
+              [
+                "フールプルーフ (fool proof – chống sai sót)",
+                "Dù người làm sai thì lỗi cũng không xảy ra, hoặc nhận ra ngay",
+                "Đầu nối cắm sai hướng thì không vào được"
+              ],
+              [
+                "フェールセーフ (fail safe – an toàn khi hỏng)",
+                "Dù hỏng vẫn hoạt động về phía an toàn",
+                "Máy tự phanh khi mất điện"
+              ],
+              [
+                "信頼性 (độ tin cậy)",
+                "Khó hỏng",
+                "Dùng 1000 giờ không hỏng"
+              ],
+              [
+                "保全性 (khả năng bảo trì)",
+                "Dễ sửa",
+                "Kết cấu thay linh kiện được ngay"
+              ]
+            ]
+          },
+          {
+            "type": "memo",
+            "ja": "FMEAは下から上へ（ボトムアップ）、FTAは上から下へ（トップダウン）。「M」はモード（故障の形）から出発、と覚えましょう。",
+            "vi": "FMEA đi từ dưới lên (bottom-up), FTA đi từ trên xuống (top-down). Nhớ rằng “M” là mode – xuất phát từ dạng hỏng."
+          }
+        ]
+      },
+      {
+        "basic": true,
+        "h": {
+          "ja": "つまずきやすいポイント：苦情への対応の順序",
+          "vi": "Điểm dễ vấp: thứ tự xử lý khiếu nại"
+        },
+        "blocks": [
+          {
+            "type": "list",
+            "ja": [
+              "お客様の話を聞き、現品と事実を確認する",
+              "交換や修理などの応急処置で、お客様の困りごとをすぐに解消する",
+              "社内で原因を調べる",
+              "原因を取り除く再発防止策を行い、ほかの製品・工程にも水平展開する",
+              "結果を記録し、設計・製造など関係部門で共有する"
+            ],
+            "vi": [
+              "Nghe khách hàng, xác nhận hàng thực tế và sự việc",
+              "Xử lý khẩn cấp như đổi hàng, sửa chữa để giải quyết ngay khó khăn của khách",
+              "Điều tra nguyên nhân trong công ty",
+              "Thực hiện biện pháp phòng ngừa tái phát loại bỏ nguyên nhân, và triển khai ngang sang sản phẩm, công đoạn khác",
+              "Ghi lại kết quả, chia sẻ với các bộ phận liên quan như thiết kế, sản xuất"
+            ],
+            "ol": true
+          },
+          {
+            "type": "mistake",
+            "ja": "苦情が少ないからといって、お客様が満足しているとは限りません。不満があっても何も言わずに、ほかの会社の製品に替えてしまうお客様も多くいます。",
+            "vi": "Ít khiếu nại không có nghĩa là khách hàng hài lòng. Có nhiều khách dù bất mãn vẫn im lặng và chuyển sang dùng sản phẩm của công ty khác."
+          }
+        ]
+      },
       {
         "h": {
           "ja": "品質保証の流れ",

@@ -243,6 +243,13 @@ p.vi-t { margin: 0; }
 .learn-sec { display: grid; gap: 12px; min-width: 0; scroll-margin-top: 16px; }
 .learn-sec > p { margin: 0; max-width: 42rem; }
 .learn-h { display: grid; gap: 2px; border-bottom: 1px solid var(--grid); padding-bottom: 6px; }
+.vi-h { color: var(--ink-soft); font-weight: 700; font-size: .85rem; margin: 0; }
+.toc ul ul { padding-left: 1.1em; margin-top: 2px; font-size: .88rem; }
+.learn-group { font-size: 1.05rem; color: var(--ai); margin: 8px 0 -16px; letter-spacing: .02em; scroll-margin-top: 16px; }
+.learn-group:first-child { margin-top: 0; }
+.learn-sec.basic { background: var(--sheet); border: 1px solid var(--grid); border-left: 4px solid var(--ai); border-radius: var(--r); padding: 16px 18px; }
+.basic-badge { justify-self: start; font-size: .72rem; font-weight: 700; color: var(--ai); background: var(--ai-soft); border-radius: 999px; padding: 1px 10px; }
+.lang-link { font-weight: 700; }
 .learn-list { margin: 0; padding-left: 1.4em; display: grid; gap: 4px; max-width: 42rem; }
 
 .formula {

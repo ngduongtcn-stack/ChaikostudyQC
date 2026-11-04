@@ -200,7 +200,7 @@ def build_index(site, data):
     <li><div><span class="t-name">分野別に練習する</span><p class="t-desc">1問ごとに正解と解説が出ます。苦手な分野だけをくり返し解けます。</p></div></li>
     <li><div><span class="t-name">ミニ模擬試験で力をはかる</span><p class="t-desc">全分野からランダムに最大{20}問。最後にまとめて採点し、所要時間も表示します。</p></div></li>
     <li><div><span class="t-name">間違えた問題を復習する</span><p class="t-desc">直近で間違えた問題が自動で集まります。正解すると復習リストから外れます。</p></div></li>
-    <li lang="vi"><div><span class="t-name">Có giải thích bằng tiếng Việt</span><p class="t-desc">Dành cho người Việt đang làm việc tại Nhật: bấm「Xem giải thích bằng tiếng Việt」dưới mỗi câu. Thuật ngữ giữ nguyên tiếng Nhật kèm nghĩa để quen với đề thi thật.</p></div></li>
+    <li><div><span class="t-name">ベトナム語版もあります</span><p class="t-desc">メニューの「<a href="vi/index.html" lang="vi" hreflang="vi">Tiếng Việt</a>」から、ベトナム語の解説つきで学べます。</p></div></li>
   </ul>
   <p class="note">学習の記録はお使いのブラウザの中にだけ保存され、外部には送信されません。</p>
 </section>
@@ -216,8 +216,7 @@ def build_exam_section(data, lv):
     n_level = sum(1 for q in data["questions"] if str(q["level"]) == lv)
     used = sum(len(x) for x in sets)
     left = size - (n_level - used)
-    nxt = (f'<p class="note">次の模擬試験（第{len(sets) + 1}回）まで、あと{max(left, 0)}問。問題が{size}問たまるごとに、1回分ずつ追加されます。'
-           f'<span lang="vi">　Cứ đủ {size} câu mới là có thêm một đề thi thử.</span></p>')
+    nxt = (f'<p class="note">次の模擬試験（第{len(sets) + 1}回）まで、あと{max(left, 0)}問。問題が{size}問たまるごとに、1回分ずつ追加されます。</p>')
     dmin = cfg.get("domain_min", {}).get(lv)
     pr = round(cfg.get("pass_rate", 0.7) * 100)
     if dmin:
@@ -283,7 +282,7 @@ def build_level(site, data, lv):
 {exam_section}
 <section aria-labelledby="h-topics">
   <h2 id="h-topics">分野別に学ぶ・練習する</h2>
-  <p class="note">「学ぶ」で要点を読んでから「解く」で確認するのがおすすめです。<span lang="vi">　Nên đọc「学ぶ」(lý thuyết) trước, rồi làm「解く」(bài tập).</span></p>
+  <p class="note">「学ぶ」で要点を読んでから「解く」で確認するのがおすすめです。</p>
   {grouped}
 </section>
 </div></main>"""
@@ -341,102 +340,137 @@ def build_topic(site, data, lv, idx):
                 desc=f"{L['name']}「{t['name']}」の練習問題{len(qs)}問と解説。{t['desc']}")
 
 
-def vi_switch():
-    return ('<button type="button" class="vi-switch" id="vi-switch" aria-pressed="false" lang="vi">'
-            '<span class="vi-badge">VI</span><span class="vi-switch-text">Hiện bản tiếng Việt</span></button>')
-
-
-def render_block(b):
+def render_block(b, lang="ja"):
+    """Render one theory block in a single language (ja pages and vi pages are separate)."""
     t = b["type"]
+    txt = b.get(lang) or (b.get("ja") if lang == "vi" else "")
     if t == "p":
-        return f'<p>{e(b["ja"])}</p>' + (f'<p class="vi-t" lang="vi">{e(b["vi"])}</p>' if b.get("vi") else "")
+        return f"<p>{e(txt)}</p>" if txt else ""
     if t == "list":
         tag = "ol" if b.get("ol") else "ul"
-        out = f'<{tag} class="learn-list">' + "".join(f"<li>{e(x)}</li>" for x in b["ja"]) + f"</{tag}>"
-        if b.get("vi"):
-            out += f'<{tag} class="learn-list vi-t" lang="vi">' + "".join(f"<li>{e(x)}</li>" for x in b["vi"]) + f"</{tag}>"
-        return out
+        items = txt if isinstance(txt, list) else b.get("ja", [])
+        return f'<{tag} class="learn-list">' + "".join(f"<li>{e(x)}</li>" for x in items) + f"</{tag}>"
     if t == "formula":
-        out = '<div class="formula">' + "".join(f"<span>{e(line)}</span>" for line in b["f"]) + "</div>"
-        if b.get("ja"):
-            out += f'<p>{e(b["ja"])}</p>'
-        if b.get("vi"):
-            out += f'<p class="vi-t" lang="vi">{e(b["vi"])}</p>'
-        return out
+        out = '<div class="formula" lang="ja">' + "".join(f"<span>{e(line)}</span>" for line in b["f"]) + "</div>"
+        return out + (f"<p>{e(txt)}</p>" if txt else "")
     if t == "table":
-        def table(head, rows, extra=""):
-            th = "".join(f'<th scope="col">{e(h)}</th>' for h in head)
-            trs = "".join("<tr>" + "".join(f"<td>{e(c)}</td>" for c in r) + "</tr>" for r in rows)
-            return f'<div class="table-wrap{extra}"><table><thead><tr>{th}</tr></thead><tbody>{trs}</tbody></table></div>'
-        out = table(b["head"], b["rows"])
-        if b.get("rows_vi"):
-            out = out + table(b.get("head_vi", b["head"]), b["rows_vi"], ' vi-t" lang="vi')
-        return out
-    if t in ("mistake", "memo"):
-        label = {"mistake": "よくある間違い", "memo": "覚え方"}[t]
-        return (f'<aside class="{t}"><span class="point-label">{label}</span>'
-                f'<p>{e(b["ja"])}</p>' + (f'<p class="vi-t" lang="vi">{e(b["vi"])}</p>' if b.get("vi") else "") + "</aside>")
-    if t == "point":
-        return ('<aside class="point"><span class="point-label">ポイント</span>'
-                f'<p>{e(b["ja"])}</p>' + (f'<p class="vi-t" lang="vi">{e(b["vi"])}</p>' if b.get("vi") else "") + "</aside>")
+        head, rows = b["head"], b["rows"]
+        if lang == "vi" and b.get("rows_vi"):
+            head, rows = b.get("head_vi", head), b["rows_vi"]
+        th = "".join(f'<th scope="col">{e(h)}</th>' for h in head)
+        trs = "".join("<tr>" + "".join(f"<td>{e(c)}</td>" for c in r) + "</tr>" for r in rows)
+        return f'<div class="table-wrap"><table><thead><tr>{th}</tr></thead><tbody>{trs}</tbody></table></div>'
+    if t in ("mistake", "memo", "point"):
+        labels = {"ja": {"mistake": "よくある間違い", "memo": "覚え方", "point": "ポイント"},
+                  "vi": {"mistake": "Lỗi hay gặp", "memo": "Mẹo nhớ", "point": "Điểm chính"}}
+        return (f'<aside class="{t}"><span class="point-label">{labels[lang][t]}</span>'
+                f"<p>{e(txt)}</p></aside>")
     return ""
 
 
-def build_theory(site, data, lv, idx):
+def build_theory(site, data, lv, idx, lang="ja"):
     L = data["levels"][lv]
     t = L["topics"][idx]
     th = data["theory"][f"{lv}:{t['id']}"]
     n = sum(1 for q in data["questions"] if str(q["level"]) == lv and q["topic"] == t["id"])
+    vi = lang == "vi"
+    T = (lambda ja, v: v) if vi else (lambda ja, v: ja)
+    name = t.get("name_vi", t["name"]) if vi else t["name"]
+    ja_path = f"{L['slug']}/learn/{t['id']}.html"
+    vi_path = f"vi/{L['slug']}/{t['id']}.html"
+    up = "../../"  # both page kinds sit two levels deep
 
+    def heading(h):
+        if vi:
+            return f'<h2 id="{{id}}">{e(h.get("vi") or h["ja"])}</h2><p class="vi-h" lang="ja">{e(h["ja"])}</p>'
+        return f'<h2 id="{{id}}">{e(h["ja"])}</h2>'
+
+    basic = [s for s in th["sections"] if s.get("basic")]
+    summary = [s for s in th["sections"] if not s.get("basic")]
     toc, secs = [], []
-    for i, s in enumerate(th["sections"], 1):
-        toc.append(f'<li><a href="#s{i}">{e(s["h"]["ja"])}</a></li>')
-        blocks = "".join(render_block(b) for b in s["blocks"])
-        secs.append(f"""<section class="learn-sec" id="s{i}" aria-labelledby="h{i}">
-  <div class="learn-h"><h2 id="h{i}">{e(s['h']['ja'])}</h2><p class="vi-t vi-h" lang="vi">{e(s['h'].get('vi', ''))}</p></div>
+    k = 0
+    for group, label, badge in ((basic, T("基礎から学ぶ（はじめての人へ）", "Học từ cơ bản (cho người mới bắt đầu)"), T("入門", "Cơ bản")),
+                                (summary, T("要点まとめ", "Tóm tắt ý chính"), "")):
+        if not group:
+            continue
+        gid = "g-basic" if badge else "g-sum"
+        secs.append(f'<h2 class="learn-group" id="{gid}">{e(label)}</h2>')
+        sub = []
+        for s in group:
+            k += 1
+            title = (s["h"].get("vi") or s["h"]["ja"]) if vi else s["h"]["ja"]
+            sub.append(f'<li><a href="#s{k}">{e(title)}</a></li>')
+            blocks = "".join(render_block(b, lang) for b in s["blocks"])
+            tag = f'<span class="basic-badge">{e(badge)}</span>' if badge else ""
+            secs.append(f"""<section class="learn-sec{' basic' if badge else ''}" id="s{k}" aria-labelledby="h{k}">
+  <div class="learn-h">{tag}{heading(s['h']).replace('{id}', f'h{k}')}</div>
   {blocks}
 </section>""")
+        toc.append(f'<li><a href="#{gid}">{e(label)}</a><ul>{"".join(sub)}</ul></li>')
 
     terms = ""
     if th.get("terms"):
-        rows = "".join(f'<tr><td class="term">{e(a)}</td><td class="yomi">{e(b)}</td><td lang="vi">{e(c)}</td></tr>'
-                       for a, b, c in th["terms"])
+        if vi:
+            rows = "".join(f'<tr><td class="term" lang="ja">{e(a)}</td><td class="yomi" lang="ja">{e(b)}</td><td>{e(c)}</td></tr>'
+                           for a, b, c in th["terms"])
+            head = '<th scope="col">Thuật ngữ</th><th scope="col">Cách đọc</th><th scope="col">Nghĩa</th>'
+        else:
+            rows = "".join(f'<tr><td class="term">{e(a)}</td><td class="yomi">{e(b)}</td></tr>' for a, b, c in th["terms"])
+            head = '<th scope="col">用語</th><th scope="col">読み</th>'
         terms = f"""<section class="learn-sec" id="terms" aria-labelledby="h-terms">
-  <div class="learn-h"><h2 id="h-terms">重要用語</h2><p class="vi-t vi-h" lang="vi">Thuật ngữ quan trọng</p></div>
-  <div class="table-wrap"><table class="glossary"><thead><tr><th scope="col">用語</th><th scope="col">読み</th><th scope="col" lang="vi">Tiếng Việt</th></tr></thead><tbody>{rows}</tbody></table></div>
+  <div class="learn-h"><h2 id="h-terms">{T('重要用語', 'Thuật ngữ quan trọng')}</h2></div>
+  <div class="table-wrap"><table class="glossary"><thead><tr>{head}</tr></thead><tbody>{rows}</tbody></table></div>
 </section>"""
+        toc.append(f'<li><a href="#terms">{T("重要用語", "Thuật ngữ quan trọng")}</a></li>')
 
+    def sib(o):
+        return f"{o['id']}.html"
     prev_t = L["topics"][idx - 1] if idx > 0 else None
     next_t = L["topics"][idx + 1] if idx + 1 < len(L["topics"]) else None
+    nm = (lambda o: o.get("name_vi", o["name"])) if vi else (lambda o: o["name"])
     pager = '<div class="btn-row">'
-    if prev_t:
-        pager += f'<a class="btn ghost" href="{prev_t["id"]}.html">← {e(prev_t["name"])}</a>'
-    if next_t:
-        pager += f'<a class="btn ghost" href="{next_t["id"]}.html">{e(next_t["name"])} →</a>'
+    if prev_t and f"{lv}:{prev_t['id']}" in data["theory"]:
+        pager += f'<a class="btn ghost" href="{sib(prev_t)}">← {e(nm(prev_t))}</a>'
+    if next_t and f"{lv}:{next_t['id']}" in data["theory"]:
+        pager += f'<a class="btn ghost" href="{sib(next_t)}">{e(nm(next_t))} →</a>'
     pager += "</div>"
 
     intro = th["intro"]
-    lead_vi = f'<p class="lead vi-t" lang="vi">{e(intro["vi"])}</p>' if intro.get("vi") else ""
-    extra = f"""{lead_vi}
-  <div class="btn-row" style="margin-top:20px">{vi_switch()}</div>"""
-    body = hero(f"{L['name']} ・ 学ぶ", f"{t['name']}のまとめ", intro["ja"], extra) + f"""
+    if vi:
+        switch = f'<a class="btn ghost lang-link" lang="ja" hreflang="ja" href="{up}{ja_path}">日本語で読む</a>'
+        lead = intro.get("vi") or intro["ja"]
+        h1 = f"Lý thuyết: {name}"
+        eyebrow = f"{L['name']} · Lý thuyết · {t['name']}"
+        cta_h, cta_btn, cta_list = ("Hiểu rồi thì làm bài tập để kiểm tra", f"Làm bài tập ({n} câu)", "Danh sách câu hỏi và giải thích")
+        crumbs = [("Tiếng Việt", "vi/"), (f"{L['name']} · {name}", vi_path)]
+        title = f"Lý thuyết {L['name']}: {name} ({t['name']})"
+        desc = f"Lý thuyết {L['name']} phần {name} ({t['name']}) bằng tiếng Việt: giải thích từ cơ bản cho người mới, ví dụ thực tế, tóm tắt ý chính và thuật ngữ."
+    else:
+        switch = f'<a class="btn ghost lang-link" lang="vi" hreflang="vi" href="{up}{vi_path}">Tiếng Việt</a>'
+        lead = intro["ja"]
+        h1 = f"{t['name']}のまとめ"
+        eyebrow = f"{L['name']} ・ 学ぶ"
+        cta_h, cta_btn, cta_list = ("理解できたら、問題で確認しよう", f"練習問題を解く（{n}問）", "問題と解説の一覧")
+        crumbs = [(L["name"], f"{L['slug']}/"), (f"{t['name']}のまとめ", ja_path)]
+        title = f"{L['name']}「{t['name']}」のまとめ"
+        desc = f"{L['name']}「{t['name']}」を基礎から解説。はじめての人向けの説明と例題、要点まとめ、重要用語の読みつき。"
+    extra = f'<div class="btn-row" style="margin-top:20px">{switch}</div>'
+    body = hero(eyebrow, h1, lead, extra) + f"""
 <main><div class="wrap">
-<nav class="toc" aria-label="目次"><p class="eyebrow">目次</p><ul>{''.join(toc)}{'<li><a href="#terms">重要用語</a></li>' if terms else ''}</ul></nav>
+<nav class="toc" aria-label="{T('目次', 'Mục lục')}"><p class="eyebrow">{T('目次', 'Mục lục')}</p><ul>{''.join(toc)}</ul></nav>
 <article class="learn">{''.join(secs)}{terms}</article>
 <section class="cta" aria-labelledby="h-cta">
-  <h2 id="h-cta">理解できたら、問題で確認しよう</h2>
-  <p class="vi-t" lang="vi">Hiểu rồi thì làm bài tập để kiểm tra lại nhé.</p>
+  <h2 id="h-cta">{e(cta_h)}</h2>
   <div class="btn-row">
-    <a class="btn primary" href="../../quiz.html#{lv}.{t['id']}.practice">練習問題を解く（{n}問）</a>
-    <a class="btn" href="../{t['id']}.html">問題と解説の一覧</a>
+    <a class="btn primary" href="{up}quiz.html#{lv}.{t['id']}.practice">{e(cta_btn)}</a>
+    <a class="btn" href="{up}{L['slug']}/{t['id']}.html">{e(cta_list)}</a>
   </div>
 </section>
 {pager}
 </div></main>"""
-    return page(site, title=f"{L['name']}「{t['name']}」のまとめ", depth=2,
-                path=f"{L['slug']}/learn/{t['id']}.html", nav=lv, body=body,
-                crumbs=[(L["name"], f"{L['slug']}/"), (f"{t['name']}のまとめ", f"{L['slug']}/learn/{t['id']}.html")],
-                desc=f"{L['name']}「{t['name']}」の要点まとめ。{t['desc']} 重要用語の読みとベトナム語訳つき。")
+    return page(site, title=title, depth=2, path=vi_path if vi else ja_path, nav="vi" if vi else lv, body=body,
+                lang=lang, crumbs=crumbs, desc=desc,
+                alternates={"ja": ja_path, "vi": vi_path, "x-default": ja_path})
 
 
 FAQ = [
@@ -463,13 +497,13 @@ FAQ = [
 
 def build_exam_info(site, data):
     faq_html = "".join(
-        f'<details class="faq"><summary>{e(q)}</summary><p>{e(a)}</p><p class="vi-t" lang="vi">{e(v)}</p></details>'
+        f'<details class="faq"><summary>{e(q)}</summary><p>{e(a)}</p></details>'
         for q, a, v in FAQ)
     ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a, _ in FAQ]}
     body = hero("EXAM GUIDE", "QC検定3級・4級の試験について",
                 "試験の形式と合格基準、このサイトでの学び方をまとめました。最新の日程や申込方法は、必ず公式情報で確認してください。",
-                f'<p class="lead vi-t" lang="vi">Tóm tắt hình thức thi, tiêu chuẩn đỗ và cách học trên web này. Lịch thi và cách đăng ký mới nhất cần xem trên trang chính thức.</p><div class="btn-row" style="margin-top:20px">{vi_switch()}</div>') + f"""
+                '') + f"""
 <main><div class="wrap">
 <section aria-labelledby="h-fmt">
   <h2 id="h-fmt">試験の概要</h2>
@@ -483,19 +517,8 @@ def build_exam_info(site, data):
       <tr><td>解答方式</td><td>選択式</td><td>選択式</td></tr>
     </tbody>
   </table></div>
-  <div class="table-wrap vi-t" lang="vi"><table>
-    <thead><tr><th scope="col">Hạng mục</th><th scope="col">3級</th><th scope="col">4級</th></tr></thead>
-    <tbody>
-      <tr><td>Hình thức</td><td>Thi trên máy tính (CBT) tại trung tâm thi</td><td>Thi trên máy tính (CBT) tại trung tâm thi</td></tr>
-      <tr><td>Phần thi</td><td>手法 (phương pháp), 実践 (thực tiễn)</td><td>実践, 手法, 企業活動の基本</td></tr>
-      <tr><td>Mốc đỗ</td><td>Tổng ≥ 70% và mỗi phần ≥ 50%</td><td>Tổng ≥ 70%</td></tr>
-      <tr><td>Thời gian</td><td>90 phút</td><td>Xem trang chính thức</td></tr>
-      <tr><td>Cách trả lời</td><td>Trắc nghiệm</td><td>Trắc nghiệm</td></tr>
-    </tbody>
-  </table></div>
   <aside class="point"><span class="point-label">ポイント</span>
     <p>3級は、総合点が高くても片方の分野が50%未満だと不合格になります。このサイトの3級模擬試験は、手法と実践を25問ずつ出題し、分野ごとの得点も表示します。</p>
-    <p class="vi-t" lang="vi">Ở 3級, dù tổng điểm cao nhưng một phần dưới 50% vẫn trượt. Đề thi thử 3級 trên web có 25 câu 手法 + 25 câu 実践 và hiện điểm từng phần.</p>
   </aside>
   <p class="note">実施時期は年2回（3級はおおむね6月下旬〜9月下旬と、12月中旬〜翌年3月中旬）とされています。日程・受検料・申込方法は変わることがあるため、日本規格協会（JSA）の公式情報と<a href="https://cbt-s.com/page/qckc_all.html/" rel="noopener" target="_blank">CBT申込ページ</a>で確認してください。</p>
 </section>
@@ -521,8 +544,7 @@ def build_exam_info(site, data):
 
 
 def build_progress(site):
-    body = hero("MY PROGRESS", "学習の進捗", "このブラウザで解いた問題の記録から、分野ごとの正答率と苦手な分野を表示します。",
-                '<p class="lead" lang="vi">Tiến độ học: tỷ lệ đúng theo từng phân野 và các phân野 còn yếu, tính từ những câu đã làm trên trình duyệt này.</p>') + """
+    body = hero("MY PROGRESS", "学習の進捗", "このブラウザで解いた問題の記録から、分野ごとの正答率と苦手な分野を表示します。") + """
 <main><div class="wrap">
   <div id="progress-root"><div class="empty"><p>記録を読み込んでいます…</p></div></div>
   <noscript><p>進捗の表示にはJavaScriptを有効にしてください。</p></noscript>
@@ -544,8 +566,7 @@ def build_flashcards(site, data, lv):
     topics_opts = "".join(f'<option value="{t["id"]}">{e(t["name"])}</option>' for t in L["topics"]
                           if f"{lv}:{t['id']}" in data["theory"])
     body = hero(f"{L['name']} ・ 用語", f"{L['name']} 用語フラッシュカード",
-                f"重要用語{len(cards)}語を、カードをめくって覚えます。表は用語、裏は読みとベトナム語の意味です。",
-                '<p class="lead" lang="vi">Thẻ ghi nhớ thuật ngữ: mặt trước là thuật ngữ tiếng Nhật, mặt sau là cách đọc và nghĩa tiếng Việt.</p>') + f"""
+                f"重要用語{len(cards)}語を、カードをめくって覚えます。表は用語、裏は読みとベトナム語の意味です。") + f"""
 <main><div class="wrap">
 <section class="fc" id="fc-root" aria-label="フラッシュカード">
   <div class="fc-controls">
@@ -604,7 +625,7 @@ def build_vi(site, data):
             rows += f'<h3 class="domain-h">{e(dv)} <span lang="ja">（{e(dj)}）</span></h3><ul class="topics">'
             for t in ts:
                 k = sum(1 for q in data["questions"] if str(q["level"]) == lv and q["topic"] == t["id"])
-                learn = (f'<a class="btn" href="../{L["slug"]}/learn/{t["id"]}.html">Lý thuyết</a>'
+                learn = (f'<a class="btn" href="{L["slug"]}/{t["id"]}.html">Lý thuyết</a>'
                          if f"{lv}:{t['id']}" in data["theory"] else "")
                 rows += f"""<li><div>
     <span class="t-name">{e(t.get('name_vi', t['name']))}</span>
@@ -634,13 +655,13 @@ def build_vi(site, data):
 <section aria-labelledby="vi-how">
   <h2 id="vi-how">Học trên web này như thế nào</h2>
   <ol class="learn-list">
-    <li><b>Đọc lý thuyết</b> của từng phân野: tóm tắt ý chính, công thức, lỗi hay gặp, mẹo nhớ và bảng thuật ngữ có cách đọc, nghĩa tiếng Việt.</li>
+    <li><b>Đọc lý thuyết</b> bằng tiếng Việt của từng phân野: phần cơ bản cho người mới, tóm tắt ý chính, công thức, lỗi hay gặp, mẹo nhớ và bảng thuật ngữ có cách đọc, nghĩa tiếng Việt.</li>
     <li><b>Làm bài tập</b> theo phân野: chọn đáp án là biết đúng sai ngay, kèm giải thích tiếng Nhật và tiếng Việt.</li>
     <li><b>Ôn câu sai</b>: câu làm sai được tự động gom lại để ôn.</li>
     <li><b>Thi thử 50 câu</b>: có đồng hồ, chấm theo đúng tiêu chuẩn đỗ (3級 cần tổng ≥ 70% và mỗi phần ≥ 50%).</li>
   </ol>
   <aside class="point"><span class="point-label">MẸO</span>
-    <p>Phần tiếng Việt đã được bật sẵn cho bạn. Muốn luyện đọc chỉ bằng tiếng Nhật, bấm「Ẩn bản tiếng Việt」trên trang lý thuyết hoặc「Ẩn giải thích tiếng Việt」dưới câu hỏi.</p>
+    <p>Mới học QC lần đầu? Hãy bắt đầu từ phần「Học từ cơ bản」ở đầu mỗi bài lý thuyết: giải thích bằng ví dụ thực tế, rồi đến ví dụ tính toán từng bước. Câu hỏi bài tập giữ nguyên tiếng Nhật như đề thật; giải thích tiếng Việt hiện ngay dưới mỗi câu (bấm「Ẩn giải thích tiếng Việt」nếu muốn luyện chỉ tiếng Nhật).</p>
   </aside>
 </section>
 {''.join(lv_blocks)}
@@ -764,6 +785,8 @@ def main():
             if f"{lv}:{t['id']}" in data["theory"]:
                 write(f"{L['slug']}/learn/{t['id']}.html", build_theory(site, data, lv, i))
                 pages.append(f"{L['slug']}/learn/{t['id']}.html")
+                write(f"vi/{L['slug']}/{t['id']}.html", build_theory(site, data, lv, i, lang="vi"))
+                pages.append(f"vi/{L['slug']}/{t['id']}.html")
 
     base = site["site_url"].rstrip("/")
     today = date.today().isoformat()
