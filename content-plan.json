@@ -3,6 +3,9 @@
   "per_run": {
     "sun": 40,
     "tue": 40,
+    "wed": 40
+  },
+  "boost_once": {
     "wed": 80
   },
   "targets": {

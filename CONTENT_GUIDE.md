@@ -13,6 +13,7 @@ Phân野 được chia theo 分野 như đề thi thật (trường `domain` c�
 - `paused`: `true` → lần chạy chỉ báo cáo, không soạn câu mới.
 - `per_run.sun` / `per_run.tue` / `per_run.wed`: số câu soạn cho lần Chủ nhật / thứ Ba / thứ Tư. Đặt `0` để bỏ lần chạy đó. Chủ repo có thể sửa số `wed` trong ngày thứ Tư (sau khi xem dung lượng còn lại), trước giờ chạy buổi tối.
 - `topic_targets`: số câu mục tiêu theo từng phân野.
+- `boost_once`: số câu **chỉ áp dụng cho một lần chạy** (ví dụ `{"wed": 80}` khi chủ repo muốn dùng hết dung lượng cuối tuần). Nếu có giá trị cho ngày của lần chạy này thì dùng giá trị đó thay cho `per_run`, và **xóa mục đó sau khi chạy xong** (bước 7). Mặc định mỗi tuần luôn quay về `per_run`.
 - `exhausted`: phân野 đã hết nội dung mới (soạn tiếp chỉ ra câu trùng) → bỏ qua.
 - `exam`: cỡ đề thi thử, số đề tối đa, mốc đạt.
 
@@ -82,6 +83,8 @@ python3 tools/make_exams.py
 Tự tạo đề mới khi đủ 50 câu chưa dùng. Đề cũ không bao giờ bị thay đổi.
 
 ### 7. Build thử, commit và đẩy lên
+Nếu `content-plan.json` có `boost_once` cho ngày của lần chạy này, xóa mục đó (để lại `{}` nếu không còn ngày nào) trước khi commit.
+
 ```bash
 python3 build.py && rm -rf dist
 git add -A

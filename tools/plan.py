@@ -7,6 +7,8 @@
     python3 tools/plan.py --day wed
 
 The number of questions per run comes from content-plan.json ("per_run").
+A one-time value in "boost_once" for the day overrides it; the run removes that entry
+afterwards (CONTENT_GUIDE.md step 7), so the next week is back to per_run.
 Allocation: split between levels by remaining need, then give each question to the
 topic with the largest remaining gap (topics listed in "exhausted" are skipped).
 """
@@ -47,7 +49,8 @@ def main():
 
     alloc = {"4": {}, "3": {}}
     if args.day:
-        n_run = 0 if plan.get("paused") else int(plan["per_run"][args.day])
+        boost = plan.get("boost_once", {}).get(args.day)
+        n_run = 0 if plan.get("paused") else int(boost if boost is not None else plan["per_run"][args.day])
         total_rem = remaining["4"] + remaining["3"]
         n_run = min(n_run, total_rem)
         if n_run:
