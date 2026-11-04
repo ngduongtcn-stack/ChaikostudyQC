@@ -14,10 +14,12 @@ of the same level fill the gap, so the level total still matches the plan.
   question+correct answer similarity >= 0.80, or question similarity >= 0.85 together
   with choice-set similarity >= 0.60. (Question stems alone are not enough: many
   questions share stems like 「〜として、最も適切なものはどれか」.)
+- Shuffles the choice order (numeric choices are sorted ascending instead).
 - Assigns new IDs (4-037, 3-041, ...), sets status "checked" (passed the independent
   check, not yet reviewed by a person) and appends to src/data/questions.json.
 """
 import argparse
+import random
 import sys
 
 from qclib import QUESTIONS, PLAN, load_json, next_id, save_json, similarity
@@ -45,6 +47,27 @@ def problems(q, topics):
         if not str(q.get(f, "")).strip():
             errs.append(f"thiếu {f}")
     return errs
+
+
+def shuffle_choices(q):
+    """Shuffle choice order (deterministic per question text) so correct answers are spread
+    over ア〜エ on the static list pages. Choices that are all numbers keep ascending order."""
+    ch = q["choices"]
+    correct = ch[q["answer"]]
+    def num(x):
+        try:
+            return float(x.replace("約", "").replace("%", "").replace("個", "").replace("日", "").replace("−", "-").split("、")[0])
+        except ValueError:
+            return None
+    nums = [num(x) for x in ch]
+    if all(n is not None for n in nums):
+        new = sorted(ch, key=num)
+    else:
+        new = ch[:]
+        random.Random(q["question"]).shuffle(new)
+    q["choices"] = new
+    q["answer"] = new.index(correct)
+    return q
 
 
 def qa_text(q):
@@ -129,7 +152,7 @@ def main():
             "explanation": c["explanation"].strip(),
             "explanation_vi": c["explanation_vi"].strip(),
         }
-        bank.append(new)
+        bank.append(shuffle_choices(new))
         added[lv] += 1
 
     q4 = [q for q in bank if q["level"] == 4]
