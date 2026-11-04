@@ -6,7 +6,10 @@
     "wed": 40
   },
   "boost_once": {
-    "wed": 80
+    "wed": 120
+  },
+  "note_once": {
+    "wed": "Trong số câu soạn lần này, khoảng 15% là câu nâng cao (応用): khoảng 6 câu cho 4級 và 12 câu cho 3級. Câu nâng cao vẫn nằm trong phạm vi đề thi của cấp đó, nhưng cần suy luận nhiều bước: đọc tình huống thực tế ở nhà máy rồi chọn cách xử lý, kết hợp hai khái niệm (ví dụ ヒストグラム + 工程能力, 管理図 + 異常判定), hoặc tính toán hai bước. Ghi \"advanced\": true cho các câu này. Kiểm tra độc lập như mọi câu khác."
   },
   "targets": {
     "4": 500,

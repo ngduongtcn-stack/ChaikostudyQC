@@ -152,6 +152,8 @@ def main():
             "explanation": c["explanation"].strip(),
             "explanation_vi": c["explanation_vi"].strip(),
         }
+        if c.get("advanced"):
+            new["advanced"] = True
         bank.append(shuffle_choices(new))
         added[lv] += 1
 

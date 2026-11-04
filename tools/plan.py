@@ -86,6 +86,9 @@ def main():
             print("\nĐã đạt mục tiêu (hoặc mọi phân野 đã đủ nội dung) → không soạn câu mới.")
         else:
             print(f"\nLần chạy {args.day}: soạn {sum(alloc['4'].values()) + sum(alloc['3'].values())} câu")
+            note = plan.get("note_once", {}).get(args.day)
+            if note:
+                print(f"Ghi chú cho lần này (note_once): {note}")
             for lv in ("4", "3"):
                 for topic, n in alloc[lv].items():
                     print(f"    {lv}級 {topic}: {n}")
