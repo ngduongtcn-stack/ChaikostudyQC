@@ -6301,6 +6301,550 @@
       "answer": 1,
       "explanation": "現状の把握では、時間・場所・種類・症状などの観点でデータを層別し、問題の実態をつかみます。誰の責任かを追及する犯人さがしは、事実の把握や改善にはつながりません。",
       "explanation_vi": "Ở bước nắm hiện trạng, phân tầng dữ liệu theo thời gian, địa điểm, loại, triệu chứng… để nắm thực trạng vấn đề. Truy tìm “thủ phạm” chịu trách nhiệm không giúp nắm sự thật hay cải tiến."
+    },
+    {
+      "id": "3-235",
+      "level": 3,
+      "topic": "toukei",
+      "status": "checked",
+      "question": "正規分布の形（位置と広がり）を決める2つの値の組み合わせとして、正しいものはどれか。",
+      "choices": [
+        "最大値と最小値",
+        "メディアンと範囲",
+        "平均値μと標準偏差σ",
+        "モードとデータ数"
+      ],
+      "answer": 2,
+      "explanation": "正規分布は、分布の中心の位置を表す平均値μと、広がりを表す標準偏差σの2つで形が決まります。",
+      "explanation_vi": "Phân phối chuẩn được xác định bởi 2 giá trị: trung bình μ (vị trí trung tâm) và độ lệch chuẩn σ (độ trải rộng)."
+    },
+    {
+      "id": "3-236",
+      "level": 3,
+      "topic": "toukei",
+      "status": "checked",
+      "question": "標準正規分布についての説明として、正しいものはどれか。",
+      "choices": [
+        "平均が0、標準偏差が1の正規分布である",
+        "平均と標準偏差がどちらも100の正規分布である",
+        "左右対称ではない分布である",
+        "平均が1、標準偏差が0の正規分布である"
+      ],
+      "answer": 0,
+      "explanation": "標準正規分布は、平均0、標準偏差1の正規分布です。どのような正規分布も、u＝(x−μ)÷σ と標準化すると標準正規分布になり、正規分布表で確率を求められます。",
+      "explanation_vi": "Phân phối chuẩn tắc là phân phối chuẩn có trung bình 0, độ lệch chuẩn 1. Mọi phân phối chuẩn sau khi chuẩn hóa u = (x − μ) ÷ σ đều thành phân phối chuẩn tắc, rồi tra bảng để tìm xác suất."
+    },
+    {
+      "id": "3-237",
+      "level": 3,
+      "topic": "toukei",
+      "status": "checked",
+      "question": "標準正規分布で、u≧K となる確率（上側確率）が0.05となるKの値は、およそいくらか。",
+      "choices": [
+        "1.645",
+        "1.960",
+        "2.000",
+        "3.000"
+      ],
+      "answer": 0,
+      "explanation": "上側確率0.05に対応する値は u＝1.645 です。1.960は上側確率0.025（両側で0.05）、2.000は約0.0228、3.000は約0.0013に対応します。",
+      "explanation_vi": "Giá trị ứng với xác suất phía trên 0.05 là u = 1.645. 1.960 ứng với 0.025 một phía (0.05 hai phía), 2.000 ứng với khoảng 0.0228, 3.000 ứng với khoảng 0.0013."
+    },
+    {
+      "id": "3-238",
+      "level": 3,
+      "topic": "toukei",
+      "status": "checked",
+      "question": "製品をn個取り出したときの不良品の個数が二項分布にしたがうと考えてよい条件として、最も適切なものはどれか。",
+      "choices": [
+        "取り出す個数nが毎回変わる",
+        "製品の寸法が正規分布にしたがう",
+        "不良品が連続して発生しやすい",
+        "1個ごとの不良率pが一定で、各製品が良品か不良品かは互いに独立である"
+      ],
+      "answer": 3,
+      "explanation": "二項分布は、良品か不良品かの2つの結果しかなく、不良率pが一定で、各回の結果が互いに独立しているとき、n個中の不良個数が従う分布です。",
+      "explanation_vi": "Phân phối nhị thức là phân phối của số hàng lỗi trong n cái khi chỉ có 2 kết quả (tốt hoặc lỗi), tỷ lệ lỗi p không đổi và kết quả mỗi lần độc lập với nhau."
+    },
+    {
+      "id": "3-239",
+      "level": 3,
+      "topic": "toukei",
+      "status": "checked",
+      "question": "不良率10%の工程から製品を10個ランダムに取り出したとき、不良品が1個も含まれない確率はおよそいくらか（二項分布にしたがうものとする）。",
+      "choices": [
+        "0.10",
+        "0.35",
+        "0.65",
+        "0.90"
+      ],
+      "answer": 1,
+      "explanation": "すべてが良品である確率は 0.9 の10乗です。0.9¹⁰≒0.349 なので、約0.35です。0.90は1個だけ取り出したときに良品である確率です。",
+      "explanation_vi": "Xác suất cả 10 cái đều tốt là 0.9 mũ 10. 0.9¹⁰ ≈ 0.349, tức khoảng 0.35. 0.90 là xác suất lấy 1 cái thì được hàng tốt."
+    },
+    {
+      "id": "3-240",
+      "level": 3,
+      "topic": "toukei",
+      "status": "checked",
+      "question": "正規分布にしたがう特性が、平均値μより大きな値をとる確率はいくらか。",
+      "choices": [
+        "0.25",
+        "0.50",
+        "0.68",
+        "0.95"
+      ],
+      "answer": 1,
+      "explanation": "正規分布は平均値を中心に左右対称なので、平均値より大きい値をとる確率と小さい値をとる確率は、どちらも0.50です。",
+      "explanation_vi": "Phân phối chuẩn đối xứng quanh trung bình, nên xác suất lớn hơn trung bình và nhỏ hơn trung bình đều là 0.50."
+    },
+    {
+      "id": "3-241",
+      "level": 3,
+      "topic": "toukei",
+      "status": "checked",
+      "question": "ある測定値xを標準化したところ、u＝0 になった。このxについて正しいものはどれか。",
+      "choices": [
+        "xは規格外れである",
+        "xは平均値μと等しい",
+        "xは0である",
+        "xは平均値より3σ大きい"
+      ],
+      "answer": 1,
+      "explanation": "u＝(x−μ)÷σ が0になるのは、x−μ＝0、つまり xが平均値μと等しいときです。",
+      "explanation_vi": "u = (x − μ) ÷ σ bằng 0 khi x − μ = 0, tức là x bằng trung bình μ."
+    },
+    {
+      "id": "3-242",
+      "level": 3,
+      "topic": "data3",
+      "status": "checked",
+      "question": "工程Aのデータ10個の平均値は20、工程Bのデータ30個の平均値は24であった。2つを合わせた40個のデータの平均値はいくらか。",
+      "choices": [
+        "22",
+        "23",
+        "24",
+        "44"
+      ],
+      "answer": 1,
+      "explanation": "全体の合計は 10×20＋30×24＝200＋720＝920 なので、平均値は 920÷40＝23 です。データ数が違うので、単純に (20＋24)÷2＝22 とはなりません。",
+      "explanation_vi": "Tổng toàn bộ = 10 × 20 + 30 × 24 = 200 + 720 = 920, nên trung bình = 920 ÷ 40 = 23. Vì số dữ liệu khác nhau nên không được lấy (20 + 24) ÷ 2 = 22."
+    },
+    {
+      "id": "3-243",
+      "level": 3,
+      "topic": "data3",
+      "status": "checked",
+      "question": "それぞれのデータから平均値を引いた値（偏差）を、すべて合計するといくらになるか。",
+      "choices": [
+        "常にデータ数と等しい",
+        "常に正の値になる",
+        "常に平方和と等しい",
+        "常に0になる"
+      ],
+      "answer": 3,
+      "explanation": "偏差の合計は常に0になります。そのため、ばらつきを表すには偏差を2乗して合計した平方和Sを使います。",
+      "explanation_vi": "Tổng các độ lệch luôn bằng 0. Vì vậy để biểu diễn độ phân tán, ta bình phương độ lệch rồi cộng lại, gọi là tổng bình phương S."
+    },
+    {
+      "id": "3-244",
+      "level": 3,
+      "topic": "data3",
+      "status": "checked",
+      "question": "部品の長さ（単位：mm）のデータから不偏分散Vを求めた。Vの単位はどれか。",
+      "choices": [
+        "単位はない",
+        "mm",
+        "mm²",
+        "%"
+      ],
+      "answer": 2,
+      "explanation": "分散は偏差を2乗して求めるので、単位は元のデータの単位の2乗（mm²）になります。平方根をとった標準偏差は、元のデータと同じ単位（mm）になります。",
+      "explanation_vi": "Phương sai tính bằng bình phương độ lệch nên đơn vị là bình phương đơn vị gốc (mm²). Độ lệch chuẩn (lấy căn) có cùng đơn vị với dữ liệu gốc (mm)."
+    },
+    {
+      "id": "3-245",
+      "level": 3,
+      "topic": "data3",
+      "status": "checked",
+      "question": "すべてのデータに一律に5を加えた。このとき平方和Sはどうなるか。",
+      "choices": [
+        "5倍になる",
+        "5増える",
+        "変わらない",
+        "25増える"
+      ],
+      "answer": 2,
+      "explanation": "すべてのデータに同じ値を加えると、平均値も同じだけ増えるので、各偏差は変わりません。したがって平方和S、分散、標準偏差も変わりません。",
+      "explanation_vi": "Cộng cùng một giá trị vào mọi dữ liệu thì trung bình cũng tăng đúng bằng ấy, nên mỗi độ lệch không đổi. Do đó tổng bình phương S, phương sai, độ lệch chuẩn đều không đổi."
+    },
+    {
+      "id": "3-246",
+      "level": 3,
+      "topic": "data3",
+      "status": "checked",
+      "question": "すべてのデータを2倍した。このとき標準偏差sはどうなるか。",
+      "choices": [
+        "4倍になる",
+        "半分になる",
+        "2倍になる",
+        "変わらない"
+      ],
+      "answer": 2,
+      "explanation": "すべてのデータを2倍すると、偏差も2倍になるので、平方和と分散は4倍、その平方根である標準偏差は2倍になります。",
+      "explanation_vi": "Nhân mọi dữ liệu với 2 thì độ lệch cũng gấp 2, nên tổng bình phương và phương sai gấp 4, còn độ lệch chuẩn (căn bậc hai) gấp 2."
+    },
+    {
+      "id": "3-247",
+      "level": 3,
+      "topic": "data3",
+      "status": "checked",
+      "question": "まず倉庫の箱をいくつかランダムに選び、選んだ各箱の中から、さらに部品をランダムに何個かずつ取り出してサンプルとした。このサンプリング方法を何というか。",
+      "choices": [
+        "二段サンプリング",
+        "集落サンプリング",
+        "系統サンプリング",
+        "層別サンプリング"
+      ],
+      "answer": 0,
+      "explanation": "1段目で箱（1次単位）を選び、2段目でその中から部品（2次単位）を選ぶ方法を二段サンプリングといいます。選んだ箱の中を全部調べる場合は集落サンプリングです。",
+      "explanation_vi": "Chọn thùng (đơn vị cấp 1) ở bước 1, rồi chọn linh kiện (đơn vị cấp 2) trong thùng đó ở bước 2 gọi là 二段サンプリング (lấy mẫu hai giai đoạn). Nếu kiểm tra toàn bộ trong thùng đã chọn thì là 集落サンプリング."
+    },
+    {
+      "id": "3-248",
+      "level": 3,
+      "topic": "soukan",
+      "status": "checked",
+      "question": "2つの特性の相関係数が r＝0.3 であった。この結果の読み取り方として、最も適切なものはどれか。",
+      "choices": [
+        "強い負の相関がある",
+        "弱い正の相関がある",
+        "強い正の相関がある",
+        "一方が他方の原因であることが証明された"
+      ],
+      "answer": 1,
+      "explanation": "r＝0.3は正の値ですが1から遠いので、弱い正の相関と読み取ります。相関があっても因果関係があるとは限りません。",
+      "explanation_vi": "r = 0.3 là số dương nhưng còn xa 1, nên đọc là tương quan thuận yếu. Có tương quan cũng không có nghĩa là có quan hệ nhân quả."
+    },
+    {
+      "id": "3-249",
+      "level": 3,
+      "topic": "7tools3",
+      "status": "checked",
+      "question": "特性要因図を作るとき、大骨から中骨、小骨へと要因を掘り下げていくために繰り返す問いかけとして、最も適切なものはどれか。",
+      "choices": [
+        "だれが（責任者はだれか）",
+        "いつまで（期限はいつか）",
+        "いくら（費用はいくらか）",
+        "なぜ（なぜそれが起きるのか）"
+      ],
+      "answer": 3,
+      "explanation": "特性要因図では、「なぜその特性が悪くなるのか」「なぜその要因が起きるのか」と問いかけを繰り返して、要因を具体的なレベルまで掘り下げます。",
+      "explanation_vi": "Trong biểu đồ xương cá, lặp lại câu hỏi “tại sao đặc tính xấu đi”, “tại sao yếu tố đó xảy ra” để đào sâu yếu tố đến mức cụ thể."
+    },
+    {
+      "id": "3-250",
+      "level": 3,
+      "topic": "7tools3",
+      "status": "checked",
+      "question": "測定値を区間ごとに「／」などの印で記入していくと、記入を終えた時点でデータの分布の形がわかるチェックシートを何というか。",
+      "choices": [
+        "点検用チェックシート",
+        "管理図",
+        "不良位置調査用チェックシート",
+        "工程分布調査用チェックシート（度数分布表）"
+      ],
+      "answer": 3,
+      "explanation": "工程分布調査用チェックシートは、区間ごとに測定値の数を印で記入していくもので、記入が終わるとヒストグラムのように分布の形がわかります。",
+      "explanation_vi": "Phiếu kiểm tra điều tra phân bố công đoạn (工程分布調査用チェックシート) ghi số giá trị đo vào từng khoảng bằng ký hiệu; ghi xong là thấy được hình dạng phân bố giống biểu đồ tần suất."
+    },
+    {
+      "id": "3-251",
+      "level": 3,
+      "topic": "7tools3",
+      "status": "checked",
+      "question": "品質・コスト・納期・安全・士気など、複数の評価項目のバランスを、中心から放射状にのびる軸に表して比べるのに適したグラフはどれか。",
+      "choices": [
+        "ヒストグラム",
+        "レーダーチャート",
+        "パレート図",
+        "ガントチャート"
+      ],
+      "answer": 1,
+      "explanation": "レーダーチャートは、複数の項目を放射状の軸にとって値を結び、項目間のバランスや、目標・他部門との比較を見るのに適しています。",
+      "explanation_vi": "レーダーチャート (biểu đồ radar) đặt nhiều hạng mục trên các trục tỏa ra từ tâm rồi nối các giá trị, phù hợp để xem sự cân bằng giữa các hạng mục hoặc so sánh với mục tiêu, với bộ phận khác."
+    },
+    {
+      "id": "3-252",
+      "level": 3,
+      "topic": "7tools3",
+      "status": "checked",
+      "question": "データを層別するときの項目として、一般に用いられないものはどれか。",
+      "choices": [
+        "機械別",
+        "測定値を大きい順に並べた順位別",
+        "材料ロット別",
+        "作業者別"
+      ],
+      "answer": 1,
+      "explanation": "層別は、機械・作業者・材料・方法・時間など、データが得られた条件の違いでグループに分けることです。測定値の大小の順位で分けても、原因を探る手がかりにはなりません。",
+      "explanation_vi": "Phân tầng là chia nhóm theo sự khác nhau về điều kiện tạo ra dữ liệu như máy, người làm, vật liệu, phương pháp, thời gian. Chia theo thứ hạng lớn nhỏ của giá trị đo thì không giúp tìm nguyên nhân."
+    },
+    {
+      "id": "3-253",
+      "level": 3,
+      "topic": "7tools3",
+      "status": "checked",
+      "question": "散布図を描いたところ、点が山の形（xが中くらいのときにyが最も大きい形）に並んでいた。相関係数を計算すると0に近かった。最も適切な判断はどれか。",
+      "choices": [
+        "強い正の相関がある",
+        "散布図の描き方が間違っている",
+        "相関係数は0に近いが、xとyの間には曲線的な関係がある",
+        "xとyにはまったく関係がない"
+      ],
+      "answer": 2,
+      "explanation": "相関係数は直線的な関係の強さを表すので、山形のような曲線的な関係では0に近くなることがあります。散布図を見ると、関係があることがわかります。",
+      "explanation_vi": "Hệ số tương quan đo độ mạnh của quan hệ tuyến tính, nên với quan hệ dạng cong như hình núi, nó có thể gần 0. Nhìn biểu đồ phân tán thì thấy rõ là có quan hệ."
+    },
+    {
+      "id": "3-254",
+      "level": 3,
+      "topic": "7tools3",
+      "status": "checked",
+      "question": "ヒストグラムのすべての柱の度数を合計すると、何に等しくなるか。",
+      "choices": [
+        "平均値",
+        "データの総数",
+        "区間の数",
+        "最大値"
+      ],
+      "answer": 1,
+      "explanation": "各データはどれか1つの区間に入るので、すべての区間の度数を合計すると、データの総数になります。度数表を作ったら、合計がデータ数と一致するかを確かめましょう。",
+      "explanation_vi": "Mỗi dữ liệu rơi vào đúng một khoảng, nên cộng tần số của tất cả các khoảng sẽ bằng tổng số dữ liệu. Lập bảng tần số xong nên kiểm tra tổng có khớp với số dữ liệu không."
+    },
+    {
+      "id": "3-255",
+      "level": 3,
+      "topic": "kanrizu",
+      "status": "checked",
+      "question": "X̄−R管理図のうち、R管理図で主に管理するものはどれか。",
+      "choices": [
+        "欠点数の変化",
+        "群の平均値の変化",
+        "不良率の変化",
+        "群内のばらつきの変化"
+      ],
+      "answer": 3,
+      "explanation": "X̄管理図は群の平均値の変化（工程平均のずれ）を、R管理図は群内のばらつき（範囲）の変化を見ます。2つを組み合わせて工程の状態を判断します。",
+      "explanation_vi": "Biểu đồ X̄ xem sự thay đổi của trung bình nhóm (độ lệch của trung bình công đoạn); biểu đồ R xem sự thay đổi của biến động trong nhóm (khoảng biến thiên). Kết hợp cả hai để phán đoán trạng thái công đoạn."
+    },
+    {
+      "id": "3-256",
+      "level": 3,
+      "topic": "kanrizu",
+      "status": "checked",
+      "question": "X̄−R管理図の群分けの考え方として、最も適切なものはどれか。",
+      "choices": [
+        "群の大きさは毎回ばらばらにする",
+        "群の中には、できるだけ同じ条件で生産されたデータが入るように分ける",
+        "群の中に、いろいろな機械や材料のデータを混ぜる",
+        "群分けは測定値の大きい順に行う"
+      ],
+      "answer": 1,
+      "explanation": "群の中は偶然原因によるばらつきだけになるように、同じ条件（同じ時間帯・同じ機械など）のデータでまとめます。これを合理的な群分けといい、群間の違いから異常を見つけやすくなります。",
+      "explanation_vi": "Mỗi nhóm nên gồm dữ liệu cùng điều kiện (cùng khung giờ, cùng máy…) để trong nhóm chỉ có biến động do nguyên nhân ngẫu nhiên. Gọi là chia nhóm hợp lý (合理的な群分け), giúp dễ phát hiện bất thường qua khác biệt giữa các nhóm."
+    },
+    {
+      "id": "3-257",
+      "level": 3,
+      "topic": "kanrizu",
+      "status": "checked",
+      "question": "c管理図で、1枚あたりの平均欠点数が c̄＝4.0 のとき、上方管理限界UCLはいくらか。",
+      "choices": [
+        "6.0",
+        "8.0",
+        "10.0",
+        "16.0"
+      ],
+      "answer": 2,
+      "explanation": "c管理図のUCL＝c̄＋3√c̄＝4.0＋3×√4.0＝4.0＋3×2.0＝10.0 です。",
+      "explanation_vi": "UCL của biểu đồ c = c̄ + 3√c̄ = 4.0 + 3 × √4.0 = 4.0 + 3 × 2.0 = 10.0."
+    },
+    {
+      "id": "3-258",
+      "level": 3,
+      "topic": "kanrizu",
+      "status": "checked",
+      "question": "p管理図で、群ごとのサンプルの大きさnが変わる場合の管理限界線についての説明として、正しいものはどれか。",
+      "choices": [
+        "nが変わる場合はp管理図を使えない",
+        "nが変わっても管理限界線は常に一定である",
+        "nが大きい群ほど管理限界線の幅は広くなる",
+        "nが変わると管理限界線の幅も変わり、nが大きい群ほど幅は狭くなる"
+      ],
+      "answer": 3,
+      "explanation": "p管理図の管理限界は p̄±3√(p̄(1−p̄)/n) で、nによって変わります。nが大きいほど幅は狭くなるため、管理限界線は群ごとに凸凹になります。",
+      "explanation_vi": "Giới hạn kiểm soát của biểu đồ p là p̄ ± 3√(p̄(1 − p̄)/n), thay đổi theo n. n càng lớn thì khoảng càng hẹp, nên đường giới hạn sẽ lồi lõm theo từng nhóm."
+    },
+    {
+      "id": "3-259",
+      "level": 3,
+      "topic": "kanrizu",
+      "status": "checked",
+      "question": "管理図で、中心線の片側に続けて並んだ点の並びを何というか。",
+      "choices": [
+        "傾向",
+        "連（ラン）",
+        "周期",
+        "層"
+      ],
+      "answer": 1,
+      "explanation": "中心線の片側に連続して並んだ点の並びを連（ラン）といいます。長い連が現れたときは、工程平均がずれた可能性があり、異常と判断します（例：9点連続）。",
+      "explanation_vi": "Chuỗi điểm liên tiếp nằm cùng một phía đường trung tâm gọi là 連 (ラン – run). Khi xuất hiện run dài (ví dụ 9 điểm liên tiếp), trung bình công đoạn có thể đã lệch, cần coi là bất thường."
+    },
+    {
+      "id": "3-260",
+      "level": 3,
+      "topic": "kanrizu",
+      "status": "checked",
+      "question": "X−Rs管理図のRs（移動範囲）の求め方として、正しいものはどれか。",
+      "choices": [
+        "群の最大値と最小値の差",
+        "すべてのデータの平均値",
+        "データと規格値の差",
+        "隣り合う2つのデータの差の絶対値"
+      ],
+      "answer": 3,
+      "explanation": "移動範囲Rsは、時間順に並んだ隣り合う2つのデータの差の絶対値です。1個ずつしかデータが得られない場合に、ばらつきの変化を見るために使います。",
+      "explanation_vi": "Khoảng biến thiên trượt Rs là giá trị tuyệt đối của hiệu hai dữ liệu liền kề theo thứ tự thời gian. Dùng để xem sự thay đổi của biến động khi mỗi lần chỉ có 1 dữ liệu."
+    },
+    {
+      "id": "3-261",
+      "level": 3,
+      "topic": "kouteinouryoku",
+      "status": "checked",
+      "question": "標準偏差は変わらず、工程の平均値だけが規格の中心からずれた。このときの工程能力指数の変化として、正しいものはどれか。",
+      "choices": [
+        "Cpは変わらず、Cpkは小さくなる",
+        "CpもCpkも大きくなる",
+        "CpもCpkも変わらない",
+        "Cpは小さくなり、Cpkは変わらない"
+      ],
+      "answer": 0,
+      "explanation": "Cp＝(SU−SL)÷6s は平均値を使わないので変わりません。Cpkはかたよりを考慮するので、平均値が中心からずれると小さくなります。",
+      "explanation_vi": "Cp = (SU − SL) ÷ 6s không dùng trung bình nên không đổi. Cpk có xét độ lệch tâm nên khi trung bình lệch khỏi tâm quy cách thì Cpk giảm."
+    },
+    {
+      "id": "3-262",
+      "level": 3,
+      "topic": "kouteinouryoku",
+      "status": "checked",
+      "question": "両側規格の幅（SU−SL）が8.0の工程で、工程能力指数Cpを1.33以上にしたい。標準偏差sは、およそいくら以下にする必要があるか。",
+      "choices": [
+        "0.5",
+        "1.0",
+        "1.33",
+        "2.0"
+      ],
+      "answer": 1,
+      "explanation": "Cp＝(SU−SL)÷6s≧1.33 より、s≦8.0÷(6×1.33)≒1.0 です。標準偏差をおよそ1.0以下にすれば、Cp≧1.33 を満たします。",
+      "explanation_vi": "Từ Cp = (SU − SL) ÷ 6s ≥ 1.33 suy ra s ≤ 8.0 ÷ (6 × 1.33) ≈ 1.0. Giảm độ lệch chuẩn xuống khoảng 1.0 trở xuống thì đạt Cp ≥ 1.33."
+    },
+    {
+      "id": "3-263",
+      "level": 3,
+      "topic": "kouteinouryoku",
+      "status": "checked",
+      "question": "両側規格で Cp＝1.33 のとき、規格の幅（SU−SL）は標準偏差σのおよそ何倍にあたるか。",
+      "choices": [
+        "6倍",
+        "10倍",
+        "8倍",
+        "4倍"
+      ],
+      "answer": 2,
+      "explanation": "Cp＝(SU−SL)÷6σ＝1.33 なので、SU−SL＝1.33×6σ≒8σ です。平均が規格の中心にあれば、平均から規格まで両側に4σずつの余裕があることになります。",
+      "explanation_vi": "Cp = (SU − SL) ÷ 6σ = 1.33 nên SU − SL = 1.33 × 6σ ≈ 8σ. Nếu trung bình ở tâm quy cách thì mỗi phía còn 4σ khoảng dư."
+    },
+    {
+      "id": "3-264",
+      "level": 3,
+      "topic": "kouteinouryoku",
+      "status": "checked",
+      "question": "個々の測定値を時間の順に打点し、規格線を書き入れて、工程が規格に対してどのような状態にあるかを見る図を何というか。",
+      "choices": [
+        "親和図",
+        "工程能力図",
+        "パレート図",
+        "特性要因図"
+      ],
+      "answer": 1,
+      "explanation": "工程能力図は、測定値を時間順に打点し、上限・下限の規格線を書き入れた図です。規格に対するばらつきやかたより、時間による変化がひと目でわかります。",
+      "explanation_vi": "工程能力図 (biểu đồ năng lực công đoạn) chấm các giá trị đo theo thời gian và vẽ đường giới hạn trên, dưới của quy cách. Nhìn vào thấy ngay biến động, độ lệch tâm so với quy cách và sự thay đổi theo thời gian."
+    },
+    {
+      "id": "3-265",
+      "level": 3,
+      "topic": "shin7",
+      "status": "checked",
+      "question": "「不良を半減する」という目的を達成するための手段を考え、その手段を実現するためのさらに具体的な手段へと、一次・二次・三次と枝分かれさせて展開した。用いた手法はどれか。",
+      "choices": [
+        "連関図法",
+        "PDPC法",
+        "親和図法",
+        "系統図法"
+      ],
+      "answer": 3,
+      "explanation": "目的と手段の関係を、目的→手段→さらに具体的な手段と枝分かれさせて展開し、実行できる方策を見つける手法は系統図法です。",
+      "explanation_vi": "Triển khai quan hệ mục đích – phương tiện thành nhánh: mục đích → phương tiện → phương tiện cụ thể hơn, để tìm biện pháp có thể thực hiện, là 系統図法 (biểu đồ cây)."
+    },
+    {
+      "id": "3-266",
+      "level": 3,
+      "topic": "shin7",
+      "status": "checked",
+      "question": "いくつもの原因が互いに影響し合っていて、どれが根本的な原因なのかがわかりにくい問題について、原因と結果の関係を矢印で結んで整理した。用いた手法はどれか。",
+      "choices": [
+        "アローダイアグラム法",
+        "マトリックス図法",
+        "連関図法",
+        "系統図法"
+      ],
+      "answer": 2,
+      "explanation": "原因どうしが複雑にからみ合った問題について、原因→結果の関係を矢印で結び、主要な原因を見つける手法は連関図法です。",
+      "explanation_vi": "Với vấn đề mà các nguyên nhân đan xen ảnh hưởng lẫn nhau, nối quan hệ nguyên nhân → kết quả bằng mũi tên để tìm nguyên nhân chính là 連関図法 (biểu đồ liên quan)."
+    },
+    {
+      "id": "3-267",
+      "level": 3,
+      "topic": "shin7",
+      "status": "checked",
+      "question": "アローダイアグラムで、所要時間は0だが、作業の順序関係だけを示すために点線の矢線で表すものを何というか。",
+      "choices": [
+        "クリティカルパス",
+        "結合点",
+        "余裕日数",
+        "ダミー（擬似作業）"
+      ],
+      "answer": 3,
+      "explanation": "ダミーは、実際の作業ではなく、作業どうしの順序関係を正しく表すために使う、所要時間0の点線の矢線です。",
+      "explanation_vi": "ダミー (công việc giả) không phải công việc thật mà là mũi tên nét đứt có thời gian bằng 0, dùng để biểu diễn đúng quan hệ thứ tự giữa các công việc."
+    },
+    {
+      "id": "3-268",
+      "level": 3,
+      "topic": "hoho3",
+      "status": "checked",
+      "question": "日常管理における管理項目の体系についての説明として、最も適切なものはどれか。",
+      "choices": [
+        "上位職の点検項目が、下位職では自分の仕事の結果を見る管理項目になることがある",
+        "管理項目と点検項目は、職位に関係なく常に同じである",
+        "管理項目は全員がまったく同じものを持つ",
+        "管理項目は社長だけが持つ"
+      ],
+      "answer": 0,
+      "explanation": "上位職が原因系として見る点検項目は、その仕事を担当する下位職にとっては、自分の仕事の結果を見る管理項目になります。このように、職位ごとの管理項目と点検項目はつながっています（管理項目の体系）。",
+      "explanation_vi": "Hạng mục kiểm tra (phía nguyên nhân) mà cấp trên theo dõi, đối với cấp dưới phụ trách công việc đó lại là hạng mục quản lý (phía kết quả công việc của mình). Như vậy hạng mục quản lý và kiểm tra của các cấp liên kết với nhau (hệ thống hạng mục quản lý)."
     }
   ]
 }

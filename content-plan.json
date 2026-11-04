@@ -3,7 +3,7 @@
   "per_run": {
     "sun": 40,
     "tue": 40,
-    "wed": 60
+    "wed": 80
   },
   "targets": {
     "4": 500,
