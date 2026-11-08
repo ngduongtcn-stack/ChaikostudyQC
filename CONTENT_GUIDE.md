@@ -13,7 +13,8 @@ Phân野 được chia theo 分野 như đề thi thật (trường `domain` c�
 - `paused`: `true` → lần chạy chỉ báo cáo, không soạn câu mới.
 - `per_run.sun` / `per_run.tue` / `per_run.wed`: số câu soạn cho lần Chủ nhật / thứ Ba / thứ Tư. Đặt `0` để bỏ lần chạy đó. Chủ repo có thể sửa số `wed` trong ngày thứ Tư (sau khi xem dung lượng còn lại), trước giờ chạy buổi tối.
 - `topic_targets`: số câu mục tiêu theo từng phân野.
-- `boost_once`: số câu **chỉ áp dụng cho một lần chạy** (ví dụ `{"wed": 80}` khi chủ repo muốn dùng hết dung lượng cuối tuần). Nếu có giá trị cho ngày của lần chạy này thì dùng giá trị đó thay cho `per_run`, và **xóa mục đó sau khi chạy xong** (bước 7). Mặc định mỗi tuần luôn quay về `per_run`.
+- `per_run.extra` / `boost_once.extra`: dùng cho **lần chạy thêm một lần** (do chủ repo yêu cầu riêng), chạy với `--day extra`.
+- `boost_once`: số câu **chỉ áp dụng cho một lần chạy** (có thể là một số, hoặc chia theo cấp như `{"4": 57, "3": 63}`) (ví dụ `{"wed": 80}` khi chủ repo muốn dùng hết dung lượng cuối tuần). Nếu có giá trị cho ngày của lần chạy này thì dùng giá trị đó thay cho `per_run`, và **xóa mục đó sau khi chạy xong** (bước 7). Mặc định mỗi tuần luôn quay về `per_run`.
 - `note_once`: yêu cầu thêm **chỉ cho một lần chạy** (ví dụ thêm câu nâng cao). Nếu có ghi chú cho ngày của lần chạy này thì làm theo ghi chú khi soạn câu hỏi, và xóa mục đó sau khi chạy xong (cùng lúc với `boost_once`).
 - `exhausted`: phân野 đã hết nội dung mới (soạn tiếp chỉ ra câu trùng) → bỏ qua.
 - `exam`: cỡ đề thi thử, số đề tối đa, mốc đạt.

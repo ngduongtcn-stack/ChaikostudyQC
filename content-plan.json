@@ -3,9 +3,19 @@
   "per_run": {
     "sun": 40,
     "tue": 40,
-    "wed": 40
+    "wed": 40,
+    "extra": 0
   },
-  "boost_once": {},
+  "boost_once": {
+    "sun": {
+      "4": 57,
+      "3": 63
+    },
+    "extra": {
+      "4": 57,
+      "3": 63
+    }
+  },
   "note_once": {},
   "targets": {
     "4": 500,

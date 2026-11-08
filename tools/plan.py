@@ -5,9 +5,11 @@
     python3 tools/plan.py --day sun  # progress + how many questions to write per topic this run
     python3 tools/plan.py --day tue
     python3 tools/plan.py --day wed
+    python3 tools/plan.py --day extra   # one-off extra runs (per_run.extra is 0; use boost_once.extra)
 
 The number of questions per run comes from content-plan.json ("per_run").
-A one-time value in "boost_once" for the day overrides it; the run removes that entry
+A one-time value in "boost_once" for the day overrides it (a number, or a per-level
+object such as {"4": 57, "3": 63}); the run removes that entry
 afterwards (CONTENT_GUIDE.md step 7), so the next week is back to per_run.
 Allocation: split between levels by remaining need, then give each question to the
 topic with the largest remaining gap (topics listed in "exhausted" are skipped).
@@ -21,7 +23,7 @@ from qclib import PLAN, QUESTIONS, EXAMS, counts, load_json
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--day", choices=["sun", "tue", "wed"])
+    ap.add_argument("--day", choices=["sun", "tue", "wed", "extra"])
     ap.add_argument("--json", action="store_true", help="print the allocation as JSON only")
     args = ap.parse_args()
 
@@ -50,12 +52,19 @@ def main():
     alloc = {"4": {}, "3": {}}
     if args.day:
         boost = plan.get("boost_once", {}).get(args.day)
-        n_run = 0 if plan.get("paused") else int(boost if boost is not None else plan["per_run"][args.day])
+        split = None
+        if isinstance(boost, dict):
+            # per-level boost, e.g. {"4": 57, "3": 63}
+            split = {lv: 0 if plan.get("paused") else min(int(boost.get(lv, 0)), remaining[lv]) for lv in ("4", "3")}
+            n_run = sum(split.values())
+        else:
+            n_run = 0 if plan.get("paused") else int(boost if boost is not None else plan["per_run"].get(args.day, 0))
         total_rem = remaining["4"] + remaining["3"]
         n_run = min(n_run, total_rem)
-        if n_run:
+        if n_run and split is None:
             n4 = round(n_run * remaining["4"] / total_rem)
             split = {"4": n4, "3": n_run - n4}
+        if n_run:
             for lv in ("4", "3"):
                 gaps = {}
                 for topic, t_target in plan["topic_targets"][lv].items():
