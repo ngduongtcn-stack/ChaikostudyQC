@@ -6,12 +6,7 @@
     "wed": 40,
     "extra": 0
   },
-  "boost_once": {
-    "sun": {
-      "4": 57,
-      "3": 63
-    }
-  },
+  "boost_once": {},
   "note_once": {},
   "targets": {
     "4": 500,
