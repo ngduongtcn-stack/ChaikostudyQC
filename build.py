@@ -792,6 +792,7 @@ def main():
     today = date.today().isoformat()
     urls = "".join(f"<url><loc>{e(base + '/' + p)}</loc><lastmod>{today}</lastmod></url>" for p in pages)
     write("sitemap.xml", f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n')
+    write("sitemap.txt", "".join(base + "/" + p + "\n" for p in pages))
     write("robots.txt", f"User-agent: *\nAllow: /\nSitemap: {base}/sitemap.xml\n")
     write(".nojekyll", "")
     # files that must be served as-is from the site root (e.g. Google Search Console verification)
