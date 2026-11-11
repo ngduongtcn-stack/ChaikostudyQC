@@ -27,7 +27,7 @@
     ],
     "answer": 0,
     "explanation": "お客様の要求を超えた必要以上の品質を追求し、コストアップや納期遅れを招く状態を過剰品質といいます。品質はQCDのバランスの中で、お客様の要求に合ったレベルを目指すことが大切です。",
-    "explanation_vi": "過剰品質 (chất lượng thừa) là tình trạng theo đuổi độ chính xác hay chức năng vượt quá mức khách hàng cần, dẫn đến tăng chi phí hoặc chậm giao hàng. Chất lượng cần được cân bằng với chi phí và giao hàng (QCD) và đặt ở mức phù hợp với yêu cầu của khách hàng."
+    "explanation_vi": "Chất lượng thừa là tình trạng theo đuổi độ chính xác hay chức năng vượt quá mức khách hàng cần, dẫn đến tăng chi phí hoặc chậm giao hàng. Chất lượng cần được cân bằng với chi phí và giao hàng (QCD) và đặt ở mức phù hợp với yêu cầu của khách hàng."
   },
   {
     "id": "r-c07",
@@ -42,7 +42,7 @@
     ],
     "answer": 2,
     "explanation": "大骨に工程の順番を並べる特性要因図（工程分類型）は、作業の流れにそって、どの工程でどんな要因が入り込むかを整理しやすいのが特徴です。特性要因図は言葉で要因を整理する図であり、日程管理の図ではありません。大骨の数も4つに決まっているわけではありません。",
-    "explanation_vi": "特性要因図 (biểu đồ xương cá) có thể đặt các công đoạn theo thứ tự làm việc ở 大骨 (xương lớn) thay vì 4M. Cách này giúp dễ sắp xếp xem yếu tố nguyên nhân xâm nhập ở công đoạn nào theo dòng chảy công việc. Biểu đồ này sắp xếp nguyên nhân bằng lời, không dùng để quản lý tiến độ, và số 大骨 không cố định là 4."
+    "explanation_vi": "Biểu đồ nhân quả (xương cá) có thể đặt các công đoạn theo thứ tự làm việc ở các xương lớn thay vì 4M (dạng phân loại theo công đoạn). Cách này giúp dễ sắp xếp xem yếu tố nguyên nhân xâm nhập ở công đoạn nào theo dòng chảy công việc. Biểu đồ này sắp xếp nguyên nhân bằng lời, không dùng để quản lý tiến độ, và số xương lớn không cố định là 4."
   },
   {
     "id": "r-c09",
@@ -57,7 +57,7 @@
     ],
     "answer": 0,
     "explanation": "機械に手を入れる作業では、必ず電源を切り、「作業中・操作禁止」などの札をつけて、ほかの人が誤って機械を動かさないようにします。動かしたままや低速運転での作業は巻き込まれの危険があり、口頭の依頼だけでは伝達ミスで機械が動かされるおそれがあります。",
-    "explanation_vi": "Khi phải đưa tay vào trong máy, nhất định phải tắt nguồn và treo biển báo như「作業中・操作禁止」(đang làm việc – cấm vận hành) để người khác không vô tình khởi động máy. Làm việc khi máy đang chạy hoặc chạy chậm có nguy cơ bị cuốn vào; chỉ nhờ bằng lời thì dễ xảy ra sai sót trong truyền đạt."
+    "explanation_vi": "Khi phải đưa tay vào trong máy, nhất định phải tắt nguồn và treo biển báo như “Đang làm việc – Cấm vận hành” để người khác không vô tình khởi động máy. Làm việc khi máy đang chạy hoặc chạy chậm có nguy cơ bị cuốn vào; chỉ nhờ bằng lời thì dễ xảy ra sai sót trong truyền đạt."
   },
   {
     "id": "r-c14",
@@ -72,7 +72,7 @@
     ],
     "answer": 1,
     "explanation": "不良品の個数を扱うnp管理図と、欠点数を扱うc管理図は、どちらも計数値の管理図です。X̄−R管理図、X−Rs管理図、X̄−s管理図は、長さや重さなどの計量値を扱う管理図です。p管理図・u管理図は計数値ですが、組み合わせの相手が計量値の管理図になっています。",
-    "explanation_vi": "np管理図 (số sản phẩm lỗi) và c管理図 (số khuyết tật) đều là biểu đồ kiểm soát cho 計数値 (dữ liệu đếm). X̄−R, X−Rs, X̄−s là biểu đồ cho 計量値 (dữ liệu đo như chiều dài, khối lượng). p管理図 và u管理図 cũng là dữ liệu đếm, nhưng trong các phương án đó lại đi cùng một biểu đồ dữ liệu đo."
+    "explanation_vi": "Biểu đồ np (số sản phẩm lỗi) và biểu đồ c (số khuyết tật) đều là biểu đồ kiểm soát cho dữ liệu đếm. X̄−R, X−Rs, X̄−s là biểu đồ cho dữ liệu đo (như chiều dài, khối lượng). Biểu đồ p và biểu đồ u cũng dùng cho dữ liệu đếm, nhưng trong các cặp đó lại đi cùng một biểu đồ dữ liệu đo."
   },
   {
     "id": "r-d04",
@@ -87,7 +87,7 @@
     ],
     "answer": 0,
     "explanation": "等級（グレード）は、同じ用途の対象に対する要求事項の違いによる区分であり、品質は要求事項を満たす程度を表します。等級が低くても、その等級に求められる要求事項を満たしていれば品質は高いといえます。",
-    "explanation_vi": "等級 (cấp hạng, grade) là phân loại theo sự khác nhau của yêu cầu đối với các đối tượng cùng mục đích sử dụng, còn 品質 (chất lượng) là mức độ đáp ứng yêu cầu. Dù cấp hạng thấp, nếu đáp ứng tốt yêu cầu của cấp hạng đó thì vẫn có thể nói chất lượng cao."
+    "explanation_vi": "Cấp hạng (grade) là phân loại theo sự khác nhau của yêu cầu đối với các đối tượng cùng mục đích sử dụng, còn chất lượng là mức độ đáp ứng yêu cầu. Dù cấp hạng thấp, nếu đáp ứng tốt yêu cầu của cấp hạng đó thì vẫn có thể nói chất lượng cao."
   },
   {
     "id": "r-d11",

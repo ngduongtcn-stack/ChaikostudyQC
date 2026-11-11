@@ -93,9 +93,11 @@ def page(site, *, title, desc, body, depth=0, path="", nav="", crumbs=None, head
             {"@type": "ListItem", "position": k, "name": n, "item": base + u} for k, (n, u) in enumerate(items, 1)]}
         head_extra += '\n<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False) + "</script>"
         links = [f'<a href="{pre}{u or "index.html"}">{e(n)}</a>' for n, u in items[:-1]]
-        crumbs_html = ('<nav class="crumbs" aria-label="パンくずリスト"><div class="wrap">'
+        crumbs_html = (f'<nav class="crumbs" aria-label="{"Đường dẫn" if lang == "vi" else "パンくずリスト"}"><div class="wrap">'
                        + " › ".join(links + [f'<span aria-current="page">{e(items[-1][0])}</span>']) + "</div></nav>")
-    full_title = (f"{title} | {site['site_name']}" if title != site["site_name"] else f"{site['site_name']}｜{site['tagline']}")
+    vi = lang == "vi"
+    brand = VI_BRAND if vi else site["site_name"]
+    full_title = (f"{title} | {brand}" if title != site["site_name"] else f"{site['site_name']}｜{site['tagline']}")
     url = site["site_url"].rstrip("/") + "/" + path
     gsv = (f'\n<meta name="google-site-verification" content="{e(site["google_site_verification"])}">'
            if site.get("google_site_verification") else "")
@@ -116,7 +118,7 @@ def page(site, *, title, desc, body, depth=0, path="", nav="", crumbs=None, head
 <meta property="og:description" content="{e(desc)}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{e(url)}">
-<meta property="og:site_name" content="{e(site['site_name'])}">
+<meta property="og:site_name" content="{e(brand)}">
 <meta property="og:locale" content="{'vi_VN' if lang == 'vi' else 'ja_JP'}">
 <meta name="twitter:card" content="summary">{head_extra}
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -127,20 +129,19 @@ def page(site, *, title, desc, body, depth=0, path="", nav="", crumbs=None, head
 </head>
 <body>
 <header class="site-head"><div class="wrap">
-  <a class="brand" href="{pre}index.html"><span class="mark">○</span>{e(site['site_name'])}</a>
-  <nav class="nav" aria-label="メインメニュー">
-    {nav_link('4kyu/index.html', '4級', '4')}
-    {nav_link('3kyu/index.html', '3級', '3')}
-    {nav_link('exam.html', '試験について', 'exam')}
-    {nav_link('progress.html', '進捗', 'progress')}
+  <a class="brand" href="{pre}{'vi/index.html' if vi else 'index.html'}"><span class="mark">○</span>{e(brand)}</a>
+  <nav class="nav" aria-label="{'Menu chính' if vi else 'メインメニュー'}">
+    {nav_link('4kyu/index.html', 'Cấp 4' if vi else '4級', '4')}
+    {nav_link('3kyu/index.html', 'Cấp 3' if vi else '3級', '3')}
+    {nav_link('exam.html', 'Kỳ thi' if vi else '試験について', 'exam')}
+    {nav_link('progress.html', 'Tiến độ' if vi else '進捗', 'progress')}
     <a href="{pre}vi/index.html" lang="vi" hreflang="vi"{' aria-current="page"' if nav == 'vi' else ''}>Tiếng Việt</a>
   </nav>
 </div></header>
 {crumbs_html}
 {body}
 <footer class="site-foot"><div class="wrap">
-  <span>© {date.today().year} {e(site['site_name'])}　QC検定®は一般財団法人日本規格協会の登録商標です。本サイトは非公式の学習サイトです。</span>
-  <span class="foot-links"><a href="{pre}about.html">このサイトについて・プライバシー</a><a href="{pre}exam.html">試験について・よくある質問</a></span>
+  {(foot_vi if vi else foot_ja).format(year=date.today().year, name=e(site['site_name']), pre=pre)}
 </div></footer>
 <script src="{pre}assets/config.js"></script>
 <script src="{pre}assets/questions.js"></script>
@@ -351,7 +352,8 @@ def render_block(b, lang="ja"):
         items = txt if isinstance(txt, list) else b.get("ja", [])
         return f'<{tag} class="learn-list">' + "".join(f"<li>{e(x)}</li>" for x in items) + f"</{tag}>"
     if t == "formula":
-        out = '<div class="formula" lang="ja">' + "".join(f"<span>{e(line)}</span>" for line in b["f"]) + "</div>"
+        lines = b.get("f_vi", b["f"]) if lang == "vi" else b["f"]
+        out = f'<div class="formula" lang="{lang}">' + "".join(f"<span>{e(line)}</span>" for line in lines) + "</div>"
         return out + (f"<p>{e(txt)}</p>" if txt else "")
     if t == "table":
         head, rows = b["head"], b["rows"]
@@ -382,7 +384,7 @@ def build_theory(site, data, lv, idx, lang="ja"):
 
     def heading(h):
         if vi:
-            return f'<h2 id="{{id}}">{e(h.get("vi") or h["ja"])}</h2><p class="vi-h" lang="ja">{e(h["ja"])}</p>'
+            return f'<h2 id="{{id}}">{e(h.get("vi") or h["ja"])}</h2>'
         return f'<h2 id="{{id}}">{e(h["ja"])}</h2>'
 
     basic = [s for s in th["sections"] if s.get("basic")]
@@ -409,7 +411,7 @@ def build_theory(site, data, lv, idx, lang="ja"):
         toc.append(f'<li><a href="#{gid}">{e(label)}</a><ul>{"".join(sub)}</ul></li>')
 
     terms = ""
-    if th.get("terms"):
+    if th.get("terms") and not vi:
         if vi:
             rows = "".join(f'<tr><td class="term" lang="ja">{e(a)}</td><td class="yomi" lang="ja">{e(b)}</td><td>{e(c)}</td></tr>'
                            for a, b, c in th["terms"])
@@ -437,14 +439,16 @@ def build_theory(site, data, lv, idx, lang="ja"):
 
     intro = th["intro"]
     if vi:
-        switch = f'<a class="btn ghost lang-link" lang="ja" hreflang="ja" href="{up}{ja_path}">日本語で読む</a>'
+        switch = (f'<a class="btn ghost lang-link" hreflang="ja" href="{up}{ja_path}">Đọc bản tiếng Nhật</a>'
+                  f'<a class="btn ghost" href="{up}{L["slug"]}/flashcards.html">Flashcard thuật ngữ tiếng Nhật</a>')
         lead = intro.get("vi") or intro["ja"]
         h1 = f"Lý thuyết: {name}"
-        eyebrow = f"{L['name']} · Lý thuyết · {t['name']}"
+        lvn = L.get("name_vi", L["name"])
+        eyebrow = f"{lvn} · Lý thuyết"
         cta_h, cta_btn, cta_list = ("Hiểu rồi thì làm bài tập để kiểm tra", f"Làm bài tập ({n} câu)", "Danh sách câu hỏi và giải thích")
-        crumbs = [("Tiếng Việt", "vi/"), (f"{L['name']} · {name}", vi_path)]
-        title = f"Lý thuyết {L['name']}: {name} ({t['name']})"
-        desc = f"Lý thuyết {L['name']} phần {name} ({t['name']}) bằng tiếng Việt: giải thích từ cơ bản cho người mới, ví dụ thực tế, tóm tắt ý chính và thuật ngữ."
+        crumbs = [("Tiếng Việt", "vi/"), (f"{lvn} · {name}", vi_path)]
+        title = f"Lý thuyết {lvn}: {name}"
+        desc = f"Lý thuyết {lvn} phần {name} bằng tiếng Việt: giải thích từ cơ bản cho người mới, ví dụ thực tế, công thức và tóm tắt ý chính."
     else:
         switch = f'<a class="btn ghost lang-link" lang="vi" hreflang="vi" href="{up}{vi_path}">Tiếng Việt</a>'
         lead = intro["ja"]
@@ -473,25 +477,31 @@ def build_theory(site, data, lv, idx, lang="ja"):
                 alternates={"ja": ja_path, "vi": vi_path, "x-default": ja_path})
 
 
+VI_BRAND = "Sổ luyện thi QC Kentei"
+foot_ja = ('<span>© {year} {name}　QC検定®は一般財団法人日本規格協会の登録商標です。本サイトは非公式の学習サイトです。</span>\n'
+           '  <span class="foot-links"><a href="{pre}about.html">このサイトについて・プライバシー</a><a href="{pre}exam.html">試験について・よくある質問</a></span>')
+foot_vi = ('<span>© {year} Sổ luyện thi QC Kentei. QC Kentei® là nhãn hiệu đã đăng ký của Hiệp hội Tiêu chuẩn Nhật Bản (JSA). Đây là trang học tập không chính thức.</span>\n'
+           '  <span class="foot-links"><a href="{pre}about.html">Giới thiệu và quyền riêng tư (tiếng Nhật)</a><a href="{pre}exam.html">Thông tin kỳ thi (tiếng Nhật)</a></span>')
+
 FAQ = [
     ("QC検定3級・4級は、いまどのような形式の試験ですか？",
      "2025年9月の第40回から、3級・4級はテストセンターで受けるコンピュータ試験（CBT）になりました。決められた期間の中で、空いている会場と日時を選んで受検します。",
-     "Từ kỳ thi lần thứ 40 (tháng 9/2025), 3級 và 4級 thi trên máy tính (CBT) tại trung tâm thi. Thí sinh chọn địa điểm và giờ còn trống trong khoảng thời gian quy định."),
+     "Từ kỳ thi lần thứ 40 (tháng 9/2025), cấp 3 và cấp 4 thi trên máy tính (CBT) tại trung tâm thi. Thí sinh chọn địa điểm và giờ còn trống trong khoảng thời gian quy định."),
     ("3級の合格基準を教えてください。",
      "総合得点率がおおむね70%以上で、かつ手法分野・実践分野それぞれの得点率がおおむね50%以上であることが目安です。片方の分野だけが得意でも合格できないので、両方をバランスよく学びましょう。",
-     "Mốc đỗ 3級: tổng điểm khoảng 70% trở lên, đồng thời phần 手法 (phương pháp) và phần 実践 (thực tiễn) mỗi phần khoảng 50% trở lên. Giỏi một phần thôi thì chưa đỗ, nên cần học cân bằng cả hai."),
+     "Mốc đỗ cấp 3: tổng điểm khoảng 70% trở lên, đồng thời phần phương pháp và phần thực tiễn mỗi phần khoảng 50% trở lên. Giỏi một phần thôi thì chưa đỗ, nên cần học cân bằng cả hai."),
     ("4級の出題範囲と合格基準は？",
      "4級は「実践分野」「手法分野」「企業活動の基本」から出題され、総合でおおむね70%以上が合格の目安です。品質管理の基本的な用語と考え方が中心です。",
-     "4級 ra đề từ 3 phần: 実践 (thực tiễn), 手法 (phương pháp) và 企業活動の基本 (cơ bản về hoạt động doanh nghiệp). Mốc đỗ là tổng điểm khoảng 70% trở lên."),
+     "Cấp 4 ra đề từ 3 phần: thực tiễn, phương pháp và cơ bản về hoạt động doanh nghiệp. Mốc đỗ là tổng điểm khoảng 70% trở lên."),
     ("4級と3級、どちらから受ければいいですか？",
      "受検資格の制限はないので、どちらからでも受けられます。品質管理を初めて学ぶなら4級から、職場でQC七つ道具や管理図を使う機会があるなら3級から始める人も多いです。",
-     "Không có điều kiện dự thi nên bắt đầu từ cấp nào cũng được. Mới học QC thì nên bắt đầu từ 4級; nếu ở chỗ làm đã dùng 7 công cụ QC, biểu đồ kiểm soát thì nhiều người thi thẳng 3級."),
+     "Không có điều kiện dự thi nên bắt đầu từ cấp nào cũng được. Mới học QC thì nên bắt đầu từ cấp 4; nếu ở chỗ làm đã dùng 7 công cụ QC, biểu đồ kiểm soát thì nhiều người thi thẳng cấp 3."),
     ("このサイトの問題は過去問ですか？",
      "いいえ。掲載している問題と解説は、すべて運営者が独自に作成したものです。過去問題や市販の問題集を転載したものではありません。",
      "Không. Tất cả câu hỏi và lời giải thích đều do người làm web tự soạn, không chép từ đề thi cũ hay sách bán ngoài thị trường."),
     ("無料で使えますか？ベトナム語の解説はありますか？",
      "すべて無料で、登録も不要です。解説の下の「Xem giải thích bằng tiếng Việt」を押すと、ベトナム語の解説が表示されます。",
-     "Hoàn toàn miễn phí, không cần đăng ký. Bấm「Xem giải thích bằng tiếng Việt」dưới phần giải thích để xem bản tiếng Việt."),
+     "Hoàn toàn miễn phí, không cần đăng ký. Bấm “Xem giải thích bằng tiếng Việt” dưới phần giải thích để xem bản tiếng Việt."),
 ]
 
 
@@ -595,14 +605,14 @@ def build_flashcards(site, data, lv):
 
 
 VI_FAQ = [
-    ("QC検定 là gì?",
-     "QC検定 (品質管理検定 – Kiểm định quản lý chất lượng) là kỳ thi do Hiệp hội Tiêu chuẩn Nhật Bản (JSA) và Hiệp hội Khoa học Kỹ thuật Nhật Bản (JUSE) tổ chức, đánh giá kiến thức quản lý chất lượng. Có 4 cấp, từ 4級 (cơ bản nhất) đến 1級. Nhiều nhà máy ở Nhật khuyến khích nhân viên thi 4級, 3級."),
-    ("Hiện nay 3級 và 4級 thi như thế nào?",
-     "Từ kỳ thi lần thứ 40 (tháng 9/2025), 3級 và 4級 thi trên máy tính (CBT) tại trung tâm thi. Thí sinh tự chọn địa điểm và giờ thi trong khoảng thời gian quy định. Đề thi hoàn toàn bằng tiếng Nhật, dạng trắc nghiệm."),
+    ("QC Kentei là gì?",
+     "QC Kentei (kỳ thi kiểm định quản lý chất lượng) là kỳ thi do Hiệp hội Tiêu chuẩn Nhật Bản (JSA) và Hiệp hội Khoa học Kỹ thuật Nhật Bản (JUSE) tổ chức, đánh giá kiến thức quản lý chất lượng. Có 4 cấp, từ cấp 4 (cơ bản nhất) đến cấp 1. Nhiều nhà máy ở Nhật khuyến khích nhân viên thi cấp 4, cấp 3."),
+    ("Hiện nay cấp 3 và cấp 4 thi như thế nào?",
+     "Từ kỳ thi lần thứ 40 (tháng 9/2025), cấp 3 và cấp 4 thi trên máy tính (CBT) tại trung tâm thi. Thí sinh tự chọn địa điểm và giờ thi trong khoảng thời gian quy định. Đề thi hoàn toàn bằng tiếng Nhật, dạng trắc nghiệm."),
     ("Tiêu chuẩn đỗ là bao nhiêu?",
-     "3級: tổng điểm khoảng 70% trở lên, đồng thời phần 手法 (phương pháp) và phần 実践 (thực tiễn) mỗi phần khoảng 50% trở lên. 4級: tổng điểm khoảng 70% trở lên."),
+     "Cấp 3: tổng điểm khoảng 70% trở lên, đồng thời phần phương pháp và phần thực tiễn mỗi phần khoảng 50% trở lên. Cấp 4: tổng điểm khoảng 70% trở lên."),
     ("Không giỏi tiếng Nhật có học được không?",
-     "Đề thi bằng tiếng Nhật nên vẫn cần học thuật ngữ tiếng Nhật. Trên web này, câu hỏi giữ nguyên tiếng Nhật như đề thật, còn lời giải thích và bài lý thuyết có thêm bản tiếng Việt; thuật ngữ có cách đọc hiragana và nghĩa tiếng Việt, kèm flashcard để học thuộc."),
+     "Đề thi bằng tiếng Nhật nên vẫn cần học thuật ngữ tiếng Nhật. Trên web này, câu hỏi giữ nguyên tiếng Nhật như đề thật, còn lời giải thích và bài lý thuyết có bản tiếng Việt riêng. Thuật ngữ tiếng Nhật (kèm cách đọc) được tập hợp ở trang lý thuyết tiếng Nhật và flashcard để học thuộc."),
     ("Web có mất phí hay cần đăng ký không?",
      "Không. Web hoàn toàn miễn phí, không cần đăng ký. Tiến độ học được lưu ngay trên trình duyệt của bạn."),
     ("Câu hỏi trên web có phải đề thi cũ không?",
@@ -622,14 +632,13 @@ def build_vi(site, data):
         rows = ""
         for d, ts in groups.items():
             dj = L.get("domains", {}).get(d, ""); dv = L.get("domains_vi", {}).get(d, "")
-            rows += f'<h3 class="domain-h">{e(dv)} <span lang="ja">（{e(dj)}）</span></h3><ul class="topics">'
+            rows += f'<h3 class="domain-h">Phần {e(dv.lower())}</h3><ul class="topics">'
             for t in ts:
                 k = sum(1 for q in data["questions"] if str(q["level"]) == lv and q["topic"] == t["id"])
                 learn = (f'<a class="btn" href="{L["slug"]}/{t["id"]}.html">Lý thuyết</a>'
                          if f"{lv}:{t['id']}" in data["theory"] else "")
                 rows += f"""<li><div>
     <span class="t-name">{e(t.get('name_vi', t['name']))}</span>
-    <p class="t-desc" lang="ja">{e(t['name'])}</p>
     <span class="meta">{k} câu</span>
   </div><div class="t-actions">
     {learn}
@@ -637,9 +646,9 @@ def build_vi(site, data):
   </div></li>"""
             rows += "</ul>"
         lv_blocks.append(f"""<section aria-labelledby="vi-h{lv}">
-  <h2 id="vi-h{lv}">{e(L['name'])} <span class="meta">· {n} câu · {n_ex} đề thi thử</span></h2>
+  <h2 id="vi-h{lv}">{e(L.get('name_vi', L['name']))} <span class="meta">· {n} câu · {n_ex} đề thi thử</span></h2>
   <div class="btn-row">
-    <a class="btn primary" href="../{L['slug']}/index.html">Vào trang {e(L['name'])}</a>
+    <a class="btn primary" href="../{L['slug']}/index.html">Vào trang bài tập {e(L.get('name_vi', L['name']))}</a>
     <a class="btn" href="../{L['slug']}/flashcards.html">Flashcard thuật ngữ</a>
   </div>
   {rows}
@@ -648,34 +657,34 @@ def build_vi(site, data):
     ld = {"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "vi", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in VI_FAQ]}
     total = len(data["questions"])
-    body = hero("QC KENTEI · TIẾNG VIỆT", "Ôn thi QC検定 4級・3級 miễn phí, có giải thích tiếng Việt",
+    body = hero("QC KENTEI · TIẾNG VIỆT", "Ôn thi QC Kentei cấp 4, cấp 3 miễn phí, có giải thích tiếng Việt",
                 f"Dành cho người Việt đang làm việc tại Nhật. Câu hỏi bằng tiếng Nhật như đề thật, lời giải thích và lý thuyết có bản tiếng Việt. Hiện có {total} câu, mỗi tuần đều thêm câu mới.",
-                '<div class="btn-row" style="margin-top:20px"><a class="btn primary" href="../4kyu/index.html">Bắt đầu 4級</a><a class="btn primary" href="../3kyu/index.html">Bắt đầu 3級</a><a class="btn" href="../progress.html">Xem tiến độ</a></div>') + f"""
+                '<div class="btn-row" style="margin-top:20px"><a class="btn primary" href="../4kyu/index.html">Bắt đầu cấp 4</a><a class="btn primary" href="../3kyu/index.html">Bắt đầu cấp 3</a><a class="btn" href="../progress.html">Xem tiến độ</a></div>') + f"""
 <main><div class="wrap">
 <section aria-labelledby="vi-how">
   <h2 id="vi-how">Học trên web này như thế nào</h2>
   <ol class="learn-list">
-    <li><b>Đọc lý thuyết</b> bằng tiếng Việt của từng phân野: phần cơ bản cho người mới, tóm tắt ý chính, công thức, lỗi hay gặp, mẹo nhớ và bảng thuật ngữ có cách đọc, nghĩa tiếng Việt.</li>
-    <li><b>Làm bài tập</b> theo phân野: chọn đáp án là biết đúng sai ngay, kèm giải thích tiếng Nhật và tiếng Việt.</li>
+    <li><b>Đọc lý thuyết</b> bằng tiếng Việt của từng chủ đề: phần cơ bản cho người mới, tóm tắt ý chính, công thức, lỗi hay gặp và mẹo nhớ.</li>
+    <li><b>Làm bài tập</b> theo chủ đề: chọn đáp án là biết đúng sai ngay, kèm giải thích tiếng Nhật và tiếng Việt.</li>
     <li><b>Ôn câu sai</b>: câu làm sai được tự động gom lại để ôn.</li>
-    <li><b>Thi thử 50 câu</b>: có đồng hồ, chấm theo đúng tiêu chuẩn đỗ (3級 cần tổng ≥ 70% và mỗi phần ≥ 50%).</li>
+    <li><b>Thi thử 50 câu</b>: có đồng hồ, chấm theo đúng tiêu chuẩn đỗ (cấp 3 cần tổng ≥ 70% và mỗi phần ≥ 50%).</li>
   </ol>
   <aside class="point"><span class="point-label">MẸO</span>
-    <p>Mới học QC lần đầu? Hãy bắt đầu từ phần「Học từ cơ bản」ở đầu mỗi bài lý thuyết: giải thích bằng ví dụ thực tế, rồi đến ví dụ tính toán từng bước. Câu hỏi bài tập giữ nguyên tiếng Nhật như đề thật; giải thích tiếng Việt hiện ngay dưới mỗi câu (bấm「Ẩn giải thích tiếng Việt」nếu muốn luyện chỉ tiếng Nhật).</p>
+    <p>Mới học QC lần đầu? Hãy bắt đầu từ phần “Học từ cơ bản” ở đầu mỗi bài lý thuyết: giải thích bằng ví dụ thực tế, rồi đến ví dụ tính toán từng bước. Câu hỏi bài tập giữ nguyên tiếng Nhật như đề thật; giải thích tiếng Việt hiện ngay dưới mỗi câu (bấm “Ẩn giải thích tiếng Việt” nếu muốn luyện chỉ tiếng Nhật).</p>
   </aside>
 </section>
 {''.join(lv_blocks)}
 <section aria-labelledby="vi-faq">
   <h2 id="vi-faq">Câu hỏi thường gặp</h2>
   {faq_html}
-  <p class="note">Lịch thi, lệ phí và cách đăng ký có thể thay đổi; hãy xem thông tin chính thức của JSA và <a href="https://cbt-s.com/page/qckc_all.html/" rel="noopener" target="_blank">trang đăng ký thi CBT</a>. Tóm tắt bằng tiếng Nhật: <a href="../exam.html" lang="ja">試験について</a>.</p>
+  <p class="note">Lịch thi, lệ phí và cách đăng ký có thể thay đổi; hãy xem thông tin chính thức của JSA và <a href="https://cbt-s.com/page/qckc_all.html/" rel="noopener" target="_blank">trang đăng ký thi CBT</a>. Tóm tắt bằng tiếng Nhật: <a href="../exam.html" hreflang="ja">trang thông tin kỳ thi</a>.</p>
 </section>
 </div></main>"""
-    return page(site, title="Ôn thi QC検定 4級・3級 miễn phí – giải thích tiếng Việt", depth=1, path="vi/", nav="vi", body=body,
+    return page(site, title="Ôn thi QC Kentei cấp 4, cấp 3 miễn phí – giải thích tiếng Việt", depth=1, path="vi/", nav="vi", body=body,
                 lang="vi", alternates={"vi": "vi/", "ja": "", "x-default": ""},
                 crumbs=[("Tiếng Việt", "vi/")],
                 head_extra='\n<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False) + "</script>",
-                desc=f"Web ôn thi QC検定 4級・3級 miễn phí cho người Việt tại Nhật: {total} câu hỏi có giải thích tiếng Việt, lý thuyết song ngữ, flashcard thuật ngữ và đề thi thử chấm như thi thật.")
+                desc=f"Web ôn thi QC Kentei (QC検定) cấp 4, cấp 3 miễn phí cho người Việt tại Nhật: {total} câu hỏi có giải thích tiếng Việt, lý thuyết tiếng Việt, flashcard thuật ngữ và đề thi thử chấm như thi thật.")
 
 def build_quiz(site):
     body = """<main><div class="wrap">
