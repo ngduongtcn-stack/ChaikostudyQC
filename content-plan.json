@@ -13,7 +13,7 @@
     }
   },
   "note_once": {
-    "wed": "Yêu cầu riêng hôm nay của chủ repo: 200 câu mỗi cấp (4級 tối đa đến đủ 500). Phần còn lại đã soạn trong phiên trò chuyện; lần chạy này soạn 4級 60, 3級 60. explanation_vi phải hoàn toàn tiếng Việt, không lẫn chữ Nhật."
+    "wed": "Yêu cầu riêng hôm nay của chủ repo: 200 câu mỗi cấp. Trong phiên trò chuyện đã thêm 4級 126, 3級 140; lần chạy này thêm 4級 60 (đủ mục tiêu 500), 3級 60. Kho dự trữ có sẵn 4級 36, 3級 31 câu đã kiểm tra — dùng trước. explanation_vi phải hoàn toàn tiếng Việt."
   },
   "targets": {
     "4": 500,
