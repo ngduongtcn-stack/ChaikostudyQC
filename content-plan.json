@@ -6,15 +6,8 @@
     "wed": 40,
     "extra": 0
   },
-  "boost_once": {
-    "wed": {
-      "4": 60,
-      "3": 60
-    }
-  },
-  "note_once": {
-    "wed": "Yêu cầu riêng hôm nay của chủ repo: 200 câu mỗi cấp. Trong phiên trò chuyện đã thêm 4級 126, 3級 140; lần chạy này thêm 4級 60 (đủ mục tiêu 500), 3級 60. Kho dự trữ có sẵn 4級 36, 3級 31 câu đã kiểm tra — dùng trước. explanation_vi phải hoàn toàn tiếng Việt."
-  },
+  "boost_once": {},
+  "note_once": {},
   "targets": {
     "4": 500,
     "3": 1000
