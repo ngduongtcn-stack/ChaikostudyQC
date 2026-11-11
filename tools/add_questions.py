@@ -19,6 +19,7 @@ of the same level fill the gap, so the level total still matches the plan.
   check, not yet reviewed by a person) and appends to src/data/questions.json.
 """
 import argparse
+import re
 import random
 import sys
 
@@ -46,7 +47,12 @@ def problems(q, topics):
     for f in ("question", "explanation", "explanation_vi"):
         if not str(q.get(f, "")).strip():
             errs.append(f"thiếu {f}")
+    if JP_CHARS.search(str(q.get("explanation_vi", ""))):
+        errs.append("explanation_vi còn chữ Nhật — phải viết hoàn toàn bằng tiếng Việt")
     return errs
+
+
+JP_CHARS = re.compile(r"[\u3000-\u30ff\u3400-\u9fff\uff01-\uff60]")
 
 
 def shuffle_choices(q):

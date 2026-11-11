@@ -6,8 +6,15 @@
     "wed": 40,
     "extra": 0
   },
-  "boost_once": {},
-  "note_once": {},
+  "boost_once": {
+    "wed": {
+      "4": 60,
+      "3": 60
+    }
+  },
+  "note_once": {
+    "wed": "Yêu cầu riêng hôm nay của chủ repo: 200 câu mỗi cấp (4級 tối đa đến đủ 500). Phần còn lại đã soạn trong phiên trò chuyện; lần chạy này soạn 4級 60, 3級 60. explanation_vi phải hoàn toàn tiếng Việt, không lẫn chữ Nhật."
+  },
   "targets": {
     "4": 500,
     "3": 1000

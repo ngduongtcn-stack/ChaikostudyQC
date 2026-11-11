@@ -4,7 +4,7 @@ Tài liệu này là quy trình chuẩn cho mỗi lần chạy tự động. L�
 
 Mục tiêu: 4級 500 câu, 3級 1.000 câu, rồi đề thi thử (4級 10 đề, 3級 20 đề, mỗi đề 50 câu, mở dần tự động).
 
-Phân野 được chia theo 分野 như đề thi thật (trường `domain` của từng topic trong `questions.json`):
+Các phần được chia theo 分野 như đề thi thật (trường `domain` của từng topic trong `questions.json`):
 - 4級: 実践分野, 手法分野, 企業活動の基本 (đỗ khi tổng ≥ 70%).
 - 3級: 手法分野 và 実践分野, mỗi phần 50% số câu của đề thi thử (đỗ khi tổng ≥ 70% **và** mỗi phần ≥ 50%). `make_exams.py` chỉ tạo đề 3級 khi mỗi phần có đủ 25 câu chưa dùng, nên phần nào thiếu thì `plan.py` sẽ tự ưu tiên phần đó. Đây là việc làm thêm bằng dung lượng dư: **ưu tiên chất lượng hơn số lượng**. Thiếu câu hay còn hơn câu trùng hoặc sai.
 
@@ -12,11 +12,11 @@ Phân野 được chia theo 分野 như đề thi thật (trường `domain` c�
 
 - `paused`: `true` → lần chạy chỉ báo cáo, không soạn câu mới.
 - `per_run.sun` / `per_run.tue` / `per_run.wed`: số câu soạn cho lần Chủ nhật / thứ Ba / thứ Tư. Đặt `0` để bỏ lần chạy đó. Chủ repo có thể sửa số `wed` trong ngày thứ Tư (sau khi xem dung lượng còn lại), trước giờ chạy buổi tối.
-- `topic_targets`: số câu mục tiêu theo từng phân野.
+- `topic_targets`: số câu mục tiêu theo từng chủ đề.
 - `per_run.extra` / `boost_once.extra`: dùng cho **lần chạy thêm một lần** (do chủ repo yêu cầu riêng), chạy với `--day extra`.
 - `boost_once`: số câu **chỉ áp dụng cho một lần chạy** (có thể là một số, hoặc chia theo cấp như `{"4": 57, "3": 63}`) (ví dụ `{"wed": 80}` khi chủ repo muốn dùng hết dung lượng cuối tuần). Nếu có giá trị cho ngày của lần chạy này thì dùng giá trị đó thay cho `per_run`, và **xóa mục đó sau khi chạy xong** (bước 7). Mặc định mỗi tuần luôn quay về `per_run`.
 - `note_once`: yêu cầu thêm **chỉ cho một lần chạy** (ví dụ thêm câu nâng cao). Nếu có ghi chú cho ngày của lần chạy này thì làm theo ghi chú khi soạn câu hỏi, và xóa mục đó sau khi chạy xong (cùng lúc với `boost_once`).
-- `exhausted`: phân野 đã hết nội dung mới (soạn tiếp chỉ ra câu trùng) → bỏ qua.
+- `exhausted`: chủ đề đã hết nội dung mới (soạn tiếp chỉ ra câu trùng) → bỏ qua.
 - `exam`: cỡ đề thi thử, số đề tối đa, mốc đạt.
 
 ## Các bước
@@ -30,11 +30,11 @@ python3 tools/plan.py --day sun   # hoặc --day tue / --day wed
 Nếu kết quả là "paused" hoặc "Đã đạt mục tiêu" → bỏ qua bước 2–5, chỉ làm bước 6–8.
 
 ### 2. Đọc tài liệu trước khi soạn
-- `src/data/theory.json`: phần lý thuyết của các phân野 được phân công.
-- Toàn bộ câu hỏi hiện có của các phân野 đó trong `src/data/questions.json`, để **không soạn lại ý đã có** (cùng khái niệm, cùng cách hỏi, chỉ đổi chữ cũng tính là trùng).
+- `src/data/theory.json`: phần lý thuyết của các chủ đề được phân công.
+- Toàn bộ câu hỏi hiện có của các chủ đề đó trong `src/data/questions.json`, để **không soạn lại ý đã có** (cùng khái niệm, cùng cách hỏi, chỉ đổi chữ cũng tính là trùng).
 
 ### 3. Soạn câu hỏi ứng viên
-Trước tiên xem `src/data/reserve.json` (kho dự trữ): đây là những câu đã qua kiểm tra ở lần trước nhưng chưa dùng, và sẽ được dùng trước. Với mỗi phân野, lấy số câu được phân công trừ đi số câu dự trữ của phân野 đó, rồi soạn khoảng **phần còn lại + 20%** (để bù câu bị loại). Ghi vào `candidates.json` dạng danh sách:
+Trước tiên xem `src/data/reserve.json` (kho dự trữ): đây là những câu đã qua kiểm tra ở lần trước nhưng chưa dùng, và sẽ được dùng trước. Với mỗi chủ đề, lấy số câu được phân công trừ đi số câu dự trữ của chủ đề đó, rồi soạn khoảng **phần còn lại + 20%** (để bù câu bị loại). Ghi vào `candidates.json` dạng danh sách:
 
 ```json
 {"id": "c01", "level": 3, "topic": "kanrizu", "question": "…", "choices": ["…","…","…","…"],
@@ -48,12 +48,12 @@ Quy tắc chất lượng:
 - Đa dạng dạng câu hỏi: định nghĩa, ví dụ áp dụng, tính toán, chọn câu「適切でないもの」, phân biệt hai khái niệm gần nhau, đọc tình huống thực tế ở nhà máy.
 - Câu tính toán: **tính lại mọi con số bằng Python**; ưu tiên số đẹp; phương án sai nên là kết quả của lỗi thường gặp (chia n thay vì n−1, một phía/hai phía…).
 - `explanation` (tiếng Nhật): 2–4 câu, nói vì sao đúng và vì sao phương án dễ nhầm là sai.
-- `explanation_vi`: tiếng Việt tự nhiên; giữ thuật ngữ tiếng Nhật kèm nghĩa trong ngoặc, ví dụ 管理限界線 (đường giới hạn kiểm soát).
+- `explanation_vi`: **hoàn toàn bằng tiếng Việt**, không chèn chữ Nhật (kanji/kana, dấu 「」（）・). Dịch thuật ngữ sang tiếng Việt chuẩn, ví dụ "đường giới hạn kiểm soát", "biểu đồ Pareto"; được giữ ký hiệu/viết tắt Latin quốc tế (QC, PDCA, JIS, ISO 9001, x̄–R, Cp). Khi nhắc tới một phương án thì diễn đạt nội dung bằng tiếng Việt ("phương án nói rằng…"), không chép nguyên văn tiếng Nhật. `add_questions.py` sẽ từ chối câu có chữ Nhật trong `explanation_vi`.
 - Không dùng thông tin dễ thay đổi theo thời gian (ngày thi, lệ phí, số liệu thống kê mới nhất…).
 - 3級 có thể hỏi cả kiến thức 4級, nhưng phải ở mức sâu hơn.
-- Phân野 実践 (品質の概念, 管理の方法, 品質保証, 品質経営の要素) cần câu hỏi tình huống thực tế ở nơi làm việc, không chỉ hỏi định nghĩa.
+- Chủ đề 実践 (品質の概念, 管理の方法, 品質保証, 品質経営の要素) cần câu hỏi tình huống thực tế ở nơi làm việc, không chỉ hỏi định nghĩa.
 
-**Lần chạy lớn (trên 25 câu):** soạn và kiểm tra theo **từng đợt tối đa khoảng 25 câu ứng viên** (`candidates-1.json`, `candidates-2.json`, …). Chia đợt theo phân野 để mỗi đợt tập trung vào vài chủ đề. Mỗi đợt làm riêng bước 4 với một tác tử kiểm tra riêng, rồi gộp ở bước 5. Trước khi soạn đợt sau, xem lại các câu của đợt trước để không lặp ý.
+**Lần chạy lớn (trên 25 câu):** soạn và kiểm tra theo **từng đợt tối đa khoảng 25 câu ứng viên** (`candidates-1.json`, `candidates-2.json`, …). Chia đợt theo chủ đề để mỗi đợt tập trung vào vài chủ đề. Mỗi đợt làm riêng bước 4 với một tác tử kiểm tra riêng, rồi gộp ở bước 5. Trước khi soạn đợt sau, xem lại các câu của đợt trước để không lặp ý.
 
 ### 4. Kiểm tra độc lập (bắt buộc)
 ```bash
@@ -74,9 +74,9 @@ Chỉ những câu khớp đáp án **và** `confident: true` mới được gi�
 ```bash
 python3 tools/add_questions.py verified-1.json verified-2.json --alloc "$(python3 tools/plan.py --day sun --json)" --reserve src/data/reserve.json
 ```
-(Thay `sun` bằng `tue` hoặc `wed` cho lần thứ Ba / thứ Tư.) Script dùng kho dự trữ trước, giới hạn đúng số câu đã phân công cho từng phân野, loại câu gần giống câu đã có, gán ID mới và đặt `status: "checked"` (đã qua kiểm tra độc lập, chưa qua người duyệt). Câu đạt nhưng dư được cất lại vào kho dự trữ cho lần sau.
+(Thay `sun` bằng `tue` hoặc `wed` cho lần thứ Ba / thứ Tư.) Script dùng kho dự trữ trước, giới hạn đúng số câu đã phân công cho từng chủ đề, loại câu gần giống câu đã có, gán ID mới và đặt `status: "checked"` (đã qua kiểm tra độc lập, chưa qua người duyệt). Câu đạt nhưng dư được cất lại vào kho dự trữ cho lần sau.
 
-Nếu một phân野 có **hơn một nửa** số câu ứng viên bị loại vì trùng, phân野 đó coi như đã hết nội dung mới: thêm nó vào `exhausted` trong `content-plan.json`.
+Nếu một chủ đề có **hơn một nửa** số câu ứng viên bị loại vì trùng, chủ đề đó coi như đã hết nội dung mới: thêm nó vào `exhausted` trong `content-plan.json`.
 
 ### 6. Đề thi thử
 ```bash
@@ -99,7 +99,7 @@ Chờ GitHub Actions ("Build and deploy site") chạy xong với trạng thái t
 Ngắn gọn, bằng tiếng Việt:
 - số câu đã thêm (4級 / 3級), số câu bị loại và lý do chính;
 - tổng hiện tại so với mục tiêu, số đề thi thử;
-- phân野 nào mới được đánh dấu hết nội dung;
+- chủ đề nào mới được đánh dấu hết nội dung;
 - 3 câu ngẫu nhiên vừa thêm (ID + câu hỏi), để chủ repo kiểm tra ngẫu nhiên.
 
 ## Trạng thái câu hỏi
