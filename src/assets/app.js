@@ -426,7 +426,7 @@
       var L = DATA.levels[String(q.level)] || {};
       var list = el("ul", { class: "choices" });
       var sheet = el("div", { class: "sheet" }, [
-        el("span", { class: "meta", text: (L.name || "") + " ・ " + topicName(q.level, q.topic) }),
+        el("span", { class: "meta", text: (L.name || "") + " ・ " + topicName(q.level, q.topic) + (q.advanced ? " ・ 応用" : "") }),
         el("p", { class: "qtext", text: q.question }), list
       ]);
       var buttons = [];

@@ -304,7 +304,7 @@ def build_topic(site, data, lv, idx):
             vi = (f'\n    <details class="vi-details" lang="vi"><summary><span class="vi-badge">VI</span>'
                   f'Giải thích bằng tiếng Việt</summary><p>{e(q["explanation_vi"])}</p></details>')
         items.append(f"""<article class="qitem" id="q{q['id']}">
-  <span class="qid">問題ID {q['id']}</span>
+  <span class="qid">問題ID {q['id']}</span>{' <span class="adv-badge" title="試験レベルより少し難しい応用問題">応用</span>' if q.get('advanced') else ''}
   <p><strong>{e(q['question'])}</strong></p>
   <ol>{lis}</ol>
   <details>
@@ -761,7 +761,7 @@ def main():
     for f in ("style.css", "app.js"):
         shutil.copy(SRC / "assets" / f, DIST / "assets" / f)
 
-    fields = ("id", "level", "topic", "question", "choices", "answer", "explanation", "explanation_vi")
+    fields = ("id", "level", "topic", "question", "choices", "answer", "explanation", "explanation_vi", "advanced")
     public_q = [{k: q[k] for k in fields if k in q} for q in data["questions"]]
     known = {q["id"] for q in public_q}
     exams = {lv: [ex for ex in sets if all(i in known for i in ex)] for lv, sets in data["exams"].items()}

@@ -330,3 +330,9 @@ p.vi-t { margin: 0; }
 .fc-vi { font-size: 1.1rem; font-weight: 700; color: var(--ai); }
 .fc-hint { font-size: .8rem; color: var(--ink-soft); }
 .fc-actions { justify-content: center; }
+
+.adv-badge {
+  display: inline-block; margin-left: 6px; font-size: .7rem; font-weight: 700; letter-spacing: .06em;
+  color: var(--ai); border: 1px solid currentColor; border-radius: 4px; padding: 0 6px; line-height: 1.6;
+  vertical-align: middle;
+}

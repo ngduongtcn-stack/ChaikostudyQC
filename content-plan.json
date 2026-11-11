@@ -44,6 +44,40 @@
       "data3"
     ]
   },
+  "advanced_targets": {
+    "4": 200,
+    "3": 500
+  },
+  "advanced_topic_targets": {
+    "4": {
+      "kangaekata": 22,
+      "hinshitsu": 18,
+      "kaizen": 18,
+      "kensa": 18,
+      "hyojun": 16,
+      "kotei": 16,
+      "data": 36,
+      "7tools": 36,
+      "kigyo": 20
+    },
+    "3": {
+      "data3": 45,
+      "7tools3": 45,
+      "shin7": 30,
+      "toukei": 40,
+      "kanrizu": 45,
+      "kouteinouryoku": 30,
+      "soukan": 15,
+      "gainen3": 60,
+      "hoho3": 65,
+      "hosho3": 65,
+      "kanri": 60
+    }
+  },
+  "exhausted_advanced": {
+    "4": [],
+    "3": []
+  },
   "exam": {
     "size": 50,
     "max_exams": {

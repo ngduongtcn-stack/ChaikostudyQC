@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Create new mock exams (模擬試験) from questions not yet used in any exam.
+Questions marked "advanced" (nâng cao, above exam level) are never put into new exams.
 
     python3 tools/make_exams.py
 
@@ -39,7 +40,7 @@ def main():
         split = splits.get(lv)
         used = {i for ex in exams[lv] for i in ex}
         while len(exams[lv]) < plan["exam"]["max_exams"][lv]:
-            free = [q for q in data["questions"] if str(q["level"]) == lv and q["id"] not in used]
+            free = [q for q in data["questions"] if str(q["level"]) == lv and q["id"] not in used and not q.get("advanced")]
             if split:
                 need = {d: round(size * share) for d, share in split.items()}
                 need[max(need, key=need.get)] += size - sum(need.values())
@@ -61,7 +62,7 @@ def main():
             exams[lv].append(pick)
             used.update(pick)
             made.append(f"{lv}級 第{len(exams[lv])}回")
-        free_qs = [q for q in data["questions"] if str(q["level"]) == lv and q["id"] not in used]
+        free_qs = [q for q in data["questions"] if str(q["level"]) == lv and q["id"] not in used and not q.get("advanced")]
         if split:
             have = {d: sum(1 for q in free_qs if domain_of.get(q["topic"]) == d) for d in split}
             need = {d: round(size * s) for d, s in split.items()}

@@ -3,6 +3,7 @@
 Tài liệu này là quy trình chuẩn cho mỗi lần chạy tự động. Lần chạy nào cũng làm đúng các bước dưới đây, theo thứ tự.
 
 Mục tiêu: 4級 500 câu, 3級 1.000 câu, rồi đề thi thử (4級 10 đề, 3級 20 đề, mỗi đề 50 câu, mở dần tự động).
+Sau khi một cấp đủ câu cơ bản, cấp đó chuyển sang **giai đoạn nâng cao**: thêm 4級 200 câu, 3級 500 câu nâng cao (xem mục "Câu nâng cao" bên dưới).
 
 Các phần được chia theo 分野 như đề thi thật (trường `domain` của từng topic trong `questions.json`):
 - 4級: 実践分野, 手法分野, 企業活動の基本 (đỗ khi tổng ≥ 70%).
@@ -17,6 +18,8 @@ Các phần được chia theo 分野 như đề thi thật (trường `domain` 
 - `boost_once`: số câu **chỉ áp dụng cho một lần chạy** (có thể là một số, hoặc chia theo cấp như `{"4": 57, "3": 63}`) (ví dụ `{"wed": 80}` khi chủ repo muốn dùng hết dung lượng cuối tuần). Nếu có giá trị cho ngày của lần chạy này thì dùng giá trị đó thay cho `per_run`, và **xóa mục đó sau khi chạy xong** (bước 7). Mặc định mỗi tuần luôn quay về `per_run`.
 - `note_once`: yêu cầu thêm **chỉ cho một lần chạy** (ví dụ thêm câu nâng cao). Nếu có ghi chú cho ngày của lần chạy này thì làm theo ghi chú khi soạn câu hỏi, và xóa mục đó sau khi chạy xong (cùng lúc với `boost_once`).
 - `exhausted`: chủ đề đã hết nội dung mới (soạn tiếp chỉ ra câu trùng) → bỏ qua.
+- `advanced_targets` / `advanced_topic_targets`: số câu nâng cao mục tiêu (theo cấp / theo chủ đề), đếm các câu có `"advanced": true`. `plan.py` chỉ phân công câu nâng cao cho một cấp khi cấp đó đã đủ `topic_targets` cơ bản (chủ đề cơ bản trong `exhausted` coi như đủ).
+- `exhausted_advanced`: chủ đề đã hết ý cho câu nâng cao → bỏ qua (danh sách riêng, không dùng chung với `exhausted`).
 - `exam`: cỡ đề thi thử, số đề tối đa, mốc đạt.
 
 ## Các bước
@@ -51,6 +54,14 @@ Quy tắc chất lượng:
 - `explanation_vi`: **hoàn toàn bằng tiếng Việt**, không chèn chữ Nhật (kanji/kana, dấu 「」（）・). Dịch thuật ngữ sang tiếng Việt chuẩn, ví dụ "đường giới hạn kiểm soát", "biểu đồ Pareto"; được giữ ký hiệu/viết tắt Latin quốc tế (QC, PDCA, JIS, ISO 9001, x̄–R, Cp). Khi nhắc tới một phương án thì diễn đạt nội dung bằng tiếng Việt ("phương án nói rằng…"), không chép nguyên văn tiếng Nhật. `add_questions.py` sẽ từ chối câu có chữ Nhật trong `explanation_vi`.
 - Không dùng thông tin dễ thay đổi theo thời gian (ngày thi, lệ phí, số liệu thống kê mới nhất…).
 - 3級 có thể hỏi cả kiến thức 4級, nhưng phải ở mức sâu hơn.
+
+**Câu nâng cao** (các dòng `plan.py` in kèm `[nâng cao → "advanced": true]`, tức `alloc["adv"]` trong `--json`): ghi `"advanced": true` vào ứng viên. Đây là câu **khó hơn mức đề thi thật một bậc**, để người học đã làm hết câu cơ bản luyện sâu hơn:
+- Vẫn nằm trong phạm vi của cấp đó (4級 có thể chạm nhẹ tới kiến thức cơ bản của 3級; 3級 có thể chạm nhẹ tới phần đầu của 2級), và phần giải thích phải tự đủ để hiểu, không giả định người học đã học phần vượt cấp.
+- Dạng nên dùng: tính toán nhiều bước; tình huống thực tế kết hợp hai, ba khái niệm; đọc bảng số liệu hay mô tả biểu đồ rồi đưa ra phán đoán; phân biệt các khái niệm rất gần nhau; tìm chỗ sai trong một cách làm/lập luận; chọn thứ tự các bước đúng.
+- Không làm câu "khó" bằng cách đánh đố chữ, dùng thuật ngữ hiếm, hay số liệu xấu. Vẫn chỉ một đáp án đúng rõ ràng, phương án sai là lỗi hay gặp.
+- Không lặp lại ý của câu cơ bản đã có chỉ bằng cách đổi số: câu nâng cao phải đòi hỏi thêm ít nhất một bước suy luận.
+- Câu nâng cao không được đưa vào đề thi thử (`make_exams.py` tự loại); trên trang web chúng có nhãn 応用.
+- Kho dự trữ: câu dự trữ có `"advanced": true` tính vào phần nâng cao của chủ đề, câu không có thì tính vào phần cơ bản.
 - Chủ đề 実践 (品質の概念, 管理の方法, 品質保証, 品質経営の要素) cần câu hỏi tình huống thực tế ở nơi làm việc, không chỉ hỏi định nghĩa.
 
 **Lần chạy lớn (trên 25 câu):** soạn và kiểm tra theo **từng đợt tối đa khoảng 25 câu ứng viên** (`candidates-1.json`, `candidates-2.json`, …). Chia đợt theo chủ đề để mỗi đợt tập trung vào vài chủ đề. Mỗi đợt làm riêng bước 4 với một tác tử kiểm tra riêng, rồi gộp ở bước 5. Trước khi soạn đợt sau, xem lại các câu của đợt trước để không lặp ý.
@@ -76,7 +87,7 @@ python3 tools/add_questions.py verified-1.json verified-2.json --alloc "$(python
 ```
 (Thay `sun` bằng `tue` hoặc `wed` cho lần thứ Ba / thứ Tư.) Script dùng kho dự trữ trước, giới hạn đúng số câu đã phân công cho từng chủ đề, loại câu gần giống câu đã có, gán ID mới và đặt `status: "checked"` (đã qua kiểm tra độc lập, chưa qua người duyệt). Câu đạt nhưng dư được cất lại vào kho dự trữ cho lần sau.
 
-Nếu một chủ đề có **hơn một nửa** số câu ứng viên bị loại vì trùng, chủ đề đó coi như đã hết nội dung mới: thêm nó vào `exhausted` trong `content-plan.json`.
+Nếu một chủ đề có **hơn một nửa** số câu ứng viên bị loại vì trùng, chủ đề đó coi như đã hết nội dung mới: thêm nó vào `exhausted` trong `content-plan.json` (với câu nâng cao thì thêm vào `exhausted_advanced`).
 
 ### 6. Đề thi thử
 ```bash
@@ -97,8 +108,8 @@ Chờ GitHub Actions ("Build and deploy site") chạy xong với trạng thái t
 
 ### 8. Báo cáo cho chủ repo
 Ngắn gọn, bằng tiếng Việt:
-- số câu đã thêm (4級 / 3級), số câu bị loại và lý do chính;
-- tổng hiện tại so với mục tiêu, số đề thi thử;
+- số câu đã thêm (4級 / 3級, trong đó bao nhiêu câu nâng cao), số câu bị loại và lý do chính;
+- tổng hiện tại so với mục tiêu (cơ bản và nâng cao), số đề thi thử;
 - chủ đề nào mới được đánh dấu hết nội dung;
 - 3 câu ngẫu nhiên vừa thêm (ID + câu hỏi), để chủ repo kiểm tra ngẫu nhiên.
 

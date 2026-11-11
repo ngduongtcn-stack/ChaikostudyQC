@@ -95,7 +95,7 @@ def main():
     ap.add_argument("files", nargs="+", help="one or more verified.json files (one per batch)")
     ap.add_argument("--limit-4", type=int)
     ap.add_argument("--limit-3", type=int)
-    ap.add_argument("--alloc", help="JSON from plan.py --json: {level: {topic: n}}")
+    ap.add_argument("--alloc", help='JSON from plan.py --json: {level: {topic: n}, "adv": {level: {topic: n}}}')
     ap.add_argument("--reserve", help="reserve file: verified questions left over from earlier runs; used first, leftovers saved back")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
@@ -110,13 +110,16 @@ def main():
     if args.alloc:
         import json as _json
         alloc = _json.loads(args.alloc)
-        limits = {lv: sum(alloc.get(lv, {}).values()) for lv in ("4", "3")}
-        # pass 1: candidates within their topic's quota; pass 2: the rest, as fillers
+        adv = alloc.get("adv", {})
+        limits = {lv: sum(alloc.get(lv, {}).values()) + sum(adv.get(lv, {}).values()) for lv in ("4", "3")}
+        # pass 1: candidates within their topic's quota (base quota, or the advanced quota
+        # alloc["adv"] for candidates marked "advanced": true); pass 2: the rest, as fillers
         used = {}
         first, rest = [], []
         for c in cands:
-            key = (str(c.get("level")), c.get("topic"))
-            if used.get(key, 0) < alloc.get(key[0], {}).get(key[1], 0):
+            key = (str(c.get("level")), c.get("topic"), bool(c.get("advanced")))
+            quota = (adv if key[2] else alloc).get(key[0], {}).get(key[1], 0)
+            if used.get(key, 0) < quota:
                 used[key] = used.get(key, 0) + 1
                 first.append(c)
             else:
