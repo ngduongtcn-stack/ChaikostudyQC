@@ -103,5 +103,20 @@
     "answer": 1,
     "explanation": "仕事の品質は、仕事の結果が後工程やお客様の要求をどれだけ満たしているかで表されます。書類の記入ミスの件数は、仕事の出来ばえを表すので、事務の仕事の品質の指標として適しています。",
     "explanation_vi": "Chất lượng công việc được thể hiện bằng mức độ kết quả công việc đáp ứng yêu cầu của công đoạn sau hoặc khách hàng. Số lỗi ghi chép trong giấy tờ phản ánh kết quả công việc, nên phù hợp làm chỉ số chất lượng của công việc văn phòng."
+  },
+  {
+    "id": "r-w13-10",
+    "level": 3,
+    "topic": "kanri",
+    "question": "ある部品で外観不良が見つかったが、原因である金型の修正には1か月かかることがわかった。そこで、修正が終わるまでの間、出荷前に全数の外観検査を追加して流出を防いでいる。その後、金型の修正が完了した。追加した全数検査の扱いとして、最も適切なものはどれか。",
+    "choices": [
+      "金型の修正が完了した時点で、すぐに全数検査をやめる",
+      "修正後の製品で不良が出なくなったことをデータで確認してから、全数検査をやめる",
+      "念のため、追加した全数検査をこれからもずっと続ける",
+      "全数検査で不良を取り除けているので、金型の修正の効果は確認しなくてよい"
+    ],
+    "answer": 1,
+    "explanation": "全数検査の追加は、原因が残っている間に流出を防ぐための応急処置（暫定処置）である。金型の修正という再発防止策の効果をデータで確認してから解除するのが適切で、確認前にやめると対策が効いていなかったときに不良が流出する。効果を確かめないまま検査を続けると、費用がかかり続けるうえ、再発防止ができたかどうかもわからない。",
+    "explanation_vi": "Việc bổ sung kiểm tra toàn bộ là xử lý tạm thời nhằm ngăn hàng lỗi lọt ra ngoài trong khi nguyên nhân vẫn còn. Cách phù hợp là chỉ dừng kiểm tra sau khi đã xác nhận bằng dữ liệu rằng biện pháp phòng ngừa tái phát, tức việc sửa khuôn, thực sự có hiệu quả. Nếu dừng ngay khi vừa sửa xong mà biện pháp chưa hiệu quả thì hàng lỗi sẽ lọt ra. Còn nếu cứ duy trì kiểm tra mãi mà không xác nhận hiệu quả thì chi phí kéo dài và cũng không biết đã phòng ngừa tái phát được hay chưa."
   }
 ]

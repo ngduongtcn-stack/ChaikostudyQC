@@ -20855,6 +20855,134 @@
       "answer": 2,
       "explanation": "右上の区域の点は x・y の偏差がともに正、左下の区域の点はともに負なので、偏差の積はどちらも正になります。これらの点が多いと積の合計である Sxy は正となり、正の相関があると考えられます。",
       "explanation_vi": "Các điểm ở vùng trên bên phải có độ lệch của x và y đều dương, các điểm ở vùng dưới bên trái có độ lệch đều âm, nên tích độ lệch ở cả hai vùng đều dương. Khi những điểm này chiếm đa số thì tổng tích Sxy là số dương, và có thể coi là có tương quan thuận."
+    },
+    {
+      "id": "3-792",
+      "level": 3,
+      "topic": "shin7",
+      "status": "checked",
+      "question": "ある改善工事の日程をアローダイアグラムで表した。作業A（3日）のあと、作業B（5日）と作業C（2日）を並行して行う。作業Cのあとに作業D（3日）を行い、作業Bと作業Dの両方が終わってから作業E（2日）を行う。全体の完了日数を1日短縮するために、1つの作業だけを1日短縮する。どの作業を短縮すればよいか。",
+      "choices": [
+        "作業A",
+        "作業B",
+        "作業D",
+        "作業C"
+      ],
+      "answer": 0,
+      "explanation": "経路A→B→Eは3＋5＋2＝10日、経路A→C→D→Eは3＋2＋3＋2＝10日で、どちらもクリティカルパスである。BやC・Dを短縮しても、もう一方の経路が10日のまま残るため全体は短くならない。両方の経路に共通する作業Aを短縮すれば、全体が9日になる。",
+      "explanation_vi": "Đường A, B, E mất 3 + 5 + 2 = 10 ngày, đường A, C, D, E mất 3 + 2 + 3 + 2 = 10 ngày, nên cả hai đều là đường găng. Nếu rút ngắn công việc B, hoặc C, hoặc D thì đường còn lại vẫn là 10 ngày, nên tổng thời gian không giảm. Chỉ khi rút ngắn công việc A, vốn nằm chung trên cả hai đường găng, thì toàn bộ mới giảm xuống 9 ngày. Nhiều người chọn B vì đó là công việc dài nhất, nhưng điều đó không đủ khi có hai đường găng."
+    },
+    {
+      "id": "3-793",
+      "level": 3,
+      "topic": "shin7",
+      "status": "checked",
+      "question": "系統図法で、目的「段取り替え時間を短くする」に対する一次手段として「工具を探す時間をなくす」を挙げ、さらにその二次手段として「工具の置き場所を決めて表示する」を展開した。このとき、一次手段「工具を探す時間をなくす」は、二次手段「工具の置き場所を決めて表示する」から見ると何にあたるか。",
+      "choices": [
+        "評価項目",
+        "原因",
+        "目的",
+        "結果"
+      ],
+      "answer": 2,
+      "explanation": "系統図法では、ある段階の手段は、次の段階の手段にとっての目的になる。この「目的→手段」の連鎖をくり返して、実行できる具体策まで展開していく。「原因」「結果」は連関図法や特性要因図で扱う因果関係の見方であり、系統図の上下関係とは異なる。",
+      "explanation_vi": "Trong phương pháp biểu đồ cây, biện pháp ở một cấp sẽ trở thành mục đích đối với biện pháp ở cấp tiếp theo. Chuỗi mục đích và biện pháp này được lặp lại cho đến khi đạt tới những biện pháp cụ thể có thể thực hiện được. Cách nhìn nguyên nhân và kết quả là quan hệ nhân quả dùng trong biểu đồ liên quan hay biểu đồ nhân quả, không phải quan hệ trên dưới trong biểu đồ cây."
+    },
+    {
+      "id": "3-794",
+      "level": 3,
+      "topic": "shin7",
+      "status": "checked",
+      "question": "次の職場の場面のうち、新QC七つ道具ではなく、QC七つ道具を用いるのが最も適しているものはどれか。",
+      "choices": [
+        "新しい設備の導入工事について、作業の順序と日程を管理したい",
+        "新製品の発売計画で、部品の調達遅れなどの事態に前もって備えたい",
+        "お客様アンケートの自由記述の意見を整理し、不満の全体像をつかみたい",
+        "部品の寸法を100個測定し、ばらつきの形や規格との関係を調べたい"
+      ],
+      "answer": 3,
+      "explanation": "100個の測定値という数値データからばらつきの形や規格との関係を見るには、QC七つ道具のヒストグラムが適している。ほかの3つは、言語データの整理（親和図法）、日程管理（アローダイアグラム法）、事態の予測と対応（PDPC法）であり、新QC七つ道具の手法が向いている。",
+      "explanation_vi": "Muốn xem hình dạng phân bố và quan hệ với quy cách từ dữ liệu số là 100 giá trị đo kích thước thì biểu đồ tần số (histogram) trong bảy công cụ QC là phù hợp. Ba tình huống còn lại là sắp xếp ý kiến dạng lời nói của khách hàng (biểu đồ tương đồng), quản lý thứ tự và tiến độ công việc (sơ đồ mũi tên), và dự đoán sự cố để chuẩn bị đối sách (PDPC), nên phù hợp với bảy công cụ QC mới."
+    },
+    {
+      "id": "3-795",
+      "level": 3,
+      "topic": "toukei",
+      "status": "checked",
+      "question": "不良率10%の工程から製品を100個ランダムに抜き取る。抜き取った100個の中の不良品の割合（サンプルの不良率）の標準偏差はいくらか（不良個数は二項分布にしたがうものとする）。",
+      "choices": [
+        "0.0009",
+        "0.03",
+        "0.09",
+        "3"
+      ],
+      "answer": 1,
+      "explanation": "不良個数の分散は np(1−p)、サンプルの不良率 x/n の分散はそれを n² で割った p(1−p)/n となる。p(1−p)/n＝0.1×0.9÷100＝0.0009 で、標準偏差はその平方根の0.03（3%）である。3は不良個数の標準偏差、0.0009は不良率の分散であり、取り違えに注意する。",
+      "explanation_vi": "Phương sai của số sản phẩm lỗi là np(1 − p), còn phương sai của tỷ lệ lỗi trong mẫu x/n bằng giá trị đó chia cho n bình phương, tức p(1 − p)/n. Ta có p(1 − p)/n = 0,1 × 0,9 / 100 = 0,0009, nên độ lệch chuẩn là căn bậc hai, bằng 0,03 (tức 3%). Giá trị 3 là độ lệch chuẩn của số sản phẩm lỗi, còn 0,0009 là phương sai của tỷ lệ lỗi, cần tránh nhầm lẫn."
+    },
+    {
+      "id": "3-796",
+      "level": 3,
+      "topic": "gainen3",
+      "status": "checked",
+      "question": "要求品質と品質特性の関係についての説明として、適切でないものはどれか。",
+      "choices": [
+        "要求品質を品質特性に置き換えることで、設計の目標値を決めたり工程で管理したりできるようになる",
+        "要求品質はお客様の言葉で表され、品質特性は測定できる技術的な言葉で表される",
+        "1つの要求品質には、必ず1つの品質特性だけが対応する",
+        "1つの品質特性が、複数の要求品質に関係することがある"
+      ],
+      "answer": 2,
+      "explanation": "1つの要求品質は、ふつう複数の品質特性に関係する。たとえば「持ちやすい」は、重さ・太さ・表面の滑りにくさなどの特性で表される。逆に「重さ」のように、1つの品質特性が「持ちやすい」「持ち運びやすい」など複数の要求品質に関係することもある。",
+      "explanation_vi": "Một chất lượng được yêu cầu thường liên quan đến nhiều đặc tính chất lượng. Ví dụ yêu cầu dễ cầm được thể hiện qua trọng lượng, độ dày thân và độ chống trơn của bề mặt. Ngược lại, một đặc tính như trọng lượng cũng có thể liên quan đến nhiều yêu cầu như dễ cầm và dễ mang theo. Vì vậy phát biểu cho rằng mỗi yêu cầu chỉ tương ứng đúng một đặc tính là không phù hợp."
+    },
+    {
+      "id": "3-797",
+      "level": 3,
+      "topic": "gainen3",
+      "status": "checked",
+      "question": "車内で使うスマートフォンスタンドの開発で、次の①〜③の取組みを行った。それぞれが主にどの品質をつくり込む取組みか、正しい組合せはどれか。①お客様の使い方を調べ、「真夏の車内に置いても変形しないスタンド」という新製品のねらいを決めた ②図面で、材料に耐熱温度の高い樹脂を指定した ③成形工程の金型温度を管理し、図面どおりの寸法の製品を安定してつくれるようにした",
+      "choices": [
+        "①使用品質　②設計品質　③製造品質",
+        "①企画品質　②設計品質　③製造品質",
+        "①設計品質　②企画品質　③製造品質",
+        "①企画品質　②製造品質　③設計品質"
+      ],
+      "answer": 1,
+      "explanation": "お客様の要求を製品のねらいに反映するのは企画品質、それを図面や仕様で具体的に定めるのは設計品質（ねらいの品質）、図面どおりにつくるのは製造品質（できばえの品質）である。使用品質はお客様が実際に使って感じる品質で、①のように製品のねらいを決める段階の品質ではない。",
+      "explanation_vi": "Đưa yêu cầu của khách hàng vào định hướng sản phẩm là chất lượng hoạch định, cụ thể hóa định hướng đó bằng bản vẽ và thông số là chất lượng thiết kế (chất lượng mục tiêu), còn làm ra sản phẩm đúng bản vẽ là chất lượng chế tạo (chất lượng thành phẩm). Chất lượng sử dụng là chất lượng khách hàng cảm nhận khi thực sự dùng sản phẩm, không phải chất lượng ở giai đoạn quyết định định hướng sản phẩm như việc thứ nhất."
+    },
+    {
+      "id": "3-798",
+      "level": 3,
+      "topic": "kanri",
+      "status": "checked",
+      "question": "ISO 9001にもとづく品質方針の扱いとして、適切でないものはどれか。",
+      "choices": [
+        "品質方針には、要求事項を満たすことや、品質マネジメントシステムを継続的に改善することへの約束を含める",
+        "品質方針は、品質目標を設定するための枠組みとなるようにする",
+        "品質方針は経営者が把握していればよいので、従業員に伝える必要はない",
+        "トップマネジメントが、組織の目的や状況に合った品質方針を定める"
+      ],
+      "answer": 2,
+      "explanation": "品質方針は文書にして組織内に伝達し、従業員に理解され、日々の仕事に生かされるようにする必要がある。経営者だけが知っている方針では、各部門の品質目標や活動に結びつかない。ほかの3つは、トップが定めること、品質目標の枠組みとなること、要求事項を満たすことと継続的改善への約束を含むことで、いずれも適切である。",
+      "explanation_vi": "Chính sách chất lượng phải được lập thành văn bản, truyền đạt trong tổ chức để nhân viên hiểu và vận dụng vào công việc hằng ngày. Nếu chỉ lãnh đạo biết thì chính sách không thể gắn với mục tiêu chất lượng và hoạt động của từng bộ phận. Các phát biểu còn lại đều phù hợp: lãnh đạo cao nhất thiết lập chính sách, chính sách làm khuôn khổ để đặt mục tiêu chất lượng, và chính sách bao gồm cam kết đáp ứng yêu cầu cũng như cải tiến liên tục hệ thống quản lý chất lượng."
+    },
+    {
+      "id": "3-799",
+      "level": 3,
+      "topic": "toukei",
+      "status": "checked",
+      "question": "同じ部品を2台の機械でつくっている。生産量の割合は機械Aが60%、機械Bが40%で、不良率は機械Aが2%、機械Bが5%である。2台分をまとめた製品全体から1個を取り出したとき、それが不良品である確率はいくらか。",
+      "choices": [
+        "3.2%",
+        "3.5%",
+        "3.8%",
+        "7.0%"
+      ],
+      "answer": 0,
+      "explanation": "生産量の割合で重みをつけて合計する。0.6×0.02＋0.4×0.05＝0.012＋0.020＝0.032、すなわち3.2%である。2つの不良率を単純に平均した3.5%は、生産量の違いを考えていないので誤り。割合を逆にかけると3.8%になる。",
+      "explanation_vi": "Phải lấy tỷ lệ sản lượng làm trọng số rồi cộng lại: 0,6 × 0,02 + 0,4 × 0,05 = 0,012 + 0,020 = 0,032, tức 3,2%. Lấy trung bình cộng đơn giản của hai tỷ lệ lỗi thành 3,5% là sai vì không tính đến khác biệt về sản lượng. Nếu nhân ngược tỷ lệ sản lượng sẽ ra 3,8%, còn cộng thẳng hai tỷ lệ lỗi được 7,0% cũng sai."
     }
   ]
 }
