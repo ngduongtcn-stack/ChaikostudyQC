@@ -105,37 +105,6 @@
     "explanation_vi": "Chất lượng công việc được thể hiện bằng mức độ kết quả công việc đáp ứng yêu cầu của công đoạn sau hoặc khách hàng. Số lỗi ghi chép trong giấy tờ phản ánh kết quả công việc, nên phù hợp làm chỉ số chất lượng của công việc văn phòng."
   },
   {
-    "id": "r-w13-10",
-    "level": 3,
-    "topic": "kanri",
-    "question": "ある部品で外観不良が見つかったが、原因である金型の修正には1か月かかることがわかった。そこで、修正が終わるまでの間、出荷前に全数の外観検査を追加して流出を防いでいる。その後、金型の修正が完了した。追加した全数検査の扱いとして、最も適切なものはどれか。",
-    "choices": [
-      "金型の修正が完了した時点で、すぐに全数検査をやめる",
-      "修正後の製品で不良が出なくなったことをデータで確認してから、全数検査をやめる",
-      "念のため、追加した全数検査をこれからもずっと続ける",
-      "全数検査で不良を取り除けているので、金型の修正の効果は確認しなくてよい"
-    ],
-    "answer": 1,
-    "explanation": "全数検査の追加は、原因が残っている間に流出を防ぐための応急処置（暫定処置）である。金型の修正という再発防止策の効果をデータで確認してから解除するのが適切で、確認前にやめると対策が効いていなかったときに不良が流出する。効果を確かめないまま検査を続けると、費用がかかり続けるうえ、再発防止ができたかどうかもわからない。",
-    "explanation_vi": "Việc bổ sung kiểm tra toàn bộ là xử lý tạm thời nhằm ngăn hàng lỗi lọt ra ngoài trong khi nguyên nhân vẫn còn. Cách phù hợp là chỉ dừng kiểm tra sau khi đã xác nhận bằng dữ liệu rằng biện pháp phòng ngừa tái phát, tức việc sửa khuôn, thực sự có hiệu quả. Nếu dừng ngay khi vừa sửa xong mà biện pháp chưa hiệu quả thì hàng lỗi sẽ lọt ra. Còn nếu cứ duy trì kiểm tra mãi mà không xác nhận hiệu quả thì chi phí kéo dài và cũng không biết đã phòng ngừa tái phát được hay chưa."
-  },
-  {
-    "id": "r-a1-20",
-    "level": 4,
-    "topic": "data",
-    "question": "規格が 10.00±0.10 mm の部品を、1時間ごとに1個測定した（mm）。\n8時 10.00、9時 10.02、10時 10.03、11時 10.05、12時 10.06、13時 10.08\n平均値は10.04 mmで、すべて規格内である。この結果の判断として、最も適切なものはどれか。",
-    "choices": [
-      "すべて規格内で平均値も規格内なので、対策は必要ない",
-      "時間とともに値が大きくなっていく傾向があり、このまま続くと規格の上限を超えるおそれがあるので、原因を調べる",
-      "範囲が0.08 mmで規格の幅0.20 mmより小さいので、問題はない",
-      "13時の値だけが大きいので、測定ミスとして記録から除く"
-    ],
-    "answer": 1,
-    "explanation": "測定した順に見ると、値が 10.00 から 10.08 まで少しずつ大きくなっています。今は規格内でも、この傾向が続けばまもなく上限の10.10 mmを超えるおそれがあり、刃物の摩耗など時間とともに変わる原因を調べる必要があります。平均値や範囲だけを見るとこの変化に気づけないので、測定の順番（時刻）を記録しておくことが大切です。",
-    "explanation_vi": "Xem theo thứ tự đo, giá trị tăng dần từ 10,00 lên 10,08. Hiện tại vẫn trong quy cách, nhưng nếu xu hướng này tiếp tục thì sắp vượt giới hạn trên 10,10 mm, nên cần điều tra nguyên nhân thay đổi theo thời gian như mòn dao cắt. Nếu chỉ nhìn giá trị trung bình hay khoảng biến thiên thì không nhận ra sự thay đổi này, vì vậy việc ghi lại thứ tự đo (thời điểm đo) là rất quan trọng.",
-    "advanced": true
-  },
-  {
     "id": "r-a1-21",
     "level": 4,
     "topic": "data",
@@ -232,22 +201,6 @@
     "advanced": true
   },
   {
-    "id": "r-a3-12",
-    "level": 4,
-    "topic": "kangaekata",
-    "advanced": true,
-    "question": "ある不良への対応として、次の2つの案を比べている。\n案1：出荷前の全数選別を続ける。費用は毎月50万円。\n案2：原因を取り除く再発防止策を実施する。設備改造費が最初に240万円かかり、その後は点検費が毎月10万円かかる。\n2つの案の費用の累計が等しくなるのは、何か月後か。",
-    "choices": [
-      "4か月後",
-      "4.8か月後",
-      "6か月後",
-      "24か月後"
-    ],
-    "answer": 2,
-    "explanation": "m か月後の累計は、案1が50m万円、案2が240＋10m万円である。50m＝240＋10m より 40m＝240、m＝6 か月となる。点検費を考えないと 240÷50＝4.8 か月、点検費を足してしまうと 240÷60＝4 か月と誤る。6か月を過ぎると再発防止策のほうが安くなり、さらに不良の原因そのものがなくなるという利点もある。",
-    "explanation_vi": "Sau m tháng, tổng chi phí của phương án sàng lọc là 50m vạn yên, của phương án phòng ngừa tái phát là 240 + 10m vạn yên. Từ 50m = 240 + 10m suy ra 40m = 240, nên m = 6 tháng. Nếu quên chi phí kiểm tra hàng tháng sẽ tính nhầm 240 chia 50 bằng 4,8 tháng, còn nếu cộng nhầm chi phí kiểm tra vào sẽ ra 240 chia 60 bằng 4 tháng. Sau 6 tháng phương án phòng ngừa tái phát rẻ hơn, và còn có lợi ích là bản thân nguyên nhân gây lỗi đã bị loại bỏ."
-  },
-  {
     "id": "r-a3-13",
     "level": 4,
     "topic": "kangaekata",
@@ -280,22 +233,6 @@
     "explanation_vi": "Khi số lượng sản xuất khác nhau thì phải so sánh bằng tỷ lệ lỗi chứ không phải số lỗi. Tháng trước là 20 chia 4.000 bằng 0,5%, tháng này là 30 chia 10.000 bằng 0,3%, nên tỷ lệ lỗi đã giảm. Báo cáo của tổ trưởng chỉ dựa vào số lỗi nên đã đọc sai dữ liệu. Dù số lượng sản xuất khác nhau, chỉ cần đổi sang tỷ lệ là có thể so sánh được."
   },
   {
-    "id": "r-a3-24",
-    "level": 4,
-    "topic": "hinshitsu",
-    "advanced": true,
-    "question": "次のア〜ウの問題と、主に関係する品質の組み合わせとして、正しいものはどれか。\nア：使っている本人は困っていないが、屋外機の運転音がうるさいと近所の住民から苦情が出た\nイ：図面どおりにつくられているが、取っ手の位置が低く、多くのお客様から使いにくいと言われた\nウ：図面の寸法から外れた部品が、そのまま製品に組み込まれていた",
-    "choices": [
-      "ア：社会的品質　イ：ねらいの品質　ウ：できばえの品質",
-      "ア：当たり前品質　イ：できばえの品質　ウ：ねらいの品質",
-      "ア：社会的品質　イ：できばえの品質　ウ：ねらいの品質",
-      "ア：ねらいの品質　イ：社会的品質　ウ：できばえの品質"
-    ],
-    "answer": 0,
-    "explanation": "アは使用者以外の第三者（近所の住民）に与える影響の問題なので、社会的品質に関係する。イは図面どおりにつくられているのに要求に合っていないので、ねらいの品質（設計品質）の問題である。ウは図面どおりにつくれていないので、できばえの品質（製造品質）の問題である。「図面どおりか」でねらいとできばえを、「誰に影響するか」で社会的品質を見分ける。",
-    "explanation_vi": "Vấn đề tiếng ồn của dàn nóng làm phiền hàng xóm là ảnh hưởng đến bên thứ ba ngoài người sử dụng, nên liên quan đến chất lượng xã hội. Vấn đề tay cầm đặt thấp khó dùng tuy làm đúng bản vẽ là do mục tiêu không phù hợp yêu cầu, nên là chất lượng mục tiêu, tức chất lượng thiết kế. Vấn đề chi tiết sai kích thước bản vẽ vẫn được lắp vào là do không làm đúng bản vẽ, nên là chất lượng thực hiện, tức chất lượng chế tạo. Cách phân biệt: dựa vào việc có làm đúng bản vẽ hay không để tách thiết kế và chế tạo, và dựa vào việc ảnh hưởng đến ai để nhận ra chất lượng xã hội."
-  },
-  {
     "id": "r-a3-25",
     "level": 4,
     "topic": "hinshitsu",
@@ -310,22 +247,6 @@
     "answer": 2,
     "explanation": "接客サービスは、提供されると同時にお客様が受け取るので、製品のように出荷前に検査して不良を取り除くことができない。そのため、提供のプロセスを標準化し、従業員を教育・訓練して、最初からよいサービスを提供できるようにすることが大切である。サービスにも待ち時間や注文の間違いの件数など評価できる品質特性があり、管理の対象になる。後から確認するだけでは、すでに受けた不満を取り消すことはできない。",
     "explanation_vi": "Dịch vụ tiếp khách được khách hàng tiếp nhận ngay khi được cung cấp, nên không thể kiểm tra trước để loại bỏ lỗi như với sản phẩm trước khi xuất hàng. Vì vậy, cần tiêu chuẩn hóa quá trình cung cấp dịch vụ, đào tạo và huấn luyện nhân viên để ngay từ đầu cung cấp được dịch vụ tốt. Dịch vụ cũng có các đặc tính chất lượng đánh giá được như thời gian chờ hay số lần nhầm món, nên vẫn là đối tượng quản lý. Nếu chỉ đi kiểm tra sau khi đã phục vụ thì không thể xóa đi sự bất mãn mà khách đã gặp phải."
-  },
-  {
-    "id": "r-a4-10",
-    "level": 4,
-    "topic": "kaizen",
-    "question": "作業方法を改善し、製品1個あたりの作業時間を60秒から48秒に短くした。1日の作業時間（480分）は変わらず、その間ずっとこの作業を続けるとき、1日に生産できる数は改善前より何%増えるか。",
-    "choices": [
-      "12%",
-      "20%",
-      "25%",
-      "80%"
-    ],
-    "answer": 2,
-    "explanation": "1日の生産数は、改善前が480×60÷60＝480個、改善後が28,800秒÷48秒＝600個である。増えた数は120個なので、120÷480＝0.25、つまり25%増える。作業時間が20%短くなったからといって、生産数も20%増えるわけではない点に注意する。",
-    "explanation_vi": "Số sản phẩm mỗi ngày trước cải tiến là 28.800 giây chia 60 giây = 480 cái, sau cải tiến là 28.800 chia 48 = 600 cái. Tăng thêm 120 cái, tức 120 chia 480 = 0,25, nghĩa là tăng 25%. Cần chú ý rằng thời gian thao tác giảm 20% không có nghĩa là sản lượng cũng chỉ tăng 20%.",
-    "advanced": true
   },
   {
     "id": "r-a4-11",
@@ -376,22 +297,6 @@
     "advanced": true
   },
   {
-    "id": "r-a5-09",
-    "level": 4,
-    "topic": "hyojun",
-    "advanced": true,
-    "question": "新しい作業標準書の案を、職場のメンバーで見直している。出された意見のうち、適切でないものはどれか。",
-    "choices": [
-      "「実際に現場で試してみて、作業者が無理なく守れるかを確かめてから決めよう」",
-      "「急所には、なぜそうするのかという理由も書いておこう」",
-      "「言葉だけではわかりにくい部分には、写真や図を入れよう」",
-      "「作成した技術者がわかれば十分なので、作業者には読みにくい専門用語だけで書いてもよい」"
-    ],
-    "answer": 3,
-    "explanation": "作業標準書は、実際に作業する人が読んで、そのとおりに作業できなければ意味がない。そのため、作業者にわかる言葉で、具体的に、必要に応じて写真や図を使って書く。現場で試して守れることを確かめることや、急所に理由を書くことは、標準を守りやすく、正しく伝えるために適切である。",
-    "explanation_vi": "Tài liệu tiêu chuẩn thao tác sẽ vô nghĩa nếu người trực tiếp làm việc đọc mà không làm theo được. Vì vậy cần viết bằng từ ngữ người làm hiểu được, cụ thể, và khi cần thì dùng ảnh hoặc hình vẽ. Việc thử tại hiện trường để xác nhận người làm có thể tuân thủ, hay ghi lý do cho các điểm mấu chốt, đều giúp tiêu chuẩn dễ tuân thủ và được truyền đạt đúng nên là ý kiến phù hợp. Ý kiến cho rằng chỉ cần người kỹ sư soạn thảo hiểu là đủ thì không phù hợp."
-  },
-  {
     "id": "r-a5-10",
     "level": 4,
     "topic": "hyojun",
@@ -422,134 +327,6 @@
     "answer": 3,
     "explanation": "工程の異常とは、規格から外れた状態だけでなく、いつもと違う状態も含む。値が一方向に続けて大きくなっているのは、刃具の摩耗など何かが変わっているしるしであり、このままでは近いうちに規格を外れるおそれがある。規格外になるまで待たずに報告して原因を調べれば、不良を出す前に手を打てる。自分の判断で設定を変えて記録も残さないと、原因がわからず、同じことがくり返される。",
     "explanation_vi": "Bất thường trong công đoạn không chỉ là trạng thái vượt quy cách mà còn bao gồm trạng thái khác với thường ngày. Số đo liên tục tăng theo một chiều là dấu hiệu có điều gì đó đang thay đổi, ví dụ dao cắt bị mòn, và nếu cứ thế thì sắp tới sẽ vượt quy cách. Không chờ đến khi vượt quy cách mà báo cáo ngay để tìm nguyên nhân thì có thể xử lý trước khi phát sinh lỗi. Nếu tự ý chỉnh thiết bị mà không ghi lại thì sẽ không biết nguyên nhân và sự việc sẽ lặp lại."
-  },
-  {
-    "id": "r-a5-31",
-    "level": 4,
-    "topic": "kigyo",
-    "advanced": true,
-    "question": "ヒヤリハットの報告として、職場で対策を考えるのに最も役立つものはどれか。",
-    "choices": [
-      "「通路で危なかったです。これから気をつけます。」",
-      "「〇月〇日14時ごろ、第2倉庫の曲がり角で台車を押していたところ、出てきたフォークリフトとぶつかりそうになった。曲がり角にミラーがなく、先が見えにくい。」",
-      "「フォークリフトの運転者の不注意が悪いので、運転者に注意してほしい。」",
-      "「けがはなかったので報告しなくてもよいと思いましたが、念のため報告します。」"
-    ],
-    "answer": 1,
-    "explanation": "ヒヤリハットの報告は、いつ・どこで・何をしているときに・何が起きそうになったか・どんな状態が危なかったかを具体的に書くと、職場で原因と対策（この例ではミラーの設置など）を考えやすい。「気をつけます」だけでは、何が危ないのかがほかの人に伝わらない。特定の人の不注意を責める書き方では、設備や環境の問題が見えにくくなる。",
-    "explanation_vi": "Báo cáo sự cố suýt xảy ra nếu ghi cụ thể khi nào, ở đâu, đang làm gì, suýt xảy ra chuyện gì và tình trạng nào nguy hiểm thì nơi làm việc dễ tìm nguyên nhân và biện pháp, ví dụ lắp gương ở góc cua. Chỉ viết sẽ chú ý thì người khác không biết cái gì nguy hiểm. Cách viết đổ lỗi cho sự bất cẩn của một người cụ thể sẽ che khuất vấn đề về thiết bị và môi trường."
-  },
-  {
-    "id": "r-a5-32",
-    "level": 4,
-    "topic": "kigyo",
-    "advanced": true,
-    "question": "外観検査で、限度見本とくらべても、合格か不合格か判断がつかない小さなキズのある製品を見つけた。最も適切な行動はどれか。",
-    "choices": [
-      "たぶん合格だろうと考えて、良品として次の工程に流す",
-      "念のため、自分の判断で不良品として廃棄しておく",
-      "自分だけで判断せず、その製品を区別して保留にし、上司や検査の責任者に相談する",
-      "今後は同じ程度のキズは合格にすると、自分で決めて作業を続ける"
-    ],
-    "answer": 2,
-    "explanation": "判断に迷うときは、自分だけで決めずに上司や責任者に相談する。その間は製品を区別して保留にし、良品・不良品のどちらにも混ざらないようにする。自分の判断で流したり捨てたりすると、判断の誤りや、限度見本があいまいだという問題が見えなくなる。相談の結果は限度見本の見直しなどに生かせる。",
-    "explanation_vi": "Khi phân vân trong phán đoán, không tự mình quyết định mà xin ý kiến cấp trên hoặc người phụ trách kiểm tra. Trong lúc đó, tách riêng sản phẩm và để ở trạng thái chờ, không để lẫn vào hàng tốt hay hàng lỗi. Nếu tự ý cho qua hoặc hủy bỏ thì sai sót trong phán đoán, hay vấn đề mẫu giới hạn chưa rõ ràng, sẽ bị che khuất. Kết quả xin ý kiến còn có thể dùng để xem lại mẫu giới hạn."
-  },
-  {
-    "id": "r-b1-11",
-    "level": 3,
-    "topic": "data3",
-    "question": "真の値が10.00mmの標準ゲージを、測定器A・Bでそれぞれ5回測定した。\nA：10.02, 10.01, 10.03, 10.02, 10.02\nB：10.00, 9.98, 10.02, 10.01, 9.99\n2台の測定器についての判断として、最も適切なものはどれか。",
-    "choices": [
-      "Aはかたよりもばらつきも小さく、Bよりすぐれている",
-      "Bは平均値が真の値と一致しているので、かたよりもばらつきも小さい",
-      "Aは平均値10.02mmで0.02mmのかたよりがあるが、標準偏差は約0.007mmでばらつきは小さい。Bはかたよりがないが、標準偏差は約0.016mmでAの約2倍ばらつく",
-      "Aは平均値10.02mmでかたよりがあり、ばらつきもBより大きい"
-    ],
-    "answer": 2,
-    "explanation": "Aの平均値は10.02mmで真の値より0.02mmかたよっていますが、偏差 0, −0.01, 0.01, 0, 0 から平方和0.0002、s＝√(0.0002÷4)≒0.007mm と小さく、ばらつきの小さい測定器です。Bの平均値は10.00mmでかたよりはありませんが、平方和0.0010、s＝√(0.0010÷4)≒0.016mm とAの約2倍です。平均値が真の値に近いことと、ばらつきが小さいことは別の性質なので、両方を分けて評価します。",
-    "explanation_vi": "Trung bình của máy A là 10,02 mm nên lệch so với giá trị thật 0,02 mm, nhưng các độ lệch là 0, −0,01, 0,01, 0, 0 cho tổng bình phương 0,0002 và s = √(0,0002 ÷ 4) ≈ 0,007 mm, tức độ phân tán nhỏ. Máy B có trung bình 10,00 mm nên không có độ lệch tâm, nhưng tổng bình phương là 0,0010 và s = √(0,0010 ÷ 4) ≈ 0,016 mm, lớn gấp khoảng 2 lần máy A. Trung bình gần giá trị thật và độ phân tán nhỏ là hai tính chất khác nhau, nên phải đánh giá riêng từng tính chất.",
-    "advanced": true
-  },
-  {
-    "id": "r-b1-15",
-    "level": 3,
-    "topic": "soukan",
-    "question": "乾燥温度 x（℃）と含水率 y（%）について、次の5組のデータを得た。相関係数rはいくらか。\nx：10, 20, 30, 40, 50\ny：5.2, 5.0, 4.6, 4.8, 4.4",
-    "choices": [
-      "−1.8",
-      "−0.09",
-      "−0.9",
-      "0.9"
-    ],
-    "answer": 2,
-    "explanation": "u＝(x−30)÷10、v＝(y−4.8)×10 と変換すると、u は −2, −1, 0, 1, 2、v は 4, 2, −2, 0, −4 となり計算が簡単になります。Suu＝10、Svv＝40、Suv＝−8−2＋0＋0−8＝−18 なので、r＝−18÷√(10×40)＝−18÷20＝−0.9 です。相関係数は正の数を掛けたり定数を引いたりする変換では変わらないので、元のデータの r も −0.9 です。−1.8 は Suv÷Suu で、回帰の傾きと取り違えた誤りです。",
-    "explanation_vi": "Đổi biến u = (x − 30) ÷ 10 và v = (y − 4,8) × 10 thì u là −2, −1, 0, 1, 2 và v là 4, 2, −2, 0, −4, giúp tính toán đơn giản. Ta có Suu = 10, Svv = 40, Suv = −8 − 2 + 0 + 0 − 8 = −18, nên r = −18 ÷ √(10×40) = −18 ÷ 20 = −0,9. Hệ số tương quan không đổi khi nhân với số dương hay trừ hằng số, nên dữ liệu gốc cũng có r = −0,9. Giá trị −1,8 là Suv ÷ Suu, tức nhầm với độ dốc của đường hồi quy.",
-    "advanced": true
-  },
-  {
-    "id": "r-b1-22",
-    "level": 3,
-    "topic": "kouteinouryoku",
-    "question": "上限規格のみがある特性で、安定した工程から得たデータのヒストグラムは、右（大きい値の側）に長く裾を引いた形であった。平均値と標準偏差から工程能力指数を計算すると1.33になったので、担当者は「正規分布の表から、上限規格を超える割合は約0.003%」と報告した。この報告についての判断として、最も適切なものはどれか。",
-    "choices": [
-      "工程能力指数は分布の形に関係なく規格外れの割合を正確に表すので、報告は正しい",
-      "規格外れの割合の目安は正規分布を前提としたもので、裾が上限規格の側に長い分布では実際の割合がもっと大きくなるおそれがあるので、分布の形を考慮して評価し直す",
-      "裾の長い分布では、規格外れの割合は正規分布より必ず小さくなるので、報告は安全側である",
-      "ヒストグラムの形は工程能力と関係がないので、指数が1.33以上であれば規格外れの心配はない"
-    ],
-    "answer": 1,
-    "explanation": "工程能力指数から規格外れの割合を読み取る目安は、データが正規分布にしたがうことを前提としています。右に長く裾を引いた分布では、上限規格の側に正規分布よりも多くのデータが遠くまで散らばるため、指数が1.33でも実際の規格外れは0.003%より多くなるおそれがあります。工程能力を評価するときは、指数の値だけでなくヒストグラムで分布の形を確認し、必要なら変換や分布に合った方法で評価し直します。",
-    "explanation_vi": "Cách suy ra tỉ lệ ngoài quy cách từ chỉ số năng lực công đoạn dựa trên giả định dữ liệu tuân theo phân phối chuẩn. Với phân phối có đuôi dài về phía giá trị lớn, nhiều dữ liệu phân tán ra xa về phía giới hạn trên hơn so với phân phối chuẩn, nên dù chỉ số là 1,33 thì tỉ lệ vượt quy cách thực tế vẫn có thể lớn hơn 0,003%. Khi đánh giá năng lực công đoạn, ngoài giá trị chỉ số cần xem biểu đồ tần suất để kiểm tra hình dạng phân phối, và nếu cần thì đánh giá lại bằng phép biến đổi hoặc phương pháp phù hợp với phân phối.",
-    "advanced": true
-  },
-  {
-    "id": "r-b1-23",
-    "level": 3,
-    "topic": "kouteinouryoku",
-    "question": "両側規格の工程で、標準偏差は0.2mm、工程能力指数は Cp＝1.50、Cpk＝1.20 であった。工程の平均値は規格の中心からどれだけずれているか。",
-    "choices": [
-      "0.06mm",
-      "0.18mm",
-      "0.30mm",
-      "0.36mm"
-    ],
-    "answer": 1,
-    "explanation": "Cp＝1.50 から規格の幅は 1.50×6×0.2＝1.8mm、中心から規格値までは0.9mmです。Cpk＝1.20 から、平均値から近い側の規格値までの距離は 1.20×3×0.2＝0.72mm です。したがって平均値のずれは 0.9−0.72＝0.18mm となります（(Cp−Cpk)×3s と同じ）。0.30 は指数の差をそのまま mm とした誤り、0.36 は 6s を掛けた誤りです。",
-    "explanation_vi": "Từ Cp = 1,50 suy ra độ rộng quy cách là 1,50×6×0,2 = 1,8 mm, tức từ tâm đến mỗi giới hạn là 0,9 mm. Từ Cpk = 1,20 suy ra khoảng cách từ trung bình đến giới hạn gần hơn là 1,20×3×0,2 = 0,72 mm. Vậy độ lệch của trung bình so với tâm là 0,9 − 0,72 = 0,18 mm, bằng với (Cp − Cpk)×3s. Giá trị 0,30 là lấy nguyên hiệu hai chỉ số làm số mm, còn 0,36 là do nhân với 6s.",
-    "advanced": true
-  },
-  {
-    "id": "r-b2-10",
-    "level": 3,
-    "topic": "7tools3",
-    "question": "不良件数の合計が200件のパレート図で、累積比率の折れ線の値が、左の項目から順に 40%、65%、80%、90%、100% であった。左から3番目の項目の件数はいくらか。",
-    "choices": [
-      "15件",
-      "30件",
-      "130件",
-      "160件"
-    ],
-    "answer": 1,
-    "explanation": "3番目の項目の割合は、3番目までの累積比率から2番目までの累積比率を引いた 80%−65%＝15% です。件数は 200×0.15＝30件となります。160件は3番目までの累積件数（80%）、130件は2番目までの累積件数（65%）で、累積値と各項目の値を取り違えています。15件は割合の15%を件数と読み違えた値です。",
-    "explanation_vi": "Tỷ lệ của hạng mục thứ ba bằng tỷ lệ cộng dồn đến hạng mục thứ ba trừ đi tỷ lệ cộng dồn đến hạng mục thứ hai: 80% − 65% = 15%. Số trường hợp là 200 × 0.15 = 30. Con số 160 là số cộng dồn đến hạng mục thứ ba (80%), còn 130 là số cộng dồn đến hạng mục thứ hai (65%); đó là nhầm lẫn giữa giá trị cộng dồn và giá trị của từng hạng mục. Con số 15 là nhầm tỷ lệ phần trăm thành số trường hợp.",
-    "advanced": true
-  },
-  {
-    "id": "r-b2-11",
-    "level": 3,
-    "topic": "7tools3",
-    "question": "測定単位 0.1 のデータで、区間の幅を 0.15 としてヒストグラムを作ったところ、1つおきに度数が少ない歯抜け型になった。この形になった理由として、最も適切なものはどれか。",
-    "choices": [
-      "区間の幅が測定単位より大きいので、区間の数が少なくなりすぎたから",
-      "どの区間にも測定値が 1.5 種類ずつ入るので、度数がなめらかに変化するはずだが、測定のくせが出たから",
-      "平均値の異なる2つの分布が混ざっているから",
-      "区間の幅が測定単位の整数倍でないため、入りうる測定値が1種類の区間と2種類の区間が交互にでき、度数が1つおきに少なくなったから"
-    ],
-    "answer": 3,
-    "explanation": "測定値は 0.1 きざみの値しかとらないので、幅 0.15 の区間には、入りうる測定値が1種類の区間と2種類の区間が交互にできます。2種類入る区間は度数が多く、1種類しか入らない区間は少なくなるため、工程に問題がなくても歯抜け型に見えます。測定値が 1.5 種類ずつ入ることはありえず、区間の幅を 0.1 や 0.2 など測定単位の整数倍にして作り直すのが対策です。",
-    "explanation_vi": "Giá trị đo chỉ nhận các giá trị cách nhau 0.1, nên với độ rộng khoảng 0.15 sẽ xen kẽ xuất hiện khoảng chỉ chứa được một giá trị đo và khoảng chứa được hai giá trị đo. Khoảng chứa hai giá trị có tần số cao, khoảng chỉ chứa một giá trị có tần số thấp, nên dù công đoạn không có vấn đề, biểu đồ vẫn trông như dạng răng lược. Không thể có chuyện mỗi khoảng chứa 1.5 giá trị đo; cách khắc phục là vẽ lại với độ rộng khoảng là bội số nguyên của đơn vị đo như 0.1 hoặc 0.2.",
-    "advanced": true
   },
   {
     "id": "r-b2-21",
@@ -838,5 +615,35 @@
     "explanation": "まず現品と発生状況を確認して事実をつかみ（イ）、すぐに同じロットの製品を選別して不適合品がこれ以上お客様のもとで使われないようにします（ア）。そのうえで発生原因と流出原因を調べ（ウ）、対策と水平展開を行い（エ）、効果を確認して標準化します（オ）。選別を原因調査のあとに回すと、その間に不適合品が使われてしまいます。原因を調べる前に対策を決めると、真の原因に対する対策になりません。",
     "explanation_vi": "Trước hết xác nhận hàng thực tế và tình trạng phát sinh để nắm sự thật, rồi lập tức chọn lọc sản phẩm cùng lô để hàng không phù hợp không tiếp tục bị sử dụng ở phía khách hàng. Sau đó điều tra nguyên nhân phát sinh và nguyên nhân lọt lỗi, thực hiện đối sách và triển khai ngang, rồi xác nhận hiệu quả và tiêu chuẩn hóa. Nếu để việc chọn lọc sau khi điều tra nguyên nhân thì trong thời gian đó hàng không phù hợp vẫn bị sử dụng. Nếu quyết định đối sách trước khi điều tra nguyên nhân thì đối sách sẽ không nhắm vào nguyên nhân thật.",
     "advanced": true
+  },
+  {
+    "id": "r-c07",
+    "level": 3,
+    "topic": "hosho3",
+    "question": "市場での品質情報の集め方として、最も適切なものはどれか。",
+    "choices": [
+      "苦情として届いた製品だけを調べれば、市場の品質の状況は十分にわかる。",
+      "保証期間を過ぎた故障はメーカーの責任ではないので、情報を集める必要はない。",
+      "苦情だけでなく、修理窓口やサービス部門の修理記録なども集め、故障の内容や使用期間を分析する。",
+      "営業担当者の印象を聞けば、データを集めなくても市場の品質はわかる。"
+    ],
+    "answer": 2,
+    "explanation": "苦情として表に出るのは不具合の一部にすぎないため、修理記録などの情報も集めて分析することが大切である。保証期間後の故障も、製品の寿命や設計の弱点を知るための重要な情報である。印象だけでなく事実（データ）にもとづいて判断する。",
+    "explanation_vi": "Những gì được phản ánh thành khiếu nại chỉ là một phần các lỗi, nên cần thu thập và phân tích cả thông tin như hồ sơ sửa chữa. Hỏng hóc sau thời hạn bảo hành cũng là thông tin quan trọng để biết tuổi thọ sản phẩm và điểm yếu của thiết kế. Phải phán đoán dựa trên dữ liệu thực tế chứ không chỉ dựa vào ấn tượng."
+  },
+  {
+    "id": "r-c20",
+    "level": 3,
+    "topic": "kanri",
+    "question": "作業標準書を改訂するときの手続きとして、適切でないものはどれか。",
+    "choices": [
+      "改訂の理由と内容を改訂履歴に記録する。",
+      "改訂案は、定められた責任者の承認を受けてから使い始める。",
+      "改訂後は関係する作業者に教育を行い、旧版を現場から回収する。",
+      "現場の作業者が気づいた点は、承認を受けずにその場で標準書に手書きで書き加えて使ってよい。"
+    ],
+    "answer": 3,
+    "explanation": "標準書の内容は、承認を受けた正式な改訂の手続きで変える必要がある。承認なしの手書きの修正を認めると、人によって手順が違ってしまい、標準の意味がなくなる。現場の気づきは改訂の提案として出し、承認・履歴の記録・教育・旧版の回収を行う。",
+    "explanation_vi": "Nội dung tiêu chuẩn thao tác phải được thay đổi qua thủ tục sửa đổi chính thức có phê duyệt. Nếu cho phép tự ghi tay sửa mà không phê duyệt, mỗi người sẽ làm một kiểu và tiêu chuẩn mất ý nghĩa. Phát hiện của hiện trường nên đưa thành đề xuất sửa đổi, sau đó phê duyệt, ghi lịch sử, đào tạo và thu hồi bản cũ."
   }
 ]
