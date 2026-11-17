@@ -10002,6 +10002,125 @@
       "advanced": true
     },
     {
+      "id": "4-608",
+      "level": 4,
+      "topic": "data",
+      "status": "checked",
+      "question": "7個のデータを 4, 6, 7, 8, 9, 10, 40 と記録したが、あとで「40」は「12」の書き間違いであることがわかった。正しい値に直すと、平均値・メディアン・範囲Rはそれぞれどうなるか。",
+      "choices": [
+        "平均値は12から8に、メディアンは8から6.5に、範囲は36から8に、すべて小さくなる",
+        "平均値もメディアンも変わらず、範囲だけが36から8に小さくなる",
+        "平均値は12のまま変わらず、メディアンと範囲が小さくなる",
+        "平均値は12から8に下がり、メディアンは8のまま変わらず、範囲は36から8に小さくなる"
+      ],
+      "answer": 3,
+      "explanation": "修正前は合計84で平均値12、修正後は合計56で平均値8です。メディアンは並べたときの4番目の値で、修正前（4, 6, 7, 8, 9, 10, 40）も修正後（4, 6, 7, 8, 9, 10, 12）も8のまま変わりません。範囲は最大値が40から12に変わるので、36から8になります。最大値だけが変わっても真ん中の順位は変わらないため、メディアンは影響を受けません。",
+      "explanation_vi": "Trước khi sửa, tổng là 84 nên trung bình là 12; sau khi sửa, tổng là 56 nên trung bình là 8. Trung vị là giá trị thứ 4 khi xếp theo thứ tự, cả trước khi sửa (4, 6, 7, 8, 9, 10, 40) và sau khi sửa (4, 6, 7, 8, 9, 10, 12) đều là 8, không đổi. Khoảng biến thiên đổi từ 36 thành 8 vì giá trị lớn nhất đổi từ 40 thành 12. Chỉ giá trị lớn nhất thay đổi nên thứ tự ở giữa không đổi, trung vị không bị ảnh hưởng.",
+      "advanced": true
+    },
+    {
+      "id": "4-609",
+      "level": 4,
+      "topic": "7tools",
+      "status": "checked",
+      "question": "管理図に打った点は、すべて管理限界線の内側にあった。次の点の並び方のうち、JIS Z 9020-2 の異常判定ルールに当てはまり、「工程に何か変化が起きた可能性がある」と判断すべきものはどれか。",
+      "choices": [
+        "連続する3点が中心線の上側にある",
+        "連続する3点が増加している",
+        "点が中心線の上下に、ばらばらに散らばっている",
+        "連続する6点が増加し続けている"
+      ],
+      "answer": 3,
+      "explanation": "JIS Z 9020-2 では、管理限界線の内側であっても、連続する6点が増加（または減少）し続ける並び方を異常のサインとしている。工具の摩耗のように、工程が少しずつ一方向に変化しているときに現れやすい。連続3点の増加や、中心線の片側に3点続く程度は偶然でもよく起こるので、これだけで異常とは判断しない（片側に並ぶ場合の目安は連続9点）。点が上下にばらばらに散らばるのは、安定した状態の典型である。",
+      "explanation_vi": "Theo JIS Z 9020-2, dù các điểm vẫn nằm trong giới hạn kiểm soát, việc 6 điểm liên tiếp tăng dần hoặc giảm dần được xem là dấu hiệu bất thường. Hiện tượng này dễ xuất hiện khi quá trình thay đổi dần theo một hướng, chẳng hạn do dao cụ bị mòn. Ba điểm liên tiếp tăng, hay ba điểm liên tiếp nằm ở một phía đường trung tâm, vẫn thường xảy ra một cách ngẫu nhiên nên chưa thể kết luận là bất thường, mốc cho trường hợp nằm cùng một phía là 9 điểm liên tiếp. Các điểm phân bố lộn xộn ở hai phía đường trung tâm là dáng vẻ điển hình của trạng thái ổn định.",
+      "advanced": true
+    },
+    {
+      "id": "4-610",
+      "level": 4,
+      "topic": "hinshitsu",
+      "status": "checked",
+      "question": "レストランの接客サービスの品質を確保する考え方として、最も適切なものはどれか。",
+      "choices": [
+        "料理を出した後に責任者が客席を回って確認すれば、接客の品質は十分に確保できる",
+        "サービスは提供と同時にお客様が受け取るので、提供前に検査して不良を取り除くことができない。そのため、提供のやり方を標準化し、従業員を教育して品質をつくり込む",
+        "お客様ごとに求めるものが違うので、接客の手順を標準化する必要はない",
+        "サービスは形がないので品質を評価することはできず、管理の対象にはならない"
+      ],
+      "answer": 1,
+      "explanation": "接客サービスは、提供されると同時にお客様が受け取るので、製品のように出荷前に検査して不良を取り除くことができない。そのため、提供のプロセスを標準化し、従業員を教育・訓練して、最初からよいサービスを提供できるようにすることが大切である。サービスにも待ち時間や注文の間違いの件数など評価できる品質特性があり、管理の対象になる。後から確認するだけでは、すでに受けた不満を取り消すことはできない。",
+      "explanation_vi": "Dịch vụ tiếp khách được khách hàng tiếp nhận ngay khi được cung cấp, nên không thể kiểm tra trước để loại bỏ lỗi như với sản phẩm trước khi xuất hàng. Vì vậy, cần tiêu chuẩn hóa quá trình cung cấp dịch vụ, đào tạo và huấn luyện nhân viên để ngay từ đầu cung cấp được dịch vụ tốt. Dịch vụ cũng có các đặc tính chất lượng đánh giá được như thời gian chờ hay số lần nhầm món, nên vẫn là đối tượng quản lý. Nếu chỉ đi kiểm tra sau khi đã phục vụ thì không thể xóa đi sự bất mãn mà khách đã gặp phải.",
+      "advanced": true
+    },
+    {
+      "id": "4-611",
+      "level": 4,
+      "topic": "kaizen",
+      "status": "checked",
+      "question": "作業改善の着眼点に「排除（やめられないか）」「結合（まとめられないか）」「交換（順序や場所を入れ替えられないか）」「簡素化（もっと簡単にできないか）」がある。改善の例と着眼点の組み合わせとして、適切でないものはどれか。",
+      "choices": [
+        "もう誰も使っていなかった日報の転記作業をやめた ― 排除",
+        "部品を取り付ける順番を入れ替え、製品の持ち替えの回数を減らした ― 交換",
+        "手順が複雑だった位置合わせを、専用の治具を当てるだけでできるようにした ― 結合",
+        "2つの工程で別々に行っていた穴あけと面取りを、1台の機械で同時に行うようにした ― 結合"
+      ],
+      "answer": 2,
+      "explanation": "治具を使って複雑な作業を単純にするのは、作業をまとめたのではなく、やり方を簡単にした「簡素化」にあたる。不要な転記をやめるのは排除、2つの作業を1台で同時に行うのは結合、取り付け順の入れ替えは交換である。改善を考えるときは、排除→結合→交換→簡素化の順に検討すると効果が大きいとされる。",
+      "explanation_vi": "Dùng đồ gá để biến một thao tác phức tạp thành đơn giản là đơn giản hóa cách làm, không phải gộp các công việc lại. Bỏ việc chép lại báo cáo không còn ai dùng là loại bỏ, làm khoan lỗ và vát mép cùng lúc trên một máy là kết hợp, đổi thứ tự lắp linh kiện là thay đổi thứ tự. Khi cải tiến, nên xem xét theo thứ tự loại bỏ, kết hợp, thay đổi thứ tự, rồi mới đến đơn giản hóa thì hiệu quả lớn hơn.",
+      "advanced": true
+    },
+    {
+      "id": "4-612",
+      "level": 4,
+      "topic": "kensa",
+      "status": "checked",
+      "question": "抜取検査を行うためにロットをまとめる方法として、最も適切なものはどれか。",
+      "choices": [
+        "同じ機械・同じ材料ロット・同じ条件で続けてつくった品物を、1つのロットにまとめる",
+        "途中で材料ロットが替わっても、同じ日につくった品物はすべて1つのロットにまとめる",
+        "2台の機械で加工した品物を、置き場所が同じなので1つのロットにまとめる",
+        "サンプルを取りやすいように、検査の直前に状態のよさそうな箱だけを集めて1つのロットにする"
+      ],
+      "answer": 0,
+      "explanation": "抜取検査では、サンプルの結果からロット全体を判断するので、ロットの中の品物は同じ条件でつくられ、品質がそろっている必要がある。機械や材料ロットが違うものを混ぜると、サンプルがロット全体を代表しにくくなり、問題が起きたときに原因もたどりにくい。よさそうな箱だけを集めるのは、ロットをかたよらせることになり適切でない。",
+      "explanation_vi": "Kiểm tra lấy mẫu dùng kết quả của mẫu để phán định cả lô, nên các sản phẩm trong một lô phải được làm trong cùng điều kiện và có chất lượng đồng đều. Nếu trộn sản phẩm từ các máy khác nhau hoặc các lô vật liệu khác nhau, mẫu khó đại diện cho cả lô, và khi có sự cố cũng khó truy nguyên nhân. Chỉ gom những thùng trông có vẻ tốt sẽ làm lô bị thiên lệch nên không phù hợp.",
+      "advanced": true
+    },
+    {
+      "id": "4-613",
+      "level": 4,
+      "topic": "hyojun",
+      "status": "checked",
+      "question": "JIS（日本産業規格）とJISマークについての説明として、最も適切なものはどれか。",
+      "choices": [
+        "製品がJISに合っていると自社で判断すれば、どの会社でも自由にJISマークをつけることができる",
+        "JISは、法律によってすべての製品に守ることが義務づけられている",
+        "JISマークは、登録認証機関の認証を受けた事業者が、JISに適合する製品などにつけることができる",
+        "JISは、一度定められると内容が見直されることはない"
+      ],
+      "answer": 2,
+      "explanation": "JISマークは、国に登録された認証機関の審査を受けて認証された事業者だけが、JISに適合する製品などにつけることができる。自社の判断だけでつけることはできない。また、JISは原則として自主的に使うものであり、技術の進歩などに合わせて定期的に見直され、必要に応じて改正される。",
+      "explanation_vi": "Dấu JIS chỉ được gắn lên sản phẩm phù hợp với JIS bởi những doanh nghiệp đã được tổ chức chứng nhận đăng ký với nhà nước đánh giá và cấp chứng nhận; doanh nghiệp không thể tự mình quyết định gắn dấu. Ngoài ra, về nguyên tắc JIS là tiêu chuẩn áp dụng tự nguyện, không bắt buộc cho mọi sản phẩm, và được xem xét lại định kỳ theo tiến bộ kỹ thuật, sửa đổi khi cần thiết.",
+      "advanced": true
+    },
+    {
+      "id": "4-614",
+      "level": 4,
+      "topic": "kotei",
+      "status": "checked",
+      "question": "寸法の規格が 10.0±0.3mm の製品で、1時間ごとに測った値が、10.02、10.05、10.09、10.13、10.18、10.22（mm）と、毎回少しずつ大きくなっていた。どの値も規格内である。作業者の行動として、最も適切なものはどれか。",
+      "choices": [
+        "規格を外れる値が出るまで測定を続け、外れたら上司に報告する",
+        "自分の判断で設備の設定を少し変えて寸法を元に戻し、記録には残さない",
+        "すべて規格内なので、とくに何もせずに作業を続ける",
+        "いつもと違う傾向なので異常の兆しとして上司に報告し、原因を調べてもらう"
+      ],
+      "answer": 3,
+      "explanation": "工程の異常とは、規格から外れた状態だけでなく、いつもと違う状態も含む。値が一方向に続けて大きくなっているのは、刃具の摩耗など何かが変わっているしるしであり、このままでは近いうちに規格を外れるおそれがある。規格外になるまで待たずに報告して原因を調べれば、不良を出す前に手を打てる。自分の判断で設定を変えて記録も残さないと、原因がわからず、同じことがくり返される。",
+      "explanation_vi": "Bất thường trong công đoạn không chỉ là trạng thái vượt quy cách mà còn bao gồm trạng thái khác với thường ngày. Số đo liên tục tăng theo một chiều là dấu hiệu có điều gì đó đang thay đổi, ví dụ dao cắt bị mòn, và nếu cứ thế thì sắp tới sẽ vượt quy cách. Không chờ đến khi vượt quy cách mà báo cáo ngay để tìm nguyên nhân thì có thể xử lý trước khi phát sinh lỗi. Nếu tự ý chỉnh thiết bị mà không ghi lại thì sẽ không biết nguyên nhân và sự việc sẽ lặp lại.",
+      "advanced": true
+    },
+    {
       "id": "3-001",
       "level": 3,
       "topic": "data3",
@@ -25035,6 +25154,535 @@
       "answer": 3,
       "explanation": "測定値は 0.1 きざみの値しかとらないので、幅 0.15 の区間には、入りうる測定値が1種類の区間と2種類の区間が交互にできます。2種類入る区間は度数が多く、1種類しか入らない区間は少なくなるため、工程に問題がなくても歯抜け型に見えます。測定値が 1.5 種類ずつ入ることはありえず、区間の幅を 0.1 や 0.2 など測定単位の整数倍にして作り直すのが対策です。",
       "explanation_vi": "Giá trị đo chỉ nhận các giá trị cách nhau 0.1, nên với độ rộng khoảng 0.15 sẽ xen kẽ xuất hiện khoảng chỉ chứa được một giá trị đo và khoảng chứa được hai giá trị đo. Khoảng chứa hai giá trị có tần số cao, khoảng chỉ chứa một giá trị có tần số thấp, nên dù công đoạn không có vấn đề, biểu đồ vẫn trông như dạng răng lược. Không thể có chuyện mỗi khoảng chứa 1.5 giá trị đo; cách khắc phục là vẽ lại với độ rộng khoảng là bội số nguyên của đơn vị đo như 0.1 hoặc 0.2.",
+      "advanced": true
+    },
+    {
+      "id": "3-933",
+      "level": 3,
+      "topic": "hosho3",
+      "status": "checked",
+      "question": "市場での品質情報の集め方として、最も適切なものはどれか。",
+      "choices": [
+        "苦情だけでなく、修理窓口やサービス部門の修理記録なども集め、故障の内容や使用期間を分析する。",
+        "保証期間を過ぎた故障はメーカーの責任ではないので、情報を集める必要はない。",
+        "苦情として届いた製品だけを調べれば、市場の品質の状況は十分にわかる。",
+        "営業担当者の印象を聞けば、データを集めなくても市場の品質はわかる。"
+      ],
+      "answer": 0,
+      "explanation": "苦情として表に出るのは不具合の一部にすぎないため、修理記録などの情報も集めて分析することが大切である。保証期間後の故障も、製品の寿命や設計の弱点を知るための重要な情報である。印象だけでなく事実（データ）にもとづいて判断する。",
+      "explanation_vi": "Những gì được phản ánh thành khiếu nại chỉ là một phần các lỗi, nên cần thu thập và phân tích cả thông tin như hồ sơ sửa chữa. Hỏng hóc sau thời hạn bảo hành cũng là thông tin quan trọng để biết tuổi thọ sản phẩm và điểm yếu của thiết kế. Phải phán đoán dựa trên dữ liệu thực tế chứ không chỉ dựa vào ấn tượng."
+    },
+    {
+      "id": "3-934",
+      "level": 3,
+      "topic": "kanri",
+      "status": "checked",
+      "question": "作業標準書を改訂するときの手続きとして、適切でないものはどれか。",
+      "choices": [
+        "改訂の理由と内容を改訂履歴に記録する。",
+        "改訂後は関係する作業者に教育を行い、旧版を現場から回収する。",
+        "改訂案は、定められた責任者の承認を受けてから使い始める。",
+        "現場の作業者が気づいた点は、承認を受けずにその場で標準書に手書きで書き加えて使ってよい。"
+      ],
+      "answer": 3,
+      "explanation": "標準書の内容は、承認を受けた正式な改訂の手続きで変える必要がある。承認なしの手書きの修正を認めると、人によって手順が違ってしまい、標準の意味がなくなる。現場の気づきは改訂の提案として出し、承認・履歴の記録・教育・旧版の回収を行う。",
+      "explanation_vi": "Nội dung tiêu chuẩn thao tác phải được thay đổi qua thủ tục sửa đổi chính thức có phê duyệt. Nếu cho phép tự ghi tay sửa mà không phê duyệt, mỗi người sẽ làm một kiểu và tiêu chuẩn mất ý nghĩa. Phát hiện của hiện trường nên đưa thành đề xuất sửa đổi, sau đó phê duyệt, ghi lịch sử, đào tạo và thu hồi bản cũ."
+    },
+    {
+      "id": "3-935",
+      "level": 3,
+      "topic": "kanrizu",
+      "status": "checked",
+      "question": "工程に異常原因による変化が起きているにもかかわらず、管理図の点が管理限界内にとどまり、異常を見逃してしまう誤りを何というか。",
+      "choices": [
+        "第1種の誤り（あわてものの誤り）",
+        "第2種の誤り（ぼんやりものの誤り）",
+        "サンプリング誤差",
+        "測定誤差"
+      ],
+      "answer": 1,
+      "explanation": "異常があるのに「異常なし」と判断して見逃す誤りを第2種の誤り（ぼんやりものの誤り）といいます。反対に、異常がないのに「異常あり」と判断する誤りが第1種の誤り（あわてものの誤り）です。管理限界を±3σにするのは、この2つの誤りのつり合いを考えたためです。",
+      "explanation_vi": "Sai lầm khi công đoạn thực sự có bất thường nhưng lại kết luận là không có bất thường, tức là bỏ sót, gọi là sai lầm loại 2, còn gọi là sai lầm của người lơ đễnh. Ngược lại, kết luận có bất thường trong khi thực ra không có là sai lầm loại 1, sai lầm của người hấp tấp. Đường giới hạn kiểm soát được đặt ở ±3σ là để cân bằng giữa hai loại sai lầm này."
+    },
+    {
+      "id": "3-936",
+      "level": 3,
+      "topic": "kanrizu",
+      "status": "checked",
+      "question": "群の大きさ n＝10 で X̄−s管理図を作った。X̿＝50.0、s̄＝2.0 であった。X̄管理図の上方管理限界UCLはいくらか。（n＝10 のとき A₃＝0.975、A₂＝0.308）",
+      "choices": [
+        "50.62",
+        "51.95",
+        "53.08",
+        "56.00"
+      ],
+      "answer": 1,
+      "explanation": "X̄−s管理図の X̄管理図では、UCL＝X̿＋A₃s̄＝50.0＋0.975×2.0＝51.95 となります。A₂ は範囲 R̄ に掛ける係数なので s̄ に使うのは誤りです（50.62）。また、s̄ に3を掛けるだけでは群の平均値のばらつきにならず、管理限界が広くなりすぎます（56.00）。",
+      "explanation_vi": "Với biểu đồ x̄ trong cặp biểu đồ x̄–s, giới hạn kiểm soát trên UCL = X̿ + A₃ nhân s̄ = 50.0 + 0.975 × 2.0 = 51.95. Hệ số A₂ dùng để nhân với khoảng biến thiên trung bình R̄ nên dùng cho s̄ là sai, cho ra 50.62. Còn nếu chỉ lấy s̄ nhân 3 thì đó không phải độ phân tán của giá trị trung bình nhóm, giới hạn sẽ quá rộng, cho ra 56.00."
+    },
+    {
+      "id": "3-937",
+      "level": 3,
+      "topic": "kanrizu",
+      "status": "checked",
+      "question": "管理図に中心線と管理限界線を書き入れるときの線の種類について、一般的な描き方として最も適切なものはどれか。",
+      "choices": [
+        "中心線も管理限界線も、すべて破線で描く",
+        "中心線は描かず、管理限界線だけを実線で描く",
+        "中心線は実線、管理限界線は破線で描く",
+        "中心線は破線、管理限界線は実線で描く"
+      ],
+      "answer": 2,
+      "explanation": "管理図では、一般に中心線（CL）を実線、上方・下方管理限界線（UCL・LCL）を破線で描き、両者を見分けやすくします。中心線は点の並び（連など）を判断する基準にもなるので、省略してはいけません。",
+      "explanation_vi": "Trên biểu đồ kiểm soát, thông thường đường tâm CL được vẽ bằng nét liền, còn đường giới hạn kiểm soát trên và dưới UCL, LCL được vẽ bằng nét đứt để dễ phân biệt. Đường tâm còn là căn cứ để đánh giá cách sắp xếp của các điểm, chẳng hạn chuỗi điểm nằm cùng một phía, nên không được bỏ đi."
+    },
+    {
+      "id": "3-938",
+      "level": 3,
+      "topic": "kanrizu",
+      "status": "checked",
+      "question": "X̄−R管理図で長く安定していた工程で、寸法を測る測定器を新しいものに替えた日から、X̄管理図の点が中心線の上側に続けて並ぶようになった。加工条件や材料は変えていない。まず行うこととして、最も適切なものはどれか。",
+      "choices": [
+        "点は管理限界内なので、特に何もせずに打点を続ける",
+        "新しい測定値で管理限界をすぐに計算し直し、中心線を上に移す",
+        "工程の平均が上がったと考え、すぐに機械を調整して寸法を小さくする",
+        "測定器の違いによるかたよりを疑い、新旧の測定器で同じ製品を測って比べ、校正の状態を確かめる"
+      ],
+      "answer": 3,
+      "explanation": "変化が測定器の交換と同時に始まり、加工条件などは変わっていないので、まず測定器のかたより（校正のずれ）を疑い、同じ製品を新旧の測定器で測って比べます。原因を確かめずに機械を調整すると、正しかった工程を狂わせるおそれがあります。管理限界内でも中心線の片側に点が続くのは異常のサインであり、原因がわからないうちに管理限界を計算し直すのも適切ではありません。",
+      "explanation_vi": "Thay đổi bắt đầu đúng vào lúc thay dụng cụ đo, trong khi điều kiện gia công không đổi, nên trước tiên cần nghi ngờ độ lệch của dụng cụ đo, tức là sai lệch hiệu chuẩn, và đo cùng một sản phẩm bằng dụng cụ cũ và mới để so sánh. Nếu điều chỉnh máy khi chưa xác định nguyên nhân, có thể làm hỏng một công đoạn vốn đang đúng. Dù các điểm vẫn nằm trong giới hạn, việc nhiều điểm liên tiếp nằm một phía đường tâm là dấu hiệu bất thường, và tính lại giới hạn khi chưa rõ nguyên nhân cũng không phù hợp."
+    },
+    {
+      "id": "3-939",
+      "level": 3,
+      "topic": "kanrizu",
+      "status": "checked",
+      "question": "p管理図やnp管理図の管理限界線を計算するときに、そのもとになっている確率分布はどれか。",
+      "choices": [
+        "一様分布",
+        "二項分布",
+        "t分布",
+        "ポアソン分布"
+      ],
+      "answer": 1,
+      "explanation": "p管理図・np管理図は、抜き取った n 個の中の不良品の個数（または不良率）を扱います。不良率が一定で各製品の良否が独立なら不良個数は二項分布にしたがうので、管理限界は np̄±3√(np̄(1−p̄)) のように二項分布の標準偏差から求めます。ポアソン分布は欠点数を扱う c管理図・u管理図のもとになる分布です。",
+      "explanation_vi": "Biểu đồ p và biểu đồ np xử lý số sản phẩm lỗi, hoặc tỉ lệ lỗi, trong n sản phẩm lấy mẫu. Khi tỉ lệ lỗi không đổi và việc đạt hay không của từng sản phẩm độc lập với nhau thì số sản phẩm lỗi tuân theo phân phối nhị thức, nên giới hạn kiểm soát được tính từ độ lệch chuẩn của phân phối nhị thức, ví dụ np̄ ± 3 nhân căn của np̄(1 − p̄). Phân phối Poisson là cơ sở của biểu đồ c và biểu đồ u dùng cho số khuyết tật."
+    },
+    {
+      "id": "3-940",
+      "level": 3,
+      "topic": "toukei",
+      "status": "checked",
+      "question": "不良率が0.2で一定の工程から、製品を10個ランダムに抜き取る。抜き取った10個の中の不良品の個数のうち、起こる確率が最も高いのは何個か（不良個数は二項分布にしたがうものとする。0.8¹⁰≒0.107、0.8⁹≒0.134、0.8⁸≒0.168、0.8⁷≒0.210）。",
+      "choices": [
+        "0個",
+        "1個",
+        "2個",
+        "3個"
+      ],
+      "answer": 2,
+      "explanation": "二項分布の式で計算すると、0個：0.8¹⁰≒0.107、1個：10×0.2×0.8⁹≒0.268、2個：45×0.2²×0.8⁸≒0.302、3個：120×0.2³×0.8⁷≒0.201 となり、2個が最も高くなります。これは期待値 np＝10×0.2＝2個と一致します。0個は1つの組合せしかないので、確率は小さくなります。",
+      "explanation_vi": "Tính theo công thức phân phối nhị thức: 0 sản phẩm lỗi có xác suất 0.8 mũ 10 ≈ 0.107; 1 sản phẩm là 10 × 0.2 × 0.8 mũ 9 ≈ 0.268; 2 sản phẩm là 45 × 0.2 bình phương × 0.8 mũ 8 ≈ 0.302; 3 sản phẩm là 120 × 0.2 mũ 3 × 0.8 mũ 7 ≈ 0.201. Vì vậy 2 sản phẩm có xác suất cao nhất, trùng với giá trị kỳ vọng np = 10 × 0.2 = 2. Trường hợp 0 sản phẩm lỗi chỉ có một cách tổ hợp nên xác suất nhỏ hơn."
+    },
+    {
+      "id": "3-941",
+      "level": 3,
+      "topic": "7tools3",
+      "status": "checked",
+      "question": "10個のデータを度数表にまとめたところ、区間の中心値が 18、20、22 の区間の度数が、それぞれ 2、6、2 であった。度数表から求めた標準偏差 s（偏差平方和を n−1 で割った不偏分散の平方根）はおよそいくらか。",
+      "choices": [
+        "1.26",
+        "1.33",
+        "1.78",
+        "16.0"
+      ],
+      "answer": 1,
+      "explanation": "平均値は (18×2＋20×6＋22×2)÷10＝20 です。偏差平方和は 2×(−2)²＋6×0²＋2×2²＝16、不偏分散は 16÷(10−1)≒1.78、標準偏差は √1.78≒1.33 となります。nの10で割ると1.26になり誤りです。1.78は分散、16.0は偏差平方和の値です。",
+      "explanation_vi": "Trung bình là (18 × 2 + 20 × 6 + 22 × 2) ÷ 10 = 20. Tổng bình phương độ lệch là 2 × (−2) bình phương + 6 × 0 + 2 × 2 bình phương = 16, phương sai không chệch là 16 ÷ (10 − 1) ≈ 1.78, nên độ lệch chuẩn là căn của 1.78 ≈ 1.33. Nếu chia cho n bằng 10 thì được 1.26, là sai. Còn 1.78 là phương sai, 16.0 là tổng bình phương độ lệch."
+    },
+    {
+      "id": "3-942",
+      "level": 3,
+      "topic": "7tools3",
+      "status": "checked",
+      "question": "不良項目別にパレート図を作ったところ、「その他」の件数が、最も多い項目の件数よりも大きくなってしまった。次の対応として、最も適切なものはどれか。",
+      "choices": [
+        "「その他」の中身を調べ、件数の多い内容は独立した項目として分類し直してから描き直す",
+        "「その他」を件数の順に並べ替えて、いちばん左に置く",
+        "「その他」が大きいのは避けられないので、そのまま最も多い項目に重点をおいて対策する",
+        "「その他」は重要でないので、パレート図から取り除いて描き直す"
+      ],
+      "answer": 0,
+      "explanation": "「その他」が大きいと、本当に重要な項目が隠れている可能性があります。中身を調べて、件数の多い内容を独立した項目に分類し直すと、重点項目を正しく選べます。「その他」は件数にかかわらずいちばん右に置くのが約束で、取り除くと全体の件数が合わなくなります。",
+      "explanation_vi": "Khi mục khác quá lớn, có thể có hạng mục thực sự quan trọng đang bị che khuất bên trong. Cần xem nội dung của mục khác và tách những nội dung có nhiều trường hợp thành hạng mục riêng rồi vẽ lại, như vậy mới chọn đúng hạng mục trọng điểm. Theo quy ước, mục khác luôn đặt ở cuối bên phải bất kể số lượng, còn nếu loại bỏ nó thì tổng số sẽ không khớp."
+    },
+    {
+      "id": "3-943",
+      "level": 3,
+      "topic": "shin7",
+      "status": "checked",
+      "question": "系統図法で方策を展開したあと、展開が正しいかを確かめるため、下位の手段から上位に向かって読み返すことにした。このときの問いかけとして、最も適切なものはどれか。",
+      "choices": [
+        "「なぜそれが起きるのか」",
+        "「いつまでに、だれが行うのか」",
+        "「この手段は何のために行うのか」",
+        "「ほかに似た意見はないか」"
+      ],
+      "answer": 2,
+      "explanation": "系統図は、上位から下位へは「そのためにはどうすればよいか」と手段を展開し、下位から上位へは「それは何のためか」と読み返して、目的と手段のつながりが正しいかを確かめます。「なぜそれが起きるのか」は特性要因図などで原因を掘り下げる問いかけで、「似た意見」は親和図法でカードをまとめるときの考え方です。",
+      "explanation_vi": "Với sơ đồ cây, đi từ trên xuống dưới thì đặt câu hỏi để làm được điều đó cần làm gì nhằm triển khai biện pháp, còn đọc ngược từ dưới lên trên thì hỏi biện pháp này để làm gì, nhằm kiểm tra mối nối giữa mục đích và biện pháp có đúng không. Câu hỏi vì sao điều đó xảy ra là câu hỏi đào sâu nguyên nhân như ở biểu đồ nhân quả, còn tìm ý kiến tương tự là cách nghĩ khi gom thẻ trong biểu đồ tương đồng."
+    },
+    {
+      "id": "3-944",
+      "level": 3,
+      "topic": "shin7",
+      "status": "checked",
+      "question": "アローダイアグラムで、最早開始時刻と最遅開始時刻が等しくなる作業についての説明として、最も適切なものはどれか。",
+      "choices": [
+        "日程に余裕が最も大きい作業である",
+        "全体の日程に影響しないので、後回しにしてよい作業である",
+        "クリティカルパス上の作業で、遅れるとそのまま全体の完了が遅れる",
+        "所要時間が0のダミー作業である"
+      ],
+      "answer": 2,
+      "explanation": "最早開始時刻と最遅開始時刻が等しい作業は、開始を遅らせる余裕がまったくない作業で、クリティカルパス上にあります。この作業が1日遅れると、全体の完了も1日遅れます。余裕がある作業は、最遅開始時刻が最早開始時刻より遅くなります。",
+      "explanation_vi": "Công việc có thời điểm bắt đầu sớm nhất bằng thời điểm bắt đầu muộn nhất là công việc hoàn toàn không có thời gian dự phòng, nằm trên đường găng. Nếu công việc này chậm một ngày thì toàn bộ dự án cũng hoàn thành chậm một ngày. Công việc có thời gian dự phòng thì thời điểm bắt đầu muộn nhất sẽ trễ hơn thời điểm bắt đầu sớm nhất."
+    },
+    {
+      "id": "3-945",
+      "level": 3,
+      "topic": "hoho3",
+      "status": "checked",
+      "question": "購買課で日常管理を始めるにあたり、仕事の結果を見る管理項目を決めることにした。管理項目として最も適切なものはどれか。",
+      "choices": [
+        "1か月に作成した発注書の枚数",
+        "購入品の納期遅れ件数",
+        "取引先の会社の数",
+        "購買課員の1か月の残業時間の合計"
+      ],
+      "answer": 1,
+      "explanation": "購買課の仕事の目的は、必要な品物を必要な時期に、必要な品質で手に入れることです。納期遅れ件数はその目的が達成できたかを表すので、管理項目として適切です。発注書の枚数や取引先の数は仕事の量や規模を表すだけで、結果のよしあしは判断できません。残業時間は管理の対象にはなりますが、購買の仕事の結果を直接表すものではありません。",
+      "explanation_vi": "Mục đích công việc của bộ phận mua hàng là có được vật tư cần thiết, đúng thời điểm, với chất lượng cần thiết. Số lần giao hàng trễ cho biết mục đích đó có đạt được hay không, nên phù hợp làm hạng mục quản lý. Số phiếu đặt hàng hay số nhà cung cấp chỉ thể hiện khối lượng hoặc quy mô công việc, không đánh giá được kết quả tốt hay xấu. Thời gian làm thêm giờ có thể được theo dõi nhưng không trực tiếp thể hiện kết quả công việc mua hàng."
+    },
+    {
+      "id": "3-946",
+      "level": 3,
+      "topic": "hoho3",
+      "status": "checked",
+      "question": "段取り替えの改善によって、1回あたりの段取り時間が60分から40分になった。段取り替えは1日3回、1か月の稼働日は20日で、作業者1人で行う。1時間あたりの人件費を3,000円とすると、この改善による1か月あたりの人件費の削減額はいくらか。",
+      "choices": [
+        "360万円",
+        "2万円",
+        "6万円",
+        "72万円"
+      ],
+      "answer": 2,
+      "explanation": "短縮できた時間は1回20分なので、1か月では 20分×3回×20日＝1,200分＝20時間です。20時間×3,000円＝60,000円、つまり6万円になります。1日の回数を掛け忘れると2万円、年間に直すと72万円、分を時間に直さずに掛けると360万円となり誤りです。",
+      "explanation_vi": "Mỗi lần rút ngắn được 20 phút, nên trong một tháng là 20 phút × 3 lần × 20 ngày = 1,200 phút = 20 giờ. Nhân với 3,000 yên mỗi giờ được 60,000 yên, tức 6 vạn yên. Nếu quên nhân số lần mỗi ngày sẽ ra 2 vạn yên, nếu tính cho cả năm sẽ ra 72 vạn yên, còn nếu không đổi phút sang giờ mà nhân luôn sẽ ra 360 vạn yên, đều là sai."
+    },
+    {
+      "id": "3-947",
+      "level": 3,
+      "topic": "hoho3",
+      "status": "checked",
+      "question": "なぜなぜ分析で「なぜ」を問いかけたところ、1つの現象に対して、考えられる答えが2つ出てきた。このときの進め方として、最も適切なものはどれか。",
+      "choices": [
+        "答えが2つ出た時点で分析をやめ、両方に対する対策をすぐに実施する",
+        "話し合いで、より可能性が高そうな1つだけを選び、もう1つは捨てて先に進む",
+        "枝分かれさせて、それぞれの答えについて「なぜ」を続け、事実で確かめながら掘り下げる",
+        "2つの答えを1つの文にまとめてから、「なぜ」を続ける"
+      ],
+      "answer": 2,
+      "explanation": "なぜなぜ分析では、1つの「なぜ」に複数の答えがあれば枝分かれさせ、それぞれについて現場・現物で事実を確かめながら掘り下げます。思い込みで1つに絞ると、真の原因を見落とすおそれがあります。複数の内容を1つの文にまとめると、何について「なぜ」を問うのかがあいまいになります。",
+      "explanation_vi": "Trong phân tích tại sao tại sao, nếu một câu hỏi vì sao có nhiều câu trả lời thì rẽ nhánh, và với từng câu trả lời tiếp tục đào sâu, đồng thời kiểm chứng bằng sự thật tại hiện trường và trên hiện vật. Nếu chỉ chọn một câu trả lời theo cảm tính thì có thể bỏ sót nguyên nhân thật. Còn gộp nhiều nội dung vào một câu thì không rõ đang hỏi vì sao về điều gì."
+    },
+    {
+      "id": "3-948",
+      "level": 3,
+      "topic": "hoho3",
+      "status": "checked",
+      "question": "なぜなぜ分析を始めるとき、最初に書く「現象（問題）」の書き方として、最も適切なものはどれか。",
+      "choices": [
+        "「品質が悪い」",
+        "「設備が古いことが問題である」",
+        "「組立ラインで、製品Aのカバーのねじ1本が締められないまま次工程に流れた」",
+        "「作業者の注意が足りない」"
+      ],
+      "answer": 2,
+      "explanation": "なぜなぜ分析の出発点は、何が、どこで、どのような状態になったかを具体的な事実として書きます。「品質が悪い」のようにあいまいだと掘り下げる方向が定まりません。「注意が足りない」「設備が古い」は現象ではなく、すでに原因の推定（思い込み）を含んでいるので、出発点として不適切です。",
+      "explanation_vi": "Điểm xuất phát của phân tích tại sao tại sao là ghi hiện tượng như một sự thật cụ thể: cái gì, ở đâu, đã ở trạng thái thế nào. Nếu ghi mơ hồ như chất lượng kém thì không xác định được hướng đào sâu. Còn các câu như người thao tác thiếu chú ý hay thiết bị cũ không phải là hiện tượng mà đã chứa sẵn sự suy đoán nguyên nhân, tức định kiến, nên không phù hợp làm điểm xuất phát."
+    },
+    {
+      "id": "3-949",
+      "level": 3,
+      "topic": "hoho3",
+      "status": "checked",
+      "question": "作業標準書に記載する内容として、適切でないものはどれか。",
+      "choices": [
+        "その作業を担当する作業者一人ひとりの勤務成績の評価",
+        "作業の手順と、それぞれの手順の急所",
+        "異常が起きたときの処置と連絡先",
+        "使用する設備・治工具と、その設定条件"
+      ],
+      "answer": 0,
+      "explanation": "作業標準書には、誰が作業しても同じ品質で作業できるように、作業の手順と急所、使用する設備・治工具と条件、異常のときの処置や連絡先などを書きます。作業者個人の勤務成績の評価は人事管理の情報であり、作業のやり方を定める作業標準書に書く内容ではありません。",
+      "explanation_vi": "Tiêu chuẩn thao tác ghi các nội dung như trình tự thao tác và điểm mấu chốt của từng bước, thiết bị và đồ gá sử dụng cùng điều kiện cài đặt, cách xử lý và nơi liên lạc khi có bất thường, để bất kỳ ai làm cũng đạt cùng chất lượng. Đánh giá thành tích làm việc của từng người thao tác là thông tin quản lý nhân sự, không phải nội dung của tài liệu quy định cách làm việc."
+    },
+    {
+      "id": "3-950",
+      "level": 3,
+      "topic": "hoho3",
+      "status": "checked",
+      "question": "ある工程の製品の長さは、規格が 50.0±1.0mm である。過去の安定した期間のデータでは、平均値 50.0mm、標準偏差 0.20mm であった。日常管理の管理水準を「平均値±3×標準偏差」として決めるとき、管理水準として正しいものはどれか。",
+      "choices": [
+        "49.4〜50.6mm",
+        "49.6〜50.4mm",
+        "49.0〜51.0mm",
+        "49.8〜50.2mm"
+      ],
+      "answer": 0,
+      "explanation": "平均値±3×標準偏差＝50.0±3×0.20＝50.0±0.6 なので、管理水準は49.4〜50.6mmです。49.0〜51.0mmは規格そのもので、これを管理水準にすると、外れたときにはすでに規格外れが出ています。49.6〜50.4mmは±2×標準偏差、49.8〜50.2mmは±1×標準偏差の範囲です。",
+      "explanation_vi": "Trung bình ± 3 × độ lệch chuẩn = 50.0 ± 3 × 0.20 = 50.0 ± 0.6, nên mức quản lý là 49.4 đến 50.6 mm. Khoảng 49.0 đến 51.0 mm chính là quy cách; nếu lấy làm mức quản lý thì khi vượt ra ngoài đã có sản phẩm ngoài quy cách. Khoảng 49.6 đến 50.4 mm là ± 2 lần độ lệch chuẩn, còn 49.8 đến 50.2 mm là ± 1 lần độ lệch chuẩn."
+    },
+    {
+      "id": "3-951",
+      "level": 3,
+      "topic": "hoho3",
+      "status": "checked",
+      "question": "QCストーリーの「効果の確認」で、不良率の推移を折れ線グラフに表して報告する。グラフの描き方として、最も適切なものはどれか。",
+      "choices": [
+        "対策前のデータは条件が違うので、グラフから省く",
+        "対策前と対策後のデータを同じグラフに時間の順に描き、目標値の線と対策を実施した時期を書き入れる",
+        "対策後のデータだけを描き、目標値は文章で説明する",
+        "効果を大きく見せるため、対策後の部分だけ縦軸の目盛りを細かくする"
+      ],
+      "answer": 1,
+      "explanation": "効果の確認では、対策前と対策後を同じ尺度で時間の順に並べ、目標値の線と対策の実施時期を書き入れると、いつから・どれだけ変化し、目標に届いたかが一目でわかります。対策後だけでは比較ができず、途中で目盛りを変えると効果を誤って伝えてしまいます。",
+      "explanation_vi": "Khi xác nhận hiệu quả, nếu vẽ dữ liệu trước và sau biện pháp trên cùng một thang đo theo thứ tự thời gian, đồng thời ghi đường giá trị mục tiêu và thời điểm thực hiện biện pháp, thì nhìn là biết thay đổi từ khi nào, bao nhiêu và đã đạt mục tiêu chưa. Chỉ vẽ dữ liệu sau biện pháp thì không so sánh được, còn đổi thang chia giữa chừng sẽ truyền đạt sai về hiệu quả."
+    },
+    {
+      "id": "3-952",
+      "level": 3,
+      "topic": "kanri",
+      "status": "checked",
+      "question": "新しく配属された作業者に、作業標準書を渡して読ませ、上司が一度だけ作業をやって見せたあと、すぐに一人で作業させたところ、不良が発生した。「仕事の教え方」の4段階に照らして、主に不足していた段階はどれか。",
+      "choices": [
+        "作業の目的を伝える段階",
+        "作業者にやらせてみて、誤りを直し、その後も様子を確かめる段階",
+        "習う準備をさせる段階",
+        "作業を説明してやって見せる段階"
+      ],
+      "answer": 1,
+      "explanation": "仕事の教え方は、①習う準備をさせる、②作業を説明してやって見せる、③やらせてみて誤りを直す、④教えた後を見る（ときどき確認する）の4段階です。この例では、説明してやって見せたものの、本人にやらせて確かめることも、その後の確認もしないまま一人で作業させています。",
+      "explanation_vi": "Cách dạy công việc gồm 4 bước: một là chuẩn bị cho người học, hai là giải thích và làm mẫu, ba là cho người học làm thử và sửa lỗi, bốn là theo dõi sau khi dạy, thỉnh thoảng kiểm tra lại. Trong ví dụ này, cấp trên đã giải thích và làm mẫu, nhưng chưa cho người mới làm thử để kiểm tra và cũng không theo dõi sau đó mà để họ làm một mình ngay."
+    },
+    {
+      "id": "3-953",
+      "level": 3,
+      "topic": "kanri",
+      "status": "checked",
+      "question": "管理者がQCサークル活動を評価するときの考え方として、最も適切なものはどれか。",
+      "choices": [
+        "削減できた金額だけで評価し、金額の大きいサークルを高く評価する",
+        "発表会での話し方のうまさを中心に評価する",
+        "評価をするとメンバーの負担になるので、評価は行わない",
+        "テーマの難しさや活動の進め方、メンバーの能力の向上なども含めて評価し、次の活動につながる助言をする"
+      ],
+      "answer": 3,
+      "explanation": "QCサークル活動は、改善の成果だけでなく、メンバーの能力の向上や活気ある職場づくりもねらいとしています。そのため、有形効果だけでなく、テーマの選び方、QCストーリーに沿った進め方、手法の活用、メンバーの成長なども評価し、次の活動に生かせるよう助言することが大切です。",
+      "explanation_vi": "Hoạt động nhóm QC không chỉ nhằm vào thành quả cải tiến mà còn nhằm nâng cao năng lực thành viên và xây dựng nơi làm việc sôi nổi. Vì vậy, ngoài hiệu quả hữu hình, cần đánh giá cả cách chọn đề tài, cách tiến hành theo trình tự giải quyết vấn đề, việc sử dụng công cụ và sự trưởng thành của thành viên, rồi góp ý để áp dụng cho hoạt động tiếp theo."
+    },
+    {
+      "id": "3-954",
+      "level": 3,
+      "topic": "kanri",
+      "status": "checked",
+      "question": "品質マネジメントシステムの考え方で、「購買プロセス」のインプットとアウトプットの組み合わせとして、最も適切なものはどれか。",
+      "choices": [
+        "インプット：購買課の人員　アウトプット：購買課の予算",
+        "インプット：納入された部品　アウトプット：購買要求（必要な部品の仕様・数量・納期）",
+        "インプット：購買要求（必要な部品の仕様・数量・納期）　アウトプット：要求どおりに納入された部品",
+        "インプット：完成した製品　アウトプット：お客様からの注文"
+      ],
+      "answer": 2,
+      "explanation": "プロセスは、インプットを使って意図した結果（アウトプット）を生み出す活動です。購買プロセスでは、必要な部品の仕様・数量・納期を示した購買要求がインプットとなり、要求どおりに納入された部品がアウトプットとなります。人員や予算はプロセスを動かすための資源であり、インプット・アウトプットとは区別します。",
+      "explanation_vi": "Quá trình là hoạt động sử dụng đầu vào để tạo ra kết quả dự kiến, tức đầu ra. Trong quá trình mua hàng, yêu cầu mua hàng nêu rõ quy cách, số lượng, thời hạn giao của linh kiện cần thiết là đầu vào, còn linh kiện được giao đúng như yêu cầu là đầu ra. Nhân sự và ngân sách là nguồn lực để vận hành quá trình, cần phân biệt với đầu vào và đầu ra."
+    },
+    {
+      "id": "3-955",
+      "level": 3,
+      "topic": "kanri",
+      "status": "checked",
+      "question": "職場で起きた不具合やミスの情報を上司に伝えるときの考え方として、最も適切なものはどれか。",
+      "choices": [
+        "よい情報を先に報告し、悪い情報は落ち着いてから報告する",
+        "原因と対策がすべてわかってから、まとめて報告する",
+        "小さな不具合は自分で処理し、報告しないほうが上司の負担が減る",
+        "悪い情報ほど早く報告し、事実をそのまま伝える"
+      ],
+      "answer": 3,
+      "explanation": "悪い情報ほど早く上げることで、応急処置や影響範囲の確認、お客様への連絡などを早く始められ、被害の拡大を防げます。原因や対策がわかるまで待つと対応が遅れます。小さな不具合でも報告し記録することで、再発防止や大きな問題の未然防止につながります。",
+      "explanation_vi": "Thông tin xấu càng báo sớm thì càng sớm bắt đầu được xử lý tạm thời, xác định phạm vi ảnh hưởng và liên lạc với khách hàng, từ đó ngăn thiệt hại lan rộng. Nếu chờ đến khi biết rõ nguyên nhân và biện pháp mới báo thì việc ứng phó sẽ chậm. Dù là trục trặc nhỏ, việc báo cáo và ghi lại sẽ giúp phòng ngừa tái phát và phòng ngừa trước các vấn đề lớn."
+    },
+    {
+      "id": "3-956",
+      "level": 3,
+      "topic": "kanri",
+      "status": "checked",
+      "question": "ある工場で、作業者からヒヤリ・ハット（事故や不良には至らなかったが、ひやりとしたり、はっとしたりした出来事）の報告を集める仕組みをつくった。この仕組みの主なねらいとして、最も適切なものはどれか。",
+      "choices": [
+        "事故や不良が起きる前の兆しを集めて原因を調べ、未然防止の対策につなげる",
+        "報告を書かせることで、作業者の文章力を高める",
+        "事故が起きたときの責任者を明確にする",
+        "報告件数の多い作業者を注意し、気を引き締めさせる"
+      ],
+      "answer": 0,
+      "explanation": "大きな事故や不良の背後には、多くのヒヤリ・ハットがあるといわれます。その情報を集めて原因を調べ、対策をとれば、事故や不良を起こる前に防ぐ（未然防止）ことができます。報告した人を責めると報告が集まらなくなるので、責任追及に使ってはいけません。",
+      "explanation_vi": "Người ta cho rằng đằng sau mỗi tai nạn hay lỗi lớn có rất nhiều sự cố suýt xảy ra. Nếu thu thập những thông tin đó, tìm nguyên nhân và có biện pháp, có thể ngăn tai nạn và lỗi trước khi chúng xảy ra, tức là phòng ngừa trước. Nếu trách phạt người báo cáo thì sẽ không còn ai báo cáo, nên không được dùng cơ chế này để truy cứu trách nhiệm."
+    },
+    {
+      "id": "3-957",
+      "level": 3,
+      "topic": "gainen3",
+      "status": "checked",
+      "question": "JIS Q 9000では、品質を「対象に本来備わっている特性の集まりが、要求事項を満たす程度」と定義している。ある電気ポットについて、次のうち「本来備わっている特性」にあたらないものはどれか。",
+      "choices": [
+        "容量",
+        "販売価格",
+        "満水からの沸騰時間",
+        "本体の重さ"
+      ],
+      "answer": 1,
+      "explanation": "「本来備わっている」とは、その対象の中に存在している性質という意味で、沸騰時間・容量・重さなどがあたります。販売価格は、売る側が製品に付与した特性であり、本来備わっている特性ではありません。そのため、価格が高いことは品質がよいことを意味しません。",
+      "explanation_vi": "Vốn có nghĩa là tính chất tồn tại bên trong chính đối tượng đó, ví dụ thời gian đun sôi, dung tích, khối lượng. Giá bán là đặc tính do bên bán gán cho sản phẩm, không phải đặc tính vốn có. Vì vậy, giá cao không có nghĩa là chất lượng tốt."
+    },
+    {
+      "id": "3-958",
+      "level": 3,
+      "topic": "gainen3",
+      "status": "checked",
+      "question": "要求事項には、明示されているもの、通常暗黙のうちに了解されているもの、義務として要求されているものがある。家庭用電気製品の要求事項のうち、「義務として要求されているもの」にあたるものとして、最も適切なものはどれか。",
+      "choices": [
+        "販売店が希望した梱包の大きさ",
+        "お客様が注文書で指定した本体の色",
+        "法令で定められた電気用品の安全基準を満たすこと",
+        "説明しなくても、お客様が当然と考えている「普通に使って壊れない」こと"
+      ],
+      "answer": 2,
+      "explanation": "義務として要求されているものとは、法令や規制によって満たすことが求められている事項です。電気用品の安全に関する法令の基準はこれにあたります。注文書で指定された色や梱包の大きさは明示された要求事項、「普通に使って壊れない」は通常暗黙のうちに了解されている要求事項です。",
+      "explanation_vi": "Yêu cầu mang tính bắt buộc là những điều phải đáp ứng theo luật pháp hoặc quy định. Tiêu chuẩn an toàn của thiết bị điện do luật định thuộc loại này. Màu sắc được chỉ định trong đơn đặt hàng hay kích thước bao bì là yêu cầu được nêu rõ, còn việc dùng bình thường không bị hỏng là yêu cầu ngầm hiểu thông thường."
+    },
+    {
+      "id": "3-959",
+      "level": 3,
+      "topic": "gainen3",
+      "status": "checked",
+      "question": "設計部門が「後工程はお客様」の考え方を実践する取組みとして、最も適切なものはどれか。",
+      "choices": [
+        "設計の締切りを守ることを最優先し、図面の内容は製造部門で直してもらう",
+        "設計部門の担当者の得意な技術を、できるだけ多く製品に盛り込む",
+        "製造部門や検査部門の意見を設計の段階で聞き、つくりやすく検査しやすい設計にする",
+        "製造で問題が出たときは、製造部門の責任として対応を任せる"
+      ],
+      "answer": 2,
+      "explanation": "設計部門にとっての後工程は、図面を受け取って製品をつくる製造部門や、検査部門などです。後工程の意見を設計段階で取り入れ、つくりやすく検査しやすい設計にすることが「後工程はお客様」の実践になります。問題を後工程に任せたり、自部門の都合を優先したりするのはこの考え方に反します。",
+      "explanation_vi": "Với bộ phận thiết kế, công đoạn sau là bộ phận sản xuất nhận bản vẽ để chế tạo, bộ phận kiểm tra và các bộ phận khác. Lắng nghe ý kiến của công đoạn sau ngay từ giai đoạn thiết kế để tạo ra thiết kế dễ chế tạo, dễ kiểm tra chính là thực hành tư tưởng công đoạn sau là khách hàng. Phó mặc vấn đề cho công đoạn sau hay ưu tiên sự thuận tiện của bộ phận mình là đi ngược lại tư tưởng này."
+    },
+    {
+      "id": "3-960",
+      "level": 3,
+      "topic": "gainen3",
+      "status": "checked",
+      "question": "出荷検査で、ある製品の測定値が規格をわずかに外れた。納期が迫っていたため、上司から「規格内の値に書き換えて出荷しよう」と指示された。品質管理の考え方にもとづく対応として、最も適切なものはどれか。",
+      "choices": [
+        "上司の指示なので、そのまま書き換えて出荷する",
+        "わずかな外れなので、記録は書き換えずに黙って出荷する",
+        "記録を書き換えることはせず、品質保証部門などに事実を報告し、決められた手続きで処置を決める",
+        "測定をやり直し、規格内の値が出るまで何度も測定して、その値を記録する"
+      ],
+      "answer": 2,
+      "explanation": "検査記録の書き換え（改ざん）は、お客様の信頼を裏切り、会社の存続にもかかわる重大な問題です。品質第一の考え方にもとづき、事実を正しく記録して報告し、不適合品として決められた手続き（選別、特別採用の申請など）で処置を決めます。規格内の値が出るまで測り直すことも、事実をゆがめる点で同じ問題があります。",
+      "explanation_vi": "Sửa đổi, làm giả hồ sơ kiểm tra là vấn đề nghiêm trọng, phản bội lòng tin của khách hàng và ảnh hưởng đến cả sự tồn tại của công ty. Theo tư tưởng chất lượng là trên hết, phải ghi chép và báo cáo đúng sự thật, rồi xử lý như sản phẩm không phù hợp theo thủ tục đã quy định, chẳng hạn phân loại hoặc xin chấp nhận đặc biệt. Đo đi đo lại cho đến khi ra giá trị trong quy cách cũng có cùng vấn đề vì làm sai lệch sự thật."
+    },
+    {
+      "id": "3-961",
+      "level": 3,
+      "topic": "gainen3",
+      "status": "checked",
+      "question": "製品の品質の良し悪しを最終的に評価するのは誰か、という問いに対して、品質管理の考え方として最も適切なものはどれか。",
+      "choices": [
+        "製品を製造した製造部門",
+        "製品を使うお客様",
+        "製品を検査した検査部門",
+        "製品を設計した設計部門"
+      ],
+      "answer": 1,
+      "explanation": "品質は、お客様の要求をどれだけ満たしているかで決まるので、最終的に評価するのは製品を使うお客様です。社内の規格に合格していても、お客様の要求を満たしていなければ品質がよいとはいえません。社内の各部門は、お客様の評価を高めるために品質をつくり込む立場にあります。",
+      "explanation_vi": "Chất lượng được quyết định bởi mức độ đáp ứng yêu cầu của khách hàng, nên người đánh giá cuối cùng là khách hàng sử dụng sản phẩm. Dù đạt quy cách nội bộ, nếu không đáp ứng yêu cầu của khách hàng thì không thể nói là chất lượng tốt. Các bộ phận trong công ty có vai trò tạo dựng chất lượng để nâng cao đánh giá của khách hàng."
+    },
+    {
+      "id": "3-962",
+      "level": 3,
+      "topic": "hosho3",
+      "status": "checked",
+      "question": "製造物責任法（PL法）で、製品の欠陥による損害について賠償責任を負う「製造業者等」に含まれるものとして、最も適切なものはどれか。",
+      "choices": [
+        "製品の広告を作成した広告会社",
+        "製品を購入して使用した利用者",
+        "製品を運送した運送業者",
+        "製品を海外から輸入して国内で販売した業者"
+      ],
+      "answer": 3,
+      "explanation": "製造物責任法でいう製造業者等には、製品を製造・加工した者のほか、製品を輸入した者や、製造業者として自分の名前などを表示した者も含まれます。海外の製造者に直接責任を問うのは難しいため、輸入業者が責任を負います。運送業者や広告会社、利用者は製造業者等にはあたりません。",
+      "explanation_vi": "Theo Luật trách nhiệm sản phẩm, nhà sản xuất và các đối tượng tương đương bao gồm người chế tạo, gia công sản phẩm, người nhập khẩu sản phẩm, và người ghi tên mình lên sản phẩm như nhà sản xuất. Vì khó truy cứu trách nhiệm trực tiếp với nhà sản xuất ở nước ngoài, nên nhà nhập khẩu phải chịu trách nhiệm. Công ty vận chuyển, công ty quảng cáo hay người sử dụng không thuộc đối tượng này."
+    },
+    {
+      "id": "3-963",
+      "level": 3,
+      "topic": "hosho3",
+      "status": "checked",
+      "question": "製造物責任法（PL法）の対象となる「製造物」は、製造または加工された動産である。次のうち、この「製造物」にあたらないものはどれか。",
+      "choices": [
+        "工場で組み立てた家庭用の電子レンジ",
+        "自動車に組み込まれる部品",
+        "建築会社が建てた住宅（建物そのもの）",
+        "工場で加工した冷凍食品"
+      ],
+      "answer": 2,
+      "explanation": "製造物責任法の製造物は「製造又は加工された動産」なので、土地や建物などの不動産は対象外です。電子レンジ、加工した冷凍食品、自動車部品はいずれも製造・加工された動産なので製造物にあたります。なお、建物に使われた部品や設備機器が動産として製造されたものであれば、それらは対象になりえます。",
+      "explanation_vi": "Sản phẩm theo Luật trách nhiệm sản phẩm là động sản được chế tạo hoặc gia công, nên bất động sản như đất đai, nhà cửa không thuộc phạm vi. Lò vi sóng, thực phẩm đông lạnh đã chế biến, linh kiện ô tô đều là động sản được chế tạo hoặc gia công nên là sản phẩm theo luật này. Tuy nhiên, linh kiện hay thiết bị dùng trong tòa nhà nếu được chế tạo như động sản thì vẫn có thể thuộc phạm vi."
+    },
+    {
+      "id": "3-964",
+      "level": 3,
+      "topic": "hosho3",
+      "status": "checked",
+      "question": "ある陶器メーカーでは、表面に小さな色むらがあり、1級品の要求事項を満たさない食器を、要求事項の異なる2級品として扱い、表示を変えて販売することにした。このような不適合品の処置を何というか。",
+      "choices": [
+        "修理",
+        "再格付け",
+        "特別採用",
+        "手直し"
+      ],
+      "answer": 1,
+      "explanation": "再格付けは、不適合となった製品の等級（グレード）を変え、当初とは異なる要求事項に適合するものとして扱う処置です。手直しは元の要求事項を満たすように処置すること、修理は元の要求事項は満たさないが意図した用途に使えるようにすること、特別採用は要求事項を満たさないものを関係者の承認を得て使用・出荷することです。",
+      "explanation_vi": "Phân loại lại cấp là cách xử lý thay đổi cấp hạng của sản phẩm không phù hợp, coi nó là sản phẩm phù hợp với một yêu cầu khác với ban đầu. Làm lại là xử lý để đáp ứng yêu cầu ban đầu; sửa chữa là làm cho sản phẩm dùng được cho mục đích dự kiến dù không đáp ứng yêu cầu ban đầu; chấp nhận đặc biệt là sử dụng hoặc xuất hàng sản phẩm không đáp ứng yêu cầu sau khi được bên liên quan chấp thuận."
+    },
+    {
+      "id": "3-965",
+      "level": 3,
+      "topic": "kanrizu",
+      "status": "checked",
+      "question": "4つのラインの状況を、管理図の状態と工程能力指数 Cp で整理した。ラインA：安定、Cp＝1.67。ラインB：安定、Cp＝0.80。ラインC：管理限界外の点が複数あり、全データから求めた Cp＝1.50。ラインD：安定、Cp＝1.10。この表についての判断として、最も適切なものはどれか。",
+      "choices": [
+        "ラインAは工程能力が十分なので、管理図による管理をやめてよい",
+        "ラインDは Cp が1.33未満なので、管理図の管理限界線を規格に合わせて狭くする",
+        "ラインCは Cp の値は大きいが安定状態でないので、まず異常原因を取り除いて安定させてから、工程能力を評価し直す",
+        "ラインBは管理図が安定しているので、規格外れの心配はなく、現状を維持すればよい"
+      ],
+      "answer": 2,
+      "explanation": "工程能力指数は、工程が安定状態にあることを前提に意味をもつ値です。ラインCは異常原因が残っているので、Cp＝1.50 は工程の実力を表しているとはいえず、まず安定させてから評価し直します。ラインBは安定していても Cp＝0.80 と工程能力が不足しており、規格外れが出るおそれがあります。管理限界は工程のデータから決まるもので、規格に合わせて変えるものではなく、能力が十分なラインAでも管理図による監視は続けます。",
+      "explanation_vi": "Chỉ số năng lực quy trình chỉ có ý nghĩa khi công đoạn ở trạng thái ổn định. Dây chuyền C vẫn còn nguyên nhân bất thường nên giá trị Cp 1.50 không phản ánh đúng thực lực, cần làm ổn định trước rồi mới đánh giá lại. Dây chuyền B tuy ổn định nhưng Cp chỉ 0.80, năng lực không đủ nên có nguy cơ xuất hiện hàng ngoài quy cách. Giới hạn kiểm soát được xác định từ dữ liệu công đoạn chứ không chỉnh theo quy cách, và ngay cả dây chuyền A có năng lực đủ cũng vẫn tiếp tục theo dõi bằng biểu đồ kiểm soát.",
       "advanced": true
     }
   ]
