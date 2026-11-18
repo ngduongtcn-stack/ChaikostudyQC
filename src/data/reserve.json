@@ -105,38 +105,6 @@
     "explanation_vi": "Chất lượng công việc được thể hiện bằng mức độ kết quả công việc đáp ứng yêu cầu của công đoạn sau hoặc khách hàng. Số lỗi ghi chép trong giấy tờ phản ánh kết quả công việc, nên phù hợp làm chỉ số chất lượng của công việc văn phòng."
   },
   {
-    "id": "r-a1-22",
-    "level": 4,
-    "topic": "data",
-    "question": "作業方法の改善効果を確かめるため、改善前は新人作業者が担当した週の不良率、改善後はベテラン作業者が担当した週の不良率を比べたところ、4%から1%に下がった。この比べ方についての説明として、最も適切なものはどれか。",
-    "choices": [
-      "不良率が下がっているので、改善の効果があったことは確実である",
-      "作業者の違いの影響も混ざっているので、作業者などほかの条件をそろえて比べる必要がある",
-      "検査した製品の数が同じであれば、ほかの条件は考えなくてよい",
-      "改善後の不良率が低すぎるので、改善後のデータを捨てて取り直す"
-    ],
-    "answer": 1,
-    "explanation": "改善前と改善後で作業者まで変わっているので、不良率が下がったのが作業方法の改善によるものか、作業者の経験の違いによるものかを区別できません。改善の効果を確かめるには、作業者・機械・材料など、改善した点以外の条件をできるだけそろえて比べる必要があります。データの数が同じでも、条件が違えば正しい比較にはなりません。",
-    "explanation_vi": "Trước và sau cải tiến đã thay đổi cả người làm, nên không phân biệt được tỷ lệ lỗi giảm là nhờ cải tiến phương pháp làm việc hay do khác biệt kinh nghiệm của người làm. Để xác nhận hiệu quả cải tiến, cần so sánh trong điều kiện giống nhau nhất có thể về người làm, máy, vật liệu, ngoài điểm đã cải tiến. Dù số lượng dữ liệu như nhau, nếu điều kiện khác nhau thì không phải là so sánh đúng.",
-    "advanced": true
-  },
-  {
-    "id": "r-a2-20",
-    "level": 4,
-    "topic": "7tools",
-    "question": "2台の機械の1か月の生産数と不良数を調べた。\n機械A：生産数2,000個、不良数40個\n機械B：生産数500個、不良数20個\nこの結果からいえることとして、最も適切なものはどれか。",
-    "choices": [
-      "不良数は機械Aのほうが多いが、不良率は機械Bのほうが高い",
-      "2台を合わせた不良率は3%である",
-      "機械Aと機械Bの不良率は同じである",
-      "不良数が多い機械Aのほうが、不良を出しやすい機械である"
-    ],
-    "answer": 0,
-    "explanation": "不良率は、機械Aが40÷2,000×100＝2%、機械Bが20÷500×100＝4%で、機械Bのほうが高い。生産数が違うグループを層別して比べるときは、件数ではなく率で比べないと判断を誤る。2台を合わせた不良率は60÷2,500×100＝2.4%で、2%と4%を単純に平均した3%にはならない。",
-    "explanation_vi": "Tỷ lệ lỗi của máy A là 40 / 2.000 x 100 = 2%, của máy B là 20 / 500 x 100 = 4%, nên máy B cao hơn. Khi phân tầng để so sánh các nhóm có số lượng sản xuất khác nhau, phải so sánh bằng tỷ lệ chứ không phải số lượng lỗi, nếu không sẽ kết luận sai. Tỷ lệ lỗi gộp của hai máy là 60 / 2.500 x 100 = 2,4%, không phải 3% như khi lấy trung bình cộng đơn giản của 2% và 4%.",
-    "advanced": true
-  },
-  {
     "id": "r-a2-21",
     "level": 4,
     "topic": "7tools",
@@ -169,22 +137,6 @@
     "advanced": true
   },
   {
-    "id": "r-a3-13",
-    "level": 4,
-    "topic": "kangaekata",
-    "advanced": true,
-    "question": "新しい掃除機を企画するにあたり、マーケットインの考え方で進めることにした。次の進め方のうち、適切でないものはどれか。",
-    "choices": [
-      "アンケートで要望として挙がらなかった点は、お客様が求めていないことなので、検討しなくてよい",
-      "家庭で実際に掃除機を使っている様子を観察し、お客様が言葉にしていない不便を探す",
-      "販売店や窓口に寄せられた苦情・要望を集めて分析し、製品の仕様に反映する",
-      "発売後もお客様の使い方や評価を調べ、次の改良に生かす"
-    ],
-    "answer": 0,
-    "explanation": "お客様は、自分の要求をすべて言葉にできるとは限らない。アンケートに出てこなくても、使う様子を観察すると見つかる不便（潜在的な要求）があり、それをつかむこともマーケットインに含まれる。苦情・要望の分析や発売後の評価の調査は、お客様の要求を出発点にする進め方なので適切である。",
-    "explanation_vi": "Khách hàng không phải lúc nào cũng nói ra được hết mong muốn của mình. Có những bất tiện tuy không xuất hiện trong phiếu khảo sát nhưng có thể phát hiện khi quan sát cách khách sử dụng, tức là nhu cầu tiềm ẩn, và nắm bắt nhu cầu đó cũng thuộc cách nghĩ hướng theo thị trường. Vì vậy cho rằng điều gì không có trong khảo sát thì không cần xem xét là không phù hợp. Phân tích khiếu nại, mong muốn và khảo sát đánh giá sau khi bán đều lấy yêu cầu của khách hàng làm điểm xuất phát nên là phù hợp."
-  },
-  {
     "id": "r-a3-14",
     "level": 4,
     "topic": "kangaekata",
@@ -199,294 +151,6 @@
     "answer": 1,
     "explanation": "生産数が違うときは、件数ではなく不良率で比べる。先月は20÷4,000＝0.5％、今月は30÷10,000＝0.3％で、不良率は下がっている。件数だけで判断した班長の報告は、データの見方を誤っている。生産数が違っても、率に直せば比べることができる。",
     "explanation_vi": "Khi số lượng sản xuất khác nhau thì phải so sánh bằng tỷ lệ lỗi chứ không phải số lỗi. Tháng trước là 20 chia 4.000 bằng 0,5%, tháng này là 30 chia 10.000 bằng 0,3%, nên tỷ lệ lỗi đã giảm. Báo cáo của tổ trưởng chỉ dựa vào số lỗi nên đã đọc sai dữ liệu. Dù số lượng sản xuất khác nhau, chỉ cần đổi sang tỷ lệ là có thể so sánh được."
-  },
-  {
-    "id": "r-a4-22",
-    "level": 4,
-    "topic": "kensa",
-    "question": "ある部品の受入検査を、仕入先の検査成績書を確認する間接検査に切り替えることを考えている。切り替えの考え方として、適切でないものはどれか。",
-    "choices": [
-      "仕入先の工程が安定しており、長い間よい品質の実績があることを確かめておく",
-      "切り替えた後は、成績書が届いてさえいれば、書かれている内容は確認しなくてよい",
-      "仕入先の検査の方法や設備が信頼できることを、事前に確認しておく",
-      "切り替えた後も、ときどき自社で測定して、成績書の値と照らし合わせる"
-    ],
-    "answer": 1,
-    "explanation": "間接検査は、仕入先の検査結果を利用して受入側の検査を簡略化する方法であり、成績書の内容が判定基準を満たしているかを確かめることが判定そのものになる。届いたことだけを確認して中身を見なければ、検査をしていないのと同じである。仕入先の工程や検査の信頼性を事前に確かめ、切り替え後もときどき自社で測って照合するのは適切な考え方である。",
-    "explanation_vi": "Kiểm tra gián tiếp là cách dùng kết quả kiểm tra của nhà cung cấp để đơn giản hóa kiểm tra đầu vào, và việc xác nhận nội dung phiếu kết quả có đáp ứng tiêu chuẩn phán định hay không chính là bước phán định. Nếu chỉ xem phiếu đã đến hay chưa mà không đọc nội dung thì cũng như không kiểm tra. Xác nhận trước độ tin cậy của quá trình và việc kiểm tra của nhà cung cấp, và sau khi chuyển đổi thỉnh thoảng tự đo để đối chiếu, là cách làm phù hợp.",
-    "advanced": true
-  },
-  {
-    "id": "r-b2-22",
-    "level": 3,
-    "topic": "kanrizu",
-    "question": "管理用管理図で、点が上方管理限界線の外に出た。職場で行った次の対応のうち、適切でないものはどれか。",
-    "choices": [
-      "まず、測定ミスや計算・打点の誤りがないかを確認した",
-      "原因を調べたがわからなかったので、偶然によるものと考えてその点を除き、管理限界を計算し直した",
-      "材料ロットの切替え、作業者の交代、設備の修理など、その時期の変化点を記録と照らし合わせて調べた",
-      "原因がわかって処置したので、処置の内容を管理図に記入し、再発防止のため作業標準を改訂した"
-    ],
-    "answer": 1,
-    "explanation": "管理限界の計算から除いてよいのは、原因がわかり処置をとった点だけです。原因がわからないまま「偶然」として除くと、異常のサインを見逃すうえ、計算し直した管理限界が工程の実態を表さなくなります。原因がわからない場合は、点を残したまま調査を続け、注意して監視します。測定・打点の誤りの確認、変化点の調査、処置内容の記録と標準化は、いずれも適切な対応です。",
-    "explanation_vi": "Chỉ được loại khỏi phép tính giới hạn kiểm soát những điểm đã tìm ra nguyên nhân và đã có xử lý. Nếu chưa rõ nguyên nhân mà coi là ngẫu nhiên rồi loại bỏ, ta vừa bỏ qua dấu hiệu bất thường, vừa làm giới hạn kiểm soát tính lại không còn phản ánh đúng thực trạng công đoạn. Khi chưa tìm ra nguyên nhân, phải giữ lại điểm đó, tiếp tục điều tra và theo dõi cẩn thận. Kiểm tra sai sót đo, tính và chấm điểm, điều tra các điểm thay đổi, ghi lại nội dung xử lý và tiêu chuẩn hóa đều là cách làm phù hợp.",
-    "advanced": true
-  },
-  {
-    "id": "r-b3-07",
-    "level": 3,
-    "topic": "shin7",
-    "question": "ある職場で、QCストーリーに沿って「組立工程の手直しを減らす」問題に取り組んだ。各ステップでの手法の使い方として、適切でないものはどれか。",
-    "choices": [
-      "要因の解析：原因どうしが互いにからみ合っていたので、系統図法で原因どうしの関係を矢印で自由に結び、根本原因を探した",
-      "対策の立案：「手直しをなくす」という目的から、系統図法で具体的な手段まで枝分かれさせて展開した",
-      "対策の実施：計画どおりに進まない場合に備えて、PDPC法で起こりうる事態とその対応を前もって決めておいた",
-      "効果の確認：対策の前と後のパレート図を同じ目盛りで並べ、手直し件数の減り方を比べた"
-    ],
-    "answer": 0,
-    "explanation": "原因どうしが複雑にからみ合った関係を矢印で自由に結んで根本原因を探すのは連関図法の使い方で、系統図法ではありません。系統図法は、目的から手段へと一方向に枝分かれさせて展開する手法なので、対策の立案に向いています。PDPC法で実施中の事態に備えること、対策前後のパレート図を同じ目盛りで比べることは、どちらも適切です。連関図法と系統図法は「原因を探す」か「手段を展開する」かで使い分けます。",
-    "explanation_vi": "Nối tự do các nguyên nhân đan xen phức tạp bằng mũi tên để tìm nguyên nhân gốc là cách dùng của biểu đồ liên quan, không phải biểu đồ cây. Biểu đồ cây triển khai một chiều từ mục đích đến biện pháp theo dạng phân nhánh, nên phù hợp với bước lập đối sách. Dùng PDPC để chuẩn bị trước cho các tình huống khi thực hiện, và so sánh biểu đồ Pareto trước và sau đối sách với cùng thang chia, đều là cách dùng phù hợp. Biểu đồ liên quan dùng để tìm nguyên nhân, còn biểu đồ cây dùng để triển khai biện pháp.",
-    "advanced": true
-  },
-  {
-    "id": "r-b3-08",
-    "level": 3,
-    "topic": "shin7",
-    "question": "次の順序関係をアローダイアグラムで表したい。作業Aと作業Bは同時に開始できる。作業Cは作業Aが終わってから始め、作業Dは作業Aと作業Bの両方が終わってから始める。正しく表す方法として、最も適切なものはどれか。",
-    "choices": [
-      "AとBの終点を同じ1つの結合点にまとめ、その結合点からCとDを始める",
-      "Aの終点の結合点からBの終点の結合点へダミーを引き、Aの終点からC、Bの終点からDを始める",
-      "Bの終点の結合点からAの終点の結合点へダミーを引き、Aの終点からC、Bの終点からDを始める",
-      "Aの終点からC、Bの終点からDを始め、Cの終点の結合点からDの始点の結合点へダミーを引く"
-    ],
-    "answer": 1,
-    "explanation": "Dは「AとBの両方のあと」なので、Aの終点からBの終点（Dの始点）へダミーを引けば、DはAとBの両方を待つことになり、CはAだけを待つことができます。AとBの終点を1つにまとめると、本来Aだけを待てばよいCまでBを待つことになってしまいます。ダミーの向きを逆（Bの終点→Aの終点）にすると、CがBを待ち、DはAを待たなくなるので誤りです。Cの終点からDへダミーを引くと、必要のない「Cのあと」という条件が加わります。",
-    "explanation_vi": "Công việc D phải bắt đầu sau khi xong cả A và B, nên nếu vẽ mũi tên giả từ điểm cuối của A sang điểm cuối của B (cũng là điểm bắt đầu của D) thì D sẽ chờ cả A lẫn B, còn C chỉ cần chờ A. Nếu gộp điểm cuối của A và B thành một điểm nút thì C, vốn chỉ cần chờ A, lại phải chờ cả B. Nếu vẽ mũi tên giả theo chiều ngược lại, từ điểm cuối của B sang điểm cuối của A, thì C phải chờ B còn D lại không chờ A, nên sai. Vẽ mũi tên giả từ điểm cuối của C sang D thì thêm vào điều kiện không cần thiết là D phải chờ C.",
-    "advanced": true
-  },
-  {
-    "id": "r-b3-17",
-    "level": 3,
-    "topic": "toukei",
-    "question": "不良率pの工程からn個を抜き取ったときの不良個数Xが二項分布にしたがうとき、次の説明のうち適切でないものはどれか。",
-    "choices": [
-      "n＝20、p＝0.05 のように期待値npが小さいとき、Xの分布は0個や1個の近くに山があり、右に長く裾を引く形になる",
-      "nを4倍にすると、不良率（X÷n）の標準偏差も4倍になる",
-      "nを4倍にしても、不良率（X÷n）の期待値はpのまま変わらない",
-      "n＝100、p＝0.5 のとき、Xの期待値は50個、標準偏差は5個で、分布はほぼ左右対称の形になる"
-    ],
-    "answer": 1,
-    "explanation": "不良個数Xの標準偏差は √(np(1−p)) なので、nを4倍にすると2倍になります。不良率 X÷n の標準偏差は、これをnで割った √(p(1−p)÷n) なので、nを4倍にすると逆に1/2になります。したがって「4倍になる」は誤りです。npが小さいと右に裾を引く形になること、X÷n の期待値がpであること、n＝100・p＝0.5 で期待値50・標準偏差 √25＝5 のほぼ対称な形になることは、いずれも正しい説明です。",
-    "explanation_vi": "Độ lệch chuẩn của số sản phẩm lỗi là căn bậc hai của np(1 − p), nên khi n tăng 4 lần thì nó tăng 2 lần. Độ lệch chuẩn của tỷ lệ lỗi, tức số lỗi chia cho n, là căn bậc hai của p(1 − p) ÷ n, nên khi n tăng 4 lần thì ngược lại còn một nửa. Vì vậy phát biểu rằng độ lệch chuẩn của tỷ lệ lỗi tăng 4 lần là sai. Các phát biểu còn lại đều đúng: khi np nhỏ thì phân phối lệch, có đuôi dài về bên phải; kỳ vọng của tỷ lệ lỗi luôn là p; với n = 100 và p = 0.5 thì kỳ vọng là 50, độ lệch chuẩn √25 = 5 và hình dạng gần như đối xứng.",
-    "advanced": true
-  },
-  {
-    "id": "r-b3-18",
-    "level": 3,
-    "topic": "toukei",
-    "question": "同じ部品を2台の機械で同じ数ずつつくっている。寸法は、機械Aでは平均50.0・標準偏差2.0、機械Bでは平均52.0・標準偏差2.0の正規分布にしたがう。規格上限は54.0である。2台分をまとめた製品全体で、規格上限を超える割合はおよそいくらか。（P(u≧1.00)＝0.1587、P(u≧1.50)＝0.0668、P(u≧2.00)＝0.0228）",
-    "choices": [
-      "約6.7%",
-      "約9.1%",
-      "約18.2%",
-      "約2.3%"
-    ],
-    "answer": 1,
-    "explanation": "機械ごとに計算すると、Aは u＝(54.0−50.0)÷2.0＝2.00 で0.0228、Bは u＝(54.0−52.0)÷2.0＝1.00 で0.1587です。同じ数ずつつくっているので、全体の割合は (0.0228＋0.1587)÷2≒0.091（約9.1%）です。全体を平均51.0・標準偏差2.0の1つの正規分布とみなすと u＝1.50 で約6.7%となりますが、平均の違う2つの分布が混ざった全体は1つの正規分布ではなく、ばらつきも2.0より大きいので誤りです。18.2%は2つの割合を単純に足した誤りです。",
-    "explanation_vi": "Tính riêng từng máy: máy A có u = (54.0 − 50.0) ÷ 2.0 = 2.00 ứng với 0.0228, máy B có u = (54.0 − 52.0) ÷ 2.0 = 1.00 ứng với 0.1587. Vì hai máy sản xuất số lượng bằng nhau nên tỷ lệ chung là (0.0228 + 0.1587) ÷ 2 ≈ 0.091, khoảng 9.1%. Nếu coi toàn bộ là một phân phối chuẩn có trung bình 51.0 và độ lệch chuẩn 2.0 thì u = 1.50, ra khoảng 6.7%, nhưng tổng thể trộn từ hai phân phối có trung bình khác nhau không phải là một phân phối chuẩn và độ phân tán còn lớn hơn 2.0, nên cách đó sai. Con số 18.2% là lỗi cộng thẳng hai tỷ lệ.",
-    "advanced": true
-  },
-  {
-    "id": "r-b4-13",
-    "level": 3,
-    "topic": "gainen3",
-    "question": "掃除機の新製品を企画するにあたり、お客様がまだ言葉にしていない潜在要求をとらえたい。その方法として、最も適切なものはどれか。",
-    "choices": [
-      "「どのような機能がほしいですか」と自由記述のアンケートをとり、多く書かれた機能を集計する",
-      "現在の製品の苦情を項目別に集計し、件数の多い項目をそのまま新製品の要求とする",
-      "家庭を訪問してお客様が実際に掃除をする様子を観察し、本人が意識せずに工夫している動作や、手間のかかっている場面を見つける",
-      "自社の新技術を一覧にして、搭載できるものをすべて新製品に盛り込む"
-    ],
-    "answer": 2,
-    "explanation": "潜在要求は、お客様自身が気づいていない、または言葉にしていない要求なので、「何がほしいか」を尋ねるアンケートや、すでに表に出た苦情の集計ではとらえにくいものです。実際の使用場面を観察すると、無意識の工夫や手間のかかる動作など、言葉にならない要求の手がかりが得られます。アンケートや苦情は、すでに意識されている顕在要求をつかむのに役立つ方法です。新技術をすべて盛り込むのは、お客様の要求から出発しないプロダクトアウトの考え方です。",
-    "explanation_vi": "Nhu cầu tiềm ẩn là yêu cầu mà chính khách hàng chưa nhận ra hoặc chưa nói thành lời, nên khó nắm bắt bằng phiếu khảo sát hỏi muốn gì hay bằng tổng hợp khiếu nại đã xuất hiện. Quan sát tình huống sử dụng thực tế giúp tìm ra manh mối như những cách xoay xở vô thức hay thao tác tốn công. Khảo sát và khiếu nại hữu ích để nắm các yêu cầu hiển hiện mà khách đã ý thức được. Đưa hết công nghệ mới vào sản phẩm là cách nghĩ hướng sản phẩm, không xuất phát từ yêu cầu khách hàng.",
-    "advanced": true
-  },
-  {
-    "id": "r-b4-14",
-    "level": 3,
-    "topic": "gainen3",
-    "question": "ある職場で作業方法を変更した翌日、不良率が前日の3.0％から1.0％に下がった。係長は「この1日のデータで改善の効果が確認できたので、新しい作業方法を標準にする」と報告した。QC的なものの見方から、最も適切な指摘はどれか。",
-    "choices": [
-      "不良率は日によってばらつくので、1日だけで判断せず、変更前後の一定期間のデータを同じ条件で集めて比べるべきである",
-      "不良率が3分の1になっているので効果は明らかであり、すぐに標準化してよい",
-      "効果を確かめるには、変更前のデータは必要なく、変更後のデータだけを長い期間集めればよい",
-      "不良率の変化は作業者の注意力によるものなので、データで確かめる必要はない"
-    ],
-    "answer": 0,
-    "explanation": "データには必ずばらつきがあるので、1日の値の変化が改善の効果なのか、偶然の変動なのかは区別できません。効果を確かめるには、変更前と変更後のそれぞれ一定期間のデータを、品種や材料ロットなどの条件をそろえて比べる必要があります。変更後のデータだけでは比べる基準がなく、効果を判断できません。事実にもとづく管理とばらつきに注目する考え方を組み合わせて判断します。",
-    "explanation_vi": "Dữ liệu luôn có phân tán, nên không thể phân biệt sự thay đổi trong một ngày là do cải tiến hay do biến động ngẫu nhiên. Để xác nhận hiệu quả, cần thu thập dữ liệu trong một khoảng thời gian nhất định cả trước và sau khi thay đổi, với điều kiện như chủng loại sản phẩm, lô vật liệu được đồng nhất, rồi so sánh. Chỉ có dữ liệu sau thay đổi thì không có mốc để so, nên không đánh giá được hiệu quả. Ở đây cần kết hợp quản lý dựa trên sự thật với cách nhìn chú ý đến độ phân tán.",
-    "advanced": true
-  },
-  {
-    "id": "r-b4-15",
-    "level": 3,
-    "topic": "gainen3",
-    "question": "ある会社は「単身者向けの小型炊飯器」として新製品を企画した。設計も製造も計画どおりに行われ、製品は図面・仕様書どおりにできている。しかし発売後の調査で、実際の購入者の多くは家族世帯で、子どもの弁当用に朝だけ少量を炊くために使っており、「予約炊飯の時刻をもっと細かく設定したい」などの声が多いことがわかった。この事例の対応として、最も適切なものはどれか。",
-    "choices": [
-      "製造工程の検査を強化して、製造品質をさらに高める",
-      "企画の内容はそのままにして、予約炊飯の設定だけを図面上で変更すれば十分である",
-      "想定と違う使い方はお客様側の問題なので、取扱説明書で単身者向けの使い方を案内する",
-      "企画の段階で想定したお客様や使われ方が実際とずれていたので、企画品質から見直し、それにもとづいて設計品質を決め直す"
-    ],
-    "answer": 3,
-    "explanation": "製品は図面どおりで、図面も企画どおりなので、製造品質や設計品質が企画に合っていないわけではありません。問題の出発点は、企画で想定したお客様（単身者）と実際のお客様（家族世帯）や使われ方がずれていたことで、企画品質の問題です。予約設定だけを変えても、ねらう顧客と要求のとらえ方を見直さなければ、ほかの要求を見落とすおそれがあります。お客様の実際の使い方を自社の想定に合わせようとするのは、マーケットインの考え方に反します。",
-    "explanation_vi": "Sản phẩm đúng bản vẽ và bản vẽ cũng đúng kế hoạch, nên chất lượng chế tạo và chất lượng thiết kế không lệch với kế hoạch. Điểm xuất phát của vấn đề là khách hàng và cách sử dụng giả định khi lập kế hoạch (người sống một mình) khác với thực tế (hộ gia đình), tức là vấn đề chất lượng hoạch định. Nếu chỉ sửa chức năng hẹn giờ mà không xem lại đối tượng khách hàng mục tiêu và cách nắm bắt yêu cầu, có thể bỏ sót các yêu cầu khác. Bắt khách hàng dùng theo giả định của công ty là trái với cách nghĩ hướng thị trường.",
-    "advanced": true
-  },
-  {
-    "id": "r-b4-28",
-    "level": 3,
-    "topic": "kanri",
-    "question": "ある工場の年度目標は「年間の不良件数を前年度より300件減らす」である。各課の課長が、方策の裏付けをもとに自課の削減目標案を出したところ、A課120件、B課80件、C課40件であった。工場長の対応として、最も適切なものはどれか。",
-    "choices": [
-      "工場目標に対して60件不足しているので、その分をどの課でどのような方策によって上積みできるかを、各課長と話し合って調整する",
-      "工場目標に対して60件不足しているので、方策は検討せずに、3課に20件ずつ目標を上乗せするよう指示する",
-      "各課の目標案は現場の実情にもとづいているので、話し合いをせずに工場目標を240件に下げて確定する",
-      "工場目標に対して40件不足しているので、その分をどの課でどのような方策によって上積みできるかを、各課長と話し合って調整する"
-    ],
-    "answer": 0,
-    "explanation": "各課の削減目標案の合計は120＋80＋40＝240件で、工場目標の300件に対して60件不足しています。方針管理では、上位の目標と下位の目標・方策が整合するよう、上司と部下が話し合って調整する「すり合わせ」を行い、不足分を埋める方策を検討します。方策の裏付けなしに件数だけを割り振ると、目標が達成できる根拠がありません。話し合いをせずに上位目標を下げてしまうのも、すり合わせとはいえません。",
-    "explanation_vi": "Tổng mục tiêu cắt giảm của các phòng là 120 + 80 + 40 = 240 lỗi, thiếu 60 lỗi so với mục tiêu 300 lỗi của nhà máy. Trong quản lý theo phương châm, cấp trên và cấp dưới trao đổi để điều chỉnh sao cho mục tiêu cấp trên khớp với mục tiêu và biện pháp cấp dưới, gọi là bàn bạc thống nhất, và cùng tìm biện pháp bù phần thiếu. Chỉ chia số lượng mà không có biện pháp làm cơ sở thì không có căn cứ để đạt mục tiêu. Hạ mục tiêu cấp trên mà không trao đổi cũng không phải là bàn bạc thống nhất.",
-    "advanced": true
-  },
-  {
-    "id": "r-b4-29",
-    "level": 3,
-    "topic": "kanri",
-    "question": "ある不具合について、原因と考えた治具を改造する是正処置を行った。処置前は月平均20件だった不具合の件数が、処置後は1か月目2件、2か月目9件、3か月目18件と推移した。この結果の判断として、最も適切なものはどれか。",
-    "choices": [
-      "1か月目に大きく減っているので、是正処置は有効だったと判断し、処置を完了とする",
-      "件数が元の水準に戻りつつあるので、処置で原因を十分に取り除けていないと考え、原因を調べ直して処置を見直す",
-      "処置後3か月の平均は約10件で、処置前の半分になったので、効果は十分であり完了としてよい",
-      "件数の増加は作業者の慣れによるもので、処置とは関係がないので、作業者に注意するだけでよい"
-    ],
-    "answer": 1,
-    "explanation": "是正処置の効果は、処置直後の一時点ではなく、その後の推移を見て判断します。この例では2件→9件→18件と増え続け、処置前の20件に近づいているので、処置が原因を取り除けていないか、別の原因があると考えられます。3か月の平均（約9.7件）で判断すると、増加傾向という重要な事実を見落とします。原因を再調査し、処置を見直したうえで、再び効果を確認する必要があります。",
-    "explanation_vi": "Hiệu quả của hành động khắc phục phải được đánh giá qua diễn biến sau đó, không chỉ ở một thời điểm ngay sau xử lý. Ở đây số lỗi tăng liên tục 2, 9 rồi 18, tiến gần về mức 20 trước xử lý, nên có thể xử lý chưa loại bỏ được nguyên nhân hoặc còn nguyên nhân khác. Nếu đánh giá bằng trung bình ba tháng, khoảng 9,7 lỗi, sẽ bỏ sót sự thật quan trọng là xu hướng tăng. Cần điều tra lại nguyên nhân, xem lại cách xử lý, rồi xác nhận hiệu quả một lần nữa.",
-    "advanced": true
-  },
-  {
-    "id": "r-b4-30",
-    "level": 3,
-    "topic": "kanri",
-    "question": "ある工程で、次の2つの問題が起きている。\n問題X：これまで0.2％前後で安定していた不良率が、ある日だけ急に3％になった\n問題Y：不良率が何年も前から1.5％前後で安定しているが、他工場の同じ工程と比べて高い\nそれぞれへの取り組み方の組合せとして、最も適切なものはどれか。",
-    "choices": [
-      "X：重点課題として1年かけて計画的に取り組む　Y：異常として、ただちに設備を止めて処置する",
-      "X：1日だけなので、しばらく様子をみる　Y：安定しているので、今の状態を維持する",
-      "X：日常管理の異常として、すぐに原因を調べて処置し、元の状態に戻す　Y：慢性的な問題として改善の重点課題に取り上げ、今のやり方や標準そのものを見直す",
-      "X：日常管理の異常として処置する　Y：安定しているので管理状態にあり、取り組む必要はない"
-    ],
-    "answer": 2,
-    "explanation": "問題Xは、いつもの状態から急に外れた突発的な問題なので、日常管理の異常としてすぐに原因を突き止め、元の状態に戻します（維持）。問題Yは、安定してはいるものの、水準そのものが低い慢性的な問題です。今のやり方を守っていても良くならないので、重点課題として取り上げ、やり方や標準を見直して水準を上げる改善が必要です。安定していることと、水準が十分であることは別であることに注意します。",
-    "explanation_vi": "Vấn đề thứ nhất là sự cố đột xuất, lệch khỏi trạng thái thường ngày, nên coi là bất thường trong quản lý hằng ngày, nhanh chóng tìm nguyên nhân và đưa về trạng thái cũ, tức là duy trì. Vấn đề thứ hai tuy ổn định nhưng bản thân mức độ còn kém, là vấn đề mãn tính. Giữ nguyên cách làm hiện tại thì không tốt lên được, nên cần đưa vào vấn đề trọng điểm, xem lại cách làm và tiêu chuẩn để nâng mức, tức là cải tiến. Cần lưu ý rằng ổn định và đạt mức đủ tốt là hai chuyện khác nhau.",
-    "advanced": true
-  },
-  {
-    "id": "r-b5-14",
-    "level": 3,
-    "topic": "hoho3",
-    "question": "問題解決型QCストーリーで「不良率を2.0%から1.0%以下にする」目標を立て、主要因と確かめた2つの要因に対策を行った。効果の確認の結果、不良率は1.4%になり、対策した2つの要因に関係する不良はほぼなくなったが、目標には届かなかった。次の進め方として、最も適切なものはどれか。",
-    "choices": [
-      "目標に届かなかったので、2つの対策をいったん取りやめて元の方法に戻す",
-      "効果が確認された対策は標準化して維持しながら、残っている不良について要因の解析に戻り、見落とした要因を調べる",
-      "目標に届くまでは、効果のあった対策も標準化しないでおく",
-      "目標を1.4%に変更して、達成したものとして活動を完了する"
-    ],
-    "answer": 1,
-    "explanation": "2つの対策は、それぞれの要因に関係する不良をほぼなくしており、効果があったことがわかっています。この効果は標準化して失わないようにしつつ、目標との差（1.4%と1.0%の差）は別の要因によるものと考え、要因の解析に戻って調べ直します。効果のある対策を取りやめたり標準化を先延ばしにしたりすると、得られた成果が失われます。目標を後から下げるのは、事実にもとづく評価になりません。",
-    "explanation_vi": "Hai đối sách đã gần như loại bỏ lỗi liên quan đến từng nguyên nhân, tức là đã có hiệu quả. Cần tiêu chuẩn hóa để giữ hiệu quả này, đồng thời coi phần chênh lệch còn lại giữa 1,4% và 1,0% là do nguyên nhân khác, rồi quay lại bước phân tích nguyên nhân để điều tra lại. Nếu hủy đối sách có hiệu quả hoặc trì hoãn tiêu chuẩn hóa thì thành quả đạt được sẽ mất đi. Hạ mục tiêu về sau cho khớp kết quả thì không phải là đánh giá dựa trên sự thật.",
-    "advanced": true
-  },
-  {
-    "id": "r-b5-15",
-    "level": 3,
-    "topic": "hoho3",
-    "question": "ある改善の対策を標準化したあと、月ごとの不良率は1.0%、1.1%、0.9%、1.8%、2.2%と推移した（対策前は2.5%）。この状況への対応として、最も適切なものはどれか。",
-    "choices": [
-      "4か月目から効果が失われつつあるので、標準が守られているか、標準で決めていない条件に変化がないかを調べる",
-      "5か月の平均は1.4%で、対策前の2.5%より低いので、効果は維持されていると判断する",
-      "標準化はすでに済んでいるので、品質管理として行うことはない",
-      "対策の効果がなくなったので、標準を廃止して対策前の方法に戻す"
-    ],
-    "answer": 0,
-    "explanation": "最初の3か月は1%前後で安定していましたが、4か月目から1.8%、2.2%と上がり続けており、対策前の水準に近づいています。平均値の1.4%だけを見ると、この時間的な変化を見落としてしまいます。管理の定着では、標準が守られているか（教育・設備の状態など）や、標準外の条件が変わっていないかを調べ、必要なら標準や教育を見直します。",
-    "explanation_vi": "Ba tháng đầu ổn định quanh 1%, nhưng từ tháng thứ tư tăng liên tục lên 1,8% rồi 2,2%, tiến gần mức trước đối sách. Nếu chỉ nhìn giá trị trung bình 1,4% thì sẽ bỏ sót sự thay đổi theo thời gian này. Trong bước duy trì quản lý, cần điều tra xem tiêu chuẩn có được tuân thủ không, như tình trạng đào tạo hay thiết bị, và các điều kiện ngoài tiêu chuẩn có thay đổi không, rồi xem lại tiêu chuẩn hoặc đào tạo khi cần.",
-    "advanced": true
-  },
-  {
-    "id": "r-b5-16",
-    "level": 3,
-    "topic": "hoho3",
-    "question": "管理水準を規格の内側に設定して日常管理を行っている工程で、次の（ア）〜（ウ）の状況があった。「異常」として扱い、原因を調べるべきものの組み合わせとして、最も適切なものはどれか。（ア）測定値が管理水準を外れたが、規格の範囲内であった（イ）測定値はすべて管理水準内だが、7回続けて上昇していた（ウ）測定値は管理水準内で、中心付近に不規則にばらついていた",
-    "choices": [
-      "（ア）のみ",
-      "（イ）と（ウ）",
-      "（ア）と（イ）と（ウ）",
-      "（ア）と（イ）"
-    ],
-    "answer": 3,
-    "explanation": "日常管理の「異常」は、管理水準を外れた場合と、管理水準内でもいつもと違う傾向（連続した上昇など）が見られる場合です。（ア）は規格内でも管理水準を外れているので異常であり、規格外れが出る前に処置するために管理水準を内側に置いています。（イ）は傾向が出ているので異常の兆しとして調べます。（ウ）は通常のばらつきなので異常ではありません。",
-    "explanation_vi": "Bất thường trong quản lý hằng ngày gồm trường hợp ra ngoài mức quản lý, và trường hợp dù nằm trong mức quản lý nhưng có xu hướng khác thường như tăng liên tục. Trường hợp ra ngoài mức quản lý nhưng vẫn trong quy cách vẫn là bất thường, vì mức quản lý được đặt bên trong quy cách chính là để xử lý trước khi có hàng ngoài quy cách. Trường hợp tăng bảy lần liên tiếp có xu hướng nên phải điều tra như dấu hiệu bất thường. Trường hợp dao động ngẫu nhiên quanh tâm là biến động bình thường, không phải bất thường.",
-    "advanced": true
-  },
-  {
-    "id": "r-b5-30",
-    "level": 3,
-    "topic": "hosho3",
-    "question": "ある製品の苦情件数は、前期が出荷250,000個に対して5件、今期が出荷400,000個に対して6件であった。苦情の発生状況の説明として、最も適切なものはどれか。",
-    "choices": [
-      "件数が5件から6件に増えたので、品質は悪くなっている",
-      "出荷100万個あたりでは20件から24件に増えている",
-      "出荷数が違うので、前期と今期の苦情の発生状況は比べられない",
-      "件数は1件増えたが、出荷100万個あたりでは20件から15件に減っている"
-    ],
-    "answer": 3,
-    "explanation": "出荷数が違うので、一定の出荷数あたりの件数に直して比べます。前期は5÷250,000×1,000,000＝20件、今期は6÷400,000×1,000,000＝15件で、発生の割合は下がっています。24件は今期の6件を前期の出荷数で割った誤りです。件数だけで判断すると、出荷数の増加による見かけの変化に惑わされます。",
-    "explanation_vi": "Vì số lượng xuất hàng khác nhau nên phải quy về số vụ trên cùng một lượng xuất hàng để so sánh. Kỳ trước là 5 ÷ 250.000 × 1.000.000 = 20 vụ, kỳ này là 6 ÷ 400.000 × 1.000.000 = 15 vụ trên một triệu sản phẩm, tức tỷ lệ phát sinh đã giảm. Con số 24 vụ là lỗi lấy 6 vụ của kỳ này chia cho số xuất hàng của kỳ trước. Nếu chỉ nhìn số vụ, sẽ bị đánh lừa bởi thay đổi bề ngoài do số lượng xuất hàng tăng.",
-    "advanced": true
-  },
-  {
-    "id": "r-b5-31",
-    "level": 3,
-    "topic": "hosho3",
-    "question": "ある装置のFTAで、頂上事象「装置が停止する」は、事象A「制御基板の故障」が起きるか、または事象B「主ポンプの故障」と事象C「予備ポンプの故障」が両方とも起きたときに発生する。A・B・Cは互いに独立で、一定期間内の発生確率はAが0.1、Bが0.2、Cが0.5である。頂上事象の発生確率はいくらか。",
-    "choices": [
-      "0.20",
-      "0.19",
-      "0.01",
-      "0.80"
-    ],
-    "answer": 1,
-    "explanation": "BとCはANDゲートなので、両方が起きる確率は0.2×0.5＝0.1です。これとAがORゲートで結ばれるので、どちらも起きない確率（1−0.1）×（1−0.1）＝0.81を1から引いて、1−0.81＝0.19になります。0.20は0.1＋0.1と単純に足した誤りで、AとBCが同時に起きる場合（0.01）を二重に数えています。0.01はすべてをAND、0.80はすべてを単純に足した値です。",
-    "explanation_vi": "B và C nối bằng cổng AND nên xác suất cả hai cùng xảy ra là 0,2 × 0,5 = 0,1. Kết quả này nối với A bằng cổng OR, nên lấy 1 trừ xác suất cả hai đều không xảy ra là (1 − 0,1) × (1 − 0,1) = 0,81, được 1 − 0,81 = 0,19. Đáp án 0,20 là lỗi cộng đơn giản 0,1 + 0,1, đếm hai lần trường hợp A và tổ hợp B, C cùng xảy ra với xác suất 0,01. Còn 0,01 là coi tất cả là AND, 0,80 là cộng đơn giản cả ba xác suất.",
-    "advanced": true
-  },
-  {
-    "id": "r-b5-32",
-    "level": 3,
-    "topic": "hosho3",
-    "question": "お客様から「納入した部品の一部に穴があいていない」という苦情を受けた。次のア〜オの対応を、行う順に並べたものとして、最も適切なものはどれか。ア：同じロットの社内在庫・輸送中・お客様先の在庫を調べ、不適合品を選別する　イ：現品とお客様での発生状況を確認する　ウ：穴があかなかった原因（発生原因）と、検査で見のがした原因（流出原因）を調べる　エ：原因を取り除く対策を行い、同じ作業がある工程にも水平展開する　オ：効果を確認し、作業標準やQC工程表を改訂して記録を共有する",
-    "choices": [
-      "イ→ア→ウ→エ→オ",
-      "イ→ウ→エ→ア→オ",
-      "ウ→イ→ア→エ→オ",
-      "イ→ア→エ→ウ→オ"
-    ],
-    "answer": 0,
-    "explanation": "まず現品と発生状況を確認して事実をつかみ（イ）、すぐに同じロットの製品を選別して不適合品がこれ以上お客様のもとで使われないようにします（ア）。そのうえで発生原因と流出原因を調べ（ウ）、対策と水平展開を行い（エ）、効果を確認して標準化します（オ）。選別を原因調査のあとに回すと、その間に不適合品が使われてしまいます。原因を調べる前に対策を決めると、真の原因に対する対策になりません。",
-    "explanation_vi": "Trước hết xác nhận hàng thực tế và tình trạng phát sinh để nắm sự thật, rồi lập tức chọn lọc sản phẩm cùng lô để hàng không phù hợp không tiếp tục bị sử dụng ở phía khách hàng. Sau đó điều tra nguyên nhân phát sinh và nguyên nhân lọt lỗi, thực hiện đối sách và triển khai ngang, rồi xác nhận hiệu quả và tiêu chuẩn hóa. Nếu để việc chọn lọc sau khi điều tra nguyên nhân thì trong thời gian đó hàng không phù hợp vẫn bị sử dụng. Nếu quyết định đối sách trước khi điều tra nguyên nhân thì đối sách sẽ không nhắm vào nguyên nhân thật.",
-    "advanced": true
   },
   {
     "id": "r-b1-06",
@@ -504,21 +168,6 @@
     "explanation_vi": "Biểu đồ kiểm soát là công cụ để đánh giá công đoạn có ở trạng thái ổn định hay không, không phải để xét từng sản phẩm có đạt quy cách hay không. Dù công đoạn ổn định, nếu năng lực công đoạn không đủ thì vẫn có sản phẩm ngoài quy cách, nên phương án nói rằng có thể bỏ kiểm tra là không phù hợp. Chấm điểm theo thứ tự thời gian, ghi lại nội dung xử lý, và giữ nguyên giới hạn của biểu đồ dùng để kiểm soát khi chưa thay đổi điều kiện công đoạn là cách dùng đúng."
   },
   {
-    "id": "r-b1-11",
-    "level": 3,
-    "topic": "7tools3",
-    "question": "3台の機械で加工した部品の寸法をまとめてヒストグラムを作ると、頂上付近が平らな高原型になった。機械別に層別して描き直すと、3台とも山が1つでばらつきは小さいが、平均値が機械ごとに少しずつ異なっていた。取るべき処置として、最も適切なものはどれか。",
-    "choices": [
-      "3台の機械の平均値がそろうように、それぞれの機械の設定や調整の違いを調べて合わせる",
-      "3台とも山は1つなので、どの機械にも問題はなく、何もしなくてよい",
-      "区間の数を増やしてヒストグラムを描き直し、形がなめらかになるかを確かめる",
-      "3台すべてについて、機械内のばらつきを小さくする改善を最優先で行う"
-    ],
-    "answer": 0,
-    "explanation": "高原型は、平均値が少しずつ異なるいくつかの分布が混ざったときに現れます。層別の結果、各機械のばらつきは小さく平均値だけが異なるとわかったので、機械間の平均値の差をなくすことが全体のばらつきを小さくする近道です。機械内のばらつきはすでに小さいので、そこを最優先にするのは効果が小さくなります。",
-    "explanation_vi": "Dạng cao nguyên xuất hiện khi nhiều phân phối có giá trị trung bình hơi khác nhau bị trộn lẫn. Sau khi phân tầng, biết rằng độ phân tán của từng máy đã nhỏ và chỉ có giá trị trung bình là khác nhau, nên loại bỏ chênh lệch trung bình giữa các máy là cách nhanh nhất để giảm độ phân tán chung. Độ phân tán trong từng máy vốn đã nhỏ nên ưu tiên cải tiến phần đó sẽ ít hiệu quả."
-  },
-  {
     "id": "r-b1-14",
     "level": 3,
     "topic": "shin7",
@@ -534,63 +183,114 @@
     "explanation_vi": "Biểu đồ nhân quả là một trong bảy công cụ QC, dùng để sắp xếp mối quan hệ giữa đặc tính, tức kết quả, và các yếu tố ảnh hưởng đến nó nhằm tìm nguyên nhân. Sơ đồ cây dạng triển khai biện pháp là một phương pháp trong bảy công cụ QC mới, triển khai các biện pháp cấp một, cấp hai… để đạt mục đích nhằm tìm ra biện pháp cụ thể. Cả hai chủ yếu xử lý thông tin dạng lời, không phải hình vẽ từ dữ liệu số."
   },
   {
-    "id": "r-b2-13",
+    "id": "r-c03",
+    "level": 3,
+    "topic": "toukei",
+    "question": "ある特性のデータは、右に裾を引いた（正規分布ではない）分布をしている。この工程から毎回n個ずつサンプルを取り、その平均値x̄を多数求めた。x̄の分布についての説明として、最も適切なものはどれか。",
+    "choices": [
+      "もとの分布が正規分布でないので、nをいくら大きくしてもx̄の分布は右に裾を引いた形のままである",
+      "nを大きくすると、x̄の分布は正規分布に近づき、そのばらつき（標準偏差）は σ÷√n になる",
+      "nを大きくすると、x̄の分布のばらつきは大きくなる",
+      "x̄の分布の平均は、nを大きくするほど、もとの分布の平均より大きくなる"
+    ],
+    "answer": 1,
+    "explanation": "もとの分布が正規分布でなくても、サンプルの大きさnを大きくすると、平均値x̄の分布は正規分布に近づきます（中心極限定理）。x̄の分布の平均はもとの平均μと同じで、標準偏差は σ÷√n と、nが大きいほど小さくなります。このため、管理図などで平均値を扱うときに正規分布の考え方が使えます。",
+    "explanation_vi": "Dù phân phối ban đầu không phải phân phối chuẩn, khi cỡ mẫu n tăng thì phân phối của giá trị trung bình mẫu sẽ tiến gần đến phân phối chuẩn, đây là định lý giới hạn trung tâm. Trung bình của phân phối này bằng trung bình μ ban đầu, còn độ lệch chuẩn là σ chia căn bậc hai của n, nên n càng lớn thì càng nhỏ. Nhờ vậy có thể áp dụng phân phối chuẩn khi xử lý giá trị trung bình, ví dụ trên biểu đồ kiểm soát."
+  },
+  {
+    "id": "r-c06",
+    "level": 4,
+    "topic": "kigyo",
+    "advanced": true,
+    "question": "作業中に、自分の工程でいつもより寸法の大きい製品が続けて出ていることに気づいた。作業標準どおりに作業している。このときの作業者の行動のうち、適切でないものはどれか。",
+    "choices": [
+      "すぐに上司に、いつから・何個くらい・どのような状態かを報告する",
+      "寸法の大きい製品を、良品と混ざらないように分けて置き、表示をする",
+      "作業標準の加工条件を自分の判断で変えて、寸法を元に戻してから作業を続ける",
+      "上司の指示があるまで、決められたルールにしたがって設備を止めるなどの処置をとる"
+    ],
+    "answer": 2,
+    "explanation": "作業標準どおりに作業していても異常が出ているときは、標準そのものや設備などに原因がある可能性があり、上司に報告して判断を仰ぎます。作業者が自分の判断で作業条件を変えると、原因がわからなくなったり、別の不具合を生んだりするおそれがあります。異常品を分けて表示すること、ルールにしたがって設備を止めることは適切な行動です。",
+    "explanation_vi": "Khi làm đúng tiêu chuẩn mà vẫn xuất hiện bất thường thì có thể nguyên nhân nằm ở chính tiêu chuẩn hoặc thiết bị, nên phải báo cáo cấp trên để xin chỉ thị. Nếu người làm tự ý thay đổi điều kiện gia công thì có thể làm mất dấu nguyên nhân hoặc gây ra lỗi khác. Tách riêng và ghi chú sản phẩm bất thường, dừng thiết bị theo quy định là những hành động phù hợp."
+  },
+  {
+    "id": "r-c09",
+    "level": 4,
+    "topic": "kaizen",
+    "advanced": true,
+    "question": "作業者が部品を取りに行くため、作業場所から片道6mの棚まで1日に120回往復している。歩く速さを毎秒1mとする。棚を作業場所から片道1mの位置に移すと、1日あたりの歩く時間は何分短くなるか。",
+    "choices": [
+      "4分",
+      "10分",
+      "20分",
+      "24分"
+    ],
+    "answer": 2,
+    "explanation": "移す前は 6m×2（往復）×120回＝1,440m で、1,440秒＝24分歩いています。移した後は 1m×2×120回＝240m で、240秒＝4分です。したがって、24−4＝20分短くなります。片道だけで計算すると10分となり、往復を考え忘れる誤りです。",
+    "explanation_vi": "Trước khi dời kệ, quãng đường mỗi ngày là 6 m nhân 2 vì đi và về nhân 120 lần bằng 1.440 m, tức 1.440 giây bằng 24 phút. Sau khi dời là 1 m nhân 2 nhân 120 lần bằng 240 m, tức 240 giây bằng 4 phút. Vậy thời gian đi bộ giảm 24 trừ 4 bằng 20 phút. Nếu chỉ tính một chiều sẽ ra 10 phút, đó là lỗi quên tính cả lượt về."
+  },
+  {
+    "id": "r-c12",
+    "level": 3,
+    "topic": "hoho3",
+    "advanced": true,
+    "question": "ある設備の段取り替えは1回60分で、その間は設備が止まっている。調べたところ、このうち25分の作業（金型の準備や工具の用意）は、設備を動かしたまま前もって行えることがわかったので、そのように手順を変えた。段取り替えは1日3回、1か月の稼働日は20日である。1か月あたり、設備が止まる時間は何時間減るか。",
+    "choices": [
+      "1.25時間",
+      "25時間",
+      "35時間",
+      "60時間"
+    ],
+    "answer": 1,
+    "explanation": "設備を止めずに前もって行える作業に移した25分が、1回あたりの停止時間の減少分です。1か月では 25分×3回×20日＝1,500分＝25時間 減ります。35時間は残った停止時間（35分）で計算した値、1.25時間は1日分（75分）だけの値です。",
+    "explanation_vi": "Phần 25 phút được chuyển sang làm trước trong khi thiết bị vẫn chạy chính là lượng thời gian dừng giảm được mỗi lần. Trong một tháng giảm 25 phút nhân 3 lần nhân 20 ngày bằng 1.500 phút, tức 25 giờ. Giá trị 35 giờ là tính theo thời gian dừng còn lại 35 phút, còn 1,25 giờ chỉ là con số của một ngày, tức 75 phút."
+  },
+  {
+    "id": "r-c15",
+    "level": 3,
+    "topic": "hosho3",
+    "advanced": true,
+    "question": "抜取検査で、サンプルの大きさnは変えずに、合格判定個数cを0から1に変更した（サンプル中の不適合品が1個以下なら合格）。この変更によるOC曲線と2つの危険の変化として、最も適切なものはどれか。",
+    "choices": [
+      "どの不適合品率のロットでも合格する確率が上がり、生産者危険は小さく、消費者危険は大きくなる",
+      "どの不適合品率のロットでも合格する確率が下がり、生産者危険は大きく、消費者危険は小さくなる",
+      "合格する確率は変わらず、生産者危険と消費者危険はどちらも変わらない",
+      "生産者危険と消費者危険が、どちらも小さくなる"
+    ],
+    "answer": 0,
+    "explanation": "nが同じでcを大きくすると、合格の条件がゆるくなるので、どのロットでも合格する確率が上がり、OC曲線は上側に移ります。その結果、品質のよいロットを不合格にする生産者危険は小さくなりますが、品質の悪いロットを合格にする消費者危険は大きくなります。両方を同時に小さくするには、サンプルの大きさnを大きくする必要があります。",
+    "explanation_vi": "Khi giữ nguyên cỡ mẫu n mà tăng số chấp nhận c, điều kiện đạt trở nên lỏng hơn nên lô nào cũng có xác suất được chấp nhận cao hơn và đường cong OC dịch lên trên. Kết quả là rủi ro của nhà sản xuất, tức loại nhầm lô tốt, giảm xuống, nhưng rủi ro của người tiêu dùng, tức chấp nhận nhầm lô xấu, lại tăng lên. Muốn giảm cả hai rủi ro cùng lúc thì phải tăng cỡ mẫu n."
+  },
+  {
+    "id": "r-c17",
     "level": 3,
     "topic": "kanri",
-    "question": "ある工場では、製造ラインごとに、正常に稼働しているときは緑、部品の補充などで呼び出しが必要なときは黄、異常で停止したときは赤のランプが点灯する表示灯を設け、離れた場所からでもラインの状態がわかるようにした。この取組みに最も関係の深い考え方はどれか。",
+    "advanced": true,
+    "question": "ISO 9001にもとづくマネジメントレビューで扱うものを、「レビューに持ち込む情報（インプット）」と「レビューの結果として決めること（アウトプット）」に分けた。アウトプットにあたるものとして、最も適切なものはどれか。",
     "choices": [
-      "見える化（目で見る管理）",
-      "源流管理",
-      "機能別管理",
-      "プロダクトアウト"
+      "内部監査の結果",
+      "顧客満足や苦情に関する情報",
+      "前回のマネジメントレビューで決めた処置の実施状況",
+      "品質マネジメントシステムの改善の機会や、必要な資源に関する決定"
     ],
-    "answer": 0,
-    "explanation": "ラインの状態をランプの色で示し、誰でも一目で異常や呼び出しに気づけるようにするのは、見える化（目で見る管理）の取組みです。このような表示灯はあんどんとも呼ばれ、異常への対応を早めるのに役立ちます。源流管理は上流の段階で問題を防ぐ考え方、機能別管理は品質・コストなどの機能ごとに部門をこえて管理する方法です。",
-    "explanation_vi": "Thể hiện trạng thái dây chuyền bằng màu đèn để ai cũng nhận ra ngay bất thường hay yêu cầu hỗ trợ là hoạt động trực quan hóa, tức quản lý bằng mắt. Loại đèn báo này còn được gọi là andon, giúp ứng phó bất thường nhanh hơn. Quản lý từ nguồn là cách nghĩ ngăn vấn đề ở giai đoạn thượng nguồn, còn quản lý theo chức năng là quản lý vượt qua ranh giới bộ phận theo từng chức năng như chất lượng, chi phí."
+    "answer": 3,
+    "explanation": "マネジメントレビューでは、内部監査の結果、顧客満足や苦情、プロセスの実績、前回の処置の状況などの情報をインプットとして、トップマネジメントが評価します。その結果として、改善の機会、システムの変更の必要性、必要な資源などについての決定がアウトプットになります。ほかの3つは、レビューに持ち込む情報です。",
+    "explanation_vi": "Trong xem xét của lãnh đạo, ban lãnh đạo cao nhất đánh giá dựa trên các thông tin đầu vào như kết quả đánh giá nội bộ, sự hài lòng và khiếu nại của khách hàng, kết quả thực hiện của các quá trình, tình hình thực hiện hành động của lần xem xét trước. Đầu ra là các quyết định về cơ hội cải tiến, nhu cầu thay đổi hệ thống và nguồn lực cần thiết. Ba phương án còn lại đều là thông tin đầu vào."
   },
   {
-    "id": "r-b2-19",
+    "id": "r-c19",
     "level": 3,
     "topic": "gainen3",
-    "question": "QCD（品質・コスト・納期）の考え方で、品質を優先することについての説明として、適切でないものはどれか。",
+    "advanced": true,
+    "question": "ある製品の苦情件数は、昨年が20件、今年が12件であった。満足度調査から、不満を感じたお客様のうち苦情を申し出る人の割合は、昨年は約5%、今年は苦情窓口の電話番号が取扱説明書から外れたため約2%と推定された。この情報からの判断として、最も適切なものはどれか。",
     "choices": [
-      "品質を優先すると不良や手直しが減り、結果としてコストや納期もよくなることが多い",
-      "品質問題を起こすと、お客様の信頼を失い、長期的に大きな損失につながる",
-      "品質を優先するとは、お客様が求めていない性能まで、費用をかけて高めることである",
-      "品質を優先するとは、目先の生産量やコストのために品質を犠牲にしないことである"
+      "苦情件数が40%減ったので、お客様の不満は減ったと判断できる",
+      "不満を感じたお客様は、昨年の約400人から今年の約600人へ増えたと推定され、苦情件数だけで満足が高まったと判断するのは誤りである",
+      "苦情を申し出る割合は品質と関係ないので、苦情件数だけで判断してよい",
+      "不満を感じたお客様は、昨年も今年も約12〜20人で、大きな変化はない"
     ],
-    "answer": 2,
-    "explanation": "品質優先とは、目先の生産量やコストのために品質を犠牲にしないという考え方で、不良や手直しが減ることでコストや納期の改善にもつながります。一方、お客様が求めていない性能まで費用をかけて高めるのは過剰品質であり、品質優先の意味とは異なります。",
-    "explanation_vi": "Ưu tiên chất lượng là tư tưởng không hy sinh chất lượng vì sản lượng hay chi phí trước mắt; khi lỗi và làm lại giảm thì chi phí và thời hạn giao hàng cũng được cải thiện. Ngược lại, tốn chi phí để nâng cao cả những tính năng khách hàng không cần là chất lượng thừa, khác với ý nghĩa của ưu tiên chất lượng."
-  },
-  {
-    "id": "r-b2-23",
-    "level": 3,
-    "topic": "hosho3",
-    "question": "QC工程図（QC工程表）と作業標準書の関係についての説明として、最も適切なものはどれか。",
-    "choices": [
-      "QC工程図は個々の作業の手順と急所を詳しく書いたもので、作業標準書は工程全体の流れを一覧にしたものである",
-      "QC工程図があれば、作業標準書は必要ない",
-      "QC工程図は工程の流れに沿って各工程の管理項目や管理方法を一覧にしたもので、作業標準書は個々の作業の手順や急所を具体的に示したものである",
-      "QC工程図はお客様に提出するためだけの文書で、工場の管理には使わない"
-    ],
-    "answer": 2,
-    "explanation": "QC工程図は、材料の受入れから出荷までの工程の流れに沿って、各工程で何を、どの方法・頻度で管理するかを一覧にしたもので、工程全体の管理の全体像を示します。作業標準書は、そのうち個々の作業について、手順や急所を具体的に定めた文書です。両者は役割が違い、組み合わせて使います。",
-    "explanation_vi": "Sơ đồ quản lý công đoạn liệt kê, theo dòng công đoạn từ tiếp nhận vật liệu đến xuất hàng, việc quản lý cái gì, bằng phương pháp và tần suất nào tại mỗi công đoạn, cho thấy bức tranh tổng thể về quản lý công đoạn. Tiêu chuẩn thao tác là tài liệu quy định cụ thể trình tự và điểm mấu chốt của từng thao tác riêng lẻ. Hai tài liệu có vai trò khác nhau và được dùng kết hợp với nhau."
-  },
-  {
-    "id": "r-b2-24",
-    "level": 3,
-    "topic": "hosho3",
-    "question": "ある部品の受入検査で、測定器の定期校正を行ったところ、許容範囲内であった。それでも、毎日の作業開始前に、基準となるゲージを測って測定器の指示値を確かめる日常点検を行っている。この日常点検の主なねらいとして、最も適切なものはどれか。",
-    "choices": [
-      "定期校正の間に起こる測定器の狂いや故障を早く見つけ、誤った合否判定を防ぐため",
-      "定期校正の代わりにするため",
-      "作業者の測定技能を評価するため",
-      "測定器の寿命を延ばすため"
-    ],
-    "answer": 0,
-    "explanation": "定期校正で合格していても、その後の落下や摩耗などで測定器が狂うことがあります。作業開始前に基準ゲージで指示値を確かめておけば、狂いを早く見つけて、誤った合否判定や不良品の流出を防げます。日常点検は定期校正を補うもので、その代わりになるものではありません。",
-    "explanation_vi": "Dù đã đạt khi hiệu chuẩn định kỳ, dụng cụ đo vẫn có thể bị sai lệch do rơi hoặc mài mòn sau đó. Nếu trước khi bắt đầu làm việc kiểm tra số chỉ bằng dưỡng chuẩn, có thể sớm phát hiện sai lệch, ngăn việc đánh giá đạt hay không đạt sai và ngăn sản phẩm lỗi lọt ra ngoài. Kiểm tra hằng ngày là để bổ sung cho hiệu chuẩn định kỳ, không thay thế được nó."
+    "answer": 1,
+    "explanation": "不満を感じたお客様の数は、苦情件数÷申し出る割合で推定できます。昨年は 20÷0.05＝400人、今年は 12÷0.02＝600人 で、不満をもつお客様はむしろ増えていると考えられます。苦情は不満の一部しか表さないので、件数の増減だけでなく、申し出やすさや満足度調査などもあわせて判断する必要があります。",
+    "explanation_vi": "Số khách hàng không hài lòng có thể ước tính bằng số khiếu nại chia cho tỷ lệ người lên tiếng. Năm ngoái là 20 chia 0,05 bằng 400 người, năm nay là 12 chia 0,02 bằng 600 người, nên số khách không hài lòng thực ra đã tăng. Khiếu nại chỉ phản ánh một phần sự không hài lòng, vì vậy không chỉ nhìn số khiếu nại tăng hay giảm mà cần xem cả mức độ dễ phản ánh và kết quả khảo sát mức độ hài lòng."
   }
 ]
