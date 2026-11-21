@@ -173,6 +173,36 @@
         "jissen": "Thực tiễn"
       },
       "name_vi": "QC Kentei cấp 3"
+    },
+    "2": {
+      "name": "QC検定2級",
+      "slug": "2kyu",
+      "name_vi": "QC Kentei cấp 2",
+      "lead": "統計的手法（検定・推定、管理図、工程能力など）と品質経営の実践。学習ページを順次公開しています。",
+      "domains": {
+        "shuho": "手法分野",
+        "jissen": "実践分野"
+      },
+      "domains_vi": {
+        "shuho": "Phương pháp",
+        "jissen": "Thực tiễn"
+      },
+      "topics": [
+        {
+          "id": "b1",
+          "name": "データの取り方とまとめ方",
+          "desc": "データの種類、母集団とサンプル、誤差、基本統計量（平方和・分散・標準偏差）、データの変換。",
+          "domain": "shuho",
+          "name_vi": "Lấy và tổng hợp dữ liệu"
+        },
+        {
+          "id": "b2",
+          "name": "QC七つ道具",
+          "desc": "パレート図・特性要因図・チェックシート・ヒストグラム・散布図・グラフ・層別の使い方と読み方。",
+          "domain": "shuho",
+          "name_vi": "7 công cụ QC"
+        }
+      ]
     }
   },
   "questions": [
@@ -33579,6 +33609,2745 @@
       "explanation": "異常がいつ起きたかはわかりませんが、10時の群は正常だったので、10時の抜取り以降に起きた可能性があります。そのため、最後に正常を確認した10時以降に生産した製品を、原因を取り除くまで出荷を止めて調べます。12時以降だけでは、10時〜12時の間に異常が起きていた場合に見逃します。抜き取った5個が規格内でも、工程が変化している以上、規格外れの製品が含まれているおそれがあります。",
       "explanation_vi": "Không biết bất thường xảy ra lúc nào, nhưng vì nhóm lúc 10 giờ còn bình thường nên bất thường có thể đã xảy ra bất kỳ lúc nào sau lần lấy mẫu 10 giờ. Vì vậy cần dừng xuất hàng và kiểm tra các sản phẩm sản xuất từ lần xác nhận bình thường cuối cùng lúc 10 giờ cho đến khi loại bỏ được nguyên nhân. Nếu chỉ giữ hàng từ 12 giờ trở đi thì sẽ bỏ sót trường hợp bất thường xảy ra trong khoảng 10 giờ đến 12 giờ. Dù 5 mẫu đều đạt quy cách, công đoạn đã thay đổi nên vẫn có thể có sản phẩm ngoài quy cách.",
       "advanced": true
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "次のうち、計量値はどれか。",
+      "choices": [
+        "ある日の不適合品数",
+        "1か月の機械の故障回数",
+        "鋼板の厚さ（mm）",
+        "布1m²あたりのキズの数"
+      ],
+      "answer": 2,
+      "explanation": "厚さは測定器で測る連続した値なので計量値。ほかの3つは数えて得る計数値。",
+      "explanation_vi": "Đề bài: Trong các dữ liệu sau, dữ liệu nào là dữ liệu đo (giá trị liên tục)? Giải thích: Độ dày được đo bằng dụng cụ đo và nhận giá trị liên tục nên là dữ liệu đo (phương án 3). Ba phương án còn lại có được bằng cách đếm nên là dữ liệu đếm.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-001"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "ある工程の不適合品率が 3.2% であった。このデータの種類として正しいものはどれか。",
+      "choices": [
+        "計量値",
+        "計数値",
+        "言語データ",
+        "順位データ"
+      ],
+      "answer": 1,
+      "explanation": "不適合品率は、数えた不適合品数を検査個数で割った値なので計数値。小数・%で表されても計量値にはならない。",
+      "explanation_vi": "Đề bài: Tỷ lệ sản phẩm không phù hợp của một công đoạn là 3.2%. Loại dữ liệu này là gì? Giải thích: Tỷ lệ sản phẩm không phù hợp = số sản phẩm không phù hợp (đếm được) ÷ số sản phẩm kiểm tra, nên là dữ liệu đếm (phương án 2). Dù viết dưới dạng số thập phân hay % cũng không trở thành dữ liệu đo.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-002"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "データの種類に関する記述として、正しいものはどれか。",
+      "choices": [
+        "計量値は、測定器の精度を上げてもとびとびの値しかとらない。",
+        "計数値が小数で表されることはない。",
+        "言語データは、主に新QC七つ道具で整理される。",
+        "不適合品率は小数で表されるので計量値である。"
+      ],
+      "answer": 2,
+      "explanation": "ア：とびとびの値をとるのは計数値。イ：不適合品率のように計数値も小数になる。エ：不適合品率は計数値。",
+      "explanation_vi": "Đề bài: Phát biểu nào sau đây về các loại dữ liệu là đúng? Giải thích: Phương án 3 đúng: dữ liệu ngôn ngữ chủ yếu được sắp xếp bằng 7 công cụ QC mới. Phương án 1 sai: chỉ nhận giá trị rời rạc là đặc điểm của dữ liệu đếm. Phương án 2 sai: dữ liệu đếm cũng có thể là số thập phân, ví dụ tỷ lệ sản phẩm không phù hợp. Phương án 4 sai: tỷ lệ sản phẩm không phù hợp là dữ liệu đếm.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-003"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "ある組立工程から1時間ごとに5個ずつ製品を取り出して寸法を測定し、管理図を作成している。このときの母集団はどれか。",
+      "choices": [
+        "取り出した5個の製品",
+        "その組立工程（今後つくられる製品を含む）",
+        "その1時間につくられた製品",
+        "測定して得た寸法のデータ"
+      ],
+      "answer": 1,
+      "explanation": "工程管理では、処置をとる対象である工程そのものが母集団（無限母集団）。5個はサンプル、寸法はデータ。",
+      "explanation_vi": "Đề bài: Mỗi giờ lấy 5 sản phẩm từ một công đoạn lắp ráp để đo kích thước và lập biểu đồ kiểm soát. Tổng thể trong trường hợp này là gì? Giải thích: Trong quản lý công đoạn, đối tượng được xử lý là chính công đoạn, nên tổng thể là công đoạn lắp ráp, kể cả các sản phẩm sẽ làm sau này (tổng thể vô hạn) - phương án 2. 5 sản phẩm lấy ra là mẫu, số đo kích thước là dữ liệu.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-004"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "「サンプルサイズ」の意味として正しいものはどれか。",
+      "choices": [
+        "サンプルを何組とったかの数",
+        "1つのサンプルに含まれるサンプリング単位の数",
+        "母集団に含まれるサンプリング単位の数",
+        "サンプルの最大値と最小値の差"
+      ],
+      "answer": 1,
+      "explanation": "サンプルサイズ（サンプルの大きさ）n は1つのサンプルの中の単位の数。アはサンプル数、ウは母集団の大きさ、エは範囲 R。",
+      "explanation_vi": "Đề bài: Ý nghĩa đúng của \"cỡ mẫu\" là gì? Giải thích: Cỡ mẫu (kích thước mẫu) n là số đơn vị lấy mẫu có trong một mẫu - phương án 2. Phương án 1 là số mẫu, phương án 3 là kích thước tổng thể, phương án 4 là khoảng biến thiên R.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-005"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "母数を表す記号の組合せとして正しいものはどれか。",
+      "choices": [
+        "x̄ と s",
+        "μ と σ",
+        "V と s",
+        "x̄ と σ"
+      ],
+      "answer": 1,
+      "explanation": "母平均 μ・母標準偏差 σ が母数。x̄・V・s はサンプルから計算する統計量。",
+      "explanation_vi": "Đề bài: Cặp ký hiệu nào biểu thị tham số tổng thể? Giải thích: Trung bình tổng thể μ và độ lệch chuẩn tổng thể σ là tham số tổng thể - phương án 2. x̄, V, s là thống kê tính từ mẫu.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-006"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "次の文の空欄に入る語の組合せとして正しいものはどれか。\n「母集団から（①）を取ることを（②）といい、得られたデータから母集団について判断し（③）をとる。」",
+      "choices": [
+        "①データ ②測定 ③検査",
+        "①サンプル ②サンプリング ③処置",
+        "①ロット ②検査 ③判定",
+        "①サンプル ②層別 ③改善"
+      ],
+      "answer": 1,
+      "explanation": "サンプルを取る行為がサンプリング。データの目的は母集団に対する処置。",
+      "explanation_vi": "Đề bài: Chọn tổ hợp từ đúng để điền vào chỗ trống trong câu sau.\n\"Việc lấy (①) từ tổng thể gọi là (②); từ dữ liệu thu được, ta phán đoán về tổng thể và thực hiện (③).\" Giải thích: Hành động lấy mẫu từ tổng thể gọi là lấy mẫu; mục đích của dữ liệu là đưa ra hành động xử lý đối với tổng thể. Do đó ① mẫu, ② lấy mẫu, ③ xử lý - phương án 2.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-007"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "母集団とサンプルに関する記述として、誤っているものはどれか。",
+      "choices": [
+        "サンプリングは、母集団の姿をできるだけ偏りなく反映するように行う。",
+        "抜取検査では、ロットが母集団となる。",
+        "有限母集団とは、工程のように製造を続ける限りいくらでもサンプルがとれる母集団をいう。",
+        "母数は通常未知であり、サンプルのデータから推測する。"
+      ],
+      "answer": 2,
+      "explanation": "製造を続ける限りサンプルがとれる工程は無限母集団。有限母集団の例はロット。",
+      "explanation_vi": "Đề bài: Phát biểu nào sau đây về tổng thể và mẫu là sai? Giải thích: Phương án 3 sai: công đoạn mà còn sản xuất thì còn lấy được mẫu là tổng thể vô hạn, không phải hữu hạn. Ví dụ của tổng thể hữu hạn là lô hàng. Các phương án còn lại đúng.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-008"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "測定の誤差に関する記述として、正しいものはどれか。",
+      "choices": [
+        "同じものをくり返し測定して平均をとれば、かたよりは小さくなる。",
+        "精度がよいとは、測定値の母平均が真の値に近いことをいう。",
+        "測定器の校正がずれていると、測定値にかたよりが生じる。",
+        "正確さとは、ばらつきの小さい程度だけを表す。"
+      ],
+      "answer": 2,
+      "explanation": "校正のずれは毎回同じ方向にずれる系統的な誤差＝かたより。アは誤り：平均をとって小さくなるのはばらつきだけ（ひっかけ）。イは真度の説明。エは精度の説明で、正確さは真度と精度の両方を含む。",
+      "explanation_vi": "Đề bài: Phát biểu nào sau đây về sai số đo là đúng? Giải thích: Phương án 3 đúng: dụng cụ đo bị lệch hiệu chuẩn gây sai số hệ thống, lần nào cũng lệch về một phía, tức là độ chệch. Phương án 1 sai: lấy trung bình nhiều lần đo chỉ làm giảm độ phân tán, không làm giảm độ chệch (bẫy). Phương án 2 là định nghĩa của độ đúng, không phải độ chụm. Phương án 4 là định nghĩa của độ chụm; độ chính xác bao gồm cả độ đúng và độ chụm.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-009"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "次の文の空欄に入る語の組合せとして正しいものはどれか。\n\n「測定値の母平均から真の値を引いた値を（①）といい、その小さい程度を（②）という。また、測定値の不ぞろいの程度を（③）という。」",
+      "choices": [
+        "①かたより ②真度 ③ばらつき",
+        "①かたより ②精度 ③ばらつき",
+        "①ばらつき ②真度 ③かたより",
+        "①誤差 ②正確さ ③偏差"
+      ],
+      "answer": 0,
+      "explanation": "母平均と真の値の差＝かたより、その小ささ＝真度、不ぞろい＝ばらつき。イは「精度」をかたよりの小ささとしている点が誤り（精度はばらつきの小ささ）。エの誤差は個々の測定値と真の値の差。",
+      "explanation_vi": "Đề bài: Chọn tổ hợp từ đúng để điền vào chỗ trống trong câu sau.\n\n\"Hiệu giữa trung bình tổng thể của giá trị đo và giá trị thật gọi là (①), mức độ nhỏ của nó gọi là (②). Còn mức độ không đồng đều của các giá trị đo gọi là (③).\" Giải thích: Hiệu giữa trung bình tổng thể và giá trị thật là độ chệch, mức độ nhỏ của độ chệch là độ đúng, mức độ không đồng đều là độ phân tán - phương án 1. Phương án 2 sai vì coi độ chụm là mức độ nhỏ của độ chệch (độ chụm là mức độ nhỏ của độ phân tán). Sai số ở phương án 4 là hiệu giữa từng giá trị đo và giá trị thật.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-010"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "ある部品の寸法データについて、サンプリング誤差の標準偏差が 0.08 mm、測定誤差の標準偏差が 0.06 mm である。両者が互いに独立であるとき、データ全体の誤差の標準偏差はいくらか。",
+      "choices": [
+        "0.02 mm",
+        "0.07 mm",
+        "0.14 mm",
+        "0.10 mm"
+      ],
+      "answer": 3,
+      "explanation": "独立なら分散が加法的：σ_T² ＝ 0.08² ＋ 0.06² ＝ 0.0064 ＋ 0.0036 ＝ 0.0100、σ_T ＝ 0.10 mm。0.14 は標準偏差をそのまま足した誤り、0.02 は引いた誤り、0.07 は単純平均。",
+      "explanation_vi": "Đề bài: Với dữ liệu kích thước của một linh kiện, độ lệch chuẩn của sai số lấy mẫu là 0.08 mm, độ lệch chuẩn của sai số đo là 0.06 mm. Khi hai sai số độc lập với nhau, độ lệch chuẩn của sai số toàn bộ dữ liệu là bao nhiêu? Giải thích: Khi độc lập, phương sai cộng được: σ_T² = 0.08² + 0.06² = 0.0064 + 0.0036 = 0.0100, σ_T = 0.10 mm (phương án 4). 0.14 là cộng thẳng hai độ lệch chuẩn (sai), 0.02 là trừ, 0.07 là trung bình cộng đơn giản.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-011"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "データ 4, 9, 6, 5 のメディアンはいくらか。",
+      "choices": [
+        "5",
+        "5.5",
+        "6",
+        "6.5"
+      ],
+      "answer": 1,
+      "explanation": "並べ替えると 4, 5, 6, 9。n ＝ 4（偶数）なので中央の2つ 5 と 6 の平均で 5.5。6 は平均 x̄（24／4）と混同した答え。並べ替えずに中央の 9 と 6 をとると 7.5 になる。",
+      "explanation_vi": "Đề bài: Trung vị của dữ liệu 4, 9, 6, 5 là bao nhiêu? Giải thích: Xếp theo thứ tự: 4, 5, 6, 9. n = 4 (chẵn) nên trung vị là trung bình của hai số ở giữa 5 và 6, tức 5.5 (phương án 2). 6 là đáp án nhầm với trung bình x̄ (24/4). Nếu không xếp lại mà lấy hai số giữa 9 và 6 thì ra 7.5.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-012"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "データ 21, 25, 23, 20, 26 の偏差平方和 S はいくらか。",
+      "choices": [
+        "6.5",
+        "23",
+        "26",
+        "32.5"
+      ],
+      "answer": 2,
+      "explanation": "x̄ ＝ 115／5 ＝ 23。偏差 −2, 2, 0, −3, 3 → S ＝ 4＋4＋0＋9＋9 ＝ 26。6.5 は V ＝ 26／4（S と V の混同）、23 は平均。",
+      "explanation_vi": "Đề bài: Tổng bình phương độ lệch S của dữ liệu 21, 25, 23, 20, 26 là bao nhiêu? Giải thích: x̄ = 115/5 = 23. Độ lệch −2, 2, 0, −3, 3 → S = 4 + 4 + 0 + 9 + 9 = 26 (phương án 3). 6.5 là V = 26/4 (nhầm S với V), 23 là trung bình.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-013"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "データ 30.4, 30.1, 29.8, 30.2, 30.0 の分散 V と標準偏差 s の組合せとして正しいものはどれか（V は不偏分散）。",
+      "choices": [
+        "V ＝ 0.05、s ≒ 0.224",
+        "V ＝ 0.04、s ＝ 0.200",
+        "V ＝ 0.20、s ≒ 0.447",
+        "V ＝ 0.05、s ＝ 0.0025"
+      ],
+      "answer": 0,
+      "explanation": "x̄ ＝ 150.5／5 ＝ 30.1。偏差 0.3, 0, −0.3, 0.1, −0.1 → S ＝ 0.09＋0＋0.09＋0.01＋0.01 ＝ 0.20。V ＝ 0.20／4 ＝ 0.05、s ＝ √0.05 ≒ 0.224。V ＝ 0.04 は n ＝ 5 で割った誤り、0.20 は S そのもの、s ＝ 0.0025 は2乗してしまった誤り。",
+      "explanation_vi": "Đề bài: Với dữ liệu 30.4, 30.1, 29.8, 30.2, 30.0, tổ hợp đúng của phương sai V và độ lệch chuẩn s là gì? (V là phương sai không chệch) Giải thích: x̄ = 150.5/5 = 30.1. Độ lệch 0.3, 0, −0.3, 0.1, −0.1 → S = 0.09 + 0 + 0.09 + 0.01 + 0.01 = 0.20. V = 0.20/4 = 0.05, s = √0.05 ≈ 0.224 (phương án 1). V = 0.04 là chia cho n = 5 (sai), 0.20 là chính S, s = 0.0025 là bình phương V thay vì lấy căn.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-014"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "基本統計量に関する記述として、誤っているものはどれか。",
+      "choices": [
+        "偏差 (xᵢ − x̄) の合計は常に0になる。",
+        "分散の単位は、データの単位の2乗である。",
+        "メディアンは、平均に比べて外れ値の影響を受けにくい。",
+        "範囲 R は、すべてのデータを使うので外れ値の影響を受けにくい。"
+      ],
+      "answer": 3,
+      "explanation": "範囲は最大値と最小値の2つだけで決まるので、外れ値があると大きく変わる。ア・イ・ウはいずれも正しい。ウ（メディアン）を誤りと選びやすいが、外れ値に強いのはメディアンのほう。",
+      "explanation_vi": "Đề bài: Phát biểu nào sau đây về các thống kê cơ bản là sai? Giải thích: Phương án 4 sai: khoảng biến thiên R chỉ do giá trị lớn nhất và nhỏ nhất quyết định nên khi có giá trị ngoại lai thì thay đổi rất lớn. Phương án 1, 2, 3 đều đúng. Dễ chọn nhầm phương án 3 (trung vị), nhưng chính trung vị mới là đại lượng ít bị ảnh hưởng bởi giá trị ngoại lai.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-015"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "サプライヤーから納入された基板 2000 枚のロットから 50 枚を抜き取って検査し、そのロットの合格・不合格を判定する。このときの母集団として正しいものはどれか。",
+      "choices": [
+        "抜き取った 50 枚の基板",
+        "サプライヤーの製造工程",
+        "納入された 2000 枚のロット",
+        "50 枚から得た検査データ"
+      ],
+      "answer": 2,
+      "explanation": "抜取検査では、処置（合格・不合格の判定）をとる対象であるロットが母集団（有限母集団）。50 枚はサンプル、検査結果はデータ。サプライヤーの工程は、工程管理（工程に処置をとる）の場合の母集団で、この問題の判断対象ではない。",
+      "explanation_vi": "Đề bài: Từ một lô 2000 tấm bo mạch do nhà cung cấp giao, lấy 50 tấm ra kiểm tra để quyết định lô đó đạt hay không đạt. Tổng thể đúng trong trường hợp này là gì? Giải thích: Trong kiểm tra lấy mẫu, đối tượng được xử lý (quyết định đạt/không đạt) là lô, nên tổng thể là lô 2000 tấm (tổng thể hữu hạn) - phương án 3. 50 tấm là mẫu, kết quả kiểm tra là dữ liệu. Công đoạn sản xuất của nhà cung cấp là tổng thể khi mục đích là quản lý công đoạn (xử lý công đoạn), không phải đối tượng phán đoán ở câu này.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-016"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "母集団に関する記述として、正しいものはどれか。",
+      "choices": [
+        "工程管理では、ある1日につくられた製品が母集団であり、有限母集団である。",
+        "工程管理では、今後つくられる製品も含めた工程を母集団とみなし、無限母集団として扱う。",
+        "抜取検査のロットは、いくらでもサンプルがとれるので無限母集団である。",
+        "母集団とは、測定して得られたデータの集まりのことである。"
+      ],
+      "answer": 1,
+      "explanation": "工程管理の目的は工程に処置をとることなので、これからつくられる製品も含めた工程が母集団＝無限母集団。アは「1日分の製品」に限定している点が誤り（間違えやすい点）。ウ：ロットは大きさが決まっている有限母集団。エ：データはサンプルを測定した結果であり母集団ではない。",
+      "explanation_vi": "Đề bài: Phát biểu nào sau đây về tổng thể là đúng? Giải thích: Mục đích của quản lý công đoạn là xử lý công đoạn, nên tổng thể là công đoạn bao gồm cả các sản phẩm sẽ làm sau này, tức tổng thể vô hạn - phương án 2. Phương án 1 sai vì giới hạn tổng thể trong sản phẩm của một ngày (điểm dễ nhầm). Phương án 3 sai: lô có kích thước xác định nên là tổng thể hữu hạn. Phương án 4 sai: dữ liệu là kết quả đo mẫu, không phải tổng thể.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-017"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "次のうち、計数値はどれか。",
+      "choices": [
+        "アンテナ1台あたりのはんだ付け不適合箇所数",
+        "アンテナエレメントの長さ（mm）",
+        "同軸ケーブルの引張強さ（N）",
+        "リフロー炉内の温度（℃）"
+      ],
+      "answer": 0,
+      "explanation": "不適合箇所数は数えて得る値なので計数値。長さ・引張強さ・温度は測定器で測る連続量なので計量値。",
+      "explanation_vi": "Đề bài: Trong các dữ liệu sau, dữ liệu nào là dữ liệu đếm? Giải thích: Số chỗ hàn không phù hợp trên một anten có được bằng cách đếm nên là dữ liệu đếm (phương án 1). Chiều dài, độ bền kéo, nhiệt độ được đo bằng dụng cụ và là đại lượng liên tục nên là dữ liệu đo.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-018"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "n ＝ 5 のデータについて Σx ＝ 40、Σx² ＝ 330 であった。分散 V（不偏分散）はいくらか。",
+      "choices": [
+        "2.0",
+        "2.5",
+        "10",
+        "66"
+      ],
+      "answer": 1,
+      "explanation": "S ＝ 330 − 40²／5 ＝ 330 − 320 ＝ 10、V ＝ 10／(5 − 1) ＝ 2.5。2.0 は n ＝ 5 で割った誤り、10 は S、66 は Σx²／n。",
+      "explanation_vi": "Đề bài: Với dữ liệu n = 5 có Σx = 40, Σx² = 330. Phương sai V (phương sai không chệch) là bao nhiêu? Giải thích: S = 330 − 40²/5 = 330 − 320 = 10, V = 10/(5 − 1) = 2.5 (phương án 2). 2.0 là chia cho n = 5 (sai), 10 là S, 66 là Σx²/n.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-019"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "データ 7, 9, 12, 8, 10 の偏差平方和 S を簡便式で求めるとき、正しい値はどれか。",
+      "choices": [
+        "3.7",
+        "9.2",
+        "423.2",
+        "14.8"
+      ],
+      "answer": 3,
+      "explanation": "Σx ＝ 46、Σx² ＝ 49＋81＋144＋64＋100 ＝ 438、修正項 ＝ 46²／5 ＝ 423.2、S ＝ 438 − 423.2 ＝ 14.8。3.7 は V（S と V の混同）、423.2 は修正項、9.2 は平均。",
+      "explanation_vi": "Đề bài: Khi tính tổng bình phương độ lệch S của dữ liệu 7, 9, 12, 8, 10 bằng công thức rút gọn, giá trị đúng là bao nhiêu? Giải thích: Σx = 46, Σx² = 49 + 81 + 144 + 64 + 100 = 438, số hạng hiệu chỉnh = 46²/5 = 423.2, S = 438 − 423.2 = 14.8 (phương án 4). 3.7 là V (nhầm S với V), 423.2 là số hạng hiệu chỉnh, 9.2 là trung bình.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-020"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "部品Aの長さは平均 20.0 mm、標準偏差 0.5 mm、部品Bの長さは平均 400 mm、標準偏差 2.0 mm である。変動係数の組合せとして正しいものはどれか。",
+      "choices": [
+        "A 2.5％、B 0.5％",
+        "A 0.5％、B 2.5％",
+        "A 0.025％、B 0.005％",
+        "A 1.25％、B 0.25％"
+      ],
+      "answer": 0,
+      "explanation": "CV ＝ s／x̄ × 100：A ＝ 0.5／20.0 × 100 ＝ 2.5％、B ＝ 2.0／400 × 100 ＝ 0.5％。s は B のほうが大きいが、相対的なばらつきは A のほうが大きい。イは A と B を逆にした誤り。",
+      "explanation_vi": "Đề bài: Chiều dài linh kiện A có trung bình 20.0 mm, độ lệch chuẩn 0.5 mm; chiều dài linh kiện B có trung bình 400 mm, độ lệch chuẩn 2.0 mm. Tổ hợp đúng của hệ số biến thiên là gì? Giải thích: CV = s/x̄ × 100: A = 0.5/20.0 × 100 = 2.5%, B = 2.0/400 × 100 = 0.5% (phương án 1). s của B lớn hơn, nhưng độ phân tán tương đối của A lại lớn hơn. Phương án 2 là đảo ngược A và B.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-021"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "基本統計量に関する記述として、誤っているものはどれか。",
+      "choices": [
+        "偏差平方和は S ＝ Σx² − (Σx)²／n で求めることができる。",
+        "不偏分散は、偏差平方和を自由度 n − 1 で割って求める。",
+        "変動係数は標準偏差を平均で割った値で、データと同じ単位をもつ。",
+        "標準偏差は分散の正の平方根で、データと同じ単位をもつ。"
+      ],
+      "answer": 2,
+      "explanation": "変動係数は s（mm）を x̄（mm）で割るので単位が消える（無次元）。だから単位の違うもの同士を比べられる。エの標準偏差がデータと同じ単位をもつのは正しい。",
+      "explanation_vi": "Đề bài: Phát biểu nào sau đây về các thống kê cơ bản là sai? Giải thích: Phương án 3 sai: hệ số biến thiên là s (mm) chia cho x̄ (mm) nên mất đơn vị (không thứ nguyên), nhờ vậy mới so sánh được các đại lượng khác đơn vị. Phương án 4 (độ lệch chuẩn có cùng đơn vị với dữ liệu) là đúng.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-022"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "データ x を u ＝ (x − 200)／5 と変換したところ、ū ＝ 1.2、V_u ＝ 2.5 であった。元のデータの平均 x̄ と分散 V_x の組合せとして正しいものはどれか。",
+      "choices": [
+        "x̄ ＝ 206、V_x ＝ 12.5",
+        "x̄ ＝ 206、V_x ＝ 62.5",
+        "x̄ ＝ 201.2、V_x ＝ 62.5",
+        "x̄ ＝ 206、V_x ＝ 262.5"
+      ],
+      "answer": 1,
+      "explanation": "x̄ ＝ 200 ＋ 5 × 1.2 ＝ 206、V_x ＝ 5² × 2.5 ＝ 62.5。12.5 は h 倍しかしなかった誤り、262.5 は分散に仮平均 200 を足した誤り、201.2 は h を掛け忘れた誤り。",
+      "explanation_vi": "Đề bài: Biến đổi dữ liệu x thành u = (x − 200)/5 thì được ū = 1.2, V_u = 2.5. Tổ hợp đúng của trung bình x̄ và phương sai V_x của dữ liệu gốc là gì? Giải thích: x̄ = 200 + 5 × 1.2 = 206, V_x = 5² × 2.5 = 62.5 (phương án 2). 12.5 là chỉ nhân h thay vì h², 262.5 là cộng thêm trung bình giả định 200 vào phương sai (sai), 201.2 là quên nhân h.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-023"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "データの変換に関する記述として、誤っているものはどれか。",
+      "choices": [
+        "すべてのデータに一定値を加えても、分散は変わらない。",
+        "すべてのデータを h 倍すると、標準偏差は h 倍（h ＞ 0）になる。",
+        "すべてのデータを h 倍すると、偏差平方和は h² 倍になる。",
+        "すべてのデータから一定値を引くと、範囲もその値だけ小さくなる。"
+      ],
+      "answer": 3,
+      "explanation": "一定値を引くのは位置をずらすだけで、最大値と最小値が同じだけずれるので範囲 R は変わらない。ア・イ・ウは正しい。",
+      "explanation_vi": "Đề bài: Phát biểu nào sau đây về biến đổi dữ liệu là sai? Giải thích: Phương án 4 sai: trừ đi một hằng số chỉ làm dời vị trí; giá trị lớn nhất và nhỏ nhất dịch chuyển như nhau nên khoảng biến thiên R không đổi. Phương án 1, 2, 3 đúng.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-024"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "次の文の空欄に入るものの組合せとして正しいものはどれか。\n\n「u ＝ (x − a)／h と変換したとき、x の平均は（①）、x の偏差平方和は（②）で求められる。」",
+      "choices": [
+        "① a ＋ h·ū ② h²·S_u",
+        "① a ＋ h·ū ② h·S_u",
+        "① (ū − a)／h ② h²·S_u",
+        "① a ＋ ū ② a ＋ h²·S_u"
+      ],
+      "answer": 0,
+      "explanation": "x ＝ a ＋ h·u なので平均は a ＋ h·ū。平方和は h² 倍で、a は関係しない。イは h² を h とした誤り、エは平方和に a を足した誤り。",
+      "explanation_vi": "Đề bài: Chọn tổ hợp đúng để điền vào chỗ trống trong câu sau.\n\n\"Khi biến đổi u = (x − a)/h, trung bình của x được tính bằng (①), tổng bình phương độ lệch của x được tính bằng (②).\" Giải thích: Vì x = a + h·u nên trung bình là a + h·ū. Tổng bình phương độ lệch nhân h² và không liên quan đến a - phương án 1. Phương án 2 dùng h thay cho h² (sai), phương án 4 cộng a vào tổng bình phương độ lệch (sai).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-025"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "寸法 10.000 mm のブロックゲージを、同じマイクロメータで 10 回測定したところ、平均 10.012 mm、標準偏差 0.002 mm であった。この測定についての判断として最も適切なものはどれか。",
+      "choices": [
+        "ばらつきが大きいので、測定回数を増やして平均をとればよい。",
+        "真度はよいが精度が悪い。",
+        "精度はよいが真度が悪いので、マイクロメータの校正を行う。",
+        "かたよりもばらつきも小さく、正確さは十分である。"
+      ],
+      "answer": 2,
+      "explanation": "標準偏差 0.002 mm は小さい（精度がよい）が、平均が真の値より 0.012 mm 大きく、標準偏差の6倍もずれている＝かたよりが大きい（真度が悪い）。かたよりは平均をとっても減らないので校正が対策。アはばらつきへの対策でかたよりには効かない。",
+      "explanation_vi": "Đề bài: Dùng cùng một panme đo một căn mẫu kích thước 10.000 mm 10 lần, được trung bình 10.012 mm, độ lệch chuẩn 0.002 mm. Phán đoán nào về phép đo này là thích hợp nhất? Giải thích: Độ lệch chuẩn 0.002 mm nhỏ (độ chụm tốt), nhưng trung bình lớn hơn giá trị thật 0.012 mm, tức lệch tới 6 lần độ lệch chuẩn: độ chệch lớn (độ đúng kém) - phương án 3. Độ chệch không giảm khi lấy trung bình nên biện pháp là hiệu chuẩn panme. Phương án 1 là biện pháp cho độ phân tán, không có tác dụng với độ chệch.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-026"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "データ全体の誤差の標準偏差が 0.25、測定誤差の標準偏差が 0.15 であった。サンプリング誤差と測定誤差が互いに独立なとき、サンプリング誤差の標準偏差はいくらか。",
+      "choices": [
+        "0.10",
+        "0.20",
+        "0.29",
+        "0.40"
+      ],
+      "answer": 1,
+      "explanation": "σ_S² ＝ σ_T² − σ_M² ＝ 0.0625 − 0.0225 ＝ 0.0400、σ_S ＝ 0.20。0.10 は標準偏差どうしを引いた誤り、0.40 は足した誤り、0.29 は √(0.0625＋0.0225)。",
+      "explanation_vi": "Đề bài: Độ lệch chuẩn của sai số toàn bộ dữ liệu là 0.25, độ lệch chuẩn của sai số đo là 0.15. Khi sai số lấy mẫu và sai số đo độc lập với nhau, độ lệch chuẩn của sai số lấy mẫu là bao nhiêu? Giải thích: σ_S² = σ_T² − σ_M² = 0.0625 − 0.0225 = 0.0400, σ_S = 0.20 (phương án 2). 0.10 là trừ thẳng hai độ lệch chuẩn (sai), 0.40 là cộng thẳng, 0.29 là √(0.0625 + 0.0225).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-027"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "母数と統計量に関する記述として、正しいものはどれか。",
+      "choices": [
+        "母平均 μ は通常未知であり、サンプルの平均 x̄ から推測する。",
+        "サンプルの標準偏差 s は母数の1つである。",
+        "サンプルを取り直しても、平均 x̄ の値は変わらない。",
+        "母集団が無限母集団であれば、母数は存在しない。"
+      ],
+      "answer": 0,
+      "explanation": "母数（μ、σ など）は通常未知で、統計量（x̄、s など）から推測する。s は統計量であって母数ではない。x̄ はサンプルごとに変わる（だからサンプリング誤差がある）。無限母集団にも母数はある。",
+      "explanation_vi": "Đề bài: Phát biểu nào sau đây về tham số tổng thể và thống kê là đúng? Giải thích: Phương án 1 đúng: tham số tổng thể (μ, σ...) thường chưa biết và được suy ra từ thống kê (x̄, s...). Phương án 2 sai: s là thống kê, không phải tham số tổng thể. Phương án 3 sai: x̄ thay đổi theo từng mẫu (vì vậy mới có sai số lấy mẫu). Phương án 4 sai: tổng thể vô hạn vẫn có tham số tổng thể.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-028"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "母集団に関する記述として、正しいものはどれか。",
+      "choices": [
+        "納入されたロットから 20 個を抜き取って合否を判定するとき、母集団は抜き取った 20 個である。",
+        "工程を管理する目的でサンプルをとるとき、母集団はその日に生産された製品だけである。",
+        "納入されたロットの合否を判定するとき、母集団はそのロットであり、有限母集団である。",
+        "母集団の大きさが有限であれば、母数は必ずわかっている。"
+      ],
+      "answer": 2,
+      "explanation": "抜取検査で処置（合格・不合格）の対象はロット → 母集団＝ロット（有限母集団）。20個はサンプル（ア誤り）。工程管理の母集団は工程そのもの（今後つくられる製品を含む無限母集団）（イ誤り）。有限でも母数は通常未知（エ誤り）。",
+      "explanation_vi": "Đề bài: Phát biểu nào sau đây về tổng thể là đúng? Giải thích: Phương án 3 đúng: trong kiểm tra lấy mẫu, đối tượng xử lý (đạt/không đạt) là lô, nên tổng thể là lô (tổng thể hữu hạn). Phương án 1 sai: 20 cái là mẫu. Phương án 2 sai: tổng thể của quản lý công đoạn là chính công đoạn (tổng thể vô hạn, gồm cả sản phẩm sẽ làm sau này). Phương án 4 sai: dù hữu hạn, tham số tổng thể thường vẫn chưa biết.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-029"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "データの種類に関する記述として、誤っているものはどれか。",
+      "choices": [
+        "ケーブルの長さ（mm）は計量値である。",
+        "1ロット中の不適合品率は、小数で表されるので計量値である。",
+        "基板1枚あたりのはんだ付け不適合箇所の数は計数値である。",
+        "顧客アンケートの自由記述は言語データである。"
+      ],
+      "answer": 1,
+      "explanation": "不適合品率は分子（不適合品数）が数えた値なので計数値。小数・％で表されても計量値にはならない。ほかは正しい。",
+      "explanation_vi": "Đề bài: Phát biểu nào sau đây về các loại dữ liệu là sai? Giải thích: Phương án 2 sai: tử số của tỷ lệ sản phẩm không phù hợp (số sản phẩm không phù hợp) là giá trị đếm nên đây là dữ liệu đếm. Dù biểu diễn bằng số thập phân hay % cũng không trở thành dữ liệu đo. Các phương án khác đúng.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-030"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "ケーブル長 x（mm）を u ＝ (x − 10.00)／0.01 と変換したところ、ū ＝ −1.5、s_u ＝ 2.0 であった。元のデータの平均 x̄ と標準偏差 s_x の組合せとして正しいものはどれか。",
+      "choices": [
+        "x̄ ＝ 9.985、s_x ＝ 0.0002",
+        "x̄ ＝ 9.985、s_x ＝ 0.02",
+        "x̄ ＝ 8.50、s_x ＝ 0.02",
+        "x̄ ＝ 10.015、s_x ＝ 0.02"
+      ],
+      "answer": 1,
+      "explanation": "x̄ ＝ 10.00 ＋ 0.01 ×（−1.5）＝ 9.985、s_x ＝ 0.01 × 2.0 ＝ 0.02（標準偏差は h 倍）。0.0002 は h² を掛けた誤り（h² は S・V のとき）。8.50 は h を掛け忘れ、10.015 は符号の誤り。",
+      "explanation_vi": "Đề bài: Biến đổi chiều dài cáp x (mm) thành u = (x − 10.00)/0.01 thì được ū = −1.5, s_u = 2.0. Tổ hợp đúng của trung bình x̄ và độ lệch chuẩn s_x của dữ liệu gốc là gì? Giải thích: x̄ = 10.00 + 0.01 × (−1.5) = 9.985, s_x = 0.01 × 2.0 = 0.02 (độ lệch chuẩn nhân h) - phương án 2. 0.0002 là nhân h² (sai; h² dùng cho S và V). 8.50 là quên nhân h, 10.015 là sai dấu.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-031"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "ある寸法データ全体の誤差の標準偏差が 0.13 mm、サンプリング誤差の標準偏差が 0.12 mm であった。サンプリング誤差と測定誤差が互いに独立であるとき、測定誤差の標準偏差はいくらか。",
+      "choices": [
+        "0.01 mm",
+        "0.05 mm",
+        "0.18 mm",
+        "0.25 mm"
+      ],
+      "answer": 1,
+      "explanation": "独立な誤差で足し引きできるのは分散。σ_m＝√(0.13²−0.12²)＝√(0.0169−0.0144)＝√0.0025＝0.05 mm。0.01 は標準偏差をそのまま引いた誤り、0.25 はそのまま足した誤り、0.18 は分散を足してしまった誤り（√(0.0169＋0.0144)≒0.18）。\n電卓：0.13 × ＝（0.0169）M+、0.12 × ＝（0.0144）M−、MR √ ＝ 0.05。",
+      "explanation_vi": "Đề bài: Độ lệch chuẩn của sai số toàn bộ dữ liệu kích thước là 0.13 mm, độ lệch chuẩn của sai số lấy mẫu là 0.12 mm. Khi sai số lấy mẫu và sai số đo độc lập với nhau, độ lệch chuẩn của sai số đo là bao nhiêu? Giải thích: Với các sai số độc lập, đại lượng cộng trừ được là phương sai. σ_M = √(0.13² − 0.12²) = √(0.0169 − 0.0144) = √0.0025 = 0.05 mm (phương án 2). 0.01 là trừ thẳng độ lệch chuẩn, 0.25 là cộng thẳng, 0.18 là cộng phương sai (√(0.0169 + 0.0144) ≈ 0.18).\nMáy tính: 0.13 × = (0.0169) M+, 0.12 × = (0.0144) M−, MR √ = 0.05.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-032"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "アンテナ組立ラインで、毎日午前と午後に4個ずつ製品を抜き取って給電部の寸法を測り、X̄-R 管理図で工程を管理している。この管理の目的からみた母集団として最も適切なものはどれか。",
+      "choices": [
+        "その日に生産された製品全体",
+        "抜き取った 8 個の製品",
+        "管理図に打点した平均値の集まり",
+        "その組立工程（今後つくられる製品を含む）"
+      ],
+      "answer": 3,
+      "explanation": "工程管理で処置をとる対象は工程そのもの。今後つくられる製品も含むので無限母集団とみなす。「その日の製品」は時間で区切っただけで、管理の対象（工程）ではない。8 個はサンプル、打点した平均値は統計量。",
+      "explanation_vi": "Đề bài: Trên dây chuyền lắp ráp anten, mỗi ngày vào buổi sáng và buổi chiều lấy 4 sản phẩm để đo kích thước phần cấp điện và quản lý công đoạn bằng biểu đồ kiểm soát X̄-R. Xét theo mục đích quản lý này, tổng thể thích hợp nhất là gì? Giải thích: Đối tượng được xử lý trong quản lý công đoạn là chính công đoạn, bao gồm cả sản phẩm sẽ làm sau này nên coi là tổng thể vô hạn - phương án 4. \"Sản phẩm trong ngày\" chỉ là một khoảng thời gian cắt ra, không phải đối tượng quản lý (công đoạn). 8 sản phẩm là mẫu, các giá trị trung bình chấm lên biểu đồ là thống kê.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-033"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "データを u ＝ (x − 50.0)／0.1 と変換したところ、ū ＝ 2.4、V_u ＝ 9.0 であった。元のデータの平均 x̄ と標準偏差 s_x の組合せとして正しいものはどれか。",
+      "choices": [
+        "x̄ ＝ 50.24、s_x ＝ 0.09",
+        "x̄ ＝ 52.4、s_x ＝ 0.3",
+        "x̄ ＝ 50.24、s_x ＝ 0.3",
+        "x̄ ＝ 50.024、s_x ＝ 0.03"
+      ],
+      "answer": 2,
+      "explanation": "x̄＝50.0＋0.1×2.4＝50.24。V_x＝0.1²×9.0＝0.09、s_x＝√0.09＝0.3（または s_u＝3.0 → ×0.1）。0.09 は分散を標準偏差と取り違えた誤り、52.4 は h を掛け忘れた誤り。\n速く解くコツ：V_u は先に √ して s_u＝3 にし、h を1回掛けるだけ。",
+      "explanation_vi": "Đề bài: Biến đổi dữ liệu thành u = (x − 50.0)/0.1 thì được ū = 2.4, V_u = 9.0. Tổ hợp đúng của trung bình x̄ và độ lệch chuẩn s_x của dữ liệu gốc là gì? Giải thích: x̄ = 50.0 + 0.1 × 2.4 = 50.24. V_x = 0.1² × 9.0 = 0.09, s_x = √0.09 = 0.3 (hoặc s_u = 3.0 rồi nhân 0.1) - phương án 3. 0.09 là nhầm phương sai với độ lệch chuẩn, 52.4 là quên nhân h.\nMẹo giải nhanh: lấy căn V_u trước để được s_u = 3, rồi chỉ cần nhân h một lần.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-034"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "データ 12.3, 12.7, 12.1, 12.5, 12.4 の不偏分散 V はいくらか。",
+      "choices": [
+        "0.04",
+        "0.05",
+        "0.20",
+        "0.224"
+      ],
+      "answer": 1,
+      "explanation": "12 を引いて u ＝ 0.3, 0.7, 0.1, 0.5, 0.4 にすると速い（S は変わらない）。\n> Σu ＝ 2.0、Σu² ＝ 0.09 ＋ 0.49 ＋ 0.01 ＋ 0.25 ＋ 0.16 ＝ 1.00\n> S ＝ 1.00 − 2.0² ／ 5 ＝ 1.00 − 0.80 ＝ 0.20\n> V ＝ S ／ (n − 1) ＝ 0.20 ／ 4 ＝ 0.05\n電卓：MRC MRC → 0.3 × = M+ … 0.4 × = M+ → MRC（1） − 0.8 = → 0.2 ÷ 4 = → 0.05。0.20 は S、0.04 は n で割った値、0.224 は s（√V）。",
+      "explanation_vi": "Đề bài: Phương sai không chệch V của dữ liệu 12.3, 12.7, 12.1, 12.5, 12.4 là bao nhiêu? Giải thích: Trừ đi 12 cho nhanh: u = 0.3, 0.7, 0.1, 0.5, 0.4 (S không đổi).\n> Σu = 2.0, Σu² = 0.09 + 0.49 + 0.01 + 0.25 + 0.16 = 1.00\n> S = 1.00 − 2.0²/5 = 1.00 − 0.80 = 0.20\n> V = S/(n − 1) = 0.20/4 = 0.05\nĐáp án là phương án 2. 0.20 là S, 0.04 là chia cho n, 0.224 là s (√V).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-035"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "データを u ＝ (x − 5.00) ÷ 0.02 と変換したところ、ū ＝ 1.5、V_u ＝ 2.25 であった。元のデータの平均 x̄ と不偏分散 V_x の組合せとして正しいものはどれか。",
+      "choices": [
+        "x̄＝5.03、V_x＝0.045",
+        "x̄＝4.97、V_x＝0.0009",
+        "x̄＝5.03、V_x＝0.0009",
+        "x̄＝6.50、V_x＝2.25"
+      ],
+      "answer": 2,
+      "explanation": "> x̄ ＝ 5.00 ＋ 0.02 × 1.5 ＝ 5.03\n> V_x ＝ 0.02² × 2.25 ＝ 0.0004 × 2.25 ＝ 0.0009（s_x ＝ 0.03）\n0.045 は h を1回しか掛けていない（分散には h²）。4.97 は符号の誤り、6.50 は変換を戻していない。",
+      "explanation_vi": "Đề bài: Biến đổi dữ liệu thành u = (x − 5.00) ÷ 0.02 thì được ū = 1.5, V_u = 2.25. Tổ hợp đúng của trung bình x̄ và phương sai không chệch V_x của dữ liệu gốc là gì? Giải thích: > x̄ = 5.00 + 0.02 × 1.5 = 5.03\n> V_x = 0.02² × 2.25 = 0.0004 × 2.25 = 0.0009 (s_x = 0.03)\nĐáp án là phương án 3. 0.045 là chỉ nhân h một lần (phương sai phải nhân h²). 4.97 là sai dấu, 6.50 là chưa đổi ngược.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-036"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "ある特性のデータ全体の誤差の標準偏差が 0.29、測定誤差の標準偏差が 0.21 であった。サンプリング誤差と測定誤差が互いに独立であるとき、サンプリング誤差の標準偏差はいくらか。",
+      "choices": [
+        "0.20",
+        "0.08",
+        "0.28",
+        "0.36"
+      ],
+      "answer": 0,
+      "explanation": "足し引きできるのは分散。\n> σ_s ＝ √(0.29² − 0.21²) ＝ √(0.0841 − 0.0441) ＝ √0.0400 ＝ 0.20\n0.08 は標準偏差をそのまま引いた誤り、0.28 は √(0.29−0.21)、0.36 は分散を引かずに足して √ をとった値（√(0.0841＋0.0441)＝√0.1282≒0.36）。\n電卓：MRC MRC → 0.29 × ＝ M+ 0.21 × ＝ M− → MRC √",
+      "explanation_vi": "Đề bài: Độ lệch chuẩn của sai số toàn bộ dữ liệu của một đặc tính là 0.29, độ lệch chuẩn của sai số đo là 0.21. Khi sai số lấy mẫu và sai số đo độc lập với nhau, độ lệch chuẩn của sai số lấy mẫu là bao nhiêu? Giải thích: Đại lượng cộng trừ được là phương sai.\n> σ_S = √(0.29² − 0.21²) = √(0.0841 − 0.0441) = √0.0400 = 0.20\nĐáp án là phương án 1. 0.08 là trừ thẳng độ lệch chuẩn, 0.28 là √(0.29 − 0.21), 0.36 là cộng phương sai rồi lấy căn (√(0.0841 + 0.0441) = √0.1282 ≈ 0.36).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-037"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "サンプリング誤差の標準偏差が 0.15 mm、測定誤差の標準偏差が 0.08 mm で、両者は互いに独立である。データ全体の誤差の標準偏差はいくらか。",
+      "choices": [
+        "0.23 mm",
+        "0.07 mm",
+        "0.0289 mm",
+        "0.17 mm"
+      ],
+      "answer": 3,
+      "explanation": "> σ ＝ √(0.15² ＋ 0.08²) ＝ √(0.0225 ＋ 0.0064) ＝ √0.0289 ＝ 0.17\n0.23 は標準偏差を足した誤り、0.0289 は分散のまま（√を忘れた）、0.07 は差。",
+      "explanation_vi": "Đề bài: Độ lệch chuẩn của sai số lấy mẫu là 0.15 mm, của sai số đo là 0.08 mm, hai sai số độc lập với nhau. Độ lệch chuẩn của sai số toàn bộ dữ liệu là bao nhiêu? Giải thích: > σ = √(0.15² + 0.08²) = √(0.0225 + 0.0064) = √0.0289 = 0.17\nĐáp án là phương án 4. 0.23 là cộng thẳng độ lệch chuẩn, 0.0289 là vẫn để ở dạng phương sai (quên lấy căn), 0.07 là hiệu.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-038"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "寸法 20.000 mm のブロックゲージを、ある測定器で 10 回測定したところ、平均 20.001 mm、標準偏差 0.015 mm であった。他の測定器では標準偏差は 0.002 mm 程度である。この測定についての判断として最も適切なものはどれか。",
+      "choices": [
+        "真度が悪いので、測定器を校正してかたよりを補正する。",
+        "真度はよいが精度が悪いので、測定のばらつきの原因（測定器・測定方法）を調べる。",
+        "かたよりもばらつきも小さいので、問題はない。",
+        "精度はよいが真度が悪いので、測定回数を増やせば解決する。"
+      ],
+      "answer": 1,
+      "explanation": "かたより＝20.001−20.000＝0.001 と小さい → 真度はよい。標準偏差 0.015 は他より大きい → 精度が悪い（ばらつき）。校正で直るのはかたより。「回数を増やす」は平均のばらつきを減らすが、かたよりは減らない。",
+      "explanation_vi": "Đề bài: Dùng một dụng cụ đo đo căn mẫu kích thước 20.000 mm 10 lần, được trung bình 20.001 mm, độ lệch chuẩn 0.015 mm. Với các dụng cụ đo khác, độ lệch chuẩn chỉ khoảng 0.002 mm. Phán đoán nào về phép đo này là thích hợp nhất? Giải thích: Độ chệch = 20.001 − 20.000 = 0.001, rất nhỏ → độ đúng tốt. Độ lệch chuẩn 0.015 lớn hơn các dụng cụ khác → độ chụm kém (độ phân tán lớn). Vì vậy phương án 2 đúng. Hiệu chuẩn chỉ sửa được độ chệch. \"Tăng số lần đo\" làm giảm độ phân tán của trung bình, nhưng không làm giảm độ chệch.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-039"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "アンテナ組立工場では、(a) サプライヤーから納入される 1 ロット 3,000 個のコネクタから 80 個を抜き取り、ロットの合否を決めている。また (b) 自社の組立ラインから毎日 4 個ずつ製品を抜き取り、X̄-R 管理図で工程を管理している。(a)・(b) の母集団の組合せとして正しいものはどれか。",
+      "choices": [
+        "(a) 抜き取った 80 個　(b) その日に作られた製品",
+        "(a) サプライヤーの工程全体　(b) その日に抜き取った 4 個",
+        "(a) その 1 ロット 3,000 個（有限母集団）　(b) 組立工程（これから作られる製品を含む、無限母集団として扱う）",
+        "(a) その 1 ロット 3,000 個　(b) その日に作られた製品（有限母集団）"
+      ],
+      "answer": 2,
+      "explanation": "母集団＝判断・処置の対象。(a) 合否を決めるのはロット → 有限母集団。(b) 管理図で処置するのは工程 → 将来の製品を含む無限母集団。「その日に作られた製品」は時間で区切っただけで、管理の対象（工程）ではない。抜き取った 80 個・4 個はサンプル。",
+      "explanation_vi": "Đề bài: Tại nhà máy lắp ráp anten: (a) từ mỗi lô 3000 đầu nối do nhà cung cấp giao, lấy 80 cái để quyết định lô đạt hay không; (b) mỗi ngày lấy 4 sản phẩm từ dây chuyền lắp ráp của công ty để quản lý công đoạn bằng biểu đồ kiểm soát X̄-R. Tổ hợp đúng của tổng thể (a) và (b) là gì? Giải thích: Tổng thể = đối tượng được phán đoán, xử lý. (a) Đối tượng quyết định đạt/không đạt là lô → tổng thể hữu hạn. (b) Đối tượng được xử lý bằng biểu đồ kiểm soát là công đoạn → tổng thể vô hạn, gồm cả sản phẩm tương lai. Đáp án là phương án 3. \"Sản phẩm làm trong ngày\" chỉ là một khoảng thời gian cắt ra, không phải đối tượng quản lý (công đoạn). 80 cái và 4 cái lấy ra là mẫu.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-040"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "母集団とサンプルに関する記述として、誤っているものはどれか。",
+      "choices": [
+        "管理図で工程を管理するときの母集団は、その日に作られた製品であり、有限母集団である。",
+        "サンプルから計算した平均 x̄ や標準偏差 s は統計量である。",
+        "抜取検査では、合否を判定するロットが母集団である。",
+        "母平均 μ や母標準偏差 σ は、ふつう未知であり、サンプルから推定する。"
+      ],
+      "answer": 0,
+      "explanation": "工程管理の母集団は工程（これから作られる製品を含む）で、無限母集団として扱う。イ〜エは正しい。",
+      "explanation_vi": "Đề bài: Phát biểu nào sau đây về tổng thể và mẫu là sai? Giải thích: Phương án 1 sai: tổng thể của quản lý công đoạn là công đoạn (gồm cả sản phẩm sẽ làm sau này) và được coi là tổng thể vô hạn. Phương án 2, 3, 4 đúng.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-041"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "基本統計量に関する記述として、誤っているものはどれか。",
+      "choices": [
+        "変動係数 CV ＝ s ÷ x̄ は単位をもたないので、平均の大きさや単位が違う特性のばらつきを比べるのに使える。",
+        "範囲 R は最大値と最小値だけで決まるので、外れ値の影響を受けにくい。",
+        "メディアンは、データを大きさの順に並べたときの中央の値で、外れ値の影響を受けにくい。",
+        "不偏分散 V は、平方和 S を (n − 1) で割って求める。"
+      ],
+      "answer": 1,
+      "explanation": "R は最大値と最小値の2つだけで決まるので、外れ値が1つあればそのまま大きくなる → 外れ値に弱い。CV は単位なし（ア正しい）。",
+      "explanation_vi": "Đề bài: Phát biểu nào sau đây về các thống kê cơ bản là sai? Giải thích: Phương án 2 sai: R chỉ do hai giá trị lớn nhất và nhỏ nhất quyết định, nên chỉ cần một giá trị ngoại lai là R tăng ngay → R dễ bị ảnh hưởng bởi giá trị ngoại lai. Phương án 1 đúng: CV không có đơn vị.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-042"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "ある部品の厚さ（mm）を6個測定し、4.2、3.8、4.5、4.1、3.9、4.3 を得た。平方和 S と不偏分散 V の組合せとして最も近いものはどれか。",
+      "choices": [
+        "S＝0.333、V＝0.056",
+        "S＝0.258、V＝0.067",
+        "S＝102.84、V＝20.57",
+        "S＝0.333、V＝0.067"
+      ],
+      "answer": 3,
+      "explanation": "4.0 を引くと 0.2、−0.2、0.5、0.1、−0.1、0.3 → Σ＝0.8、Σ²＝0.44。\n> S ＝ 0.44 − 0.8² ÷ 6 ＝ 0.44 − 0.1067 ＝ 0.333\n> V ＝ 0.333 ÷ 5 ≒ 0.067（s ≒ 0.258）\n0.056 は n＝6 で割った誤り、0.258 は s を S と取り違え、102.84 は Σx² のまま。",
+      "explanation_vi": "Đề bài: Đo độ dày (mm) của 6 linh kiện, được 4.2, 3.8, 4.5, 4.1, 3.9, 4.3. Tổ hợp gần đúng nhất của tổng bình phương độ lệch S và phương sai không chệch V là gì? Giải thích: Trừ 4.0: 0.2, −0.2, 0.5, 0.1, −0.1, 0.3 → tổng = 0.8, tổng bình phương = 0.44.\n> S = 0.44 − 0.8² ÷ 6 = 0.44 − 0.1067 = 0.333\n> V = 0.333 ÷ 5 ≈ 0.067 (s ≈ 0.258)\nĐáp án là phương án 4. 0.056 là chia cho n = 6 (sai), 0.258 là nhầm s với S, 102.84 là Σx² chưa trừ số hạng hiệu chỉnh.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-043"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "サプライヤーから入るプリント基板について、「基板1枚あたりのはんだブリッジの数」を毎日記録する。基板の大きさは一定である。このデータの種類と、想定される分布の組合せとして最も適切なものはどれか。",
+      "choices": [
+        "計量値・正規分布",
+        "計数値（不適合品数）・二項分布",
+        "計量値・ポアソン分布",
+        "計数値（不適合数）・ポアソン分布"
+      ],
+      "answer": 3,
+      "explanation": "「1枚あたりの数」は数えた値 → 計数値。1枚の中に何個でも起こりうる欠点の数（不適合数）なのでポアソン分布（管理図なら c 管理図）。二項分布は「n 個中の不適合品の数」（1個は不適合品か否かの2択）。",
+      "explanation_vi": "Đề bài: Với bo mạch in nhập từ nhà cung cấp, mỗi ngày ghi lại \"số cầu hàn (chập thiếc) trên một tấm bo mạch\". Kích thước bo mạch không đổi. Tổ hợp thích hợp nhất giữa loại dữ liệu và phân phối dự kiến là gì? Giải thích: \"Số ... trên một tấm\" là giá trị đếm → dữ liệu đếm. Đây là số khuyết tật (số điểm không phù hợp) có thể xảy ra bao nhiêu cũng được trên một tấm, nên tuân theo phân phối Poisson (nếu dùng biểu đồ kiểm soát thì là biểu đồ c) - phương án 4. Phân phối nhị thức dùng cho \"số sản phẩm không phù hợp trong n sản phẩm\" (mỗi sản phẩm chỉ có hai khả năng: không phù hợp hoặc không).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-044"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "サンプリング誤差の標準偏差が 0.24、測定誤差の標準偏差が 0.07 であり、両者は互いに独立である。データ全体の誤差の標準偏差はいくらか。",
+      "choices": [
+        "0.31",
+        "0.17",
+        "0.25",
+        "0.0625",
+        "0.20"
+      ],
+      "answer": 2,
+      "explanation": "独立な誤差は分散を足す：√(0.24²＋0.07²)＝√(0.0576＋0.0049)＝√0.0625＝0.25。0.31 は標準偏差をそのまま足した値、0.0625 は √ を忘れた分散の値、0.17 は引いた値。\n> MRC MRC → 0.24 × ＝ M+ 0.07 × ＝ M+ → MRC √ → 0.25",
+      "explanation_vi": "Đề bài: Độ lệch chuẩn của sai số lấy mẫu là 0.24, của sai số đo là 0.07, hai sai số độc lập với nhau. Độ lệch chuẩn của sai số toàn bộ dữ liệu là bao nhiêu? Giải thích: Với sai số độc lập thì cộng phương sai: √(0.24² + 0.07²) = √(0.0576 + 0.0049) = √0.0625 = 0.25 (phương án 3). 0.31 là cộng thẳng độ lệch chuẩn, 0.0625 là quên lấy căn (vẫn là phương sai), 0.17 là hiệu.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-045"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "ある寸法データ全体の誤差の標準偏差は 0.50 µm、サンプリング誤差の標準偏差は 0.48 µm であった。両者が互いに独立なとき、測定誤差の標準偏差はいくらか。",
+      "choices": [
+        "0.02 µm",
+        "0.0196 µm",
+        "0.69 µm",
+        "0.14 µm"
+      ],
+      "answer": 3,
+      "explanation": "σ_m＝√(0.50²−0.48²)＝√(0.2500−0.2304)＝√0.0196＝0.14。0.02 は標準偏差どうしを引いた値、0.0196 は √ を忘れた値、0.69 は足してしまった値。\n> MRC MRC → 0.5 × ＝ M+ 0.48 × ＝ M− → MRC √ → 0.14",
+      "explanation_vi": "Đề bài: Độ lệch chuẩn của sai số toàn bộ dữ liệu kích thước là 0.50 µm, của sai số lấy mẫu là 0.48 µm. Khi hai sai số độc lập với nhau, độ lệch chuẩn của sai số đo là bao nhiêu? Giải thích: σ_M = √(0.50² − 0.48²) = √(0.2500 − 0.2304) = √0.0196 = 0.14 (phương án 4). 0.02 là trừ thẳng độ lệch chuẩn, 0.0196 là quên lấy căn, 0.69 là cộng phương sai.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-046"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "次の文の空欄に入る語の組合せとして正しいものはどれか。\n\n「同じものを繰り返し測定したときの測定値の不ぞろいの小さい程度を（①）という。測定値の母平均と真の値との差の小さい程度を（②）という。（①）と（②）を含めた総合的な良さを（③）という。」",
+      "choices": [
+        "①精度　②真度　③正確さ",
+        "①精度　②正確さ　③真度",
+        "①真度　②精度　③正確さ",
+        "①正確さ　②真度　③精度"
+      ],
+      "answer": 0,
+      "explanation": "ばらつき（不ぞろい）の小さい程度＝精度、かたよりの小さい程度＝真度、両方を含む総合的な良さ＝正確さ。「精度」と「真度」を逆にするのが最も多いまちがい。「精」＝細かくそろっている、「真」＝真の値に近い、と覚える。",
+      "explanation_vi": "Đề bài: Chọn tổ hợp từ đúng để điền vào chỗ trống trong câu sau.\n\n\"Mức độ nhỏ của sự không đồng đều giữa các giá trị đo khi đo lặp lại cùng một vật gọi là (①). Mức độ nhỏ của hiệu giữa trung bình tổng thể của giá trị đo và giá trị thật gọi là (②). Mức độ tốt tổng hợp bao gồm cả (①) và (②) gọi là (③).\" Giải thích: Mức độ nhỏ của độ phân tán (sự không đồng đều) = độ chụm, mức độ nhỏ của độ chệch = độ đúng, mức độ tốt tổng hợp gồm cả hai = độ chính xác - phương án 1. Lỗi hay gặp nhất là đảo ngược độ chụm và độ đúng.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-047"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "寸法 5.000 mm の標準ゲージを同じ測定器で 20 回測定したところ、平均 5.008 mm、標準偏差 0.001 mm であった。この測定器について最も適切な判断と処置はどれか。",
+      "choices": [
+        "ばらつきが大きいので、測定回数を増やして平均をとる。",
+        "かたよりが大きく精度は良いので、測定器を校正する。",
+        "かたよりもばらつきも小さいので、処置は不要である。",
+        "精度が悪いので、測定者を教育する。"
+      ],
+      "answer": 1,
+      "explanation": "平均と真の値の差 0.008 mm に対し、ばらつき s＝0.001 mm は小さい → かたよりが大きい（真度が悪い）が精度は良い。かたよりは回数を増やしても減らないので校正する。アは「平均をとればかたよりも減る」という誤解。",
+      "explanation_vi": "Đề bài: Dùng cùng một dụng cụ đo đo căn chuẩn kích thước 5.000 mm 20 lần, được trung bình 5.008 mm, độ lệch chuẩn 0.001 mm. Phán đoán và biện pháp thích hợp nhất cho dụng cụ đo này là gì? Giải thích: Hiệu giữa trung bình và giá trị thật là 0.008 mm, trong khi độ phân tán s = 0.001 mm nhỏ → độ chệch lớn (độ đúng kém) nhưng độ chụm tốt. Độ chệch không giảm dù tăng số lần đo nên phải hiệu chuẩn dụng cụ - phương án 2. Phương án 1 xuất phát từ hiểu lầm \"lấy trung bình thì độ chệch cũng giảm\".",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-048"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "次のうち、母数であるものはどれか。",
+      "choices": [
+        "サンプルの平均 x̄",
+        "母標準偏差 σ",
+        "範囲 R",
+        "不偏分散 V",
+        "メディアン x̃"
+      ],
+      "answer": 1,
+      "explanation": "母数は母集団の特性を表す値（μ、σ、σ² など）で、ふつう未知。x̄・R・V・x̃ はサンプルから計算する統計量で、母数を推定するために使う。",
+      "explanation_vi": "Đề bài: Trong các đại lượng sau, đại lượng nào là tham số tổng thể? Giải thích: Tham số tổng thể là giá trị biểu thị đặc tính của tổng thể (μ, σ, σ²...), thường chưa biết. Vì vậy đáp án là phương án 2 (σ). x̄, R, V, x̃ là thống kê tính từ mẫu, dùng để ước lượng tham số tổng thể.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-049"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "サンプルに関する記述として、正しいものはどれか。",
+      "choices": [
+        "サンプルサイズとは、取り出したサンプルの組の数のことである。",
+        "サンプルは母集団について判断するための情報を得る目的で取る。",
+        "サンプルから計算した x̄ は母平均 μ と常に一致する。",
+        "抜取検査では、サンプルそのものが判断の対象（母集団）である。"
+      ],
+      "answer": 1,
+      "explanation": "サンプルは母集団の情報を得るために取る（イ）。サンプルサイズは1つのサンプルに含まれるサンプリング単位の数 n で、組の数ではない（ア誤り）。x̄ はサンプリング誤差があるので μ と一致するとは限らない（ウ誤り）。抜取検査の判断の対象はロット（エ誤り）。",
+      "explanation_vi": "Đề bài: Phát biểu nào sau đây về mẫu là đúng? Giải thích: Phương án 2 đúng: mẫu được lấy để có thông tin về tổng thể. Phương án 1 sai: cỡ mẫu là số đơn vị lấy mẫu n trong một mẫu, không phải số nhóm mẫu. Phương án 3 sai: x̄ có sai số lấy mẫu nên không nhất thiết bằng μ. Phương án 4 sai: đối tượng phán đoán trong kiểm tra lấy mẫu là lô.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-050"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "ある工程から毎日 5 個ずつ、8 日間にわたって製品を抜き取り寸法を測定した。サンプルサイズ、サンプルの数、データの総数の組合せとして正しいものはどれか。",
+      "choices": [
+        "サンプルサイズ 8、サンプルの数 5、データ総数 40",
+        "サンプルサイズ 40、サンプルの数 8、データ総数 40",
+        "サンプルサイズ 5、サンプルの数 8、データ総数 13",
+        "サンプルサイズ 5、サンプルの数 8、データ総数 40"
+      ],
+      "answer": 3,
+      "explanation": "1回に取る個数＝サンプルサイズ n＝5、組の数＝サンプルの数 k＝8、総数＝n×k＝40。アは n と k を逆にしている。",
+      "explanation_vi": "Đề bài: Từ một công đoạn, mỗi ngày lấy 5 sản phẩm, liên tục 8 ngày, để đo kích thước. Tổ hợp đúng của cỡ mẫu, số mẫu và tổng số dữ liệu là gì? Giải thích: Số sản phẩm lấy mỗi lần = cỡ mẫu n = 5, số nhóm = số mẫu k = 8, tổng số = n × k = 40 - phương án 4. Phương án 1 đảo ngược n và k.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-051"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "次の (a)〜(c) を管理したい。データの種類・分布・管理図の組合せとして正しいものはどれか。\n(a) 同軸ケーブルの長さ（mm）\n(b) 毎日 200 個ずつ検査したコネクタ中の不適合品の数\n(c) 一定の大きさの筐体 1 台当たりの塗装の傷の数",
+      "choices": [
+        "(a) 計量値・正規分布・X̄-R　(b) 計数値・二項分布・np　(c) 計数値・ポアソン分布・c",
+        "(a) 計量値・正規分布・X̄-R　(b) 計数値・ポアソン分布・c　(c) 計数値・二項分布・np",
+        "(a) 計数値・正規分布・np　(b) 計量値・二項分布・X̄-R　(c) 計数値・ポアソン分布・u",
+        "(a) 計量値・二項分布・X̄-R　(b) 計数値・正規分布・p　(c) 計数値・ポアソン分布・c"
+      ],
+      "answer": 0,
+      "explanation": "(a) 測る連続量 → 計量値・正規分布・X̄-R。(b) n＝200 一定の不適合品数 → 二項分布・np 管理図。(c) 大きさ一定の1単位当たりの不適合数 → ポアソン分布・c 管理図。イは (b) と (c) を逆にした典型的なひっかけ。",
+      "explanation_vi": "Đề bài: Muốn quản lý các đối tượng (a) đến (c) sau. Tổ hợp đúng của loại dữ liệu, phân phối và biểu đồ kiểm soát là gì?\n(a) Chiều dài cáp đồng trục (mm)\n(b) Số sản phẩm không phù hợp trong 200 đầu nối kiểm tra mỗi ngày\n(c) Số vết xước sơn trên một vỏ máy có kích thước không đổi Giải thích: (a) Đại lượng đo liên tục → dữ liệu đo, phân phối chuẩn, biểu đồ X̄-R. (b) Số sản phẩm không phù hợp với n = 200 không đổi → phân phối nhị thức, biểu đồ np. (c) Số điểm không phù hợp trên một đơn vị có kích thước không đổi → phân phối Poisson, biểu đồ c. Đáp án là phương án 1. Phương án 2 là bẫy điển hình đảo ngược (b) và (c).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-052"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "データの種類に関する記述として、誤っているものはどれか。",
+      "choices": [
+        "不適合品率は 0.025 のように小数で表されても計数値である。",
+        "重さ・長さ・時間のように測って得られる連続的な値は計量値である。",
+        "計量値の測定値を整数に丸めて記録すれば、計数値として扱うことになる。",
+        "お客様の声のような言葉で表されたデータは言語データである。"
+      ],
+      "answer": 2,
+      "explanation": "計量値か計数値かはもとの性質（測るか数えるか）で決まる。丸めて整数で記録しても計量値のまま（ウが誤り）。アの不適合品率は「数えた数÷n」なので小数でも計数値。",
+      "explanation_vi": "Đề bài: Phát biểu nào sau đây về các loại dữ liệu là sai? Giải thích: Dữ liệu đo hay dữ liệu đếm được quyết định bởi bản chất ban đầu (đo hay đếm). Dù làm tròn thành số nguyên khi ghi chép thì vẫn là dữ liệu đo, nên phương án 3 sai. Tỷ lệ sản phẩm không phù hợp ở phương án 1 là \"số đếm ÷ n\" nên dù là số thập phân vẫn là dữ liệu đếm.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-053"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "次の文の空欄に入る語句の組合せとして正しいものはどれか。\n\n「1 ロット 50 個中の不適合品数のように、大きさ n が決まった中で数えるデータは（①）に従うと考えられる。一方、電線 100 m 当たりの被覆のピンホールの数のように、一定の単位の中で起こる数は（②）に従うと考えられる。これらはいずれも（③）である。」",
+      "choices": [
+        "①二項分布　②ポアソン分布　③計数値",
+        "①ポアソン分布　②二項分布　③計数値",
+        "①二項分布　②正規分布　③計量値",
+        "①正規分布　②ポアソン分布　③計数値"
+      ],
+      "answer": 0,
+      "explanation": "「n 個中の不適合品数」→ 二項分布、「一定単位当たりの欠点数」→ ポアソン分布。どちらも数えるので計数値。①②を逆にするのが典型的なひっかけ。",
+      "explanation_vi": "Đề bài: Chọn tổ hợp từ đúng để điền vào chỗ trống trong câu sau.\n\n\"Dữ liệu đếm trong một nhóm có kích thước n xác định, như số sản phẩm không phù hợp trong một lô 50 cái, được coi là tuân theo (①). Còn số lần xảy ra trong một đơn vị nhất định, như số lỗ kim trên lớp vỏ bọc của 100 m dây điện, được coi là tuân theo (②). Cả hai đều là (③).\" Giải thích: \"Số sản phẩm không phù hợp trong n sản phẩm\" → phân phối nhị thức; \"số khuyết tật trên một đơn vị nhất định\" → phân phối Poisson. Cả hai đều có được bằng cách đếm nên là dữ liệu đếm - phương án 1. Đảo ngược ① và ② là bẫy điển hình.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-054"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "データ 8.4、8.1、8.6、8.3、8.6 の平方和 S と不偏分散 V の組合せとして正しいものはどれか。",
+      "choices": [
+        "S＝0.18、V＝0.036",
+        "S＝0.045、V＝0.18",
+        "S＝0.20、V＝0.050",
+        "S＝0.18、V＝0.045"
+      ],
+      "answer": 3,
+      "explanation": "8.0 を引いて ×10 → 4、1、6、3、6。Σu＝20、Σu²＝98、S_u＝98−20²÷5＝18 → S＝18÷10²＝0.18。V＝S÷(n−1)＝0.18÷4＝0.045。0.036 は n で割った誤り。\n> MRC MRC → 4 × ＝ M+ 1 × ＝ M+ 6 × ＝ M+ 3 × ＝ M+ 6 × ＝ M+ → MRC（98）\n> MRC MRC → 98 M+ 20 × 20 ÷ 5 ＝ M− → MRC（18）",
+      "explanation_vi": "Đề bài: Tổ hợp đúng của tổng bình phương độ lệch S và phương sai không chệch V của dữ liệu 8.4, 8.1, 8.6, 8.3, 8.6 là gì? Giải thích: Trừ 8.0 rồi nhân 10 → 4, 1, 6, 3, 6. Σu = 20, Σu² = 98, S_u = 98 − 20² ÷ 5 = 18 → S = 18 ÷ 10² = 0.18. V = S ÷ (n − 1) = 0.18 ÷ 4 = 0.045 - phương án 4. 0.036 là chia cho n (sai).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-055"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "基本統計量に関する記述として、誤っているものはどれか。",
+      "choices": [
+        "メディアンは外れ値の影響を受けにくい。",
+        "範囲 R は最大値と最小値だけで決まるので、外れ値の影響を受けやすい。",
+        "不偏分散は平方和をデータ数 n で割った値である。",
+        "変動係数は標準偏差を平均で割った値で、単位をもたない。"
+      ],
+      "answer": 2,
+      "explanation": "不偏分散は V＝S÷(n−1)（ウが誤り）。n−1 で割るのは、x̄ を使って偏差をとると平方和が母平均からの場合より小さくなるため、その分を補正するから。",
+      "explanation_vi": "Đề bài: Phát biểu nào sau đây về các thống kê cơ bản là sai? Giải thích: Phương án 3 sai: phương sai không chệch là V = S ÷ (n − 1). Chia cho n − 1 vì khi tính độ lệch so với x̄ thì tổng bình phương nhỏ hơn so với khi tính theo trung bình tổng thể, nên cần hiệu chỉnh phần đó.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-056"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "ある部品の外径の平均が x̄＝12.0 mm、不偏分散が V＝0.36 mm² であった。変動係数 CV はいくらか。",
+      "choices": [
+        "5.0％",
+        "3.0％",
+        "0.6％",
+        "50％"
+      ],
+      "answer": 0,
+      "explanation": "s＝√0.36＝0.6、CV＝s÷x̄＝0.6÷12.0＝0.05＝5.0％。3.0％ は V を平均で割った値（√ を忘れた）。\n> 0.36 √ → 0.6 → ÷ 12 ＝ → 0.05",
+      "explanation_vi": "Đề bài: Đường kính ngoài của một linh kiện có trung bình x̄ = 12.0 mm, phương sai không chệch V = 0.36 mm². Hệ số biến thiên CV là bao nhiêu? Giải thích: s = √0.36 = 0.6, CV = s ÷ x̄ = 0.6 ÷ 12.0 = 0.05 = 5.0% (phương án 1). 3.0% là chia V cho trung bình (quên lấy căn).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-057"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "データを u ＝ (x − 7.50) ÷ 0.01 と変換したところ、ū ＝ −3.0、s_u ＝ 4.0 であった。元のデータの平均 x̄ と標準偏差 s_x の組合せとして正しいものはどれか。",
+      "choices": [
+        "x̄＝7.47、s_x＝0.0004",
+        "x̄＝7.53、s_x＝0.04",
+        "x̄＝7.47、s_x＝0.04",
+        "x̄＝4.50、s_x＝0.04"
+      ],
+      "answer": 2,
+      "explanation": "x̄＝7.50＋0.01×(−3.0)＝7.47。s_x＝h×s_u＝0.01×4.0＝0.04（s は h を1回）。0.0004 は h² を掛けた誤り（h² は S・V に掛ける）。7.53 は符号の誤り。",
+      "explanation_vi": "Đề bài: Biến đổi dữ liệu thành u = (x − 7.50) ÷ 0.01 thì được ū = −3.0, s_u = 4.0. Tổ hợp đúng của trung bình x̄ và độ lệch chuẩn s_x của dữ liệu gốc là gì? Giải thích: x̄ = 7.50 + 0.01 × (−3.0) = 7.47. s_x = h × s_u = 0.01 × 4.0 = 0.04 (s chỉ nhân h một lần) - phương án 3. 0.0004 là nhân h² (sai; h² dùng cho S và V). 7.53 là sai dấu.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-058"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "データを u ＝ (x − 30) ÷ 0.1 と変換して平方和を求めたところ S_u ＝ 250 であった。元のデータの平方和 S_x はいくらか。",
+      "choices": [
+        "25",
+        "2.5",
+        "0.25",
+        "250"
+      ],
+      "answer": 1,
+      "explanation": "S_x＝h²×S_u＝0.1²×250＝0.01×250＝2.5。25 は h を1回しか掛けていない誤り。引いた 30 は平方和に影響しない。",
+      "explanation_vi": "Đề bài: Biến đổi dữ liệu thành u = (x − 30) ÷ 0.1 và tính được tổng bình phương độ lệch S_u = 250. Tổng bình phương độ lệch S_x của dữ liệu gốc là bao nhiêu? Giải thích: S_x = h² × S_u = 0.1² × 250 = 0.01 × 250 = 2.5 (phương án 2). 25 là chỉ nhân h một lần (sai). Số 30 đã trừ đi không ảnh hưởng đến tổng bình phương độ lệch.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-059"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "ある寸法データで、サンプリング誤差の標準偏差が 0.09 mm、測定誤差の標準偏差が 0.12 mm であり、両者は互いに独立である。データ全体の誤差の分散のうち、測定誤差が占める割合はいくらか。",
+      "choices": [
+        "57％",
+        "80％",
+        "64％",
+        "36％"
+      ],
+      "answer": 2,
+      "explanation": "分散で足す：σ_T² ＝ 0.09² ＋ 0.12² ＝ 0.0081 ＋ 0.0144 ＝ 0.0225（σ_T ＝ 0.15）。測定誤差の割合 ＝ 0.0144 ÷ 0.0225 ＝ 0.64 ＝ 64％。80％ は標準偏差の比 0.12 ÷ 0.15 にした誤り、57％ は 0.12 ÷ (0.09＋0.12) と標準偏差を足した誤り。",
+      "explanation_vi": "Đề bài: Với dữ liệu kích thước, độ lệch chuẩn của sai số lấy mẫu là 0.09 mm, của sai số đo là 0.12 mm, hai sai số độc lập với nhau. Trong phương sai của sai số toàn bộ dữ liệu, sai số đo chiếm tỷ lệ bao nhiêu? Giải thích: Cộng phương sai: σ_T² = 0.09² + 0.12² = 0.0081 + 0.0144 = 0.0225 (σ_T = 0.15). Tỷ lệ của sai số đo = 0.0144 ÷ 0.0225 = 0.64 = 64% (phương án 3). 80% là lấy tỷ số độ lệch chuẩn 0.12 ÷ 0.15 (sai), 57% là 0.12 ÷ (0.09 + 0.12), tức cộng độ lệch chuẩn (sai).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-060"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "アンテナ組立会社が、サプライヤーから納入されたインダクタのロット（2,000 個）から 50 個を抜き取って特性を測定し、このロットを受け入れるかどうかを判定する。この目的からみた母集団として最も適切なものはどれか。",
+      "choices": [
+        "抜き取った 50 個",
+        "そのサプライヤーの工程でこれから作られるすべてのインダクタ",
+        "納入されたそのロットの 2,000 個",
+        "自社倉庫にある同じ品番の全在庫"
+      ],
+      "answer": 2,
+      "explanation": "目的はこのロットの合否 → 母集団はそのロット 2,000 個（有限母集団）。50 個はサンプル。サプライヤーの工程全体が母集団になるのは、工程の状態を知りたい（工程管理・工程解析）とき。",
+      "explanation_vi": "Đề bài: Công ty lắp ráp anten lấy 50 cái từ một lô cuộn cảm (2000 cái) do nhà cung cấp giao để đo đặc tính và quyết định có nhận lô này hay không. Xét theo mục đích này, tổng thể thích hợp nhất là gì? Giải thích: Mục đích là quyết định đạt/không đạt cho lô này → tổng thể là chính lô 2000 cái đó (tổng thể hữu hạn) - phương án 3. 50 cái là mẫu. Toàn bộ công đoạn của nhà cung cấp chỉ là tổng thể khi muốn biết trạng thái công đoạn (quản lý hoặc phân tích công đoạn).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-061"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "ある寸法データで、サンプリング誤差の標準偏差が 0.08 mm、測定誤差の標準偏差が 0.06 mm（互いに独立）である。測定器を更新して測定誤差の標準偏差を半分の 0.03 mm にすると、データ全体の誤差の標準偏差はおよそいくらになるか。",
+      "choices": [
+        "0.050 mm",
+        "0.085 mm",
+        "0.070 mm",
+        "0.110 mm"
+      ],
+      "answer": 1,
+      "explanation": "改善前：√(0.08² ＋ 0.06²) ＝ √0.0100 ＝ 0.100。改善後：√(0.08² ＋ 0.03²) ＝ √0.0073 ≒ 0.085 mm。測定誤差を半分にしても全体は 15％ しか減らない（大きいサンプリング誤差が支配）。0.050 は全体を半分にした誤り、0.110 は標準偏差をそのまま足した値（0.08 ＋ 0.03）。",
+      "explanation_vi": "Đề bài: Với dữ liệu kích thước, độ lệch chuẩn của sai số lấy mẫu là 0.08 mm, của sai số đo là 0.06 mm (độc lập với nhau). Nếu thay dụng cụ đo mới để giảm độ lệch chuẩn của sai số đo xuống một nửa (0.03 mm), độ lệch chuẩn của sai số toàn bộ dữ liệu sẽ xấp xỉ bao nhiêu? Giải thích: Trước cải tiến: √(0.08² + 0.06²) = √0.0100 = 0.100. Sau cải tiến: √(0.08² + 0.03²) = √0.0073 ≈ 0.085 mm (phương án 2). Giảm sai số đo một nửa nhưng sai số toàn bộ chỉ giảm khoảng 15% (sai số lấy mẫu lớn hơn chiếm ưu thế). 0.050 là lấy một nửa của sai số toàn bộ (sai), 0.110 là cộng thẳng độ lệch chuẩn (0.08 + 0.03).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-062"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "母集団とサンプルに関する記述として、正しいものはどれか。",
+      "choices": [
+        "サンプルの大きさ n を大きくすると、母集団の標準偏差 σ が小さくなる。",
+        "サンプルの不偏分散 V は母数である。",
+        "母集団が有限の大きさなら、全数を調べない限り母数について何も推測できない。",
+        "サンプルの平均 x̄ は統計量であり、母平均 μ は母数である。"
+      ],
+      "answer": 3,
+      "explanation": "x̄・V・s などサンプルから計算する値は統計量、μ・σ² など母集団の値は母数。n を大きくすると小さくなるのは x̄ のばらつき（σ/√n）で、母集団の σ そのものは変わらない。有限母集団でもランダムサンプルから母数を推測できる。",
+      "explanation_vi": "Đề bài: Phát biểu nào sau đây về tổng thể và mẫu là đúng? Giải thích: Phương án 4 đúng: các giá trị tính từ mẫu như x̄, V, s là thống kê; các giá trị của tổng thể như μ, σ² là tham số tổng thể. Phương án 1 sai: khi tăng n, cái nhỏ đi là độ phân tán của x̄ (σ/√n), còn σ của tổng thể không đổi. Phương án 2 sai: V là thống kê. Phương án 3 sai: với tổng thể hữu hạn vẫn có thể suy ra tham số tổng thể từ mẫu ngẫu nhiên.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-063"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "4個のデータ 3, 5, 6, 10 の不偏分散 V はいくらか。",
+      "choices": [
+        "6.50",
+        "8.67",
+        "2.94",
+        "26.0"
+      ],
+      "answer": 1,
+      "explanation": "x̄ ＝ 24/4 ＝ 6。S ＝ 9 ＋ 1 ＋ 0 ＋ 16 ＝ 26。V ＝ S/(n − 1) ＝ 26/3 ≒ 8.67。6.50 は n で割った値、2.94 は標準偏差 s ＝ √V、26.0 は平方和 S。",
+      "explanation_vi": "Đề bài: Phương sai không chệch V của 4 dữ liệu 3, 5, 6, 10 là bao nhiêu? Giải thích: x̄ = 24/4 = 6. S = 9 + 1 + 0 + 16 = 26. V = S/(n − 1) = 26/3 ≈ 8.67 (phương án 2). 6.50 là chia cho n, 2.94 là độ lệch chuẩn s = √V, 26.0 là tổng bình phương độ lệch S.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-064"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "データを u ＝ (x − 20.0) ÷ 0.5 と変換したところ、ū ＝ −1.2、s_u ＝ 0.8 であった。元のデータの平均 x̄ と標準偏差 s の組合せとして正しいものはどれか。",
+      "choices": [
+        "x̄ ＝ 19.4、s ＝ 0.2",
+        "x̄ ＝ 20.6、s ＝ 0.4",
+        "x̄ ＝ 17.6、s ＝ 1.6",
+        "x̄ ＝ 19.4、s ＝ 0.4"
+      ],
+      "answer": 3,
+      "explanation": "x ＝ 20.0 ＋ 0.5u なので x̄ ＝ 20.0 ＋ 0.5 × (−1.2) ＝ 19.4、s ＝ 0.5 × s_u ＝ 0.4（標準偏差は「幅」なので h 倍、引いた 20.0 は戻さない）。s ＝ 0.2 は分散のように h² ＝ 0.25 を掛けた誤り、20.6 は符号の誤り、17.6・1.6 は h で割った誤り。",
+      "explanation_vi": "Đề bài: Biến đổi dữ liệu thành u = (x − 20.0) ÷ 0.5 thì được ū = −1.2, s_u = 0.8. Tổ hợp đúng của trung bình x̄ và độ lệch chuẩn s của dữ liệu gốc là gì? Giải thích: Vì x = 20.0 + 0.5u nên x̄ = 20.0 + 0.5 × (−1.2) = 19.4, s = 0.5 × s_u = 0.4 (độ lệch chuẩn là \"độ rộng\" nên nhân h, không cộng lại 20.0) - phương án 4. s = 0.2 là nhân h² = 0.25 như với phương sai (sai), 20.6 là sai dấu, 17.6 và 1.6 là chia cho h (sai).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-065"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "ある寸法データ全体の誤差の標準偏差は 0.30 mm、測定誤差の標準偏差は 0.18 mm であった。サンプリング誤差と測定誤差が互いに独立なとき、サンプリング誤差の標準偏差はいくらか。",
+      "choices": [
+        "0.12 mm",
+        "0.24 mm",
+        "0.35 mm",
+        "0.0576 mm"
+      ],
+      "answer": 1,
+      "explanation": "分散が足し算になる：σ_全体² ＝ σ_s² ＋ σ_M²。σ_s ＝ √(0.30² − 0.18²) ＝ √(0.09 − 0.0324) ＝ √0.0576 ＝ 0.24。0.12 は標準偏差のまま引いた誤り、0.35 は2乗して足した（√(0.09 ＋ 0.0324)）誤り、0.0576 は √ を忘れた分散。",
+      "explanation_vi": "Đề bài: Độ lệch chuẩn của sai số toàn bộ dữ liệu kích thước là 0.30 mm, của sai số đo là 0.18 mm. Khi sai số lấy mẫu và sai số đo độc lập với nhau, độ lệch chuẩn của sai số lấy mẫu là bao nhiêu? Giải thích: Phương sai cộng được: σ_T² = σ_S² + σ_M². σ_S = √(0.30² − 0.18²) = √(0.09 − 0.0324) = √0.0576 = 0.24 (phương án 2). 0.12 là trừ thẳng độ lệch chuẩn, 0.35 là bình phương rồi cộng (√(0.09 + 0.0324)), 0.0576 là quên lấy căn (vẫn là phương sai).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-066"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "インダクタの受入検査で、仕入先から届いた 2000 個の1ロットから 50 個をランダムに抜き取り、不適合品数を数えてこのロットを受け入れるかどうかを判定する。この判定における母集団として最も適切なものはどれか。",
+      "choices": [
+        "抜き取った 50 個",
+        "届いた 2000 個のロット",
+        "仕入先がこれまでに作ったすべてのインダクタ",
+        "50 個の中の不適合品"
+      ],
+      "answer": 1,
+      "explanation": "母集団は「処置（判断）の対象」で決まる。判断するのは「このロットを受け入れるか」なので、母集団はその 2000 個のロット。50 個はサンプル。仕入先の工程全体が母集団になるのは、工程を管理・評価する目的（管理図など）のとき。",
+      "explanation_vi": "Đề bài: Trong kiểm tra đầu vào cuộn cảm, lấy ngẫu nhiên 50 cái từ một lô 2000 cái nhận từ nhà cung cấp, đếm số sản phẩm không phù hợp để quyết định có nhận lô này hay không. Tổng thể thích hợp nhất cho quyết định này là gì? Giải thích: Tổng thể được xác định bởi \"đối tượng được xử lý (phán đoán)\". Điều cần phán đoán là \"có nhận lô này không\", nên tổng thể là lô 2000 cái đó - phương án 2. 50 cái là mẫu. Toàn bộ công đoạn của nhà cung cấp là tổng thể khi mục đích là quản lý hoặc đánh giá công đoạn (biểu đồ kiểm soát...).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-067"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "ある寸法データ全体の誤差の標準偏差は 0.25 mm、測定誤差の標準偏差は 0.15 mm である（サンプリング誤差と測定誤差は互いに独立）。データ全体の分散のうち、測定誤差が占める割合はいくらか。",
+      "choices": [
+        "36％",
+        "60％",
+        "40％",
+        "64％"
+      ],
+      "answer": 0,
+      "explanation": "割合は分散で比べる：0.15² ÷ 0.25² ＝ 0.0225 ÷ 0.0625 ＝ 0.36（36％）。60％ は標準偏差のまま 0.15 ÷ 0.25 とした誤り、64％ はサンプリング誤差の割合（σ_s² ＝ 0.0625 − 0.0225 ＝ 0.04 → 0.04/0.0625）、40％ は 1 − 0.60。",
+      "explanation_vi": "Đề bài: Độ lệch chuẩn của sai số toàn bộ dữ liệu kích thước là 0.25 mm, của sai số đo là 0.15 mm (sai số lấy mẫu và sai số đo độc lập với nhau). Trong phương sai toàn bộ dữ liệu, sai số đo chiếm tỷ lệ bao nhiêu? Giải thích: Tỷ lệ phải so bằng phương sai: 0.15² ÷ 0.25² = 0.0225 ÷ 0.0625 = 0.36 (36%) - phương án 1. 60% là dùng độ lệch chuẩn 0.15 ÷ 0.25 (sai), 64% là tỷ lệ của sai số lấy mẫu (σ_S² = 0.0625 − 0.0225 = 0.04 → 0.04/0.0625), 40% là 1 − 0.60.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-068"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "ある寸法データ全体の誤差の標準偏差は 0.061 mm、測定誤差の標準偏差は 0.011 mm であった。サンプリング誤差と測定誤差が互いに独立なとき、サンプリング誤差の標準偏差はいくらか。",
+      "choices": [
+        "0.050 mm",
+        "0.072 mm",
+        "0.060 mm",
+        "0.0036 mm"
+      ],
+      "answer": 2,
+      "explanation": "√(0.061² − 0.011²) ＝ √(0.003721 − 0.000121) ＝ √0.0036 ＝ 0.060。0.050 は標準偏差を引いた誤り、0.0036 は分散のまま。電卓：MRC MRC 0.061 × = M+ 0.011 × = M− MRC √ → 0.06",
+      "explanation_vi": "Đề bài: Độ lệch chuẩn của sai số toàn bộ dữ liệu kích thước là 0.061 mm, của sai số đo là 0.011 mm. Khi sai số lấy mẫu và sai số đo độc lập với nhau, độ lệch chuẩn của sai số lấy mẫu là bao nhiêu? Giải thích: √(0.061² − 0.011²) = √(0.003721 − 0.000121) = √0.0036 = 0.060 (phương án 3). 0.050 là trừ thẳng độ lệch chuẩn, 0.0036 là vẫn để ở dạng phương sai.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-069"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "同軸ケーブルの外径を測る。サンプリング誤差の標準偏差は 0.03 mm、測定器1回の測定誤差の標準偏差は 0.08 mm で、両者は互いに独立である。測定誤差を小さくするため、1本につき同じ箇所を 4 回測ってその平均を測定値とした。このときのデータ全体の誤差の標準偏差はいくらか（測定の繰返しは互いに独立とする）。",
+      "choices": [
+        "0.085 mm",
+        "0.05 mm",
+        "0.07 mm",
+        "0.11 mm"
+      ],
+      "answer": 1,
+      "explanation": "4回の平均の測定誤差は 0.08/√4 ＝ 0.04。全体 ＝ √(0.03² ＋ 0.04²) ＝ √0.0025 ＝ 0.05。0.085 は平均をとらずに √(0.03² ＋ 0.08²)、0.07 は 0.03 ＋ 0.04 と標準偏差を足した誤り。かたより（真度）は平均しても減らない点にも注意。",
+      "explanation_vi": "Đề bài: Đo đường kính ngoài của cáp đồng trục. Độ lệch chuẩn của sai số lấy mẫu là 0.03 mm, độ lệch chuẩn của sai số đo cho một lần đo là 0.08 mm, hai sai số độc lập với nhau. Để giảm sai số đo, mỗi sợi được đo 4 lần tại cùng một vị trí và lấy trung bình làm giá trị đo. Khi đó độ lệch chuẩn của sai số toàn bộ dữ liệu là bao nhiêu? (các lần đo lặp lại độc lập với nhau) Giải thích: Sai số đo của trung bình 4 lần là 0.08/√4 = 0.04. Sai số toàn bộ = √(0.03² + 0.04²) = √0.0025 = 0.05 (phương án 2). 0.085 là không lấy trung bình: √(0.03² + 0.08²); 0.07 là cộng thẳng độ lệch chuẩn 0.03 + 0.04 (sai). Lưu ý thêm: độ chệch (độ đúng) không giảm khi lấy trung bình.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-070"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "X̄-R 管理図で給電部の寸法を管理している。毎日4個ずつ抜き取って測定しているとき、母集団についての記述として正しいものはどれか。",
+      "choices": [
+        "母集団は、その日に抜き取った4個である。",
+        "母集団は、その日に生産された製品だけ（有限母集団）である。",
+        "母集団は、これから生産されるものも含めた工程そのものであり、無限母集団として扱う。",
+        "母集団は、管理図に打点された x̄ の全体である。"
+      ],
+      "answer": 2,
+      "explanation": "工程管理の目的は工程に処置をとること → 母集団は工程（無限母集団）。4個はサンプル、その日の製品は母集団の一部、x̄ は統計量。抜取検査ならロットが母集団。",
+      "explanation_vi": "Đề bài: Đang quản lý kích thước phần cấp điện bằng biểu đồ kiểm soát X̄-R. Khi mỗi ngày lấy 4 cái để đo, phát biểu nào về tổng thể là đúng? Giải thích: Mục đích của quản lý công đoạn là xử lý công đoạn → tổng thể là công đoạn (tổng thể vô hạn) - phương án 3. 4 cái là mẫu, sản phẩm trong ngày chỉ là một phần của tổng thể, x̄ là thống kê. Nếu là kiểm tra lấy mẫu thì tổng thể là lô.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-071"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "データを u ＝ (x − 20.0) ÷ 0.05 と変換したところ、ū ＝ −1.2、s_u ＝ 3.0 であった。元のデータの平均 x̄ と標準偏差 s の組合せとして正しいものはどれか。",
+      "choices": [
+        "x̄ ＝ 19.94、s ＝ 0.15",
+        "x̄ ＝ 20.06、s ＝ 0.15",
+        "x̄ ＝ 19.94、s ＝ 20.15",
+        "x̄ ＝ 19.94、s ＝ 0.0075"
+      ],
+      "answer": 0,
+      "explanation": "x ＝ 20.0 ＋ 0.05u → x̄ ＝ 20.0 ＋ 0.05 × (−1.2) ＝ 19.94、s ＝ 0.05 × 3.0 ＝ 0.15（σ(aX ＋ b) ＝ |a|σ(X)：ずらし 20.0 は足さない）。20.06 は符号の誤り、20.15 はずらしを足した誤り、0.0075 は分散の式（a²）を標準偏差に使った誤り。",
+      "explanation_vi": "Đề bài: Biến đổi dữ liệu thành u = (x − 20.0) ÷ 0.05 thì được ū = −1.2, s_u = 3.0. Tổ hợp đúng của trung bình x̄ và độ lệch chuẩn s của dữ liệu gốc là gì? Giải thích: x = 20.0 + 0.05u → x̄ = 20.0 + 0.05 × (−1.2) = 19.94, s = 0.05 × 3.0 = 0.15 (theo quan hệ σ(aX + b) = |a|σ(X): không cộng lượng dịch 20.0) - phương án 1. 20.06 là sai dấu, 20.15 là cộng lượng dịch vào s (sai), 0.0075 là dùng công thức của phương sai (a²) cho độ lệch chuẩn (sai).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-072"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "アンテナ工場では、①毎日 5 本ずつエレメント長を測って X̄-R 管理図で組立工程を管理している。また、②仕入先から届いたインダクタ 3000 個の1ロットから 80 個を抜き取り、そのロットを受け入れるかを判定している。①と②の母集団の組合せとして正しいものはどれか。",
+      "choices": [
+        "① 毎日の 5 本　② 抜き取った 80 個",
+        "① これまでに測った全データ　② 仕入先の全生産品",
+        "① 組立工程（これから作られるものを含む）　② 3000 個のロット",
+        "① その日に作った全製品　② 抜き取った 80 個"
+      ],
+      "answer": 2,
+      "explanation": "母集団は「処置（判断）の対象」。①は工程を管理する → 工程そのもの（無限母集団）。②はロットを合格・不合格にする → そのロット 3000 個（有限母集団）。5 本・80 個はサンプル。",
+      "explanation_vi": "Đề bài: Tại nhà máy anten: ① mỗi ngày đo chiều dài phần tử anten của 5 sản phẩm để quản lý công đoạn lắp ráp bằng biểu đồ kiểm soát X̄-R; ② từ một lô 3000 cuộn cảm nhận từ nhà cung cấp, lấy 80 cái để quyết định có nhận lô đó hay không. Tổ hợp đúng của tổng thể ① và ② là gì? Giải thích: Tổng thể là \"đối tượng được xử lý (phán đoán)\". ① quản lý công đoạn → chính công đoạn (tổng thể vô hạn). ② quyết định lô đạt/không đạt → lô 3000 cái đó (tổng thể hữu hạn). Đáp án là phương án 3. 5 cái và 80 cái là mẫu.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-073"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "データを u ＝ (x − 12.0) ÷ 0.02 と変換したところ、ū ＝ 2.5、s_u ＝ 1.5 であった。元のデータの平均 x̄ と標準偏差 s の組合せとして正しいものはどれか。",
+      "choices": [
+        "x̄ ＝ 12.05、s ＝ 12.03",
+        "x̄ ＝ 12.05、s ＝ 0.03",
+        "x̄ ＝ 137、s ＝ 75",
+        "x̄ ＝ 12.05、s ＝ 0.0006"
+      ],
+      "answer": 1,
+      "explanation": "x ＝ 12.0 ＋ 0.02u なので x̄ ＝ 12.0 ＋ 0.02 × 2.5 ＝ 12.05、s ＝ 0.02 × 1.5 ＝ 0.03（ずらし 12.0 は標準偏差に効かない）。0.0006 は h² を掛けた（分散の変換と混同）。",
+      "explanation_vi": "Đề bài: Biến đổi dữ liệu thành u = (x − 12.0) ÷ 0.02 thì được ū = 2.5, s_u = 1.5. Tổ hợp đúng của trung bình x̄ và độ lệch chuẩn s của dữ liệu gốc là gì? Giải thích: Vì x = 12.0 + 0.02u nên x̄ = 12.0 + 0.02 × 2.5 = 12.05, s = 0.02 × 1.5 = 0.03 (lượng dịch 12.0 không ảnh hưởng đến độ lệch chuẩn) - phương án 2. 0.0006 là nhân h² (nhầm với cách đổi phương sai).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-074"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "アンテナ工場で、同軸コネクタのはんだ付け条件を変更した。今後この条件で作り続ける製品の引張強度がどの程度かを知るため、変更後の3日間に毎日10個ずつ、合計30個を抜き取って測定し、平均 x̄ を求めた。\n\nこの調査における ①母集団、②サンプル、③x̄ が推定しようとしているもの の組合せとして正しいものはどれか。",
+      "choices": [
+        "① 変更後3日間に作った製品全体　② 毎日の10個　③ サンプルの平均",
+        "① 変更後の工程（今後この条件で作られる製品全体）　② 抜き取った30個　③ 母平均 μ",
+        "① 抜き取った30個　② 測定値30個　③ 母平均 μ",
+        "① 工場で作ったすべてのコネクタ　② 抜き取った30個　③ 母標準偏差 σ"
+      ],
+      "answer": 1,
+      "explanation": "目的は「今後この条件で作り続ける製品」→ 母集団は変更後の工程（無限母集団と考える）。3日間に作った分だけでは目的に合わない（有限の一部）。サンプルは測定した30個全体、x̄ は母平均 μ の推定値。変更前を含む全コネクタは目的と違う。",
+      "explanation_vi": "Đề bài: Tại nhà máy anten, điều kiện hàn của đầu nối đồng trục đã được thay đổi. Để biết độ bền kéo của các sản phẩm sẽ tiếp tục sản xuất với điều kiện này ở mức nào, trong 3 ngày sau khi thay đổi, mỗi ngày lấy 10 cái, tổng cộng 30 cái để đo và tính trung bình x̄.\n\nTổ hợp đúng của ① tổng thể, ② mẫu, ③ đại lượng mà x̄ dùng để ước lượng trong khảo sát này là gì? Giải thích: Mục đích là \"các sản phẩm sẽ tiếp tục sản xuất với điều kiện này\" → tổng thể là công đoạn sau khi thay đổi (coi là tổng thể vô hạn). Chỉ những sản phẩm làm trong 3 ngày thì không phù hợp với mục đích (chỉ là một phần hữu hạn). Mẫu là toàn bộ 30 cái đã đo, x̄ là giá trị ước lượng của trung bình tổng thể μ. Đáp án là phương án 2. Tất cả đầu nối kể cả trước khi thay đổi thì không đúng mục đích.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-075"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "レドームの外観検査で、ロットごとに「不適合品率 3.2％」を記録している。このデータの種類として正しいものはどれか。",
+      "choices": [
+        "計数値",
+        "計量値",
+        "順位データ",
+        "言語データ"
+      ],
+      "answer": 0,
+      "explanation": "不適合品率は「不適合品の個数（数えた値）÷ 検査数」。小数で表されても元は数えたデータなので計数値。長さ・重さ・時間のように連続的に測る値が計量値。",
+      "explanation_vi": "Đề bài: Trong kiểm tra ngoại quan vỏ bảo vệ anten (radome), mỗi lô được ghi lại \"tỷ lệ sản phẩm không phù hợp 3.2%\". Loại dữ liệu này là gì? Giải thích: Tỷ lệ sản phẩm không phù hợp = \"số sản phẩm không phù hợp (giá trị đếm) ÷ số kiểm tra\". Dù biểu diễn bằng số thập phân, gốc vẫn là giá trị đếm nên là dữ liệu đếm - phương án 1. Các giá trị đo liên tục như chiều dài, khối lượng, thời gian mới là dữ liệu đo.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-076"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "ある寸法データ全体の誤差の標準偏差が 0.10 mm、測定誤差の標準偏差が 0.06 mm であった。サンプリング誤差と測定誤差が互いに独立なとき、サンプリング誤差の標準偏差はいくらか。",
+      "choices": [
+        "0.04 mm",
+        "0.0064 mm",
+        "0.117 mm",
+        "0.08 mm"
+      ],
+      "answer": 3,
+      "explanation": "分散で引く：サンプリング誤差の標準偏差 σ_S ＝ √(0.10² − 0.06²) ＝ √(0.0100 − 0.0036) ＝ √0.0064 ＝ 0.08。0.04 は標準偏差をそのまま引いた誤り、0.0064 は √ を忘れた誤り、0.117 は足した誤り。\n> 0.1 × = M+ 0.06 × = M−\n> MRC √ → 0.08",
+      "explanation_vi": "Đề bài: Độ lệch chuẩn của sai số toàn bộ dữ liệu kích thước là 0.10 mm, của sai số đo là 0.06 mm. Khi sai số lấy mẫu và sai số đo độc lập với nhau, độ lệch chuẩn của sai số lấy mẫu là bao nhiêu? Giải thích: Trừ bằng phương sai: σ_S = √(0.10² − 0.06²) = √(0.0100 − 0.0036) = √0.0064 = 0.08 (phương án 4). 0.04 là trừ thẳng độ lệch chuẩn, 0.0064 là quên lấy căn, 0.117 là cộng phương sai (sai).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-077"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "データを u ＝ (x − 50.0) × 10 と変換したところ、ū ＝ 1.2、u の不偏分散 V_u ＝ 4.0 であった。元のデータの平均 x̄ と不偏分散 V の組合せとして正しいものはどれか。",
+      "choices": [
+        "x̄ ＝ 62.0、V ＝ 400",
+        "x̄ ＝ 50.12、V ＝ 0.04",
+        "x̄ ＝ 50.12、V ＝ 0.40",
+        "x̄ ＝ 51.2、V ＝ 0.04"
+      ],
+      "answer": 1,
+      "explanation": "x ＝ 50.0 ＋ u/10 → x̄ ＝ 50.0 ＋ 0.12 ＝ 50.12。分散は掛けた数の2乗で割る：V ＝ 4.0 / 10² ＝ 0.04（引いた 50.0 は分散に関係しない）。0.40 は 10 で割っただけの誤り。",
+      "explanation_vi": "Đề bài: Biến đổi dữ liệu thành u = (x − 50.0) × 10 thì được ū = 1.2, phương sai không chệch của u là V_u = 4.0. Tổ hợp đúng của trung bình x̄ và phương sai không chệch V của dữ liệu gốc là gì? Giải thích: x = 50.0 + u/10 → x̄ = 50.0 + 0.12 = 50.12. Phương sai phải chia cho bình phương của số đã nhân: V = 4.0/10² = 0.04 (số 50.0 đã trừ đi không liên quan đến phương sai) - phương án 2. 0.40 là chỉ chia cho 10 (sai).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-078"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "誤差に関する記述として、誤っているものはどれか。",
+      "choices": [
+        "かたよりとは、測定値の母平均と真の値との差である。",
+        "精度（精密度）とは、ばらつきの小さい程度である。",
+        "サンプリング誤差と測定誤差が互いに独立なとき、データ全体の誤差の標準偏差は、両者の標準偏差の和になる。",
+        "ランダムサンプリングを行うと、サンプリングのかたよりをなくすことができる。"
+      ],
+      "answer": 2,
+      "explanation": "独立なとき足し算できるのは分散：σ_T² ＝ σ_S² ＋ σ_M²。標準偏差は √(σ_S² ＋ σ_M²) で、和より小さい。ほかの3つは定義どおり正しい。",
+      "explanation_vi": "Đề bài: Phát biểu nào sau đây về sai số là sai? Giải thích: Phương án 3 sai: khi độc lập, đại lượng cộng được là phương sai: σ_T² = σ_S² + σ_M². Độ lệch chuẩn là √(σ_S² + σ_M²), nhỏ hơn tổng hai độ lệch chuẩn. Ba phương án còn lại đúng theo định nghĩa.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-079"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "レドームの厚さ（mm）を 5 か所測った：12、15、11、14、13（単位 0.1 mm を整数で表示）。標準偏差 s ＝ √V の値（0.1 mm 単位のまま）に最も近いものはどれか。",
+      "choices": [
+        "1.414",
+        "2.500",
+        "3.162",
+        "1.581"
+      ],
+      "answer": 3,
+      "explanation": "x̄ ＝ 13、偏差 −1、2、−2、1、0 → S ＝ 1 ＋ 4 ＋ 4 ＋ 1 ＋ 0 ＝ 10、V ＝ 10 / 4 ＝ 2.5、s ＝ √2.5 ＝ 1.581。1.414 は n（＝5）で割った誤り、2.500 は V のまま答えた誤り、3.162 は √S。",
+      "explanation_vi": "Đề bài: Đo độ dày vỏ bảo vệ anten (radome) tại 5 vị trí: 12, 15, 11, 14, 13 (biểu diễn bằng số nguyên theo đơn vị 0.1 mm). Giá trị độ lệch chuẩn s = √V (giữ nguyên đơn vị 0.1 mm) gần nhất với giá trị nào? Giải thích: x̄ = 13, độ lệch −1, 2, −2, 1, 0 → S = 1 + 4 + 4 + 1 + 0 = 10, V = 10/4 = 2.5, s = √2.5 = 1.581 (phương án 4). 1.414 là chia cho n (= 5) (sai), 2.500 là trả lời bằng V, 3.162 là √S.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-080"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "ケーブル外径 x（mm）を u ＝ (x − 30.0) ÷ 0.05 と変換したところ、ū ＝ −2.0、s_u ＝ 3.0 であった（s_u：u の標準偏差）。元のデータの平均 x̄ と標準偏差 s の組合せとして正しいものはどれか。",
+      "choices": [
+        "x̄ ＝ 29.90、s ＝ 0.15",
+        "x̄ ＝ 29.90、s ＝ 30.15",
+        "x̄ ＝ 30.10、s ＝ 0.15",
+        "x̄ ＝ 29.90、s ＝ 0.0075"
+      ],
+      "answer": 0,
+      "explanation": "x ＝ 30.0 ＋ 0.05u なので x̄ ＝ 30.0 ＋ 0.05 × (−2.0) ＝ 29.90。標準偏差は原点 30.0 の影響を受けず、幅 0.05 倍だけ：s ＝ 0.05 × 3.0 ＝ 0.15。30.15 は s にも 30.0 を足した誤り、30.10 は符号の誤り、0.0075 は分散の考え（0.05² 倍）を標準偏差に使った誤り。",
+      "explanation_vi": "Đề bài: Biến đổi đường kính ngoài cáp x (mm) thành u = (x − 30.0) ÷ 0.05 thì được ū = −2.0, s_u = 3.0 (s_u: độ lệch chuẩn của u). Tổ hợp đúng của trung bình x̄ và độ lệch chuẩn s của dữ liệu gốc là gì? Giải thích: Vì x = 30.0 + 0.05u nên x̄ = 30.0 + 0.05 × (−2.0) = 29.90. Độ lệch chuẩn không bị ảnh hưởng bởi gốc 30.0, chỉ nhân độ rộng 0.05: s = 0.05 × 3.0 = 0.15 - phương án 1. 30.15 là cộng 30.0 vào cả s (sai), 30.10 là sai dấu, 0.0075 là dùng cách nghĩ của phương sai (nhân 0.05²) cho độ lệch chuẩn (sai).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-081"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "ある寸法データで、サンプリング誤差の標準偏差が 0.12 mm、測定誤差の標準偏差が 0.05 mm であり、両者は互いに独立である。データ全体の誤差の標準偏差はいくらか。",
+      "choices": [
+        "0.17 mm",
+        "0.13 mm",
+        "0.109 mm",
+        "0.07 mm"
+      ],
+      "answer": 1,
+      "explanation": "分散で足す：√(0.12² ＋ 0.05²) ＝ √(0.0144 ＋ 0.0025) ＝ √0.0169 ＝ 0.13。0.17 は標準偏差をそのまま足した誤り、0.109 は分散を引いた誤り、0.07 は差。電卓：0.12 × = M+ 0.05 × = M+ MRC √ → 0.13（最初に MRC MRC）。",
+      "explanation_vi": "Đề bài: Với dữ liệu kích thước, độ lệch chuẩn của sai số lấy mẫu là 0.12 mm, của sai số đo là 0.05 mm, hai sai số độc lập với nhau. Độ lệch chuẩn của sai số toàn bộ dữ liệu là bao nhiêu? Giải thích: Cộng bằng phương sai: √(0.12² + 0.05²) = √(0.0144 + 0.0025) = √0.0169 = 0.13 (phương án 2). 0.17 là cộng thẳng độ lệch chuẩn, 0.109 là trừ phương sai (sai), 0.07 là hiệu.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-082"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "ある寸法データの誤差全体の標準偏差は 0.13 mm、そのうち測定誤差の標準偏差は 0.05 mm で、測定誤差とサンプリング誤差は互いに独立である。サンプリング誤差の標準偏差はいくらか。",
+      "choices": [
+        "0.08 mm",
+        "0.139 mm",
+        "0.0144 mm",
+        "0.12 mm"
+      ],
+      "answer": 3,
+      "explanation": "分散で引く：σ_s ＝ √(0.13² − 0.05²) ＝ √(0.0169 − 0.0025) ＝ √0.0144 ＝ 0.12。アは標準偏差どうしを引いた誤り、イは分散を足した誤り、ウは √ を忘れた分散の値。電卓：MRC MRC 0.13 × = M+ 0.05 × = M− MRC √ → 0.12\n記号：σ_s：サンプリング誤差の標準偏差、σ_m：測定誤差の標準偏差（どちらも分散 σ² で足し引きする）",
+      "explanation_vi": "Đề bài: Độ lệch chuẩn của toàn bộ sai số của dữ liệu kích thước là 0.13 mm, trong đó độ lệch chuẩn của sai số đo là 0.05 mm; sai số đo và sai số lấy mẫu độc lập với nhau. Độ lệch chuẩn của sai số lấy mẫu là bao nhiêu? Giải thích: Trừ bằng phương sai: σ_s = √(0.13² − 0.05²) = √(0.0169 − 0.0025) = √0.0144 = 0.12 (phương án 4). Phương án 1 là trừ thẳng độ lệch chuẩn, phương án 2 là cộng phương sai, phương án 3 là quên lấy căn (vẫn là phương sai).\nKý hiệu: σ_s: độ lệch chuẩn của sai số lấy mẫu, σ_m: độ lệch chuẩn của sai số đo (cả hai đều cộng trừ bằng phương sai σ²).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-083"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "製品の寸法の測定値の標準偏差は 0.25 mm、測定器の誤差（測定のばらつき）の標準偏差は 0.07 mm である。製品そのもののばらつきの標準偏差に最も近いものはどれか（両者は独立）。",
+      "choices": [
+        "0.18",
+        "0.26",
+        "0.32",
+        "0.24"
+      ],
+      "answer": 3,
+      "explanation": "分散で引く：σ_製品 ＝ √(0.25² − 0.07²) ＝ √(0.0625 − 0.0049) ＝ √0.0576 ＝ 0.24。アは標準偏差どうしを引いた誤り。イは分散を足した誤り。ウは標準偏差をそのまま足した誤り。\n記号：σ_製品：製品のばらつきの標準偏差、0.25：測定値全体の標準偏差、0.07：測定誤差の標準偏差\n電卓：MRC MRC 0.25 × = M+ 0.07 × = M− MRC √ → 0.24",
+      "explanation_vi": "Đề bài: Độ lệch chuẩn của giá trị đo kích thước sản phẩm là 0.25 mm, độ lệch chuẩn của sai số dụng cụ đo (độ phân tán của phép đo) là 0.07 mm. Độ lệch chuẩn của độ phân tán của chính sản phẩm gần nhất với giá trị nào? (hai thành phần độc lập với nhau) Giải thích: Trừ bằng phương sai: σ_sản phẩm = √(0.25² − 0.07²) = √(0.0625 − 0.0049) = √0.0576 = 0.24 (phương án 4). Phương án 1 là trừ thẳng độ lệch chuẩn (sai), phương án 2 là cộng phương sai (sai), phương án 3 là cộng thẳng độ lệch chuẩn (sai).\nKý hiệu: σ_sản phẩm: độ lệch chuẩn độ phân tán của sản phẩm, 0.25: độ lệch chuẩn của toàn bộ giá trị đo, 0.07: độ lệch chuẩn của sai số đo.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-084"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "次の文の空欄に入るものの組合せとして正しいものはどれか。\n\n「コネクタの接触抵抗（mΩ）のように連続的な値をとるデータを （①） という。1 ロット中の不適合品数や、1 枚の基板のはんだブリッジの数のように、数えて得られるデータを （②） という。また、5 種類の試作品に 1 位〜5 位をつけたデータのように、順序に意味があるデータを （③） データという。」",
+      "choices": [
+        "① 計数値　② 計量値　③ 順位",
+        "① 計量値　② 計数値　③ 言語",
+        "① 計量値　② 計量値　③ 順位",
+        "① 計量値　② 計数値　③ 順位"
+      ],
+      "answer": 3,
+      "explanation": "長さ・質量・抵抗など連続量 → 計量値。不適合品数・欠点数など数えるもの → 計数値（欠点数も計数値）。1 位〜5 位の順位 → 順位データ。イは「言語データ」（言葉で表したもの）と混同。ウは不適合品数を計量値としたまちがい。アは計量値と計数値が逆。",
+      "explanation_vi": "Đề bài: Chọn tổ hợp đúng để điền vào chỗ trống trong câu sau.\n\n\"Dữ liệu nhận giá trị liên tục như điện trở tiếp xúc của đầu nối (mΩ) gọi là (①). Dữ liệu có được bằng cách đếm như số sản phẩm không phù hợp trong một lô hay số cầu hàn trên một tấm bo mạch gọi là (②). Ngoài ra, dữ liệu mà thứ tự có ý nghĩa, như xếp hạng từ 1 đến 5 cho 5 loại sản phẩm thử, gọi là dữ liệu (③).\" Giải thích: Đại lượng liên tục như chiều dài, khối lượng, điện trở → dữ liệu đo. Số sản phẩm không phù hợp, số khuyết tật... có được bằng cách đếm → dữ liệu đếm (số khuyết tật cũng là dữ liệu đếm). Thứ hạng từ 1 đến 5 → dữ liệu thứ hạng. Đáp án là phương án 4. Phương án 2 nhầm với dữ liệu ngôn ngữ (dữ liệu biểu diễn bằng lời). Phương án 3 coi số sản phẩm không phù hợp là dữ liệu đo (sai). Phương án 1 đảo ngược dữ liệu đo và dữ liệu đếm.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-085"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "母集団とサンプルに関する記述として、誤っているものはどれか。",
+      "choices": [
+        "母平均 μ や母標準偏差 σ は母集団の性質を表す値で、母数とよばれる",
+        "サンプルの標準偏差 s は母数の一つで、母集団が同じならどのサンプルでも同じ値になる",
+        "サンプルの平均 x̄ は統計量で、サンプルを取り直すたびに値が変わる確率変数である",
+        "製造工程を母集団と考えるとき、母集団は将来つくられる製品も含む無限母集団とみなす"
+      ],
+      "answer": 1,
+      "explanation": "イが誤り。s はサンプルから計算した統計量で、サンプルごとに値が変わる（母数は σ）。ア・ウは母数と統計量の正しい説明。エ：工程を母集団とするときは無限母集団として扱う。母集団の値はギリシャ文字（μ、σ）、サンプルの値はラテン文字（x̄、s、V）で区別する。\n記号：μ：母平均、σ：母標準偏差、x̄：サンプルの平均、s：サンプルの標準偏差",
+      "explanation_vi": "Đề bài: Phát biểu nào sau đây về tổng thể và mẫu là sai? Giải thích: Phương án 2 sai: s là thống kê tính từ mẫu, giá trị thay đổi theo từng mẫu (tham số tổng thể là σ). Phương án 1 và 3 là giải thích đúng về tham số tổng thể và thống kê. Phương án 4 đúng: khi coi công đoạn là tổng thể thì xử lý như tổng thể vô hạn. Giá trị của tổng thể ký hiệu bằng chữ Hy Lạp (μ, σ), giá trị của mẫu ký hiệu bằng chữ Latin (x̄, s, V).\nKý hiệu: μ: trung bình tổng thể, σ: độ lệch chuẩn tổng thể, x̄: trung bình mẫu, s: độ lệch chuẩn mẫu.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-086"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "コネクタの挿入力（N）のデータ 4、6、5、7、8 について、次の文の空欄に入る数値の組合せとして正しいものはどれか。\n\n「平均は 6.0、偏差平方和 S は（①）、不偏分散 V は（②）、サンプルの標準偏差 s は（③）である。」",
+      "choices": [
+        "① 10　② 2.0　③ 1.41",
+        "① 190　② 47.5　③ 6.89",
+        "① 10　② 2.5　③ 6.25",
+        "① 10　② 2.5　③ 1.58"
+      ],
+      "answer": 3,
+      "explanation": "S ＝ Σ(x − x̄)² ＝ 4 ＋ 0 ＋ 1 ＋ 1 ＋ 4 ＝ 10。V ＝ S / (n − 1) ＝ 10 / 4 ＝ 2.5（n − 1 で割るのは、平均 x̄ をデータから計算したぶん自由に動ける値が1つ減るため）。s ＝ √V ＝ 1.58。アは n ＝ 5 で割った（V ＝ 2.0、s ＝ 1.41）。イは Σx²（＝ 190）を S と取り違えた（S ＝ Σx² − (Σx)² / n ＝ 190 − 180 ＝ 10 が正しい）。ウは s に V² を書いた誤り。\n記号：x̄：平均、S：偏差平方和、V：不偏分散、s：サンプルの標準偏差、n：データ数",
+      "explanation_vi": "Đề bài: Với dữ liệu lực cắm của đầu nối (N): 4, 6, 5, 7, 8, chọn tổ hợp số đúng để điền vào chỗ trống trong câu sau.\n\n\"Trung bình là 6.0, tổng bình phương độ lệch S là (①), phương sai không chệch V là (②), độ lệch chuẩn mẫu s là (③).\" Giải thích: S = Σ(x − x̄)² = 4 + 0 + 1 + 1 + 4 = 10. V = S/(n − 1) = 10/4 = 2.5 (chia n − 1 vì trung bình x̄ được tính từ chính dữ liệu nên số giá trị tự do giảm đi 1). s = √V = 1.58. Đáp án là phương án 4. Phương án 1 là chia cho n = 5 (V = 2.0, s = 1.41). Phương án 2 là nhầm Σx² (= 190) với S (đúng phải là S = Σx² − (Σx)²/n = 190 − 180 = 10). Phương án 3 là ghi V² vào chỗ của s (sai).\nKý hiệu: x̄: trung bình, S: tổng bình phương độ lệch, V: phương sai không chệch, s: độ lệch chuẩn mẫu, n: số dữ liệu.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-087"
+    },
+    {
+      "level": 2,
+      "topic": "b1",
+      "question": "アンテナ素子の長さ x（mm）のデータ 50.12、50.15、50.11、50.14、50.13 を、u ＝ (x − 50.00) / 0.01 と変換して計算した（u はデータ変換した値で、標準化の u とは別）。ū ＝ 13.0、u の偏差平方和 S_u ＝ 10.0 であった。空欄に入る数値の組合せとして正しいものはどれか。\n\n「x̄ ＝（①）mm、x の偏差平方和 S_x ＝（②）mm² である。」",
+      "choices": [
+        "① 50.13　② 0.10",
+        "① 50.13　② 0.0010",
+        "① 13.00　② 0.0010",
+        "① 50.13　② 10.0"
+      ],
+      "answer": 1,
+      "explanation": "x ＝ x₀ ＋ h u（x₀ ＝ 50.00、h ＝ 0.01）なので x̄ ＝ 50.00 ＋ 0.01 × 13.0 ＝ 50.13。平方和は差の2乗なので x₀ は消え、h が 2 乗で効く：S_x ＝ h² × S_u ＝ 0.0001 × 10.0 ＝ 0.0010。アは h を 1 乗で掛けた（0.10）。ウは ū を戻し忘れた。エは S_u をそのまま使った。\n記号：u：変換した値、x̄：x の平均、x₀：変換の基準値、h：単位（刻み）、ū：u の平均、S_u・S_x：u・x の偏差平方和",
+      "explanation_vi": "Đề bài: Dữ liệu chiều dài phần tử anten x (mm): 50.12, 50.15, 50.11, 50.14, 50.13 được biến đổi thành u = (x − 50.00)/0.01 để tính (u là giá trị biến đổi dữ liệu, khác với u của phép chuẩn hóa). Được ū = 13.0, tổng bình phương độ lệch của u là S_u = 10.0. Chọn tổ hợp số đúng để điền vào chỗ trống.\n\n\"x̄ = (①) mm, tổng bình phương độ lệch của x là S_x = (②) mm².\" Giải thích: Vì x = x₀ + h·u (x₀ = 50.00, h = 0.01) nên x̄ = 50.00 + 0.01 × 13.0 = 50.13. Tổng bình phương độ lệch là tổng bình phương của các hiệu nên x₀ bị triệt tiêu, còn h tác động theo bình phương: S_x = h² × S_u = 0.0001 × 10.0 = 0.0010 - phương án 2. Phương án 1 là nhân h bậc một (0.10). Phương án 3 là quên đổi ngược ū. Phương án 4 là dùng nguyên S_u.\nKý hiệu: u: giá trị biến đổi, x̄: trung bình của x, x₀: giá trị gốc của phép biến đổi, h: bước (đơn vị), ū: trung bình của u, S_u và S_x: tổng bình phương độ lệch của u và x.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-088"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "ある組立工程の1か月の不適合件数は次のとおりであった（総数 200 件）。\nコネクタ締付け不足 86、ケーブル被覆傷 54、ラベル位置ずれ 28、外観汚れ 14、その他 18\nパレート図を正しく作成したとき、第3位の項目までの累積比率はいくらか。",
+      "choices": [
+        "43％",
+        "70％",
+        "84％",
+        "93％"
+      ],
+      "answer": 2,
+      "explanation": "大きい順に 86・54・28 で累積 168。168／200 × 100 ＝ 84％。93％ は 4位まで足した値（86＋54＋28＋18 ＝ 186。しかも「その他」を外観汚れより前に入れている）で、第3位までではない。70％ は第2位まで、43％ は第1位だけ。",
+      "explanation_vi": "Đề bài: Số lỗi trong 1 tháng của một công đoạn lắp ráp như sau (tổng 200 lỗi).\nSiết connector không đủ 86, xước vỏ cáp 54, lệch vị trí nhãn 28, bẩn ngoại quan 14, khác 18\nKhi vẽ biểu đồ Pareto đúng quy tắc, tỷ lệ tích lũy đến hạng mục thứ 3 là bao nhiêu? Giải thích: Xếp từ lớn đến nhỏ: 86, 54, 28 → cộng dồn 168. 168/200 × 100 = 84% (phương án 3). 93% là cộng tới hạng mục thứ 4 (86 + 54 + 28 + 18 = 186, lại còn đặt mục “khác” trước “bẩn ngoại quan”), không phải tới hạng mục thứ 3. 70% là tới hạng mục thứ 2, 43% chỉ là hạng mục thứ 1.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-089"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "パレート図の作り方・使い方に関する記述として、誤っているものはどれか。",
+      "choices": [
+        "項目は、件数または金額の大きい順に左から並べる。",
+        "「その他」は、件数が他の項目より大きくても右端に置く。",
+        "改善前後を比較するときは、それぞれの図が見やすいように縦軸の目盛を別々に決める。",
+        "累積比率の折れ線を描くと、上位の項目で全体の何％を占めるかがわかる。"
+      ],
+      "answer": 2,
+      "explanation": "前後比較では縦軸の目盛をそろえる。別々にすると棒の高さが同じでも件数が違い、効果を見誤る。イの「その他は最後」は正しいルール（大きくても最後）で、ここを誤りと選ぶ人が多い。",
+      "explanation_vi": "Đề bài: Phát biểu nào SAI về cách vẽ và cách dùng biểu đồ Pareto? Giải thích: Phương án 3 sai: khi so sánh trước và sau cải tiến phải để thang đo trục tung giống nhau. Nếu mỗi biểu đồ một thang đo thì cột cao bằng nhau nhưng số lượng lại khác nhau, dễ đánh giá sai hiệu quả. Phương án 2 (mục “khác” luôn đặt cuối, dù lớn) là quy tắc đúng — nhiều người chọn nhầm câu này.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-090"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "不適合の項目別に、件数と1件あたりの損失金額を調べた。\nA 外観傷：60件、1件 100円\nB 締付け不足：25件、1件 800円\nC 部品欠品：15件、1件 2,000円\n目的が「損失金額の削減」であるとき、最優先で取り組む項目はどれか。",
+      "choices": [
+        "A（件数が最も多いから）",
+        "B",
+        "3項目に同じ力を分けて取り組む",
+        "C"
+      ],
+      "answer": 3,
+      "explanation": "損失金額は A 6,000円、B 20,000円、C 30,000円。金額のパレート図では C が1位。件数（A が1位）で決めるのは、目的が「件数削減」のとき。全項目に均等に取り組むのは重点指向に反する。",
+      "explanation_vi": "Đề bài: Đã điều tra số lần lỗi và tổn thất tiền cho mỗi lần theo từng hạng mục.\nA Xước ngoại quan: 60 lần, 100 yên/lần\nB Siết không đủ: 25 lần, 800 yên/lần\nC Thiếu linh kiện: 15 lần, 2000 yên/lần\nKhi mục tiêu là “giảm tổn thất tiền”, hạng mục nào cần ưu tiên xử lý trước nhất? Giải thích: Tổn thất tiền: A 6000 yên, B 20000 yên, C 30000 yên. Trên biểu đồ Pareto theo tiền, C đứng đầu → phương án 4. Quyết định theo số lần (A đứng đầu, phương án 1) chỉ đúng khi mục tiêu là giảm số lần lỗi. Chia đều sức cho cả 3 hạng mục (phương án 3) là đi ngược nguyên tắc tập trung vào trọng điểm.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-091"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "特性要因図に関する記述として、正しいものはどれか。",
+      "choices": [
+        "特性要因図に書かれた要因は、すべて真の原因であることが確認されたものである。",
+        "特性要因図の「特性」とは、結果として現れている品質や問題のことである。",
+        "大骨は必ず人・機械・材料・方法の4本にしなければならない。",
+        "特性要因図は、測定した数値データだけを用いて作成する。"
+      ],
+      "answer": 1,
+      "explanation": "特性＝結果。要因は話し合いで出た原因の候補（仮説）で、データでの検証が必要（ア誤り）。4M はよく使う切り口だが決まりではない（ウ誤り）。経験や知識などの言語情報から作る（エ誤り）。",
+      "explanation_vi": "Đề bài: Phát biểu nào ĐÚNG về biểu đồ nhân quả (biểu đồ xương cá)? Giải thích: Đặc tính = kết quả → phương án 2 đúng. Yếu tố ghi trên hình chỉ là nguyên nhân có thể (giả thuyết) do thảo luận đưa ra, cần kiểm chứng bằng dữ liệu (phương án 1 sai). 4M là cách chia hay dùng nhưng không bắt buộc (phương án 3 sai). Biểu đồ được lập chủ yếu từ thông tin dạng ngôn ngữ như kinh nghiệm, kiến thức (phương án 4 sai).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-092"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "次の文の空欄に入る語句の組合せとして正しいものはどれか。\n\n「特性要因図は、特定の結果である（①）と、それに影響を及ぼすと思われる（②）との関係を（③）に表した図であり、その形から魚の骨図とも呼ばれる。」",
+      "choices": [
+        "① 要因　② 特性　③ 系統的",
+        "① 特性　② 原因　③ 時系列的",
+        "① 原因　② 要因　③ 系統的",
+        "① 特性　② 要因　③ 系統的"
+      ],
+      "answer": 3,
+      "explanation": "結果＝特性、影響を及ぼすと「思われる」もの＝要因（まだ検証前なので原因ではない）、関係を系統的に表す。アは特性と要因を逆にした誤り、イは「原因」「時系列的」が誤り。",
+      "explanation_vi": "Đề bài: Tổ hợp từ nào đúng để điền vào chỗ trống trong câu sau?\n\n“Biểu đồ nhân quả là biểu đồ thể hiện mối quan hệ giữa (①) — kết quả cụ thể — và các (②) được cho là ảnh hưởng tới kết quả đó một cách (③); do hình dạng nên còn được gọi là biểu đồ xương cá.” Giải thích: Kết quả = đặc tính (①), những thứ “được cho là” ảnh hưởng = yếu tố (②) (chưa kiểm chứng nên chưa gọi là nguyên nhân), và mối quan hệ được thể hiện một cách có hệ thống (③) → phương án 4. Phương án 1 đảo ngược đặc tính và yếu tố; phương án 2 sai ở “nguyên nhân” và “theo trình tự thời gian”; phương án 3 sai ở ① “nguyên nhân”.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-093"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "アンテナの組立工程で VSWR の規格外れが増えた。関係者で考えられる原因を出し合い、人・機械・材料・方法に分けて整理し、重点的に調べる要因を決めたい。最も適した手法はどれか。",
+      "choices": [
+        "パレート図",
+        "ヒストグラム",
+        "特性要因図",
+        "散布図"
+      ],
+      "answer": 2,
+      "explanation": "「原因を出し合う」「4Mに分けて整理」は特性要因図のサイン。パレート図は項目の大きさの順位づけ、ヒストグラムは分布の形、散布図は2変数の関係を見る手法。",
+      "explanation_vi": "Đề bài: Trong công đoạn lắp ráp anten, số sản phẩm có VSWR vượt tiêu chuẩn tăng lên. Những người liên quan muốn cùng nêu ra các nguyên nhân có thể, sắp xếp theo người, máy, vật liệu, phương pháp, rồi quyết định yếu tố cần điều tra trọng điểm. Công cụ phù hợp nhất là gì? Giải thích: “Cùng nêu ra nguyên nhân”, “chia theo 4M để sắp xếp” là dấu hiệu của biểu đồ nhân quả (phương án 3). Biểu đồ Pareto dùng để xếp thứ tự độ lớn các hạng mục, histogram để xem hình dạng phân bố, biểu đồ tán xạ để xem quan hệ giữa 2 biến.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-094"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "チェックシートに関する記述として、誤っているものはどれか。",
+      "choices": [
+        "記録用チェックシートは、データをとりながら分類・集計ができるよう、項目をあらかじめ決めておく様式である。",
+        "点検用チェックシートは、確認すべき項目を漏れなく点検するために用いる。",
+        "不適合位置調査用チェックシートでは、製品の図に不適合の発生位置を記入し、位置の偏りを調べる。",
+        "チェックシートでは不適合の件数だけが重要なので、日時・作業者・機械などの情報は記録しなくてよい。"
+      ],
+      "answer": 3,
+      "explanation": "日時・作業者・機械・ロットなど層別の情報を残さないと、あとで原因を追究できない（エが誤り）。ア・イ・ウはいずれも正しい。ウの「位置の偏り」を誤りと思う人がいるが、位置調査用はまさにそのための様式。",
+      "explanation_vi": "Đề bài: Phát biểu nào SAI về phiếu kiểm tra (check sheet)? Giải thích: Phương án 4 sai: nếu không ghi lại thông tin phân tầng như ngày giờ, người làm, máy, lô thì sau này không truy được nguyên nhân. Phương án 1, 2, 3 đều đúng. Có người nghĩ “sự tập trung theo vị trí” ở phương án 3 là sai, nhưng phiếu điều tra vị trí lỗi chính là mẫu dùng cho mục đích đó.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-095"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "サプライヤーから納入されるプリント基板について、はんだ付け不適合が基板のどの場所に多く発生しているかを、受入検査のたびに記録して調べたい。最も適したものはどれか。",
+      "choices": [
+        "度数分布調査用チェックシート",
+        "点検用チェックシート",
+        "不適合位置調査用チェックシート",
+        "パレート図"
+      ],
+      "answer": 2,
+      "explanation": "「どこに多いか（位置）」がサイン → 基板の図に発生位置を記入する不適合位置（欠点位置）調査用。度数分布調査用は計量値の分布、点検用は点検漏れの防止。パレート図は集めたあとで項目の順位をつける手法で、記録の様式ではない。",
+      "explanation_vi": "Đề bài: Với bảng mạch in (PCB) do nhà cung cấp giao, muốn ghi lại ở mỗi lần kiểm tra đầu vào để biết lỗi hàn xảy ra nhiều ở vị trí nào trên bảng mạch. Công cụ nào phù hợp nhất? Giải thích: Dấu hiệu “nhiều ở đâu (vị trí)” → phiếu kiểm tra điều tra vị trí lỗi, ghi vị trí phát sinh lên hình vẽ bảng mạch (phương án 3). Phiếu điều tra phân bố tần số dùng cho phân bố của dữ liệu đo, phiếu kiểm điểm dùng để chống bỏ sót khi kiểm tra. Biểu đồ Pareto là công cụ xếp hạng hạng mục sau khi đã thu thập dữ liệu, không phải mẫu ghi chép.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-096"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "ケーブル長のデータ n＝100 個（測定単位 0.1 mm）で、最大値 52.9 mm、最小値 47.1 mm であった。区間の数を √n を目安に決めるとき、ヒストグラムの区間の幅として最も適切なものはどれか。",
+      "choices": [
+        "0.058 mm",
+        "0.58 mm",
+        "0.6 mm",
+        "0.5 mm"
+      ],
+      "answer": 2,
+      "explanation": "k≒√100＝10、h＝(52.9−47.1)÷10＝0.58 → 測定単位 0.1 の整数倍に丸めて 0.6。0.58 は丸め忘れ（歯抜け型の原因）、0.058 は n＝100 で割った誤り、0.5 は切り捨てたため 10 区間では最大値まで届かない（47.05＋0.5×10＝52.05）。",
+      "explanation_vi": "Đề bài: Có n = 100 dữ liệu chiều dài cáp (đơn vị đo 0.1 mm), giá trị lớn nhất 52.9 mm, nhỏ nhất 47.1 mm. Khi chọn số khoảng theo mức tham khảo √n, độ rộng khoảng phù hợp nhất cho histogram là bao nhiêu? Giải thích: k ≈ √100 = 10, h = (52.9 − 47.1) ÷ 10 = 0.58 → làm tròn thành bội số nguyên của đơn vị đo 0.1 → 0.6 (phương án 3). 0.58 là quên làm tròn (gây ra dạng răng lược), 0.058 là chia nhầm cho n = 100, 0.5 là làm tròn xuống nên 10 khoảng không phủ tới giá trị lớn nhất (47.05 + 0.5 × 10 = 52.05).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-097"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "2社（A社・B社）から納入されるインダクタを区別せずに使っている。組立後のある特性値でヒストグラムを描いたところ、山が2つある形（二山型）になった。考えられることと次の処置として最も適切なものはどれか。",
+      "choices": [
+        "測定者の目盛の読み方に癖がある。測定方法を教育する。",
+        "規格外れのものを全数選別で取り除いた。選別をやめる。",
+        "特性に理論的な下限がある。対数変換して描き直す。",
+        "平均の異なる2つの分布が混ざっている。サプライヤー別に層別して描き直す。"
+      ],
+      "answer": 3,
+      "explanation": "二山型＝平均の異なる2つの分布の混在。2社を区別していないことが疑われるので、サプライヤー別に層別する。アは歯抜け型、イは絶壁型、ウはすそ引き型の説明。",
+      "explanation_vi": "Đề bài: Đang dùng lẫn cuộn cảm (inductor) do 2 công ty A và B giao mà không phân biệt. Vẽ histogram của một giá trị đặc tính sau lắp ráp thì được hình có hai đỉnh (dạng hai đỉnh). Điều có thể suy ra và bước xử lý tiếp theo phù hợp nhất là gì? Giải thích: Dạng hai đỉnh = trộn lẫn 2 phân bố có trung bình khác nhau. Vì đang không phân biệt 2 công ty, nên phân tầng theo nhà cung cấp rồi vẽ lại (phương án 4). Phương án 1 là giải thích của dạng răng lược, phương án 2 của dạng vách đứng, phương án 3 của dạng đuôi dài.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-098"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "ヒストグラムに関する記述として、誤っているものはどれか。",
+      "choices": [
+        "区間の境界値は、測定単位の 1/2 の位置にくるように決める。",
+        "ヒストグラムを見れば、データの時間的な変化や工程が安定状態にあるかどうかがわかる。",
+        "区間の幅が測定単位の整数倍になっていないと、歯抜け型になることがある。",
+        "規格の上限・下限を書き入れると、規格に対するばらつきのゆとりや平均のずれがわかる。"
+      ],
+      "answer": 1,
+      "explanation": "ヒストグラムは区間ごとにまとめるので時間の順序の情報が失われる。時間的変化・安定状態は管理図で見る（イが誤り）。ウの歯抜け型の説明を誤りと思いやすいが正しい。",
+      "explanation_vi": "Đề bài: Phát biểu nào SAI về histogram? Giải thích: Histogram gộp dữ liệu theo từng khoảng nên mất thông tin về thứ tự thời gian. Thay đổi theo thời gian và trạng thái ổn định phải xem bằng biểu đồ kiểm soát → phương án 2 sai. Dễ tưởng phương án 3 (giải thích dạng răng lược) là sai, nhưng nó đúng.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-099"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "次の①〜③の目的に最も適した手法の組合せはどれか。\n① ケーブル長 100 本の測定値から、ばらつきの形と規格に対する位置を見たい。\n② 1か月の不適合を項目別に集計し、どの項目から対策するか決めたい。\n③ 毎日の不適合を、発生のたびに項目別・直別に記録したい。",
+      "choices": [
+        "① パレート図　② ヒストグラム　③ チェックシート",
+        "① ヒストグラム　② 特性要因図　③ チェックシート",
+        "① ヒストグラム　② パレート図　③ チェックシート",
+        "① 管理図　② パレート図　③ 特性要因図"
+      ],
+      "answer": 2,
+      "explanation": "計量値の分布の形・規格との関係 → ヒストグラム。項目の順位づけ・重点 → パレート図。データを集める様式 → チェックシート。特性要因図は原因の候補を洗い出す手法で「どの項目から」を決めるものではない。管理図は時間的変化を見る。",
+      "explanation_vi": "Đề bài: Tổ hợp công cụ nào phù hợp nhất với các mục đích ① đến ③ sau?\n① Từ số đo của 100 sợi cáp, muốn xem hình dạng phân tán và vị trí so với tiêu chuẩn.\n② Tổng hợp lỗi trong 1 tháng theo hạng mục, muốn quyết định xử lý hạng mục nào trước.\n③ Muốn ghi lại lỗi hằng ngày mỗi khi phát sinh, theo hạng mục và theo ca. Giải thích: Hình dạng phân bố của dữ liệu đo và quan hệ với tiêu chuẩn → histogram. Xếp hạng hạng mục, chọn trọng điểm → biểu đồ Pareto. Mẫu để thu thập dữ liệu → phiếu kiểm tra. Vậy đáp án là phương án 3. Biểu đồ nhân quả dùng để liệt kê nguyên nhân có thể, không dùng để quyết định “xử lý hạng mục nào trước”. Biểu đồ kiểm soát dùng để xem thay đổi theo thời gian.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-100"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "受入検査のデータでヒストグラムを描いたところ、左側が規格下限の位置で急に切れ、右側はなだらかに減る形になった。この形の原因として最も考えられるものはどれか。",
+      "choices": [
+        "2つの異なる工程のデータが混ざっている。",
+        "区間の幅を測定単位の整数倍にしなかった。",
+        "一部に異常なデータが混入した。",
+        "規格下限より小さいものを選別して取り除いたあとのデータである。"
+      ],
+      "answer": 3,
+      "explanation": "片側が切り立った絶壁型は、規格外れ品を全数選別で取り除いたあとのデータで現れることが多い。「2つの工程の混在」は二山型、「区間の幅が測定単位の整数倍でない」は歯抜け型（くし歯型）、「異常データの混入」は離れ小島型の原因。",
+      "explanation_vi": "Đề bài: Vẽ histogram từ dữ liệu kiểm tra đầu vào thì được hình: phía trái bị cắt đột ngột tại vị trí giới hạn dưới tiêu chuẩn, phía phải giảm dần thoai thoải. Nguyên nhân có khả năng nhất của hình dạng này là gì? Giải thích: Dạng vách đứng (một phía bị cắt dựng đứng) thường xuất hiện ở dữ liệu sau khi đã sàng lọc toàn bộ để loại hàng ngoài tiêu chuẩn → phương án 4. “Trộn dữ liệu của 2 công đoạn khác nhau” là nguyên nhân của dạng hai đỉnh, “độ rộng khoảng không phải bội số nguyên của đơn vị đo” là của dạng răng lược, “lẫn dữ liệu bất thường” là của dạng đảo lẻ.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-101"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "次の文の空欄に入る語句の組合せとして正しいものはどれか。\n\n「チェックシートは目的によって（①）用と（②）用に大別される。（①）用は、不適合項目や不適合の発生位置などをデータとして分類・集計するために使い、（②）用は、確認すべき事項をあらかじめ並べておき、確認漏れを防ぐために使う。」",
+      "choices": [
+        "① 記録　② 点検",
+        "① 点検　② 記録",
+        "① 調査　② 管理",
+        "① 記録　② 管理"
+      ],
+      "answer": 0,
+      "explanation": "データを集めて分類・集計するのが記録用、作業や設備の確認漏れを防ぐのが点検用。不適合項目調査用・不適合位置調査用・度数分布調査用などは記録用の例。",
+      "explanation_vi": "Đề bài: Tổ hợp từ nào đúng để điền vào chỗ trống?\n\n“Theo mục đích, phiếu kiểm tra được chia lớn thành loại dùng cho (①) và loại dùng cho (②). Loại (①) dùng để phân loại, tổng hợp dữ liệu như hạng mục lỗi hay vị trí phát sinh lỗi; loại (②) liệt kê sẵn các nội dung cần xác nhận để chống bỏ sót.” Giải thích: Thu thập dữ liệu để phân loại, tổng hợp là loại ghi chép (①); chống bỏ sót khi xác nhận công việc hay thiết bị là loại kiểm điểm (②) → phương án 1. Phiếu điều tra hạng mục lỗi, điều tra vị trí lỗi, điều tra phân bố tần số... đều là ví dụ của loại ghi chép.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-102"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "対策の前と後のパレート図を並べて効果を確かめたい。正しいものはどれか。",
+      "choices": [
+        "縦軸の目盛は、改善後の件数が見やすいように改善後の図だけ拡大する。",
+        "改善後は件数が減るので、累積比率の折れ線は描かなくてよい。",
+        "前と後で縦軸の目盛をそろえて描き、棒の高さで効果を比べる。",
+        "効果は「その他」の件数がどれだけ減ったかで判断する。"
+      ],
+      "answer": 2,
+      "explanation": "改善前後を比べるときは縦軸の目盛を同じにしないと、棒の高さで効果を比べられない（改善後だけ拡大すると効果が小さく見える）。累積比率は改善後も描く。効果は対策した項目と全体の件数（または損失金額）で判断し、「その他」で判断するのではない。",
+      "explanation_vi": "Đề bài: Muốn đặt biểu đồ Pareto trước và sau biện pháp cạnh nhau để xác nhận hiệu quả. Phát biểu nào đúng? Giải thích: Khi so sánh trước và sau cải tiến, nếu thang đo trục tung không giống nhau thì không thể so hiệu quả bằng chiều cao cột (nếu chỉ phóng to biểu đồ sau cải tiến thì hiệu quả trông nhỏ đi) → phương án 3. Đường tỷ lệ tích lũy vẫn vẽ cho biểu đồ sau cải tiến. Hiệu quả được đánh giá bằng hạng mục đã xử lý và tổng số lỗi (hoặc tổn thất tiền), không phải bằng mục “khác”.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-103"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "次の文の空欄に入る語句の組合せとして正しいものはどれか。\n\n「特性要因図では、右端の“魚の頭”に（①）を書き、大骨・中骨・小骨に（②）を書く。大骨は、人・機械・材料・（③）の4Mで分けることが多い。」",
+      "choices": [
+        "① 要因　② 特性　③ 方法",
+        "① 特性　② 要因　③ 方法",
+        "① 特性　② 対策　③ 測定",
+        "① 原因　② 要因　③ 環境"
+      ],
+      "answer": 1,
+      "explanation": "頭に書くのは結果である特性（例：VSWR 規格外れ）、骨に書くのはそれに影響する要因。4M は Man（人）・Machine（機械）・Material（材料）・Method（方法）。特性要因図は原因を洗い出す図であり、対策を書く図ではない。「原因」は要因のうち特性に影響すると確かめられたもの。",
+      "explanation_vi": "Đề bài: Tổ hợp từ nào đúng để điền vào chỗ trống?\n\n“Trong biểu đồ nhân quả, ở ‘đầu cá’ bên phải ghi (①), trên xương lớn, xương vừa, xương nhỏ ghi (②). Xương lớn thường được chia theo 4M: người, máy, vật liệu, (③).” Giải thích: Ở đầu cá ghi đặc tính là kết quả (ví dụ: VSWR vượt tiêu chuẩn), trên các xương ghi yếu tố ảnh hưởng tới nó. 4M là Man (người), Machine (máy), Material (vật liệu), Method (phương pháp) → phương án 2. Biểu đồ nhân quả là để liệt kê nguyên nhân, không phải để ghi biện pháp. “Nguyên nhân” là những yếu tố đã được xác nhận là có ảnh hưởng tới đặc tính.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-104"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "ケーブル長 n＝50 本の度数表は次のとおりである（区間の幅 h＝0.5 mm）。\n- 中心値（mm）：19.0、19.5、20.0、20.5、21.0\n- 度数：3、10、20、12、5\nu ＝ (x − 20.0) ÷ 0.5 と変換して計算するとき、平均 x̄ と標準偏差 s の組合せとして最も近いものはどれか。",
+      "choices": [
+        "x̄＝20.06 mm、s＝0.27 mm",
+        "x̄＝20.06 mm、s＝0.52 mm",
+        "x̄＝20.12 mm、s＝0.52 mm",
+        "x̄＝20.06 mm、s＝1.04 mm"
+      ],
+      "answer": 1,
+      "explanation": "u＝−2,−1,0,1,2。Σfu＝−6−10＋0＋12＋10＝6、Σfu²＝12＋10＋0＋12＋20＝54。\n> x̄＝20.0＋0.5×6÷50＝20.06\n> S＝0.5²×(54−6²÷50)＝0.25×53.28＝13.32、V＝13.32÷49≒0.272、s≒0.52\n0.27 は V（√を忘れた）、20.12 は h を掛け忘れた平均、1.04 は u のままの標準偏差（h を掛け忘れ）。",
+      "explanation_vi": "Đề bài: Bảng tần số chiều dài của n = 50 sợi cáp như sau (độ rộng khoảng h = 0.5 mm).\n- Giá trị tâm (mm): 19.0, 19.5, 20.0, 20.5, 21.0\n- Tần số: 3, 10, 20, 12, 5\nKhi đổi biến u = (x − 20.0) ÷ 0.5 để tính, tổ hợp trung bình x̄ và độ lệch chuẩn s gần đúng nhất là gì? Giải thích: u = −2, −1, 0, 1, 2. Σfu = −6 − 10 + 0 + 12 + 10 = 6, Σfu² = 12 + 10 + 0 + 12 + 20 = 54.\n> x̄ = 20.0 + 0.5 × 6 ÷ 50 = 20.06\n> S = 0.5² × (54 − 6² ÷ 50) = 0.25 × 53.28 = 13.32, V = 13.32 ÷ 49 ≈ 0.272, s ≈ 0.52\nĐáp án là phương án 2. 0.27 là V (quên lấy căn), 20.12 là trung bình quên nhân h, 1.04 là độ lệch chuẩn vẫn còn ở đơn vị u (quên nhân h).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-105"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "度数表から平均・標準偏差を求める方法に関する記述として、誤っているものはどれか。",
+      "choices": [
+        "各区間のデータは、その区間の中心値に等しいと見なして計算する。",
+        "u ＝ (中心値 − x₀) ÷ h と変換すると、u は整数になり計算が簡単になる。",
+        "度数表から求めた平均・標準偏差は、生データから求めた値の近似値である。",
+        "u から元に戻すとき、平方和 S には区間の幅 h を1回だけ掛ければよい。"
+      ],
+      "answer": 3,
+      "explanation": "S は偏差の2乗の和なので h² を掛ける（S＝h²×{Σfu²−(Σfu)²/n}）。h を1回掛けるのは平均（の偏差部分）と標準偏差 s。ウ「近似値」を誤りと思う人がいるが、中心値で代表させているので近似になるのが正しい。",
+      "explanation_vi": "Đề bài: Phát biểu nào SAI về cách tính trung bình và độ lệch chuẩn từ bảng tần số? Giải thích: S là tổng bình phương độ lệch nên phải nhân h² (S = h² × {Σfu² − (Σfu)²/n}) → phương án 4 sai. Nhân h một lần là cho trung bình (phần độ lệch) và cho độ lệch chuẩn s. Có người nghĩ phương án 3 (“giá trị xấp xỉ”) là sai, nhưng vì dùng giá trị tâm để đại diện cho cả khoảng nên kết quả là xấp xỉ — phát biểu này đúng.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-106"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "受入検査で、あるインダクタのインダクタンス（規格 9.0〜11.0 µH）を 100 個測り、ヒストグラムを描いた。一般型で、x̄＝10.6 µH、s＝0.10 µH、規格外れはなかった。この結果の読み取りとして最も適切なものはどれか。",
+      "choices": [
+        "ばらつきは規格の幅に比べて小さいが、平均が規格の上限側に寄っているので、平均を規格の中心に近づける検討が必要である。",
+        "規格外れがないので、問題は何もない。",
+        "ばらつきが規格の幅に対して大きすぎるので、ばらつきの低減が最優先である。",
+        "二山型なので層別が必要である。"
+      ],
+      "answer": 0,
+      "explanation": "規格の中心は 10.0、x̄＝10.6 で上限側に 0.6 寄っている。x̄ ± 3s ＝ 10.3〜10.9 で規格幅 2.0 に対しばらつき幅 0.6 は小さい → 課題は平均の位置。「規格外れなし＝問題なし」は、平均が少しずれると上限を超えるリスクを見落とす。二山型とは書かれていない。",
+      "explanation_vi": "Đề bài: Trong kiểm tra đầu vào, đo điện cảm của một loại cuộn cảm (tiêu chuẩn 9.0 đến 11.0 µH) cho 100 cái và vẽ histogram. Hình dạng thông thường, x̄ = 10.6 µH, s = 0.10 µH, không có cái nào ngoài tiêu chuẩn. Cách đọc kết quả nào phù hợp nhất? Giải thích: Tâm tiêu chuẩn là 10.0, x̄ = 10.6 lệch về phía giới hạn trên 0.6. x̄ ± 3s = 10.3 đến 10.9, độ rộng phân tán 0.6 nhỏ so với độ rộng tiêu chuẩn 2.0 → vấn đề là vị trí trung bình (phương án 1). “Không có hàng ngoài tiêu chuẩn = không có vấn đề” là bỏ sót rủi ro: chỉ cần trung bình lệch thêm một chút là vượt giới hạn trên. Đề bài không nói là dạng hai đỉnh.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-107"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "散布図に関する記述として、誤っているものはどれか。",
+      "choices": [
+        "散布図は、対になった2つの特性の関係を見るために、一方を横軸、他方を縦軸にとって打点した図である。",
+        "散布図に他から大きく離れた点があるときは、まず記録ミスや異常の有無を調べる。",
+        "相関係数が 0 に近ければ、2つの特性の間には何の関係もないと判断してよい。",
+        "散布図で強い相関が見られても、それだけで因果関係があるとは言えない。"
+      ],
+      "answer": 2,
+      "explanation": "相関係数は直線的な関係の強さ。U字や山型の曲線的な関係、層の混在があると、関係があっても 0 に近くなる → 「何の関係もない」とは言えない。エ（相関≠因果）は正しい記述で、ここを選ぶ人が多い。",
+      "explanation_vi": "Đề bài: Phát biểu nào SAI về biểu đồ tán xạ? Giải thích: Hệ số tương quan đo độ mạnh của quan hệ tuyến tính. Khi có quan hệ dạng cong (chữ U, hình núi) hoặc có trộn lẫn tầng, dù có quan hệ thì hệ số vẫn có thể gần 0 → không thể nói “không có quan hệ gì” (phương án 3 sai). Phương án 4 (tương quan không đồng nghĩa với nhân quả) là phát biểu đúng, nhiều người chọn nhầm.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-108"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "同軸ケーブルのコネクタ圧着工程で、「圧着高さ」と「端子の引張強さ」に関係があるかを、30 本の製品の測定値で調べたい。最も適した手法はどれか。",
+      "choices": [
+        "ヒストグラム",
+        "散布図",
+        "パレート図",
+        "特性要因図"
+      ],
+      "answer": 1,
+      "explanation": "サインは「2つの計量値（圧着高さ・引張強さ）」「関係があるか」→ 散布図。ヒストグラムは1つの特性の分布、パレート図は項目別の件数、特性要因図は要因の洗い出し（データによる確認ではない）。",
+      "explanation_vi": "Đề bài: Ở công đoạn bấm (crimp) connector cho cáp đồng trục, muốn dùng số đo của 30 sản phẩm để xem “chiều cao bấm” và “lực kéo của đầu cốt” có quan hệ với nhau không. Công cụ phù hợp nhất là gì? Giải thích: Dấu hiệu là “2 giá trị đo (chiều cao bấm, lực kéo)” và “có quan hệ không” → biểu đồ tán xạ (phương án 2). Histogram xem phân bố của 1 đặc tính, Pareto xem số lượng theo hạng mục, biểu đồ nhân quả liệt kê yếu tố (không phải xác nhận bằng dữ liệu).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-109"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "ある部品の熱処理温度 x と硬さ y の散布図を描いたところ、全体としてはっきりした右上がりの傾向があり、1点だけが他の点から大きく下に離れていた。対応として最も適切なものはどれか。",
+      "choices": [
+        "離れた点は誤差なので、理由を調べずに削除して相関を求める。",
+        "離れた点があるので、x と y には相関がないと判断する。",
+        "右上がりの傾向があるので、温度を上げるほど硬さは必ず上がると結論づける。",
+        "離れた点について、記録ミス・測定ミス・工程の異常などの原因を調べる。"
+      ],
+      "answer": 3,
+      "explanation": "外れ値は異常の手がかり → まず原因調査（理由がわかれば除外・修正を検討）。理由なく消すのは誤り。1点の外れで全体の傾向は否定されない。相関があっても「必ず」「因果」とは言えず、範囲外の温度での挙動もわからない。",
+      "explanation_vi": "Đề bài: Vẽ biểu đồ tán xạ giữa nhiệt độ nhiệt luyện x và độ cứng y của một linh kiện: nhìn chung có xu hướng dốc lên rõ ràng, chỉ có 1 điểm nằm cách xa hẳn phía dưới các điểm khác. Cách xử lý phù hợp nhất là gì? Giải thích: Điểm ngoại lai là manh mối của bất thường → trước hết điều tra nguyên nhân (biết được lý do rồi mới xem xét loại bỏ hay sửa) → phương án 4. Xóa mà không có lý do là sai. Một điểm ngoại lai không phủ nhận xu hướng chung. Có tương quan cũng không thể kết luận “chắc chắn” hay “nhân quả”, và cũng không biết được gì về nhiệt độ ngoài phạm vi đã đo.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-110"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "次の文の空欄に入る語句の組合せとして正しいものはどれか。\n\n「散布図で、x が増えると y も増える傾向があるとき（①）があるといい、x が増えると y が減る傾向があるとき（②）があるという。散布図を描くときは、原因と考えられる特性を（③）にとるのが一般的である。」",
+      "choices": [
+        "① 正の相関　② 負の相関　③ 横軸",
+        "① 負の相関　② 正の相関　③ 横軸",
+        "① 正の相関　② 負の相関　③ 縦軸",
+        "① 正の相関　② 無相関　③ 縦軸"
+      ],
+      "answer": 0,
+      "explanation": "右上がり＝正の相関、右下がり＝負の相関。要因（原因側）を横軸 x、特性（結果側）を縦軸 y にとる。③を縦軸と取り違えやすい。",
+      "explanation_vi": "Đề bài: Tổ hợp từ nào đúng để điền vào chỗ trống?\n\n“Trên biểu đồ tán xạ, khi x tăng thì y cũng có xu hướng tăng, ta nói có (①); khi x tăng thì y có xu hướng giảm, ta nói có (②). Khi vẽ biểu đồ tán xạ, thông thường đặc tính được coi là nguyên nhân sẽ đặt ở (③).” Giải thích: Dốc lên = tương quan dương, dốc xuống = tương quan âm. Yếu tố (phía nguyên nhân) đặt ở trục hoành x, đặc tính (phía kết quả) ở trục tung y → phương án 1. Dễ nhầm ③ thành trục tung.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-111"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "次の①〜③の目的に最も適したグラフの組合せはどれか。\n① 不適合の内訳（構成比）が、3年間でどう変わったかを並べて比べたい。\n② 月ごとの客先クレーム件数の推移を見たい。\n③ 5つの評価項目（品質・コスト・納期・安全・環境）について、2つのサプライヤーのバランスを比べたい。",
+      "choices": [
+        "① 円グラフ　② 棒グラフ　③ 帯グラフ",
+        "① 折れ線グラフ　② 円グラフ　③ レーダーチャート",
+        "① 帯グラフ　② 折れ線グラフ　③ レーダーチャート",
+        "① 帯グラフ　② レーダーチャート　③ 折れ線グラフ"
+      ],
+      "answer": 2,
+      "explanation": "構成比を複数の時点で並べて比べる→帯グラフ（円グラフは1時点の内訳向き）。推移→折れ線グラフ。複数項目のバランス→レーダーチャート。①を円グラフにする誤りが多い。",
+      "explanation_vi": "Đề bài: Tổ hợp đồ thị nào phù hợp nhất với các mục đích ① đến ③?\n① Muốn đặt cạnh nhau để so sánh cơ cấu (tỷ lệ thành phần) lỗi đã thay đổi thế nào qua 3 năm.\n② Muốn xem diễn biến số khiếu nại của khách hàng theo từng tháng.\n③ Muốn so sánh sự cân bằng của 2 nhà cung cấp theo 5 tiêu chí đánh giá (chất lượng, chi phí, giao hàng, an toàn, môi trường). Giải thích: So sánh cơ cấu giữa nhiều thời điểm → biểu đồ dải (biểu đồ tròn phù hợp cho cơ cấu ở 1 thời điểm). Diễn biến → biểu đồ đường. Cân bằng nhiều tiêu chí → biểu đồ radar. Vậy là phương án 3. Hay nhầm ① thành biểu đồ tròn.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-112"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "Zグラフを作成している。先月の移動合計（直近12か月の合計）は 1,250 件であった。今月の値は 110 件、前年の同じ月の値は 95 件である。今月の移動合計はいくらか。",
+      "choices": [
+        "1,360 件",
+        "1,265 件",
+        "1,235 件",
+        "1,155 件"
+      ],
+      "answer": 1,
+      "explanation": "移動合計は直近12か月の窓：新しい月が入り、前年同月が出る。\n> 1,250 ＋ 110 − 95 ＝ 1,265\n1,360 は前年同月を引き忘れ、1,235 は足し引きを逆にした値、1,155 は今月を足し忘れた値。",
+      "explanation_vi": "Đề bài: Đang lập biểu đồ Z. Tổng di động tháng trước (tổng 12 tháng gần nhất) là 1250 lỗi. Giá trị tháng này là 110, giá trị cùng tháng năm trước là 95. Tổng di động tháng này là bao nhiêu? Giải thích: Tổng di động là cửa sổ 12 tháng gần nhất: tháng mới được thêm vào, tháng cùng kỳ năm trước bị bỏ ra.\n> 1250 + 110 − 95 = 1265\nĐáp án là phương án 2. 1360 là quên trừ cùng tháng năm trước, 1235 là đảo ngược phép cộng và trừ, 1155 là quên cộng tháng này.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-113"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "グラフに関する記述として、誤っているものはどれか。",
+      "choices": [
+        "棒グラフは、棒の長さで量の大小を比べるので、縦軸は原則として 0 から始める。",
+        "折れ線グラフは、時間的な推移や傾向を見るのに適している。",
+        "ガントチャートは、日程の計画と実績を比べて進捗を管理するのに用いる。",
+        "円グラフは、月ごとの不適合件数の推移を見るのに最も適している。"
+      ],
+      "answer": 3,
+      "explanation": "円グラフは1時点の内訳（構成比）を見るもの。推移は折れ線グラフ。アの「縦軸は 0 から」は正しい（途中から始めると差が大げさに見える）。",
+      "explanation_vi": "Đề bài: Phát biểu nào SAI về đồ thị? Giải thích: Biểu đồ tròn dùng để xem cơ cấu (tỷ lệ thành phần) ở 1 thời điểm; diễn biến theo thời gian thì dùng biểu đồ đường → phương án 4 sai. Phương án 1 (“trục tung bắt đầu từ 0”) là đúng: nếu bắt đầu giữa chừng, chênh lệch trông lớn hơn thực tế.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-114"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "層別に関する記述として、誤っているものはどれか。",
+      "choices": [
+        "層別はデータを集めたあとで考えればよいので、データを記録するときに設備や作業者を書き残す必要はない。",
+        "層別では、層の内部はできるだけ均一に、層の間の違いがはっきり出るように分けるとよい。",
+        "ヒストグラムが二山型になったときは、サプライヤーや設備などで層別して描き直すとよい。",
+        "層別の因子として、人・機械・材料・方法（4M）のほか、測定・時間・環境もよく使われる。"
+      ],
+      "answer": 0,
+      "explanation": "層別の情報（設備・作業者・ロットなど）を記録していなければあとから分けられない → データを取る段階で記録欄を作る（チェックシートの設計）。イ〜エは正しい。",
+      "explanation_vi": "Đề bài: Phát biểu nào SAI về phân tầng? Giải thích: Nếu không ghi lại thông tin phân tầng (thiết bị, người làm, lô...) thì sau này không thể chia được → phải tạo sẵn ô ghi ngay từ khâu lấy dữ liệu (thiết kế phiếu kiểm tra). Phương án 1 sai; phương án 2 đến 4 đúng.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-115"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "2社のケーブル長（各5本、mm）は次のとおりであった。\n- A社：10.1、10.3、10.2、10.4、10.0\n- B社：10.6、10.5、10.7、10.4、10.8\n10本全体の平方和 S_T と、層内の平方和（A社の平方和 S_A と B社の平方和 S_B の和）の組合せとして正しいものはどれか。",
+      "choices": [
+        "S_T＝0.60、層内＝0.40",
+        "S_T＝0.20、層内＝0.60",
+        "S_T＝0.60、層内＝0.20",
+        "S_T＝0.40、層内＝0.20"
+      ],
+      "answer": 2,
+      "explanation": "x̄_A＝10.2、S_A＝0.01＋0.01＋0＋0.04＋0.04＝0.10。x̄_B＝10.6、S_B＝0.10 → 層内＝0.20。全体 x̄＝10.4、S_T＝0.60。差の 0.40 が層間（5×0.2²＋5×0.2²）。\n> S_T ＝ 層内 0.20 ＋ 層間 0.40 ＝ 0.60\n0.40 を層内と取り違えやすい：0.40 は平均の違いから来る部分。",
+      "explanation_vi": "Đề bài: Chiều dài cáp của 2 công ty (mỗi công ty 5 sợi, mm) như sau.\n- Công ty A: 10.1, 10.3, 10.2, 10.4, 10.0\n- Công ty B: 10.6, 10.5, 10.7, 10.4, 10.8\nTổ hợp nào đúng cho tổng bình phương độ lệch của toàn bộ 10 sợi S_T và tổng bình phương độ lệch trong tầng (tổng của S_A của công ty A và S_B của công ty B)? Giải thích: x̄_A = 10.2, S_A = 0.01 + 0.01 + 0 + 0.04 + 0.04 = 0.10. x̄_B = 10.6, S_B = 0.10 → trong tầng = 0.20. Trung bình chung x̄ = 10.4, S_T = 0.60. Phần chênh 0.40 là giữa các tầng (5 × 0.2² + 5 × 0.2²).\n> S_T = trong tầng 0.20 + giữa tầng 0.40 = 0.60\nĐáp án là phương án 3. Dễ nhầm 0.40 là trong tầng: 0.40 là phần đến từ chênh lệch trung bình giữa 2 công ty.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-116"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "2社（A社・B社）のインダクタについて、巻線抵抗 x とインダクタンス y の散布図を描いた。2社をまとめて打点すると相関はほとんど見られなかったが、会社別に色分けすると、それぞれの会社の中ではどちらもはっきりした正の相関があった。最も適切な解釈はどれか。",
+      "choices": [
+        "全体で相関がないので、x と y には関係がない。",
+        "2社で x や y の水準が違うため、まとめると層の違いが相関を打ち消して見えなくなっていた。層別した見方を優先して検討する。",
+        "層別するとデータ数が減るので、層別した散布図は信頼できない。",
+        "正の相関があるので、巻線抵抗を上げればインダクタンスは必ず上がる。"
+      ],
+      "answer": 1,
+      "explanation": "層の水準の違いが混ざると、層内の関係が隠れる（逆に、層間の違いで見かけの相関が出ることもある）→ 層別散布図で判断する。データ数が減ることは「信頼できない」理由にならない。相関から「必ず」の因果は言えない。",
+      "explanation_vi": "Đề bài: Với cuộn cảm của 2 công ty A và B, vẽ biểu đồ tán xạ giữa điện trở dây quấn x và điện cảm y. Khi chấm chung cả 2 công ty thì hầu như không thấy tương quan, nhưng khi tô màu riêng theo công ty thì trong mỗi công ty đều có tương quan dương rõ ràng. Cách hiểu phù hợp nhất là gì? Giải thích: Khi trộn các tầng có mức khác nhau, chênh lệch giữa các tầng có thể che mất quan hệ bên trong tầng (ngược lại, chênh lệch giữa tầng cũng có thể tạo ra tương quan giả) → đánh giá bằng biểu đồ tán xạ phân tầng (phương án 2). Số dữ liệu giảm khi phân tầng không phải là lý do để nói “không tin cậy”. Từ tương quan không thể kết luận quan hệ nhân quả “chắc chắn”.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-117"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "アンテナ組立工場では、A社製インダクタをライン1で、B社製インダクタをライン2で組み立てている（両社の部品が他方のラインで使われることはない）。この3か月、ライン2の組立後の特性不適合率がライン1の約2倍であった。品質担当者は「B社のインダクタが原因である」と報告しようとしている。この判断に関する記述として最も適切なものはどれか。",
+      "choices": [
+        "ライン別に層別して差が出たので、B社のインダクタが原因であると結論づけてよい。",
+        "不適合率が2倍なので、ライン2の作業者の教育を最優先で行えばよい。",
+        "サプライヤー別のパレート図を描けば、原因がサプライヤーかラインかを区別できる。",
+        "サプライヤーとラインが常に同時に変わっているので、どちらの影響か区別できない。A社品をライン2で、B社品をライン1でも流してデータを取るなどの計画が必要である。"
+      ],
+      "answer": 3,
+      "explanation": "サプライヤーとラインが交絡している：ライン2＝B社品なので、差が「B社品」と「ライン2（設備・作業者・方法）」のどちらによるか、今のデータでは分けられない。サプライヤー別に描いてもライン別と同じ分け方になるだけ。組合せを入れ替えたデータが必要。",
+      "explanation_vi": "Đề bài: Tại một nhà máy lắp ráp anten, cuộn cảm của công ty A được lắp ở line 1, cuộn cảm của công ty B được lắp ở line 2 (linh kiện của mỗi công ty không bao giờ dùng ở line kia). Trong 3 tháng gần đây, tỷ lệ lỗi đặc tính sau lắp ráp của line 2 cao gấp khoảng 2 lần line 1. Người phụ trách chất lượng định báo cáo rằng “nguyên nhân là cuộn cảm của công ty B”. Phát biểu nào phù hợp nhất về nhận định này? Giải thích: Nhà cung cấp và line đang bị nhiễu lẫn (confounding): line 2 = hàng công ty B, nên với dữ liệu hiện có không thể tách được chênh lệch là do “hàng công ty B” hay do “line 2 (thiết bị, người làm, phương pháp)” → phương án 4. Vẽ Pareto theo nhà cung cấp thì cũng chỉ chia giống hệt như chia theo line. Cần có dữ liệu với tổ hợp được đổi chéo.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-118"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "次の文の空欄に入る語句の組合せとして正しいものはどれか。\n\n「層別とは、データを、その特性に影響を与えていると考えられる（①）の共通点や特徴によって、いくつかの（②）に分けることである。分けるときは、（②）の内部のばらつきができるだけ（③）なるようにするとよい。」",
+      "choices": [
+        "① 結果　② 区間　③ 大きく",
+        "① 要因　② グループ（層）　③ 小さく",
+        "① 要因　② 区間　③ 大きく",
+        "① 特性　② グループ（層）　③ 大きく"
+      ],
+      "answer": 1,
+      "explanation": "層別は要因に着目してデータを層（グループ）に分ける。層内は均一に（ばらつき小さく）、層間の違いをはっきりさせる。「区間」はヒストグラムの用語で、層別とは別。",
+      "explanation_vi": "Đề bài: Tổ hợp từ nào đúng để điền vào chỗ trống?\n\n“Phân tầng là việc chia dữ liệu thành một số (②) theo điểm chung hay đặc điểm của (①) được cho là ảnh hưởng tới đặc tính. Khi chia, nên chia sao cho độ phân tán bên trong mỗi (②) càng (③) càng tốt.” Giải thích: Phân tầng là chú ý vào yếu tố để chia dữ liệu thành các tầng (nhóm). Bên trong tầng đồng đều (độ phân tán nhỏ), chênh lệch giữa các tầng rõ ràng → phương án 2. “Khoảng” là thuật ngữ của histogram, khác với phân tầng.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-119"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "8月から、あるアンテナ製品の VSWR 不適合が増えた。調べると、7月末にケーブルの購入先を一部変更しており、8月以降は旧購入先と新購入先のケーブルが混在している。設備・作業者・作業手順には変更がない。最初に試みる層別の因子として最も適切なものはどれか。",
+      "choices": [
+        "ケーブルの購入先（材料）",
+        "作業者",
+        "組立設備の号機",
+        "曜日"
+      ],
+      "answer": 0,
+      "explanation": "層別の切り口は問題文の変化点から探す：変わったのはケーブルの購入先（4M の材料）だけで、時期も不適合増加と一致する。作業者・設備は「変更がない」と書かれている。",
+      "explanation_vi": "Đề bài: Từ tháng 8, lỗi VSWR của một sản phẩm anten tăng lên. Điều tra thì thấy cuối tháng 7 đã đổi một phần nơi mua cáp, và từ tháng 8 cáp của nơi mua cũ và nơi mua mới được dùng lẫn. Thiết bị, người làm, quy trình làm việc không thay đổi. Yếu tố phân tầng nên thử đầu tiên là gì? Giải thích: Tìm cách chia tầng từ điểm thay đổi trong đề bài: thứ duy nhất thay đổi là nơi mua cáp (vật liệu trong 4M), và thời điểm cũng trùng với lúc lỗi tăng → phương án 1. Người làm và thiết bị được ghi rõ là “không thay đổi”.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-120"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "ケーブル長を1本ずつ測りながら、あらかじめ区間を印刷した用紙の該当する区間に「／」を記入していき、100本を測り終えた時点で分布の形がわかるようにしたい。最も適したものはどれか。",
+      "choices": [
+        "点検用チェックシート",
+        "不適合位置調査用チェックシート",
+        "パレート図",
+        "度数分布調査用チェックシート"
+      ],
+      "answer": 3,
+      "explanation": "測りながら区間に記入 → 記録の段階の様式 → 度数分布調査用チェックシート（終われば度数表・ヒストグラムの形がそろう）。パレート図は項目別件数の解析手法、位置調査用は発生場所、点検用は点検漏れ防止。",
+      "explanation_vi": "Đề bài: Muốn đo chiều dài từng sợi cáp và gạch “/” vào khoảng tương ứng trên tờ giấy đã in sẵn các khoảng, để khi đo xong 100 sợi là biết ngay hình dạng phân bố. Công cụ nào phù hợp nhất? Giải thích: Vừa đo vừa ghi vào khoảng → là mẫu ở giai đoạn ghi chép → phiếu kiểm tra điều tra phân bố tần số (đo xong là có ngay bảng tần số và hình dạng histogram) → phương án 4. Biểu đồ Pareto là phương pháp phân tích số lượng theo hạng mục, phiếu điều tra vị trí dùng cho nơi phát sinh, phiếu kiểm điểm dùng để chống bỏ sót khi kiểm tra.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-121"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "パレート図に関する記述として、正しいものはどれか。",
+      "choices": [
+        "「その他」の件数が最も大きいときは、左端に置く。",
+        "パレート図の横軸は計量値の区間である。",
+        "改善前後のパレート図を比べるときは、縦軸の目盛と項目の並び（色分け）をそろえる。",
+        "改善の効果は、改善後の図で第1位の項目が変わったかどうかだけで判断する。"
+      ],
+      "answer": 2,
+      "explanation": "前後比較は目盛と項目の並びをそろえて、件数（棒の高さ）の変化で見る。「その他」はいつも右端。横軸は項目（計量値の区間はヒストグラム）。第1位が変わっても総数が減っていなければ効果とは言えない。",
+      "explanation_vi": "Đề bài: Phát biểu nào ĐÚNG về biểu đồ Pareto? Giải thích: So sánh trước và sau phải thống nhất thang đo và thứ tự hạng mục (màu), rồi xem sự thay đổi số lượng (chiều cao cột) → phương án 3. Mục “khác” luôn đặt ở bên phải cùng. Trục hoành là hạng mục (khoảng giá trị đo là của histogram). Dù hạng mục đứng đầu thay đổi, nếu tổng số không giảm thì chưa thể nói là có hiệu quả.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-122"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "次の文の空欄に入る語句の組合せとして正しいものはどれか。\n\n「特性要因図では、問題となっている（①）を右端に書き、それに影響を与えると思われる（②）を大骨・中骨・小骨と系統的に整理する。（②）を漏れなく出すためには、関係者による（③）が有効である。」",
+      "choices": [
+        "① 要因　② 特性　③ ブレーンストーミング",
+        "① 特性　② 要因　③ ブレーンストーミング",
+        "① 特性　② 原因　③ パレート分析",
+        "① 原因　② 結果　③ 層別"
+      ],
+      "answer": 1,
+      "explanation": "右端（魚の頭）は結果である特性、骨は影響を与えると「思われる」要因（検証前なので原因ではない）。要因の洗い出しはブレーンストーミング。",
+      "explanation_vi": "Đề bài: Tổ hợp từ nào đúng để điền vào chỗ trống?\n\n“Trong biểu đồ nhân quả, (①) đang là vấn đề được ghi ở bên phải, còn các (②) được cho là ảnh hưởng tới nó được sắp xếp có hệ thống thành xương lớn, xương vừa, xương nhỏ. Để nêu ra (②) mà không bỏ sót, cách hiệu quả là (③) của những người liên quan.” Giải thích: Bên phải (đầu cá) là đặc tính — kết quả; trên xương là yếu tố “được cho là” ảnh hưởng (chưa kiểm chứng nên chưa phải nguyên nhân). Liệt kê yếu tố bằng brainstorming (động não) → phương án 2.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-123"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "ある部品の厚さを n ＝ 50 個測定した（測定単位 0.1 mm）。最大値 35.8 mm、最小値 32.3 mm である。区間の数を √n を目安に決めるとき、区間の幅と第1区間の下側境界値の組合せとして正しいものはどれか。",
+      "choices": [
+        "幅 0.5 mm、下側境界値 32.30 mm",
+        "幅 0.7 mm、下側境界値 32.25 mm",
+        "幅 0.5 mm、下側境界値 32.20 mm",
+        "幅 0.5 mm、下側境界値 32.25 mm"
+      ],
+      "answer": 3,
+      "explanation": "k≒√50≒7.07 → 7。h＝(35.8−32.3)÷7＝0.5（測定単位 0.1 の整数倍なのでそのまま）。下側境界値＝最小値−測定単位÷2＝32.3−0.05＝32.25。32.30 では最小値が境界に乗ってしまう。なお 32.25＋0.5×7＝35.75＜35.8 なので、最大値を含めるには区間は 8 つになる（√n は目安）。\n> 電卓：35.8 − 32.3 ＝ ÷ 7 ＝ → 0.5",
+      "explanation_vi": "Đề bài: Đo độ dày của n = 50 linh kiện (đơn vị đo 0.1 mm). Giá trị lớn nhất 35.8 mm, nhỏ nhất 32.3 mm. Khi chọn số khoảng theo mức tham khảo √n, tổ hợp nào đúng cho độ rộng khoảng và biên dưới của khoảng thứ nhất? Giải thích: k ≈ √50 ≈ 7.07 → 7. h = (35.8 − 32.3) ÷ 7 = 0.5 (đã là bội số nguyên của đơn vị đo 0.1 nên giữ nguyên). Biên dưới = giá trị nhỏ nhất − đơn vị đo ÷ 2 = 32.3 − 0.05 = 32.25 → phương án 4. Nếu lấy 32.30 thì giá trị nhỏ nhất rơi đúng lên biên. Lưu ý 32.25 + 0.5 × 7 = 35.75 < 35.8, nên để chứa cả giá trị lớn nhất cần 8 khoảng (√n chỉ là mức tham khảo).\n> Máy tính: 35.8 − 32.3 = ÷ 7 = → 0.5",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-124"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "測定単位 0.01 mm のデータで、区間の幅を 0.025 mm としてヒストグラムを描いたところ、柱の高さが1つおきに高くなったり低くなったりした。最も考えられる原因と処置はどれか。",
+      "choices": [
+        "2つの分布が混在している → 層別して描き直す。",
+        "区間の幅が測定単位の整数倍でない → 幅を 0.02 または 0.03 にして描き直す。",
+        "規格外れを選別している → 選別をやめる。",
+        "工程に異常がある → 工程を止めて調査する。"
+      ],
+      "answer": 1,
+      "explanation": "幅 0.025 は測定単位 0.01 の整数倍でないため、区間によって入りうる測定値の数が 2 個・3 個と変わり、歯抜け型になる。工程の問題ではなく描き方の問題。アは二山型、ウは絶壁型の原因。",
+      "explanation_vi": "Đề bài: Với dữ liệu có đơn vị đo 0.01 mm, vẽ histogram với độ rộng khoảng 0.025 mm thì chiều cao các cột cứ cách một cột lại cao rồi thấp. Nguyên nhân và cách xử lý có khả năng nhất là gì? Giải thích: Độ rộng 0.025 không phải bội số nguyên của đơn vị đo 0.01, nên số giá trị đo có thể rơi vào mỗi khoảng thay đổi giữa 2 và 3 → thành dạng răng lược → phương án 2. Đây là vấn đề của cách vẽ, không phải vấn đề của công đoạn. Phương án 1 là nguyên nhân của dạng hai đỉnh, phương án 3 là của dạng vách đứng.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-125"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "ヒストグラムに関する記述として、誤っているものはどれか。",
+      "choices": [
+        "分布の形や、規格に対する位置とばらつきを見るのに適している。",
+        "二山型のときは、層別して描き直すとよい。",
+        "打点の順序から、工程が時間とともにどう変化したかを読み取ることができる。",
+        "横軸は計量値の区間で、縦軸は度数である。"
+      ],
+      "answer": 2,
+      "explanation": "ヒストグラムは度数をまとめるので時間の順序の情報を失う。時間的な変化や安定状態は管理図で見る（ウが誤り）。",
+      "explanation_vi": "Đề bài: Phát biểu nào SAI về histogram? Giải thích: Histogram gộp tần số theo khoảng nên mất thông tin về thứ tự thời gian. Thay đổi theo thời gian và trạng thái ổn định phải xem bằng biểu đồ kiểm soát → phương án 3 sai.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-126"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "パレート図に関する記述として、誤っているものはどれか。",
+      "choices": [
+        "項目は件数や損失金額の大きい順に左から並べる。",
+        "「その他」は件数が大きくても右端に置く。",
+        "累積比率の折れ線から、上位いくつかの項目が全体に占める割合がわかる。",
+        "改善の前後を比べるときは、見やすいように前と後で縦軸の目盛を変えるとよい。"
+      ],
+      "answer": 3,
+      "explanation": "改善前後の比較では、縦軸の目盛と項目の並び（色）をそろえる。目盛を変えると効果を見誤る（エが誤り）。",
+      "explanation_vi": "Đề bài: Phát biểu nào SAI về biểu đồ Pareto? Giải thích: Khi so sánh trước và sau cải tiến phải thống nhất thang đo trục tung và thứ tự hạng mục (màu). Đổi thang đo sẽ đánh giá sai hiệu quả → phương án 4 sai.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-127"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "受入検査で見つかったプリント基板の不適合を減らしたい。項目別の件数は「はんだブリッジ」が最も多いが、1件当たりの手直し費用は「部品欠品」が非常に高い。目的が損失の削減であるとき、パレート図の縦軸として最も適切なものはどれか。",
+      "choices": [
+        "不適合の件数",
+        "損失金額（件数 × 1件当たりの費用）",
+        "不適合の発生日",
+        "項目の名前の五十音順"
+      ],
+      "answer": 1,
+      "explanation": "目的が損失の削減なら、件数ではなく損失金額で並べると、効果の大きい項目が先頭に来る。件数だけでは費用の高い項目を見落とす。",
+      "explanation_vi": "Đề bài: Muốn giảm lỗi của bảng mạch in phát hiện ở kiểm tra đầu vào. Theo số lượng thì “cầu hàn (hàn dính chân)” nhiều nhất, nhưng chi phí sửa cho mỗi lỗi thì “thiếu linh kiện” rất cao. Khi mục tiêu là giảm tổn thất, trục tung của biểu đồ Pareto nên là gì? Giải thích: Nếu mục tiêu là giảm tổn thất thì sắp xếp theo tiền tổn thất thay vì số lượng; hạng mục mang lại hiệu quả lớn sẽ đứng đầu → phương án 2. Chỉ dựa vào số lượng sẽ bỏ sót hạng mục có chi phí cao.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-128"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "特性要因図に関する記述として、誤っているものはどれか。",
+      "choices": [
+        "右端に問題となる特性を書く。",
+        "大骨には 4M（人・機械・材料・方法）などを使うことが多い。",
+        "図に書かれた要因は、データで検証された原因である。",
+        "要因を出すときはブレーンストーミングがよく使われる。"
+      ],
+      "answer": 2,
+      "explanation": "特性要因図の要因は、影響を及ぼすと「思われる」ものを系統的に整理したもので、まだ検証されていない。重要と思われる要因は散布図や層別などのデータで確かめる（ウが誤り）。",
+      "explanation_vi": "Đề bài: Phát biểu nào SAI về biểu đồ nhân quả? Giải thích: Yếu tố trong biểu đồ nhân quả là những thứ “được cho là” ảnh hưởng, được sắp xếp có hệ thống, và chưa được kiểm chứng. Yếu tố được cho là quan trọng cần xác nhận bằng dữ liệu như biểu đồ tán xạ, phân tầng → phương án 3 sai.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-129"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "筐体の塗装の傷が、筐体のどの面・どの位置に多く発生しているかを調べたい。最も適したものはどれか。",
+      "choices": [
+        "度数分布調査用チェックシート",
+        "不適合位置調査用チェックシート（製品の略図に記入）",
+        "パレート図",
+        "点検用チェックシート"
+      ],
+      "answer": 1,
+      "explanation": "発生位置を調べるには、製品の略図に印をつける不適合位置調査用チェックシートを使う。度数分布調査用は計量値の分布、点検用は確認項目の漏れ防止が目的。",
+      "explanation_vi": "Đề bài: Muốn điều tra xem vết xước sơn trên vỏ máy (housing) xảy ra nhiều ở mặt nào, vị trí nào của vỏ. Công cụ nào phù hợp nhất? Giải thích: Để điều tra vị trí phát sinh, dùng phiếu kiểm tra điều tra vị trí lỗi, đánh dấu lên hình vẽ đơn giản của sản phẩm → phương án 2. Phiếu điều tra phân bố tần số dùng cho phân bố dữ liệu đo, phiếu kiểm điểm dùng để chống bỏ sót hạng mục cần xác nhận.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-130"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "散布図に関する記述として、誤っているものはどれか。",
+      "choices": [
+        "対になった2つの計量値の関係を見るのに使う。",
+        "他の点から大きく離れた点は、原因を調べずにただちに除いて相関を判断する。",
+        "2つの層が混ざっていると、相関を見誤ることがある。",
+        "相関があっても、因果関係があるとは限らない。"
+      ],
+      "answer": 1,
+      "explanation": "外れ値はまず原因を調べる。理由なく除くと大事な情報（測定ミスや異常の兆候）を失う（イが誤り）。",
+      "explanation_vi": "Đề bài: Phát biểu nào SAI về biểu đồ tán xạ? Giải thích: Với điểm ngoại lai, trước hết phải điều tra nguyên nhân. Loại bỏ không có lý do sẽ làm mất thông tin quan trọng (sai sót đo, dấu hiệu bất thường) → phương án 2 sai.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-131"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "不適合の項目別の内訳（構成比）が、3年間でどのように変わったかを1つの図で比べたい。最も適したグラフはどれか。",
+      "choices": [
+        "折れ線グラフ",
+        "レーダーチャート",
+        "帯グラフ",
+        "ガントチャート"
+      ],
+      "answer": 2,
+      "explanation": "内訳を複数の時点で並べて比べるには帯グラフ。1時点の内訳なら円グラフ、推移は折れ線、複数項目のバランスはレーダーチャート、日程はガントチャート。",
+      "explanation_vi": "Đề bài: Muốn so sánh trên 1 biểu đồ xem cơ cấu (tỷ lệ thành phần) lỗi theo hạng mục đã thay đổi thế nào qua 3 năm. Đồ thị nào phù hợp nhất? Giải thích: Để đặt cạnh nhau so sánh cơ cấu ở nhiều thời điểm thì dùng biểu đồ dải → phương án 3. Cơ cấu ở 1 thời điểm thì dùng biểu đồ tròn, diễn biến dùng biểu đồ đường, cân bằng nhiều tiêu chí dùng biểu đồ radar, tiến độ dùng biểu đồ Gantt.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-132"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "アンテナ組立工場で、10月から VSWR 不適合が増えた。調べると、10月から夜勤を新設し、夜勤では新しい作業者だけが新しく導入した圧着機だけを使っている。昼勤はベテラン作業者が従来の圧着機を使っている。直（昼・夜）別に層別すると夜勤の不適合が多かった。この状況についての判断として最も適切なものはどれか。",
+      "choices": [
+        "夜勤の作業者の技能が原因であると断定できる。",
+        "新しい圧着機が原因であると断定できる。",
+        "作業者と圧着機が交絡しているので、このデータだけではどちらの影響か区別できない。作業者と機械の組合せを変えてデータを取る必要がある。",
+        "層別の結果に差があるので、これ以上の調査は不要である。"
+      ],
+      "answer": 2,
+      "explanation": "作業者（新・ベテラン）と機械（新・従来）がいつも同時に変わっているので交絡している。層別しただけではどちらが原因か区別できない。新しい作業者が従来機を使う、ベテランが新機を使う、などの組合せでデータを取る（データの取り方を計画する）必要がある。",
+      "explanation_vi": "Đề bài: Ở nhà máy lắp ráp anten, từ tháng 10 lỗi VSWR tăng. Điều tra thì thấy từ tháng 10 có lập thêm ca đêm, và ở ca đêm chỉ có công nhân mới dùng chỉ máy bấm cos mới đưa vào. Ca ngày là công nhân lâu năm dùng máy bấm cos cũ. Phân tầng theo ca (ngày/đêm) thì ca đêm nhiều lỗi hơn. Nhận định nào phù hợp nhất? Giải thích: Công nhân (mới / lâu năm) và máy (mới / cũ) luôn thay đổi cùng lúc nên bị nhiễu lẫn. Chỉ phân tầng thì không phân biệt được cái nào là nguyên nhân → phương án 3. Cần lấy dữ liệu theo các tổ hợp như công nhân mới dùng máy cũ, công nhân lâu năm dùng máy mới (lập kế hoạch cách lấy dữ liệu).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-133"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "n ＝ 50 個のデータ（測定単位 0.01 mm）で、最大値 8.43 mm、最小値 8.02 mm であった。区間の数を √n を目安に決めるとき、区間の幅 h と第1区間の下側境界値の組合せとして正しいものはどれか。",
+      "choices": [
+        "h ＝ 0.05、8.015",
+        "h ＝ 0.06、8.020",
+        "h ＝ 0.06、8.010",
+        "h ＝ 0.06、8.015"
+      ],
+      "answer": 3,
+      "explanation": "√50 ≒ 7.07 → 7 区間。h ＝ (8.43 − 8.02) ÷ 7 ＝ 0.0586 → 測定単位 0.01 の整数倍に丸めて 0.06。第1区間の下側境界値 ＝ 最小値 − 測定単位 ÷ 2 ＝ 8.02 − 0.005 ＝ 8.015。8.020 は半単位ずらしを忘れた誤り（データが境界上に乗る）。",
+      "explanation_vi": "Đề bài: Có n = 50 dữ liệu (đơn vị đo 0.01 mm), giá trị lớn nhất 8.43 mm, nhỏ nhất 8.02 mm. Khi chọn số khoảng theo mức tham khảo √n, tổ hợp nào đúng cho độ rộng khoảng h và biên dưới của khoảng thứ nhất? Giải thích: √50 ≈ 7.07 → 7 khoảng. h = (8.43 − 8.02) ÷ 7 = 0.0586 → làm tròn thành bội số nguyên của 0.01 → 0.06. Biên dưới của khoảng thứ nhất = giá trị nhỏ nhất − đơn vị đo ÷ 2 = 8.02 − 0.005 = 8.015 → phương án 4. 8.020 là quên dịch nửa đơn vị đo (dữ liệu rơi đúng lên biên).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-134"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "アンテナカバーの外観検査で、傷がカバーのどの位置に多いかを調べたい。カバーの展開図を印刷し、傷を見つけるたびにその位置に印をつける。このチェックシートの種類として最も適切なものはどれか。",
+      "choices": [
+        "度数分布調査用チェックシート",
+        "不適合位置調査用チェックシート",
+        "点検・確認用チェックシート",
+        "不適合要因調査用チェックシート"
+      ],
+      "answer": 1,
+      "explanation": "製品の図に発生位置を記入する → 不適合位置（欠点位置）調査用。度数分布調査用は計量値の分布の形を見るもの、点検用は確認項目の漏れを防ぐもの、要因調査用は機械・作業者などの層ごとに分けて記録するもの。",
+      "explanation_vi": "Đề bài: Trong kiểm tra ngoại quan nắp anten, muốn biết vết xước nhiều ở vị trí nào trên nắp. In hình khai triển của nắp, mỗi khi phát hiện vết xước thì đánh dấu vào vị trí đó. Loại phiếu kiểm tra này là gì? Giải thích: Ghi vị trí phát sinh lên hình vẽ sản phẩm → phiếu điều tra vị trí lỗi (phương án 2). Phiếu điều tra phân bố tần số để xem hình dạng phân bố của dữ liệu đo, phiếu kiểm điểm để chống bỏ sót hạng mục xác nhận, phiếu điều tra nguyên nhân lỗi để ghi riêng theo từng tầng như máy, người làm.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-135"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "Zグラフを作っている。先月の移動合計（直近12か月の合計）は 600 件、今月の不適合件数は 52 件、前年同月は 40 件であった。今月の移動合計はいくらか。",
+      "choices": [
+        "652 件",
+        "612 件",
+        "592 件",
+        "560 件"
+      ],
+      "answer": 1,
+      "explanation": "移動合計 ＝ 先月の移動合計 ＋ 今月 − 前年同月 ＝ 600 ＋ 52 − 40 ＝ 612。652 は前年同月を引き忘れた値（累計と混同）。",
+      "explanation_vi": "Đề bài: Đang lập biểu đồ Z. Tổng di động tháng trước (tổng 12 tháng gần nhất) là 600 lỗi, số lỗi tháng này là 52, cùng tháng năm trước là 40. Tổng di động tháng này là bao nhiêu? Giải thích: Tổng di động = tổng di động tháng trước + tháng này − cùng tháng năm trước = 600 + 52 − 40 = 612 → phương án 2. 652 là quên trừ cùng tháng năm trước (nhầm với lũy kế).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-136"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "アンテナ組立工場で、新しい半田付け治具を10月から夜勤だけで使い始めた。同時に、夜勤には10月から熟練作業者が異動してきた。10月の夜勤の不適合品率は 9月より大きく下がった。この結果の解釈として最も適切なものはどれか。",
+      "choices": [
+        "治具の効果であることが確認できたので、昼勤にも展開すればよい",
+        "治具の変更と作業者の変更が交絡しているので、どちらの効果かはこのデータでは区別できない",
+        "作業者の効果であることが確認できたので、治具は元に戻してよい",
+        "夜勤と昼勤を層別して比べれば、治具の効果だけを取り出せる"
+      ],
+      "answer": 1,
+      "explanation": "治具と作業者が同時に変わったので交絡している。夜勤と昼勤を層別しても、夜勤の中で治具と作業者の変化は分けられない。効果を分けるには、熟練者が旧治具を使う・新治具を他の作業者が使う組合せを計画してデータを取る。",
+      "explanation_vi": "Đề bài: Ở nhà máy lắp ráp anten, từ tháng 10 bắt đầu dùng đồ gá hàn mới chỉ ở ca đêm. Đồng thời, từ tháng 10 có công nhân lành nghề chuyển sang ca đêm. Tỷ lệ sản phẩm lỗi của ca đêm tháng 10 giảm mạnh so với tháng 9. Cách hiểu nào phù hợp nhất? Giải thích: Đồ gá và công nhân thay đổi cùng lúc nên bị nhiễu lẫn → phương án 2. Dù phân tầng theo ca đêm và ca ngày, cũng không tách được thay đổi của đồ gá và của công nhân bên trong ca đêm (phương án 4 sai). Muốn tách hiệu quả, cần lập kế hoạch lấy dữ liệu theo các tổ hợp như công nhân lành nghề dùng đồ gá cũ, công nhân khác dùng đồ gá mới.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-137"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "ある月の組立不適合の内訳は、はんだ 54 件、位置ずれ 30 件、傷 18 件、寸法 12 件、その他 6 件（計 120 件）であった。パレート図を描いたとき、左から2番目の項目までの累積比率はいくらか。",
+      "choices": [
+        "45.0％",
+        "70.0％",
+        "25.0％",
+        "85.0％"
+      ],
+      "answer": 1,
+      "explanation": "パレート図は件数の多い順に左から並べる（「その他」は件数にかかわらず最後）。累積：はんだ 54 ＋ 位置ずれ 30 ＝ 84、84 ÷ 120 ＝ 70.0％。45.0％ は1項目目だけ、25.0％ は2項目目だけの比率、85.0％ は3項目目まで足した値（84 ＋ 18 ＝ 102 → 102/120）。",
+      "explanation_vi": "Đề bài: Cơ cấu lỗi lắp ráp trong một tháng: hàn 54, lệch vị trí 30, xước 18, kích thước 12, khác 6 (tổng 120). Khi vẽ biểu đồ Pareto, tỷ lệ tích lũy đến hạng mục thứ 2 từ trái sang là bao nhiêu? Giải thích: Biểu đồ Pareto xếp từ trái theo số lượng giảm dần (mục “khác” luôn ở cuối bất kể số lượng). Cộng dồn: hàn 54 + lệch vị trí 30 = 84, 84 ÷ 120 = 70.0% → phương án 2. 45.0% là chỉ hạng mục thứ 1, 25.0% là tỷ lệ của riêng hạng mục thứ 2, 85.0% là cộng tới hạng mục thứ 3 (84 + 18 = 102 → 102/120).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-138"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "特性要因図に関する記述として、誤っているものはどれか。",
+      "choices": [
+        "右端に「特性」（結果・問題）を書き、左から背骨（太い矢印）を引く。",
+        "大骨には 4M（人・機械・材料・方法）などを使うことが多い。",
+        "各要因が特性にどれだけ影響しているかの大きさを、骨の長さで定量的に表す図である。",
+        "要因を洗い出すときは、関係者が集まりブレーンストーミングで意見を出すとよい。"
+      ],
+      "answer": 2,
+      "explanation": "特性要因図は特性と要因の関係を整理する図で、骨の長さに数量的な意味はない。どの要因が効いているかはデータ（パレート図・散布図・層別・検定など）で検証する。ア・イ・エは正しい作り方。",
+      "explanation_vi": "Đề bài: Phát biểu nào SAI về biểu đồ nhân quả? Giải thích: Biểu đồ nhân quả dùng để sắp xếp mối quan hệ giữa đặc tính và yếu tố; độ dài của xương không có ý nghĩa định lượng → phương án 3 sai. Yếu tố nào thực sự có ảnh hưởng phải kiểm chứng bằng dữ liệu (Pareto, biểu đồ tán xạ, phân tầng, kiểm định...). Phương án 1, 2, 4 là cách lập đúng.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-139"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "アンテナのレドーム（カバー）に付く傷が、製品のどの部分に多いかを調べたい。最も適したチェックシートはどれか。",
+      "choices": [
+        "度数分布調査用チェックシート",
+        "点検用チェックシート",
+        "不適合位置調査用チェックシート",
+        "不適合項目調査用チェックシート"
+      ],
+      "answer": 2,
+      "explanation": "製品の図に発生位置を記入する不適合位置調査用で、位置の偏りが見える。度数分布調査用は計量値の分布の形、不適合項目調査用は項目別の件数（→ パレート図）、点検用は点検漏れの防止が目的。",
+      "explanation_vi": "Đề bài: Muốn điều tra xem vết xước trên radome (nắp anten) tập trung nhiều ở phần nào của sản phẩm. Phiếu kiểm tra nào phù hợp nhất? Giải thích: Dùng phiếu điều tra vị trí lỗi, ghi vị trí phát sinh lên hình vẽ sản phẩm, sẽ thấy được sự tập trung theo vị trí → phương án 3. Phiếu điều tra phân bố tần số để xem hình dạng phân bố dữ liệu đo, phiếu điều tra hạng mục lỗi để đếm số lượng theo hạng mục (→ Pareto), phiếu kiểm điểm để chống bỏ sót khi kiểm tra.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-140"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "ある部品の長さを n ＝ 64 個測定した（測定単位 0.1 mm）。最大値 28.7 mm、最小値 24.0 mm である。区間の数を √n を目安に決めるとき、区間の幅と第1区間の下側境界値の組合せとして正しいものはどれか。",
+      "choices": [
+        "幅 0.59 mm、下側境界値 23.95 mm",
+        "幅 0.6 mm、下側境界値 24.00 mm",
+        "幅 0.6 mm、下側境界値 23.90 mm",
+        "幅 0.6 mm、下側境界値 23.95 mm"
+      ],
+      "answer": 3,
+      "explanation": "k ≒ √64 ＝ 8、h ＝ (28.7 − 24.0)/8 ＝ 0.5875 → 測定単位 0.1 の整数倍に丸めて 0.6。下側境界値 ＝ 24.0 − 0.1/2 ＝ 23.95。0.59 は丸めが測定単位の整数倍になっていない、24.00 は境界がデータと重なる、23.90 は測定単位をまるごと引いた誤り。",
+      "explanation_vi": "Đề bài: Đo chiều dài của n = 64 linh kiện (đơn vị đo 0.1 mm). Lớn nhất 28.7 mm, nhỏ nhất 24.0 mm. Khi chọn số khoảng theo mức tham khảo √n, tổ hợp nào đúng cho độ rộng khoảng và biên dưới của khoảng thứ nhất? Giải thích: k ≈ √64 = 8, h = (28.7 − 24.0)/8 = 0.5875 → làm tròn thành bội số nguyên của 0.1 → 0.6. Biên dưới = 24.0 − 0.1/2 = 23.95 → phương án 4. 0.59 không phải bội số nguyên của đơn vị đo, 24.00 làm biên trùng với dữ liệu, 23.90 là trừ nhầm nguyên một đơn vị đo.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-141"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "ヒストグラムの形と考えられる原因の組合せとして、誤っているものはどれか。",
+      "choices": [
+        "二山型 — 平均の異なる2つの分布（2社のサプライヤーなど）が混在している",
+        "歯抜け型 — 平均の異なる2つの工程のデータが混在している",
+        "絶壁型 — 規格外れのものを全数選別で取り除いた",
+        "離れ小島型 — 異常なデータや別の工程のものが少数混入した"
+      ],
+      "answer": 1,
+      "explanation": "歯抜け型（くし歯型）は、区間の幅が測定単位の整数倍でない、測定者の読み癖など描き方・測り方の問題が多い。平均の異なる2つの分布の混在は二山型（さらに複数なら高原型）。",
+      "explanation_vi": "Đề bài: Tổ hợp nào giữa hình dạng histogram và nguyên nhân có thể là SAI? Giải thích: Dạng răng lược thường do cách vẽ, cách đo: độ rộng khoảng không phải bội số nguyên của đơn vị đo, thói quen đọc số của người đo → phương án 2 sai. Trộn lẫn 2 phân bố có trung bình khác nhau là dạng hai đỉnh (nếu nhiều phân bố hơn thì là dạng cao nguyên).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-142"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "散布図の見方に関する記述として、正しいものはどれか。",
+      "choices": [
+        "点が右下がりに並んでいれば、x を大きくすると必ず y は小さくなる。",
+        "相関係数が 0 に近ければ、x と y の間には関係がないと判断してよい。",
+        "外れ値が1点あれば、必ず削除してから相関を判断する。",
+        "点が曲線的に並んでいるときは、相関係数が小さくても関係がある場合がある。"
+      ],
+      "answer": 3,
+      "explanation": "相関係数は直線的な関係の強さ。U 字などの曲線関係では r ≒ 0 でも関係がある。ア：相関は因果を意味しない・ばらつきもある。イ：曲線関係や層の混合を見落とす。ウ：外れ値はまず原因を調べる（測定ミスか、重要な情報か）。",
+      "explanation_vi": "Đề bài: Phát biểu nào ĐÚNG về cách đọc biểu đồ tán xạ? Giải thích: Hệ số tương quan đo độ mạnh của quan hệ tuyến tính. Với quan hệ dạng cong như chữ U thì dù r ≈ 0 vẫn có quan hệ → phương án 4. Phương án 1: tương quan không có nghĩa là nhân quả, và dữ liệu còn có độ phân tán. Phương án 2: bỏ sót quan hệ dạng cong hoặc trộn lẫn tầng. Phương án 3: với điểm ngoại lai, trước hết phải điều tra nguyên nhân (là sai sót đo hay là thông tin quan trọng).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-143"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "月ごとの不適合の内訳（はんだ・寸法・外観・その他の割合）が、6か月の間にどう変わったかを比べたい。最も適切なグラフはどれか。",
+      "choices": [
+        "帯グラフ",
+        "円グラフ",
+        "レーダーチャート",
+        "ガントチャート"
+      ],
+      "answer": 0,
+      "explanation": "「内訳の比較」→ 帯グラフ（月ごとの帯を並べる）。円グラフは1時点の内訳、レーダーチャートは項目間のバランス、ガントチャートは日程管理。",
+      "explanation_vi": "Đề bài: Muốn so sánh xem cơ cấu lỗi theo từng tháng (tỷ lệ hàn, kích thước, ngoại quan, khác) đã thay đổi thế nào trong 6 tháng. Đồ thị nào phù hợp nhất? Giải thích: “So sánh cơ cấu” → biểu đồ dải (đặt các dải của từng tháng cạnh nhau) → phương án 1. Biểu đồ tròn cho cơ cấu ở 1 thời điểm, biểu đồ radar cho cân bằng giữa các tiêu chí, biểu đồ Gantt cho quản lý tiến độ.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-144"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "2社（P社・Q社）のインダクタについて、巻線抵抗とインダクタンスの散布図を描いた。2社をまとめると右上がりの相関が見られたが、会社別に層別すると、どちらの会社の中でもほとんど相関がなく、P社の点は左下、Q社の点は右上に固まっていた。この結果の解釈として最も適切なものはどれか。",
+      "choices": [
+        "巻線抵抗を下げればインダクタンスも確実に下がる。",
+        "見かけの相関は会社の違い（層の差）によって生じた可能性が高く、各社の中では巻線抵抗とインダクタンスの関係は弱い。",
+        "層別すると相関が消えたので、層別は誤った方法である。",
+        "2社をまとめた散布図の方が n が大きいので、そちらの結論を採用すべきである。"
+      ],
+      "answer": 1,
+      "explanation": "層（会社）ごとの平均の差が、まとめた散布図に見かけの相関を作っている。層別して関係を確かめるのが正しい手順。ア は見かけの相関を因果とみなした誤り。エ は n の大きさよりも層の混合が問題。",
+      "explanation_vi": "Đề bài: Với cuộn cảm của 2 công ty P và Q, vẽ biểu đồ tán xạ giữa điện trở dây quấn và điện cảm. Gộp chung 2 công ty thì thấy tương quan dốc lên, nhưng khi phân tầng theo công ty thì bên trong mỗi công ty hầu như không có tương quan; các điểm của P tập trung ở góc dưới bên trái, các điểm của Q ở góc trên bên phải. Cách hiểu phù hợp nhất là gì? Giải thích: Chênh lệch trung bình giữa các tầng (công ty) đã tạo ra tương quan giả trên biểu đồ gộp → phương án 2. Phân tầng để xác nhận quan hệ là trình tự đúng. Phương án 1 là coi tương quan giả là nhân quả. Phương án 4: vấn đề nằm ở việc trộn lẫn tầng chứ không phải ở độ lớn của n.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-145"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "受入検査に合格したインダクタの値でヒストグラムを描いたところ、下限規格のところで柱が急に切れた「絶壁型」になった。最も考えられる原因はどれか。",
+      "choices": [
+        "測定単位と区間の幅が合っていない。",
+        "規格外れ品を全数選別して取り除いたデータである。",
+        "2つの異なる母集団が混ざっている。",
+        "測定値の一部に記録ミスがある。"
+      ],
+      "answer": 1,
+      "explanation": "規格の位置で切り取られた絶壁型は、選別（規格外れを除いた）データで典型的。区間の幅と測定単位の不一致は「歯抜け型（くし歯型）」、2つの母集団の混合は「二山型」、記録ミスは「離れ小島型」の原因として考える。",
+      "explanation_vi": "Đề bài: Vẽ histogram giá trị của các cuộn cảm đã đạt kiểm tra đầu vào thì cột bị cắt đột ngột tại giới hạn dưới tiêu chuẩn, thành “dạng vách đứng”. Nguyên nhân có khả năng nhất là gì? Giải thích: Dạng vách đứng bị cắt tại vị trí tiêu chuẩn là điển hình của dữ liệu đã qua sàng lọc (đã loại hàng ngoài tiêu chuẩn) → phương án 2. Độ rộng khoảng không khớp với đơn vị đo là nguyên nhân của dạng răng lược, trộn 2 tổng thể là của dạng hai đỉnh, sai sót ghi chép là của dạng đảo lẻ.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-146"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "ある部品の寸法を n ＝ 100 個測定した（測定単位 0.1 mm）。最大値 63.8 mm、最小値 54.2 mm である。区間の数を √n を目安に決めるとき、区間の幅と第1区間の下側境界値の組合せとして正しいものはどれか。",
+      "choices": [
+        "幅 1.0 mm、下側境界値 54.15 mm",
+        "幅 0.96 mm、下側境界値 54.15 mm",
+        "幅 1.0 mm、下側境界値 54.20 mm",
+        "幅 1.0 mm、下側境界値 54.10 mm"
+      ],
+      "answer": 0,
+      "explanation": "k ≒ √100 ＝ 10、h ＝ (63.8 − 54.2)/10 ＝ 0.96 → 測定単位 0.1 の整数倍に丸めて 1.0。下側境界値 ＝ 54.2 − 0.1/2 ＝ 54.15（境界をデータと重ねない）。",
+      "explanation_vi": "Đề bài: Đo kích thước của n = 100 linh kiện (đơn vị đo 0.1 mm). Lớn nhất 63.8 mm, nhỏ nhất 54.2 mm. Khi chọn số khoảng theo mức tham khảo √n, tổ hợp nào đúng cho độ rộng khoảng và biên dưới của khoảng thứ nhất? Giải thích: k ≈ √100 = 10, h = (63.8 − 54.2)/10 = 0.96 → làm tròn thành bội số nguyên của 0.1 → 1.0. Biên dưới = 54.2 − 0.1/2 = 54.15 (không để biên trùng với dữ liệu) → phương án 1.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-147"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "アンテナの給電部はんだ付けで、ボイド（内部の空洞）による不適合が先月から増えた。QC サークルで特性要因図を作ることになり、メンバーが次のように進め方を提案した。特性要因図の作り方・使い方として正しいものはどれか。",
+      "choices": [
+        "特性は「はんだ付け工程の問題」のように広く書いたほうが、要因が多く出てよい",
+        "4M（人・機械・材料・方法）で大骨を作ったら、中骨・小骨まで細かくする必要はない",
+        "特性要因図が完成すれば原因は特定できたので、データで確かめる必要はない",
+        "特性は「給電部はんだのボイド発生率」のように具体的に書き、要因は関係者が集まって出し合う"
+      ],
+      "answer": 3,
+      "explanation": "特性（結果）は測れる形で具体的に書く。要因は関係者の知恵を集めて大骨 → 中骨 → 小骨と掘り下げる。特性要因図は原因の「候補」を整理する道具で、重要な要因はデータで検証する。広すぎる特性では要因がぼやける。",
+      "explanation_vi": "Đề bài: Ở công đoạn hàn phần cấp tín hiệu (feed) của anten, lỗi do rỗ khí (void — lỗ rỗng bên trong mối hàn) tăng lên từ tháng trước. Nhóm QC quyết định lập biểu đồ nhân quả, và các thành viên đề xuất cách làm như sau. Phát biểu nào ĐÚNG về cách lập và cách dùng biểu đồ nhân quả? Giải thích: Đặc tính (kết quả) phải viết cụ thể, ở dạng đo được. Yếu tố do những người liên quan cùng góp ý, đào sâu từ xương lớn → xương vừa → xương nhỏ → phương án 4. Biểu đồ nhân quả là công cụ sắp xếp các nguyên nhân “có thể”; yếu tố quan trọng phải kiểm chứng bằng dữ liệu. Đặc tính quá rộng sẽ làm các yếu tố bị mơ hồ.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-148"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "アンテナ組立の1か月の不適合件数を項目別にまとめた：はんだ不適合 45 件、締付不足 27 件、外観傷 12 件、その他 10 件、寸法外れ 6 件（合計 100 件）。パレート図を描いたとき、上位 2 項目の累積比率はいくらか。また「その他」はどこに置くか。",
+      "choices": [
+        "72％、件数の順なので外観傷の右（4番目）",
+        "45％、いちばん左",
+        "72％、件数にかかわらずいちばん右",
+        "84％、いちばん右"
+      ],
+      "answer": 2,
+      "explanation": "件数の多い順：45、27 → 累積 72 件 ／ 100 件 ＝ 72％。「その他」は件数が寸法外れ（6 件）より多くても、いちばん右に置く。45％ は1位だけ、84％ は上位3項目（45 ＋ 27 ＋ 12）。",
+      "explanation_vi": "Đề bài: Tổng hợp số lỗi trong 1 tháng của dây chuyền lắp ráp anten theo hạng mục: lỗi hàn 45, siết không đủ 27, xước ngoại quan 12, khác 10, sai kích thước 6 (tổng 100). Khi vẽ biểu đồ Pareto, tỷ lệ tích lũy của 2 hạng mục đầu là bao nhiêu, và mục “khác” đặt ở đâu? Giải thích: Theo thứ tự giảm dần: 45, 27 → cộng dồn 72 / 100 = 72%. Mục “khác” dù nhiều hơn sai kích thước (6) vẫn đặt ở bên phải cùng → phương án 3. 45% là chỉ hạng mục thứ 1, 84% là 3 hạng mục đầu (45 + 27 + 12).",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-149"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "ヒストグラムの形と考えられる原因の組合せとして、誤っているものはどれか。",
+      "choices": [
+        "二山型：平均の異なる2つの分布が混ざっている（層別して調べる）",
+        "絶壁型：規格外のものを選別して取り除いたデータである可能性",
+        "離れ小島型：異なる工程のデータや測定ミスが少し混ざっている可能性",
+        "絶壁型：工程が安定していて、分布が規格の中心にある"
+      ],
+      "answer": 3,
+      "explanation": "絶壁型（片側がすっぱり切れた形）は、規格外れを全数選別して除いた、または規格値付近で測定値を丸めた・ごまかしたなどが疑われる形で、安定を示す形ではない。安定した工程は一般型（左右ほぼ対称の山）。ア・イ・ウは正しい組合せ。",
+      "explanation_vi": "Đề bài: Tổ hợp nào giữa hình dạng histogram và nguyên nhân có thể là SAI? Giải thích: Dạng vách đứng (một phía bị cắt gọn) gợi ý đã sàng lọc loại bỏ toàn bộ hàng ngoài tiêu chuẩn, hoặc giá trị đo gần mức tiêu chuẩn đã bị làm tròn hay sửa số; đó không phải hình dạng cho thấy công đoạn ổn định → phương án 4 sai. Công đoạn ổn định có dạng thông thường (một đỉnh gần đối xứng hai bên). Phương án 1, 2, 3 là tổ hợp đúng.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-150"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "レドーム（アンテナカバー）の成形品で、表面の傷の不適合が増えている。どの場所に傷が集中しているかを調べて、金型や搬送のどこが原因かを絞り込みたい。検査員が製品の展開図に、見つけた傷の位置を印で記入していく方法をとることにした。このとき使うチェックシートとして最も適切なものはどれか。",
+      "choices": [
+        "不適合項目調査用チェックシート",
+        "不適合位置調査用チェックシート",
+        "度数分布調査用チェックシート",
+        "点検・確認用チェックシート"
+      ],
+      "answer": 1,
+      "explanation": "製品の図に発生場所を記入するのは不適合位置（欠点位置）調査用。アは項目別の件数（どの種類が多いか）、ウは測定値の分布（ヒストグラムの元）、エは作業や設備の点検漏れ防止。",
+      "explanation_vi": "Đề bài: Với sản phẩm đúc radome (nắp anten), lỗi xước bề mặt đang tăng. Muốn tìm xem vết xước tập trung ở đâu để khoanh vùng nguyên nhân là ở khuôn hay ở khâu vận chuyển. Quyết định để kiểm tra viên đánh dấu vị trí vết xước tìm thấy lên hình khai triển của sản phẩm. Phiếu kiểm tra phù hợp nhất là gì? Giải thích: Ghi nơi phát sinh lên hình vẽ sản phẩm là phiếu điều tra vị trí lỗi → phương án 2. Phương án 1 đếm số lượng theo hạng mục (loại lỗi nào nhiều), phương án 3 cho phân bố giá trị đo (nguồn dữ liệu của histogram), phương án 4 để chống bỏ sót khi kiểm tra công việc hay thiết bị.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-151"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "はんだ付け温度 x と接合強度 y の 30 組のデータから相関係数を計算すると r ＝ 0.08 であった。しかし散布図を描くと、温度が中ほどで強度が最も高く、低すぎても高すぎても強度が下がる山形の点の並びになっていた。最も適切な判断はどれか。",
+      "choices": [
+        "r がほぼ 0 なので、温度と強度には関係がない",
+        "r が小さいので、データを取り直す必要がある",
+        "直線的な関係は弱いが、曲線的な関係がある。r だけで判断せず散布図を見る",
+        "r ＝ 0.08 は正の相関なので、温度を上げるほど強度が上がる"
+      ],
+      "answer": 2,
+      "explanation": "相関係数 r は直線的な関係の強さだけを表す。山形（曲線）の関係では r が 0 に近くても強い関係がある。だから散布図を必ず描く。ア・エは r だけで判断した誤り。",
+      "explanation_vi": "Đề bài: Từ 30 cặp dữ liệu nhiệt độ hàn x và độ bền mối nối y, tính được hệ số tương quan r = 0.08. Nhưng khi vẽ biểu đồ tán xạ, các điểm xếp thành hình núi: độ bền cao nhất ở nhiệt độ trung bình, nhiệt độ quá thấp hay quá cao đều làm độ bền giảm. Nhận định nào phù hợp nhất? Giải thích: Hệ số tương quan r chỉ thể hiện độ mạnh của quan hệ tuyến tính. Với quan hệ hình núi (dạng cong), dù r gần 0 vẫn có thể có quan hệ mạnh → phương án 3. Vì vậy luôn phải vẽ biểu đồ tán xạ. Phương án 1 và 4 là phán đoán chỉ dựa vào r nên sai.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-152"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "月ごとの不適合件数について、「各月の値」「年初からの累計」「直近12か月の移動合計」の3本の線を1つの図に描き、傾向をつかむグラフを何というか。",
+      "choices": [
+        "レーダーチャート",
+        "帯グラフ",
+        "ガントチャート",
+        "Zグラフ"
+      ],
+      "answer": 3,
+      "explanation": "3本の線が Z の形に見えるので Z グラフ。レーダーチャートは複数項目のバランス、帯グラフは内訳の比較、ガントチャートは日程管理。",
+      "explanation_vi": "Đề bài: Với số lỗi theo tháng, vẽ 3 đường “giá trị từng tháng”, “lũy kế từ đầu năm” và “tổng di động 12 tháng gần nhất” trên cùng 1 biểu đồ để nắm xu hướng. Đồ thị này gọi là gì? Giải thích: 3 đường trông giống chữ Z nên gọi là biểu đồ Z → phương án 4. Biểu đồ radar dùng cho cân bằng nhiều tiêu chí, biểu đồ dải để so sánh cơ cấu, biểu đồ Gantt để quản lý tiến độ.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-153"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "次の文の空欄に入るものの組合せとして正しいものはどれか。\n\n「2台の巻線機のデータを混ぜて散布図を描くと、巻数と抵抗値に強い相関があるように見えた。しかし機械別に分けて描くと、それぞれの機械では相関が見られなかった。これは（①）による見かけの相関である。このようにデータを分ける切り口として、（②）などがよく使われる。」",
+      "choices": [
+        "① 層の違い　② 4M（人・機械・材料・方法）",
+        "① 測定誤差　② 5W1H",
+        "① 外れ値　② 4M（人・機械・材料・方法）",
+        "① 層の違い　② PDCA"
+      ],
+      "answer": 0,
+      "explanation": "2つの層（機械）の平均の違いが、混ぜたときに見かけの相関をつくる。層別の切り口は 4M（Man・Machine・Material・Method）に測定・環境・時間などを加える。PDCA・5W1H は層別の切り口ではない。",
+      "explanation_vi": "Đề bài: Tổ hợp nào đúng để điền vào chỗ trống?\n\n“Trộn dữ liệu của 2 máy quấn dây rồi vẽ biểu đồ tán xạ thì thấy số vòng quấn và giá trị điện trở có vẻ tương quan mạnh. Nhưng khi vẽ riêng theo từng máy thì trong mỗi máy không thấy tương quan. Đây là tương quan giả do (①). Để chia dữ liệu như vậy, cách chia thường dùng là (②).” Giải thích: Chênh lệch trung bình giữa 2 tầng (2 máy) tạo ra tương quan giả khi trộn lẫn. Cách chia tầng là 4M (Man, Machine, Material, Method) cộng thêm đo lường, môi trường, thời gian... → phương án 1. PDCA và 5W1H không phải cách chia tầng.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-154"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "特性要因図に関する記述として、誤っているものはどれか。",
+      "choices": [
+        "特性（結果）と、それに影響すると考えられる要因の関係を体系的に整理した図である。",
+        "大骨には 5M（人・機械・材料・方法・測定）などを使うことが多い。",
+        "要因どうしの関係を数値で示し、どの要因が特性に効いているかを統計的に証明する図である。",
+        "作成後は、重要と思われる要因について、データで検証することが必要である。"
+      ],
+      "answer": 2,
+      "explanation": "特性要因図は、要因を洗い出して整理する図で、要因の効果を統計的に証明するものではない（ウが誤り）。検証は散布図・層別・実験計画法などのデータで行う（エは正しい）。ア・イは正しい。\n記号：5M：Man・Machine・Material・Method・Measurement",
+      "explanation_vi": "Đề bài: Phát biểu nào SAI về biểu đồ nhân quả? Giải thích: Biểu đồ nhân quả dùng để liệt kê và sắp xếp yếu tố, không phải để chứng minh bằng thống kê hiệu quả của yếu tố → phương án 3 sai. Việc kiểm chứng làm bằng dữ liệu như biểu đồ tán xạ, phân tầng, thiết kế thí nghiệm (phương án 4 đúng). Phương án 1, 2 đúng.\nKý hiệu: 5M = Man, Machine, Material, Method, Measurement",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-155"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "ケーブル長さの度数表をつくったところ、区間ごとの度数が次のように1つおきに多い・少ないをくり返した。\n\n> 区間：1　2　3　4　5　6　7　8\n> 度数：3　12　4　18　6　15　3　7\n\nこのヒストグラムの形の名前と、最も考えられる原因の組合せとして正しいものはどれか。",
+      "choices": [
+        "二山型：2つのロットが混ざっている",
+        "離れ小島型：異常なデータが混入した",
+        "歯抜け型：区間の幅が測定単位の整数倍になっていない",
+        "絶壁型：規格外れを除いた"
+      ],
+      "answer": 2,
+      "explanation": "1つおきに高低する → 歯抜け型（くし歯型）。区間の幅が測定単位（最小目盛）の整数倍でないと、区間に入るデータの数が交互に変わる（ウ）。アは山が2つ、イは離れた所に小さい山、エは片側がすっぱり切れた形。",
+      "explanation_vi": "Đề bài: Lập bảng tần số chiều dài cáp thì tần số của các khoảng cứ cách một khoảng lại nhiều rồi ít như sau.\n\n> Khoảng: 1  2  3  4  5  6  7  8\n> Tần số: 3  12  4  18  6  15  3  7\n\nTổ hợp nào đúng giữa tên hình dạng của histogram này và nguyên nhân có khả năng nhất? Giải thích: Cao thấp xen kẽ từng khoảng → dạng răng lược. Nếu độ rộng khoảng không phải bội số nguyên của đơn vị đo (vạch chia nhỏ nhất), số dữ liệu rơi vào mỗi khoảng sẽ thay đổi xen kẽ → phương án 3. Dạng hai đỉnh (phương án 1) có 2 đỉnh, dạng đảo lẻ (phương án 2) có một đỉnh nhỏ ở chỗ tách xa, dạng vách đứng (phương án 4) bị cắt gọn một phía.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-156"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "アンテナ組立ラインの1か月の不適合を項目別に数えると、はんだ 48 件、外観きず 30 件、寸法 12 件、圧着 6 件、その他 4 件（合計 100 件）であった。これをパレート図にする。作り方と読み方について正しいものはどれか。",
+      "choices": [
+        "「その他」は件数が4件で最も少ないので、件数の順に並べて右端に置けばよく、件数が多ければ途中に置いてもよい",
+        "上位2項目（はんだ・外観きず）の累積比率は 78％ なので、この2項目を重点に対策すると効果が大きい",
+        "累積曲線は左から右へ下がっていく",
+        "縦軸の目盛りは件数だけを書き、累積比率は書かない"
+      ],
+      "answer": 1,
+      "explanation": "件数の多い順に並べると累積は 48 → 78 → 90 → 96 → 100（％）。上位2項目で 78％ → 重点指向（イ）。ア：「その他」は件数にかかわらず最後（右端）に置くのが決まり。ウ：累積曲線は右へ上がって 100％ で終わる。エ：左の縦軸に件数、右の縦軸に累積比率（％）を書く。\n記号：累積比率 ＝ その項目までの件数の合計 ÷ 総数 × 100",
+      "explanation_vi": "Đề bài: Đếm lỗi trong 1 tháng của dây chuyền lắp ráp anten theo hạng mục: hàn 48, xước ngoại quan 30, kích thước 12, bấm cos 6, khác 4 (tổng 100). Vẽ thành biểu đồ Pareto. Phát biểu nào ĐÚNG về cách vẽ và cách đọc? Giải thích: Xếp theo số lượng giảm dần thì tỷ lệ tích lũy là 48 → 78 → 90 → 96 → 100 (%). 2 hạng mục đầu chiếm 78% → tập trung vào trọng điểm (phương án 2). Phương án 1: mục “khác” luôn đặt cuối cùng (bên phải cùng) bất kể số lượng. Phương án 3: đường tích lũy đi lên về bên phải và kết thúc ở 100%. Phương án 4: trục tung bên trái ghi số lượng, trục tung bên phải ghi tỷ lệ tích lũy (%).\nKý hiệu: tỷ lệ tích lũy = tổng số lượng đến hạng mục đó ÷ tổng số × 100",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-157"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "グラフの使い分けに関する記述として、誤っているものはどれか。",
+      "choices": [
+        "折れ線グラフは、不適合品率の月ごとの推移など、時間による変化を見るのに適している",
+        "帯グラフは、ラインごとの不適合の内訳の比率を並べて比べるのに適している",
+        "棒グラフは、仕入先ごとの不適合件数など、量の大小を比べるのに適している",
+        "レーダーチャートは、1つの項目の時間による変化を細かく見るのに最も適している"
+      ],
+      "answer": 3,
+      "explanation": "エが誤り。レーダーチャートは複数の項目のバランス（例：仕入先評価の品質・納期・価格・対応を同時に比べる）を見るグラフ。時間による変化は折れ線グラフ。ア・イ・ウは正しい。円グラフは1つの全体の内訳、帯グラフは内訳を複数並べて比べる、の違いも出題される。",
+      "explanation_vi": "Đề bài: Phát biểu nào SAI về cách chọn dùng đồ thị? Giải thích: Phương án 4 sai. Biểu đồ radar dùng để xem cân bằng giữa nhiều tiêu chí (ví dụ khi đánh giá nhà cung cấp, so sánh đồng thời chất lượng, giao hàng, giá, cách ứng xử). Thay đổi theo thời gian thì dùng biểu đồ đường. Phương án 1, 2, 3 đúng. Sự khác nhau giữa biểu đồ tròn (cơ cấu của 1 tổng thể) và biểu đồ dải (đặt nhiều cơ cấu cạnh nhau để so sánh) cũng hay ra đề.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-158"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "散布図に関する記述として、誤っているものはどれか。",
+      "choices": [
+        "散布図で強い正の相関が見られれば、横軸の特性が縦軸の特性の原因であると判断してよい",
+        "全体では相関が見えなくても、機械別などに層別すると相関が見えることがある",
+        "飛び離れた点があるときは、まずその点のデータに誤りや特別な原因がないかを調べる",
+        "ふつう横軸に原因系（要因）、縦軸に結果系（特性）をとる"
+      ],
+      "answer": 0,
+      "explanation": "アが誤り（正解）。相関は「一緒に動く」ことを示すだけで、因果関係までは分からない（第3の要因が両方に効いている場合もある）。技術的な裏づけや実験で確かめる。イ：層別すると隠れた相関が見える（逆に、層をまぜると見かけの相関が出ることもある）。ウ・エは正しい。",
+      "explanation_vi": "Đề bài: Phát biểu nào SAI về biểu đồ tán xạ? Giải thích: Phương án 1 sai (là đáp án). Tương quan chỉ cho thấy hai đại lượng “cùng biến động”, không cho biết quan hệ nhân quả (có thể có yếu tố thứ ba tác động lên cả hai). Phải xác nhận bằng cơ sở kỹ thuật hoặc thí nghiệm. Phương án 2: phân tầng có thể làm lộ ra tương quan bị che khuất (ngược lại, trộn tầng có thể tạo ra tương quan giả). Phương án 3, 4 đúng.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-159"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "同軸ケーブルの端子の引張強さについて、1か月分 200 本のデータでヒストグラムを描いたところ、山が2つある形になった。データは2台の圧着機 X・Y、2人の作業者 P・Q、2つの端子ロットで作られたものであり、それぞれの記録が残っている。調べると、圧着機別に分けたヒストグラムはどちらも山が1つで、X の平均は Y より約 8 N 高かった。作業者別・ロット別に分けたヒストグラムは、どちらも全体と同じ2つの山の形であった。\n\nこの事例の考え方として最も適切なものはどれか。",
+      "choices": [
+        "ヒストグラムに山が2つあるのは測定誤差が大きいためなので、測定器を校正する",
+        "2つの山は作業者の違いによるものなので、作業者 Q を再教育する",
+        "層別しても原因は分からないので、データを増やしてもう一度全体のヒストグラムを描く",
+        "圧着機による層別で山が1つずつに分かれたので、2台の圧着機の差が2つの山の主な原因と考えられ、圧着機の条件の違いを調べる"
+      ],
+      "answer": 3,
+      "explanation": "エが正しい。層別は「原因と思われる要因でデータを分ける」こと。分けたときに山が1つずつになった要因（圧着機）が2つの山の原因と考えられる。作業者別・ロット別では形が変わらない → イは根拠がない。ア・ウは層別の結果を使っていない。記録（作業者・機械・ロット）を残しておくことが層別の前提。",
+      "explanation_vi": "Đề bài: Về lực kéo của đầu cốt cáp đồng trục, vẽ histogram từ 200 dữ liệu trong 1 tháng thì được hình có 2 đỉnh. Dữ liệu được tạo ra từ 2 máy bấm cos X, Y, 2 công nhân P, Q và 2 lô đầu cốt, và đều có ghi chép lại. Điều tra thì thấy histogram tách theo máy bấm cos đều chỉ có 1 đỉnh, trung bình của X cao hơn Y khoảng 8 N. Histogram tách theo công nhân và theo lô đều có hình 2 đỉnh giống tổng thể.\n\nCách suy nghĩ phù hợp nhất cho trường hợp này là gì? Giải thích: Phương án 4 đúng. Phân tầng là chia dữ liệu theo yếu tố được cho là nguyên nhân. Yếu tố mà khi chia thì mỗi phần chỉ còn 1 đỉnh (máy bấm cos) được coi là nguyên nhân của 2 đỉnh. Chia theo công nhân hay theo lô thì hình dạng không đổi → phương án 2 không có cơ sở. Phương án 1 và 3 không sử dụng kết quả phân tầng. Việc lưu ghi chép (công nhân, máy, lô) là tiền đề của phân tầng.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-160"
+    },
+    {
+      "level": 2,
+      "topic": "b2",
+      "question": "アンテナ組立品の外観検査で、「どの部分にきずが多いか」を調べるため、製品の図の上に、見つけたきずの場所を印で書き込むチェックシートを使った。このチェックシートの種類として最も適切なものはどれか。",
+      "choices": [
+        "度数分布調べ用チェックシート",
+        "不適合項目調べ用チェックシート",
+        "点検・確認用チェックシート",
+        "不適合位置調べ用チェックシート"
+      ],
+      "answer": 3,
+      "explanation": "エが正しい。製品の図（展開図）に場所を書き込むのは不適合位置調べ用。アは測定値をヒストグラムのように区間ごとに数える。イは不適合の種類ごとに件数を数える（場所ではない）。ウは作業や点検の項目を確認するもの。",
+      "explanation_vi": "Đề bài: Trong kiểm tra ngoại quan sản phẩm lắp ráp anten, để tìm “phần nào có nhiều vết xước”, đã dùng phiếu kiểm tra đánh dấu vị trí vết xước tìm thấy lên hình vẽ sản phẩm. Loại phiếu kiểm tra này là gì? Giải thích: Phương án 4 đúng. Ghi vị trí lên hình vẽ (hình khai triển) sản phẩm là phiếu điều tra vị trí lỗi. Phương án 1 đếm giá trị đo theo từng khoảng giống histogram. Phương án 2 đếm số lượng theo loại lỗi (không phải vị trí). Phương án 3 dùng để xác nhận các hạng mục công việc hay kiểm tra.",
+      "keep_order": true,
+      "status": "checked",
+      "id": "2-161"
     }
   ]
 }

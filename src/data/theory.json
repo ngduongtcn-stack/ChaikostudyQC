@@ -6783,5 +6783,532 @@
         "chống sai sót (poka-yoke)"
       ]
     ]
+  },
+  "2:b1": {
+    "intro": {
+      "ja": "データの種類、母集団とサンプル、誤差、基本統計量（平方和・分散・標準偏差）、データの変換。",
+      "vi": "Lý thuyết QC Kentei cấp 2 – Lấy và tổng hợp dữ liệu."
+    },
+    "sections": [
+      {
+        "h": {
+          "ja": "データの種類",
+          "vi": "Các loại dữ liệu"
+        },
+        "blocks": [
+          {
+            "type": "md",
+            "ja": "品質管理で扱うデータは、まず**数値データ**と**言語データ**に分かれる。数値データはさらに**計量値**と**計数値**に分かれる。\n\n#### 計量値\n長さ・重さ・時間・温度・強度のように、**連続した値**をとるデータ。測定器の精度を上げれば、いくらでも細かく測れる。\n- 例：鋼板の厚さ（mm）、錠剤の重さ（g）、引張強さ（N/mm²）、通学時間（分）\n\n#### 計数値\n不適合品の数・欠点（キズ）の数・故障回数のように、**1個、2個…と数えて得る**、とびとびの値（離散値）をとるデータ。\n- 例：不適合品数、ガラス板1枚あたりの泡の数、機械の故障回数\n\n#### 要注意：「率」も計数値\n**不適合品率 ＝ 不適合品数 ÷ 検査個数**。小数で表されても、分子が数えた値なので**計数値**として扱う。\n> p = 3個 ÷ 200個 = 0.015（1.5%）→ 計数値\n\n#### 言語データ\n「使いやすい」「音がうるさい」のように言葉で表したデータ。お客様の声（VOC）が代表例で、主に**新QC七つ道具**（親和図法など）で整理する。\n\n#### なぜ区別するのか\nデータの種類によって、使う**分布・管理図・検定**が変わるから。\n- 計量値 → 正規分布、X̄-R管理図、u検定・t検定など\n- 計数値（不適合品数・不適合品率）→ 二項分布、p管理図・np管理図\n- 計数値（欠点数）→ ポアソン分布、u管理図・c管理図\n\n試験では「このデータは計量値か計数値か」→「どの管理図・分布を使うか」という流れでよく問われる。",
+            "vi": "Dữ liệu dùng trong quản lý chất lượng trước hết được chia thành **dữ liệu số** và **dữ liệu ngôn ngữ**. Dữ liệu số lại được chia thành **giá trị đo** (dữ liệu đo lường) và **giá trị đếm** (dữ liệu đếm).\n\n#### Giá trị đo\nDữ liệu nhận **giá trị liên tục** như chiều dài, khối lượng, thời gian, nhiệt độ, độ bền. Nếu nâng độ chính xác của dụng cụ đo thì có thể đo chi tiết đến mức nào cũng được.\n- Ví dụ: độ dày tấm thép (mm), khối lượng viên thuốc (g), độ bền kéo (N/mm²), thời gian đi học (phút)\n\n#### Giá trị đếm\nDữ liệu **có được bằng cách đếm 1 cái, 2 cái…**, nhận các giá trị rời rạc (giá trị gián đoạn), như số sản phẩm không phù hợp, số khuyết tật (vết xước), số lần hỏng máy.\n- Ví dụ: số sản phẩm không phù hợp, số bọt khí trên một tấm kính, số lần hỏng của máy\n\n#### Lưu ý: \"tỷ lệ\" cũng là giá trị đếm\n**Tỷ lệ sản phẩm không phù hợp = số sản phẩm không phù hợp ÷ số sản phẩm được kiểm tra**. Dù được biểu diễn bằng số thập phân, vì tử số là giá trị đếm nên vẫn được xem là **giá trị đếm**.\n> p = 3 cái ÷ 200 cái = 0.015 (1.5%) → giá trị đếm\n\n#### Dữ liệu ngôn ngữ\nDữ liệu được diễn đạt bằng lời, như \"dễ sử dụng\", \"tiếng ồn lớn\". Ví dụ tiêu biểu là tiếng nói của khách hàng (VOC); loại dữ liệu này chủ yếu được sắp xếp bằng **7 công cụ QC mới** (như biểu đồ tương đồng).\n\n#### Vì sao phải phân biệt\nVì tùy loại dữ liệu mà **phân phối, biểu đồ kiểm soát và phương pháp kiểm định** được sử dụng sẽ khác nhau.\n- Giá trị đo → phân phối chuẩn, biểu đồ kiểm soát X̄-R, kiểm định u, kiểm định t…\n- Giá trị đếm (số sản phẩm không phù hợp, tỷ lệ sản phẩm không phù hợp) → phân phối nhị thức, biểu đồ kiểm soát p, biểu đồ kiểm soát np\n- Giá trị đếm (số khuyết tật) → phân phối Poisson, biểu đồ kiểm soát u, biểu đồ kiểm soát c\n\nĐề thi thường hỏi theo trình tự: \"dữ liệu này là giá trị đo hay giá trị đếm\" → \"dùng biểu đồ kiểm soát, phân phối nào\"."
+          }
+        ]
+      },
+      {
+        "h": {
+          "ja": "データの変換",
+          "vi": "Biến đổi dữ liệu"
+        },
+        "blocks": [
+          {
+            "type": "md",
+            "ja": "#### 定義\n**データの変換**：計算を簡単にするため、データ x から一定の値 a を引き、一定の値 h で割って（または掛けて）、扱いやすい数値 u に置き換えること。\n> u ＝ (x − a) ／ h　　（逆に x ＝ a ＋ h·u）\n> a：仮平均（データの中心付近のきりのよい値）、h：きざみ（測定単位など）\n\n#### 本質：足し算・引き算と、掛け算・割り算で影響が違う\n- a を引く（**位置をずらす**）→ 平均は変わるが、**ばらつき（S、V、s、R）は変わらない**。\n- h で割る（**目盛りを変える**）→ 平均もばらつきも変わる。平方和・分散は **h²** 倍、標準偏差・範囲は **h** 倍の関係になる。\n\n#### 元に戻す公式\n> x̄ ＝ a ＋ h·ū\n> Me_x ＝ a ＋ h·Me_u\n> S_x ＝ h²·S_u\n> V_x ＝ h²·V_u\n> s_x ＝ h·s_u（h ＞ 0）\n> R_x ＝ h·R_u\n位置を表す統計量（平均・メディアン）だけ a を足し戻し、ばらつきの統計量には a が出てこないのがポイント。\n\n#### 例題：データ 50.2, 49.8, 50.5, 50.1, 49.9, 50.3（n ＝ 6）を a ＝ 50.0、h ＝ 0.1 で変換\n> u ＝ (x − 50.0)／0.1 → 2, −2, 5, 1, −1, 3\n> Σu ＝ 8、Σu² ＝ 4＋4＋25＋1＋1＋9 ＝ 44\n> S_u ＝ 44 − 8²／6 ＝ 44 − 10.667 ＝ 33.333\n> ū ＝ 8／6 ≒ 1.333 → x̄ ＝ 50.0 ＋ 0.1 × 1.333 ≒ 50.133\n> S_x ＝ 0.1² × 33.333 ＝ 0.3333\n> V_x ＝ 0.3333／5 ≒ 0.0667、s_x ＝ √0.0667 ≒ 0.258\n（「平方和の簡便式」の項で「桁落ち」の例として扱うデータと同じ。変換すれば整数の計算で済む。）\n\n#### 混同しやすい点\n- S_x ＝ h·S_u としてしまう誤り（正しくは h²）。\n- s_x ＝ h²·s_u としてしまう誤り（正しくは h）。\n- 分散を戻すときに a を足してしまう誤り（ばらつきに a は無関係）。\n- 変動係数は平均が変わるので、変換後の u で計算した値は元の CV と一致しない。\n\n#### 試験での問われ方\n変換後の ū・V_u などが与えられ、元の x̄・V・s を求める計算（逆算）。「定数を加えると分散は変わらない」などの正誤問題。",
+            "vi": "#### Định nghĩa\n**Biến đổi dữ liệu**: để tính toán đơn giản hơn, lấy dữ liệu x trừ đi một giá trị cố định a rồi chia (hoặc nhân) cho một giá trị cố định h, thay bằng con số u dễ xử lý.\n> u = (x − a) / h    (ngược lại x = a + h·u)\n> a: trung bình giả định (giá trị tròn gần trung tâm dữ liệu), h: bước (như đơn vị đo)\n\n#### Bản chất: cộng, trừ và nhân, chia ảnh hưởng khác nhau\n- Trừ a (**dời vị trí**) → trung bình thay đổi, nhưng **độ phân tán (S, V, s, R) không đổi**.\n- Chia cho h (**đổi thang đo**) → cả trung bình lẫn độ phân tán đều thay đổi. Tổng bình phương độ lệch và phương sai liên hệ theo hệ số **h²**, độ lệch chuẩn và khoảng biến thiên liên hệ theo hệ số **h**.\n\n#### Công thức đổi ngược\n> x̄ = a + h·ū\n> Me_x = a + h·Me_u\n> S_x = h²·S_u\n> V_x = h²·V_u\n> s_x = h·s_u (h > 0)\n> R_x = h·R_u\nĐiểm mấu chốt: chỉ các thống kê vị trí (trung bình, trung vị) mới cộng lại a; trong các thống kê về độ phân tán không xuất hiện a.\n\n#### Ví dụ: biến đổi dữ liệu 50.2, 49.8, 50.5, 50.1, 49.9, 50.3 (n = 6) với a = 50.0, h = 0.1\n> u = (x − 50.0) / 0.1 → 2, −2, 5, 1, −1, 3\n> Σu = 8, Σu² = 4 + 4 + 25 + 1 + 1 + 9 = 44\n> S_u = 44 − 8²/6 = 44 − 10.667 = 33.333\n> ū = 8/6 ≒ 1.333 → x̄ = 50.0 + 0.1 × 1.333 ≒ 50.133\n> S_x = 0.1² × 33.333 = 0.3333\n> V_x = 0.3333/5 ≒ 0.0667, s_x = √0.0667 ≒ 0.258\n(Đây cũng là dữ liệu được dùng làm ví dụ về \"mất chữ số có nghĩa\" trong phần công thức nhanh tính tổng bình phương độ lệch. Sau khi biến đổi, chỉ cần tính với số nguyên.)\n\n#### Những điểm dễ nhầm\n- Viết sai S_x = h·S_u (đúng là h²).\n- Viết sai s_x = h²·s_u (đúng là h).\n- Cộng a khi đổi ngược phương sai (a không liên quan đến độ phân tán).\n- Hệ số biến động: vì trung bình thay đổi nên giá trị tính từ u sau biến đổi không trùng với CV ban đầu.\n\n#### Cách ra đề\nCho ū, V_u… sau biến đổi, yêu cầu tính x̄, V, s của dữ liệu gốc (tính ngược). Câu hỏi đúng/sai như \"cộng thêm một hằng số vào dữ liệu thì phương sai không đổi\"."
+          }
+        ]
+      },
+      {
+        "h": {
+          "ja": "母集団とサンプル",
+          "vi": "Tổng thể và mẫu"
+        },
+        "blocks": [
+          {
+            "type": "md",
+            "ja": "**母集団**：考察の対象となる特性をもつ、すべてのものの集団。サンプルの結果にもとづいて**処置をとる対象**でもある。\n**サンプル**（試料・標本）：母集団の情報を得るために、母集団から取り出したもの。\n**サンプリング**：母集団からサンプルを取ること。\n\n#### 品質管理での流れ\n> 母集団 →(サンプリング)→ サンプル →(測定)→ データ →(推測・判断)→ 母集団に処置\n\nデータを見る目的はサンプルを知ることではなく、**母集団について判断し、処置すること**である。\n\n#### 有限母集団と無限母集団\n- **有限母集団**：大きさが限られている。例：抜取検査の**ロット**\n- **無限母集団**：製造を続ける限りいくらでもサンプルがとれる。例：工程管理の対象となる**工程**\n\n#### 母数と統計量\n母集団の特性値を**母数**という。通常は**未知**なので、サンプルから計算した**統計量**で推測する（これが検定・推定）。\n> 母数（母集団）：母平均 μ、母分散 σ²、母標準偏差 σ\n> 統計量（サンプル）：平均 x̄、（不偏）分散 V、標準偏差 s\nギリシャ文字は母集団、ローマ字はサンプル、と覚える。\n\n#### サンプルサイズ\n**サンプルサイズ（サンプルの大きさ） n**：1つのサンプルに含まれるサンプリング単位の数。\n「**サンプル数**」（サンプルを何組とったか）と混同しないこと。",
+            "vi": "**Tổng thể**: tập hợp tất cả các đối tượng mang đặc tính cần xem xét. Đây cũng là **đối tượng sẽ được xử lý** dựa trên kết quả của mẫu.\n**Mẫu** (mẫu thử, mẫu thống kê): phần được lấy ra từ tổng thể để có thông tin về tổng thể.\n**Lấy mẫu**: việc lấy mẫu từ tổng thể.\n\n#### Trình tự trong quản lý chất lượng\n> Tổng thể →(lấy mẫu)→ mẫu →(đo)→ dữ liệu →(suy luận, phán đoán)→ xử lý đối với tổng thể\n\nMục đích của việc xem dữ liệu không phải là để biết về mẫu, mà là để **phán đoán và xử lý đối với tổng thể**.\n\n#### Tổng thể hữu hạn và tổng thể vô hạn\n- **Tổng thể hữu hạn**: có kích thước giới hạn. Ví dụ: **lô** trong kiểm tra lấy mẫu\n- **Tổng thể vô hạn**: chừng nào còn tiếp tục sản xuất thì còn lấy được mẫu không giới hạn. Ví dụ: **công đoạn (quá trình)** là đối tượng của quản lý công đoạn\n\n#### Tham số và thống kê\nGiá trị đặc trưng của tổng thể gọi là **tham số**. Thông thường tham số **chưa biết**, nên ta suy ra nó bằng **thống kê** tính từ mẫu (đó chính là kiểm định và ước lượng).\n> Tham số (tổng thể): trung bình tổng thể μ, phương sai tổng thể σ², độ lệch chuẩn tổng thể σ\n> Thống kê (mẫu): trung bình x̄, phương sai (không chệch) V, độ lệch chuẩn s\nMẹo nhớ: chữ Hy Lạp là tổng thể, chữ Latin là mẫu.\n\n#### Cỡ mẫu\n**Cỡ mẫu (kích thước mẫu) n**: số đơn vị lấy mẫu có trong một mẫu.\nKhông được nhầm với \"**số mẫu**\" (đã lấy bao nhiêu mẫu)."
+          }
+        ]
+      },
+      {
+        "h": {
+          "ja": "サンプリングと誤差",
+          "vi": "Lấy mẫu và sai số"
+        },
+        "blocks": [
+          {
+            "type": "md",
+            "ja": "#### 定義\n**誤差**：測定値（観測値）から**真の値**を引いた差。\n> 誤差 ＝ 測定値 − 真の値\n誤差は次の2つの性質に分けて考える。\n- **かたより**：測定値の母平均（無限回測ったときの平均）と真の値との差。同じ方向に一定してずれる**系統的**な誤差。\n- **ばらつき**：測定値の大きさがそろっていないこと、不ぞろいの程度。毎回ランダムに変わる**偶然**の誤差。\n\n#### 真度・精度・正確さ\n- **真度**：かたよりの小さい程度\n- **精度**（精密度）：ばらつきの小さい程度\n- **正確さ**：真度と精度を合わせた総合的な良さ（かたよりもばらつきも小さい）\n的当てで考える：矢が中心からずれた1か所に固まっている → 精度はよいが真度が悪い。中心のまわりに散らばっている → 真度はよいが精度が悪い。\n\n#### 本質：なぜ分けるのか\nかたよりとばらつきでは**原因も対策も違う**からである。\n- かたより → 原因は校正のずれ、偏ったサンプリングなど。**校正・サンプリング方法の見直し**で除く。測定を何回くり返して平均しても**小さくならない**。\n- ばらつき → 原因は偶然の変動。**くり返し測定して平均**すると小さくなる（平均のばらつきは σ/√n）。\n\n#### 品質管理で現れる誤差\n母集団 → サンプル → データ の流れの各段階で誤差が入る。\n- **サンプリング誤差**：サンプルの取り方によって生じる誤差（どのサンプルが選ばれるかで値が変わる）\n- **測定誤差**：測定器・測定者・測定方法によって生じる誤差\nそれぞれに、かたよりとばらつきがある。**ランダムサンプリング**を行うと、サンプリングの**かたよりをなくし**、ばらつきの大きさを統計的に評価できる（サンプリングの種類は別の項目で扱う）。\n\n#### 公式：誤差のばらつきの合成\nサンプリング誤差と測定誤差が互いに独立なら、**分散**が足し算になる（標準偏差は足し算にならない）。\n> σ_T² ＝ σ_S² ＋ σ_M²\n> σ_T：データ全体の誤差の標準偏差、σ_S：サンプリング誤差の標準偏差、σ_M：測定誤差の標準偏差\n\n#### 例題\nσ_S ＝ 0.12 mm、σ_M ＝ 0.05 mm のとき、全体の誤差の標準偏差は？\n> σ_T² ＝ 0.12² ＋ 0.05² ＝ 0.0144 ＋ 0.0025 ＝ 0.0169\n> σ_T ＝ √0.0169 ＝ 0.13 mm\n（0.12 ＋ 0.05 ＝ 0.17 としたら誤り。）\n測定器をよくして σ_M を半分の 0.025 にしても σ_T ≒ 0.123 にしかならない。**大きいほうの誤差を減らすのが効果的**。\n\n#### 混同しやすい点\n- かたより ↔ ばらつき：「くり返し測定して平均をとれば小さくなる」のはばらつきだけ。\n- 精度 ↔ 正確さ：精度はばらつきだけ、正確さはかたより＋ばらつき。\n- 誤差 ↔ 不適合：誤差は測定値と真の値の差であり、規格外れ（不適合）とは別の概念。\n\n#### 試験での問われ方\n- 正誤問題：「くり返し測定の平均をとると、かたよりは小さくなる」→ 誤り\n- 空欄補充：かたより／ばらつき／真度／精度の語を入れる\n- 計算：σ_T² ＝ σ_S² ＋ σ_M² で合成（または一方を逆算）",
+            "vi": "#### Định nghĩa\n**Sai số**: hiệu giữa giá trị đo (giá trị quan sát) và **giá trị thật**.\n> Sai số = giá trị đo − giá trị thật\nSai số được xem xét theo hai tính chất sau.\n- **Độ chệch**: hiệu giữa trung bình tổng thể của giá trị đo (trung bình khi đo vô số lần) và giá trị thật. Đây là sai số **hệ thống**, luôn lệch đều về cùng một phía.\n- **Độ phân tán**: việc các giá trị đo không đồng đều, tức mức độ không đồng đều. Đây là sai số **ngẫu nhiên**, thay đổi ngẫu nhiên ở mỗi lần đo.\n\n#### Độ đúng, độ chụm, độ chính xác\n- **Độ đúng**: mức độ nhỏ của độ chệch\n- **Độ chụm** (độ chính xác lặp): mức độ nhỏ của độ phân tán\n- **Độ chính xác**: mức độ tốt tổng hợp gồm cả độ đúng và độ chụm (cả độ chệch lẫn độ phân tán đều nhỏ)\nHãy nghĩ đến việc bắn bia: các mũi tên tụ lại ở một chỗ lệch khỏi tâm → độ chụm tốt nhưng độ đúng kém. Các mũi tên rải rác quanh tâm → độ đúng tốt nhưng độ chụm kém.\n\n#### Bản chất: vì sao phải tách riêng\nVì độ chệch và độ phân tán có **nguyên nhân và biện pháp khác nhau**.\n- Độ chệch → nguyên nhân là hiệu chuẩn bị lệch, lấy mẫu thiên lệch… Loại bỏ bằng cách **hiệu chuẩn, xem lại phương pháp lấy mẫu**. Dù đo lặp lại bao nhiêu lần rồi lấy trung bình cũng **không nhỏ đi**.\n- Độ phân tán → nguyên nhân là dao động ngẫu nhiên. **Đo lặp lại rồi lấy trung bình** thì sẽ nhỏ đi (độ phân tán của trung bình là σ/√n).\n\n#### Sai số xuất hiện trong quản lý chất lượng\nSai số xen vào ở từng giai đoạn của trình tự tổng thể → mẫu → dữ liệu.\n- **Sai số lấy mẫu**: sai số sinh ra do cách lấy mẫu (giá trị thay đổi tùy mẫu nào được chọn)\n- **Sai số đo**: sai số sinh ra do dụng cụ đo, người đo, phương pháp đo\nMỗi loại đều có độ chệch và độ phân tán. Nếu thực hiện **lấy mẫu ngẫu nhiên** thì **loại bỏ được độ chệch** do lấy mẫu và có thể đánh giá độ lớn của độ phân tán bằng thống kê (các loại lấy mẫu được trình bày ở mục khác).\n\n#### Công thức: hợp thành độ phân tán của sai số\nNếu sai số lấy mẫu và sai số đo độc lập với nhau thì **phương sai** cộng được với nhau (độ lệch chuẩn thì không cộng được).\n> σ_T² = σ_S² + σ_M²\n> σ_T: độ lệch chuẩn của sai số của toàn bộ dữ liệu, σ_S: độ lệch chuẩn của sai số lấy mẫu, σ_M: độ lệch chuẩn của sai số đo\n\n#### Ví dụ\nKhi σ_S = 0.12 mm, σ_M = 0.05 mm, độ lệch chuẩn của sai số toàn bộ là bao nhiêu?\n> σ_T² = 0.12² + 0.05² = 0.0144 + 0.0025 = 0.0169\n> σ_T = √0.0169 = 0.13 mm\n(Nếu tính 0.12 + 0.05 = 0.17 là sai.)\nDù cải thiện dụng cụ đo để giảm σ_M xuống một nửa còn 0.025 thì σ_T cũng chỉ còn ≒ 0.123. **Giảm nguồn sai số lớn hơn mới có hiệu quả**.\n\n#### Những điểm dễ nhầm\n- Độ chệch ↔ độ phân tán: \"đo lặp lại rồi lấy trung bình thì nhỏ đi\" chỉ đúng với độ phân tán.\n- Độ chụm ↔ độ chính xác: độ chụm chỉ nói về độ phân tán, độ chính xác gồm cả độ chệch và độ phân tán.\n- Sai số ↔ không phù hợp: sai số là hiệu giữa giá trị đo và giá trị thật, là khái niệm khác với việc nằm ngoài quy cách (không phù hợp).\n\n#### Cách ra đề\n- Câu hỏi đúng/sai: \"Lấy trung bình của các lần đo lặp lại thì độ chệch nhỏ đi\" → sai\n- Điền vào chỗ trống: điền các từ độ chệch / độ phân tán / độ đúng / độ chụm\n- Tính toán: hợp thành bằng σ_T² = σ_S² + σ_M² (hoặc tính ngược một trong hai)"
+          }
+        ]
+      },
+      {
+        "h": {
+          "ja": "基本統計量（平均・平方和・分散・標準偏差）",
+          "vi": "Các thống kê cơ bản (trung bình, tổng bình phương độ lệch, phương sai, độ lệch chuẩn)"
+        },
+        "blocks": [
+          {
+            "type": "md",
+            "ja": "#### 定義と記号（n：サンプルサイズ、x₁…xₙ：データ）\n- **平均** x̄：中心の位置を表す。\n> x̄ ＝ Σxᵢ ／ n\n- **メディアン**（中央値）Me：大きさの順に並べたときの真ん中の値。n が偶数なら中央の2つの平均。\n- **範囲** R：最大値と最小値の差。\n> R ＝ x_max − x_min\n- **偏差平方和**（平方和）S：各データと平均の差（偏差）を2乗して合計したもの。\n> S ＝ Σ(xᵢ − x̄)²\n- **分散**（不偏分散）V：平方和を**自由度 n − 1** で割ったもの。単位はデータの単位の2乗。\n> V ＝ S ／ (n − 1)\n- **標準偏差** s：分散の正の平方根。単位はデータと同じ。\n> s ＝ √V\n\n#### 本質\nデータの姿は「**中心の位置**」（x̄、Me）と「**ばらつきの大きさ**」（R、S、V、s）の2つで要約する。品質管理では、ばらつきを小さくすることが改善の中心である。\n\n- 偏差をそのまま足すと必ず Σ(xᵢ − x̄) ＝ 0 になるので、2乗して足す（これが S）。\n- S はデータ数が増えるほど大きくなるので、データ数の影響を除くため割り算する（これが V）。\n- n − 1 で割る理由：偏差の合計が0という制約があり、自由に動ける偏差は n − 1 個だけだから（**自由度**）。n − 1 で割った V は母分散 σ² の**かたよりのない推定値**になる。\n- V は単位が2乗で直感に合わないので、平方根をとって元の単位に戻す（これが s）。\n\n#### 使い分け・条件\n- Me は**外れ値の影響を受けにくい**。x̄ は外れ値に引っぱられる。\n- R は最大・最小の2つしか使わないので計算は簡単だが、外れ値の影響を強く受け、n が大きいと情報を捨てすぎる。n ≦ 10 程度の小さなサンプル（管理図など）で使う。\n\n#### 例題：データ 12, 15, 11, 14, 13（n ＝ 5）\n> x̄ ＝ (12＋15＋11＋14＋13) ／ 5 ＝ 65 ／ 5 ＝ 13\n> 並べ替え 11, 12, 13, 14, 15 → Me ＝ 13\n> R ＝ 15 − 11 ＝ 4\n> 偏差：−1, 2, −2, 1, 0（合計 0 を確認）\n> S ＝ 1 ＋ 4 ＋ 4 ＋ 1 ＋ 0 ＝ 10\n> V ＝ 10 ／ (5 − 1) ＝ 2.5\n> s ＝ √2.5 ≒ 1.58\n平均が割り切れないときに使う S の**簡便式**と変動係数は、続きの項で扱う。\n\n#### 混同しやすい点\n- **平方和 S** ↔ **分散 V**：S は割る前、V は割った後。\n- n − 1 で割る（不偏分散） ↔ n で割る：試験の「分散」は原則 V ＝ S／(n − 1)。\n- **標準偏差 s**（サンプルの統計量） ↔ **σ**（母標準偏差、母数）。\n- Me（メディアン） ↔ モード（最頻値）。\n\n#### 試験での問われ方\n数個のデータから x̄・Me・R・S・V・s を求める計算、各統計量の性質（外れ値への強さ、単位）の正誤、空欄補充。電卓での計算ミスが失点源なので、偏差の合計が0になるかを必ず確認する。\n\n#### 判断フロー\n- 「分散」「標準偏差」と書かれていたら → 特に断りがなければ V = S/(n − 1)、s = √V\n- 外れ値がある・分布が片寄っている → 中心はメディアンで見る\n- 単位や平均の大きさが違うものどうしのばらつきを比べる → 変動係数 CV\n\n#### 電卓の手順（Σx と Σx² を一度に）\n- 2乗してメモリーに足す：12 × ＝ M+、15 × ＝ M+ …（機種によっては「12 × 12 ＝ M+」）。最後に MR で Σx²。\n- Σx は GT キー、または別に足し算。\n- 例：12, 15, 11, 14, 13 → Σx = 65、Σx² = 855 → S = 855 − 65²/5 = 855 − 845 = 10、V = 10/4 = 2.5\n- 検算：S は必ず 0 以上。V は（範囲）² より小さい。",
+            "vi": "#### Định nghĩa và ký hiệu (n: cỡ mẫu, x₁…xₙ: dữ liệu)\n- **Trung bình** x̄: biểu thị vị trí trung tâm.\n> x̄ = Σxᵢ / n\n- **Trung vị** Me: giá trị ở chính giữa khi xếp dữ liệu theo thứ tự lớn nhỏ. Nếu n chẵn thì lấy trung bình của 2 giá trị ở giữa.\n- **Khoảng biến thiên** R: hiệu giữa giá trị lớn nhất và giá trị nhỏ nhất.\n> R = x_max − x_min\n- **Tổng bình phương độ lệch** S: bình phương hiệu giữa từng dữ liệu và trung bình (độ lệch) rồi cộng lại.\n> S = Σ(xᵢ − x̄)²\n- **Phương sai** (phương sai không chệch) V: tổng bình phương độ lệch chia cho **bậc tự do n − 1**. Đơn vị là bình phương của đơn vị dữ liệu.\n> V = S / (n − 1)\n- **Độ lệch chuẩn** s: căn bậc hai dương của phương sai. Cùng đơn vị với dữ liệu.\n> s = √V\n\n#### Bản chất\nHình dạng của dữ liệu được tóm tắt bằng hai thứ: \"**vị trí trung tâm**\" (x̄, Me) và \"**độ lớn của độ phân tán**\" (R, S, V, s). Trong quản lý chất lượng, giảm độ phân tán là trọng tâm của cải tiến.\n\n- Nếu cộng thẳng các độ lệch thì luôn được Σ(xᵢ − x̄) = 0, nên phải bình phương rồi cộng (đó là S).\n- S càng lớn khi số dữ liệu càng nhiều, nên phải chia để loại bỏ ảnh hưởng của số dữ liệu (đó là V).\n- Lý do chia cho n − 1: do có ràng buộc tổng độ lệch bằng 0 nên chỉ có n − 1 độ lệch được tự do thay đổi (**bậc tự do**). V chia cho n − 1 là **ước lượng không chệch** của phương sai tổng thể σ².\n- V có đơn vị bình phương nên khó hình dung, vì vậy lấy căn bậc hai để đưa về đơn vị ban đầu (đó là s).\n\n#### Cách dùng, điều kiện\n- Me **ít bị ảnh hưởng bởi giá trị ngoại lai**. x̄ thì bị giá trị ngoại lai kéo lệch.\n- R chỉ dùng 2 giá trị lớn nhất và nhỏ nhất nên tính đơn giản, nhưng bị ảnh hưởng mạnh bởi giá trị ngoại lai, và khi n lớn thì bỏ phí quá nhiều thông tin. Dùng cho mẫu nhỏ khoảng n ≤ 10 (như trong biểu đồ kiểm soát).\n\n#### Ví dụ: dữ liệu 12, 15, 11, 14, 13 (n = 5)\n> x̄ = (12 + 15 + 11 + 14 + 13) / 5 = 65 / 5 = 13\n> xếp lại 11, 12, 13, 14, 15 → Me = 13\n> R = 15 − 11 = 4\n> độ lệch: −1, 2, −2, 1, 0 (kiểm tra tổng bằng 0)\n> S = 1 + 4 + 4 + 1 + 0 = 10\n> V = 10 / (5 − 1) = 2.5\n> s = √2.5 ≒ 1.58\nCông thức nhanh tính S (dùng khi trung bình không chia hết) và hệ số biến động được trình bày ở phần tiếp theo.\n\n#### Những điểm dễ nhầm\n- **Tổng bình phương độ lệch S** ↔ **phương sai V**: S là trước khi chia, V là sau khi chia.\n- Chia cho n − 1 (phương sai không chệch) ↔ chia cho n: \"phương sai\" trong đề thi về nguyên tắc là V = S/(n − 1).\n- **Độ lệch chuẩn s** (thống kê của mẫu) ↔ **σ** (độ lệch chuẩn tổng thể, là tham số).\n- Me (trung vị) ↔ mốt (yếu vị).\n\n#### Cách ra đề\nTính x̄, Me, R, S, V, s từ vài dữ liệu; câu hỏi đúng/sai về tính chất của từng thống kê (mức độ bị ảnh hưởng bởi giá trị ngoại lai, đơn vị); điền vào chỗ trống. Sai sót khi bấm máy tính là nguyên nhân mất điểm, nên nhất định phải kiểm tra xem tổng độ lệch có bằng 0 hay không.\n\n#### Trình tự phán đoán\n- Đề ghi \"phương sai\", \"độ lệch chuẩn\" → nếu không có ghi chú gì đặc biệt thì dùng V = S/(n − 1), s = √V\n- Có giá trị ngoại lai, phân bố bị lệch → xem trung tâm bằng trung vị\n- So sánh độ phân tán giữa các đối tượng khác đơn vị hoặc khác độ lớn trung bình → hệ số biến động CV\n\n#### Thao tác máy tính (tính Σx và Σx² cùng lúc)\n- Bình phương rồi cộng vào bộ nhớ: 12 × = M+, 15 × = M+ … (tùy loại máy là \"12 × 12 = M+\"). Cuối cùng bấm MR để ra Σx².\n- Σx tính bằng phím GT, hoặc cộng riêng.\n- Ví dụ: 12, 15, 11, 14, 13 → Σx = 65, Σx² = 855 → S = 855 − 65²/5 = 855 − 845 = 10, V = 10/4 = 2.5\n- Kiểm tra lại: S luôn lớn hơn hoặc bằng 0. V nhỏ hơn (khoảng biến thiên)²."
+          }
+        ]
+      },
+      {
+        "h": {
+          "ja": "基本統計量（続き）：平方和の簡便式・変動係数",
+          "vi": "Các thống kê cơ bản (tiếp): công thức nhanh tính tổng bình phương độ lệch, hệ số biến động"
+        },
+        "blocks": [
+          {
+            "type": "md",
+            "ja": "#### 平方和の簡便式\n偏差を1つずつ計算して S ＝ Σ(xᵢ − x̄)² を求める方法では、平均が割り切れないと偏差が小数になり計算が面倒なので、次の**簡便式**を使う（展開すると同じ値になる）。\n> S ＝ Σxᵢ² − (Σxᵢ)² ／ n\n> Σxᵢ²：データを1つずつ2乗した合計、(Σxᵢ)²：データの合計を2乗したもの、(Σxᵢ)²／n：**修正項**（CT）と呼ぶ\nΣxᵢ² と (Σxᵢ)² は**別物**。前者は「2乗してから足す」、後者は「足してから2乗」。\n\n#### 例題：データ 15, 18, 14, 17, 20, 16（n ＝ 6）\n> Σx ＝ 100、x̄ ＝ 100／6 ≒ 16.67（割り切れない）\n> Σx² ＝ 225＋324＋196＋289＋400＋256 ＝ 1690\n> 修正項 ＝ 100²／6 ≒ 1666.67\n> S ＝ 1690 − 1666.67 ≒ 23.33\n> V ＝ 23.33／5 ≒ 4.667、s ＝ √4.667 ≒ 2.16\n\n#### 注意：桁落ち\nデータが 50.2, 49.8, 50.5, 50.1, 49.9, 50.3 のように「大きな値＋小さな差」だと、Σx² ＝ 15080.44 と修正項 15080.1067 の差 0.3333 を求めることになり、途中で丸めると答えが大きく狂う。このときは「データの変換」（B1.2）で数値を小さくしてから計算する。\n\n#### 変動係数\n**変動係数** CV：標準偏差を平均で割った値。百分率で表すことが多い。\n> CV ＝ s ／ x̄ × 100（％）\n単位が消えるので、**単位や平均の大きさが違うもの**どうしのばらつきを比べるのに使う（x̄ ＞ 0 のデータで使う）。\n> 例：エレメント長 x̄ ＝ 20.0 mm、s ＝ 0.5 mm → CV ＝ 2.5％\n> 　　ケーブル長 x̄ ＝ 400 mm、s ＝ 2.0 mm → CV ＝ 0.5％\ns はケーブルのほうが大きいが、平均に対する相対的なばらつきはエレメントのほうが大きい。\n\n#### 混同しやすい点\n- Σx² ↔ (Σx)²\n- 変動係数（s／x̄） ↔ 分散（s²）：変動係数は相対的なばらつき、単位なし。\n- 修正項 CT ↔ 平方和 S。\n\n#### 試験での問われ方\nΣx と Σx² が与えられて S・V・s を求める計算、変動係数の計算と意味（単位がない、異なる単位の比較）の正誤。",
+            "vi": "#### Công thức nhanh tính tổng bình phương độ lệch\nKhi tính S = Σ(xᵢ − x̄)² bằng cách tính từng độ lệch một, nếu trung bình không chia hết thì độ lệch thành số thập phân và việc tính rất mất công, nên ta dùng **công thức nhanh** sau (khai triển ra sẽ được cùng giá trị).\n> S = Σxᵢ² − (Σxᵢ)² / n\n> Σxᵢ²: tổng bình phương từng dữ liệu, (Σxᵢ)²: bình phương của tổng dữ liệu, (Σxᵢ)²/n: gọi là **số hạng hiệu chỉnh** (CT)\nΣxᵢ² và (Σxᵢ)² là **hai thứ khác nhau**. Cái trước là \"bình phương rồi mới cộng\", cái sau là \"cộng rồi mới bình phương\".\n\n#### Ví dụ: dữ liệu 15, 18, 14, 17, 20, 16 (n = 6)\n> Σx = 100, x̄ = 100/6 ≒ 16.67 (không chia hết)\n> Σx² = 225 + 324 + 196 + 289 + 400 + 256 = 1690\n> số hạng hiệu chỉnh = 100²/6 ≒ 1666.67\n> S = 1690 − 1666.67 ≒ 23.33\n> V = 23.33/5 ≒ 4.667, s = √4.667 ≒ 2.16\n\n#### Lưu ý: mất chữ số có nghĩa\nVới dữ liệu dạng \"giá trị lớn + chênh lệch nhỏ\" như 50.2, 49.8, 50.5, 50.1, 49.9, 50.3, ta phải tính hiệu 0.3333 giữa Σx² = 15080.44 và số hạng hiệu chỉnh 15080.1067; nếu làm tròn giữa chừng thì kết quả sẽ sai lệch rất nhiều. Khi đó hãy dùng \"biến đổi dữ liệu\" (B1.2) để làm nhỏ các con số rồi mới tính.\n\n#### Hệ số biến động\n**Hệ số biến động** CV: giá trị bằng độ lệch chuẩn chia cho trung bình. Thường được biểu diễn bằng phần trăm.\n> CV = s / x̄ × 100 (%)\nVì không còn đơn vị nên dùng để so sánh độ phân tán giữa **các đối tượng khác đơn vị hoặc khác độ lớn trung bình** (dùng cho dữ liệu có x̄ > 0).\n> Ví dụ: chiều dài phần tử anten (element) x̄ = 20.0 mm, s = 0.5 mm → CV = 2.5%\n>     chiều dài cáp x̄ = 400 mm, s = 2.0 mm → CV = 0.5%\ns của cáp lớn hơn, nhưng độ phân tán tương đối so với trung bình thì phần tử anten lớn hơn.\n\n#### Những điểm dễ nhầm\n- Σx² ↔ (Σx)²\n- Hệ số biến động (s/x̄) ↔ phương sai (s²): hệ số biến động là độ phân tán tương đối, không có đơn vị.\n- Số hạng hiệu chỉnh CT ↔ tổng bình phương độ lệch S.\n\n#### Cách ra đề\nCho Σx và Σx², tính S, V, s; tính hệ số biến động và câu hỏi đúng/sai về ý nghĩa của nó (không có đơn vị, so sánh được giữa các đơn vị khác nhau)."
+          }
+        ]
+      }
+    ],
+    "terms": [
+      [
+        "計量値",
+        "けいりょうち",
+        "Giá trị đo (liên tục)"
+      ],
+      [
+        "計数値",
+        "けいすうち",
+        "Giá trị đếm (rời rạc)"
+      ],
+      [
+        "言語データ",
+        "げんごデータ",
+        "Dữ liệu dạng lời nói, chữ viết"
+      ],
+      [
+        "不適合品",
+        "ふてきごうひん",
+        "Sản phẩm không phù hợp"
+      ],
+      [
+        "母集団",
+        "ぼしゅうだん",
+        "Tổng thể"
+      ],
+      [
+        "サンプル",
+        "",
+        "Mẫu"
+      ],
+      [
+        "サンプリング",
+        "",
+        "Lấy mẫu"
+      ],
+      [
+        "サンプルサイズ",
+        "",
+        "Cỡ mẫu (số đơn vị trong một mẫu)"
+      ],
+      [
+        "母数",
+        "ぼすう",
+        "Tham số tổng thể (μ, σ²…)"
+      ],
+      [
+        "統計量",
+        "とうけいりょう",
+        "Thống kê mẫu (x̄, V, s…)"
+      ],
+      [
+        "ロット",
+        "",
+        "Lô"
+      ],
+      [
+        "誤差",
+        "ごさ",
+        "Sai số (đo − thật)"
+      ],
+      [
+        "かたより",
+        "かたより",
+        "Độ chệch"
+      ],
+      [
+        "ばらつき",
+        "ばらつき",
+        "Độ phân tán"
+      ],
+      [
+        "真度",
+        "しんど",
+        "Độ đúng (ít chệch)"
+      ],
+      [
+        "精度",
+        "せいど",
+        "Độ chụm (ít phân tán)"
+      ],
+      [
+        "正確さ",
+        "せいかくさ",
+        "Độ chính xác tổng hợp"
+      ],
+      [
+        "サンプリング誤差",
+        "さんぷりんぐごさ",
+        "Sai số lấy mẫu"
+      ],
+      [
+        "測定誤差",
+        "そくていごさ",
+        "Sai số đo"
+      ],
+      [
+        "メディアン",
+        "めでぃあん",
+        "Trung vị"
+      ],
+      [
+        "範囲",
+        "はんい",
+        "Khoảng biến thiên"
+      ],
+      [
+        "偏差平方和",
+        "へんさへいほうわ",
+        "Tổng bình phương độ lệch"
+      ],
+      [
+        "不偏分散",
+        "ふへんぶんさん",
+        "Phương sai không chệch"
+      ],
+      [
+        "平方和の簡便式",
+        "へいほうわのかんべんしき",
+        "Công thức rút gọn của S"
+      ],
+      [
+        "修正項",
+        "しゅうせいこう",
+        "Số hạng hiệu chỉnh (Σx)²/n"
+      ],
+      [
+        "変動係数",
+        "へんどうけいすう",
+        "Hệ số biến thiên"
+      ],
+      [
+        "自由度",
+        "じゆうど",
+        "Bậc tự do"
+      ],
+      [
+        "データの変換",
+        "でーたのへんかん",
+        "Biến đổi dữ liệu"
+      ],
+      [
+        "仮平均",
+        "かりへいきん",
+        "Trung bình giả định (số tròn để trừ)"
+      ],
+      [
+        "きざみ",
+        "きざみ",
+        "Bước chia (h)"
+      ],
+      [
+        "桁落ち",
+        "けたおち",
+        "Mất chữ số có nghĩa"
+      ],
+      [
+        "標準偏差",
+        "ひょうじゅんへんさ",
+        "Độ lệch chuẩn"
+      ]
+    ]
+  },
+  "2:b2": {
+    "intro": {
+      "ja": "パレート図・特性要因図・チェックシート・ヒストグラム・散布図・グラフ・層別の使い方と読み方。",
+      "vi": "Lý thuyết QC Kentei cấp 2 – 7 công cụ QC."
+    },
+    "sections": [
+      {
+        "h": {
+          "ja": "パレート図",
+          "vi": "Biểu đồ Pareto"
+        },
+        "blocks": [
+          {
+            "type": "md",
+            "ja": "#### ひとことで\n**パレート図**＝「どの問題から手をつけるか」を一目で決めるための図。項目を大きい順に並べた棒グラフに、累積比率の折れ線を重ねる。\n\n#### なぜ\n不適合や損失は、たいてい**少数の項目に集中**している（重要な少数・vital few）。全部を少しずつ改善するより、上位1〜2項目をつぶすほうが全体が大きく減る。これを**重点指向**という。\n例えばアンテナの組立工程で、1か月の不適合 200件のうち「コネクタ締付け不足」と「ケーブル被覆傷」の2項目で 70％ を占めるなら、まずこの2つに人と時間を集中する。\n\n#### 定義\n不適合品数・不適合数・損失金額などを、現象や原因の**項目別**に分類してデータをとり、**大きい順**に並べた棒グラフと、その**累積比率**を示す折れ線（累積曲線）とを組み合わせた図。\n\n#### 作り方（ルール）\n- 期間と、何を数えるか（件数か金額か）を決めてデータを集める。\n- 項目別に集計し、**大きい順**に並べる。数の少ない項目はまとめて「**その他**」とし、その他は**大きさに関係なく最後（右端）**に置く。\n- 左の縦軸＝件数（または金額）、右の縦軸＝累積比率（0〜100％）。\n- 期間・データ数・作成者など必要事項を書き入れる。\n- 改善の前後を比べるときは、2つの図の**縦軸の目盛をそろえる**（そろえないと棒の高さで効果を見誤る）。\n\n#### 公式：累積比率\n> 構成比率（％）＝ 各項目の値 ÷ 総数 × 100\n> 累積比率（％）＝ 1位からその項目までの合計 ÷ 総数 × 100\n最後の項目（その他）までの累積比率は必ず 100％。\n\n#### 例題（1か月の不適合件数、総数 200）\n> コネクタ締付け不足 86 → 43.0％　累積 43.0％\n> ケーブル被覆傷　　 54 → 27.0％　累積 70.0％\n> ラベル位置ずれ　　 28 → 14.0％　累積 84.0％\n> 外観汚れ　　　　　 14 →  7.0％　累積 91.0％\n> その他　　　　　　 18 →  9.0％　累積 100.0％\nその他（18）は外観汚れ（14）より大きいが、最後に置く。上位2項目で 70％ → ここが重点。\n改善後、コネクタ締付け不足が 86 → 30 になり他が同じなら、総数は 200 → 144、**総数の減少率** ＝ 56／200 ＝ 28％（項目自体の減少率 56／86 ≒ 65％ と区別する）。\n\n#### 件数か金額か\n件数の多い項目が、損失の大きい項目とは限らない。目的が「損失を減らす」なら **損失金額**（件数 × 1件あたり損失）でパレート図をつくり直すと、順位が入れ替わることがある。\n\n#### 電卓の手順\n> 総数 200 を一度だけ入れ、各項目を累積していく：86 M+ → 54 M+ → MR ÷ 200 × 100 ＝ 70（累積）\n> 次の項目：28 M+ → MR ÷ 200 × 100 ＝ 84\n桁の確認：累積比率は単調に増え、最後は 100。100 を超えたら総数の入れ間違い。\n\n#### 判断フロー\n- 「どの項目が大きいか」「重点を絞る」「改善の優先順位」「改善前後の効果を比べる」→ **パレート図**\n- 「原因として考えられるものを洗い出す・整理する」→ 特性要因図（B2.2）\n- 「ばらつきの分布の形・規格との関係」→ ヒストグラム（B2.4）\n- 「2つの特性の関係」→ 散布図\n- 問題文に「損失」「費用」「金額」とあれば、件数ではなく**金額**で順位を決める。\n\n#### 混同しやすい点\n- パレート図 ↔ ヒストグラム：パレート図の横軸は**項目（分類）**、ヒストグラムの横軸は**計量値の区間**。\n- 構成比率 ↔ 累積比率。\n- 総数の減少率 ↔ 特定項目の減少率。\n\n#### 試験での問われ方\n作り方の正誤（その他の位置、目盛のそろえ方）、累積比率の計算、改善前後の比較、件数と金額の順位の違い。\n\n#### よくある誤解\n- 「その他も大きい順の位置に入れる」→ 誤り。その他は常に最後。\n- 「件数1位を必ず最優先にする」→ 目的が損失なら金額で判断。\n- 「改善後の図は見やすい目盛で描けばよい」→ 前後比較は目盛をそろえる。",
+            "vi": "#### Tóm tắt\n**Biểu đồ Pareto** = biểu đồ giúp quyết định ngay \"nên xử lý vấn đề nào trước\". Đó là biểu đồ cột sắp xếp các hạng mục từ lớn đến nhỏ, chồng thêm đường gấp khúc biểu thị tỷ lệ tích lũy.\n\n#### Vì sao\nSố không phù hợp hay tổn thất thường **tập trung vào một số ít hạng mục** (số ít quan trọng - vital few). Xử lý triệt để 1-2 hạng mục đứng đầu làm tổng giảm mạnh hơn nhiều so với cải tiến mỗi thứ một chút. Cách làm này gọi là **ưu tiên trọng điểm**.\nVí dụ ở công đoạn lắp ráp anten: trong 200 lỗi không phù hợp của 1 tháng, nếu 2 hạng mục \"siết connector không đủ\" và \"xước vỏ cáp\" chiếm 70% thì trước hết dồn người và thời gian vào 2 hạng mục này.\n\n#### Định nghĩa\nBiểu đồ kết hợp giữa biểu đồ cột - lập bằng cách phân loại dữ liệu như số sản phẩm không phù hợp, số điểm không phù hợp, số tiền tổn thất... **theo từng hạng mục** hiện tượng hoặc nguyên nhân rồi sắp xếp **từ lớn đến nhỏ** - và đường gấp khúc (đường tích lũy) biểu thị **tỷ lệ tích lũy** của chúng.\n\n#### Cách vẽ (quy tắc)\n- Xác định khoảng thời gian và đối tượng đếm (số lần hay số tiền) rồi thu thập dữ liệu.\n- Tổng hợp theo hạng mục và sắp xếp **từ lớn đến nhỏ**. Các hạng mục có số lượng ít gộp lại thành \"**Khác**\"; mục Khác luôn đặt **cuối cùng (ngoài cùng bên phải) bất kể lớn hay nhỏ**.\n- Trục tung bên trái = số lần (hoặc số tiền), trục tung bên phải = tỷ lệ tích lũy (0-100%).\n- Ghi các thông tin cần thiết như khoảng thời gian, số dữ liệu, người lập.\n- Khi so sánh trước và sau cải tiến, **thống nhất thang chia trục tung** của 2 biểu đồ (nếu không, sẽ đánh giá sai hiệu quả qua chiều cao cột).\n\n#### Công thức: tỷ lệ tích lũy\n> Tỷ lệ cơ cấu (%) = giá trị của từng hạng mục ÷ tổng số × 100\n> Tỷ lệ tích lũy (%) = tổng từ hạng mục thứ 1 đến hạng mục đó ÷ tổng số × 100\nTỷ lệ tích lũy đến hạng mục cuối cùng (Khác) luôn bằng 100%.\n\n#### Ví dụ (số lỗi không phù hợp trong 1 tháng, tổng số 200)\n> Siết connector không đủ 86 → 43.0%   tích lũy 43.0%\n> Xước vỏ cáp 54 → 27.0%   tích lũy 70.0%\n> Lệch vị trí nhãn 28 → 14.0%   tích lũy 84.0%\n> Bẩn ngoại quan 14 → 7.0%   tích lũy 91.0%\n> Khác 18 → 9.0%   tích lũy 100.0%\nMục Khác (18) lớn hơn Bẩn ngoại quan (14) nhưng vẫn đặt cuối. 2 hạng mục đầu chiếm 70% → đây là trọng điểm.\nSau cải tiến, nếu siết connector không đủ giảm từ 86 → 30 và các mục khác giữ nguyên thì tổng số 200 → 144, **tỷ lệ giảm của tổng số** = 56/200 = 28% (phân biệt với tỷ lệ giảm của riêng hạng mục đó 56/86 ≈ 65%).\n\n#### Số lần hay số tiền\nHạng mục có số lần nhiều chưa chắc là hạng mục gây tổn thất lớn. Nếu mục đích là \"giảm tổn thất\" thì vẽ lại Pareto theo **số tiền tổn thất** (số lần × tổn thất mỗi lần); thứ tự có thể bị đảo.\n\n#### Thao tác máy tính\n> Chỉ nhập tổng số 200 một lần, cộng dồn từng hạng mục: 86 M+ → 54 M+ → MR ÷ 200 × 100 = 70 (tích lũy)\n> Hạng mục tiếp theo: 28 M+ → MR ÷ 200 × 100 = 84\nKiểm tra: tỷ lệ tích lũy tăng dần và cuối cùng bằng 100. Nếu vượt 100 là đã nhập sai tổng số.\n\n#### Sơ đồ chọn công cụ\n- \"Hạng mục nào lớn\", \"khoanh vùng trọng điểm\", \"thứ tự ưu tiên cải tiến\", \"so sánh hiệu quả trước - sau cải tiến\" → **biểu đồ Pareto**\n- \"Liệt kê, sắp xếp các nguyên nhân có thể\" → biểu đồ nhân quả (B2.2)\n- \"Hình dạng phân bố của độ phân tán, quan hệ với tiêu chuẩn\" → histogram (B2.4)\n- \"Quan hệ giữa 2 đặc tính\" → biểu đồ tán xạ\n- Nếu đề bài có từ \"tổn thất\", \"chi phí\", \"số tiền\" thì xếp thứ tự theo **số tiền**, không theo số lần.\n\n#### Những điểm dễ nhầm\n- Pareto ↔ histogram: trục ngang của Pareto là **hạng mục (phân loại)**, của histogram là **khoảng giá trị đo**.\n- Tỷ lệ cơ cấu ↔ tỷ lệ tích lũy.\n- Tỷ lệ giảm của tổng số ↔ tỷ lệ giảm của một hạng mục cụ thể.\n\n#### Cách ra đề trong kỳ thi\nĐúng/sai về cách vẽ (vị trí mục Khác, cách thống nhất thang đo), tính tỷ lệ tích lũy, so sánh trước - sau cải tiến, sự khác nhau về thứ tự khi xếp theo số lần và theo số tiền.\n\n#### Những hiểu lầm thường gặp\n- \"Mục Khác cũng xếp theo đúng thứ tự lớn nhỏ\" → sai. Mục Khác luôn ở cuối.\n- \"Hạng mục có số lần nhiều nhất luôn phải ưu tiên nhất\" → nếu mục đích là giảm tổn thất thì đánh giá theo số tiền.\n- \"Biểu đồ sau cải tiến cứ vẽ theo thang đo dễ nhìn\" → so sánh trước - sau phải thống nhất thang đo."
+          }
+        ]
+      },
+      {
+        "h": {
+          "ja": "特性要因図",
+          "vi": "Biểu đồ nhân quả"
+        },
+        "blocks": [
+          {
+            "type": "md",
+            "ja": "#### ひとことで\n**特性要因図**＝ある結果（特性）を生む「原因の候補（要因）」を、魚の骨の形で漏れなく洗い出して整理する図。\n\n#### なぜ\n不具合の原因を思いつきで1つ決めて対策すると、外れたときに時間を失う。関係者の知恵を集めて要因を**体系的に**並べると、見落としが減り、「どれをデータで確かめるか」が決めやすくなる。\n例：特性「コネクタ締付けトルク不足」→ 人（作業者の習熟）、機械（トルクドライバの設定・校正）、材料（ナットのねじ寸法）、方法（締付け順序・手順書）…と分けて書き出す。\n\n#### 定義\n特定の結果（**特性**）と、それに影響を及ぼすと思われる**要因**との関係を系統的に表した図。形から**魚の骨図**とも呼ばれる。石川馨博士が考案したとされる。\n\n#### 構造と作り方\n- 右端に**特性**（問題・結果）を書き、左から太い矢印（**背骨**）を引く。\n- **大骨**：要因の大分類。製造では **4M**（人 Man・機械 Machine・材料 Material・方法 Method）がよく使われ、測定・環境を加えることもある（5M1E など）。4Mは「よく使う切り口」であり、決まりではない。\n- **中骨・小骨**：大骨を「なぜ？」を繰り返して細かくしていく。ブレーンストーミングで多くの意見を出す。\n- 重要と思われる要因に**印**をつけ、特性・作成日・作成者などを記入する。\n\n#### 2つの使い方\n- **要因解析用**：問題の原因を追究するため（なぜそうなったか）。\n- **管理用**（工程管理用）：良い結果を出すために管理すべき要因を整理し、標準化・教育に使う。\n\n#### 重要：要因は「仮説」\n図に書いた要因は、話し合いで出た**原因の候補**にすぎない。本当に影響しているかは、層別・散布図・実験などの**データで検証**して初めて「原因」と言える。\n\n#### 判断フロー\n- 「考えられる原因を洗い出す」「要因を整理する」「4Mで分類」→ **特性要因図**（QC七つ道具・数値データでなく言語情報）\n- 要因どうしが**複雑にからみ合っていて**、因果関係を矢印でたどりたい → **連関図法**（新QC七つ道具）\n- 改善活動の流れ：パレート図で**重点問題を選ぶ** → 特性要因図で**要因を洗い出す** → データで**検証** → 対策。\n\n#### 混同しやすい点\n- 特性 ↔ 要因：特性は「結果」、要因は「原因の候補」。\n- 要因 ↔ 原因：原因は検証済みのもの。\n- 特性要因図 ↔ 連関図：特性要因図は1つの特性への階層的な分類、連関図は要因間の複雑な因果。\n- 特性要因図 ↔ 系統図：系統図は目的→手段の展開（方策を考える）。\n\n#### 試験での問われ方\n定義の空欄補充（特性・要因・系統的）、大骨の例（4M）、「要因は検証が必要」の正誤、場面から手法を選ぶ問題。\n\n#### よくある誤解\n- 「図に書いた要因＝真の原因」→ 誤り。データで検証が必要。\n- 「大骨は必ず4M」→ 4Mは代表的な切り口にすぎない。\n- 「特性要因図は数値データで作る」→ 主に経験・知識（言語情報）から作る。",
+            "vi": "#### Tóm tắt\n**Biểu đồ nhân quả** = biểu đồ hình xương cá dùng để liệt kê đầy đủ và sắp xếp các \"ứng viên nguyên nhân (yếu tố)\" có thể gây ra một kết quả (đặc tính).\n\n#### Vì sao\nNếu tùy tiện chọn một nguyên nhân theo cảm tính rồi đưa ra biện pháp, khi đoán sai sẽ mất thời gian. Tập hợp hiểu biết của những người liên quan và sắp xếp các yếu tố một cách **có hệ thống** sẽ giảm bỏ sót và dễ quyết định \"cần kiểm chứng yếu tố nào bằng dữ liệu\".\nVí dụ: đặc tính \"lực siết connector không đủ\" → chia ra và viết: Người (độ thành thạo của công nhân), Máy (cài đặt, hiệu chuẩn tô vít lực), Vật liệu (kích thước ren của đai ốc), Phương pháp (thứ tự siết, hướng dẫn công việc)...\n\n#### Định nghĩa\nBiểu đồ biểu diễn một cách **có hệ thống** mối quan hệ giữa một kết quả cụ thể (**đặc tính**) và các **yếu tố** được cho là có ảnh hưởng đến nó. Do hình dạng nên còn gọi là **biểu đồ xương cá**. Được cho là do tiến sĩ Ishikawa Kaoru đề xuất.\n\n#### Cấu trúc và cách vẽ\n- Ghi **đặc tính** (vấn đề, kết quả) ở đầu bên phải, kẻ mũi tên đậm (**xương sống**) từ trái sang.\n- **Xương lớn**: nhóm phân loại lớn của yếu tố. Trong sản xuất hay dùng **4M** (Người Man, Máy Machine, Vật liệu Material, Phương pháp Method), có khi thêm Đo lường và Môi trường (như 5M1E). 4M là \"cách chia hay dùng\", không phải quy định bắt buộc.\n- **Xương vừa, xương nhỏ**: chi tiết hóa xương lớn bằng cách lặp lại câu hỏi \"tại sao?\". Dùng brainstorming để đưa ra nhiều ý kiến.\n- Đánh **dấu** vào các yếu tố được cho là quan trọng, ghi đặc tính, ngày lập, người lập...\n\n#### Hai cách sử dụng\n- **Dùng để phân tích yếu tố**: để truy tìm nguyên nhân của vấn đề (vì sao lại xảy ra).\n- **Dùng để quản lý** (quản lý công đoạn): sắp xếp các yếu tố cần quản lý để tạo ra kết quả tốt, dùng cho tiêu chuẩn hóa và đào tạo.\n\n#### Quan trọng: yếu tố chỉ là \"giả thuyết\"\nCác yếu tố ghi trên biểu đồ chỉ là **ứng viên nguyên nhân** đưa ra khi thảo luận. Chỉ khi đã **kiểm chứng bằng dữ liệu** như phân tầng, biểu đồ tán xạ, thí nghiệm... mới có thể gọi là \"nguyên nhân\".\n\n#### Sơ đồ chọn công cụ\n- \"Liệt kê các nguyên nhân có thể\", \"sắp xếp yếu tố\", \"phân loại theo 4M\" → **biểu đồ nhân quả** (thuộc 7 công cụ QC; dùng thông tin ngôn ngữ chứ không phải dữ liệu số)\n- Các yếu tố **đan xen phức tạp với nhau**, muốn lần theo quan hệ nhân quả bằng mũi tên → **biểu đồ quan hệ** (thuộc 7 công cụ QC mới)\n- Trình tự hoạt động cải tiến: dùng Pareto để **chọn vấn đề trọng điểm** → dùng biểu đồ nhân quả để **liệt kê yếu tố** → **kiểm chứng** bằng dữ liệu → biện pháp.\n\n#### Những điểm dễ nhầm\n- Đặc tính ↔ yếu tố: đặc tính là \"kết quả\", yếu tố là \"ứng viên nguyên nhân\".\n- Yếu tố ↔ nguyên nhân: nguyên nhân là cái đã được kiểm chứng.\n- Biểu đồ nhân quả ↔ biểu đồ quan hệ: biểu đồ nhân quả phân loại theo tầng bậc cho 1 đặc tính, biểu đồ quan hệ thể hiện quan hệ nhân quả phức tạp giữa các yếu tố.\n- Biểu đồ nhân quả ↔ biểu đồ hệ thống (biểu đồ cây): biểu đồ hệ thống triển khai mục đích → phương tiện (để nghĩ ra biện pháp).\n\n#### Cách ra đề trong kỳ thi\nĐiền vào chỗ trống của định nghĩa (đặc tính, yếu tố, có hệ thống), ví dụ về xương lớn (4M), đúng/sai về \"yếu tố cần được kiểm chứng\", chọn công cụ theo tình huống.\n\n#### Những hiểu lầm thường gặp\n- \"Yếu tố ghi trên biểu đồ = nguyên nhân thật\" → sai. Cần kiểm chứng bằng dữ liệu.\n- \"Xương lớn bắt buộc là 4M\" → 4M chỉ là cách chia tiêu biểu.\n- \"Biểu đồ nhân quả được lập từ dữ liệu số\" → chủ yếu lập từ kinh nghiệm, kiến thức (thông tin ngôn ngữ)."
+          }
+        ]
+      },
+      {
+        "h": {
+          "ja": "チェックシート",
+          "vi": "Phiếu kiểm tra (check sheet)"
+        },
+        "blocks": [
+          {
+            "type": "md",
+            "ja": "#### ひとことで\n**チェックシート**＝データを「とりながら」分類・集計まで済ませてしまう、あらかじめ様式を決めた記録用紙。または、点検項目を漏れなく確認するための用紙。\n\n#### なぜ\n現場でメモ書きのデータをあとから集計すると、手間がかかり、書き漏れ・分類のぶれが起きる。項目・区分を**先に決めて**チェック（／や正の字）するだけにすれば、記入が速く、終わったときにはもう集計ができている。しかも日時・作業者・ラインなど**層別の情報**を一緒に残せるので、あとでパレート図や層別に使える。\n例：アンテナ組立ラインで「コネクタ締付け不足／ケーブル被覆傷／ラベル位置ずれ…」の行と、月〜金・A直／B直の列をもつ用紙に、発生のたびに／を入れる → 週末には項目別・曜日別・直別の件数がそろっている。\n\n#### 定義（【定義と基本的な考え方】レベル）\nデータが簡単にとれ、しかもそのデータが整理しやすいように、また点検・確認項目が漏れなくチェックできるように、**あらかじめ設計してある様式**。\n\n#### 種類\n- **記録用（調査用）チェックシート**：データの分類・集計が目的。\n　- 不適合項目調査用：どの不適合項目が多いか（→ パレート図につながる）\n　- 度数分布調査用：計量値を区間ごとに／で記入（→ そのままヒストグラムの形が見える）\n　- 不適合位置調査用（欠点位置調査用）：製品の図に発生位置を記入（→ 位置の偏りがわかる）\n　- 不適合要因調査用：作業者・機械など要因別に記入（→ 層別）\n- **点検用（確認用）チェックシート**：始業点検・作業前確認など、確認すべき項目を漏れなく点検するのが目的。\n\n#### 作り方のポイント\n- 目的（何を知りたいか）を先に決め、それに合う項目・区分を決める。\n- 層別の情報（日時・作業者・機械・材料ロット・サプライヤー）を書く欄を必ずつくる。\n- 誰が書いても同じになるよう、項目の判定基準をはっきりさせる。\n- 集めたあとは、パレート図・ヒストグラム・層別などで解析して処置につなげる（記録して終わりにしない）。\n\n#### 判断フロー\n- 「発生のたびに項目別に記録」「データを集める段階」→ **記録用チェックシート**\n- 「どこに（位置）多いか」→ 不適合位置調査用／「どの区間に何個」→ 度数分布調査用\n- 「点検・確認の漏れを防ぐ」「始業前点検」→ **点検用チェックシート**\n- 集めたデータの「順位づけ」→ パレート図、「分布の形」→ ヒストグラム（記録の**あと**の手法）\n\n#### 試験での問われ方\n種類と目的の組合せ、場面からの選択、「層別の情報を記録する」の正誤。\n\n#### よくある誤解\n- 「チェックシートは点検用だけ」→ 記録用（データ収集）が中心。\n- 「層別の情報は不要」→ 日時・作業者などを残さないと原因の追究ができない。\n- 「記録すれば終わり」→ 集めたデータを解析して処置につなげる。",
+            "vi": "#### Tóm tắt\n**Phiếu kiểm tra (check sheet)** = phiếu ghi chép có mẫu định sẵn, giúp vừa \"lấy\" dữ liệu vừa hoàn thành luôn việc phân loại, tổng hợp. Hoặc là phiếu dùng để kiểm tra các hạng mục mà không bỏ sót.\n\n#### Vì sao\nNếu ở hiện trường ghi chép tự do rồi sau đó mới tổng hợp thì tốn công, dễ ghi sót và phân loại không thống nhất. Nếu **quyết định trước** hạng mục, cách phân loại và chỉ cần đánh dấu (gạch / hoặc đếm theo nét) thì ghi rất nhanh, và khi ghi xong là đã có số liệu tổng hợp. Hơn nữa, có thể lưu cùng **thông tin phân tầng** như ngày giờ, công nhân, dây chuyền nên sau này dùng được cho Pareto hay phân tầng.\nVí dụ: trên dây chuyền lắp ráp anten, dùng phiếu có các hàng \"siết connector không đủ / xước vỏ cáp / lệch vị trí nhãn...\" và các cột thứ 2 - thứ 6 × ca A / ca B, mỗi lần phát sinh thì gạch một nét / → cuối tuần đã có đủ số lượng theo hạng mục, theo ngày, theo ca.\n\n#### Định nghĩa (mức \"định nghĩa và tư duy cơ bản\")\nMẫu phiếu **được thiết kế sẵn** sao cho lấy dữ liệu dễ dàng, dữ liệu đó dễ sắp xếp, và các hạng mục kiểm tra, xác nhận được kiểm tra không bỏ sót.\n\n#### Các loại\n- **Phiếu kiểm tra dùng để ghi chép (điều tra)**: mục đích là phân loại, tổng hợp dữ liệu.\n  - Điều tra hạng mục không phù hợp: hạng mục không phù hợp nào nhiều (→ nối tiếp sang Pareto)\n  - Điều tra phân bố tần số: đánh dấu / giá trị đo theo từng khoảng (→ thấy ngay hình dạng histogram)\n  - Điều tra vị trí không phù hợp (vị trí khuyết tật): ghi vị trí phát sinh lên hình vẽ sản phẩm (→ biết vị trí nào tập trung)\n  - Điều tra yếu tố gây không phù hợp: ghi theo yếu tố như công nhân, máy (→ phân tầng)\n- **Phiếu kiểm tra dùng để kiểm điểm (xác nhận)**: mục đích là kiểm tra không bỏ sót các hạng mục cần xác nhận, như kiểm tra đầu ca, xác nhận trước khi làm việc.\n\n#### Điểm chính khi thiết kế\n- Quyết định mục đích (muốn biết điều gì) trước, rồi chọn hạng mục, cách phân loại phù hợp.\n- Nhất định phải có ô ghi thông tin phân tầng (ngày giờ, công nhân, máy, lô vật liệu, nhà cung cấp).\n- Làm rõ tiêu chuẩn đánh giá của từng hạng mục để ai ghi cũng ra kết quả giống nhau.\n- Sau khi thu thập, phân tích bằng Pareto, histogram, phân tầng... để dẫn tới xử lý (không dừng lại ở việc ghi chép).\n\n#### Sơ đồ chọn công cụ\n- \"Ghi theo hạng mục mỗi khi phát sinh\", \"giai đoạn thu thập dữ liệu\" → **phiếu kiểm tra dùng để ghi chép**\n- \"Nhiều ở đâu (vị trí)\" → loại điều tra vị trí không phù hợp / \"khoảng nào có bao nhiêu cái\" → loại điều tra phân bố tần số\n- \"Ngăn bỏ sót khi kiểm tra, xác nhận\", \"kiểm tra đầu ca\" → **phiếu kiểm tra dùng để kiểm điểm**\n- \"Xếp thứ tự\" dữ liệu đã thu thập → Pareto, \"hình dạng phân bố\" → histogram (là công cụ dùng **sau** khi ghi chép)\n\n#### Cách ra đề trong kỳ thi\nGhép loại phiếu với mục đích, chọn theo tình huống, đúng/sai về \"ghi lại thông tin phân tầng\".\n\n#### Những hiểu lầm thường gặp\n- \"Phiếu kiểm tra chỉ dùng để kiểm điểm\" → loại ghi chép (thu thập dữ liệu) mới là chính.\n- \"Không cần thông tin phân tầng\" → nếu không lưu ngày giờ, công nhân... thì không truy được nguyên nhân.\n- \"Ghi xong là xong\" → phải phân tích dữ liệu đã thu thập để dẫn tới xử lý."
+          }
+        ]
+      },
+      {
+        "h": {
+          "ja": "ヒストグラム",
+          "vi": "Histogram (biểu đồ tần số)"
+        },
+        "blocks": [
+          {
+            "type": "md",
+            "ja": "#### ひとことで\n**ヒストグラム**＝計量値データを区間に分けて度数を数え、柱で表した図。「ばらつきの**形**」と「規格に対する**位置**」を一目で見る道具。\n\n#### なぜ\n平均と標準偏差だけでは、データの姿は見えない。平均が同じでも、山が2つある・一部が飛び離れている・規格の外側が切り落とされている…といった違いは、**形を見て初めて**わかる。形は「工程で何が起きているか」のヒントになる。\n例：2社のサプライヤーから入るインダクタを混ぜて使っている工程で、特性値のヒストグラムが**二山型**になった → 2社の平均が違うのでは？ → サプライヤー別に**層別**して描き直す。\n\n#### 定義（【定義と基本的な考え方】レベル）\n計量値の分布を、データの範囲をいくつかの**区間**に分け、各区間に入るデータの数（**度数**）を柱の高さ（面積）で表した図。度数を表にしたものが**度数表（度数分布表）**。\n横軸は**計量値の区間**（パレート図の横軸は項目）。\n\n#### 作り方（度数表からの x̄・s の計算は次の項目で扱う）\n- ① データを集める（目安 n ≧ 50、できれば 100 程度）。最大値・最小値を求める。\n- ② **区間の数** k を決める：目安 **k ≒ √n**（n＝100 なら 10 程度）。\n- ③ **区間の幅** h ＝（最大値 − 最小値）÷ k を計算し、**測定単位の整数倍に丸める**。\n- ④ **第1区間の下側境界値** ＝ 最小値 − 測定単位 ÷ 2。以後、幅 h ずつ足して境界値を決める（最大値を含むまで）。\n- ⑤ **中心値** ＝（下側境界値＋上側境界値）÷ 2。\n- ⑥ 度数表を作り（度数分布調査用チェックシートでもよい）、柱を描く。規格値・平均値の線、n・期間などを記入する。\n\n#### 公式（記号の意味）\n> k ≒ √n　（n：データ数）\n> h ＝ (x_max − x_min) ÷ k → 測定単位の整数倍に丸める\n> 第1区間の下側境界値 ＝ x_min − (測定単位)／2\nなぜ「測定単位の半分」ずらす？ → 0.01 mm 単位で測ったデータは必ず 10.12, 10.13… のような値になる。境界を 10.115 のように半端な位置に置けば、データが境界の**上に乗らず**、どちらの区間に入れるか迷わない。\nなぜ幅を「測定単位の整数倍」に？ → 半端な幅だと、区間によって入りうる測定値の数が 3 個だったり 4 個だったりして、柱の高さが交互に凸凹する（**歯抜け型**の原因）。\n\n#### 例題（アンテナエレメント長、n＝100、測定単位 0.01 mm、最大 10.48、最小 10.12）\n> k ≒ √100 ＝ 10\n> h ＝ (10.48 − 10.12) ÷ 10 ＝ 0.036 → 0.01 の整数倍に丸めて 0.04\n> 第1区間：下側境界値 10.12 − 0.005 ＝ 10.115、上側 10.115 ＋ 0.04 ＝ 10.155、中心値 10.135\n> 境界値 10.115, 10.155, …, 10.475 → 10.475 は最大 10.48 より小さいので、もう1区間：…10.515\n> 区間の数は結果として 10\n丸め方しだいで区間の数が √n から少しずれるのは問題ない（√n は目安）。\n\n#### 電卓の手順\n> 10.48 − 10.12 ＝ 0.36 → ÷ 10 ＝ 0.036 → 丸めて 0.04\n> 10.12 − 0.005 ＝ 10.115 → ＋ 0.04 ＝ 10.155 → ＋ 0.04 ＝ …（最後の境界値だけ確認するなら 0.04 × 10 ＋ 10.115 ＝ 10.515 ≧ 10.48 と1回で確認できる。普通の電卓は左から順に計算するので掛け算を先に打つ）\n桁の確認：幅 × 区間の数 ≒ 範囲（0.04 × 10 ＝ 0.40 ≧ 0.36）。\n\n#### 形の読み方\n- **一般型**（左右対称の山）：通常の工程。\n- **二山型**：平均の異なる2つの分布が混在 → 層別（サプライヤー別・機械別・直別）して描き直す。\n- **高原型**：平均が少しずつ違う複数の分布が混在。\n- **離れ小島型**：少数の異常データ・別の工程のものが混入 → 原因を調べる。\n- **絶壁型**：規格外れのものを全数選別で取り除いた場合など。\n- **歯抜け型（くし歯型）**：区間の幅が測定単位の整数倍でない・測定者の読み方の癖。工程の問題ではなく**描き方・測り方**の問題のことが多い。\n- **右すそ引き型／左すそ引き型**：理論的・規格的に下限（上限）が抑えられている特性（例：振れ・不純物量のように 0 より小さくならない）。\n\n#### 規格との比較（定性的に）\n規格の上限・下限を書き入れて、①平均が規格の中心にあるか、②ばらつきの幅が規格の幅に収まりゆとりがあるか、③規格外れがあるか、を見る。数値での評価（工程能力指数）は B8 で扱う。\n\n#### 判断フロー\n- 計量値 → 「分布の形」「ばらつき」「規格に対する位置」→ **ヒストグラム**\n- 項目（分類）の件数・金額 → 「どれが大きいか」→ パレート図\n- 2つの計量値の関係 → 散布図（B2.5）\n- 「時間とともにどう変わるか」「工程が安定しているか」→ 管理図（ヒストグラムは**時間の順序の情報を失う**）\n- 二山型・高原型を見たら → **層別**\n\n#### 混同しやすい点\n- ヒストグラム ↔ パレート図：横軸が計量値の区間か、項目か。\n- 区間の幅 ↔ 測定単位：幅は測定単位の整数倍。\n- 境界値 ↔ 中心値：境界値は半端な位置、中心値は区間の真ん中。\n\n#### 試験での問われ方\n区間の数・幅・境界値の計算、形とその原因の組合せ（二山型→層別、絶壁型→選別、歯抜け型→幅や読み癖）、「時間的変化がわかる」などの誤った記述を選ぶ問題。\n\n#### よくある誤解\n- 「ヒストグラムで工程の安定状態（時間的な変化）がわかる」→ わからない。管理図を使う。\n- 「区間の幅は計算値をそのまま使う」→ 測定単位の整数倍に丸める。\n- 「歯抜け型は工程の異常」→ 多くは区間の取り方・読み方の問題。",
+            "vi": "#### Tóm tắt\n**Histogram** = biểu đồ chia dữ liệu đo (giá trị đo lường) thành các khoảng, đếm tần số và biểu diễn bằng cột. Là công cụ để nhìn ngay \"**hình dạng** của độ phân tán\" và \"**vị trí** so với tiêu chuẩn\".\n\n#### Vì sao\nChỉ có trung bình và độ lệch chuẩn thì không thấy được hình ảnh của dữ liệu. Dù trung bình giống nhau, những khác biệt như có 2 đỉnh, một phần tách xa, phía ngoài tiêu chuẩn bị cắt bỏ... chỉ khi **nhìn hình dạng mới** biết được. Hình dạng là gợi ý về \"điều gì đang xảy ra ở công đoạn\".\nVí dụ: ở công đoạn dùng lẫn cuộn cảm nhập từ 2 nhà cung cấp, histogram của giá trị đặc tính có **dạng 2 đỉnh** → có phải trung bình của 2 hãng khác nhau? → **phân tầng** theo nhà cung cấp và vẽ lại.\n\n#### Định nghĩa (mức \"định nghĩa và tư duy cơ bản\")\nBiểu đồ biểu diễn phân bố của giá trị đo bằng cách chia phạm vi dữ liệu thành một số **khoảng** và thể hiện số dữ liệu rơi vào mỗi khoảng (**tần số**) bằng chiều cao (diện tích) của cột. Bảng ghi tần số gọi là **bảng tần số (bảng phân bố tần số)**.\nTrục ngang là **khoảng giá trị đo** (trục ngang của Pareto là hạng mục).\n\n#### Cách vẽ (việc tính x̄, s từ bảng tần số được trình bày ở mục tiếp theo)\n- (1) Thu thập dữ liệu (tham khảo n ≥ 50, tốt nhất khoảng 100). Tìm giá trị lớn nhất, giá trị nhỏ nhất.\n- (2) Quyết định **số khoảng** k: tham khảo **k ≈ √n** (n = 100 thì khoảng 10).\n- (3) Tính **độ rộng khoảng** h = (giá trị lớn nhất − giá trị nhỏ nhất) ÷ k, rồi **làm tròn thành bội số nguyên của đơn vị đo**.\n- (4) **Biên dưới của khoảng thứ 1** = giá trị nhỏ nhất − đơn vị đo ÷ 2. Sau đó cộng dần h để có các biên tiếp theo (cho đến khi bao gồm giá trị lớn nhất).\n- (5) **Giá trị tâm** = (biên dưới + biên trên) ÷ 2.\n- (6) Lập bảng tần số (có thể dùng phiếu kiểm tra điều tra phân bố tần số), vẽ cột. Ghi đường giá trị tiêu chuẩn, đường trung bình, n, khoảng thời gian...\n\n#### Công thức (ý nghĩa ký hiệu)\n> k ≈ √n (n: số dữ liệu)\n> h = (x_max − x_min) ÷ k → làm tròn thành bội số nguyên của đơn vị đo\n> Biên dưới của khoảng thứ 1 = x_min − (đơn vị đo)/2\nVì sao phải dịch đi \"một nửa đơn vị đo\"? → Dữ liệu đo theo đơn vị 0.01 mm luôn có giá trị dạng 10.12, 10.13... Nếu đặt biên ở vị trí lẻ như 10.115 thì dữ liệu **không rơi đúng lên biên**, không phải phân vân xếp vào khoảng nào.\nVì sao độ rộng phải là \"bội số nguyên của đơn vị đo\"? → Nếu độ rộng lẻ, có khoảng chứa được 3 giá trị đo, có khoảng chứa được 4, nên chiều cao cột lồi lõm xen kẽ (nguyên nhân của **dạng răng lược**).\n\n#### Ví dụ (chiều dài phần tử anten, n = 100, đơn vị đo 0.01 mm, lớn nhất 10.48, nhỏ nhất 10.12)\n> k ≈ √100 = 10\n> h = (10.48 − 10.12) ÷ 10 = 0.036 → làm tròn thành bội số nguyên của 0.01 được 0.04\n> Khoảng thứ 1: biên dưới 10.12 − 0.005 = 10.115, biên trên 10.115 + 0.04 = 10.155, giá trị tâm 10.135\n> Các biên 10.115, 10.155, ..., 10.475 → 10.475 nhỏ hơn giá trị lớn nhất 10.48 nên thêm 1 khoảng nữa: ...10.515\n> Kết quả số khoảng là 10\nTùy cách làm tròn mà số khoảng lệch một chút so với √n cũng không sao (√n chỉ là giá trị tham khảo).\n\n#### Thao tác máy tính\n> 10.48 − 10.12 = 0.36 → ÷ 10 = 0.036 → làm tròn thành 0.04\n> 10.12 − 0.005 = 10.115 → + 0.04 = 10.155 → + 0.04 = ... (nếu chỉ muốn kiểm tra biên cuối cùng thì 0.04 × 10 + 10.115 = 10.515 ≥ 10.48, kiểm tra được bằng 1 lần bấm. Máy tính thông thường tính lần lượt từ trái sang nên bấm phép nhân trước)\nKiểm tra: độ rộng × số khoảng ≈ phạm vi (0.04 × 10 = 0.40 ≥ 0.36).\n\n#### Cách đọc hình dạng\n- **Dạng thông thường** (một đỉnh đối xứng trái phải): công đoạn bình thường.\n- **Dạng 2 đỉnh**: lẫn 2 phân bố có trung bình khác nhau → phân tầng (theo nhà cung cấp, theo máy, theo ca) rồi vẽ lại.\n- **Dạng cao nguyên**: lẫn nhiều phân bố có trung bình lệch nhau từng chút.\n- **Dạng đảo lẻ**: lẫn một ít dữ liệu bất thường hoặc hàng của công đoạn khác → điều tra nguyên nhân.\n- **Dạng vách đứng**: ví dụ khi đã loại bỏ hàng ngoài tiêu chuẩn bằng tuyển chọn toàn bộ.\n- **Dạng răng lược**: độ rộng khoảng không phải bội số nguyên của đơn vị đo, hoặc thói quen đọc của người đo. Thường là vấn đề **cách vẽ, cách đo** chứ không phải vấn đề của công đoạn.\n- **Dạng đuôi dài bên phải / đuôi dài bên trái**: đặc tính bị chặn giới hạn dưới (giới hạn trên) về lý thuyết hoặc theo tiêu chuẩn (ví dụ: độ đảo, lượng tạp chất không thể nhỏ hơn 0).\n\n#### So sánh với tiêu chuẩn (định tính)\nVẽ giới hạn trên, giới hạn dưới của tiêu chuẩn vào và xem: (1) trung bình có nằm ở giữa tiêu chuẩn không, (2) độ rộng phân tán có nằm gọn trong độ rộng tiêu chuẩn và còn dư không, (3) có hàng ngoài tiêu chuẩn không. Đánh giá bằng số (chỉ số năng lực công đoạn) được trình bày ở B8.\n\n#### Sơ đồ chọn công cụ\n- Giá trị đo → \"hình dạng phân bố\", \"độ phân tán\", \"vị trí so với tiêu chuẩn\" → **histogram**\n- Số lần, số tiền theo hạng mục (phân loại) → \"cái nào lớn\" → Pareto\n- Quan hệ giữa 2 giá trị đo → biểu đồ tán xạ (B2.5)\n- \"Thay đổi thế nào theo thời gian\", \"công đoạn có ổn định không\" → biểu đồ kiểm soát (histogram **làm mất thông tin về thứ tự thời gian**)\n- Thấy dạng 2 đỉnh, dạng cao nguyên → **phân tầng**\n\n#### Những điểm dễ nhầm\n- Histogram ↔ Pareto: trục ngang là khoảng giá trị đo hay là hạng mục.\n- Độ rộng khoảng ↔ đơn vị đo: độ rộng là bội số nguyên của đơn vị đo.\n- Biên ↔ giá trị tâm: biên ở vị trí lẻ, giá trị tâm ở chính giữa khoảng.\n\n#### Cách ra đề trong kỳ thi\nTính số khoảng, độ rộng, biên; ghép hình dạng với nguyên nhân (2 đỉnh → phân tầng, vách đứng → tuyển chọn, răng lược → độ rộng hoặc thói quen đọc); chọn phát biểu sai như \"biết được thay đổi theo thời gian\".\n\n#### Những hiểu lầm thường gặp\n- \"Histogram cho biết trạng thái ổn định (thay đổi theo thời gian) của công đoạn\" → không biết được. Dùng biểu đồ kiểm soát.\n- \"Độ rộng khoảng dùng nguyên giá trị tính được\" → làm tròn thành bội số nguyên của đơn vị đo.\n- \"Dạng răng lược là bất thường của công đoạn\" → phần lớn là vấn đề cách chia khoảng, cách đọc."
+          }
+        ]
+      },
+      {
+        "h": {
+          "ja": "ヒストグラム（続き）― 度数表から x̄・s を求める・規格との比較",
+          "vi": "Histogram (tiếp) - tính x̄, s từ bảng tần số và so sánh với tiêu chuẩn"
+        },
+        "blocks": [
+          {
+            "type": "md",
+            "ja": "#### ひとことで\n**度数表から平均・標準偏差を求める**＝区間に入ったデータを、すべてその区間の**中心値**だと見なして計算する。中心値を **u に変換**すると、−2、−1、0、1、2 のような小さな整数だけで計算でき、電卓の打ち間違いが激減する。\n\n#### なぜ\nヒストグラムを描いた時点で手元にあるのは「どの区間に何個」という度数表だけで、100個の生データを1つずつ打ち直すのは試験では時間が足りない。区間の中のデータは中心値の近くにあるので、中心値×度数で代表させても平均・標準偏差はほぼ同じになる（**近似値**）。\nさらに中心値は等間隔（幅 h ずつ）に並んでいるので、u ＝（中心値 − x₀）÷ h と変換すれば u は整数になる。これは「データの変換」（u ＝ (x − a) ÷ h と変換し、u の値から x̄・S・V・s を元に戻す方法）そのもの。\n\n#### 公式（記号の意味）\n- x₀：基準にする中心値（度数が最も多い区間など、表の真ん中あたりを選ぶ）\n- h：区間の幅、f：各区間の度数、n ＝ Σf：データ数\n> u ＝ (x − x₀) ÷ h\n> x̄ ＝ x₀ ＋ h × (Σfu ÷ n)\n> S ＝ h² × { Σfu² − (Σfu)² ÷ n }\n> V ＝ S ÷ (n − 1)、　s ＝ √V\nなぜ S には **h²** が掛かる？ → S は「偏差の2乗」の和。偏差を h 倍に伸ばすと、2乗は h² 倍になる。x̄ には h が1回、S・V には h² が掛かり、s（√V）には h が1回掛かる。x₀ はずらしただけなので、ばらつき（S・V・s）には**関係しない**。\n\n#### 例題（B2.4 と同じアンテナエレメント長、n＝100、h＝0.04、x₀＝10.295）\n- 中心値：10.135、10.175、10.215、10.255、10.295、10.335、10.375、10.415、10.455、10.495\n- 度数 f：1、4、9、16、24、20、14、8、3、1（計 100）\n- u：−4、−3、−2、−1、0、1、2、3、4、5\n> fu：−4、−12、−18、−16、0、20、28、24、12、5 → Σfu ＝ 39\n> fu²：16、36、36、16、0、20、56、72、48、25 → Σfu² ＝ 325\n> x̄ ＝ 10.295 ＋ 0.04 × 39 ÷ 100 ＝ 10.295 ＋ 0.0156 ＝ 10.3106 ≒ 10.311 mm\n> Σfu² − (Σfu)²/n ＝ 325 − 39² ÷ 100 ＝ 325 − 15.21 ＝ 309.79\n> S ＝ 0.04² × 309.79 ＝ 0.0016 × 309.79 ＝ 0.495664\n> V ＝ 0.495664 ÷ 99 ≒ 0.005007、　s ＝ √0.005007 ≒ 0.0708 mm\n検算：s はデータの範囲（約 0.36）の 1/6〜1/4 程度になるのがふつう → 0.07 は妥当。\n\n#### 電卓の手順\n> MRC MRC → 4 M− 4 × 3 M− 9 × 2 M− 16 M− 20 M+ 14 × 2 M+ 8 × 3 M+ 3 × 4 M+ 5 M+ → MRC（Σfu ＝ 39）\n> MRC MRC → 1 × 4 × 4 M+ 4 × 3 × 3 M+ 9 × 2 × 2 M+ 16 M+ 20 M+ 14 × 2 × 2 M+ 8 × 3 × 3 M+ 3 × 4 × 4 M+ 5 × 5 M+ → MRC（Σfu² ＝ 325）\n> MRC MRC → 325 M+ 39 × 39 ÷ 100 ＝ M− → MRC（309.79）\n> × 0.04 × 0.04 ÷ 99 ＝ √ → 0.07075…\n- u が負の区間は、fu を **M−** で入れる（+/− を押すより速く、符号ミスも減る）。fu² は常に正なので **M+**。\n- u＝±1 の区間は掛け算不要（fu ＝ ±f、fu² ＝ f）。\n- 最後は「×h×h÷(n−1)＝√」と左から一気に打てる（＝を押してから √）。\n\n#### 判断フロー\n- 問題に**生データ**が並んでいる → S ＝ Σx² − (Σx)²/n\n- **度数表**（区間・中心値・度数）が与えられている → 中心値を u に変換して Σfu、Σfu²\n- 「u ＝ (x − ○)/○ と変換した」と書いてある → x̄ は h 倍＋x₀、S・V は **h²** 倍、s は **h** 倍\n- 「平均の位置と規格」→ ヒストグラムに規格線を入れて見る（数値評価は工程能力指数 B8）\n\n#### 規格との比較（読み取りの型）\n- 平均が規格の中心からずれている → **平均の調整**（中心化）\n- ばらつきの幅（およそ x̄ ± 3s）が規格の幅に近い・はみ出す → **ばらつきの低減**\n- 両方 OK でも、形が二山・離れ小島なら → 層別・原因調査\n\n#### 試験での問われ方\n度数表から x̄・s の数値を選ぶ計算問題（中心値・u の表が途中まで与えられ、空欄を埋める形式も多い）、「s を求めるとき h を何回掛けるか」のひっかけ。\n\n#### よくある誤解\n- 「S には h を1回掛ける」→ **h²**。s（標準偏差）なら h を1回。\n- 「x₀ を足すのは S にも」→ x₀ は平均だけ。ばらつきは位置をずらしても変わらない。\n- 「度数表から求めた値は生データの値と完全に一致する」→ 中心値で代表させた**近似値**。",
+            "vi": "#### Tóm tắt\n**Tính trung bình, độ lệch chuẩn từ bảng tần số** = coi mọi dữ liệu rơi vào một khoảng đều bằng **giá trị tâm** của khoảng đó rồi tính. Nếu **đổi giá trị tâm sang u** thì chỉ cần tính với các số nguyên nhỏ như −2, −1, 0, 1, 2, giảm hẳn lỗi bấm máy.\n\n#### Vì sao\nKhi đã vẽ xong histogram, trong tay chỉ có bảng tần số \"khoảng nào có bao nhiêu cái\"; trong giờ thi không đủ thời gian nhập lại từng giá trị của 100 dữ liệu gốc. Dữ liệu trong một khoảng nằm gần giá trị tâm, nên dùng giá trị tâm × tần số để đại diện thì trung bình, độ lệch chuẩn gần như không đổi (**giá trị xấp xỉ**).\nHơn nữa, các giá trị tâm cách đều nhau (cách nhau h), nên nếu đổi u = (giá trị tâm − x₀) ÷ h thì u là số nguyên. Đây chính là phép \"đổi biến dữ liệu\" (đổi u = (x − a) ÷ h, rồi từ giá trị của u suy ngược lại x̄, S, V, s).\n\n#### Công thức (ý nghĩa ký hiệu)\n- x₀: giá trị tâm chọn làm gốc (chọn khoảng ở quãng giữa bảng, như khoảng có tần số lớn nhất)\n- h: độ rộng khoảng, f: tần số của từng khoảng, n = Σf: số dữ liệu\n> u = (x − x₀) ÷ h\n> x̄ = x₀ + h × (Σfu ÷ n)\n> S = h² × { Σfu² − (Σfu)² ÷ n }\n> V = S ÷ (n − 1), s = √V\nVì sao S phải nhân **h²**? → S là tổng các \"bình phương độ lệch\". Kéo giãn độ lệch h lần thì bình phương giãn h² lần. x̄ nhân h một lần, S và V nhân h², s (√V) nhân h một lần. x₀ chỉ là phép dịch chuyển nên **không liên quan** đến độ phân tán (S, V, s).\n\n#### Ví dụ (cùng dữ liệu chiều dài phần tử anten ở B2.4, n = 100, h = 0.04, x₀ = 10.295)\n- Giá trị tâm: 10.135, 10.175, 10.215, 10.255, 10.295, 10.335, 10.375, 10.415, 10.455, 10.495\n- Tần số f: 1, 4, 9, 16, 24, 20, 14, 8, 3, 1 (tổng 100)\n- u: −4, −3, −2, −1, 0, 1, 2, 3, 4, 5\n> fu: −4, −12, −18, −16, 0, 20, 28, 24, 12, 5 → Σfu = 39\n> fu²: 16, 36, 36, 16, 0, 20, 56, 72, 48, 25 → Σfu² = 325\n> x̄ = 10.295 + 0.04 × 39 ÷ 100 = 10.295 + 0.0156 = 10.3106 ≈ 10.311 mm\n> Σfu² − (Σfu)²/n = 325 − 39² ÷ 100 = 325 − 15.21 = 309.79\n> S = 0.04² × 309.79 = 0.0016 × 309.79 = 0.495664\n> V = 0.495664 ÷ 99 ≈ 0.005007, s = √0.005007 ≈ 0.0708 mm\nKiểm tra: s thường vào khoảng từ 1/6 đến 1/4 phạm vi dữ liệu (khoảng 0.36) → 0.07 là hợp lý.\n\n#### Thao tác máy tính\n> MRC MRC → 4 M− 4 × 3 M− 9 × 2 M− 16 M− 20 M+ 14 × 2 M+ 8 × 3 M+ 3 × 4 M+ 5 M+ → MRC (Σfu = 39)\n> MRC MRC → 1 × 4 × 4 M+ 4 × 3 × 3 M+ 9 × 2 × 2 M+ 16 M+ 20 M+ 14 × 2 × 2 M+ 8 × 3 × 3 M+ 3 × 4 × 4 M+ 5 × 5 M+ → MRC (Σfu² = 325)\n> MRC MRC → 325 M+ 39 × 39 ÷ 100 = M− → MRC (309.79)\n> × 0.04 × 0.04 ÷ 99 = √ → 0.07075...\n- Khoảng có u âm thì nhập fu bằng **M−** (nhanh hơn bấm +/−, lại ít sai dấu). fu² luôn dương nên dùng **M+**.\n- Khoảng có u = ±1 không cần nhân (fu = ±f, fu² = f).\n- Cuối cùng có thể bấm liền một mạch từ trái sang \"× h × h ÷ (n − 1) = √\" (bấm = rồi mới bấm √).\n\n#### Sơ đồ chọn cách tính\n- Đề bài cho **dữ liệu gốc** → S = Σx² − (Σx)²/n\n- Đề bài cho **bảng tần số** (khoảng, giá trị tâm, tần số) → đổi giá trị tâm sang u, tính Σfu, Σfu²\n- Đề bài ghi \"đã đổi u = (x − a)/h\" → x̄ nhân h rồi cộng x₀, S và V nhân **h²**, s nhân **h**\n- \"Vị trí trung bình so với tiêu chuẩn\" → vẽ đường tiêu chuẩn lên histogram để xem (đánh giá bằng số là chỉ số năng lực công đoạn, B8)\n\n#### So sánh với tiêu chuẩn (mẫu đọc kết quả)\n- Trung bình lệch khỏi tâm tiêu chuẩn → **điều chỉnh trung bình** (đưa về tâm)\n- Độ rộng phân tán (khoảng x̄ ± 3s) gần bằng hoặc vượt ra ngoài độ rộng tiêu chuẩn → **giảm độ phân tán**\n- Dù cả hai đều ổn, nếu hình dạng là 2 đỉnh hay đảo lẻ → phân tầng, điều tra nguyên nhân\n\n#### Cách ra đề trong kỳ thi\nBài tính chọn giá trị x̄, s từ bảng tần số (nhiều đề cho sẵn một phần bảng giá trị tâm và u, yêu cầu điền chỗ trống), câu bẫy \"khi tính s phải nhân h mấy lần\".\n\n#### Những hiểu lầm thường gặp\n- \"S nhân h một lần\" → nhân **h²**. Nếu là s (độ lệch chuẩn) thì nhân h một lần.\n- \"Cũng cộng x₀ vào S\" → x₀ chỉ cộng vào trung bình. Độ phân tán không đổi khi dịch vị trí.\n- \"Giá trị tính từ bảng tần số trùng khớp hoàn toàn với giá trị tính từ dữ liệu gốc\" → đó là **giá trị xấp xỉ** vì dùng giá trị tâm làm đại diện."
+          }
+        ]
+      },
+      {
+        "h": {
+          "ja": "散布図",
+          "vi": "Biểu đồ tán xạ"
+        },
+        "blocks": [
+          {
+            "type": "md",
+            "ja": "#### ひとことで\n**散布図**＝対になった2つの計量値 (x, y) を点で打った図。「x が変わると y はどう変わるか」という**関係の有無・強さ・形**と、**外れ値**を一目で見る道具。\n\n#### なぜ\n「圧着高さが低いと端子の引張強さが落ちるのでは？」のような**要因と特性の関係**は、表の数字を眺めてもわからない。点を打てば、右上がり・右下がり・曲線・バラバラ、が見える。特性要因図で挙げた要因が本当に効いているかを、データで確かめる段階で使う。\n例：同軸ケーブルのコネクタ圧着で、横軸に圧着高さ x、縦軸に引張強さ y を 30 組打つ → 右下がりの帯 → 「圧着高さを規格の下側で管理すると強度が上がる」という仮説につながる（ただし因果かどうかは別途確認）。\n\n#### 定義\n2つの特性を横軸と縦軸にとり、観測値を**打点**して作るグラフ。原因側と考える変数（要因）を**横軸 x**、結果側（特性）を**縦軸 y** にとるのが基本。\n\n#### 見方\n- **正の相関**：x が増えると y も増える傾向（右上がり）。点が直線に近く集まるほど強い。\n- **負の相関**：x が増えると y が減る傾向（右下がり）。\n- **相関がない（無相関）**：傾向が見られない。\n- **曲線的な関係**：U字・山型など。直線的な相関の強さを表す相関係数（B11.1 で扱う、−1〜+1）が 0 に近くても、**関係がないとは言えない**。\n- **外れ値**：他から大きく離れた点。まず記録ミス・測定ミス・異常の有無を調べる（むやみに消さない）。\n- **層別**：2つの層が混ざっていないか（サプライヤー別・設備別に色分けして打つ＝**層別散布図**）。\n\n#### 作るときの注意\n- データは**対**（同じ製品の x と y）で 30 組以上が目安。\n- 縦横の目盛は、x と y の範囲がそれぞれ同じくらいの長さになるようにとる（極端に縦長・横長にしない）。\n- 同じ点が重なったら、印を変える（◎など）か数を書く。\n- 相関があっても**因果関係があるとは限らない**（共通の原因・偶然）。逆に、x の範囲を狭く取りすぎると、本当は関係があっても相関が弱く見える。\n\n#### 判断フロー\n- 「2つの計量値の**関係**」「〜と〜に関係があるか」「要因が特性に効いているか」→ **散布図**\n- 関係の強さを**数値**で → 相関係数 r（B11.1）、y を x から**予測**する式 → 回帰（B12）\n- 1つの計量値の**分布の形** → ヒストグラム、**時間的な変化** → 管理図・折れ線グラフ\n- 散布図が「バラバラ」でも → 層別して打ち直す・曲線でないかを見る\n\n#### 試験での問われ方\n散布図の形と相関の組合せ、「相関係数が 0 なら無関係」「相関があれば因果関係」などの誤りを選ぶ問題、層別散布図の解釈。\n\n#### よくある誤解\n- 「相関係数が 0 に近い → 2変数は無関係」→ 曲線的な関係や層の混在がありうる。\n- 「強い相関 → x が y の原因」→ 因果は固有技術・実験で確かめる。\n- 「外れ値は邪魔なので除いて描く」→ まず原因を調べる。異常の手がかりになる。",
+            "vi": "#### Tóm tắt\n**Biểu đồ tán xạ** = biểu đồ chấm điểm các cặp giá trị đo (x, y). Là công cụ để nhìn ngay **có quan hệ hay không, mạnh hay yếu, dạng quan hệ** kiểu \"khi x thay đổi thì y thay đổi thế nào\", cùng với **giá trị ngoại lai**.\n\n#### Vì sao\n**Quan hệ giữa yếu tố và đặc tính** kiểu \"phải chăng chiều cao bấm cos thấp thì lực kéo của đầu cos giảm?\" không thể biết được khi chỉ nhìn các con số trong bảng. Chấm điểm lên thì thấy dốc lên, dốc xuống, đường cong hay rời rạc. Công cụ này dùng ở giai đoạn kiểm chứng bằng dữ liệu xem yếu tố nêu trong biểu đồ nhân quả có thật sự ảnh hưởng không.\nVí dụ: khi bấm cos connector của cáp đồng trục, chấm 30 cặp với trục ngang là chiều cao bấm x, trục đứng là lực kéo y → dải dốc xuống → dẫn tới giả thuyết \"quản lý chiều cao bấm ở phía dưới của tiêu chuẩn thì độ bền tăng\" (tuy nhiên có phải quan hệ nhân quả hay không thì cần xác nhận riêng).\n\n#### Định nghĩa\nBiểu đồ lấy 2 đặc tính làm trục ngang và trục đứng rồi **chấm điểm** các giá trị quan sát. Về cơ bản, biến được xem là phía nguyên nhân (yếu tố) đặt ở **trục ngang x**, phía kết quả (đặc tính) đặt ở **trục đứng y**.\n\n#### Cách đọc\n- **Tương quan dương**: x tăng thì y cũng có xu hướng tăng (dốc lên bên phải). Điểm tụ càng sát một đường thẳng thì tương quan càng mạnh.\n- **Tương quan âm**: x tăng thì y có xu hướng giảm (dốc xuống bên phải).\n- **Không tương quan**: không thấy xu hướng.\n- **Quan hệ dạng đường cong**: hình chữ U, hình núi... Dù hệ số tương quan - đại lượng biểu thị độ mạnh của tương quan tuyến tính (trình bày ở B11.1, từ −1 đến +1) - gần bằng 0 thì **cũng không thể nói là không có quan hệ**.\n- **Giá trị ngoại lai**: điểm tách xa hẳn các điểm khác. Trước hết điều tra xem có ghi sai, đo sai, bất thường hay không (không tùy tiện xóa).\n- **Phân tầng**: xem có bị lẫn 2 tầng không (chấm khác màu theo nhà cung cấp, theo thiết bị = **biểu đồ tán xạ phân tầng**).\n\n#### Lưu ý khi vẽ\n- Dữ liệu phải theo **cặp** (x và y của cùng một sản phẩm), tham khảo từ 30 cặp trở lên.\n- Thang chia trục ngang và trục đứng chọn sao cho phạm vi của x và của y có chiều dài xấp xỉ nhau (không vẽ quá dài theo chiều đứng hay chiều ngang).\n- Khi các điểm trùng nhau, đổi ký hiệu (như ◎) hoặc ghi số lượng.\n- Dù có tương quan cũng **chưa chắc có quan hệ nhân quả** (có thể do nguyên nhân chung, do ngẫu nhiên). Ngược lại, nếu lấy phạm vi x quá hẹp thì dù thực tế có quan hệ, tương quan trông vẫn yếu.\n\n#### Sơ đồ chọn công cụ\n- \"**Quan hệ** giữa 2 giá trị đo\", \"... và ... có quan hệ không\", \"yếu tố có ảnh hưởng tới đặc tính không\" → **biểu đồ tán xạ**\n- Muốn biểu thị độ mạnh của quan hệ bằng **con số** → hệ số tương quan r (B11.1); công thức **dự đoán** y từ x → hồi quy (B12)\n- **Hình dạng phân bố** của 1 giá trị đo → histogram; **thay đổi theo thời gian** → biểu đồ kiểm soát, biểu đồ đường\n- Dù biểu đồ tán xạ trông \"rời rạc\" → phân tầng rồi chấm lại, xem có phải dạng đường cong không\n\n#### Cách ra đề trong kỳ thi\nGhép hình dạng biểu đồ tán xạ với loại tương quan, chọn phát biểu sai như \"hệ số tương quan bằng 0 thì không có quan hệ\", \"có tương quan thì có quan hệ nhân quả\", giải thích biểu đồ tán xạ phân tầng.\n\n#### Những hiểu lầm thường gặp\n- \"Hệ số tương quan gần 0 → 2 biến không có quan hệ\" → có thể có quan hệ dạng đường cong hoặc lẫn tầng.\n- \"Tương quan mạnh → x là nguyên nhân của y\" → quan hệ nhân quả phải xác nhận bằng kỹ thuật chuyên môn, thí nghiệm.\n- \"Giá trị ngoại lai gây vướng nên loại đi khi vẽ\" → trước hết điều tra nguyên nhân. Đó có thể là manh mối của bất thường."
+          }
+        ]
+      },
+      {
+        "h": {
+          "ja": "グラフ",
+          "vi": "Đồ thị"
+        },
+        "blocks": [
+          {
+            "type": "md",
+            "ja": "#### ひとことで\n**グラフ**＝数値の「大きさ」「推移」「内訳」「バランス」を、目的に合った形で見せる図。**目的が先、形はあと**。\n\n#### なぜ\n同じデータでも、見せ方を誤ると判断を誤る。たとえば月ごとの不適合件数を円グラフにしても推移は読めないし、縦軸を途中から始めた棒グラフは差を大げさに見せる。QC では「誰が見ても同じ事実が読み取れる」ことが大事なので、目的ごとの定番の形がある。\n\n#### 種類と目的\n- **棒グラフ**：項目ごとの**量の大小**を比べる（棒の長さで比べるので縦軸は 0 から）。\n- **折れ線グラフ**：**時間的な推移**（傾向・周期）を見る。横軸は時間。\n- **円グラフ**：全体に対する**内訳（構成比）**を見る。\n- **帯グラフ**：構成比を**複数の時点・グループで比べる**（帯を並べる）。\n- **レーダーチャート**：複数の評価項目の**バランス**を見る（他社比較、改善前後、力量評価）。\n- **ガントチャート**：計画と実績の**日程**管理。\n- **Zグラフ**：月々の値・その**累計**・**移動合計**（直近12か月の合計）の3本の折れ線で、季節変動に惑わされずに長期傾向を見る。\n- **絵グラフ**：絵の数で量を示す（掲示・説明用）。\n\n#### 公式（Zグラフの移動合計）\n> 今月の移動合計 ＝ 先月の移動合計 ＋ 今月の値 − 前年同月の値\nなぜ？ → 移動合計は「直近 12 か月の窓」。窓を1か月進めると、新しい月が入り、12 か月前（前年同月）が出ていく。移動合計が右上がりなら、季節に関係なく**長期的に増えている**。\n\n#### 例題\n先月までの直近12か月の不適合件数の合計が 480 件、今月 38 件、前年同月 45 件。\n> 今月の移動合計 ＝ 480 ＋ 38 − 45 ＝ 473 件 → 前月より減少 → 長期傾向はやや改善\n\n#### 判断フロー\n- 「推移」「傾向」「月ごとの変化」→ **折れ線グラフ**（長期傾向・季節変動を除く → **Zグラフ**）\n- 「大小の比較」→ **棒グラフ**\n- 「内訳」「構成比」→ **円グラフ**、それを「年ごと・ラインごとに比べる」→ **帯グラフ**\n- 「複数項目のバランス」「総合評価」→ **レーダーチャート**\n- 「日程の計画と実績」→ **ガントチャート**（作業の順序関係・最短日程まで → アローダイアグラム B3）\n- 「項目別の大きい順＋累積比率」→ グラフではなく**パレート図**\n\n#### 試験での問われ方\n目的と種類の組合せ、「円グラフは推移を見るのに適する」のような誤り探し、Zグラフの移動合計の計算・読み方。\n\n#### よくある誤解\n- 「棒グラフの縦軸は見やすい位置から始めてよい」→ 量を長さで比べるので 0 から（途中から始めるなら省略記号で明示）。\n- 「帯グラフ＝円グラフと同じ」→ 帯グラフは**複数の構成比を並べて比べる**のが強み。\n- 「Zグラフの3本目は累計」→ 累計と**移動合計**は別。累計は年度初めから足し上げ、移動合計は直近12か月。",
+            "vi": "#### Tóm tắt\n**Đồ thị** = hình biểu diễn \"độ lớn\", \"diễn biến\", \"cơ cấu\", \"sự cân bằng\" của số liệu theo dạng phù hợp với mục đích. **Mục đích trước, hình dạng sau**.\n\n#### Vì sao\nCùng một dữ liệu nhưng trình bày sai thì sẽ phán đoán sai. Ví dụ, vẽ số lỗi không phù hợp từng tháng bằng biểu đồ tròn thì không đọc được diễn biến; biểu đồ cột có trục tung bắt đầu giữa chừng làm chênh lệch trông lớn hơn thực tế. Trong QC, điều quan trọng là \"ai nhìn cũng đọc ra cùng một sự thật\", nên mỗi mục đích có một dạng đồ thị chuẩn.\n\n#### Các loại và mục đích\n- **Biểu đồ cột**: so sánh **độ lớn của lượng** theo từng hạng mục (so sánh bằng chiều dài cột nên trục tung bắt đầu từ 0).\n- **Biểu đồ đường (gấp khúc)**: xem **diễn biến theo thời gian** (xu hướng, chu kỳ). Trục ngang là thời gian.\n- **Biểu đồ tròn**: xem **cơ cấu (tỷ lệ thành phần)** so với tổng thể.\n- **Biểu đồ thanh (băng)**: **so sánh cơ cấu giữa nhiều thời điểm, nhiều nhóm** (xếp các thanh cạnh nhau).\n- **Biểu đồ radar**: xem **sự cân bằng** giữa nhiều tiêu chí đánh giá (so sánh với công ty khác, trước - sau cải tiến, đánh giá năng lực).\n- **Biểu đồ Gantt**: quản lý **tiến độ** kế hoạch và thực tế.\n- **Biểu đồ Z**: dùng 3 đường gồm giá trị từng tháng, **lũy kế** và **tổng di động** (tổng của 12 tháng gần nhất) để xem xu hướng dài hạn mà không bị biến động mùa vụ đánh lừa.\n- **Biểu đồ hình ảnh**: biểu thị lượng bằng số hình vẽ (dùng để dán thông báo, giải thích).\n\n#### Công thức (tổng di động của biểu đồ Z)\n> Tổng di động tháng này = tổng di động tháng trước + giá trị tháng này − giá trị cùng tháng năm trước\nVì sao? → Tổng di động là \"cửa sổ 12 tháng gần nhất\". Khi dịch cửa sổ thêm 1 tháng, tháng mới được thêm vào và tháng của 12 tháng trước (cùng tháng năm trước) bị loại ra. Nếu tổng di động dốc lên thì bất kể mùa vụ, **về dài hạn đang tăng**.\n\n#### Ví dụ\nTổng số lỗi không phù hợp của 12 tháng gần nhất tính đến tháng trước là 480, tháng này 38, cùng tháng năm trước 45.\n> Tổng di động tháng này = 480 + 38 − 45 = 473 → giảm so với tháng trước → xu hướng dài hạn cải thiện nhẹ\n\n#### Sơ đồ chọn công cụ\n- \"Diễn biến\", \"xu hướng\", \"thay đổi từng tháng\" → **biểu đồ đường** (xu hướng dài hạn, loại bỏ biến động mùa vụ → **biểu đồ Z**)\n- \"So sánh lớn nhỏ\" → **biểu đồ cột**\n- \"Cơ cấu\", \"tỷ lệ thành phần\" → **biểu đồ tròn**; muốn \"so sánh theo từng năm, từng dây chuyền\" → **biểu đồ thanh**\n- \"Cân bằng giữa nhiều tiêu chí\", \"đánh giá tổng hợp\" → **biểu đồ radar**\n- \"Kế hoạch và thực tế của tiến độ\" → **biểu đồ Gantt** (nếu cần cả quan hệ thứ tự công việc và tiến độ ngắn nhất → sơ đồ mũi tên B3)\n- \"Sắp xếp theo hạng mục từ lớn đến nhỏ + tỷ lệ tích lũy\" → không phải đồ thị thông thường mà là **biểu đồ Pareto**\n\n#### Cách ra đề trong kỳ thi\nGhép mục đích với loại đồ thị, tìm phát biểu sai như \"biểu đồ tròn phù hợp để xem diễn biến\", tính và đọc tổng di động của biểu đồ Z.\n\n#### Những hiểu lầm thường gặp\n- \"Trục tung của biểu đồ cột có thể bắt đầu từ vị trí dễ nhìn\" → so sánh lượng bằng chiều dài nên bắt đầu từ 0 (nếu bắt đầu giữa chừng thì phải ghi rõ bằng ký hiệu lược bớt).\n- \"Biểu đồ thanh = biểu đồ tròn\" → điểm mạnh của biểu đồ thanh là **xếp nhiều cơ cấu cạnh nhau để so sánh**.\n- \"Đường thứ 3 của biểu đồ Z là lũy kế\" → lũy kế và **tổng di động** là khác nhau. Lũy kế là cộng dồn từ đầu năm tài chính, tổng di động là tổng 12 tháng gần nhất."
+          }
+        ]
+      },
+      {
+        "h": {
+          "ja": "層別",
+          "vi": "Phân tầng"
+        },
+        "blocks": [
+          {
+            "type": "md",
+            "ja": "#### ひとことで\n**層別**＝データを、機械・作業者・材料ロット・サプライヤー・時間帯など**ばらつきの原因になりそうな共通点**でグループ（**層**）に分けて比べること。QC七つ道具の中で唯一「図」ではなく**考え方**。\n\n#### なぜ\n全体をまとめて見ると、原因の違いが平均化されて見えなくなる。分けて比べれば「どこが違うか」がそのまま原因の手がかりになる。\n例：VSWR の規格外れが増えた。全体のヒストグラムは少し広がっているだけ。ところがケーブルのサプライヤー別に分けると、B社品だけ平均がずれていた → 対策の的が一気に絞れる。\n\n#### 定義\nデータを、その特性に影響を与えていると考えられる**要因の共通点や特徴によっていくつかのグループに分ける**こと。分けたグループを**層**という。層の中はできるだけ均一に、層の間の違いがはっきり出るように分けるのがよい。\n\n#### 層別の因子（よく使う切り口）\n- **4M**：人（作業者・直・熟練度）、機械（設備・号機・治具・金型）、材料（サプライヤー・ロット）、方法（作業条件・手順）\n- さらに：**測定**（測定器・測定者）、**時間**（日・時間帯・曜日・季節）、**環境**（温度・湿度）\n\n#### 層別すると何がわかるか（数値で見る）\nサプライヤー A・B のケーブル長（各5本、mm）：A＝10.1、10.3、10.2、10.4、10.0／B＝10.6、10.5、10.7、10.4、10.8\n> x̄_A ＝ 10.2、S_A ＝ 0.10　／　x̄_B ＝ 10.6、S_B ＝ 0.10\n> 全体（10本）：x̄ ＝ 10.4、S_T ＝ 0.60\n> 層内（各層の中のばらつき）＝ S_A ＋ S_B ＝ 0.20\n> 層間（層の平均の違い）＝ 5 × (10.2 − 10.4)² ＋ 5 × (10.6 − 10.4)² ＝ 0.20 ＋ 0.20 ＝ 0.40\n> S_T ＝ 層内 ＋ 層間 ＝ 0.20 ＋ 0.40 ＝ 0.60\n全体のばらつきの 2/3 が「A と B の平均の違い」から来ている → 1本ずつのばらつきを減らすより、**B社の平均を合わせる**ほうが効く。全体の標準偏差 s ＝ √(0.60/9) ≒ 0.258 に対し、A だけなら √(0.10/4) ≒ 0.158。（この「全体＝層内＋層間」の分け方は、実験計画法 B10 の分散分析と同じ考え方。）\n\n#### 層別と他の道具の組合せ\n- **層別ヒストグラム**：二山型・高原型のとき、層ごとに描き直す。\n- **層別散布図**：全体では無相関に見えても、層ごとには相関がある（逆に、全体の相関が層の違いによる見かけの相関のこともある）。\n- **層別パレート図**：ライン別・直別に描いて比べる。\n- **チェックシート**：層別の情報を**記録する欄**をあらかじめ作る（あとからは分けられない）。\n\n#### 交絡（こうらく）に注意\n2つの要因が**いつも一緒に変わる**と、層別しても**どちらの影響か区別できない**。\n例：A社のインダクタはいつもライン1、B社品はいつもライン2で組み立てている → ライン2の不適合率が高くても、「B社品のせい」か「ライン2のせい」か分からない（サプライヤーとラインが交絡）。→ データを取る段階で、A社品をライン2でも、B社品をライン1でも流すように計画する。\n\n#### 判断フロー\n- ヒストグラムが**二山型・高原型**、散布図がバラバラ、全体で見て原因が絞れない → **層別**\n- 「何で分けるか」→ 問題文の変化点（サプライヤー変更・設備更新・新人配置・季節）を探す\n- 2つの要因が常に同時に変わっている → **交絡**：層別では分離できない → データの取り方（実験の計画）を変える\n- 層の平均の違いを**統計的に判断** → 2つの母平均の差の検定（B5）・分散分析（B10）\n\n#### 試験での問われ方\n層別の定義・因子（4M）、層別散布図の解釈（全体と層で相関が違う）、「層別はデータを集めたあとで考えればよい」の誤り、交絡の事例。\n\n#### よくある誤解\n- 「層別はデータを集めてから考えればよい」→ 層別の情報を**記録していなければ**分けられない。\n- 「層別は図の一種」→ 考え方（手法）であり、他の道具と組み合わせて使う。\n- 「層に分ければ必ず原因がわかる」→ 要因どうしが交絡していると区別できない。",
+            "vi": "#### Tóm tắt\n**Phân tầng** = chia dữ liệu thành các nhóm (**tầng**) theo **điểm chung có thể là nguyên nhân gây phân tán** như máy, công nhân, lô vật liệu, nhà cung cấp, khung giờ... rồi so sánh. Trong 7 công cụ QC, đây là công cụ duy nhất không phải là \"biểu đồ\" mà là **cách tư duy**.\n\n#### Vì sao\nNhìn gộp toàn bộ thì sự khác biệt về nguyên nhân bị trung bình hóa và không thấy được. Chia ra so sánh thì \"chỗ nào khác\" chính là manh mối của nguyên nhân.\nVí dụ: số hàng VSWR ngoài tiêu chuẩn tăng. Histogram toàn bộ chỉ hơi rộng ra. Nhưng khi chia theo nhà cung cấp cáp thì chỉ hàng của hãng B bị lệch trung bình → khoanh vùng được ngay đối tượng của biện pháp.\n\n#### Định nghĩa\nViệc **chia dữ liệu thành một số nhóm theo điểm chung hoặc đặc trưng của yếu tố** được cho là ảnh hưởng tới đặc tính đó. Mỗi nhóm được chia gọi là **tầng**. Nên chia sao cho bên trong mỗi tầng càng đồng nhất càng tốt, còn khác biệt giữa các tầng thể hiện rõ.\n\n#### Yếu tố phân tầng (cách chia hay dùng)\n- **4M**: Người (công nhân, ca, độ thành thạo), Máy (thiết bị, số máy, đồ gá, khuôn), Vật liệu (nhà cung cấp, lô), Phương pháp (điều kiện làm việc, quy trình)\n- Thêm nữa: **Đo lường** (dụng cụ đo, người đo), **Thời gian** (ngày, khung giờ, thứ, mùa), **Môi trường** (nhiệt độ, độ ẩm)\n\n#### Phân tầng cho biết điều gì (xem bằng số)\nChiều dài cáp của nhà cung cấp A, B (mỗi hãng 5 sợi, mm): A = 10.1, 10.3, 10.2, 10.4, 10.0 / B = 10.6, 10.5, 10.7, 10.4, 10.8\n> x̄_A = 10.2, S_A = 0.10 / x̄_B = 10.6, S_B = 0.10\n> Toàn bộ (10 sợi): x̄ = 10.4, S_T = 0.60\n> Trong tầng (phân tán bên trong mỗi tầng) = S_A + S_B = 0.20\n> Giữa các tầng (khác biệt trung bình giữa các tầng) = 5 × (10.2 − 10.4)² + 5 × (10.6 − 10.4)² = 0.20 + 0.20 = 0.40\n> S_T = trong tầng + giữa các tầng = 0.20 + 0.40 = 0.60\n2/3 độ phân tán toàn bộ đến từ \"khác biệt trung bình giữa A và B\" → **điều chỉnh trung bình của hãng B** hiệu quả hơn so với giảm phân tán của từng sợi. Độ lệch chuẩn toàn bộ s = √(0.60/9) ≈ 0.258, trong khi nếu chỉ có A thì √(0.10/4) ≈ 0.158. (Cách chia \"toàn bộ = trong tầng + giữa các tầng\" này cùng tư duy với phân tích phương sai trong thiết kế thí nghiệm B10.)\n\n#### Kết hợp phân tầng với các công cụ khác\n- **Histogram phân tầng**: khi có dạng 2 đỉnh, dạng cao nguyên thì vẽ lại theo từng tầng.\n- **Biểu đồ tán xạ phân tầng**: nhìn toàn bộ thì như không tương quan nhưng từng tầng lại có tương quan (ngược lại, tương quan của toàn bộ có thể chỉ là tương quan bề ngoài do khác biệt giữa các tầng).\n- **Pareto phân tầng**: vẽ theo dây chuyền, theo ca để so sánh.\n- **Phiếu kiểm tra**: làm sẵn **ô ghi** thông tin phân tầng từ đầu (sau này không chia lại được).\n\n#### Chú ý hiện tượng gây nhiễu lẫn (confounding)\nNếu 2 yếu tố **luôn thay đổi cùng nhau** thì dù phân tầng cũng **không phân biệt được ảnh hưởng là của yếu tố nào**.\nVí dụ: cuộn cảm hãng A luôn được lắp ráp ở dây chuyền 1, hàng hãng B luôn ở dây chuyền 2 → dù tỷ lệ không phù hợp của dây chuyền 2 cao, cũng không biết là \"do hàng hãng B\" hay \"do dây chuyền 2\" (nhà cung cấp và dây chuyền bị gây nhiễu lẫn). → Ngay ở giai đoạn lấy dữ liệu, lập kế hoạch cho hàng hãng A chạy cả ở dây chuyền 2, hàng hãng B chạy cả ở dây chuyền 1.\n\n#### Sơ đồ chọn công cụ\n- Histogram có **dạng 2 đỉnh, dạng cao nguyên**, biểu đồ tán xạ rời rạc, nhìn toàn bộ không khoanh vùng được nguyên nhân → **phân tầng**\n- \"Chia theo gì\" → tìm điểm thay đổi trong đề bài (đổi nhà cung cấp, thay thiết bị, bố trí người mới, mùa)\n- 2 yếu tố luôn thay đổi đồng thời → **gây nhiễu lẫn**: phân tầng không tách được → thay đổi cách lấy dữ liệu (kế hoạch thí nghiệm)\n- Đánh giá **bằng thống kê** khác biệt trung bình giữa các tầng → kiểm định hiệu 2 trung bình tổng thể (B5), phân tích phương sai (B10)\n\n#### Cách ra đề trong kỳ thi\nĐịnh nghĩa và yếu tố phân tầng (4M), giải thích biểu đồ tán xạ phân tầng (tương quan của toàn bộ và của từng tầng khác nhau), phát biểu sai \"phân tầng cứ nghĩ sau khi thu thập dữ liệu là được\", ví dụ về gây nhiễu lẫn.\n\n#### Những hiểu lầm thường gặp\n- \"Phân tầng cứ nghĩ sau khi thu thập dữ liệu là được\" → nếu **không ghi lại** thông tin phân tầng thì không chia được.\n- \"Phân tầng là một loại biểu đồ\" → là cách tư duy (phương pháp), dùng kết hợp với các công cụ khác.\n- \"Cứ chia tầng là chắc chắn tìm ra nguyên nhân\" → nếu các yếu tố bị gây nhiễu lẫn với nhau thì không phân biệt được."
+          }
+        ]
+      }
+    ],
+    "terms": [
+      [
+        "パレート図",
+        "ぱれーとず",
+        "Biểu đồ Pareto"
+      ],
+      [
+        "累積比率",
+        "るいせきひりつ",
+        "Tỷ lệ tích lũy (%)"
+      ],
+      [
+        "重点指向",
+        "じゅうてんしこう",
+        "Tập trung vào trọng điểm"
+      ],
+      [
+        "その他",
+        "そのた",
+        "Mục 'khác' (gộp mục nhỏ)"
+      ],
+      [
+        "損失金額",
+        "そんしつきんがく",
+        "Thiệt hại bằng tiền"
+      ],
+      [
+        "特性要因図",
+        "とくせいよういんず",
+        "Biểu đồ nhân quả / xương cá"
+      ],
+      [
+        "特性",
+        "とくせい",
+        "Đặc tính (kết quả)"
+      ],
+      [
+        "要因",
+        "よういん",
+        "Yếu tố (nguyên nhân có thể)"
+      ],
+      [
+        "大骨",
+        "おおぼね",
+        "Xương lớn (nhóm nguyên nhân)"
+      ],
+      [
+        "4M",
+        "よんえむ",
+        "4M: Người, Máy, Vật liệu, Phương pháp"
+      ],
+      [
+        "ブレーンストーミング",
+        "ぶれーんすとーみんぐ",
+        "Động não"
+      ],
+      [
+        "チェックシート",
+        "ちぇっくしーと",
+        "Phiếu kiểm tra"
+      ],
+      [
+        "記録用チェックシート",
+        "きろくようちぇっくしーと",
+        "Phiếu kiểm tra loại ghi chép"
+      ],
+      [
+        "点検用チェックシート",
+        "てんけんようちぇっくしーと",
+        "Phiếu kiểm tra loại kiểm điểm"
+      ],
+      [
+        "ヒストグラム",
+        "ひすとぐらむ",
+        "Biểu đồ tần số (histogram)"
+      ],
+      [
+        "度数表",
+        "どすうひょう",
+        "Bảng tần số"
+      ],
+      [
+        "区間の幅",
+        "くかんのはば",
+        "Độ rộng khoảng"
+      ],
+      [
+        "区間の数",
+        "くかんのかず",
+        "Số khoảng"
+      ],
+      [
+        "境界値",
+        "きょうかいち",
+        "Giá trị biên khoảng"
+      ],
+      [
+        "中心値",
+        "ちゅうしんち",
+        "Giá trị tâm khoảng"
+      ],
+      [
+        "測定単位",
+        "そくていたんい",
+        "Đơn vị đo (bước đo nhỏ nhất)"
+      ],
+      [
+        "二山型",
+        "ふたやまがた",
+        "Dạng hai đỉnh"
+      ],
+      [
+        "歯抜け型",
+        "はぬけがた",
+        "Dạng răng lược"
+      ],
+      [
+        "散布図",
+        "さんぷず",
+        "Biểu đồ tán xạ"
+      ],
+      [
+        "正の相関",
+        "せいのそうかん",
+        "Tương quan dương"
+      ],
+      [
+        "負の相関",
+        "ふのそうかん",
+        "Tương quan âm"
+      ],
+      [
+        "外れ値",
+        "はずれち",
+        "Giá trị ngoại lai"
+      ],
+      [
+        "層別",
+        "そうべつ",
+        "Phân tầng"
+      ],
+      [
+        "層別散布図",
+        "そうべつさんぷず",
+        "Biểu đồ tán xạ phân tầng"
+      ],
+      [
+        "交絡",
+        "こうらく",
+        "Gây nhiễu lẫn (hai yếu tố luôn thay đổi cùng nhau)"
+      ],
+      [
+        "帯グラフ",
+        "おびぐらふ",
+        "Biểu đồ thanh cơ cấu"
+      ],
+      [
+        "レーダーチャート",
+        "れーだーちゃーと",
+        "Biểu đồ radar"
+      ],
+      [
+        "Zグラフ",
+        "ぜっとぐらふ",
+        "Biểu đồ Z"
+      ]
+    ]
   }
 }
