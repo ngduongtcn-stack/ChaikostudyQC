@@ -24,6 +24,7 @@ FONTS = ("https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700"
          "&family=IBM+Plex+Mono&family=Shippori+Mincho+B1:wght@700;800&display=swap")
 
 e = html.escape
+HAS_LV2 = False  # set in main() when the 2級 section has content
 
 
 def load():
@@ -133,7 +134,7 @@ def page(site, *, title, desc, body, depth=0, path="", nav="", crumbs=None, head
   <nav class="nav" aria-label="{'Menu chính' if vi else 'メインメニュー'}">
     {nav_link('4kyu/index.html', 'Cấp 4' if vi else '4級', '4')}
     {nav_link('3kyu/index.html', 'Cấp 3' if vi else '3級', '3')}
-    {nav_link('2kyu/index.html', 'Cấp 2' if vi else '2級', '2')}
+    {nav_link('2kyu/index.html', 'Cấp 2' if vi else '2級', '2') if HAS_LV2 else ''}
     {nav_link('exam.html', 'Kỳ thi' if vi else '試験について', 'exam')}
     {nav_link('progress.html', 'Tiến độ' if vi else '進捗', 'progress')}
     <a href="{pre}vi/index.html" lang="vi" hreflang="vi"{' aria-current="page"' if nav == 'vi' else ''}>Tiếng Việt</a>
@@ -783,7 +784,9 @@ def write(rel, text):
 
 
 def main():
+    global HAS_LV2
     site, data = load()
+    HAS_LV2 = "2" in data["levels"]
     errors = validate(data) + validate_theory(data)
     if errors:
         print("questions.json にエラーがあります：")
