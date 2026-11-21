@@ -14,7 +14,7 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false  # let each run finish; a cancelled half-run made the deploy step fail
 
 jobs:
   deploy:
