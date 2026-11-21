@@ -341,3 +341,5 @@ p.vi-t { margin: 0; }
 .md-h { font-size: 1.02rem; margin: 18px 0 6px; }
 .learn-sec .formula span { white-space: normal; }
 .learn-sec p strong, .learn-list strong { font-weight: 700; }
+
+.nav .lang-switch { font-weight: 700; color: var(--ai); border: 1px solid var(--ai); border-radius: 999px; padding: 0 10px; }

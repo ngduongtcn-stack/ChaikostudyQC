@@ -25,6 +25,25 @@ FONTS = ("https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700"
 
 e = html.escape
 HAS_LV2 = False  # set in main() when the 2級 section has content
+THEORY_KEYS = set()  # "<slug>/<topic>" pairs that have theory pages (set in main())
+
+
+def other_lang(path, vi):
+    """The same page in the other language, or the closest page that exists."""
+    if vi:
+        if path.startswith("vi/") and path.count("/") == 2:   # vi/<slug>/<topic>.html
+            slug, f = path[3:].split("/")
+            return f"{slug}/learn/{f}"
+        return ""
+    parts = path.split("/")
+    if len(parts) == 3 and parts[1] == "learn":                # <slug>/learn/<topic>.html
+        return f"vi/{parts[0]}/{parts[2]}"
+    if len(parts) == 2 and parts[0].endswith("kyu"):          # <slug>/ , <slug>/<topic>.html, flashcards
+        lv = parts[0][0]
+        if parts[1] and f"{parts[0]}/{parts[1][:-5]}" in THEORY_KEYS:
+            return f"vi/{parts[0]}/{parts[1]}"
+        return f"vi/index.html#vi-h{lv}"
+    return "vi/"
 
 
 def load():
@@ -89,7 +108,7 @@ def page(site, *, title, desc, body, depth=0, path="", nav="", crumbs=None, head
         head_extra += f'\n<link rel="alternate" hreflang="{code}" href="{e(base + alt_path)}">'
     crumbs_html = ""
     if crumbs:
-        items = [("Trang chủ" if lang == "vi" else "ホーム", "")] + list(crumbs)
+        items = ([("Trang chủ", "vi/")] + [c for c in crumbs if c[1] != "vi/"]) if lang == "vi" else [("ホーム", "")] + list(crumbs)
         ld = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": k, "name": n, "item": base + u} for k, (n, u) in enumerate(items, 1)]}
         head_extra += '\n<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False) + "</script>"
@@ -106,6 +125,13 @@ def page(site, *, title, desc, body, depth=0, path="", nav="", crumbs=None, head
     def nav_link(href, label, key):
         cur = ' aria-current="page"' if key == nav else ""
         return f'<a href="{pre}{href}"{cur}>{label}</a>'
+
+    lvls = [lv for lv in ("4", "3", "2") if lv != "2" or HAS_LV2]
+    if vi:  # Vietnamese menu stays inside the Vietnamese pages
+        menu = "\n    ".join(nav_link(f"vi/index.html#vi-h{lv}", f"Cấp {lv}", "vi" + lv) for lv in lvls)
+    else:
+        menu = "\n    ".join([nav_link(f"{lv}kyu/index.html", f"{lv}級", lv) for lv in lvls]
+                              + [nav_link("exam.html", "試験について", "exam"), nav_link("progress.html", "進捗", "progress")])
 
     return f"""<!doctype html>
 <html lang="{lang}">
@@ -132,12 +158,8 @@ def page(site, *, title, desc, body, depth=0, path="", nav="", crumbs=None, head
 <header class="site-head"><div class="wrap">
   <a class="brand" href="{pre}{'vi/index.html' if vi else 'index.html'}"><span class="mark">○</span>{e(brand)}</a>
   <nav class="nav" aria-label="{'Menu chính' if vi else 'メインメニュー'}">
-    {nav_link('vi/index.html#vi-h4' if vi else '4kyu/index.html', 'Cấp 4' if vi else '4級', '4')}
-    {nav_link('vi/index.html#vi-h3' if vi else '3kyu/index.html', 'Cấp 3' if vi else '3級', '3')}
-    {(nav_link('vi/index.html#vi-h2' if vi else '2kyu/index.html', 'Cấp 2' if vi else '2級', '2') if HAS_LV2 else '')}
-    {nav_link('exam.html', 'Kỳ thi' if vi else '試験について', 'exam')}
-    {nav_link('progress.html', 'Tiến độ' if vi else '進捗', 'progress')}
-    <a href="{pre}vi/index.html" lang="vi" hreflang="vi"{' aria-current="page"' if nav == 'vi' else ''}>Tiếng Việt</a>
+    {menu}
+    <a class="lang-switch" href="{pre}{other_lang(path, vi)}" lang="{'ja' if vi else 'vi'}" hreflang="{'ja' if vi else 'vi'}">{'日本語' if vi else 'Tiếng Việt'}</a>
   </nav>
 </div></header>
 {crumbs_html}
@@ -514,6 +536,7 @@ def build_theory(site, data, lv, idx, lang="ja"):
     <a class="btn primary" href="{up}quiz.html#{lv}.{t['id']}.practice">{e(cta_btn)}</a>
     <a class="btn" href="{up}{L['slug']}/{t['id']}.html">{e(cta_list)}</a>
   </div>
+  {'<p class="note">Bài tập dùng đề tiếng Nhật giống kỳ thi thật; giải thích tiếng Việt hiện ngay dưới mỗi câu. Muốn quay lại phần tiếng Việt, bấm “Tiếng Việt” trên menu.</p>' if vi else ''}
 </section>
 {pager}
 </div></main>"""
@@ -693,7 +716,7 @@ def build_vi(site, data):
         lv_blocks.append(f"""<section aria-labelledby="vi-h{lv}">
   <h2 id="vi-h{lv}">{e(L.get('name_vi', L['name']))} <span class="meta">· {n} câu · {n_ex} đề thi thử</span></h2>
   <div class="btn-row">
-    <a class="btn primary" href="../{L['slug']}/index.html">Vào trang bài tập {e(L.get('name_vi', L['name']))}</a>
+    <a class="btn primary" href="../{L['slug']}/index.html">Làm bài tập {e(L.get('name_vi', L['name']))} (đề tiếng Nhật)</a>
     <a class="btn" href="../{L['slug']}/flashcards.html">Flashcard thuật ngữ</a>
   </div>
   {rows}
@@ -704,7 +727,7 @@ def build_vi(site, data):
     total = len(data["questions"])
     body = hero("QC KENTEI · TIẾNG VIỆT", "Ôn thi QC Kentei cấp 4, cấp 3 miễn phí, có giải thích tiếng Việt",
                 f"Dành cho người Việt đang làm việc tại Nhật. Câu hỏi bằng tiếng Nhật như đề thật, lời giải thích và lý thuyết có bản tiếng Việt. Hiện có {total} câu, mỗi tuần đều thêm câu mới.",
-                '<div class="btn-row" style="margin-top:20px"><a class="btn primary" href="../4kyu/index.html">Bắt đầu cấp 4</a><a class="btn primary" href="../3kyu/index.html">Bắt đầu cấp 3</a><a class="btn" href="../progress.html">Xem tiến độ</a></div>') + f"""
+                '<div class="btn-row" style="margin-top:20px"><a class="btn primary" href="../4kyu/index.html">Làm bài cấp 4 (đề tiếng Nhật)</a><a class="btn primary" href="../3kyu/index.html">Làm bài cấp 3 (đề tiếng Nhật)</a><a class="btn" href="../progress.html">Xem tiến độ (tiếng Nhật)</a></div>') + f"""
 <main><div class="wrap">
 <section aria-labelledby="vi-how">
   <h2 id="vi-how">Học trên web này như thế nào</h2>
@@ -784,9 +807,10 @@ def write(rel, text):
 
 
 def main():
-    global HAS_LV2
+    global HAS_LV2, THEORY_KEYS
     site, data = load()
     HAS_LV2 = "2" in data["levels"]
+    THEORY_KEYS = {f"{data['levels'][k.split(':')[0]]['slug']}/{k.split(':')[1]}" for k in data["theory"]}
     errors = validate(data) + validate_theory(data)
     if errors:
         print("questions.json にエラーがあります：")
