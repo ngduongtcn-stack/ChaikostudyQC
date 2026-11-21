@@ -96,7 +96,7 @@ def main():
             dropped.append((q["id"], why)); continue
         vi = f"Đề bài: {plain(c['q_vi'])} Giải thích: {plain(c['exp_vi'])}"
         assert not JP.search(vi), q["id"]
-        kept.append({"level": 2, "topic": tid, "question": plain(q["q_ja"]), "choices": [plain(o) for o in q["options"]],
+        kept.append({"level": 2, "topic": tid, "question": plain(c.get("q_ja") or q["q_ja"]), "choices": [plain(o) for o in q["options"]],
                      "answer": q["answer"], "explanation": plain(c.get("exp_ja") or q["exp_ja"]),
                      "explanation_vi": vi, "keep_order": True, "status": "checked", "src": q["id"]})
 
