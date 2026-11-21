@@ -34,7 +34,7 @@ def main():
     splits = plan["exam"].get("domain_split", {})
     order = {q["id"]: k for k, q in enumerate(data["questions"])}
     made = []
-    for lv in ("4", "3"):
+    for lv in ("4", "3"):  # 2級 has no generated mock exams
         exams.setdefault(lv, [])
         domain_of = {t["id"]: t.get("domain", "all") for t in data["levels"][lv]["topics"]}
         split = splits.get(lv)

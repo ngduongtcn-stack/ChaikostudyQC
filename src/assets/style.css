@@ -336,3 +336,8 @@ p.vi-t { margin: 0; }
   color: var(--ai); border: 1px solid currentColor; border-radius: 4px; padding: 0 6px; line-height: 1.6;
   vertical-align: middle;
 }
+
+/* 2級 lesson text (Markdown blocks) */
+.md-h { font-size: 1.02rem; margin: 18px 0 6px; }
+.learn-sec .formula span { white-space: normal; }
+.learn-sec p strong, .learn-list strong { font-weight: 700; }

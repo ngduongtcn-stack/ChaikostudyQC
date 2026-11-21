@@ -176,12 +176,12 @@
   function parseHash() {
     var h = (location.hash || "").replace(/^#/, "");
     var p = h.split(".");
-    var level = p[0] === "3" ? "3" : (p[0] === "4" ? "4" : null);
+    var level = ["4", "3", "2"].indexOf(p[0]) >= 0 ? p[0] : null;
     var topic = p[1] || "all";
     var mode = ["practice", "exam", "review"].indexOf(p[2]) >= 0 ? p[2] : "practice";
     if (!level) {
       var qs = new URLSearchParams(location.search);
-      level = qs.get("level") === "3" ? "3" : "4";
+      level = ["4", "3", "2"].indexOf(qs.get("level")) >= 0 ? qs.get("level") : "4";
       topic = qs.get("topic") || topic;
       mode = qs.get("mode") || mode;
     }
@@ -205,7 +205,8 @@
     if (p.mode === "exam" && !mock) qs = qs.slice(0, EXAM_SIZE);
     if (this.timer) { clearInterval(this.timer); this.timer = null; }
     this.items = qs.map(function (q) {
-      var order = shuffle(q.choices.map(function (_, i) { return i; }));
+      var idx = q.choices.map(function (_, i) { return i; });
+      var order = q.keep_order ? idx : shuffle(idx);
       return { q: q, order: order, picked: null };
     });
     this.i = 0;
@@ -422,7 +423,8 @@
     if (!root || !DATA.questions.length) return;
     function show() {
       var q = DATA.questions[Math.floor(Math.random() * DATA.questions.length)];
-      var order = shuffle(q.choices.map(function (_, i) { return i; }));
+      var idx = q.choices.map(function (_, i) { return i; });
+      var order = q.keep_order ? idx : shuffle(idx);
       var L = DATA.levels[String(q.level)] || {};
       var list = el("ul", { class: "choices" });
       var sheet = el("div", { class: "sheet" }, [
@@ -465,7 +467,7 @@
     var stats = loadStats(), results = loadResults();
     var blocks = [];
     var anyAnswered = false;
-    ["4", "3"].forEach(function (lv) {
+    ["4", "3", "2"].forEach(function (lv) {
       var L = DATA.levels[lv];
       if (!L) return;
       var topics = L.topics.map(function (t) {

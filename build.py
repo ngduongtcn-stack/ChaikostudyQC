@@ -48,7 +48,7 @@ def validate_theory(data):
             continue
         for si, sec in enumerate(th.get("sections", [])):
             for b in sec.get("blocks", []):
-                if b.get("type") not in ("p", "list", "formula", "table", "point", "mistake", "memo"):
+                if b.get("type") not in ("p", "list", "formula", "table", "point", "mistake", "memo", "md"):
                     errors.append(f"theory.json: {key} セクション{si + 1} に不明なブロック '{b.get('type')}'")
     return errors
 
@@ -133,6 +133,7 @@ def page(site, *, title, desc, body, depth=0, path="", nav="", crumbs=None, head
   <nav class="nav" aria-label="{'Menu chính' if vi else 'メインメニュー'}">
     {nav_link('4kyu/index.html', 'Cấp 4' if vi else '4級', '4')}
     {nav_link('3kyu/index.html', 'Cấp 3' if vi else '3級', '3')}
+    {nav_link('2kyu/index.html', 'Cấp 2' if vi else '2級', '2')}
     {nav_link('exam.html', 'Kỳ thi' if vi else '試験について', 'exam')}
     {nav_link('progress.html', 'Tiến độ' if vi else '進捗', 'progress')}
     <a href="{pre}vi/index.html" lang="vi" hreflang="vi"{' aria-current="page"' if nav == 'vi' else ''}>Tiếng Việt</a>
@@ -162,7 +163,7 @@ def hero(eyebrow, h1, lead, extra=""):
 
 def build_index(site, data):
     cards = []
-    for lv in ("4", "3"):
+    for lv in [x for x in ("4", "3", "2") if x in data["levels"]]:
         L = data["levels"][lv]
         n = sum(1 for q in data["questions"] if str(q["level"]) == lv)
         cards.append(f"""<div class="level-card" data-progress="{lv}:all">
@@ -176,7 +177,7 @@ def build_index(site, data):
   </div>
 </div>""")
     body = hero("QC KENTEI · FREE DRILL", "QC検定4級・3級を、無料で毎日すこしずつ。",
-                "分野別の練習問題と解説、ミニ模擬試験、間違えた問題の自動復習。登録なしで、スマホからすぐ解けます。") + f"""
+                "分野別の練習問題と解説、ミニ模擬試験、間違えた問題の自動復習。登録なしで、スマホからすぐ解けます。2級の学習ページも順次公開中です。") + f"""
 <main><div class="wrap">
 <section aria-labelledby="h-levels">
   <h2 id="h-levels">級を選ぶ</h2>
@@ -277,7 +278,7 @@ def build_level(site, data, lv):
     <a class="btn" href="../quiz.html#{lv}.all.review">間違えた問題を復習（<span data-review-count="{lv}:all">0</span>）</a>
     <a class="btn" href="flashcards.html">用語フラッシュカード</a>
   </div>"""
-    exam_section = build_exam_section(data, lv)
+    exam_section = build_exam_section(data, lv) if lv in data["exam_cfg"].get("max_exams", {}) else ""
     body = hero(f"QC KENTEI LEVEL {lv}", f"{L['name']} 練習問題", L["lead"], extra) + f"""
 <main><div class="wrap">
 {exam_section}
@@ -341,6 +342,47 @@ def build_topic(site, data, lv, idx):
                 desc=f"{L['name']}「{t['name']}」の練習問題{len(qs)}問と解説。{t['desc']}")
 
 
+def _inline(t):
+    import re as _re
+    return _re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", e(t))
+
+
+def md_html(src):
+    """Tiny Markdown subset used by 2級 lessons: #### headings, - lists, 1. lists, > formula lines, **bold**."""
+    import re as _re
+    out, para, lst, ltag, fm = [], [], [], "", []
+
+    def flush():
+        nonlocal para, lst, ltag, fm
+        if para:
+            out.append("<p>" + "<br>".join(_inline(x) for x in para) + "</p>")
+        if lst:
+            out.append(f'<{ltag} class="learn-list">' + "".join(f"<li>{_inline(x)}</li>" for x in lst) + f"</{ltag}>")
+        if fm:
+            out.append('<div class="formula">' + "".join(f"<span>{_inline(x)}</span>" for x in fm) + "</div>")
+        para, lst, ltag, fm = [], [], "", []
+
+    for raw in (src or "").split("\n"):
+        line = raw.strip()
+        if not line:
+            flush(); continue
+        m = _re.match(r"^#{2,6}\s+(.*)", line)
+        if m:
+            flush(); out.append(f'<h3 class="md-h">{_inline(m.group(1))}</h3>'); continue
+        if line.startswith(">"):
+            if para or lst: flush()
+            fm.append(line.lstrip("> ").strip()); continue
+        m = _re.match(r"^(-|\d+\.)\s+(.*)", line)
+        if m:
+            tag = "ul" if m.group(1) == "-" else "ol"
+            if para or fm or (lst and ltag != tag): flush()
+            ltag = tag; lst.append(m.group(2)); continue
+        if lst or fm: flush()
+        para.append(line)
+    flush()
+    return "".join(out)
+
+
 def render_block(b, lang="ja"):
     """Render one theory block in a single language (ja pages and vi pages are separate)."""
     t = b["type"]
@@ -362,6 +404,8 @@ def render_block(b, lang="ja"):
         th = "".join(f'<th scope="col">{e(h)}</th>' for h in head)
         trs = "".join("<tr>" + "".join(f"<td>{e(c)}</td>" for c in r) + "</tr>" for r in rows)
         return f'<div class="table-wrap"><table><thead><tr>{th}</tr></thead><tbody>{trs}</tbody></table></div>'
+    if t == "md":
+        return md_html(txt)
     if t in ("mistake", "memo", "point"):
         labels = {"ja": {"mistake": "よくある間違い", "memo": "覚え方", "point": "ポイント"},
                   "vi": {"mistake": "Lỗi hay gặp", "memo": "Mẹo nhớ", "point": "Điểm chính"}}
@@ -622,7 +666,7 @@ VI_FAQ = [
 
 def build_vi(site, data):
     lv_blocks = []
-    for lv in ("4", "3"):
+    for lv in [x for x in ("4", "3", "2") if x in data["levels"]]:
         L = data["levels"][lv]
         n = sum(1 for q in data["questions"] if str(q["level"]) == lv)
         n_ex = len(data["exams"].get(lv, []))
@@ -761,7 +805,7 @@ def main():
     for f in ("style.css", "app.js"):
         shutil.copy(SRC / "assets" / f, DIST / "assets" / f)
 
-    fields = ("id", "level", "topic", "question", "choices", "answer", "explanation", "explanation_vi", "advanced")
+    fields = ("id", "level", "topic", "question", "choices", "answer", "explanation", "explanation_vi", "advanced", "keep_order")
     public_q = [{k: q[k] for k in fields if k in q} for q in data["questions"]]
     known = {q["id"] for q in public_q}
     exams = {lv: [ex for ex in sets if all(i in known for i in ex)] for lv, sets in data["exams"].items()}
