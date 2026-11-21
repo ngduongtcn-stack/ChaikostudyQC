@@ -132,9 +132,9 @@ def page(site, *, title, desc, body, depth=0, path="", nav="", crumbs=None, head
 <header class="site-head"><div class="wrap">
   <a class="brand" href="{pre}{'vi/index.html' if vi else 'index.html'}"><span class="mark">○</span>{e(brand)}</a>
   <nav class="nav" aria-label="{'Menu chính' if vi else 'メインメニュー'}">
-    {nav_link('4kyu/index.html', 'Cấp 4' if vi else '4級', '4')}
-    {nav_link('3kyu/index.html', 'Cấp 3' if vi else '3級', '3')}
-    {nav_link('2kyu/index.html', 'Cấp 2' if vi else '2級', '2') if HAS_LV2 else ''}
+    {nav_link('vi/index.html#vi-h4' if vi else '4kyu/index.html', 'Cấp 4' if vi else '4級', '4')}
+    {nav_link('vi/index.html#vi-h3' if vi else '3kyu/index.html', 'Cấp 3' if vi else '3級', '3')}
+    {(nav_link('vi/index.html#vi-h2' if vi else '2kyu/index.html', 'Cấp 2' if vi else '2級', '2') if HAS_LV2 else '')}
     {nav_link('exam.html', 'Kỳ thi' if vi else '試験について', 'exam')}
     {nav_link('progress.html', 'Tiến độ' if vi else '進捗', 'progress')}
     <a href="{pre}vi/index.html" lang="vi" hreflang="vi"{' aria-current="page"' if nav == 'vi' else ''}>Tiếng Việt</a>
