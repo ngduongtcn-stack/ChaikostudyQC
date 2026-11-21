@@ -199,7 +199,7 @@ def build_index(site, data):
     <a class="btn" href="quiz.html#{lv}.all.exam">ミニ模擬試験</a>
   </div>
 </div>""")
-    body = hero("QC KENTEI · FREE DRILL", "QC検定4級・3級を、無料で毎日すこしずつ。",
+    body = hero("QC KENTEI · FREE DRILL", "QC検定4級・3級・2級を、無料で毎日すこしずつ。",
                 "分野別の練習問題と解説、ミニ模擬試験、間違えた問題の自動復習。登録なしで、スマホからすぐ解けます。2級の学習ページも順次公開中です。") + f"""
 <main><div class="wrap">
 <section aria-labelledby="h-levels">
@@ -725,7 +725,7 @@ def build_vi(site, data):
     ld = {"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "vi", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in VI_FAQ]}
     total = len(data["questions"])
-    body = hero("QC KENTEI · TIẾNG VIỆT", "Ôn thi QC Kentei cấp 4, cấp 3 miễn phí, có giải thích tiếng Việt",
+    body = hero("QC KENTEI · TIẾNG VIỆT", "Ôn thi QC Kentei cấp 4, cấp 3, cấp 2 miễn phí, có giải thích tiếng Việt",
                 f"Dành cho người Việt đang làm việc tại Nhật. Câu hỏi bằng tiếng Nhật như đề thật, lời giải thích và lý thuyết có bản tiếng Việt. Hiện có {total} câu, mỗi tuần đều thêm câu mới.",
                 '<div class="btn-row" style="margin-top:20px"><a class="btn primary" href="../4kyu/index.html">Làm bài cấp 4 (đề tiếng Nhật)</a><a class="btn primary" href="../3kyu/index.html">Làm bài cấp 3 (đề tiếng Nhật)</a><a class="btn" href="../progress.html">Xem tiến độ (tiếng Nhật)</a></div>') + f"""
 <main><div class="wrap">
@@ -748,11 +748,11 @@ def build_vi(site, data):
   <p class="note">Lịch thi, lệ phí và cách đăng ký có thể thay đổi; hãy xem thông tin chính thức của JSA và <a href="https://cbt-s.com/page/qckc_all.html/" rel="noopener" target="_blank">trang đăng ký thi CBT</a>. Tóm tắt bằng tiếng Nhật: <a href="../exam.html" hreflang="ja">trang thông tin kỳ thi</a>.</p>
 </section>
 </div></main>"""
-    return page(site, title="Ôn thi QC Kentei cấp 4, cấp 3 miễn phí – giải thích tiếng Việt", depth=1, path="vi/", nav="vi", body=body,
+    return page(site, title="Ôn thi QC Kentei cấp 4, cấp 3, cấp 2 miễn phí – giải thích tiếng Việt", depth=1, path="vi/", nav="vi", body=body,
                 lang="vi", alternates={"vi": "vi/", "ja": "", "x-default": ""},
                 crumbs=[("Tiếng Việt", "vi/")],
                 head_extra='\n<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False) + "</script>",
-                desc=f"Web ôn thi QC Kentei (QC検定) cấp 4, cấp 3 miễn phí cho người Việt tại Nhật: {total} câu hỏi có giải thích tiếng Việt, lý thuyết tiếng Việt, flashcard thuật ngữ và đề thi thử chấm như thi thật.")
+                desc=f"Web ôn thi QC Kentei (QC検定) cấp 4, cấp 3, cấp 2 miễn phí cho người Việt tại Nhật: {total} câu hỏi có giải thích tiếng Việt, lý thuyết tiếng Việt, flashcard thuật ngữ và đề thi thử chấm như thi thật.")
 
 def build_quiz(site):
     body = """<main><div class="wrap">
@@ -766,7 +766,7 @@ def build_quiz(site):
 </section>
 </div></main>"""
     return page(site, title="練習問題を解く", path="quiz.html", body=body,
-                desc="QC検定4級・3級の練習問題をクイズ形式で解けます。1問ごとの解説、ミニ模擬試験、間違えた問題の復習に対応。")
+                desc="QC検定4級・3級・2級の練習問題をクイズ形式で解けます。1問ごとの解説、ミニ模擬試験、間違えた問題の復習に対応。")
 
 
 def build_about(site):
