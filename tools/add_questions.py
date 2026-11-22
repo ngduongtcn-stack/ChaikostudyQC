@@ -168,7 +168,8 @@ def main():
 
     q4 = [q for q in bank if q["level"] == 4]
     q3 = [q for q in bank if q["level"] == 3]
-    data["questions"] = q4 + q3
+    others = [q for q in bank if q["level"] not in (4, 3)]  # keep 2級 (and any other level) untouched
+    data["questions"] = q4 + q3 + others
     if not args.dry_run:
         save_json(QUESTIONS, data)
         if args.reserve:
