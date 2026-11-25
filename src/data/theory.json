@@ -7310,5 +7310,510 @@
         "Biểu đồ Z"
       ]
     ]
+  },
+  "2:b4": {
+    "intro": {
+      "ja": "正規分布・二項分布・ポアソン分布、χ²・t・F分布、期待値と分散の加法性、中心極限定理。",
+      "vi": "Lý thuyết QC Kentei cấp 2 – Phân phối xác suất."
+    },
+    "sections": [
+      {
+        "h": {
+          "ja": "正規分布（確率計算）（続き）― 正規分布表(II) と逆算（平均・σ・規格を決める）",
+          "vi": "Phân phối chuẩn (tính xác suất) (tiếp theo) - Bảng phân phối chuẩn (II) và tính ngược (quyết định trung bình, σ, tiêu chuẩn)"
+        },
+        "blocks": [
+          {
+            "type": "md",
+            "ja": "#### ひとことで\n表(I) は「境目 → 確率」。ここでは**逆向き**：「確率（不適合品率の目標）→ 境目・平均・σ」を求める。使うのは**正規分布表(II)（P → K_P）**と、標準化の式を**変形しただけ**の逆算式。\n\n#### なぜ\n現場で本当に聞かれるのは「上限を超える割合を 1％ 以下にするには、切断長の**平均をいくつに設定**すればよいか」「両側で合計 1％ 以下にするには **σ をどこまで小さく**しなければならないか」という問い。確率を出すだけでなく、**目標から設定値を決める**のが品質管理の仕事。\n式を新しく覚える必要はない。標準化\n> u ＝ (x − μ) ÷ σ\nの u に、目標の確率 P に対応する **K_P** を入れて、知りたい文字について解くだけ。「境目は平均から σ の K_P 個分離れていなければならない」という1つの考え方に全部まとまる。\n\n#### 定義（表(II)）\n正規分布表(II) は、上側確率 P を与えると、P(u ＞ K_P) ＝ P となる **K_P（上側 P 点）**を返す表。表(I) の逆引き。\n必ず覚える値（表を引かずに即答する）：\n> P ＝ 0.10 → K_P ＝ 1.282\n> P ＝ 0.05 → K_P ＝ 1.645\n> P ＝ 0.025 → K_P ＝ 1.960\n> P ＝ 0.01 → K_P ＝ 2.326\n> P ＝ 0.005 → K_P ＝ 2.576\n（P ＝ 0.02 → 2.054、P ＝ 0.001 → 3.090 も表で確かめておく。）\n\n#### 逆算の3つの型（記号）\nS_U：上限規格、S_L：下限規格、μ：母平均、σ：母標準偏差（単位は x と同じ）、K_P：表(II) の値（単位なし）\n> ① 平均を決める（上限側）：μ ≦ S_U − K_P × σ\n> 　 平均を決める（下限側）：μ ≧ S_L ＋ K_P × σ\n> ② σ を決める（平均が規格の中心、両側規格・合計 P）：σ ≦ (S_U − μ) ÷ K_(P/2)\n> ③ 境目（規格・選別値）を決める：a ＝ μ ＋ K_P × σ（上側 P を切る値）\nなぜ ② は P/2？ → 平均が中心にあれば、上側と下側の不適合品率は同じ。合計 P を左右に**半分ずつ**配るので、表(II) は P/2 で引く。\n実測の不適合品率から平均を推定する問題（例：上限超えが 2.28％ だった）は、**表(I) を逆に読む**（0.0228 → K ＝ 2.00）か表(II) を使い、型①で μ ＝ S_U − K × σ。\n\n#### 例題（アンテナエレメント長、σ ＝ 0.20 mm）\n(a) 上限 250.50 mm を超える割合を 1％ 以下にしたい。平均の上限は？\n> P ＝ 0.01 → 表(II) K ＝ 2.326\n> μ ≦ 250.50 − 2.326 × 0.20 ＝ 250.50 − 0.4652 ＝ 250.0348 → 約 250.03 mm\n(b) 規格 250.00 ± 0.50 mm、平均を中心 250.00 に合わせる。規格外れ合計を 1％ 以下にするには σ はいくら以下？\n> 片側 0.005 → K ＝ 2.576\n> σ ≦ 0.50 ÷ 2.576 ＝ 0.1941 → 約 0.194 mm（今の 0.20 mm では足りない）\n(c) 部品重さ N(50.0, 2.0²) g。重い方の 5％ を選別して外す境の値は？\n> a ＝ 50.0 ＋ 1.645 × 2.0 ＝ 53.29 g\n検算：(a) の答えを標準化すると (250.50 − 250.0348) ÷ 0.20 ＝ 2.326 → 表(I) で 0.0100。逆算の答えは**必ず元の向きで確かめられる**。\n\n#### 電卓の手順\n(a) 「250.5 − 2.326 × 0.2 ＝」と打つと、左から計算されて (250.5 − 2.326) × 0.2 になり**誤り**。掛け算を先にメモリーへ：\n> MRC MRC 2.326 × 0.2 M+ 250.5 − MRC ＝ → 250.0348\n(b) 割るだけ：\n> 0.5 ÷ 2.576 ＝ → 0.19409…\n(c) 足し算の場合も同じ形（「50 ＋ 1.645 × 2 ＝」は 103.29 になり誤り）：\n> MRC MRC 1.645 × 2 M+ 50 ＋ MRC ＝ → 53.29\nまたは「1.645 × 2 ＋ 50 ＝ → 53.29」（掛け算を先に打てば左から順でも正しい）。\n\n#### 判断フロー\n- 問題文が**確率・割合・％を聞いている**（「〜の確率は」「不適合品率はいくらか」）→ 表(I)（K → P）、確率を求める型\n- 問題文が**値を聞いている**（「平均をいくらに」「σ をいくら以下に」「規格・境の値は」）→ 表(II)（P → K）、逆算\n- 「上限を超える割合を P 以下に」「上側 P を除く」→ 片側：K_P をそのまま\n- 「規格外れ（両側合計）を P 以下に」＋「平均は規格の中心」→ K_(P/2)\n- 「不適合品率が 2.28％ であった」など**実測値から平均を求める** → 表(I) を逆に読む（または表(II)）→ μ ＝ S_U − Kσ\n- 「σ を小さくしたら（平均ずらしたら）不適合品率はどうなる」→ 新しい μ・σ で u を出し直す → 表(I)\n\n#### 混同しやすい点\n- 両側合計 P なのに表(II) を P で引く（1％ → 2.326 は誤り、正しくは 0.5％ → 2.576）。\n- μ ＝ S_U − K_P σ の符号：上限側は**引く**（平均を規格から内側へ離す）、下限側は**足す**。\n- K_P × σ を σ² で掛ける：N(μ, 0.04) なら σ ＝ 0.2。\n- 「平均を中心に合わせれば不適合はゼロ」→ σ が大きければ外れる。平均調整とばらつき低減は別の打ち手。\n\n#### 試験での問われ方\n「不適合品率を ○％ 以下にするための母平均の最大値（最小値）」「両側規格で母標準偏差の許容値」「上側 ○％ を除く選別値」、平均を δ ずらしたときの不適合品率の変化（両側を別々に計算）。\n\n#### よくある誤解\n- 「表(II) は表(I) と別の分布の表」→ 同じ標準正規分布の表。引く向きが逆なだけ。\n- 「平均が中心からずれていても、片側を2倍すれば規格外れ合計になる」→ ずれていれば上側・下側の u が違う。別々に計算して足す。\n- 「逆算の答えは丸めた K でも同じ」→ 選択肢が近いことが多い。2.326・2.576 など3桁まで使う。",
+            "vi": "#### Nói gọn\nBảng (I) đi theo chiều \"biên → xác suất\". Ở đây đi theo **chiều ngược lại**: từ \"xác suất (mục tiêu tỷ lệ không phù hợp) → biên, trung bình, σ\". Công cụ là **bảng phân phối chuẩn (II) (P → K_P)** và công thức tính ngược, vốn **chỉ là biến đổi** công thức chuẩn hóa.\n\n#### Vì sao\nCâu hỏi thật sự ở hiện trường là: \"Để tỷ lệ vượt giới hạn trên không quá 1% thì phải **đặt trung bình** chiều dài cắt bằng bao nhiêu?\", \"Để tổng hai phía không quá 1% thì phải **giảm σ** xuống mức nào?\". Không chỉ tính xác suất, mà **từ mục tiêu quyết định giá trị cài đặt** mới là công việc của quản lý chất lượng.\nKhông cần nhớ công thức mới. Trong công thức chuẩn hóa\n> u = (x − μ) ÷ σ\nchỉ cần thay u bằng **K_P** ứng với xác suất mục tiêu P rồi giải theo đại lượng cần tìm. Mọi thứ quy về một ý: \"biên phải cách trung bình K_P lần σ\".\n\n#### Định nghĩa (bảng (II))\nBảng phân phối chuẩn (II) là bảng mà khi cho xác suất phía trên P thì trả về **K_P (điểm P phía trên)** sao cho P(u > K_P) = P. Đây là cách tra ngược của bảng (I).\nCác giá trị phải nhớ (trả lời ngay, không cần tra bảng):\n> P = 0.10 → K_P = 1.282\n> P = 0.05 → K_P = 1.645\n> P = 0.025 → K_P = 1.960\n> P = 0.01 → K_P = 2.326\n> P = 0.005 → K_P = 2.576\n(Cũng nên kiểm tra trên bảng: P = 0.02 → 2.054, P = 0.001 → 3.090.)\n\n#### Ba dạng tính ngược (ký hiệu)\nS_U: giới hạn trên của tiêu chuẩn, S_L: giới hạn dưới, μ: trung bình tổng thể, σ: độ lệch chuẩn tổng thể (cùng đơn vị với x), K_P: giá trị của bảng (II) (không có đơn vị)\n> (1) Quyết định trung bình (phía trên): μ ≦ S_U − K_P × σ\n>     Quyết định trung bình (phía dưới): μ ≧ S_L + K_P × σ\n> (2) Quyết định σ (trung bình ở tâm tiêu chuẩn, tiêu chuẩn hai phía, tổng P): σ ≦ (S_U − μ) ÷ K_(P/2)\n> (3) Quyết định biên (tiêu chuẩn, giá trị phân loại): a = μ + K_P × σ (giá trị cắt phần P phía trên)\nVì sao dạng (2) là P/2? → Nếu trung bình ở tâm thì tỷ lệ không phù hợp phía trên và phía dưới bằng nhau. Tổng P được chia **mỗi bên một nửa**, nên tra bảng (II) với P/2.\nBài toán ước lượng trung bình từ tỷ lệ không phù hợp thực tế (ví dụ: phần vượt giới hạn trên là 2.28%) thì **đọc ngược bảng (I)** (0.0228 → K = 2.00) hoặc dùng bảng (II), rồi theo dạng (1): μ = S_U − K × σ.\n\n#### Ví dụ (chiều dài element anten, σ = 0.20 mm)\n(a) Muốn tỷ lệ vượt giới hạn trên 250.50 mm không quá 1%. Trung bình tối đa là bao nhiêu?\n> P = 0.01 → bảng (II) K = 2.326\n> μ ≦ 250.50 − 2.326 × 0.20 = 250.50 − 0.4652 = 250.0348 → khoảng 250.03 mm\n(b) Tiêu chuẩn 250.00 ± 0.50 mm, đặt trung bình đúng tâm 250.00. Để tổng phần ngoài tiêu chuẩn không quá 1% thì σ phải không quá bao nhiêu?\n> Mỗi phía 0.005 → K = 2.576\n> σ ≦ 0.50 ÷ 2.576 = 0.1941 → khoảng 0.194 mm (σ hiện tại 0.20 mm là chưa đạt)\n(c) Khối lượng chi tiết N(50.0, 2.0²) g. Giá trị ranh giới để tách bỏ 5% nặng nhất là bao nhiêu?\n> a = 50.0 + 1.645 × 2.0 = 53.29 g\nKiểm tra lại: chuẩn hóa đáp án (a) được (250.50 − 250.0348) ÷ 0.20 = 2.326 → bảng (I) cho 0.0100. Đáp án của phép tính ngược **luôn kiểm tra được theo chiều thuận**.\n\n#### Thao tác máy tính\n(a) Nếu bấm \"250.5 − 2.326 × 0.2 =\" thì máy tính lần lượt từ trái sang phải thành (250.5 − 2.326) × 0.2, **sai**. Tính phép nhân trước và đưa vào bộ nhớ:\n> MRC MRC 2.326 × 0.2 M+ 250.5 − MRC = → 250.0348\n(b) Chỉ cần chia:\n> 0.5 ÷ 2.576 = → 0.19409...\n(c) Phép cộng cũng cùng dạng (\"50 + 1.645 × 2 =\" sẽ ra 103.29, sai):\n> MRC MRC 1.645 × 2 M+ 50 + MRC = → 53.29\nHoặc \"1.645 × 2 + 50 = → 53.29\" (bấm phép nhân trước thì tính từ trái sang phải vẫn đúng).\n\n#### Sơ đồ nhận dạng\n- Đề **hỏi xác suất, tỷ lệ, %** (\"xác suất ... là bao nhiêu\", \"tỷ lệ không phù hợp là bao nhiêu\") → bảng (I) (K → P), dạng tính xác suất\n- Đề **hỏi một giá trị** (\"đặt trung bình bằng bao nhiêu\", \"σ không quá bao nhiêu\", \"tiêu chuẩn, giá trị ranh giới là bao nhiêu\") → bảng (II) (P → K), tính ngược\n- \"Tỷ lệ vượt giới hạn trên không quá P\", \"loại bỏ P phía trên\" → một phía: dùng nguyên K_P\n- \"Phần ngoài tiêu chuẩn (tổng hai phía) không quá P\" + \"trung bình ở tâm tiêu chuẩn\" → K_(P/2)\n- \"Tỷ lệ không phù hợp là 2.28%\"... **tìm trung bình từ giá trị thực tế** → đọc ngược bảng (I) (hoặc bảng (II)) → μ = S_U − Kσ\n- \"Nếu giảm σ (dịch trung bình) thì tỷ lệ không phù hợp thế nào\" → tính lại u với μ, σ mới → bảng (I)\n\n#### Dễ nhầm lẫn\n- Tổng hai phía là P mà lại tra bảng (II) với P (1% → 2.326 là sai, đúng là 0.5% → 2.576).\n- Dấu của μ = S_U − K_P σ: phía trên thì **trừ** (đưa trung bình vào trong, xa khỏi tiêu chuẩn), phía dưới thì **cộng**.\n- Nhân K_P với σ²: nếu N(μ, 0.04) thì σ = 0.2.\n- \"Đưa trung bình về tâm thì không còn sản phẩm không phù hợp\" → nếu σ lớn thì vẫn lọt ra ngoài. Chỉnh trung bình và giảm độ phân tán là hai biện pháp khác nhau.\n\n#### Cách ra đề trong kỳ thi\n\"Giá trị lớn nhất (nhỏ nhất) của trung bình tổng thể để tỷ lệ không phù hợp không quá ...%\", \"giá trị cho phép của độ lệch chuẩn tổng thể với tiêu chuẩn hai phía\", \"giá trị phân loại để loại bỏ ...% phía trên\", sự thay đổi tỷ lệ không phù hợp khi dịch trung bình một lượng δ (tính riêng từng phía).\n\n#### Hiểu lầm thường gặp\n- \"Bảng (II) là bảng của một phân phối khác bảng (I)\" → cùng là bảng phân phối chuẩn tắc, chỉ khác chiều tra.\n- \"Dù trung bình lệch khỏi tâm, nhân đôi một phía vẫn ra tổng phần ngoài tiêu chuẩn\" → nếu lệch thì u phía trên và phía dưới khác nhau. Phải tính riêng rồi cộng.\n- \"Dùng K đã làm tròn thì đáp án tính ngược cũng như nhau\" → các phương án thường rất sát nhau. Dùng đủ 3 chữ số thập phân như 2.326, 2.576."
+          }
+        ]
+      },
+      {
+        "h": {
+          "ja": "正規分布（確率計算）（続き）― 試験の計算パターン総仕上げ（平均のずれ・改善策の比較・同じ側の区間・2ラインの合成）",
+          "vi": "Phân phối chuẩn (tính xác suất) (tiếp theo) - Tổng hợp các dạng tính toán trong đề thi (trung bình lệch, so sánh biện pháp cải tiến, khoảng cùng một phía, gộp hai dây chuyền)"
+        },
+        "blocks": [
+          {
+            "type": "md",
+            "ja": "#### ひとことで\n正規分布の試験問題は、ほぼすべて「**u を出す → 表(I)/(II) を引く → 足す・引く・掛ける**」の組合せ。ここでは試験によく出る**組合せの型**を総仕上げする：(A) 平均がずれたときの両側の不適合品率と「平均調整かばらつき低減か」の比較、(B) 同じ側の区間（手直し範囲）、(C) 2つのラインを合わせた全体の不適合品率、(D) 表の読み取り、(E) 不適合品率から個数へ（二項分布への橋渡し）。\n\n#### なぜ\n現場の問いは「確率はいくら？」で終わらない。「平均を合わせるのと σ を減らすのと、**どちらが効く**？」「規格を少し超えたものは手直しできる。**手直し品**は何％出る？」「ライン1とライン2を合わせた**工場全体**の不適合品率は？」— 判断に使える数字にするには、表から読んだ確率を**正しく組み合わせる**必要がある。新しい公式はない。全部、「u ＝ (境目 − μ) ÷ σ」と表(I)・(II) だけでできる。\n\n#### 型A：平均がずれたときの両側不適合品率と改善策の比較\nエレメント長 規格 250.00 ± 0.50 mm（249.50〜250.50）、今 N(250.10, 0.20²)。\n> 上側：u ＝ (250.50 − 250.10) ÷ 0.20 ＝ 2.00 → 0.0228\n> 下側：u ＝ (250.10 − 249.50) ÷ 0.20 ＝ 3.00 → 0.00135\n> 不適合品率 ＝ 0.0228 ＋ 0.00135 ＝ 0.02415（約 2.42％）\n改善案① 平均を中心 250.00 に合わせる（σ ＝ 0.20 のまま）：\n> u ＝ 0.50 ÷ 0.20 ＝ 2.50（上下とも）→ 2 × 0.0062 ＝ 0.0124（1.24％）\n改善案② 平均はそのまま、σ を 0.16 に減らす：\n> 上側 u ＝ 0.40 ÷ 0.16 ＝ 2.50 → 0.0062、下側 u ＝ 0.60 ÷ 0.16 ＝ 3.75 → 約 0.0001（ほぼ 0）\n> 不適合品率 ≒ 0.0063（0.63％）\n読み方：平均のずれが小さい（0.5σ）ときは、σ を2割減らすほうが効く。逆に**平均が大きくずれていて片側だけ外れている**なら、まず平均調整（安く早い）。どちらが効くかは**計算して比べる**。\nu ＝ 3.50 で上側確率は約 0.00023（表では .2326E-3 のような指数表記）、3.75 で 0.0001 未満 — 選択肢を選ぶ計算ではほぼ 0 と見てよい（ただし問題文が「無視できる」と言わないときは、表にある値は足す）。\n\n#### 型B：同じ側の区間（手直し・選別の範囲）\n上限 250.50 を超えたエレメントのうち、250.70 以下なら切り直して使える（手直し）、250.70 を超えたら廃却とする。N(250.10, 0.20²) のとき：\n> 250.50 → u ＝ 2.00 → 上側 0.0228\n> 250.70 → u ＝ 3.00 → 上側 0.00135\n> 手直し品 ＝ P(250.50 ＜ x ≦ 250.70) ＝ 0.0228 − 0.00135 ＝ 0.02145（約 2.1％）、廃却 ＝ 0.00135（0.135％）\nなぜ引き算？ → 表(I) は「その境目より**右側全部**」の面積。右側全部（2.00 から先）から、さらに右側（3.00 から先）を除くと、間の帯だけが残る。区間が**平均をまたぐ**ときは「1 − 上側 − 下側」、**同じ側**のときは「上側の差」。\n\n#### 型C：2つのライン（層）を合わせた全体の不適合品率\n同じ部品をライン1（生産量の 60％）とライン2（40％）で作る。上限規格 52.0 g のみ。\nライン1：N(50.0, 1.0²)、ライン2：N(50.5, 1.0²)。\n> ライン1：u ＝ (52.0 − 50.0) ÷ 1.0 ＝ 2.00 → p₁ ＝ 0.0228\n> ライン2：u ＝ (52.0 − 50.5) ÷ 1.0 ＝ 1.50 → p₂ ＝ 0.0668\n> 全体 p ＝ w₁ p₁ ＋ w₂ p₂ ＝ 0.6 × 0.0228 ＋ 0.4 × 0.0668 ＝ 0.01368 ＋ 0.02672 ＝ 0.0404（4.04％）\n記号：w₁, w₂ は生産比率（w₁ ＋ w₂ ＝ 1）、p₁, p₂ は各ラインの不適合品率。\nなぜ加重平均？ → 1000 個作れば、ライン1から 600 個 × 0.0228 ＝ 13.7 個、ライン2から 400 個 × 0.0668 ＝ 26.7 個の不適合品が出る。合計 40.4 個 ÷ 1000 ＝ 0.0404。**単純平均（(0.0228＋0.0668)÷2 ＝ 0.0448）は、生産量が同じときだけ**正しい。\n注意：2つのラインを混ぜた全体のデータは、平均が違えば**1つの正規分布ではない**（裾が広い・二山型に近い形になりうる — 層別 B2.7 の話）。全体の x̄ と s で1回だけ u を出す方法は、近似にすぎない。**ラインごとに計算して加重平均**が基本。\n\n#### 型D：表の読み取り（よくある落とし穴）\n- 表(I) は**上側確率**だけ。「〜以下になる確率」は 1 − P：P(x ≦ μ ＋ 1.28σ) ＝ 1 − 0.1003 ＝ 0.8997。\n- u ＝ 0.50 → 0.3085（3割も外れる）。u が小さいと P は大きい — 「P は小さい数のはず」と思い込まない。\n- u ＝ 0 → 0.5000（平均ちょうどを超える確率は半分）。\n- 2桁目の読み方：u ＝ 1.96 は「1.9 の行 × .06 の列」→ 0.0250、u ＝ 2.33 →「2.3 の行 × .03 の列」→ 0.0099。\n- 負の u は符号を取って引く（対称性）。表に負の値を探さない。\n\n#### 型E：不適合品率から個数へ（二項分布への橋渡し）\n1日 500 本作り、不適合品率 p ＝ 0.02415 なら、1日の不適合品の数の**平均（期待値）**は\n> n × p ＝ 500 × 0.02415 ≒ 12.1 本\n「ちょうど 10 本出る確率」「3本以下の確率」のような**個数の確率**は、正規分布ではなく**二項分布**（B4.2）で考える。正規分布で p を出し、二項分布で個数を考える — 2つの分布はこうつながる。\n\n#### 電卓の手順\n型A（u は「大きい値 − 小さい値」の順に打てば正の数で出る）：\n> 250.5 − 250.1 ÷ 0.2 ＝ → 2\n> 250.1 − 249.5 ÷ 0.2 ＝ → 3\n> 0.0228 ＋ 0.00135 ＝ → 0.02415\n型B：\n> 0.0228 − 0.00135 ＝ → 0.02145\n型C（掛け算2つを足す：M+ は打ちかけの計算を完了してから足す）：\n> MRC MRC 0.6 × 0.0228 M+ 0.4 × 0.0668 M+ MRC → 0.0404\n（「0.6 × 0.0228 ＋ 0.4 × 0.0668 ＝」と続けて打つと、左から順に計算されて誤り。）\n型E：\n> 500 × 0.02415 ＝ → 12.075\n\n#### 判断フロー\n- 「上限・下限の**両方**」＋「平均が中心からずれている」→ 型A：上側・下側を**別々に** u → 足す\n- 「どちらの改善が効果的か」「平均を合わせた場合と σ を減らした場合」→ 型A を**案ごとに計算し直して比べる**（感覚で答えない）\n- 「規格は外れるが〜以下なら手直し」「〜から〜の間（平均より片側）」→ 型B：**上側確率の差**\n- 「〜から〜の間（平均をまたぐ）」「規格内」→ 1 − 上側 − 下側\n- 「ライン A・B」「2台の機械」「生産比率 ○：○」「工場全体の」→ 型C：ラインごとに p → **生産比率で加重平均**\n- 「〜以下になる確率」「〜を下回らない確率」→ 型D：1 − P または対称性\n- 「1日 n 個作ると、平均何個」→ 型E：n × p。「ちょうど x 個の確率」→ 二項分布（B4.2）\n\n#### 混同しやすい点\n- 同じ側の区間を「1 − 上側 − 下側」で計算する（平均をまたぐ区間の式）。\n- 2ラインの全体を**単純平均**する、または p₁ ＋ p₂ と**足す**。\n- 平均をずらす案で、片側だけ計算して反対側を忘れる（中心に合わせると**両側**が同じ確率になり、2倍する）。\n- 型A の下側 u を「249.5 − 250.1」で負のまま表を探す。\n\n#### 試験での問われ方\n「現状の不適合品率」→「改善案1・2の不適合品率」→「どちらが有効か」の連続小問、手直し品と廃却品の割合、2ライン（2台）の全体の不適合品率、「〜以下の確率」の読み取り。計算の小問が連続するので、**最初の u を間違えると全滅**する — 1問目は検算（u から境目に戻す）をしてから進む。\n\n#### よくある誤解\n- 「平均を中心に合わせるのがいつも最善」→ ずれが小さいときは、σ 低減のほうが効くことが多い。数字で比べる。\n- 「全体のデータの x̄ と s で計算すれば、ライン別に計算したのと同じ」→ 平均が違うラインを混ぜた分布は正規分布でない。ライン別 → 加重平均。\n- 「u が 3 を超えたら確率は 0」→ u ＝ 3.00 でも 0.00135 ある。0 と見てよいのは u がもっと大きいとき（3.5〜4 以上が目安）か、問題文が無視してよいと言うとき。",
+            "vi": "#### Nói gọn\nBài thi về phân phối chuẩn hầu như đều là tổ hợp của \"**tính u → tra bảng (I)/(II) → cộng, trừ, nhân**\". Ở đây tổng hợp các **dạng tổ hợp** hay ra thi: (A) tỷ lệ không phù hợp hai phía khi trung bình bị lệch và so sánh \"chỉnh trung bình hay giảm độ phân tán\", (B) khoảng cùng một phía (phạm vi sửa lại), (C) tỷ lệ không phù hợp chung khi gộp hai dây chuyền, (D) đọc bảng, (E) từ tỷ lệ không phù hợp sang số lượng (cầu nối sang phân phối nhị thức).\n\n#### Vì sao\nCâu hỏi ở hiện trường không dừng ở \"xác suất là bao nhiêu?\". \"Chỉnh trung bình hay giảm σ, **cách nào hiệu quả hơn**?\", \"Sản phẩm vượt tiêu chuẩn một chút thì sửa lại được. **Sản phẩm phải sửa lại** chiếm bao nhiêu %?\", \"Tỷ lệ không phù hợp của **toàn nhà máy** khi gộp dây chuyền 1 và dây chuyền 2 là bao nhiêu?\" - để có con số dùng được cho việc ra quyết định, phải **kết hợp đúng** các xác suất đọc từ bảng. Không có công thức mới. Tất cả chỉ dùng \"u = (biên − μ) ÷ σ\" và bảng (I), (II).\n\n#### Dạng A: tỷ lệ không phù hợp hai phía khi trung bình lệch và so sánh biện pháp cải tiến\nChiều dài element tiêu chuẩn 250.00 ± 0.50 mm (249.50 đến 250.50), hiện tại N(250.10, 0.20²).\n> Phía trên: u = (250.50 − 250.10) ÷ 0.20 = 2.00 → 0.0228\n> Phía dưới: u = (250.10 − 249.50) ÷ 0.20 = 3.00 → 0.00135\n> Tỷ lệ không phù hợp = 0.0228 + 0.00135 = 0.02415 (khoảng 2.42%)\nPhương án cải tiến 1: đưa trung bình về tâm 250.00 (giữ σ = 0.20):\n> u = 0.50 ÷ 0.20 = 2.50 (cả hai phía) → 2 × 0.0062 = 0.0124 (1.24%)\nPhương án cải tiến 2: giữ nguyên trung bình, giảm σ xuống 0.16:\n> Phía trên u = 0.40 ÷ 0.16 = 2.50 → 0.0062, phía dưới u = 0.60 ÷ 0.16 = 3.75 → khoảng 0.0001 (gần bằng 0)\n> Tỷ lệ không phù hợp ≒ 0.0063 (0.63%)\nCách đọc: khi trung bình lệch ít (0.5σ), giảm σ 20% hiệu quả hơn. Ngược lại, nếu **trung bình lệch nhiều và chỉ lọt ra một phía** thì trước hết chỉnh trung bình (rẻ và nhanh). Cách nào hiệu quả hơn thì **phải tính rồi so sánh**.\nVới u = 3.50 xác suất phía trên khoảng 0.00023 (trong bảng ghi dạng số mũ như .2326E-3), với 3.75 thì nhỏ hơn 0.0001 - trong các phép tính chọn đáp án có thể coi gần bằng 0 (nhưng nếu đề không nói \"bỏ qua được\" thì các giá trị có trong bảng vẫn phải cộng vào).\n\n#### Dạng B: khoảng cùng một phía (phạm vi sửa lại, phân loại)\nTrong các element vượt giới hạn trên 250.50, cái nào không quá 250.70 thì cắt lại để dùng (sửa lại), vượt 250.70 thì loại bỏ. Khi N(250.10, 0.20²):\n> 250.50 → u = 2.00 → phía trên 0.0228\n> 250.70 → u = 3.00 → phía trên 0.00135\n> Sản phẩm sửa lại = P(250.50 < x ≦ 250.70) = 0.0228 − 0.00135 = 0.02145 (khoảng 2.1%), loại bỏ = 0.00135 (0.135%)\nVì sao lại là phép trừ? → Bảng (I) cho diện tích \"**toàn bộ bên phải**\" của biên đó. Lấy toàn bộ bên phải (từ 2.00 trở đi) bỏ đi phần xa hơn bên phải (từ 3.00 trở đi) thì chỉ còn lại dải ở giữa. Khi khoảng **chứa trung bình** thì dùng \"1 − phía trên − phía dưới\", khi **cùng một phía** thì dùng \"hiệu hai xác suất phía trên\".\n\n#### Dạng C: tỷ lệ không phù hợp chung khi gộp hai dây chuyền (hai tầng)\nCùng một chi tiết được làm trên dây chuyền 1 (60% sản lượng) và dây chuyền 2 (40%). Chỉ có giới hạn trên 52.0 g.\nDây chuyền 1: N(50.0, 1.0²), dây chuyền 2: N(50.5, 1.0²).\n> Dây chuyền 1: u = (52.0 − 50.0) ÷ 1.0 = 2.00 → p₁ = 0.0228\n> Dây chuyền 2: u = (52.0 − 50.5) ÷ 1.0 = 1.50 → p₂ = 0.0668\n> Toàn bộ p = w₁ p₁ + w₂ p₂ = 0.6 × 0.0228 + 0.4 × 0.0668 = 0.01368 + 0.02672 = 0.0404 (4.04%)\nKý hiệu: w₁, w₂ là tỷ lệ sản lượng (w₁ + w₂ = 1), p₁, p₂ là tỷ lệ không phù hợp của từng dây chuyền.\nVì sao là trung bình có trọng số? → Nếu làm 1000 cái thì dây chuyền 1 cho 600 cái × 0.0228 = 13.7 cái không phù hợp, dây chuyền 2 cho 400 cái × 0.0668 = 26.7 cái. Tổng 40.4 cái ÷ 1000 = 0.0404. **Trung bình cộng đơn giản ((0.0228 + 0.0668) ÷ 2 = 0.0448) chỉ đúng khi sản lượng bằng nhau.**\nChú ý: dữ liệu toàn bộ khi trộn hai dây chuyền, nếu trung bình khác nhau thì **không phải là một phân phối chuẩn** (có thể có đuôi rộng hoặc gần dạng hai đỉnh - chủ đề phân tầng B2.7). Cách chỉ tính u một lần bằng x̄ và s của toàn bộ chỉ là xấp xỉ. Cơ bản là **tính cho từng dây chuyền rồi lấy trung bình có trọng số**.\n\n#### Dạng D: đọc bảng (các bẫy thường gặp)\n- Bảng (I) chỉ cho **xác suất phía trên**. \"Xác suất không vượt quá ...\" là 1 − P: P(x ≦ μ + 1.28σ) = 1 − 0.1003 = 0.8997.\n- u = 0.50 → 0.3085 (lọt ra tới 30%). u nhỏ thì P lớn - đừng mặc định \"P phải là số nhỏ\".\n- u = 0 → 0.5000 (xác suất vượt đúng trung bình là một nửa).\n- Cách đọc chữ số thứ hai: u = 1.96 là \"hàng 1.9 × cột .06\" → 0.0250, u = 2.33 → \"hàng 2.3 × cột .03\" → 0.0099.\n- u âm thì bỏ dấu rồi tra (tính đối xứng). Đừng tìm giá trị âm trong bảng.\n\n#### Dạng E: từ tỷ lệ không phù hợp sang số lượng (cầu nối sang phân phối nhị thức)\nMỗi ngày làm 500 thanh, tỷ lệ không phù hợp p = 0.02415 thì **trung bình (kỳ vọng)** số sản phẩm không phù hợp mỗi ngày là\n> n × p = 500 × 0.02415 ≒ 12.1 thanh\n**Xác suất về số lượng** như \"xác suất có đúng 10 thanh\", \"xác suất không quá 3 thanh\" thì không dùng phân phối chuẩn mà dùng **phân phối nhị thức** (B4.2). Dùng phân phối chuẩn để tính p, dùng phân phối nhị thức để xét số lượng - hai phân phối nối với nhau như vậy.\n\n#### Thao tác máy tính\nDạng A (bấm theo thứ tự \"giá trị lớn − giá trị nhỏ\" thì u ra số dương):\n> 250.5 − 250.1 ÷ 0.2 = → 2\n> 250.1 − 249.5 ÷ 0.2 = → 3\n> 0.0228 + 0.00135 = → 0.02415\nDạng B:\n> 0.0228 − 0.00135 = → 0.02145\nDạng C (cộng hai phép nhân: M+ sẽ hoàn tất phép tính đang bấm rồi mới cộng vào bộ nhớ):\n> MRC MRC 0.6 × 0.0228 M+ 0.4 × 0.0668 M+ MRC → 0.0404\n(Nếu bấm liền \"0.6 × 0.0228 + 0.4 × 0.0668 =\" thì máy tính lần lượt từ trái sang phải và ra sai.)\nDạng E:\n> 500 × 0.02415 = → 12.075\n\n#### Sơ đồ nhận dạng\n- \"**Cả hai** giới hạn trên và dưới\" + \"trung bình lệch khỏi tâm\" → dạng A: tính u **riêng** cho phía trên, phía dưới → cộng\n- \"Cải tiến nào hiệu quả hơn\", \"trường hợp chỉnh trung bình và trường hợp giảm σ\" → dạng A: **tính lại cho từng phương án rồi so sánh** (không trả lời theo cảm tính)\n- \"Ngoài tiêu chuẩn nhưng không quá ... thì sửa lại được\", \"từ ... đến ... (một phía của trung bình)\" → dạng B: **hiệu xác suất phía trên**\n- \"Từ ... đến ... (chứa trung bình)\", \"trong tiêu chuẩn\" → 1 − phía trên − phía dưới\n- \"Dây chuyền A, B\", \"hai máy\", \"tỷ lệ sản lượng ...:...\", \"toàn nhà máy\" → dạng C: tính p cho từng dây chuyền → **trung bình có trọng số theo tỷ lệ sản lượng**\n- \"Xác suất không vượt quá ...\", \"xác suất không thấp hơn ...\" → dạng D: 1 − P hoặc dùng tính đối xứng\n- \"Mỗi ngày làm n cái thì trung bình bao nhiêu cái\" → dạng E: n × p. \"Xác suất đúng x cái\" → phân phối nhị thức (B4.2)\n\n#### Dễ nhầm lẫn\n- Tính khoảng cùng một phía bằng \"1 − phía trên − phía dưới\" (công thức của khoảng chứa trung bình).\n- Tính toàn bộ hai dây chuyền bằng **trung bình cộng đơn giản**, hoặc **cộng thẳng** p₁ + p₂.\n- Ở phương án dịch trung bình, chỉ tính một phía mà quên phía kia (khi đưa về tâm thì **hai phía** có xác suất bằng nhau, nhân 2).\n- Để nguyên u phía dưới của dạng A là \"249.5 − 250.1\" (số âm) rồi đi tìm trong bảng.\n\n#### Cách ra đề trong kỳ thi\nChuỗi câu hỏi nhỏ liên tiếp \"tỷ lệ không phù hợp hiện tại\" → \"tỷ lệ không phù hợp của phương án cải tiến 1, 2\" → \"phương án nào hiệu quả hơn\", tỷ lệ sản phẩm sửa lại và sản phẩm loại bỏ, tỷ lệ không phù hợp chung của hai dây chuyền (hai máy), đọc \"xác suất không vượt quá ...\". Vì các câu tính toán nối tiếp nhau, **sai u đầu tiên là sai cả chuỗi** - câu đầu tiên nên kiểm tra lại (từ u quay về biên) rồi mới làm tiếp.\n\n#### Hiểu lầm thường gặp\n- \"Đưa trung bình về tâm luôn là tốt nhất\" → khi độ lệch nhỏ, giảm σ thường hiệu quả hơn. So sánh bằng con số.\n- \"Tính bằng x̄ và s của toàn bộ dữ liệu cũng giống như tính riêng từng dây chuyền\" → phân phối trộn các dây chuyền có trung bình khác nhau không phải phân phối chuẩn. Tính riêng từng dây chuyền → trung bình có trọng số.\n- \"u vượt 3 thì xác suất bằng 0\" → ngay cả u = 3.00 vẫn còn 0.00135. Chỉ coi là 0 khi u lớn hơn nhiều (tham khảo từ 3.5 đến 4 trở lên) hoặc khi đề nói có thể bỏ qua."
+          }
+        ]
+      },
+      {
+        "h": {
+          "ja": "B4.2 二項分布 ― 定義・4つの条件・確率の式・期待値と分散",
+          "vi": "B4.2 Phân phối nhị thức - Định nghĩa, bốn điều kiện, công thức xác suất, kỳ vọng và phương sai"
+        },
+        "blocks": [
+          {
+            "type": "md",
+            "ja": "#### ひとことで\n二項分布は「**n 個を調べたとき、不適合品がちょうど x 個になる確率**」を与える分布。正規分布は「1個の寸法がいくつになるか」、二項分布は「**何個**不適合になるか」— 連続量から**個数（計数値）**の世界に入る。\n\n#### なぜ\n受入検査で、インダクタのロットの不適合品率が p ＝ 0.05 だとする。20個抜き取ったら不適合品は何個出るか？ 毎回1個とは限らない。0個のときも、3個のときもある。「0個の確率は？」「2個以上出る確率は？」が分かれば、「2個以上ならロット不合格」という検査のルールが、**よいロットをどれくらい誤って不合格にするか**を計算できる（抜取検査・OC曲線 B9 の土台）。np 管理図・p 管理図（B7）、母不適合品率の検定（B6）も、すべてこの分布の上に立っている。\n\n#### 定義\n1回ごとに「起こる（不適合品）／起こらない（適合品）」の2通りしかない試行を、同じ条件で独立に n 回くり返す。1回で起こる確率を p とすると、起こる回数 x（0, 1, …, n）の確率は\n> P(x) ＝ ₙCₓ · pˣ · (1 − p)^(n − x)　（x ＝ 0, 1, 2, …, n）\n> ₙCₓ ＝ n! / (x! (n − x)!)\n- n：調べる個数（試行回数）— 問題文の「サンプルサイズ」「n 個を抜き取る」\n- p：1個が不適合品である確率（母不適合品率）\n- x：不適合品の個数（整数）\n- ₙCₓ：n 個の中で「どの x 個が不適合か」の**並び方の数**（組合せ）\n\nこの分布を**二項分布 B(n, p)** という。\n\n#### 式の形の「なぜ」\nn ＝ 3、p ＝ 0.1 で「ちょうど1個が不適合」を考える。並び方は（不・適・適）（適・不・適）（適・適・不）の3通り。どれも確率は 0.1 × 0.9 × 0.9 ＝ 0.081（独立なので掛け算）。3通りあるので\n> P(1) ＝ 3 × 0.1 × 0.9² ＝ 0.243\n- pˣ：不適合が x 回起こる確率\n- (1 − p)^(n − x)：残りの n − x 個が適合である確率\n- ₙCₓ：その並び方が何通りあるか（₃C₁ ＝ 3）\n式は「1つの並び方の確率 × 並び方の数」にすぎない。ₙCₓ を忘れると、**1つの並び方の確率**しか出ない（よくある誤り）。\n\n#### 使える4つの条件\n1. n が**あらかじめ決まっている**（「20個抜き取る」）\n2. 結果が**2通り**（適合／不適合、合格／不合格）\n3. p が**毎回同じ**\n4. 各回が**独立**（1個目の結果が2個目に影響しない）\n条件3・4は、大きなロット（または工程）から抜き取るなら成り立つと考えてよい。小さなロット N から**戻さずに**（非復元で）抜き取ると、1個抜くたびに残りの不適合品率が変わる → 厳密には**超幾何分布**。ただし N が n に比べて十分大きい（目安：n/N ≦ 0.1）なら二項分布で近似してよい。\n\n#### 期待値と分散\n> E(x) ＝ np　V(x) ＝ np(1 − p)　σ(x) ＝ √(np(1 − p))\nなぜ？ 1個ずつ見ると「不適合なら1、適合なら0」の変数で、その平均は p、分散は p(1 − p)。n 個の合計が x なので、平均も分散も n 倍（独立なので分散が足せる — 分散の加法性 B4.5 で詳しく）。\n- 1 − p が掛かるのが二項分布の特徴。p が小さいと 1 − p ≒ 1 で V ≒ np（ポアソン分布 E ＝ V ＝ λ に近づく — B4.3）。\n- 標準偏差は分散の**平方根**。V(x) をそのまま σ として使わない。\n\n#### 例題（手計算）：n ＝ 5、p ＝ 0.1\n> P(0) ＝ 0.9⁵ ＝ 0.59049\n> P(1) ＝ ₅C₁ × 0.1 × 0.9⁴ ＝ 5 × 0.1 × 0.6561 ＝ 0.32805\n> P(2) ＝ ₅C₂ × 0.1² × 0.9³ ＝ 10 × 0.01 × 0.729 ＝ 0.0729\n> P(x ≦ 1) ＝ 0.59049 ＋ 0.32805 ＝ 0.91854\n> P(x ≧ 2) ＝ 1 − 0.91854 ＝ 0.08146\n> E(x) ＝ 5 × 0.1 ＝ 0.5　V(x) ＝ 5 × 0.1 × 0.9 ＝ 0.45　σ(x) ＝ √0.45 ≒ 0.671\n読み方：不適合品率 10％でも、5個中1個も出ないことが 59％ある。「5個調べて0個だったから、このロットは不適合品なし」とは言えない。\n\n#### 例題（受入検査）：n ＝ 10、p ＝ 0.05\n> P(0) ＝ 0.95¹⁰ ≒ 0.5987\n> P(x ≧ 1) ＝ 1 − 0.95¹⁰ ≒ 0.4013（少なくとも1個）\n> P(1) ＝ 10 × 0.05 × 0.95⁹ ≒ 0.3151\n> P(2) ＝ ₁₀C₂ × 0.05² × 0.95⁸ ＝ 45 × 0.0025 × 0.66342 ≒ 0.0746\n「少なくとも1個」は P(1) ＋ P(2) ＋ … ＋ P(10) を全部足さず、**余事象**（0個）を1から引く。\n\n#### 電卓の手順\n組合せは暗算でよい：₅C₂ ＝ (5 × 4) ÷ (2 × 1) ＝ 10、₁₀C₂ ＝ (10 × 9) ÷ 2 ＝ 45、₂₀C₂ ＝ 190。\n累乗は「= の繰返し」を使う（= を押すと直前の「× 0.95」をもう一度行う）。**最初に**「0.95 × 0.95 = → 0.9025」「= → 0.857375」と表示が変わることを確かめる。違う動きをしたら、0.9025 × 0.9025 ＝ のように打ち直す。\n0.95¹⁰（最初の = で2乗、以後 = 1回ごとに1乗増える → = は合計9回）：\n> 0.95 × 0.95 = = = = = = = = = → 0.598737\n少なくとも1個（メモリを使って 1 から引く）：\n> MRC MRC 0.95 × 0.95 = = = = = = = = = M+ 1 − MRC = → 0.401263\nP(1) ＝ 10 × 0.05 × 0.95⁹（累乗を先に出してから掛ける。左から順に計算されるのでこれで正しい）：\n> 0.95 × 0.95 = = = = = = = = → 0.630249\n> × 0.05 × 10 = → 0.315125\nn が大きい（20 以上など）ときは = の回数を数え間違えやすい。試験では (1 − p)ⁿ の値が問題文に与えられるか、ポアソン近似（B4.3）を使う問題が多い。\n\n#### 判断フロー\n- 「n 個中の**不適合品の数**」「合格品・不合格品」「良品か不適合品か」（1個ごとに2通り、n が決まっている）→ **二項分布**\n- 「1枚・1 m・1台あたりの**欠点数・不適合数**」「傷の数」「はんだ付け不良の箇所数」（上限がない数）→ ポアソン分布（B4.3）\n- 「寸法」「重さ」「抵抗値」（連続量）→ 正規分布（B4.1）\n- 「N ＝ 20 個の小ロットから 5 個を戻さずに」（n/N が大きい）→ 超幾何分布（1級の範囲。2級では「このときは二項分布をそのまま使えない」と分かれば十分）\n- 「**ちょうど** x 個」→ P(x) を1つ\n- 「x 個**以下**」→ P(0) ＋ … ＋ P(x)\n- 「**少なくとも1個**」「1個以上」→ 1 − P(0) ＝ 1 − (1 − p)ⁿ\n- 「2個以上」→ 1 − P(0) − P(1)\n- 「平均何個」→ np、「ばらつき（標準偏差）」→ √(np(1 − p))\n\n#### 混同しやすい点\n- **不適合品数**（品の数・二項）と**不適合数**（欠点の数・ポアソン）：1台のアンテナに不良が3か所あれば、不適合品数は1、不適合数は3。\n- V(x) ＝ np(1 − p)（二項）と V(x) ＝ λ（ポアソン）。二項で V ＝ np とするのはポアソンとの混同。\n- 二項分布は**離散**分布：P(x ＜ 2) ＝ P(0) ＋ P(1)、P(x ≦ 2) ＝ P(0) ＋ P(1) ＋ P(2)。連続分布（正規）と違い、「＜」と「≦」で値が変わる。\n- p が小さいと分布は右に裾を引く（右に歪む）。p ＝ 0.5 なら左右対称。n が大きいほど正規分布に近づく。\n\n#### 試験での問われ方\n空欄補充で「二項分布の平均は（np）、分散は（np(1 − p)）」、計算で「ちょうど1個」「少なくとも1個」「2個以上」の確率、正誤で4条件や形（p ＝ 0.5 で対称）、判断で「二項かポアソンか」。続く項目では**正規近似**（np ≧ 5 かつ n(1 − p) ≧ 5 の目安）と**不適合品率 p̂ ＝ x/n の平均・分散**、ポアソン分布を扱う。\n\n#### よくある誤解\n- 「p ＝ 5％なら 20 個中ちょうど1個出る」→ 平均（np ＝ 1）が1個なだけで、0個の確率も約 36％ある。\n- 「少なくとも1個 ＝ n × p」→ np は**平均個数**で確率ではない（n が大きいと 1 を超えてしまう）。正しくは 1 − (1 − p)ⁿ。\n- 「ₙCₓ は x が大きいほど大きい」→ ₁₀C₂ ＝ ₁₀C₈ ＝ 45 のように対称で、x ＝ n/2 付近が最大。",
+            "vi": "#### Nói gọn\nPhân phối nhị thức cho \"**xác suất có đúng x sản phẩm không phù hợp khi kiểm tra n cái**\". Phân phối chuẩn trả lời \"kích thước của một cái là bao nhiêu\", còn phân phối nhị thức trả lời \"**bao nhiêu cái** không phù hợp\" - chuyển từ đại lượng liên tục sang thế giới **số đếm (dữ liệu đếm)**.\n\n#### Vì sao\nTrong kiểm tra nhận hàng, giả sử lô cuộn cảm có tỷ lệ không phù hợp p = 0.05. Lấy 20 cái thì có bao nhiêu cái không phù hợp? Không phải lúc nào cũng là 1 cái. Có lúc 0 cái, có lúc 3 cái. Nếu biết \"xác suất 0 cái là bao nhiêu?\", \"xác suất từ 2 cái trở lên là bao nhiêu?\" thì có thể tính được quy tắc kiểm tra \"từ 2 cái trở lên thì lô không đạt\" sẽ **loại nhầm lô tốt với mức độ nào** (nền tảng của kiểm tra lấy mẫu, đường OC, B9). Biểu đồ kiểm soát np, biểu đồ kiểm soát p (B7) và kiểm định tỷ lệ không phù hợp tổng thể (B6) đều dựa trên phân phối này.\n\n#### Định nghĩa\nLặp lại n lần, độc lập và trong cùng điều kiện, một phép thử mà mỗi lần chỉ có hai kết quả \"xảy ra (sản phẩm không phù hợp) / không xảy ra (sản phẩm phù hợp)\". Nếu xác suất xảy ra trong một lần là p thì xác suất của số lần xảy ra x (0, 1, ..., n) là\n> P(x) = ₙCₓ · pˣ · (1 − p)^(n − x)   (x = 0, 1, 2, ..., n)\n> ₙCₓ = n! / (x! (n − x)!)\n- n: số cái kiểm tra (số lần thử) - trong đề là \"cỡ mẫu\", \"lấy ra n cái\"\n- p: xác suất một cái là sản phẩm không phù hợp (tỷ lệ không phù hợp tổng thể)\n- x: số sản phẩm không phù hợp (số nguyên)\n- ₙCₓ: **số cách sắp xếp** \"x cái nào trong n cái là không phù hợp\" (tổ hợp)\n\nPhân phối này gọi là **phân phối nhị thức B(n, p)**.\n\n#### \"Vì sao\" của dạng công thức\nXét n = 3, p = 0.1 và \"đúng 1 cái không phù hợp\". Có 3 cách sắp xếp: (không, phù hợp, phù hợp), (phù hợp, không, phù hợp), (phù hợp, phù hợp, không). Mỗi cách đều có xác suất 0.1 × 0.9 × 0.9 = 0.081 (độc lập nên nhân). Có 3 cách nên\n> P(1) = 3 × 0.1 × 0.9² = 0.243\n- pˣ: xác suất không phù hợp xảy ra x lần\n- (1 − p)^(n − x): xác suất n − x cái còn lại đều phù hợp\n- ₙCₓ: có bao nhiêu cách sắp xếp như vậy (₃C₁ = 3)\nCông thức chỉ là \"xác suất của một cách sắp xếp × số cách sắp xếp\". Quên ₙCₓ thì chỉ ra **xác suất của một cách sắp xếp** (lỗi thường gặp).\n\n#### Bốn điều kiện áp dụng\n1. n được **xác định trước** (\"lấy 20 cái\")\n2. Kết quả có **hai loại** (phù hợp/không phù hợp, đạt/không đạt)\n3. p **không đổi qua các lần**\n4. Các lần **độc lập** (kết quả cái thứ nhất không ảnh hưởng cái thứ hai)\nĐiều kiện 3 và 4 có thể coi là thỏa khi lấy mẫu từ lô lớn (hoặc từ quá trình). Nếu lấy **không hoàn lại** từ lô nhỏ N thì mỗi lần lấy một cái, tỷ lệ không phù hợp của phần còn lại thay đổi → nói chặt chẽ là **phân phối siêu bội**. Tuy nhiên nếu N đủ lớn so với n (tham khảo: n/N ≦ 0.1) thì có thể xấp xỉ bằng phân phối nhị thức.\n\n#### Kỳ vọng và phương sai\n> E(x) = np   V(x) = np(1 − p)   σ(x) = √(np(1 − p))\nVì sao? Xét từng cái, đó là biến \"không phù hợp thì 1, phù hợp thì 0\", có trung bình p, phương sai p(1 − p). x là tổng của n cái nên cả trung bình và phương sai đều nhân n (độc lập nên phương sai cộng được - xem chi tiết ở tính cộng của phương sai B4.5).\n- Có thừa số 1 − p là đặc trưng của phân phối nhị thức. Khi p nhỏ thì 1 − p ≒ 1 và V ≒ np (tiến gần phân phối Poisson E = V = λ - B4.3).\n- Độ lệch chuẩn là **căn bậc hai** của phương sai. Không dùng nguyên V(x) làm σ.\n\n#### Ví dụ (tính tay): n = 5, p = 0.1\n> P(0) = 0.9⁵ = 0.59049\n> P(1) = ₅C₁ × 0.1 × 0.9⁴ = 5 × 0.1 × 0.6561 = 0.32805\n> P(2) = ₅C₂ × 0.1² × 0.9³ = 10 × 0.01 × 0.729 = 0.0729\n> P(x ≦ 1) = 0.59049 + 0.32805 = 0.91854\n> P(x ≧ 2) = 1 − 0.91854 = 0.08146\n> E(x) = 5 × 0.1 = 0.5   V(x) = 5 × 0.1 × 0.9 = 0.45   σ(x) = √0.45 ≒ 0.671\nCách đọc: dù tỷ lệ không phù hợp là 10%, vẫn có 59% khả năng trong 5 cái không có cái nào. Không thể nói \"kiểm tra 5 cái thấy 0 cái nên lô này không có sản phẩm không phù hợp\".\n\n#### Ví dụ (kiểm tra nhận hàng): n = 10, p = 0.05\n> P(0) = 0.95¹⁰ ≒ 0.5987\n> P(x ≧ 1) = 1 − 0.95¹⁰ ≒ 0.4013 (ít nhất 1 cái)\n> P(1) = 10 × 0.05 × 0.95⁹ ≒ 0.3151\n> P(2) = ₁₀C₂ × 0.05² × 0.95⁸ = 45 × 0.0025 × 0.66342 ≒ 0.0746\n\"Ít nhất 1 cái\" thì không cộng hết P(1) + P(2) + ... + P(10), mà lấy 1 trừ **biến cố đối** (0 cái).\n\n#### Thao tác máy tính\nTổ hợp tính nhẩm được: ₅C₂ = (5 × 4) ÷ (2 × 1) = 10, ₁₀C₂ = (10 × 9) ÷ 2 = 45, ₂₀C₂ = 190.\nLũy thừa thì dùng \"bấm = lặp lại\" (bấm = sẽ lặp lại phép \"× 0.95\" vừa rồi). **Trước tiên** hãy kiểm tra màn hình thay đổi như \"0.95 × 0.95 = → 0.9025\", \"= → 0.857375\". Nếu máy hoạt động khác thì bấm lại kiểu 0.9025 × 0.9025 =.\n0.95¹⁰ (lần = đầu tiên cho bình phương, sau đó mỗi lần = tăng thêm một bậc → tổng cộng bấm = 9 lần):\n> 0.95 × 0.95 = = = = = = = = = → 0.598737\nÍt nhất 1 cái (dùng bộ nhớ để lấy 1 trừ đi):\n> MRC MRC 0.95 × 0.95 = = = = = = = = = M+ 1 − MRC = → 0.401263\nP(1) = 10 × 0.05 × 0.95⁹ (tính lũy thừa trước rồi mới nhân; máy tính từ trái sang phải nên như vậy là đúng):\n> 0.95 × 0.95 = = = = = = = = → 0.630249\n> × 0.05 × 10 = → 0.315125\nKhi n lớn (từ 20 trở lên...) rất dễ đếm sai số lần bấm =. Trong đề thi, thường giá trị (1 − p)ⁿ được cho sẵn, hoặc là dạng bài dùng xấp xỉ Poisson (B4.3).\n\n#### Sơ đồ nhận dạng\n- \"**Số sản phẩm không phù hợp** trong n cái\", \"sản phẩm đạt, không đạt\", \"tốt hay không phù hợp\" (mỗi cái có hai kết quả, n xác định) → **phân phối nhị thức**\n- \"**Số khuyết tật, số điểm không phù hợp trên mỗi** tấm, mét, máy\", \"số vết xước\", \"số điểm hàn lỗi\" (số không có giới hạn trên) → phân phối Poisson (B4.3)\n- \"Kích thước\", \"khối lượng\", \"giá trị điện trở\" (đại lượng liên tục) → phân phối chuẩn (B4.1)\n- \"Lấy 5 cái không hoàn lại từ lô nhỏ N = 20 cái\" (n/N lớn) → phân phối siêu bội (phạm vi cấp 1; ở cấp 2 chỉ cần biết \"khi đó không dùng thẳng phân phối nhị thức được\")\n- \"**Đúng** x cái\" → một giá trị P(x)\n- \"**Không quá** x cái\" → P(0) + ... + P(x)\n- \"**Ít nhất 1 cái**\", \"từ 1 cái trở lên\" → 1 − P(0) = 1 − (1 − p)ⁿ\n- \"Từ 2 cái trở lên\" → 1 − P(0) − P(1)\n- \"Trung bình bao nhiêu cái\" → np, \"độ phân tán (độ lệch chuẩn)\" → √(np(1 − p))\n\n#### Dễ nhầm lẫn\n- **Số sản phẩm không phù hợp** (số sản phẩm, nhị thức) và **số điểm không phù hợp** (số khuyết tật, Poisson): một anten có 3 chỗ lỗi thì số sản phẩm không phù hợp là 1, số điểm không phù hợp là 3.\n- V(x) = np(1 − p) (nhị thức) và V(x) = λ (Poisson). Lấy V = np cho nhị thức là nhầm với Poisson.\n- Phân phối nhị thức là phân phối **rời rạc**: P(x < 2) = P(0) + P(1), P(x ≦ 2) = P(0) + P(1) + P(2). Khác phân phối liên tục (chuẩn), \"<\" và \"≦\" cho giá trị khác nhau.\n- p nhỏ thì phân phối kéo đuôi về bên phải (lệch phải). p = 0.5 thì đối xứng. n càng lớn càng gần phân phối chuẩn.\n\n#### Cách ra đề trong kỳ thi\nĐiền chỗ trống \"trung bình của phân phối nhị thức là (np), phương sai là (np(1 − p))\", tính xác suất \"đúng 1 cái\", \"ít nhất 1 cái\", \"từ 2 cái trở lên\", đúng/sai về bốn điều kiện hoặc hình dạng (p = 0.5 thì đối xứng), nhận dạng \"nhị thức hay Poisson\". Các mục tiếp theo bàn về **xấp xỉ chuẩn** (tham khảo np ≧ 5 và n(1 − p) ≧ 5), **trung bình và phương sai của tỷ lệ không phù hợp p̂ = x/n**, và phân phối Poisson.\n\n#### Hiểu lầm thường gặp\n- \"p = 5% thì trong 20 cái sẽ có đúng 1 cái\" → chỉ là trung bình (np = 1) bằng 1 cái, xác suất 0 cái vẫn khoảng 36%.\n- \"Ít nhất 1 cái = n × p\" → np là **số cái trung bình**, không phải xác suất (khi n lớn sẽ vượt quá 1). Đúng là 1 − (1 − p)ⁿ.\n- \"ₙCₓ càng lớn khi x càng lớn\" → đối xứng như ₁₀C₂ = ₁₀C₈ = 45, lớn nhất ở gần x = n/2."
+          }
+        ]
+      },
+      {
+        "h": {
+          "ja": "B4.2 二項分布（続き）― 不適合品率 p̂ の平均・分散と正規近似",
+          "vi": "B4.2 Phân phối nhị thức (tiếp theo) - Trung bình, phương sai của tỷ lệ không phù hợp p̂ và xấp xỉ chuẩn"
+        },
+        "blocks": [
+          {
+            "type": "md",
+            "ja": "#### ひとことで\n二項分布は「不適合品が**何個**か（x）」の分布。ここではそれを n で割った「**不適合品率** p̂ ＝ x/n」の平均とばらつき、そして n が大きいとき二項分布を**正規分布で近似**して、正規分布表で確率を出す方法。\n\n#### なぜ\n受入検査では「400個中 52 個」より「不適合品率 13％」で話すことが多い。そのとき知りたいのは「本当の p が 10％ のロットでも、たまたま 13％ 以上と出ることはどれくらいあるか？」。二項分布の式で P(52) ＋ P(53) ＋ … を足すのは試験では不可能 — **正規分布に置き換えて u に変換**すれば、正規分布表(I) 1回で済む。p 管理図（B7）の管理限界 p̄ ± 3√(p̄(1 − p̄)/n) や、母不適合品率の検定（B6）の u₀ も、すべてこの考え方。\n\n#### 不適合品率 p̂ の期待値と分散\n> p̂ ＝ x / n　（x：n 個中の不適合品数）\n> E(p̂) ＝ p　V(p̂) ＝ p(1 − p) / n　σ(p̂) ＝ √(p(1 − p) / n)\n- p：母不適合品率（工程・ロットの本当の値）、p̂：サンプルから出した値（ピーハット）\n- **なぜ n で割るのか**：x を定数 n で割ると平均も 1/n 倍 → E(p̂) ＝ np / n ＝ p。分散は「2乗の単位」なので 1/n² 倍 → V(p̂) ＝ np(1 − p) / n² ＝ p(1 − p)/n。\n- n を4倍にすると σ(p̂) は 1/2 — 「たくさん調べるほど p̂ は p の近くに集まる」（大数の法則 B4.6 の入口）。\n\n#### 例題1：n ＝ 100、p ＝ 0.10\n> 個数：E(x) ＝ 100 × 0.10 ＝ 10　σ(x) ＝ √(100 × 0.10 × 0.90) ＝ √9 ＝ 3（個）\n> 率：E(p̂) ＝ 0.10　σ(p̂) ＝ √(0.10 × 0.90 / 100) ＝ √0.0009 ＝ 0.03（3％）\nσ(p̂) ＝ σ(x) ÷ n（3 ÷ 100 ＝ 0.03）になっていることを確かめる。\n\n#### 正規近似 ― 使ってよい目安\nn が大きいと、二項分布の形は左右対称の山（正規分布）に近づく（中心極限定理 B4.6 で理由を学ぶ）。目安は\n> np ≧ 5　かつ　n(1 − p) ≧ 5\n- np ＝ 「平均の不適合品数」、n(1 − p) ＝ 「平均の適合品数」。どちらかが小さいと、分布が 0 側（または n 側）の壁にぶつかって左右対称にならない。\n- p が小さい（0.01 など）と n ＝ 100 でも np ＝ 1 → 正規近似は不可。そのときは**ポアソン近似**（B4.3）。\n- 近似のとき、x（個数）なら N(np, np(1 − p))、p̂（率）なら N(p, p(1 − p)/n) と考える。\n\n#### 例題2：n ＝ 400、p ＝ 0.10。p̂ ≧ 0.13 となる確率は？\n> 目安：np ＝ 40 ≧ 5、n(1 − p) ＝ 360 ≧ 5 → 正規近似できる\n> σ(p̂) ＝ √(0.10 × 0.90 / 400) ＝ √0.000225 ＝ 0.015\n> u ＝ (0.13 − 0.10) / 0.015 ＝ 2.00\n> P(p̂ ≧ 0.13) ≒ P(u ≧ 2.00) ＝ 0.0228\n読み方：本当は 10％ のロットでも、400個調べて 13％ 以上と出ることは約 2.3％。個数で考えても同じ：E(x) ＝ 40、σ(x) ＝ 6、u ＝ (52 − 40)/6 ＝ 2.00。\n\n#### 電卓の手順\nσ(p̂) は**割り算を = で確定してから √**（「a × b √」は b だけの平方根になる）：\n> 0.1 × 0.9 ÷ 400 = √ → 0.015\nu は左から順に計算されるので、引き算 → 割り算をそのまま打てる：\n> 0.13 − 0.1 ÷ 0.015 = → 2\nσ(p̂) をメモリに入れて u で使う場合：\n> MRC MRC 0.1 × 0.9 ÷ 400 = √ M+\n> 0.13 − 0.1 ÷ MRC = → 2\n\n#### 判断フロー\n- 問題文が「不適合品**数**」「何個」→ x：E ＝ np、V ＝ np(1 − p)\n- 「不適合品**率**」「割合」「p̂」→ p̂：E ＝ p、V ＝ p(1 − p)/n\n- 「n が大きい」「正規分布で近似して」「正規分布表を用いて」→ np ≧ 5 と n(1 − p) ≧ 5 を確認 → u ＝ (p̂ − p) / √(p(1 − p)/n)\n- 「p が小さい」「np が 5 未満」「ポアソン分布で近似」→ ポアソン近似（B4.3）\n- 「ちょうど1個」「少なくとも1個」で n が小さい（10 前後）→ 近似せず二項分布の式\n\n#### 混同しやすい点\n- V(x) ＝ np(1 − p)（個数）と V(p̂) ＝ p(1 − p)/n（率）。率なのに np(1 − p) を使うと、標準偏差が n 倍の大きさになる。\n- √(p(1 − p)/n) と √(p(1 − p))/n：前者が正しい。√ は分母の n まで含む全体にかかる。\n- 正規近似の「連続修正（半整数補正）」はここでは使わない（2級の問題文は p̂ や u で与えることが多い）。\n\n#### 試験での問われ方\n空欄補充「p̂ の期待値は（p）、分散は（p(1 − p)/n）」、正誤「np ≧ 5 かつ n(1 − p) ≧ 5 のとき正規近似」、計算「p̂ が○％ 以上になる確率」。この形は後で p 管理図・母不適合品率の検定にそのまま出てくる。\n\n#### よくある誤解\n- 「p̂ の分散は p(1 − p)」→ それは1個（0/1）の分散。n 個の平均（率）なので ÷ n。\n- 「n が大きければ p が小さくても正規近似できる」→ 目安は np ≧ 5。p ＝ 0.01、n ＝ 200 では np ＝ 2 で不可。\n- 「p̂ ＝ p になるはず」→ 期待値（平均）が p なだけで、1回ごとの p̂ は σ(p̂) 程度ばらつく。",
+            "vi": "#### Nói gọn\nPhân phối nhị thức là phân phối của \"**bao nhiêu cái** không phù hợp (x)\". Ở đây xét trung bình và độ phân tán của \"**tỷ lệ không phù hợp** p̂ = x/n\" (lấy x chia cho n), và cách **xấp xỉ phân phối nhị thức bằng phân phối chuẩn** khi n lớn để tính xác suất bằng bảng phân phối chuẩn.\n\n#### Vì sao\nTrong kiểm tra nhận hàng, người ta thường nói \"tỷ lệ không phù hợp 13%\" hơn là \"52 cái trong 400 cái\". Khi đó điều muốn biết là \"ngay cả lô có p thật là 10%, khả năng tình cờ ra từ 13% trở lên là bao nhiêu?\". Cộng P(52) + P(53) + ... bằng công thức nhị thức thì không thể làm trong giờ thi - **thay bằng phân phối chuẩn và đổi sang u** thì chỉ cần tra bảng phân phối chuẩn (I) một lần. Giới hạn kiểm soát p̄ ± 3√(p̄(1 − p̄)/n) của biểu đồ kiểm soát p (B7) và u₀ trong kiểm định tỷ lệ không phù hợp tổng thể (B6) đều dựa trên cách nghĩ này.\n\n#### Kỳ vọng và phương sai của tỷ lệ không phù hợp p̂\n> p̂ = x / n   (x: số sản phẩm không phù hợp trong n cái)\n> E(p̂) = p   V(p̂) = p(1 − p) / n   σ(p̂) = √(p(1 − p) / n)\n- p: tỷ lệ không phù hợp tổng thể (giá trị thật của quá trình, của lô), p̂: giá trị tính từ mẫu (đọc là \"p mũ\")\n- **Vì sao chia cho n**: chia x cho hằng số n thì trung bình cũng nhân 1/n → E(p̂) = np / n = p. Phương sai có \"đơn vị bình phương\" nên nhân 1/n² → V(p̂) = np(1 − p) / n² = p(1 − p)/n.\n- Tăng n lên 4 lần thì σ(p̂) còn 1/2 - \"kiểm tra càng nhiều thì p̂ càng tập trung gần p\" (cửa vào của luật số lớn B4.6).\n\n#### Ví dụ 1: n = 100, p = 0.10\n> Số lượng: E(x) = 100 × 0.10 = 10   σ(x) = √(100 × 0.10 × 0.90) = √9 = 3 (cái)\n> Tỷ lệ: E(p̂) = 0.10   σ(p̂) = √(0.10 × 0.90 / 100) = √0.0009 = 0.03 (3%)\nKiểm tra rằng σ(p̂) = σ(x) ÷ n (3 ÷ 100 = 0.03).\n\n#### Xấp xỉ chuẩn - tiêu chí được phép dùng\nKhi n lớn, hình dạng phân phối nhị thức tiến gần dạng quả núi đối xứng (phân phối chuẩn) (lý do học ở định lý giới hạn trung tâm B4.6). Tiêu chí tham khảo là\n> np ≧ 5 và n(1 − p) ≧ 5\n- np = \"số sản phẩm không phù hợp trung bình\", n(1 − p) = \"số sản phẩm phù hợp trung bình\". Nếu một trong hai nhỏ thì phân phối bị chặn bởi bức tường phía 0 (hoặc phía n) và không đối xứng được.\n- Nếu p nhỏ (như 0.01) thì dù n = 100 vẫn chỉ có np = 1 → không xấp xỉ chuẩn được. Khi đó dùng **xấp xỉ Poisson** (B4.3).\n- Khi xấp xỉ, coi x (số lượng) tuân theo N(np, np(1 − p)), còn p̂ (tỷ lệ) tuân theo N(p, p(1 − p)/n).\n\n#### Ví dụ 2: n = 400, p = 0.10. Xác suất p̂ ≧ 0.13 là bao nhiêu?\n> Tiêu chí: np = 40 ≧ 5, n(1 − p) = 360 ≧ 5 → xấp xỉ chuẩn được\n> σ(p̂) = √(0.10 × 0.90 / 400) = √0.000225 = 0.015\n> u = (0.13 − 0.10) / 0.015 = 2.00\n> P(p̂ ≧ 0.13) ≒ P(u ≧ 2.00) = 0.0228\nCách đọc: ngay cả lô thật sự là 10%, kiểm tra 400 cái vẫn có khoảng 2.3% khả năng ra từ 13% trở lên. Tính theo số lượng cũng như vậy: E(x) = 40, σ(x) = 6, u = (52 − 40)/6 = 2.00.\n\n#### Thao tác máy tính\nσ(p̂) thì **bấm = để chốt phép chia rồi mới √** (\"a × b √\" chỉ lấy căn của b):\n> 0.1 × 0.9 ÷ 400 = √ → 0.015\nu được máy tính lần lượt từ trái sang phải nên có thể bấm thẳng phép trừ → phép chia:\n> 0.13 − 0.1 ÷ 0.015 = → 2\nNếu đưa σ(p̂) vào bộ nhớ rồi dùng cho u:\n> MRC MRC 0.1 × 0.9 ÷ 400 = √ M+\n> 0.13 − 0.1 ÷ MRC = → 2\n\n#### Sơ đồ nhận dạng\n- Đề nói \"**số** sản phẩm không phù hợp\", \"bao nhiêu cái\" → x: E = np, V = np(1 − p)\n- \"**Tỷ lệ** không phù hợp\", \"tỷ lệ\", \"p̂\" → p̂: E = p, V = p(1 − p)/n\n- \"n lớn\", \"xấp xỉ bằng phân phối chuẩn\", \"dùng bảng phân phối chuẩn\" → kiểm tra np ≧ 5 và n(1 − p) ≧ 5 → u = (p̂ − p) / √(p(1 − p)/n)\n- \"p nhỏ\", \"np nhỏ hơn 5\", \"xấp xỉ bằng phân phối Poisson\" → xấp xỉ Poisson (B4.3)\n- \"Đúng 1 cái\", \"ít nhất 1 cái\" mà n nhỏ (khoảng 10) → không xấp xỉ, dùng công thức nhị thức\n\n#### Dễ nhầm lẫn\n- V(x) = np(1 − p) (số lượng) và V(p̂) = p(1 − p)/n (tỷ lệ). Đề hỏi tỷ lệ mà dùng np(1 − p) thì độ lệch chuẩn lớn gấp n lần.\n- √(p(1 − p)/n) và √(p(1 − p))/n: cái đầu là đúng. Dấu √ bao trùm cả mẫu số n.\n- \"Hiệu chỉnh liên tục (hiệu chỉnh nửa đơn vị)\" của xấp xỉ chuẩn không dùng ở đây (đề cấp 2 thường cho sẵn p̂ hoặc u).\n\n#### Cách ra đề trong kỳ thi\nĐiền chỗ trống \"kỳ vọng của p̂ là (p), phương sai là (p(1 − p)/n)\", đúng/sai \"khi np ≧ 5 và n(1 − p) ≧ 5 thì xấp xỉ chuẩn\", tính \"xác suất p̂ từ ...% trở lên\". Dạng này về sau xuất hiện nguyên vẹn trong biểu đồ kiểm soát p và kiểm định tỷ lệ không phù hợp tổng thể.\n\n#### Hiểu lầm thường gặp\n- \"Phương sai của p̂ là p(1 − p)\" → đó là phương sai của một cái (0/1). Đây là trung bình (tỷ lệ) của n cái nên phải ÷ n.\n- \"n lớn thì dù p nhỏ vẫn xấp xỉ chuẩn được\" → tiêu chí là np ≧ 5. p = 0.01, n = 200 thì np = 2, không được.\n- \"p̂ phải bằng p\" → chỉ có kỳ vọng (trung bình) bằng p, mỗi lần p̂ vẫn dao động cỡ σ(p̂)."
+          }
+        ]
+      },
+      {
+        "h": {
+          "ja": "B4.3 ポアソン分布 ― 定義・式・E ＝ V ＝ λ と二項分布との見分け方",
+          "vi": "B4.3 Phân phối Poisson - Định nghĩa, công thức, E = V = λ và cách phân biệt với phân phối nhị thức"
+        },
+        "blocks": [
+          {
+            "type": "md",
+            "ja": "#### ひとことで\nポアソン分布は「**一定の単位（1枚・1台・1 m・1日）の中に、まれな出来事が何回起こるか**」の分布。数えるのは**品ではなく欠点（不適合）**で、上限 n がない。\n\n#### なぜ\nサプライヤーのPCBで、1枚あたりのはんだ付け不適合箇所数を数える。1枚には何百ものはんだ点があり、どの点も不適合になる確率はごく小さい — 「試行回数 n がとても大きく、p がとても小さい二項分布」。このとき n や p を個別に知らなくても、**平均 λ（1枚あたり平均何か所か）だけ**で確率が決まる。それがポアソン分布。c 管理図・u 管理図（B7）や、不適合数の検定（B6）の土台になる。\n\n#### 定義\n一定の単位あたりの事象の発生数 x（0, 1, 2, … 上限なし）が、平均 λ（ラムダ）で\n> P(x) ＝ e^(−λ) × λˣ / x!　（x ＝ 0, 1, 2, …）\n> E(x) ＝ λ　V(x) ＝ λ　σ(x) ＝ √λ\n- λ：単位あたりの平均発生数（母不適合数）。単位が変われば λ も変わる（1枚 λ ＝ 2 なら 3枚で 6）。\n- e：自然対数の底 ≒ 2.718。試験では e^(−λ) の値が問題文や付表で与えられることが多い。\n- x!：x の階乗（0! ＝ 1、1! ＝ 1、2! ＝ 2、3! ＝ 6）\n\n#### 式の形の「なぜ」（E ＝ V ＝ λ）\n二項分布で n を大きく、p を小さく、np ＝ λ を一定にすると V ＝ np(1 − p) の (1 − p) が 1 に近づき V → np ＝ λ。だから**平均と分散が等しい**。データの平均と分散がほぼ等しいことは「ポアソンらしさ」の手がかりにもなる。\n\n#### 当てはまる条件\n- 欠点は**ランダム**に（互いに独立に）起こる — 1か所の不適合が次を呼ぶ（連鎖する）と当てはまらない\n- 単位の大きさ（面積・長さ・時間）が一定で、平均 λ が一定\n- 1つの単位の中で起こりうる場所は非常に多く、1か所ごとの確率は小さい\n\n#### 例題：PCB 1枚あたりのはんだ付け不適合箇所数が λ ＝ 2 のポアソン分布に従う（e^(−2) ＝ 0.1353）\n> P(0) ＝ e^(−2) ＝ 0.1353\n> P(1) ＝ e^(−2) × 2 / 1 ＝ 0.2707\n> P(2) ＝ e^(−2) × 2² / 2! ＝ 0.2707\n> P(x ≦ 1) ＝ 0.1353 ＋ 0.2707 ＝ 0.4060\n> P(x ≧ 1) ＝ 1 − 0.1353 ＝ 0.8647\n> E(x) ＝ 2　V(x) ＝ 2　σ(x) ＝ √2 ≒ 1.414\n読み方：平均2か所の工程では、不適合箇所ゼロのPCBは約 13.5％ しかない。「1枚あたり平均2か所」は「どのPCBにも2か所」という意味ではない。\n\n#### 電卓の手順\nP(x ≦ 1) ＝ e^(−λ) × (1 ＋ λ)：左から順に計算されるので括弧なしで打てる（λ ＝ 1.5、e^(−1.5) ＝ 0.2231 の例）：\n> 1 + 1.5 × 0.2231 = → 0.55775\nP(2) ＝ λ² ÷ 2 × e^(−λ)：\n> 1.5 × 1.5 ÷ 2 × 0.2231 = → 0.25099\nP(x ≦ 2) ＝ P(0) ＋ P(1) ＋ P(2) をメモリで足す：\n> MRC MRC 1 + 1.5 × 0.2231 = M+ 1.5 × 1.5 ÷ 2 × 0.2231 = M+ MRC → 0.80874\n\n#### 判断フロー\n- 「**1枚（1台・1 m²・1日）あたりの**欠点数・不適合数・傷の数・故障件数・クレーム件数」→ **ポアソン分布**（E ＝ V ＝ λ）\n- 「n 個中の不適合**品**数」「合格・不合格の**台数**」→ 二項分布（E ＝ np、V ＝ np(1 − p)）\n- 1台に不適合が何か所あっても「1台」と数えるなら二項、「何か所」と数えるならポアソン\n- 「平均 λ」しか与えられず n がない → ポアソン。n と p が与えられ、p が小さく np が 5 未満 → ポアソンで近似（B4.3 続き）\n- 「ちょうど x 回」→ P(x) を1つ、「少なくとも1回」→ 1 − e^(−λ)、「x 回以下」→ 足し上げ\n\n#### 混同しやすい点\n- ポアソンの V ＝ λ に対し、二項は V ＝ np(1 − p)。二項に V ＝ np を使う、ポアソンに (1 − λ) を掛ける — どちらも誤り。\n- ポアソン分布は**離散**分布。λ は整数でなくてよい（1.5 など）が、x は 0, 1, 2, … の整数。\n- λ が小さいと右に裾を引き、λ が大きくなるほど左右対称（正規分布）に近づく。\n\n#### 試験での問われ方\n判断「この数データの分布は二項かポアソンか」、空欄補充「期待値と分散がともに（λ）」、計算「1枚に不適合が1か所もない確率」「1か所以下の確率」（e^(−λ) が与えられる）。このあと、二項分布のポアソン近似、単位を変えたときの λ、2つ以上の合計の問題を扱う。\n\n#### よくある誤解\n- 「λ ＝ 2 なら P(2) が一番大きく、他より明らかに高い」→ λ ＝ 2 では P(1) ＝ P(2) ＝ 0.2707 で同じ（λ が整数のとき λ − 1 と λ が同率で最大）。\n- 「ポアソン分布の分散は √λ」→ √λ は**標準偏差**。分散は λ。\n- 「不適合数も n 個中の数なので二項分布」→ 1台に何か所でも起こりうる欠点の数には上限 n がないので、ポアソン分布。",
+            "vi": "#### Nói gọn\nPhân phối Poisson là phân phối của \"**trong một đơn vị cố định (một tấm, một máy, 1 m, một ngày), một sự kiện hiếm xảy ra bao nhiêu lần**\". Cái được đếm **không phải sản phẩm mà là khuyết tật (điểm không phù hợp)**, và không có giới hạn trên n.\n\n#### Vì sao\nVới PCB của nhà cung cấp, đếm số điểm hàn không phù hợp trên mỗi tấm. Một tấm có hàng trăm điểm hàn, điểm nào cũng chỉ có xác suất rất nhỏ bị không phù hợp - đó là \"phân phối nhị thức với số lần thử n rất lớn và p rất nhỏ\". Khi đó, dù không biết riêng n hay p, xác suất vẫn được xác định **chỉ bằng trung bình λ (trung bình mỗi tấm bao nhiêu điểm)**. Đó là phân phối Poisson. Nó là nền tảng của biểu đồ kiểm soát c, biểu đồ kiểm soát u (B7) và kiểm định số điểm không phù hợp (B6).\n\n#### Định nghĩa\nSố lần xảy ra sự kiện x trên một đơn vị cố định (0, 1, 2, ..., không có giới hạn trên), với trung bình λ (lambda):\n> P(x) = e^(−λ) × λˣ / x!   (x = 0, 1, 2, ...)\n> E(x) = λ   V(x) = λ   σ(x) = √λ\n- λ: số lần xảy ra trung bình trên một đơn vị (số điểm không phù hợp tổng thể). Đơn vị thay đổi thì λ cũng thay đổi (một tấm λ = 2 thì 3 tấm là 6).\n- e: cơ số của logarit tự nhiên ≒ 2.718. Trong đề thi giá trị e^(−λ) thường được cho trong đề hoặc bảng phụ lục.\n- x!: giai thừa của x (0! = 1, 1! = 1, 2! = 2, 3! = 6)\n\n#### \"Vì sao\" của dạng công thức (E = V = λ)\nTrong phân phối nhị thức, nếu cho n lớn, p nhỏ và giữ np = λ không đổi, thì (1 − p) trong V = np(1 − p) tiến về 1 và V → np = λ. Vì vậy **trung bình và phương sai bằng nhau**. Việc trung bình và phương sai của dữ liệu xấp xỉ bằng nhau cũng là một dấu hiệu \"giống Poisson\".\n\n#### Điều kiện áp dụng\n- Khuyết tật xảy ra **ngẫu nhiên** (độc lập với nhau) - nếu một điểm không phù hợp kéo theo điểm tiếp theo (dây chuyền) thì không áp dụng được\n- Kích thước của đơn vị (diện tích, chiều dài, thời gian) không đổi, trung bình λ không đổi\n- Trong một đơn vị có rất nhiều vị trí có thể xảy ra, và xác suất ở mỗi vị trí nhỏ\n\n#### Ví dụ: số điểm hàn không phù hợp trên mỗi tấm PCB tuân theo phân phối Poisson với λ = 2 (e^(−2) = 0.1353)\n> P(0) = e^(−2) = 0.1353\n> P(1) = e^(−2) × 2 / 1 = 0.2707\n> P(2) = e^(−2) × 2² / 2! = 0.2707\n> P(x ≦ 1) = 0.1353 + 0.2707 = 0.4060\n> P(x ≧ 1) = 1 − 0.1353 = 0.8647\n> E(x) = 2   V(x) = 2   σ(x) = √2 ≒ 1.414\nCách đọc: ở quá trình trung bình 2 điểm, PCB không có điểm không phù hợp nào chỉ chiếm khoảng 13.5%. \"Trung bình mỗi tấm 2 điểm\" không có nghĩa là \"tấm nào cũng có 2 điểm\".\n\n#### Thao tác máy tính\nP(x ≦ 1) = e^(−λ) × (1 + λ): máy tính lần lượt từ trái sang phải nên bấm không cần ngoặc (ví dụ λ = 1.5, e^(−1.5) = 0.2231):\n> 1 + 1.5 × 0.2231 = → 0.55775\nP(2) = λ² ÷ 2 × e^(−λ):\n> 1.5 × 1.5 ÷ 2 × 0.2231 = → 0.25099\nP(x ≦ 2) = P(0) + P(1) + P(2), cộng bằng bộ nhớ:\n> MRC MRC 1 + 1.5 × 0.2231 = M+ 1.5 × 1.5 ÷ 2 × 0.2231 = M+ MRC → 0.80874\n\n#### Sơ đồ nhận dạng\n- \"Số khuyết tật, số điểm không phù hợp, số vết xước, số lần hỏng, số khiếu nại **trên mỗi tấm (máy, 1 m², ngày)**\" → **phân phối Poisson** (E = V = λ)\n- \"Số **sản phẩm** không phù hợp trong n cái\", \"**số máy** đạt, không đạt\" → phân phối nhị thức (E = np, V = np(1 − p))\n- Một máy có bao nhiêu điểm không phù hợp mà vẫn đếm là \"một máy\" thì là nhị thức, đếm \"bao nhiêu điểm\" thì là Poisson\n- Chỉ cho \"trung bình λ\" mà không có n → Poisson. Có n và p, p nhỏ và np nhỏ hơn 5 → xấp xỉ bằng Poisson (phần tiếp theo của B4.3)\n- \"Đúng x lần\" → một giá trị P(x), \"ít nhất 1 lần\" → 1 − e^(−λ), \"không quá x lần\" → cộng dồn\n\n#### Dễ nhầm lẫn\n- Poisson có V = λ, còn nhị thức có V = np(1 − p). Dùng V = np cho nhị thức hay nhân (1 − λ) cho Poisson - cả hai đều sai.\n- Phân phối Poisson là phân phối **rời rạc**. λ không cần là số nguyên (như 1.5) nhưng x là số nguyên 0, 1, 2, ...\n- λ nhỏ thì kéo đuôi bên phải, λ càng lớn càng gần đối xứng (phân phối chuẩn).\n\n#### Cách ra đề trong kỳ thi\nNhận dạng \"dữ liệu đếm này tuân theo nhị thức hay Poisson\", điền chỗ trống \"kỳ vọng và phương sai đều bằng (λ)\", tính \"xác suất một tấm không có điểm không phù hợp nào\", \"xác suất không quá 1 điểm\" (e^(−λ) được cho sẵn). Tiếp theo sẽ bàn về xấp xỉ Poisson cho phân phối nhị thức, λ khi đổi đơn vị, và các bài toán tổng của hai nguồn trở lên.\n\n#### Hiểu lầm thường gặp\n- \"λ = 2 thì P(2) lớn nhất và cao hơn hẳn các giá trị khác\" → với λ = 2 thì P(1) = P(2) = 0.2707, bằng nhau (khi λ là số nguyên, λ − 1 và λ cùng có xác suất lớn nhất).\n- \"Phương sai của phân phối Poisson là √λ\" → √λ là **độ lệch chuẩn**. Phương sai là λ.\n- \"Số điểm không phù hợp cũng là số trong n cái nên là nhị thức\" → số khuyết tật có thể xảy ra bao nhiêu chỗ trên một máy cũng được, không có giới hạn trên n, nên là phân phối Poisson."
+          }
+        ]
+      },
+      {
+        "h": {
+          "ja": "B4.3 ポアソン分布（続き）― ポアソン近似・λ の換算・「2件以上」・正規近似",
+          "vi": "B4.3 Phân phối Poisson (tiếp theo) - Xấp xỉ Poisson, quy đổi λ, \"từ 2 lần trở lên\", xấp xỉ chuẩn"
+        },
+        "blocks": [
+          {
+            "type": "md",
+            "ja": "#### ひとことで\nポアソン分布の「形」（P(x) ＝ e^(−λ) λˣ / x!、E ＝ V ＝ λ）を使って、試験に出る3つの使い方を学ぶ：①**二項分布をポアソン分布で近似**（λ ＝ np）、②**単位を変えたら λ も比例して変える**（1枚 → 5枚）、③**「2件以上」は 1 − P(0) − P(1)**。さらに λ が大きいときの正規近似と、e ＝ 2.718 から e^(−λ) を電卓で出す方法。\n\n#### なぜ\nサプライヤーのインダクタ（不適合品率 2％）を 100 個受け入れたとき「不適合品が 0 個」の確率を二項分布で出すには 0.98¹⁰⁰ が必要で、試験の電卓では大変。p が小さく n が大きいときは、**平均 np だけ**わかればポアソン分布で十分よく近似できる（「なぜ E ＝ V ＝ λ」と同じ理由：(1 − p) ≒ 1）。\nまた「1枚あたり平均 0.3 か所」のデータから「5枚まとめて検査したとき」の確率を聞かれることが多い。欠点はランダムに起こるので、**単位を5倍にすれば平均も5倍**になる — これが λ の換算。\n\n#### ① 二項分布のポアソン近似\n> λ ＝ np\n> P(x) ≒ e^(−np) × (np)ˣ / x!\n- 目安：**p が小さく（0.1 程度以下）、n が大きい**とき（文献により「p ≦ 0.1」「n ≧ 50」などと書き方が違う）。\n- np ≧ 5 かつ n(1 − p) ≧ 5 なら正規近似（B4.2）。p が小さく np が 5 未満 → ポアソン近似。\n- 例：n ＝ 100、p ＝ 0.02 → λ ＝ 2\n> 二項（正確）：P(0) ＝ 0.98¹⁰⁰ ＝ 0.1326　ポアソン近似：P(0) ＝ e^(−2) ＝ 0.1353\n> 二項：P(x ≦ 1) ＝ 0.4033　ポアソン近似：P(x ≦ 1) ＝ 3 × e^(−2) ＝ 0.4060\n差は小数第3位 — 試験では近似値で選ぶ。\n\n#### ② 単位を変えたときの λ（加法性）\n> 単位を k 倍 → λ_k ＝ k × λ₁\n> 独立な2つの発生源をまとめる → λ ＝ λ_A ＋ λ_B（分散も λ_A ＋ λ_B）\n- なぜ：欠点は単位のどこにでもランダムに起こるので、平均個数は単位の大きさに比例する。独立なポアソン分布の和もポアソン分布になる（**再生性**）。\n- 例：PCB 1枚あたりのはんだ付け不適合箇所数が λ₁ ＝ 0.3。5枚まとめて検査 → λ ＝ 0.3 × 5 ＝ 1.5。\n> 5枚とも不適合 0 か所：P(0) ＝ e^(−1.5) ＝ 0.2231\n- 注意：**λ を換算してから**確率を出す。1枚の P(0) ＝ e^(−0.3) を 5 倍しても意味がない（確率は 1 を超えることもある）。\n- 標準偏差は足せない：λ_A ＝ 0.8、λ_B ＝ 1.2 → 合計の 標準偏差 ＝ √2.0 ＝ 1.414（√0.8 ＋ √1.2 ＝ 1.990 ではない）。足すのは分散（B4.5 分散の加法性の入口）。\n\n#### ③ 「〜以上」「少なくとも」の確率\n> P(x ≧ 1) ＝ 1 − P(0) ＝ 1 − e^(−λ)\n> P(x ≧ 2) ＝ 1 − P(0) − P(1) ＝ 1 − e^(−λ)(1 ＋ λ)\n- なぜ余事象：x ≧ 2 は 2, 3, 4, … と上限なしに続くので、足し上げられない。反対側（0 と 1）を 1 から引く。\n- 例：λ ＝ 1.5、e^(−1.5) ＝ 0.2231\n> P(0) ＝ 0.2231　P(1) ＝ 0.2231 × 1.5 ＝ 0.3347\n> P(x ≧ 2) ＝ 1 − 0.2231 × 2.5 ＝ 0.4422\n- 「2件**以上**」は 2 を含む、「2件を**超える**」は 3 以上 → 1 − P(0) − P(1) − P(2)。問題文の言葉を必ず確認。\n\n#### ④ λ が大きいときの正規近似（c 管理図の土台）\nλ が大きい（目安 λ ≧ 5 程度）とポアソン分布は左右対称に近づき、N(λ, λ) で近似できる。\n> u ＝ (x − λ) / √λ\n- 例：1ロットあたりの外観不適合数が λ ＝ 16。x ≧ 24 となる確率 → u ＝ (24 − 16)/√16 ＝ 2.00 → 0.0228。\n- c 管理図の管理限界 c̄ ± 3√c̄ は「平均 ± 3 × 標準偏差（√λ）」そのもの（B7 で学ぶ）。\n\n#### 電卓の手順\n問題文に「e ＝ 2.718 とする」と与えられたとき、e^(−λ) を自分で出す（÷ を続けて打つ）：\n> 1 ÷ 2.718 ÷ 2.718 = → 0.13536（e^(−2)）\n> 1 ÷ 2.718 ÷ 2.718 ÷ 2.718 = → 0.04980（e^(−3)）\nλ が 0.5 刻み（e^(−1.5)）は √e をメモリに入れてから割る（「a ÷ b √」は b だけの √ になるので使わない）：\n> MRC MRC 2.718 √ M+\n> 1 ÷ 2.718 ÷ MRC = → 0.22316\nP(x ≧ 2) ＝ 1 − e^(−λ)(1 ＋ λ)（λ ＝ 1.5、e^(−1.5) ＝ 0.2231）：\n> MRC MRC 1 + 1.5 × 0.2231 = M+\n> 1 − MRC = → 0.44225\n\n#### 判断フロー\n- 「1枚（1 m・1日）**あたり**の欠点数・件数」で λ が与えられている → ポアソン（そのまま）\n- 「**5枚まとめて**」「500 m 巻」「1週間（5日）」→ **λ を k 倍してから** P(x) を出す\n- 「n 個中の不適合**品**数」で **p が小さい（1〜2％）**、「ポアソン分布で近似」→ λ ＝ np\n- 「n 個中」で np ≧ 5 かつ n(1 − p) ≧ 5 →（二項の）正規近似\n- λ が大きく「正規分布で近似」「正規分布表を用いて」→ u ＝ (x − λ)/√λ\n- 「少なくとも1件」→ 1 − e^(−λ)、「2件以上」→ 1 − e^(−λ)(1 ＋ λ)、「1件以下」→ e^(−λ)(1 ＋ λ)\n- 「2つのラインの合計」→ λ を足す（標準偏差は足さない）\n\n#### 混同しやすい点\n- λ ＝ np（ポアソン近似）と np ≧ 5（正規近似の目安）：どちらも np を使うが、np が小さいとき → ポアソン、大きいとき → 正規。\n- 二項の V ＝ np(1 − p) とポアソン近似の V ＝ np：p が小さいので (1 − p) ≒ 1 としてよい、というのが近似の意味。\n- 「以上」と「超える」、「以下」と「未満」。\n\n#### 試験での問われ方\n空欄補充「n が大きく p が小さいとき、二項分布は平均（np）のポアソン分布で近似できる」、計算「λ ＝ np として不適合品が0個の確率」「5枚まとめたとき」「2件以上の確率」（e^(−λ) または e ＝ 2.718 が与えられる）、判断「どの近似を使うか」。\n\n#### よくある誤解\n- 「1枚の確率を枚数倍すれば何枚分の確率になる」→ 換算するのは λ。確率は換算しない。\n- 「ポアソン近似は n が小さくても p が小さければよい」→ n も大きいことが前提（n ＝ 10、p ＝ 0.05 なら二項の式で直接計算する）。\n- 「2つの欠点数の合計の標準偏差は標準偏差の和」→ 足せるのは分散（λ）だけ。",
+            "vi": "#### Nói gọn\nDựa trên \"hình dạng\" của phân phối Poisson (P(x) = e^(−λ) λˣ / x!, E = V = λ), học ba cách dùng hay ra thi: (1) **xấp xỉ phân phối nhị thức bằng phân phối Poisson** (λ = np), (2) **đổi đơn vị thì λ cũng thay đổi tỷ lệ thuận** (một tấm → 5 tấm), (3) **\"từ 2 lần trở lên\" là 1 − P(0) − P(1)**. Thêm vào đó là xấp xỉ chuẩn khi λ lớn và cách tính e^(−λ) bằng máy tính từ e = 2.718.\n\n#### Vì sao\nKhi nhận 100 cuộn cảm của nhà cung cấp (tỷ lệ không phù hợp 2%), để tính xác suất \"0 sản phẩm không phù hợp\" bằng phân phối nhị thức cần 0.98¹⁰⁰, bấm bằng máy tính trong giờ thi rất vất vả. Khi p nhỏ và n lớn, **chỉ cần biết trung bình np** là phân phối Poisson đã xấp xỉ đủ tốt (cùng lý do với \"vì sao E = V = λ\": (1 − p) ≒ 1).\nNgoài ra, đề hay cho dữ liệu \"trung bình 0.3 điểm trên mỗi tấm\" rồi hỏi xác suất \"khi kiểm tra gộp 5 tấm\". Khuyết tật xảy ra ngẫu nhiên nên **đơn vị gấp 5 lần thì trung bình cũng gấp 5 lần** - đó là quy đổi λ.\n\n#### (1) Xấp xỉ Poisson cho phân phối nhị thức\n> λ = np\n> P(x) ≒ e^(−np) × (np)ˣ / x!\n- Tiêu chí: khi **p nhỏ (khoảng 0.1 trở xuống) và n lớn** (tùy tài liệu mà cách viết khác nhau như \"p ≦ 0.1\", \"n ≧ 50\").\n- Nếu np ≧ 5 và n(1 − p) ≧ 5 thì dùng xấp xỉ chuẩn (B4.2). Nếu p nhỏ và np nhỏ hơn 5 → xấp xỉ Poisson.\n- Ví dụ: n = 100, p = 0.02 → λ = 2\n> Nhị thức (chính xác): P(0) = 0.98¹⁰⁰ = 0.1326   Xấp xỉ Poisson: P(0) = e^(−2) = 0.1353\n> Nhị thức: P(x ≦ 1) = 0.4033   Xấp xỉ Poisson: P(x ≦ 1) = 3 × e^(−2) = 0.4060\nSai khác ở chữ số thập phân thứ ba - trong đề thi chọn theo giá trị xấp xỉ.\n\n#### (2) λ khi đổi đơn vị (tính cộng)\n> Đơn vị gấp k lần → λ_k = k × λ₁\n> Gộp hai nguồn phát sinh độc lập → λ = λ_A + λ_B (phương sai cũng là λ_A + λ_B)\n- Vì sao: khuyết tật xảy ra ngẫu nhiên ở bất cứ chỗ nào trong đơn vị, nên số trung bình tỷ lệ thuận với kích thước đơn vị. Tổng của các phân phối Poisson độc lập cũng là phân phối Poisson (**tính tái sinh**).\n- Ví dụ: số điểm hàn không phù hợp trên mỗi tấm PCB là λ₁ = 0.3. Kiểm tra gộp 5 tấm → λ = 0.3 × 5 = 1.5.\n> Cả 5 tấm có 0 điểm không phù hợp: P(0) = e^(−1.5) = 0.2231\n- Chú ý: **quy đổi λ trước** rồi mới tính xác suất. Lấy P(0) = e^(−0.3) của một tấm nhân 5 là vô nghĩa (xác suất có thể vượt quá 1).\n- Độ lệch chuẩn không cộng được: λ_A = 0.8, λ_B = 1.2 → độ lệch chuẩn của tổng = √2.0 = 1.414 (không phải √0.8 + √1.2 = 1.990). Cái được cộng là phương sai (cửa vào của tính cộng phương sai ở B4.5).\n\n#### (3) Xác suất \"từ ... trở lên\", \"ít nhất\"\n> P(x ≧ 1) = 1 − P(0) = 1 − e^(−λ)\n> P(x ≧ 2) = 1 − P(0) − P(1) = 1 − e^(−λ)(1 + λ)\n- Vì sao dùng biến cố đối: x ≧ 2 là 2, 3, 4, ... kéo dài không có giới hạn trên nên không cộng hết được. Lấy 1 trừ phía ngược lại (0 và 1).\n- Ví dụ: λ = 1.5, e^(−1.5) = 0.2231\n> P(0) = 0.2231   P(1) = 0.2231 × 1.5 = 0.3347\n> P(x ≧ 2) = 1 − 0.2231 × 2.5 = 0.4422\n- \"Từ 2 lần **trở lên**\" là gồm cả 2, \"**vượt quá** 2 lần\" là từ 3 trở lên → 1 − P(0) − P(1) − P(2). Luôn kiểm tra kỹ từ ngữ trong đề.\n\n#### (4) Xấp xỉ chuẩn khi λ lớn (nền tảng của biểu đồ kiểm soát c)\nKhi λ lớn (tham khảo khoảng λ ≧ 5), phân phối Poisson tiến gần đối xứng và xấp xỉ được bằng N(λ, λ).\n> u = (x − λ) / √λ\n- Ví dụ: số điểm không phù hợp ngoại quan trên mỗi lô là λ = 16. Xác suất x ≧ 24 → u = (24 − 16)/√16 = 2.00 → 0.0228.\n- Giới hạn kiểm soát c̄ ± 3√c̄ của biểu đồ kiểm soát c chính là \"trung bình ± 3 × độ lệch chuẩn (√λ)\" (học ở B7).\n\n#### Thao tác máy tính\nKhi đề cho \"lấy e = 2.718\", tự tính e^(−λ) (bấm liên tiếp ÷):\n> 1 ÷ 2.718 ÷ 2.718 = → 0.13536 (e^(−2))\n> 1 ÷ 2.718 ÷ 2.718 ÷ 2.718 = → 0.04980 (e^(−3))\nλ lẻ 0.5 (e^(−1.5)) thì đưa √e vào bộ nhớ trước rồi chia (không dùng \"a ÷ b √\" vì chỉ lấy căn của b):\n> MRC MRC 2.718 √ M+\n> 1 ÷ 2.718 ÷ MRC = → 0.22316\nP(x ≧ 2) = 1 − e^(−λ)(1 + λ) (λ = 1.5, e^(−1.5) = 0.2231):\n> MRC MRC 1 + 1.5 × 0.2231 = M+\n> 1 − MRC = → 0.44225\n\n#### Sơ đồ nhận dạng\n- Cho λ của \"số khuyết tật, số lần **trên mỗi** tấm (1 m, ngày)\" → Poisson (dùng trực tiếp)\n- \"**Gộp 5 tấm**\", \"cuộn 500 m\", \"một tuần (5 ngày)\" → **nhân λ lên k lần rồi** mới tính P(x)\n- \"Số **sản phẩm** không phù hợp trong n cái\" với **p nhỏ (1 đến 2%)**, \"xấp xỉ bằng phân phối Poisson\" → λ = np\n- \"Trong n cái\" với np ≧ 5 và n(1 − p) ≧ 5 → xấp xỉ chuẩn (của nhị thức)\n- λ lớn và \"xấp xỉ bằng phân phối chuẩn\", \"dùng bảng phân phối chuẩn\" → u = (x − λ)/√λ\n- \"Ít nhất 1 lần\" → 1 − e^(−λ), \"từ 2 lần trở lên\" → 1 − e^(−λ)(1 + λ), \"không quá 1 lần\" → e^(−λ)(1 + λ)\n- \"Tổng của hai dây chuyền\" → cộng λ (không cộng độ lệch chuẩn)\n\n#### Dễ nhầm lẫn\n- λ = np (xấp xỉ Poisson) và np ≧ 5 (tiêu chí xấp xỉ chuẩn): cả hai đều dùng np, nhưng np nhỏ → Poisson, np lớn → chuẩn.\n- V = np(1 − p) của nhị thức và V = np của xấp xỉ Poisson: vì p nhỏ nên coi (1 − p) ≒ 1, đó chính là ý nghĩa của phép xấp xỉ.\n- \"Từ ... trở lên\" và \"vượt quá\", \"không quá\" và \"nhỏ hơn\".\n\n#### Cách ra đề trong kỳ thi\nĐiền chỗ trống \"khi n lớn và p nhỏ, phân phối nhị thức có thể xấp xỉ bằng phân phối Poisson có trung bình (np)\", tính \"xác suất 0 sản phẩm không phù hợp với λ = np\", \"khi gộp 5 tấm\", \"xác suất từ 2 lần trở lên\" (cho e^(−λ) hoặc e = 2.718), nhận dạng \"dùng phép xấp xỉ nào\".\n\n#### Hiểu lầm thường gặp\n- \"Nhân xác suất của một tấm với số tấm thì ra xác suất của bấy nhiêu tấm\" → cái được quy đổi là λ. Không quy đổi xác suất.\n- \"Xấp xỉ Poisson dùng được khi p nhỏ dù n nhỏ\" → tiền đề là n cũng lớn (n = 10, p = 0.05 thì tính trực tiếp bằng công thức nhị thức).\n- \"Độ lệch chuẩn của tổng hai số khuyết tật là tổng hai độ lệch chuẩn\" → chỉ cộng được phương sai (λ)."
+          }
+        ]
+      },
+      {
+        "h": {
+          "ja": "B4.4 統計量の分布（χ²・t・F）（続き）― 表の逆引きと計算パターン",
+          "vi": "B4.4 Phân phối của các thống kê (χ², t, F) (tiếp theo) - Tra ngược bảng và các dạng tính toán"
+        },
+        "blocks": [
+          {
+            "type": "md",
+            "ja": "（χ²・t・F の定義・形・表の引き方は前提とし、ここでは**表の逆引き**と**χ²・t・F を使う計算パターン**を扱う。）\n\n#### ひとことで\n表は「確率 → 値」だけでなく、**「計算した値 → 確率がどのくらいか」**にも使う（逆引き）。計算した t₀・χ²₀・F₀（データから計算した t・χ²・F 統計量の値）を表の行に置いて、**どの2つの値の間にあるか**を見れば確率の範囲がわかる。これが検定（B5）の判定そのもの。\n\n#### なぜ\n検定では「この値は偶然でも出る程度か、めったに出ない値か」を判断する。表の値（5％点、1％点）は「めったに出ない」の境界線。たとえば新しい仕入先のインダクタで t₀ ＝ 2.66 が出たとき、両側5％の線 2.262 は越えたが両側2％（上側1％）の線 2.821 は越えていない → 「偶然にしては出にくいが、極端というほどではない」と読める。\nχ² と F では、同じ考え方で**ばらつき（不偏分散 V）がどこまで揺れるか**がわかる。母分散 σ² ＝ 0.04 の工程でも、サンプルの大きさ n ＝ 10 なら V は 0.012〜0.085 くらいまで普通に揺れる。だから V を1回見ただけで「ばらつきが増えた」と言ってはいけない。\n\n#### 公式（記号と形の理由）\n> V ＝ S / φ　（S：偏差平方和、φ：自由度 ＝ n − 1）\n> V / σ² ＝ χ² / φ　（S / σ² ～ χ²(φ) の両辺を φ で割っただけ）\n> σ² × χ²(φ, 0.975) / φ ≦ V ≦ σ² × χ²(φ, 0.025) / φ　（V が 95％ で入る範囲）\n> E(S) ＝ (n − 1)σ²、E(V) ＝ σ²、E(χ²) ＝ φ　（E( )：期待値）\n> F₀ ＝ V₁ / V₂　（V₁・V₂：2つのサンプルの不偏分散、σ₁・σ₂：それぞれの母標準偏差。σ₁ ＝ σ₂ のとき、φ₁ ＝ n₁ − 1 分子、φ₂ ＝ n₂ − 1 分母）\n> F(φ₁, φ₂; 0.95) ＝ 1 / F(φ₂, φ₁; 0.05)\n- **E(V) ＝ σ²**：V は平均すると σ² に一致する（不偏）。だから n − 1 で割る。n で割ると平均して σ² より小さくなる。\n- **V の範囲が σ² × χ² / φ**：χ² の 95％ 範囲を φ で割って σ² を掛けただけ。φ が大きいほど χ²/φ は 1 の近くに集まる → **n を増やすと V は σ² に近い値しか出なくなる**。\n- **F₀ ＝ V₁/V₂**：σ₁ ＝ σ₂ なら (V₁/σ₁²)/(V₂/σ₂²) の σ² が消える。\n\n#### 逆引きの手順\n1. 統計量を計算する（t₀、χ²₀、F₀）。\n2. 自由度の行を選ぶ（t・χ² は φ ＝ n − 1、F は (φ₁, φ₂) ＝ (分子, 分母)）。\n3. その行で t₀ を**はさむ2つの値**を探す → 列の確率が範囲になる。\n4. t表は**両側**確率。片側（上側）確率は**半分**にする。χ²表・F表は**上側**確率のまま。\n\n#### 例題1（t の逆引き）\nアンテナケーブル長の規定値 50.00 mm、n ＝ 10、サンプル平均 x̄ ＝ 50.42 mm、V ＝ 0.25 mm²（σ 未知）。\n> t₀ ＝ (50.42 − 50.00) / √(0.25 / 10) ＝ 0.42 / 0.1581 ＝ 2.66\n- φ ＝ 9 の行：t(9, 0.05) ＝ 2.262 ＜ 2.66 ＜ t(9, 0.02) ＝ 2.821\n- → |t| がこれ以上になる**両側確率は 0.02〜0.05**、上側だけなら **0.01〜0.025**。\n\n#### 例題2（χ²：V が入る範囲）\nσ² ＝ 0.04 mm² の工程から n ＝ 10。φ ＝ 9、χ²(9, 0.975) ＝ 2.70、χ²(9, 0.025) ＝ 19.02。\n> 0.04 × 2.70 / 9 ≦ V ≦ 0.04 × 19.02 / 9\n> 0.012 ≦ V ≦ 0.0845\n- 逆向き：V ≧ 0.0752 になる確率は？ → χ² ＝ 0.0752 × 9 / 0.04 ＝ 16.92 ＝ χ²(9, 0.05) → **0.05**。\n\n#### 例題3（データから χ²₀ — データの変換も使う）\n母分散の規定値 σ₀² ＝ 0.04 mm²、測定値 10.2、10.5、9.8、10.1、10.4（n ＝ 5）。u ＝ (x − 10) × 10 → 2、5、−2、1、4。\n> Σu ＝ 10、Σu² ＝ 50、S_u ＝ 50 − 10² / 5 ＝ 30（S_u：u の偏差平方和）\n> S ＝ S_u / 10² ＝ 0.30　（×10 した変換なので S は 100 で割る）\n> χ²₀ ＝ S / σ₀² ＝ 0.30 / 0.04 ＝ 7.50　（φ ＝ 4）\n- χ²(4, 0.05) ＝ 9.49 より小さい → 上側5％の外側には出ていない。\n\n#### 例題4（F₀ と下側の点）\n仕入先 A のケーブル外径 n_A ＝ 10、V_A ＝ 0.096、仕入先 B n_B ＝ 5、V_B ＝ 0.015。\n> F₀ ＝ V_A / V_B ＝ 0.096 / 0.015 ＝ 6.40　（φ ＝ (9, 4)）\n- F(9, 4; 0.05) ＝ 6.00 ＜ 6.40 ＜ F(9, 4; 0.01) ＝ 14.66 → 上側確率 0.01〜0.05。\n- 下側5％点：F(9, 4; 0.95) ＝ 1 / F(4, 9; 0.05) ＝ 1 / 3.63 ＝ 0.275。F₀ がこれより小さいと「A のほうがかなり小さい」側。\n\n#### 電卓の手順\n例題1（分母を先にメモリへ）：\n> MRC MRC 0.25 ÷ 10 = √ M+\n> 50.42 − 50 ÷ MRC = → 2.656\n例題2（左から順に計算されるので括弧不要）：\n> 0.04 × 2.7 ÷ 9 = → 0.012\n> 0.04 × 19.02 ÷ 9 = → 0.08453\n例題3（2乗は「× =」の直後に M+、(Σu)²/n は全部打って = してから M−。−2 は 2 として打つ）：\n> MRC MRC 2 × = M+ 5 × = M+ 2 × = M+ 1 × = M+ 4 × = M+\n> 10 × 10 ÷ 5 = M−\n> MRC → 30\n> 30 ÷ 100 ÷ 0.04 = → 7.5\n例題4：\n> 0.096 ÷ 0.015 = → 6.4\n> 1 ÷ 3.63 = → 0.2754\n\n#### 判断フロー\n- 「σ ＝ 〜 は既知」「長年の実績から σ は」→ u（正規分布表）\n- 「σ は未知」＋**平均**が規定値と違うか → t、φ ＝ n − 1。問題文に「両側」「異なるか」→ t(φ, α)（α：有意水準）、「大きくなったか／小さくなったか」→ t(φ, 2α)\n- **1つのばらつき** vs 規定値（「ばらつきが σ₀ と違うか」「小さくなったか」）→ χ² ＝ S/σ₀²。「小さくなったか」→ 下側 χ²(φ, 1 − α)、「大きくなったか」→ 上側 χ²(φ, α)\n- **2つのばらつきを比べる**（2台の機械、2社、改善前後で別々のサンプル）→ F ＝ V₁ / V₂\n- 「V がどこまで揺れるか」「S（V）が入る範囲」→ σ² × χ² / φ\n- 「計算値の確率はどのくらいか」「どの範囲か」→ 逆引き（行は φ、はさむ2つの値）\n\n#### 混同しやすい点\n- 逆引きの t：表の P は**両側**。上側だけの確率を聞かれたら半分。\n- χ² の範囲：下限に使うのは**小さい値** χ²(φ, 0.975)、上限は**大きい値** χ²(φ, 0.025)（列の確率と値の大小が逆向き）。\n- S と V：χ² ＝ S/σ² ＝ φV/σ²。V/σ² を χ² と思うと値が φ 分の1になる。\n- データの変換：×10 した u の S_u は 100 倍。元の S は 10² で割る。\n\n#### 試験での問われ方\n計算した t₀・χ²₀・F₀ と表の値を比べる問題（検定の前半）、V や S の範囲を σ² から出す問題、F の下側の点（逆数）、E(V) ＝ σ² の空欄補充。数値は表から問題文に与えられることが多い — **どの列の値を使うか**を間違えないことが得点の分かれ目。\n\n#### よくある誤解\n- 「t₀ が 2.262 を超えたら確率は 0.05」→ **0.05 未満**（はさむ2つの値の間）。\n- 「V の上限は σ² × χ²(φ, 0.975)」→ 逆。χ²(φ, 0.975) は小さい値なので下限。\n- 「n を増やすと V の期待値が小さくなる」→ E(V) ＝ σ² は n によらない。小さくなるのは V の**揺れ幅**。",
+            "vi": "(Định nghĩa, hình dạng và cách tra bảng của χ², t, F được coi là đã biết; ở đây bàn về **tra ngược bảng** và **các dạng tính toán dùng χ², t, F**.)\n\n#### Nói gọn\nBảng không chỉ dùng theo chiều \"xác suất → giá trị\" mà còn dùng cho **\"giá trị đã tính → xác suất cỡ nào\"** (tra ngược). Đặt t₀, χ²₀, F₀ đã tính (giá trị của thống kê t, χ², F tính từ dữ liệu) vào hàng của bảng, xem nó **nằm giữa hai giá trị nào** thì biết được khoảng của xác suất. Đây chính là cách phán định trong kiểm định (B5).\n\n#### Vì sao\nTrong kiểm định, ta phán đoán \"giá trị này là mức có thể xuất hiện do ngẫu nhiên, hay là giá trị hiếm khi xuất hiện\". Các giá trị trong bảng (điểm 5%, điểm 1%) là ranh giới của \"hiếm khi xuất hiện\". Ví dụ, với cuộn cảm của nhà cung cấp mới tính được t₀ = 2.66: đã vượt đường 5% hai phía 2.262 nhưng chưa vượt đường 2% hai phía (1% phía trên) 2.821 → đọc là \"khó xảy ra nếu chỉ do ngẫu nhiên, nhưng chưa tới mức cực đoan\".\nVới χ² và F, cùng cách nghĩ đó cho biết **độ phân tán (phương sai không chệch V) dao động tới mức nào**. Ngay cả quá trình có phương sai tổng thể σ² = 0.04, với cỡ mẫu n = 10 thì V vẫn dao động bình thường trong khoảng 0.012 đến 0.085. Vì vậy chỉ nhìn V một lần không được kết luận \"độ phân tán đã tăng\".\n\n#### Công thức (ký hiệu và lý do của dạng công thức)\n> V = S / φ   (S: tổng bình phương độ lệch, φ: bậc tự do = n − 1)\n> V / σ² = χ² / φ   (chỉ là chia hai vế của S / σ² ~ χ²(φ) cho φ)\n> σ² × χ²(φ, 0.975) / φ ≦ V ≦ σ² × χ²(φ, 0.025) / φ   (khoảng V rơi vào với xác suất 95%)\n> E(S) = (n − 1)σ², E(V) = σ², E(χ²) = φ   (E( ): kỳ vọng)\n> F₀ = V₁ / V₂   (V₁, V₂: phương sai không chệch của hai mẫu, σ₁, σ₂: độ lệch chuẩn tổng thể tương ứng. Khi σ₁ = σ₂, tử số φ₁ = n₁ − 1, mẫu số φ₂ = n₂ − 1)\n> F(φ₁, φ₂; 0.95) = 1 / F(φ₂, φ₁; 0.05)\n- **E(V) = σ²**: tính trung bình thì V bằng σ² (không chệch). Đó là lý do chia cho n − 1. Nếu chia cho n thì trung bình sẽ nhỏ hơn σ².\n- **Khoảng của V là σ² × χ² / φ**: chỉ là lấy khoảng 95% của χ² chia cho φ rồi nhân σ². φ càng lớn thì χ²/φ càng tập trung gần 1 → **tăng n thì V chỉ còn nhận các giá trị gần σ²**.\n- **F₀ = V₁/V₂**: nếu σ₁ = σ₂ thì σ² trong (V₁/σ₁²)/(V₂/σ₂²) triệt tiêu.\n\n#### Trình tự tra ngược\n1. Tính thống kê (t₀, χ²₀, F₀).\n2. Chọn hàng bậc tự do (t và χ² là φ = n − 1, F là (φ₁, φ₂) = (tử số, mẫu số)).\n3. Trên hàng đó tìm **hai giá trị kẹp** t₀ → xác suất của các cột cho ra khoảng.\n4. Bảng t là xác suất **hai phía**. Xác suất một phía (phía trên) thì **chia đôi**. Bảng χ² và bảng F giữ nguyên là xác suất **phía trên**.\n\n#### Ví dụ 1 (tra ngược t)\nGiá trị quy định chiều dài cáp anten 50.00 mm, n = 10, trung bình mẫu x̄ = 50.42 mm, V = 0.25 mm² (σ chưa biết).\n> t₀ = (50.42 − 50.00) / √(0.25 / 10) = 0.42 / 0.1581 = 2.66\n- Hàng φ = 9: t(9, 0.05) = 2.262 < 2.66 < t(9, 0.02) = 2.821\n- → **Xác suất hai phía** để |t| lớn hơn hoặc bằng giá trị này là **0.02 đến 0.05**, nếu chỉ phía trên là **0.01 đến 0.025**.\n\n#### Ví dụ 2 (χ²: khoảng V rơi vào)\nLấy n = 10 từ quá trình có σ² = 0.04 mm². φ = 9, χ²(9, 0.975) = 2.70, χ²(9, 0.025) = 19.02.\n> 0.04 × 2.70 / 9 ≦ V ≦ 0.04 × 19.02 / 9\n> 0.012 ≦ V ≦ 0.0845\n- Chiều ngược: xác suất V ≧ 0.0752 là bao nhiêu? → χ² = 0.0752 × 9 / 0.04 = 16.92 = χ²(9, 0.05) → **0.05**.\n\n#### Ví dụ 3 (χ²₀ từ dữ liệu - dùng cả phép biến đổi dữ liệu)\nGiá trị quy định phương sai tổng thể σ₀² = 0.04 mm², số đo 10.2, 10.5, 9.8, 10.1, 10.4 (n = 5). u = (x − 10) × 10 → 2, 5, −2, 1, 4.\n> Σu = 10, Σu² = 50, S_u = 50 − 10² / 5 = 30 (S_u: tổng bình phương độ lệch của u)\n> S = S_u / 10² = 0.30   (biến đổi đã nhân 10 nên S chia 100)\n> χ²₀ = S / σ₀² = 0.30 / 0.04 = 7.50   (φ = 4)\n- Nhỏ hơn χ²(4, 0.05) = 9.49 → chưa ra ngoài 5% phía trên.\n\n#### Ví dụ 4 (F₀ và điểm phía dưới)\nĐường kính ngoài cáp của nhà cung cấp A n_A = 10, V_A = 0.096, nhà cung cấp B n_B = 5, V_B = 0.015.\n> F₀ = V_A / V_B = 0.096 / 0.015 = 6.40   (φ = (9, 4))\n- F(9, 4; 0.05) = 6.00 < 6.40 < F(9, 4; 0.01) = 14.66 → xác suất phía trên 0.01 đến 0.05.\n- Điểm 5% phía dưới: F(9, 4; 0.95) = 1 / F(4, 9; 0.05) = 1 / 3.63 = 0.275. Nếu F₀ nhỏ hơn giá trị này thì thuộc phía \"A nhỏ hơn đáng kể\".\n\n#### Thao tác máy tính\nVí dụ 1 (đưa mẫu số vào bộ nhớ trước):\n> MRC MRC 0.25 ÷ 10 = √ M+\n> 50.42 − 50 ÷ MRC = → 2.656\nVí dụ 2 (máy tính lần lượt từ trái sang phải nên không cần ngoặc):\n> 0.04 × 2.7 ÷ 9 = → 0.012\n> 0.04 × 19.02 ÷ 9 = → 0.08453\nVí dụ 3 (bình phương thì bấm M+ ngay sau \"× =\", (Σu)²/n thì bấm hết, = rồi mới M−. −2 bấm như 2):\n> MRC MRC 2 × = M+ 5 × = M+ 2 × = M+ 1 × = M+ 4 × = M+\n> 10 × 10 ÷ 5 = M−\n> MRC → 30\n> 30 ÷ 100 ÷ 0.04 = → 7.5\nVí dụ 4:\n> 0.096 ÷ 0.015 = → 6.4\n> 1 ÷ 3.63 = → 0.2754\n\n#### Sơ đồ nhận dạng\n- \"σ = ... đã biết\", \"theo thực tế nhiều năm σ là\" → u (bảng phân phối chuẩn)\n- \"σ chưa biết\" + **trung bình** có khác giá trị quy định không → t, φ = n − 1. Đề nói \"hai phía\", \"có khác không\" → t(φ, α) (α: mức ý nghĩa), \"có tăng lên không / có giảm đi không\" → t(φ, 2α)\n- **Một độ phân tán** so với giá trị quy định (\"độ phân tán có khác σ₀ không\", \"có giảm đi không\") → χ² = S/σ₀². \"Có giảm đi không\" → phía dưới χ²(φ, 1 − α), \"có tăng lên không\" → phía trên χ²(φ, α)\n- **So sánh hai độ phân tán** (hai máy, hai công ty, trước và sau cải tiến với các mẫu riêng) → F = V₁ / V₂\n- \"V dao động tới mức nào\", \"khoảng S (V) rơi vào\" → σ² × χ² / φ\n- \"Xác suất của giá trị đã tính là cỡ nào\", \"nằm trong khoảng nào\" → tra ngược (hàng là φ, hai giá trị kẹp)\n\n#### Dễ nhầm lẫn\n- t khi tra ngược: P trong bảng là **hai phía**. Nếu hỏi xác suất chỉ phía trên thì chia đôi.\n- Khoảng của χ²: cận dưới dùng **giá trị nhỏ** χ²(φ, 0.975), cận trên dùng **giá trị lớn** χ²(φ, 0.025) (xác suất của cột và độ lớn của giá trị ngược chiều nhau).\n- S và V: χ² = S/σ² = φV/σ². Nếu coi V/σ² là χ² thì giá trị chỉ còn 1/φ.\n- Biến đổi dữ liệu: S_u của u đã nhân 10 thì lớn gấp 100 lần. S gốc phải chia cho 10².\n\n#### Cách ra đề trong kỳ thi\nSo sánh t₀, χ²₀, F₀ đã tính với giá trị bảng (nửa đầu của kiểm định), tính khoảng của V hoặc S từ σ², điểm phía dưới của F (nghịch đảo), điền chỗ trống E(V) = σ². Giá trị số thường được trích từ bảng và cho trong đề - **không nhầm cột nào** chính là chỗ quyết định điểm số.\n\n#### Hiểu lầm thường gặp\n- \"t₀ vượt 2.262 thì xác suất là 0.05\" → là **nhỏ hơn 0.05** (nằm giữa hai giá trị kẹp).\n- \"Cận trên của V là σ² × χ²(φ, 0.975)\" → ngược. χ²(φ, 0.975) là giá trị nhỏ nên là cận dưới.\n- \"Tăng n thì kỳ vọng của V nhỏ đi\" → E(V) = σ² không phụ thuộc n. Cái nhỏ đi là **biên độ dao động** của V."
+          }
+        ]
+      },
+      {
+        "h": {
+          "ja": "B4.4 統計量の分布（χ²・t・F）（続き）― 1組のデータから t₀・χ₀²・F₀、言葉 → 表の列、分布どうしの関係",
+          "vi": "B4.4 Phân phối của các thống kê (χ², t, F) (tiếp theo) - t₀, χ₀², F₀ từ một bộ dữ liệu, từ ngữ trong đề → cột của bảng, quan hệ giữa các phân phối"
+        },
+        "blocks": [
+          {
+            "type": "md",
+            "ja": "（定義・表の引き方と、逆引き・V の範囲は前提とする。ここでは**1組のデータから t₀・χ²₀・F₀ を全部出す総合パターン**、**問題文の言葉 → 表の列**の対応、**分布どうしの関係**（表の検算に使える）を扱う。）\n\n#### ひとことで\n同じ1組のデータでも、**何を聞かれているか**（平均か、ばらつきか、2つの比較か）で使う統計量と表が変わる。計算の出発点はいつも同じ **S（偏差平方和）**：S → V → t₀、S → χ²₀、V どうし → F₀。\n\n#### なぜ\n試験の計算問題は「データ → S・V → 統計量 → 表の値と比べる」の一本道。失点の原因は計算そのものより、**途中で S と V を取り違える**、**表の列（両側・片側）を間違える**こと。たとえば新しい仕入先のインダクタを6個測ったとき、平均が規定値からずれたか（t）と、ばらつきが規定より大きいか（χ²）は、同じ S から出せるが答えは別々。片方が「外側」でも、もう片方は「外側でない」ことがふつうにある。\n\n#### 公式（1組のデータからの一本道）\n> S ＝ Σx² − (Σx)² / n　（偏差平方和、φ：自由度 ＝ n − 1）\n> V ＝ S / (n − 1)\n> t₀ ＝ (x̄ − μ₀) / √(V / n)　（平均。σ 未知、φ ＝ n − 1）\n> χ₀² ＝ S / σ₀²　（ばらつき1つ vs 規定値 σ₀²、φ ＝ n − 1）\n> F₀ ＝ V₁ / V₂　（ばらつき2つ、φ ＝ (n₁ − 1, n₂ − 1)）\n記号：x̄：サンプルの平均、μ₀：平均の規定値、σ：母標準偏差、σ₀²：母分散の規定値、V₁・V₂：2つのグループの不偏分散、u：標準正規分布 N(0, 1) に従う変数（σ 既知のときの統計量）\n- t₀ の分母は **V**（不偏分散）を n で割って √。S を使うと値が小さくなりすぎる。\n- χ₀² の分子は **S**（V ではない）。V を使うなら (n − 1)V / σ₀²。\n- F₀ は **V どうし**（S どうしではない — n が違えば S は比べられない）。\n\n#### 例題（総合）新しい仕入先のインダクタ\nインダクタンス（µH）を n ＝ 6 個測定：10.2、10.6、10.1、10.5、10.4、10.6。規定値 μ₀ ＝ 10.20、ばらつきの規定値 σ₀² ＝ 0.015。今の仕入先は n ＝ 9 個で V ＝ 0.012。\nu ＝ (x − 10.0) × 10 と変換 → 2、6、1、5、4、6\n> Σu ＝ 24、Σu² ＝ 118、S_u ＝ 118 − 24² / 6 ＝ 22\n> S ＝ S_u / 10² ＝ 0.22、V ＝ 0.22 / 5 ＝ 0.044、x̄ ＝ 10.0 ＋ 24 / 6 / 10 ＝ 10.40\n① 平均（σ 未知）：\n> t₀ ＝ (10.40 − 10.20) / √(0.044 / 6) ＝ 0.20 / 0.08563 ＝ 2.34　（φ ＝ 5）\n- t(5, 0.10) ＝ 2.015 ＜ 2.34 ＜ t(5, 0.05) ＝ 2.571 → 両側確率 0.05〜0.10（上側だけなら 0.025〜0.05）。\n② ばらつき vs 規定値：\n> χ₀² ＝ 0.22 / 0.015 ＝ 14.67　（φ ＝ 5）\n- χ²(5, 0.025) ＝ 12.83 ＜ 14.67 ＜ χ²(5, 0.01) ＝ 15.09 → 上側確率 0.01〜0.025。\n③ 今の仕入先とばらつき比較：\n> F₀ ＝ 0.044 / 0.012 ＝ 3.67　（φ ＝ (5, 8)）\n- F(5, 8; 0.05) ＝ 3.69 より**わずかに小さい** → 上側確率は 0.05 より大きい。\n- 読み方：「平均のずれ」は両側5％の線を越えない、「規定値 σ₀² に対するばらつき」は上側2.5％の線を越える、「今の仕入先との比」は5％の線にわずかに届かない。**同じデータでも問いごとに結論が違う**（検定としての判定は B5 で）。\n\n#### 電卓の手順\nS_u（2乗は「× =」の直後に M+、(Σu)²/n は全部打って = してから M−）：\n> MRC MRC 2 × = M+ 6 × = M+ 1 × = M+ 5 × = M+ 4 × = M+ 6 × = M+\n> 24 × 24 ÷ 6 = M−\n> MRC → 22\nt₀（分母を先にメモリへ。= の後で √）：\n> MRC MRC 0.22 ÷ 5 ÷ 6 = √ M+\n> 10.4 − 10.2 ÷ MRC = → 2.3354\n- 「0.22 ÷ 5 ÷ 6」＝ V ÷ n を左から順に（括弧不要）。\nχ₀² と F₀：\n> 0.22 ÷ 0.015 = → 14.666\n> 0.22 ÷ 5 ÷ 0.012 = → 3.6666\n\n#### 問題文の言葉 → 表の列（有意水準 5％）\n- t：「違うか・変わったか」→ t(φ, 0.05)　「大きくなったか／小さくなったか」→ t(φ, 0.10)（t表は両側確率）\n- χ²：「違うか」→ χ²(φ, 0.975) と χ²(φ, 0.025) の両方　「大きくなったか」→ χ²(φ, 0.05)　「小さくなったか」→ χ²(φ, 0.95)（下側）\n- F：「A のほうが大きいか」→ F(φ_A, φ_B; 0.05)（V_A を分子）。両側の F の扱いは B5.4 で。\n\n#### 分布どうしの関係（表の値の検算に使える）\n> φ → ∞ で t(φ) → u　（t(∞, 0.05) ＝ 1.960）\n> u² ～ χ²(1)　（1.960² ＝ 3.84 ＝ χ²(1, 0.05)）\n> t(φ)² ～ F(1, φ)　（t(9, 0.05)² ＝ 2.262² ＝ 5.12 ＝ F(1, 9; 0.05)）\n> χ²(φ) / φ ～ F(φ, ∞)　（χ²(9, 0.05) / 9 ＝ 16.92 / 9 ＝ 1.88 ＝ F(9, ∞; 0.05)）\n- なぜ：χ² は u² の和、t は u ÷ √(χ²/φ)、F は (χ²/φ) どうしの比（定義より）。t を2乗すると「u²（自由度1の χ²）÷ (χ²/φ)」になり、F(1, φ) の形そのもの。\n- t表の両側 P が F表の上側 α に対応する（t の ± 両側がまとめて2乗で右側になる）。\n- 計算で使わなくても「表を読み違えていないか」の検算になる。\n\n#### 判断フロー\n- 問題文に「σ ＝ 〜（既知）」→ u。「σ は未知」「データから V」で**平均** → t、φ ＝ n − 1\n- 「ばらつき（母分散）が規定値 σ₀² と違うか／大きくなったか／小さくなったか」→ χ₀² ＝ S/σ₀²\n- 「2つの仕入先・2台の機械の**ばらつき**を比べる」→ F₀ ＝ V₁/V₂、分子の自由度が先\n- 「V（S）がどこまで揺れるか」→ σ² × χ²/φ\n- 「値から確率の範囲」→ 逆引き（はさむ2つの値）\n- 「平均の比較」でも2つのグループ（2つの母平均）なら B5.5・B5.6 — ここでの t₀ は**1つの平均 vs 規定値**だけ\n\n#### 混同しやすい点\n- t₀ の分母 √(V/n) と χ₀² の分子 S：使う量が違う（V と S）。\n- 自由度：t₀・χ₀² は n − 1。F₀ は (分子の n − 1, 分母の n − 1)。\n- 「小さくなったか」の χ² は**下側**（P ＝ 0.95 の列、小さい値）。上側 0.05 の列と取り違えやすい。\n- 変換データ：u ＝ (x − 10.0) × 10 なら S ＝ S_u / 100、x̄ ＝ 10.0 ＋ ū / 10。\n\n#### 試験での問われ方\n大問1つの中で「S・V を求めよ → t₀（または χ₀²）を求めよ → 表の値はどれか → 判定」と小問が続く形が多い。最初の S を間違えると後ろが全部崩れるので、S は**2回計算して一致を確かめる**。判断の選択肢（u・t・χ²・F）は問題文の「σ 既知／未知」「平均／ばらつき」「1つ／2つ」で決まる。\n\n#### よくある誤解\n- 「t₀ の分母は √(S/n)」→ V を使う。S だと t₀ が小さく出て「差がない」と誤る。\n- 「ばらつきが小さくなったかは χ²(φ, 0.05) と比べる」→ 下側 χ²(φ, 0.95) と比べる。\n- 「t が 2.262 を超えても χ² が超えなければ矛盾」→ 平均とばらつきは別の問い。結論が違ってよい。",
+            "vi": "(Định nghĩa, cách tra bảng, tra ngược và khoảng của V được coi là đã biết. Ở đây bàn về **dạng tổng hợp tính đủ t₀, χ²₀, F₀ từ một bộ dữ liệu**, cách ghép **từ ngữ trong đề → cột của bảng**, và **quan hệ giữa các phân phối** (dùng để kiểm tra lại giá trị bảng).)\n\n#### Nói gọn\nCùng một bộ dữ liệu, nhưng **đề hỏi gì** (trung bình, độ phân tán, hay so sánh hai nhóm) sẽ quyết định thống kê và bảng được dùng. Điểm xuất phát của phép tính luôn giống nhau là **S (tổng bình phương độ lệch)**: S → V → t₀, S → χ²₀, các V với nhau → F₀.\n\n#### Vì sao\nBài tính toán trong đề thi là một con đường thẳng \"dữ liệu → S, V → thống kê → so với giá trị bảng\". Nguyên nhân mất điểm thường không nằm ở bản thân phép tính mà ở chỗ **nhầm S với V giữa chừng**, hoặc **nhầm cột của bảng (hai phía, một phía)**. Ví dụ, đo 6 cuộn cảm của nhà cung cấp mới: trung bình có lệch khỏi giá trị quy định không (t), và độ phân tán có lớn hơn quy định không (χ²), có thể tính từ cùng một S nhưng là hai đáp án riêng. Một bên \"ra ngoài\" mà bên kia \"không ra ngoài\" là chuyện hoàn toàn bình thường.\n\n#### Công thức (con đường thẳng từ một bộ dữ liệu)\n> S = Σx² − (Σx)² / n   (tổng bình phương độ lệch, φ: bậc tự do = n − 1)\n> V = S / (n − 1)\n> t₀ = (x̄ − μ₀) / √(V / n)   (trung bình, σ chưa biết, φ = n − 1)\n> χ₀² = S / σ₀²   (một độ phân tán so với giá trị quy định σ₀², φ = n − 1)\n> F₀ = V₁ / V₂   (hai độ phân tán, φ = (n₁ − 1, n₂ − 1))\nKý hiệu: x̄: trung bình mẫu, μ₀: giá trị quy định của trung bình, σ: độ lệch chuẩn tổng thể, σ₀²: giá trị quy định của phương sai tổng thể, V₁, V₂: phương sai không chệch của hai nhóm, u: biến tuân theo phân phối chuẩn tắc N(0, 1) (thống kê khi đã biết σ)\n- Mẫu số của t₀ là **V** (phương sai không chệch) chia n rồi lấy √. Nếu dùng S thì giá trị quá nhỏ.\n- Tử số của χ₀² là **S** (không phải V). Nếu dùng V thì phải là (n − 1)V / σ₀².\n- F₀ là **tỷ số giữa các V** (không phải giữa các S - n khác nhau thì không so sánh S được).\n\n#### Ví dụ (tổng hợp) cuộn cảm của nhà cung cấp mới\nĐo điện cảm (µH) của n = 6 cái: 10.2, 10.6, 10.1, 10.5, 10.4, 10.6. Giá trị quy định μ₀ = 10.20, giá trị quy định độ phân tán σ₀² = 0.015. Nhà cung cấp hiện tại có n = 9 cái với V = 0.012.\nBiến đổi u = (x − 10.0) × 10 → 2, 6, 1, 5, 4, 6\n> Σu = 24, Σu² = 118, S_u = 118 − 24² / 6 = 22\n> S = S_u / 10² = 0.22, V = 0.22 / 5 = 0.044, x̄ = 10.0 + 24 / 6 / 10 = 10.40\n(1) Trung bình (σ chưa biết):\n> t₀ = (10.40 − 10.20) / √(0.044 / 6) = 0.20 / 0.08563 = 2.34   (φ = 5)\n- t(5, 0.10) = 2.015 < 2.34 < t(5, 0.05) = 2.571 → xác suất hai phía 0.05 đến 0.10 (chỉ phía trên thì 0.025 đến 0.05).\n(2) Độ phân tán so với giá trị quy định:\n> χ₀² = 0.22 / 0.015 = 14.67   (φ = 5)\n- χ²(5, 0.025) = 12.83 < 14.67 < χ²(5, 0.01) = 15.09 → xác suất phía trên 0.01 đến 0.025.\n(3) So sánh độ phân tán với nhà cung cấp hiện tại:\n> F₀ = 0.044 / 0.012 = 3.67   (φ = (5, 8))\n- **Hơi nhỏ hơn** F(5, 8; 0.05) = 3.69 → xác suất phía trên lớn hơn 0.05.\n- Cách đọc: \"độ lệch của trung bình\" không vượt đường 5% hai phía, \"độ phân tán so với giá trị quy định σ₀²\" vượt đường 2.5% phía trên, \"tỷ số với nhà cung cấp hiện tại\" chưa chạm đường 5% một chút. **Cùng dữ liệu nhưng mỗi câu hỏi cho kết luận khác nhau** (phán định theo kiểm định ở B5).\n\n#### Thao tác máy tính\nS_u (bình phương thì bấm M+ ngay sau \"× =\", (Σu)²/n thì bấm hết, = rồi mới M−):\n> MRC MRC 2 × = M+ 6 × = M+ 1 × = M+ 5 × = M+ 4 × = M+ 6 × = M+\n> 24 × 24 ÷ 6 = M−\n> MRC → 22\nt₀ (đưa mẫu số vào bộ nhớ trước, √ sau dấu =):\n> MRC MRC 0.22 ÷ 5 ÷ 6 = √ M+\n> 10.4 − 10.2 ÷ MRC = → 2.3354\n- \"0.22 ÷ 5 ÷ 6\" = V ÷ n, tính lần lượt từ trái sang phải (không cần ngoặc).\nχ₀² và F₀:\n> 0.22 ÷ 0.015 = → 14.666\n> 0.22 ÷ 5 ÷ 0.012 = → 3.6666\n\n#### Từ ngữ trong đề → cột của bảng (mức ý nghĩa 5%)\n- t: \"có khác không, có thay đổi không\" → t(φ, 0.05)   \"có tăng lên không / có giảm đi không\" → t(φ, 0.10) (bảng t là xác suất hai phía)\n- χ²: \"có khác không\" → cả χ²(φ, 0.975) và χ²(φ, 0.025)   \"có tăng lên không\" → χ²(φ, 0.05)   \"có giảm đi không\" → χ²(φ, 0.95) (phía dưới)\n- F: \"A có lớn hơn không\" → F(φ_A, φ_B; 0.05) (V_A ở tử số). Cách xử lý F hai phía học ở B5.4.\n\n#### Quan hệ giữa các phân phối (dùng để kiểm tra lại giá trị bảng)\n> φ → ∞ thì t(φ) → u   (t(∞, 0.05) = 1.960)\n> u² ~ χ²(1)   (1.960² = 3.84 = χ²(1, 0.05))\n> t(φ)² ~ F(1, φ)   (t(9, 0.05)² = 2.262² = 5.12 = F(1, 9; 0.05))\n> χ²(φ) / φ ~ F(φ, ∞)   (χ²(9, 0.05) / 9 = 16.92 / 9 = 1.88 = F(9, ∞; 0.05))\n- Vì sao: χ² là tổng của các u², t là u ÷ √(χ²/φ), F là tỷ số của hai (χ²/φ) (theo định nghĩa). Bình phương t được \"u² (χ² bậc tự do 1) ÷ (χ²/φ)\", đúng dạng của F(1, φ).\n- P hai phía của bảng t ứng với α phía trên của bảng F (hai phía ± của t khi bình phương gộp lại thành phía bên phải).\n- Dù không dùng trong tính toán, đây vẫn là cách kiểm tra lại \"có đọc nhầm bảng không\".\n\n#### Sơ đồ nhận dạng\n- Đề có \"σ = ... (đã biết)\" → u. \"σ chưa biết\", \"tính V từ dữ liệu\" mà hỏi **trung bình** → t, φ = n − 1\n- \"Độ phân tán (phương sai tổng thể) có khác / có tăng lên / có giảm đi so với giá trị quy định σ₀² không\" → χ₀² = S/σ₀²\n- \"So sánh **độ phân tán** của hai nhà cung cấp, hai máy\" → F₀ = V₁/V₂, bậc tự do của tử số đứng trước\n- \"V (S) dao động tới mức nào\" → σ² × χ²/φ\n- \"Từ giá trị suy ra khoảng xác suất\" → tra ngược (hai giá trị kẹp)\n- \"So sánh trung bình\" nhưng là hai nhóm (hai trung bình tổng thể) thì thuộc B5.5, B5.6 - t₀ ở đây chỉ là **một trung bình so với giá trị quy định**\n\n#### Dễ nhầm lẫn\n- Mẫu số √(V/n) của t₀ và tử số S của χ₀²: đại lượng dùng khác nhau (V và S).\n- Bậc tự do: t₀ và χ₀² là n − 1. F₀ là (n − 1 của tử số, n − 1 của mẫu số).\n- χ² của \"có giảm đi không\" là **phía dưới** (cột P = 0.95, giá trị nhỏ). Dễ nhầm với cột 0.05 phía trên.\n- Dữ liệu biến đổi: nếu u = (x − 10.0) × 10 thì S = S_u / 100, x̄ = 10.0 + ū / 10.\n\n#### Cách ra đề trong kỳ thi\nThường là trong một bài lớn có chuỗi câu nhỏ \"tính S, V → tính t₀ (hoặc χ₀²) → giá trị bảng là giá trị nào → phán định\". Sai S đầu tiên thì mọi thứ phía sau đổ vỡ, nên **tính S hai lần và kiểm tra trùng khớp**. Lựa chọn phán định (u, t, χ², F) được quyết định bởi \"σ đã biết / chưa biết\", \"trung bình / độ phân tán\", \"một / hai\" trong đề.\n\n#### Hiểu lầm thường gặp\n- \"Mẫu số của t₀ là √(S/n)\" → phải dùng V. Dùng S thì t₀ ra nhỏ và kết luận nhầm là \"không có khác biệt\".\n- \"Độ phân tán có giảm đi không thì so với χ²(φ, 0.05)\" → so với χ²(φ, 0.95) phía dưới.\n- \"t vượt 2.262 mà χ² không vượt là mâu thuẫn\" → trung bình và độ phân tán là hai câu hỏi khác nhau. Kết luận khác nhau là bình thường."
+          }
+        ]
+      },
+      {
+        "h": {
+          "ja": "B4.5 期待値と分散（加法性）― 和・差・倍の公式と組立品の規格外れ率",
+          "vi": "B4.5 Kỳ vọng và phương sai (tính cộng) - Công thức tổng, hiệu, bội và tỷ lệ ngoài tiêu chuẩn của cụm lắp"
+        },
+        "blocks": [
+          {
+            "type": "md",
+            "ja": "#### ひとことで\n足し算・引き算でできた量は、**平均は足し引き、分散はいつも足し算**（独立なとき）。標準偏差は足さない — 分散を足してから √ をとる。\n\n#### なぜ\nアンテナのエレメントを、パイプ A と B をつないで作るとする。A が長めに出ても B が短めに出れば打ち消し合うので、全長のばらつきは「A のばらつき ＋ B のばらつき」（標準偏差の和）ほど大きくはならない。かといって打ち消し合いは毎回ではないので、ばらつきが減るわけでもない。この「ほどほどの増え方」を正しく表すのが**分散の和**で、直角三角形の斜辺 √(a² ＋ b²) と同じ形になる。\n**引き算でも分散は足す**：穴径 − 軸径 ＝ すき間。穴が大きめ・軸が小さめに出ればすき間はさらに大きく、逆なら小さく — どちらのばらつきもすき間を**揺らす側**に働く。だから V(X − Y) ＝ V(X) ＋ V(Y)。\n\n#### 定義\n- **期待値** E(X)：確率変数 X の平均（母平均 μ）。\n- **分散** V(X) ＝ E[(X − μ)²] ＝ σ²（平均からの偏差の2乗の期待値）。**標準偏差** σ(X) ＝ √V(X) ＝ σ。\n- **独立**：一方の値が他方の値の出方に影響しないこと（別々の工程・別ロットで作られた部品など）。\n\n#### 公式（記号の意味と形の理由）\n> E(aX ＋ b) ＝ aE(X) ＋ b　V(aX ＋ b) ＝ a²V(X)　σ(aX ＋ b) ＝ |a| σ(X)\n- a ＝ 倍率、b ＝ ずらし。**ずらし b は分散に効かない**（全員を同じだけ動かしても、平均からの離れ方は同じ）。倍率 a は偏差を a 倍するので、2乗の分散は **a² 倍**。\n- これは B1.2 データの変換そのもの：u ＝ (x − x₀)/h → V(u) ＝ V(x)/h²、だから x̄ ＝ x₀ ＋ h ū、s ＝ h s_u（x₀ は足さない）。\n> E(X ± Y) ＝ E(X) ± E(Y)（独立でなくても成り立つ）\n> V(X ± Y) ＝ V(X) ＋ V(Y)（X と Y が独立のとき）\n> V(aX ＋ bY) ＝ a²V(X) ＋ b²V(Y)（独立のとき。b が負でも b² は正）\n> σ(X ± Y) ＝ √(σ_X² ＋ σ_Y²)\n- B1.4 の誤差の合成 σ_全体² ＝ σ_サンプリング² ＋ σ_測定² も、ポアソン分布の λ の和も、この式の特別な場合。\n\n#### 同じ部品を n 個使う（和）と、1個を n 倍する（倍）は違う\n> 独立な n 個の和：V(X₁ ＋ X₂ ＋ … ＋ X_n) ＝ nσ²　標準偏差 ＝ √n σ\n> 1個を n 倍：V(nX) ＝ n²σ²　標準偏差 ＝ n σ\n- 例：厚さ N(2.00, 0.02²) mm の板を5枚積む → 合計の平均 10.00 mm、分散 5 × 0.0004 ＝ 0.0020、標準偏差 √0.0020 ＝ 0.0447 mm。\n- 1枚の厚さを5倍した値なら標準偏差 0.10 mm。別々の5枚は打ち消し合うので小さい。\n\n#### 例題1（和）組立長さの規格外れ率\nパイプ A ～ N(120.0, 0.3²) mm、パイプ B ～ N(80.0, 0.4²) mm（独立）。つないだ全長 L ＝ A ＋ B の規格は 200.0 ± 1.0 mm。\n> E(L) ＝ 120.0 ＋ 80.0 ＝ 200.0\n> V(L) ＝ 0.3² ＋ 0.4² ＝ 0.09 ＋ 0.16 ＝ 0.25　σ(L) ＝ √0.25 ＝ 0.5\n> u ＝ (201.0 − 200.0) / 0.5 ＝ 2.00 → 正規分布表(I) 0.0228\n> 規格外れ率 ＝ 0.0228 × 2 ＝ 0.0456（両側）\n- 正規分布に従う独立な量の和・差も正規分布に従う（**再生性**）ので、正規分布表が使える。\n- まちがい例：標準偏差を足して 0.7 → u ＝ 1.43 … 全く別の答え。\n\n#### 例題2（差）すき間がマイナスになる確率\n穴径 X ～ N(10.10, 0.03²) mm、軸径 Y ～ N(10.00, 0.04²) mm（独立）。すき間 C ＝ X − Y。\n> E(C) ＝ 10.10 − 10.00 ＝ 0.10\n> V(C) ＝ 0.03² ＋ 0.04² ＝ 0.0025　σ(C) ＝ 0.05\n> P(C ＜ 0) ：u ＝ (0 − 0.10) / 0.05 ＝ −2.00 → 0.0228（はまらない確率 2.28％）\n- 引き算でも分散は**足す**。\n\n#### 電卓の手順\nσ(C) ＝ √(0.03² ＋ 0.04²)：\n> MRC MRC 0.03 × = M+ 0.04 × = M+ MRC √ → 0.05\n係数つき V(2X − 3Y)（σ_X ＝ 0.2、σ_Y ＝ 0.1）は、2乗のあとに掛け算が続くので全部打ってから = を押す：\n> MRC MRC 2 × 2 × 0.2 × 0.2 = M+ 3 × 3 × 0.1 × 0.1 = M+ MRC √ → 0.5\n- 引き算の式でも M− は使わない（分散は足す）。M− を使うのは逆算（全体から既知の分散を引く）のときだけ：\n> MRC MRC 0.1 × = M+ 0.06 × = M− MRC √ → 0.08\n\n#### 判断フロー\n- 「部品をつないだ全長」「重ねた厚さ」「合計重量」→ **和**：平均を足す、分散を足す\n- 「すき間」「穴径 − 軸径」「差」「ずれ」→ **差**：平均は引く、分散は**足す**\n- 「同じ部品を n 個（別々の n 個）」→ nσ²／「1個の値を n 倍」「単位換算（×1.8 など）」→ n²σ²（a²V）\n- 「〜を c だけずらす」「規格の中心からの偏差」→ 分散は変わらない\n- 「全体のばらつきを σ 以下にしたい。部品 B の σ はいくら以下か」→ **逆算**：σ_B ＝ √(σ² − σ_A²)\n- 「規格外れ率」→ 最後は u ＝ (規格 − 平均) / √(分散の和) → 正規分布表(I)、両側なら2つ足す\n- 「独立」と書いていない／同じ部品の2か所 → 独立の仮定に注意（共分散が入る）\n\n#### 混同しやすい点\n- V(X − Y) ＝ V(X) ＋ V(Y)（○）と V(X) − V(Y)（×）。\n- 和の V ＝ nσ² と x̄ の V ＝ σ²/n（B4.6）：n 個を**足す**と増え、**平均する**と減る。\n- E の式は独立でなくても成り立つが、V の式は独立が条件。\n\n#### 試験での問われ方\n空欄補充「V(X − Y) ＝（V(X) ＋ V(Y)）」、計算「組立品の全長・すき間の標準偏差と規格外れ率」「全体の σ を満たすための部品の σ（逆算）」、正誤「標準偏差の加法性」のひっかけ。\n\n#### よくある誤解\n- 「差の分散は分散の差」→ 差でも和。\n- 「標準偏差も足してよい」→ 足すのは分散。√(0.3² ＋ 0.4²) ＝ 0.5 であって 0.7 ではない。\n- 「n 個の和の分散は n²σ²」→ 別々の n 個なら nσ²。n²σ² は1個を n 倍したとき。",
+            "vi": "#### Nói gọn\nVới đại lượng tạo thành từ phép cộng, phép trừ thì **trung bình cộng hoặc trừ, còn phương sai luôn cộng** (khi độc lập). Không cộng độ lệch chuẩn - cộng phương sai rồi mới lấy √.\n\n#### Vì sao\nGiả sử element của anten được làm bằng cách nối ống A và ống B. Nếu A ra hơi dài mà B ra hơi ngắn thì chúng bù trừ nhau, nên độ phân tán của chiều dài toàn bộ không lớn tới mức \"độ phân tán của A + độ phân tán của B\" (tổng độ lệch chuẩn). Nhưng sự bù trừ không phải lần nào cũng xảy ra, nên độ phân tán cũng không giảm đi. Cái thể hiện đúng \"mức tăng vừa phải\" này là **tổng các phương sai**, có cùng dạng với cạnh huyền của tam giác vuông √(a² + b²).\n**Phép trừ cũng cộng phương sai**: đường kính lỗ − đường kính trục = khe hở. Nếu lỗ ra hơi lớn và trục ra hơi nhỏ thì khe hở càng lớn, ngược lại thì nhỏ đi - độ phân tán của cả hai đều có tác dụng **làm dao động** khe hở. Vì vậy V(X − Y) = V(X) + V(Y).\n\n#### Định nghĩa\n- **Kỳ vọng** E(X): trung bình của biến ngẫu nhiên X (trung bình tổng thể μ).\n- **Phương sai** V(X) = E[(X − μ)²] = σ² (kỳ vọng của bình phương độ lệch so với trung bình). **Độ lệch chuẩn** σ(X) = √V(X) = σ.\n- **Độc lập**: giá trị của biến này không ảnh hưởng đến cách xuất hiện giá trị của biến kia (như các chi tiết được làm ở các quá trình riêng, các lô riêng).\n\n#### Công thức (ý nghĩa ký hiệu và lý do của dạng công thức)\n> E(aX + b) = aE(X) + b   V(aX + b) = a²V(X)   σ(aX + b) = |a| σ(X)\n- a = hệ số nhân, b = lượng dịch. **Lượng dịch b không ảnh hưởng phương sai** (dịch tất cả cùng một lượng thì khoảng cách tới trung bình vẫn như cũ). Hệ số a nhân độ lệch lên a lần, nên phương sai (bình phương) **gấp a² lần**.\n- Đây chính là phép biến đổi dữ liệu ở B1.2: u = (x − x₀)/h → V(u) = V(x)/h², do đó x̄ = x₀ + h ū, s = h s_u (không cộng x₀).\n> E(X ± Y) = E(X) ± E(Y) (đúng cả khi không độc lập)\n> V(X ± Y) = V(X) + V(Y) (khi X và Y độc lập)\n> V(aX + bY) = a²V(X) + b²V(Y) (khi độc lập. Dù b âm thì b² vẫn dương)\n> σ(X ± Y) = √(σ_X² + σ_Y²)\n- Phép hợp sai số σ_toàn bộ² = σ_lấy mẫu² + σ_đo² ở B1.4, và tổng các λ của phân phối Poisson, đều là trường hợp đặc biệt của công thức này.\n\n#### Dùng n chi tiết giống nhau (tổng) khác với nhân một chi tiết lên n lần (bội)\n> Tổng của n cái độc lập: V(X₁ + X₂ + ... + X_n) = nσ²   độ lệch chuẩn = √n σ\n> Một cái nhân n lần: V(nX) = n²σ²   độ lệch chuẩn = n σ\n- Ví dụ: xếp chồng 5 tấm có độ dày N(2.00, 0.02²) mm → trung bình tổng 10.00 mm, phương sai 5 × 0.0004 = 0.0020, độ lệch chuẩn √0.0020 = 0.0447 mm.\n- Nếu là giá trị nhân 5 lần độ dày của một tấm thì độ lệch chuẩn là 0.10 mm. 5 tấm riêng biệt bù trừ nhau nên nhỏ hơn.\n\n#### Ví dụ 1 (tổng) tỷ lệ ngoài tiêu chuẩn của chiều dài cụm lắp\nỐng A ~ N(120.0, 0.3²) mm, ống B ~ N(80.0, 0.4²) mm (độc lập). Tiêu chuẩn của chiều dài sau khi nối L = A + B là 200.0 ± 1.0 mm.\n> E(L) = 120.0 + 80.0 = 200.0\n> V(L) = 0.3² + 0.4² = 0.09 + 0.16 = 0.25   σ(L) = √0.25 = 0.5\n> u = (201.0 − 200.0) / 0.5 = 2.00 → bảng phân phối chuẩn (I) 0.0228\n> Tỷ lệ ngoài tiêu chuẩn = 0.0228 × 2 = 0.0456 (hai phía)\n- Tổng, hiệu của các đại lượng độc lập tuân theo phân phối chuẩn cũng tuân theo phân phối chuẩn (**tính tái sinh**), nên dùng được bảng phân phối chuẩn.\n- Ví dụ sai: cộng độ lệch chuẩn được 0.7 → u = 1.43 ... ra một đáp án hoàn toàn khác.\n\n#### Ví dụ 2 (hiệu) xác suất khe hở bị âm\nĐường kính lỗ X ~ N(10.10, 0.03²) mm, đường kính trục Y ~ N(10.00, 0.04²) mm (độc lập). Khe hở C = X − Y.\n> E(C) = 10.10 − 10.00 = 0.10\n> V(C) = 0.03² + 0.04² = 0.0025   σ(C) = 0.05\n> P(C < 0): u = (0 − 0.10) / 0.05 = −2.00 → 0.0228 (xác suất không lắp vừa là 2.28%)\n- Phép trừ cũng **cộng** phương sai.\n\n#### Thao tác máy tính\nσ(C) = √(0.03² + 0.04²):\n> MRC MRC 0.03 × = M+ 0.04 × = M+ MRC √ → 0.05\nV(2X − 3Y) có hệ số (σ_X = 0.2, σ_Y = 0.1): sau bình phương còn phép nhân tiếp theo nên bấm hết rồi mới bấm =:\n> MRC MRC 2 × 2 × 0.2 × 0.2 = M+ 3 × 3 × 0.1 × 0.1 = M+ MRC √ → 0.5\n- Dù công thức là phép trừ cũng không dùng M− (phương sai được cộng). Chỉ dùng M− khi tính ngược (trừ phương sai đã biết khỏi toàn bộ):\n> MRC MRC 0.1 × = M+ 0.06 × = M− MRC √ → 0.08\n\n#### Sơ đồ nhận dạng\n- \"Chiều dài toàn bộ khi nối chi tiết\", \"độ dày khi xếp chồng\", \"tổng khối lượng\" → **tổng**: cộng trung bình, cộng phương sai\n- \"Khe hở\", \"đường kính lỗ − đường kính trục\", \"hiệu\", \"độ lệch\" → **hiệu**: trung bình thì trừ, phương sai thì **cộng**\n- \"n chi tiết giống nhau (n cái riêng biệt)\" → nσ² / \"nhân một giá trị lên n lần\", \"quy đổi đơn vị (× 1.8...)\" → n²σ² (a²V)\n- \"Dịch ... một lượng c\", \"độ lệch so với tâm tiêu chuẩn\" → phương sai không đổi\n- \"Muốn độ phân tán toàn bộ không quá σ. σ của chi tiết B phải không quá bao nhiêu\" → **tính ngược**: σ_B = √(σ² − σ_A²)\n- \"Tỷ lệ ngoài tiêu chuẩn\" → cuối cùng u = (tiêu chuẩn − trung bình) / √(tổng phương sai) → bảng phân phối chuẩn (I), hai phía thì cộng cả hai\n- Không ghi \"độc lập\" / hai vị trí trên cùng một chi tiết → chú ý giả định độc lập (có thêm hiệp phương sai)\n\n#### Dễ nhầm lẫn\n- V(X − Y) = V(X) + V(Y) (đúng) và V(X) − V(Y) (sai).\n- V của tổng = nσ² và V của x̄ = σ²/n (B4.6): **cộng** n cái thì tăng, **lấy trung bình** thì giảm.\n- Công thức E đúng cả khi không độc lập, nhưng công thức V cần điều kiện độc lập.\n\n#### Cách ra đề trong kỳ thi\nĐiền chỗ trống \"V(X − Y) = (V(X) + V(Y))\", tính \"độ lệch chuẩn của chiều dài toàn bộ, khe hở của cụm lắp và tỷ lệ ngoài tiêu chuẩn\", \"σ của chi tiết để thỏa σ toàn bộ (tính ngược)\", câu đúng/sai bẫy về \"tính cộng của độ lệch chuẩn\".\n\n#### Hiểu lầm thường gặp\n- \"Phương sai của hiệu là hiệu các phương sai\" → hiệu cũng là tổng.\n- \"Độ lệch chuẩn cũng cộng được\" → cái được cộng là phương sai. √(0.3² + 0.4²) = 0.5 chứ không phải 0.7.\n- \"Phương sai của tổng n cái là n²σ²\" → n cái riêng biệt thì là nσ². n²σ² là khi nhân một cái lên n lần."
+          }
+        ]
+      },
+      {
+        "h": {
+          "ja": "B4.6 大数の法則と中心極限定理 ― 平均値 x̄ の分布 E ＝ μ、V ＝ σ²/n",
+          "vi": "B4.6 Luật số lớn và định lý giới hạn trung tâm - Phân phối của trung bình x̄: E = μ, V = σ²/n"
+        },
+        "blocks": [
+          {
+            "type": "md",
+            "ja": "#### ひとことで\nn 個の平均 x̄ は、①平均は μ のまま、②ばらつきは σ/√n に縮み、③n が大きければ元の分布が何であれ形は正規分布に近づく。①②を「n → 大で x̄ → μ」と言ったのが**大数の法則**、③が**中心極限定理**。\n\n#### なぜ（B4.5 から1行で出る）\nx̄ ＝ (X₁ ＋ X₂ ＋ … ＋ X_n) / n。和の分散は nσ²（B4.5）、それを n で割ると a ＝ 1/n 倍なので分散は 1/n² 倍：\n> V(x̄) ＝ nσ² / n² ＝ σ² / n　σ(x̄) ＝ σ / √n　E(x̄) ＝ nμ / n ＝ μ\n- √n になるのは「分散が 1/n」だから。σ/n ではない。\n- 形が正規に近づく理由のイメージ：大きく外れた値は、他の値と平均されると薄められる。サイコロ1個の目は一様（1〜6が同じ割合）でも、10個の平均は 3.5 付近に山ができる。\n\n#### 定義\n- **大数の法則**：サンプルの大きさ n を大きくすると、標本平均 x̄ は母平均 μ に（確率的に）近づく。\n- **中心極限定理**：母集団の分布が正規分布でなくても（分散が有限なら）、n が大きいとき x̄ の分布は近似的に正規分布 N(μ, σ²/n) に従う。\n- 母集団が正規分布なら、x̄ は n によらず**正確に** N(μ, σ²/n)（再生性）。中心極限定理が必要なのは母集団が正規でないとき。\n\n#### 例題（x̄ の確率）\nねじ締めトルク ～ N(50.0, 4.0²)（N·cm）。4本の平均 x̄ が 53.0 を超える確率は？\n> σ(x̄) ＝ 4.0 / √4 ＝ 2.0\n> u ＝ (53.0 − 50.0) / 2.0 ＝ 1.50 → 0.0668\n- n ＝ 16 なら σ(x̄) ＝ 1.0 → u ＝ 3.00 → 0.00135。同じ 53.0 でも、平均は外れにくい。\n- 正規でない例：PCB 1枚あたりのはんだ不適合箇所数（ポアソン、λ ＝ 4 → σ² ＝ 4）。25枚の平均は中心極限定理により近似的に N(4, 4/25) → σ(x̄) ＝ 0.4。\n\n#### 電卓の手順\nu ＝ (x̄ − μ) / (σ/√n) は「σ ÷ √n」を先にメモリへ入れて割る：\n> MRC MRC 4 ÷ 4 √ = M+\n> 53 − 50 ÷ MRC = → 1.5\n- 「4 ÷ 4 √」は 2つ目の 4 だけの √ になる（必要な形）。= で確定してから M+。\n\n#### 判断フロー\n- 「1個のデータ x が〜を超える確率」→ u ＝ (x − μ)/σ\n- 「n 個の**平均**が〜を超える確率」「ロットの平均値」→ u ＝ (x̄ − μ)/(σ/√n)\n- 「n 個の**合計**」→ 平均 nμ、標準偏差 √n σ（B4.5）\n- 「分布が正規でないが n が大きい」「x̄ の分布を正規分布で近似」→ 中心極限定理\n- 「n を大きくすると x̄ が μ に近づく」→ 大数の法則\n- 「x̄ の標準偏差を半分にしたい」→ n を 4 倍（√n が2倍）\n\n#### 混同しやすい点\n- 大数の法則（x̄ の**値**が μ に近づく）と中心極限定理（x̄ の**分布の形**が正規に近づく）。\n- 「n を大きくすると**個々のデータ**の分布が正規に近づく」は誤り — 近づくのは x̄ の分布。\n- σ(x̄) ＝ σ/√n（○）、σ/n（×）。\n\n#### 試験での問われ方\n空欄補充（定義の言葉：大数の法則・中心極限定理・σ²/n）、正誤（「個々のデータが正規に近づく」などのひっかけ）、計算（x̄ の確率、σ_x̄ を目標以下にする n）。管理図（X̄ 管理図の限界が 3σ/√n）や検定の統計量 (x̄ − μ₀)/(σ/√n) の土台になる。\n\n#### よくある誤解\n- 「中心極限定理は母集団が正規分布のときだけ使える」→ 逆。正規でないときに役立つ。\n- 「n を2倍にすると x̄ の標準偏差は半分」→ 1/√2 倍（約 0.71 倍）。半分にするには 4 倍。\n- 「大数の法則があるからサンプルは少なくてよい」→ n が大きいほど x̄ は μ に近いという法則。",
+            "vi": "#### Nói gọn\nTrung bình x̄ của n cái: (1) trung bình vẫn là μ, (2) độ phân tán co lại còn σ/√n, (3) nếu n lớn thì dù phân phối gốc là gì, hình dạng cũng tiến gần phân phối chuẩn. Phát biểu (1), (2) dưới dạng \"n → lớn thì x̄ → μ\" là **luật số lớn**, (3) là **định lý giới hạn trung tâm**.\n\n#### Vì sao (suy ra trong một dòng từ B4.5)\nx̄ = (X₁ + X₂ + ... + X_n) / n. Phương sai của tổng là nσ² (B4.5), chia cho n tức là nhân a = 1/n nên phương sai nhân 1/n²:\n> V(x̄) = nσ² / n² = σ² / n   σ(x̄) = σ / √n   E(x̄) = nμ / n = μ\n- Có √n là vì \"phương sai bằng 1/n\". Không phải σ/n.\n- Hình dung lý do hình dạng tiến gần phân phối chuẩn: giá trị lệch xa khi được lấy trung bình với các giá trị khác sẽ bị pha loãng. Mặt một con xúc xắc phân phối đều (1 đến 6 cùng tỷ lệ), nhưng trung bình của 10 con thì tạo đỉnh quanh 3.5.\n\n#### Định nghĩa\n- **Luật số lớn**: khi tăng cỡ mẫu n, trung bình mẫu x̄ tiến gần (theo xác suất) đến trung bình tổng thể μ.\n- **Định lý giới hạn trung tâm**: dù phân phối của tổng thể không phải phân phối chuẩn (miễn phương sai hữu hạn), khi n lớn thì phân phối của x̄ xấp xỉ tuân theo phân phối chuẩn N(μ, σ²/n).\n- Nếu tổng thể là phân phối chuẩn thì x̄ tuân theo **chính xác** N(μ, σ²/n) với mọi n (tính tái sinh). Định lý giới hạn trung tâm cần đến khi tổng thể không phải phân phối chuẩn.\n\n#### Ví dụ (xác suất của x̄)\nMô-men siết vít ~ N(50.0, 4.0²) (N·cm). Xác suất trung bình x̄ của 4 con vít vượt quá 53.0 là bao nhiêu?\n> σ(x̄) = 4.0 / √4 = 2.0\n> u = (53.0 − 50.0) / 2.0 = 1.50 → 0.0668\n- Nếu n = 16 thì σ(x̄) = 1.0 → u = 3.00 → 0.00135. Cùng mức 53.0 nhưng trung bình thì khó lọt ra ngoài hơn.\n- Ví dụ không chuẩn: số điểm hàn không phù hợp trên mỗi tấm PCB (Poisson, λ = 4 → σ² = 4). Trung bình của 25 tấm theo định lý giới hạn trung tâm xấp xỉ N(4, 4/25) → σ(x̄) = 0.4.\n\n#### Thao tác máy tính\nu = (x̄ − μ) / (σ/√n): đưa \"σ ÷ √n\" vào bộ nhớ trước rồi chia:\n> MRC MRC 4 ÷ 4 √ = M+\n> 53 − 50 ÷ MRC = → 1.5\n- \"4 ÷ 4 √\" lấy căn của số 4 thứ hai (đúng dạng cần). Bấm = để chốt rồi mới M+.\n\n#### Sơ đồ nhận dạng\n- \"Xác suất một dữ liệu x vượt quá ...\" → u = (x − μ)/σ\n- \"Xác suất **trung bình** của n cái vượt quá ...\", \"giá trị trung bình của lô\" → u = (x̄ − μ)/(σ/√n)\n- \"**Tổng** của n cái\" → trung bình nμ, độ lệch chuẩn √n σ (B4.5)\n- \"Phân phối không chuẩn nhưng n lớn\", \"xấp xỉ phân phối của x̄ bằng phân phối chuẩn\" → định lý giới hạn trung tâm\n- \"Tăng n thì x̄ tiến gần μ\" → luật số lớn\n- \"Muốn độ lệch chuẩn của x̄ giảm một nửa\" → n gấp 4 lần (√n gấp 2)\n\n#### Dễ nhầm lẫn\n- Luật số lớn (**giá trị** của x̄ tiến gần μ) và định lý giới hạn trung tâm (**hình dạng phân phối** của x̄ tiến gần chuẩn).\n- \"Tăng n thì phân phối của **từng dữ liệu** tiến gần chuẩn\" là sai - cái tiến gần là phân phối của x̄.\n- σ(x̄) = σ/√n (đúng), σ/n (sai).\n\n#### Cách ra đề trong kỳ thi\nĐiền chỗ trống (thuật ngữ định nghĩa: luật số lớn, định lý giới hạn trung tâm, σ²/n), đúng/sai (bẫy như \"từng dữ liệu tiến gần chuẩn\"), tính toán (xác suất của x̄, n để σ_x̄ không quá mục tiêu). Đây là nền tảng của biểu đồ kiểm soát (giới hạn của biểu đồ X̄ là 3σ/√n) và thống kê kiểm định (x̄ − μ₀)/(σ/√n).\n\n#### Hiểu lầm thường gặp\n- \"Định lý giới hạn trung tâm chỉ dùng được khi tổng thể là phân phối chuẩn\" → ngược lại. Nó hữu ích chính khi tổng thể không chuẩn.\n- \"Tăng n gấp đôi thì độ lệch chuẩn của x̄ giảm một nửa\" → chỉ còn 1/√2 (khoảng 0.71 lần). Muốn giảm một nửa phải gấp 4.\n- \"Có luật số lớn nên mẫu ít cũng được\" → đó là định luật nói n càng lớn thì x̄ càng gần μ."
+          }
+        ]
+      }
+    ],
+    "terms": [
+      [
+        "正規分布",
+        "せいきぶんぷ",
+        "Phân phối chuẩn"
+      ],
+      [
+        "標準正規分布",
+        "ひょうじゅんせいきぶんぷ",
+        "Phân phối chuẩn tắc"
+      ],
+      [
+        "標準化",
+        "ひょうじゅんか",
+        "Chuẩn hóa"
+      ],
+      [
+        "上側確率",
+        "うわがわかくりつ",
+        "Xác suất phía trên"
+      ],
+      [
+        "正規分布表(I)",
+        "せいきぶんぷひょう",
+        "Bảng phân phối chuẩn (I)"
+      ],
+      [
+        "確率密度関数",
+        "かくりつみつどかんすう",
+        "Hàm mật độ xác suất"
+      ],
+      [
+        "変曲点",
+        "へんきょくてん",
+        "Điểm uốn"
+      ],
+      [
+        "母平均",
+        "ぼへいきん",
+        "Trung bình tổng thể"
+      ],
+      [
+        "母標準偏差",
+        "ぼひょうじゅんへんさ",
+        "Độ lệch chuẩn tổng thể"
+      ],
+      [
+        "不適合品率",
+        "ふてきごうひんりつ",
+        "Tỷ lệ sản phẩm không phù hợp"
+      ],
+      [
+        "正規分布表(II)",
+        "せいきぶんぷひょう に",
+        "Bảng chuẩn (II): từ xác suất P tra ra K_P"
+      ],
+      [
+        "両側確率",
+        "りょうがわかくりつ",
+        "Xác suất hai phía (tổng hai đuôi)"
+      ],
+      [
+        "K_P（上側 P 点）",
+        "けーぴー",
+        "Điểm phân vị phía trên P"
+      ],
+      [
+        "上限規格",
+        "じょうげんきかく",
+        "Giới hạn tiêu chuẩn trên"
+      ],
+      [
+        "下限規格",
+        "かげんきかく",
+        "Giới hạn tiêu chuẩn dưới"
+      ],
+      [
+        "両側規格",
+        "りょうがわきかく",
+        "Tiêu chuẩn hai phía"
+      ],
+      [
+        "かたより",
+        "かたより",
+        "Độ lệch hệ thống (bias)"
+      ],
+      [
+        "ばらつきの低減",
+        "ばらつきのていげん",
+        "giảm biến động"
+      ],
+      [
+        "手直し",
+        "てなおし",
+        "sửa lại (gia công lại)"
+      ],
+      [
+        "生産比率",
+        "せいさんひりつ",
+        "tỷ lệ sản lượng"
+      ],
+      [
+        "加重平均",
+        "かじゅうへいきん",
+        "trung bình có trọng số"
+      ],
+      [
+        "期待値",
+        "きたいち",
+        "kỳ vọng (giá trị trung bình)"
+      ],
+      [
+        "二項分布",
+        "にこうぶんぷ",
+        "phân phối nhị thức"
+      ],
+      [
+        "不適合品数",
+        "ふてきごうひんすう",
+        "số sản phẩm không phù hợp"
+      ],
+      [
+        "不適合数",
+        "ふてきごうすう",
+        "số điểm không phù hợp (số lỗi)"
+      ],
+      [
+        "母不適合品率",
+        "ぼふてきごうひんりつ",
+        "tỷ lệ không phù hợp của tổng thể"
+      ],
+      [
+        "組合せ",
+        "くみあわせ",
+        "tổ hợp"
+      ],
+      [
+        "独立",
+        "どくりつ",
+        "độc lập"
+      ],
+      [
+        "余事象",
+        "よじしょう",
+        "biến cố bù"
+      ],
+      [
+        "離散分布",
+        "りさんぶんぷ",
+        "phân phối rời rạc"
+      ],
+      [
+        "超幾何分布",
+        "ちょうきかぶんぷ",
+        "phân phối siêu bội"
+      ],
+      [
+        "非復元抽出",
+        "ひふくげんちゅうしゅつ",
+        "lấy mẫu không hoàn lại"
+      ],
+      [
+        "正規近似",
+        "せいききんじ",
+        "xấp xỉ chuẩn"
+      ],
+      [
+        "ポアソン分布",
+        "ぽあそんぶんぷ",
+        "phân phối Poisson"
+      ],
+      [
+        "母不適合数",
+        "ぼふてきごうすう",
+        "số lỗi trung bình của tổng thể (λ)"
+      ],
+      [
+        "欠点",
+        "けってん",
+        "khuyết tật, chỗ lỗi"
+      ],
+      [
+        "階乗",
+        "かいじょう",
+        "giai thừa"
+      ],
+      [
+        "自然対数の底",
+        "しぜんたいすうのてい",
+        "cơ số e ≈ 2,718"
+      ],
+      [
+        "標準偏差",
+        "ひょうじゅんへんさ",
+        "độ lệch chuẩn"
+      ],
+      [
+        "中心極限定理",
+        "ちゅうしんきょくげんていり",
+        "định lý giới hạn trung tâm"
+      ],
+      [
+        "ポアソン近似",
+        "ぽあそんきんじ",
+        "xấp xỉ nhị thức bằng Poisson"
+      ],
+      [
+        "単位あたり",
+        "たんいあたり",
+        "trên một đơn vị"
+      ],
+      [
+        "再生性",
+        "さいせいせい",
+        "tính tái sinh (tổng hai Poisson độc lập vẫn là Poisson)"
+      ],
+      [
+        "以上",
+        "いじょう",
+        "từ … trở lên (gồm cả số đó)"
+      ],
+      [
+        "c 管理図",
+        "しーかんりず",
+        "biểu đồ c (số lỗi, đơn vị cố định)"
+      ],
+      [
+        "度数分布調査用チェックシート",
+        "どすうぶんぷちょうさようちぇっくしーと",
+        "phiếu kiểm tra phân bố tần suất"
+      ],
+      [
+        "分散",
+        "ぶんさん",
+        "phương sai"
+      ],
+      [
+        "分散の加法性",
+        "ぶんさんのかほうせい",
+        "tính cộng của phương sai"
+      ],
+      [
+        "標本平均の分布",
+        "ひょうほんへいきんのぶんぷ",
+        "phân phối của trung bình mẫu"
+      ],
+      [
+        "標準誤差",
+        "ひょうじゅんごさ",
+        "sai số chuẩn"
+      ],
+      [
+        "大数の法則",
+        "たいすうのほうそく",
+        "luật số lớn"
+      ],
+      [
+        "すき間",
+        "すきま",
+        "khe hở (lắp ghép)"
+      ],
+      [
+        "共分散",
+        "きょうぶんさん",
+        "hiệp phương sai"
+      ],
+      [
+        "χ²分布",
+        "カイにじょうぶんぷ",
+        "phân phối khi bình phương"
+      ],
+      [
+        "t分布",
+        "ティーぶんぷ",
+        "phân phối t (Student)"
+      ],
+      [
+        "F分布",
+        "エフぶんぷ",
+        "phân phối F"
+      ],
+      [
+        "自由度",
+        "じゆうど",
+        "bậc tự do"
+      ],
+      [
+        "偏差平方和",
+        "へんさへいほうわ",
+        "tổng bình phương độ lệch"
+      ],
+      [
+        "不偏分散",
+        "ふへんぶんさん",
+        "phương sai không chệch"
+      ],
+      [
+        "統計量",
+        "とうけいりょう",
+        "thống kê (đại lượng tính từ mẫu)"
+      ],
+      [
+        "下側確率",
+        "したがわかくりつ",
+        "xác suất phía dưới (đuôi trái)"
+      ],
+      [
+        "パーセント点",
+        "ぱーせんとてん",
+        "điểm phần trăm (giá trị trên bảng)"
+      ],
+      [
+        "不偏推定量",
+        "ふへんすいていりょう",
+        "ước lượng không chệch"
+      ],
+      [
+        "検定統計量",
+        "けんていとうけいりょう",
+        "thống kê kiểm định (giá trị tính từ dữ liệu)"
+      ],
+      [
+        "分散比",
+        "ぶんさんひ",
+        "tỉ số phương sai"
+      ],
+      [
+        "標本分布",
+        "ひょうほんぶんぷ",
+        "phân phối của thống kê mẫu (x̄, V, t…)"
+      ],
+      [
+        "正規母集団",
+        "せいきぼしゅうだん",
+        "tổng thể có phân phối chuẩn"
+      ],
+      [
+        "規定値",
+        "きていち",
+        "giá trị quy định để so sánh (μ₀, σ₀²)"
+      ],
+      [
+        "片側",
+        "かたがわ",
+        "một phía"
+      ],
+      [
+        "両側",
+        "りょうがわ",
+        "hai phía"
+      ],
+      [
+        "有意水準",
+        "ゆういすいじゅん",
+        "mức ý nghĩa α"
+      ],
+      [
+        "統計数値表",
+        "とうけいすうちひょう",
+        "bảng số thống kê"
+      ],
+      [
+        "母分散の比",
+        "ぼぶんさんのひ",
+        "tỉ số phương sai tổng thể"
+      ]
+    ]
   }
 }
