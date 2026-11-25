@@ -17,11 +17,10 @@ concurrency:
   cancel-in-progress: false  # let each run finish; a cancelled half-run made the deploy step fail
 
 jobs:
-  deploy:
+  # Two jobs, as in GitHub's official Pages workflow: the artifact is fully finalized
+  # before the deploy job starts (a single job sometimes failed with "No artifacts named github-pages").
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v5
       - name: Build site
@@ -30,5 +29,13 @@ jobs:
       - uses: actions/upload-pages-artifact@v4
         with:
           path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - id: deployment
         uses: actions/deploy-pages@v4
